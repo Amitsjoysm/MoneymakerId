@@ -138,8 +138,12 @@ for (const s of TOP_SERVICES) {
     modelCells[`${m.service_id}|${m.tier}`] = (modelCells[`${m.service_id}|${m.tier}`] ?? 0) + 1;
   }
 }
-const missingCells = ALL_SERVICES.flatMap((s) => TIERS.filter((t) => !modelCells[`${s}|${t}`]).map((t) => `${s}/${t}`));
-for (const c of missingCells) warn(`cost models: no model for ${c} — that cost guide cannot pass the gate`);
+// Leaf services need ≥ 1 sourced model for a cost guide; parents (with sub-services) aggregate their subs (CONTRACTS §4).
+const LEAF_SERVICES = ALL_SERVICES.filter((s) => !SUB_SERVICES[s]);
+const missingCells = LEAF_SERVICES.flatMap((s) => TIERS.filter((t) => !modelCells[`${s}|${t}`]).map((t) => `${s}/${t}`));
+const guidesWithoutModels = LEAF_SERVICES.filter((s) => !TIERS.some((t) => modelCells[`${s}|${t}`]));
+for (const s of guidesWithoutModels) warn(`cost models: ${s} has no model — its cost guide cannot pass the gate`);
+for (const c of missingCells) if (!guidesWithoutModels.includes(c.split('/')[0])) warn(`cost models: tier gap ${c} (target, not a gate blocker)`);
 
 // --- configs, CSV templates, guides ---
 for (const f of ['seasonal-calendar', 'lead-pricing', 'gate', 'ad-slots', 'experiments', 'aggregators']) readJson(`data/${f}.json`);
@@ -172,7 +176,7 @@ for (const g of guides) {
 // --- report ---
 console.log('\nFacts coverage (priority locality × top-level service, need ≥ 3 each):');
 console.table(coverage);
-console.log(`Cost-model coverage: ${ALL_SERVICES.length * TIERS.length - missingCells.length}/${ALL_SERVICES.length * TIERS.length} service×tier cells filled`);
+console.log(`Cost guides with models: ${LEAF_SERVICES.length - guidesWithoutModels.length}/${LEAF_SERVICES.length} leaf services (+2 parent guides that aggregate); tier cells ${LEAF_SERVICES.length * TIERS.length - missingCells.length}/${LEAF_SERVICES.length * TIERS.length}`);
 for (const w of warnings) console.log(`WARN  ${w}`);
 for (const e of errors) console.log(`ERROR ${e}`);
 console.log(`\n${errors.length} error(s), ${warnings.length} coverage warning(s)`);

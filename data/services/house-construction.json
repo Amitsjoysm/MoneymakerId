@@ -1,0 +1,127 @@
+{
+  "id": "house-construction",
+  "name": "House Construction",
+  "parent_id": null,
+  "unit": "sqft",
+  "area_presets": [],
+  "scope_options": [
+    {
+      "id": "turnkey",
+      "label": "Turnkey construction (materials and labour)",
+      "description": "The contractor supplies materials and labour and hands over a finished house to an agreed specification: foundation, RCC frame, walls, plaster, flooring and tiling, plumbing, electrical wiring, doors and windows, and painting. Quantity is the built-up area in sq ft, added up across all floors. Check which items the specification leaves out before comparing rates."
+    },
+    {
+      "id": "grey-structure",
+      "label": "Grey structure (shell only)",
+      "description": "The contractor builds the structure and shell: foundation, plinth, RCC columns, beams and slabs, and masonry walls. Finishing items such as flooring, tiling, doors, windows, sanitaryware, electrical fittings and painting are not included. Whether plaster, concealed plumbing lines and electrical conduits are included varies between contractors, so get the list in writing. Quantity is the built-up area in sq ft, added up across all floors."
+    },
+    {
+      "id": "labour-only",
+      "label": "Labour contract (owner buys materials)",
+      "description": "The contractor supplies labour, and the owner buys cement, steel, sand, aggregate, bricks or blocks and finishing materials. The owner then handles purchasing, storage at site, wastage and material price changes. Check whether shuttering, scaffolding, tools and curing are included in the labour rate. Quantity is the built-up area in sq ft, added up across all floors."
+    }
+  ],
+  "materials": [
+    {
+      "id": "red-clay-brick",
+      "label": "Fired clay bricks (red bricks)",
+      "description": "Walls built from fired clay bricks laid in cement mortar, inside a reinforced cement concrete (RCC) frame.",
+      "sources": []
+    },
+    {
+      "id": "aac-block",
+      "label": "AAC blocks",
+      "description": "Walls built from autoclaved aerated concrete (AAC) blocks, which are factory-made, laid with a block adhesive or cement mortar inside an RCC frame.",
+      "sources": []
+    },
+    {
+      "id": "fly-ash-brick",
+      "label": "Fly ash bricks",
+      "description": "Walls built from bricks made with fly ash, a residue from coal-fired power stations, laid in cement mortar inside an RCC frame.",
+      "sources": []
+    },
+    {
+      "id": "concrete-block",
+      "label": "Concrete blocks (solid or hollow)",
+      "description": "Walls built from cement concrete blocks, solid or hollow, laid in cement mortar inside an RCC frame.",
+      "sources": []
+    }
+  ],
+  "duration_days": {
+    "min": 0,
+    "max": 0,
+    "basis": "NOT SOURCED. Placeholder only: research on 2026-10-06 was blocked (WebSearch budget exhausted, publisher sites blocked by the egress proxy). Do not display; replace with a sourced range (from foundation work to handover, by scope and number of floors) before review."
+  },
+  "questions_to_ask": [
+    "Is your rate per sq ft worked out on built-up area, carpet area or some other measure, and how do you count balconies, the staircase, the parking floor and the open terrace?",
+    "Is this quote turnkey, grey structure or labour-only, and which items does it leave out (for example the compound wall, water tanks, borewell, drainage and utility connections, and approval fees)?",
+    "Which brands and grades of cement, steel bars, bricks or blocks, sand and aggregate does the rate assume, and what concrete grade will be used for the foundation, columns and slabs?",
+    "Who prepares the architectural and structural drawings, and who applies for building permission and the completion or occupancy certificate? Are those fees in the quote?",
+    "What foundation type and depth does the rate assume, and how will the price change if the soil at the site needs a deeper or different foundation?",
+    "Is there a price escalation clause for steel and cement, and exactly how is it calculated?",
+    "What are the payment stages (for example plinth, each slab, brickwork, plaster, finishing), and is each payment due only after that stage is complete?",
+    "For a turnkey quote, what allowances are included for tiles, doors, windows, sanitaryware, taps, electrical switches and paint, and are they stated by brand and model or as an amount per sq ft or per piece?",
+    "Who supervises the site day to day, and will the structural engineer inspect the reinforcement before each concrete pour?",
+    "Who pays for water and electricity during construction, and are curing, shuttering, scaffolding and debris removal included?",
+    "What warranty or defect-liability period do you give on the structure, waterproofing and workmanship, and will it be written into the contract?"
+  ],
+  "common_mistakes": [
+    "Comparing per sq ft rates from different contractors without checking that they use the same area measure and the same list of inclusions.",
+    "Accepting a turnkey rate without a written specification for finishing items, and then finding lower-grade tiles, fittings or doors on site than expected.",
+    "Starting work before the building permission and approved drawings are in hand.",
+    "Building without structural drawings from a qualified structural engineer, or moving columns and beams on site without the engineer's approval.",
+    "Paying large advances that are not linked to completed stages of work.",
+    "Leaving items outside the per sq ft rate out of the budget, such as approvals, utility connections, the compound wall, water tanks, a borewell and interiors.",
+    "Making design changes during construction without a written change order that states the extra cost and time.",
+    "Not agreeing in advance how steel and concrete quality will be checked at site, for example steel test certificates and concrete cube tests, before slabs are cast.",
+    "Leaving out waterproofing of the terrace, bathrooms and other wet areas during construction to save money, when it is harder to add once the house is finished."
+  ],
+  "quote_checklist": [
+    "Area measure used for the rate (built-up or carpet), with the measured area for each floor",
+    "Scope type in writing (turnkey, grey structure or labour-only), with every inclusion and exclusion listed",
+    "Drawings the quote is based on: architectural plan, structural drawings and number of floors",
+    "Foundation type and assumed depth, and how extra depth or extra excavation is charged",
+    "Structural specification: concrete grades, steel brand and grade, cement brand, walling material and wall thickness",
+    "Finishing specification or allowances: floor and wall tiles, door frames and shutters, windows, sanitaryware and taps, electrical wiring and switches, paint system",
+    "Plumbing and electrical scope: pipe material and brand, wire brand, and number of points per room",
+    "Waterproofing for the terrace, bathrooms, balconies and water tanks: product and method",
+    "Approvals and utility connections: who obtains them and whether the fees are included",
+    "Price escalation clause for steel and cement, if any",
+    "Timeline with stage-wise milestones, and a payment schedule tied to completed stages",
+    "Site supervision, curing, shuttering, scaffolding, construction water and electricity, and debris removal: included or extra",
+    "Defect-liability or warranty period in writing",
+    "Whether GST is included or extra"
+  ],
+  "faq": [
+    {
+      "q": "How is house construction priced?",
+      "a": "Quotes come in a few forms: a rate per sq ft of built-up area for a finished (turnkey) house, a rate per sq ft for the grey structure only, a labour-only rate where the owner buys the materials, or an itemised bill of quantities. An itemised quote, or a per sq ft rate backed by a written specification, is the easiest to compare. Check which form each quote uses before comparing totals."
+    },
+    {
+      "q": "What is the difference between a grey structure quote and a turnkey quote?",
+      "a": "A grey structure quote covers the structure and shell: foundation, RCC frame, slabs and walls, sometimes with plaster. A turnkey quote also covers finishing, such as flooring, tiling, doors, windows, plumbing and electrical fittings and painting, so the house is ready to move into. Contractors do not all use these terms the same way, so ask for the list of inclusions in writing."
+    },
+    {
+      "q": "Why do quotes for the same house differ so much?",
+      "a": "Check whether the quotes differ in what they include and in the specification they assume: the area measure, the foundation, the brands and grades of cement and steel, the walling material, and the allowances for finishing items. Put the quotes side by side item by item before comparing totals."
+    },
+    {
+      "q": "What might a per sq ft rate leave out?",
+      "a": "Check the quote for items it may exclude, such as architect and approval fees, the compound wall, water tanks, a borewell, drainage and utility connections, landscaping, and interiors such as a modular kitchen or wardrobes. If they are excluded, budget for them separately."
+    },
+    {
+      "q": "Should I give a labour-only contract and buy the materials myself?",
+      "a": "A labour-only contract lets you choose and pay for materials directly, but you take on purchasing, storage at site, wastage and price changes, and you need time to manage deliveries. A material-and-labour contract puts that work on the contractor, so the written specification matters more. Decide based on how much time you can spend at the site."
+    },
+    {
+      "q": "Should construction start before approvals are in place?",
+      "a": "No. Ask your architect which permissions apply to your plot, and start work only once the building permission and approved drawings are in hand. Keep a copy of the approved plans at the site."
+    },
+    {
+      "q": "How should payments to a construction contractor be scheduled?",
+      "a": "Link each payment to a completed stage that you can check, for example plinth, each slab, brickwork, plaster and finishing, rather than paying large amounts upfront. Write the schedule into the contract and keep a record of each payment against its stage."
+    }
+  ],
+  "prose_status": "draft",
+  "sub_services": []
+}

@@ -1,0 +1,802 @@
+[
+  {
+    "id": "terrace-waterproofing-acrylic-coating-budget",
+    "service_id": "terrace-waterproofing",
+    "scope_id": "surface-coating",
+    "material_id": "acrylic-roof-coating",
+    "tier": "budget",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 35,
+      "expected": 55,
+      "high": 100
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.35,
+      "labour": 0.35,
+      "preparation": 0.15,
+      "repair": 0.08,
+      "transport": 0.03,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+        "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+        "publisher": "Pidilite Industries (Dr. Fixit)",
+        "retrieved_at": "2026-10-06",
+        "quote": "For a basic coating system, the cost is approximately ₹35–₹45 per sq ft."
+      },
+      {
+        "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+        "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Terrace Waterproofing (Concrete Surface) with Roofseal classic: ₹55/sqft"
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/waterproofing-cost-in-pune",
+        "title": "Waterproofing Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Terrace Waterproofing: ₹35–₹60 per sqft"
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/terrace-waterproofing-coating-22860711973.html",
+        "title": "Terrace Waterproofing Coating at ₹ 55/square feet in Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Terrace Waterproofing Coating at ₹ 55/square feet in Pune"
+      },
+      {
+        "url": "https://www.asianpaints.com/blogs/waterproofing-cost-in-india.html",
+        "title": "Waterproofing Cost in India: Budget by Area",
+        "publisher": "Asian Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic coating systems cost ₹60 to ₹100 per sq ft, mid-range membrane systems cost ₹100 to ₹180 per sq ft, and premium PU or advanced systems cost ₹180 to ₹250 per sq ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited per-sq-ft figures: Dr. Fixit basic coating ₹35–₹45; AapkaPainter Roofseal Classic on concrete ₹55 (₹59.85 on tiles); NoBroker Pune terrace ₹35–₹60; IndiaMART Pune seller coating ₹55; Asian Paints basic coating systems ₹60–₹100 (national). Sources disagree, so the range is widened to ₹35–₹100. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 40, 47.5, 55, 57.5, 80 → 55). NoBroker's Pune figure does not name the system; at ₹35–₹60 it matches coating-grade work. Assumes a sound existing surface with only minor crack repair. Component fractions are an editorial split for the calculator, not taken from a source. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "terrace-waterproofing-liquid-membrane-standard",
+    "service_id": "terrace-waterproofing",
+    "scope_id": "surface-coating",
+    "material_id": "liquid-applied-membrane",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 65,
+      "expected": 85,
+      "high": 120
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.42,
+      "labour": 0.3,
+      "preparation": 0.15,
+      "repair": 0.07,
+      "transport": 0.03,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+        "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+        "publisher": "Pidilite Industries (Dr. Fixit)",
+        "retrieved_at": "2026-10-06",
+        "quote": "A more advanced liquid-applied membrane costs ₹65–₹85 per sq ft and may range between ₹58,500–₹76,500 for a 900 sq ft roof."
+      },
+      {
+        "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+        "title": "What is the waterproofing cost per sq ft in India? in Pune",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Liquid membrane (Dr. Fixit): ₹80–120/sqft"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: Dr. Fixit liquid-applied membrane ₹65–₹85 per sq ft (national); Biddaro Pune 'Liquid membrane (Dr. Fixit)' ₹80–₹120. Range widened to cover both. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 75, 100 → 87.5 → 85). Biddaro appears to be a programmatic Q&A page; treat as weaker evidence. Component fractions are an editorial split for the calculator, not taken from a source."
+  },
+  {
+    "id": "terrace-waterproofing-app-membrane-standard",
+    "service_id": "terrace-waterproofing",
+    "scope_id": null,
+    "material_id": "app-membrane",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 25,
+      "expected": 90,
+      "high": 160
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.45,
+      "labour": 0.28,
+      "preparation": 0.12,
+      "repair": 0.06,
+      "transport": 0.04,
+      "waste": 0.05
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://aecord.com/blog/terrace-waterproofing-cost-india-2026",
+        "title": "Terrace Waterproofing Cost India 2026: Updated Rates, Material Breakdown & Expert Guide",
+        "publisher": "Aecord",
+        "retrieved_at": "2026-10-06",
+        "quote": "APP/SBS Torch-On Membranes cost ₹80–₹160 per sq. ft. and are best for older terraces experiencing recurrent dampness and heavy seepage, with an expected lifespan of 6-10 years."
+      },
+      {
+        "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+        "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+        "publisher": "Studio Matrx",
+        "retrieved_at": "2026-10-06",
+        "quote": "Sheet — bituminous (APP/SBS): 30–50% elongation, 10–15 years durability, ₹60–120 per sq ft"
+      },
+      {
+        "url": "https://dir.indiamart.com/pune/app-membrane-waterproofing-service.html",
+        "title": "APP Membrane Waterproofing Service in Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "APP membrane waterproofing services in Pune range from ₹25 to ₹80 per square feet"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: Aecord torch-on APP/SBS ₹80–₹160 per sq ft (2026, national); Studio Matrx APP/SBS sheet ₹60–₹120 (national); IndiaMART Pune seller listings ₹25–₹80 (one listing at ₹110). Sources disagree widely; the range is widened to ₹25–₹160 as required. The low end comes from seller-posted 'from' prices on IndiaMART whose scope is not stated (likely membrane laying only, without protective screed or slope correction). Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 120, 90, 52.5 → 90). Scope left null because no source states it. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): Studio Matrx's per-system figure comes from its comparison of membrane types used in bathrooms. It prices the system, not the terrace job; it is kept as a system rate."
+  },
+  {
+    "id": "terrace-waterproofing-pu-membrane-premium",
+    "service_id": "terrace-waterproofing",
+    "scope_id": null,
+    "material_id": "pu-membrane",
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 80,
+      "expected": 215,
+      "high": 300
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.5,
+      "labour": 0.25,
+      "preparation": 0.13,
+      "repair": 0.06,
+      "transport": 0.02,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.asianpaints.com/blogs/waterproofing-cost-in-india.html",
+        "title": "Waterproofing Cost in India: Budget by Area",
+        "publisher": "Asian Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic coating systems cost ₹60 to ₹100 per sq ft, mid-range membrane systems cost ₹100 to ₹180 per sq ft, and premium PU or advanced systems cost ₹180 to ₹250 per sq ft."
+      },
+      {
+        "url": "https://aecord.com/blog/terrace-waterproofing-cost-india-2026",
+        "title": "Terrace Waterproofing Cost India 2026: Updated Rates, Material Breakdown & Expert Guide",
+        "publisher": "Aecord",
+        "retrieved_at": "2026-10-06",
+        "quote": "Polyurethane (PU) Coating costs ₹140–₹300 per sq. ft. and is recommended for premium modern roofs requiring maximum elasticity and thermal comfort, with a lifespan of 10-15 years."
+      },
+      {
+        "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+        "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+        "publisher": "Studio Matrx",
+        "retrieved_at": "2026-10-06",
+        "quote": "Polyurethane (PU): 300–500% elongation, 12–20 years durability, ₹80–160 per sq ft"
+      },
+      {
+        "url": "https://leakfoe.com/blog/waterproofing-rates-in-pune.html",
+        "title": "Waterproofing rates in Pune",
+        "publisher": "Leakfoe",
+        "retrieved_at": "2026-10-06",
+        "quote": "For residential terrace waterproofing, the lowest rate is Rs 75/- per sqft, the acceptable rate is Rs 200/- - Rs300/- per sqft, with rates considered too high if they go up to Rs 560/- per sqft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: Asian Paints premium PU or advanced systems ₹180–₹250 per sq ft; Aecord PU coating ₹140–₹300; Studio Matrx PU ₹80–₹160; Leakfoe (a Pune waterproofing contractor, so an interested party) calls ₹200–₹300 the acceptable residential terrace rate without naming a system. Range widened to ₹80–₹300. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 120, 215, 220, 250 → 217.5 → 215). Only Leakfoe is Pune-specific. Assumes a dry, primed slab, as Studio Matrx says PU requires. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): Studio Matrx's per-system figure comes from its comparison of membrane types used in bathrooms. It prices the system, not the terrace job; it is kept as a system rate."
+  },
+  {
+    "id": "terrace-waterproofing-brickbat-coba-standard",
+    "service_id": "terrace-waterproofing",
+    "scope_id": null,
+    "material_id": "brickbat-coba",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 50,
+      "expected": 85,
+      "high": 145
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.4,
+      "labour": 0.35,
+      "preparation": 0.08,
+      "repair": 0.04,
+      "transport": 0.06,
+      "waste": 0.07
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+        "title": "What is the waterproofing cost per sq ft in India? in Pune",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Brick bat coba (traditional): ₹50–80/sqft"
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/brick-coba-waterproofing-service-11245684530.html",
+        "title": "Brick Coba Waterproofing Service at ₹ 81/square feet in Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Brick Coba Waterproofing Service at ₹ 81/square feet in Pune"
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/brick-bat-coba-waterproofing-service-11554459697.html",
+        "title": "Brick Bat Coba Waterproofing Service - Gio Vision Private Limited at ₹ 105/square feet, Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Brick Bat Coba Waterproofing Service - Gio Vision Private Limited at ₹ 105/square feet, Pune"
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/brick-bat-coba-service-27548986355.html",
+        "title": "Brick Bat Coba Service at ₹ 145/square feet in Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Brick Bat Coba Service at ₹ 145/square feet in Pune"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: Biddaro Pune brickbat coba ₹50–₹80 per sq ft; three IndiaMART Pune seller listings at ₹81, ₹105 and ₹145 (one publisher; median ₹105 used as its midpoint). Range ₹50–₹145. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 65, 105 → 85). The IndiaMART Pune directory also shows extreme listings from ₹20 to ₹210 with no stated scope; these are logged but not used. Brickbat coba is usually laid at construction or when the terrace is fully re-laid; scope left null because sources do not state it. Component fractions are an editorial split for the calculator, not taken from a source; transport and waste are set higher than for coatings because brick and mortar are bulk materials."
+  },
+  {
+    "id": "bathroom-waterproofing-grout-and-coat-budget",
+    "service_id": "bathroom-waterproofing",
+    "scope_id": "grout-and-coat",
+    "material_id": "polymer-cementitious-coating",
+    "tier": "budget",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 40,
+      "expected": 80,
+      "high": 120
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.2,
+      "labour": 0.55,
+      "preparation": 0.15,
+      "repair": 0.05,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/bathroom-waterproofing-cost",
+        "title": "Bathroom Waterproofing Cost - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic coating + grouting: Rs. 80 to Rs. 120/sq ft"
+      },
+      {
+        "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+        "title": "What is the waterproofing cost per sq ft in India? in Pune",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Cement-based slurry (bathroom): ₹40–70/sqft"
+      },
+      {
+        "url": "https://www.asianpaints.com/blogs/waterproofing-cost-in-india.html",
+        "title": "Waterproofing Cost in India: Budget by Area",
+        "publisher": "Asian Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "Bathroom waterproofing usually costs between ₹40 and ₹120 per sq ft depending on tile removal requirements, leakage severity, waterproofing layers, and plumbing repair needs."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: NoBroker 'basic coating + grouting' ₹80–₹120 per sq ft; Biddaro Pune cement-based slurry for bathrooms ₹40–₹70; Asian Paints bathroom waterproofing ₹40–₹120 (national). Range ₹40–₹120. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 100, 55, 80 → 80). Rate is per sq ft of treated area. Tiles are not removed in this scope. Component fractions are an editorial split, except that labour, preparation and repair together are set to 75%, following NoBroker's statement that labour is about 75% of bathroom waterproofing cost. Verifier (2026-10-06): NoBroker does not say whether its per-sq-ft rates apply to floor area or treated area. Studio Matrx states its rates per sq ft of treated area. The ServiceDef presets use treated area (about 80 sq ft per bathroom), so the expected cost per bathroom is about ₹6,400 (budget), ₹10,000 (standard) and ₹14,000 (premium). That sits between NoBroker Pune's ₹2,000–₹4,000 per bathroom and Leakfoe's ₹24,000, and within Studio Matrx's ₹7,000–₹22,000."
+  },
+  {
+    "id": "bathroom-waterproofing-floor-and-joints-standard",
+    "service_id": "bathroom-waterproofing",
+    "scope_id": "floor-and-joints",
+    "material_id": "polymer-cementitious-coating",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 80,
+      "expected": 125,
+      "high": 160
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.2,
+      "labour": 0.5,
+      "preparation": 0.18,
+      "repair": 0.07,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/bathroom-waterproofing-cost",
+        "title": "Bathroom Waterproofing Cost - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Standard waterproofing (floor + joints): Rs. 120 to Rs. 160/sq ft"
+      },
+      {
+        "url": "https://www.studiomatrx.org/guides/cementitious-waterproofing-india",
+        "title": "Cementitious Waterproofing India: Coatings, Coats & Cost (2026)",
+        "publisher": "Studio Matrx",
+        "retrieved_at": "2026-10-06",
+        "quote": "Applied cost for a sunken bathroom with 2 coats plus prep and mesh at junctions is ₹90–160 per sq ft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/bathroom-construction-cost-in-india/",
+        "title": "Bathroom Construction Cost in India 2026: Complete Guide with Estimates & Expert Tips - Construction Estimator India",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Cementitious coating (Dr. Fixit, STP) costs ₹80–₹120/sq ft, making it the most budget-friendly option."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: NoBroker 'standard waterproofing (floor + joints)' ₹120–₹160 per sq ft; Studio Matrx applied cost for a sunken bathroom with 2 coats, prep and mesh ₹90–₹160 (2026); Construction Estimator India cementitious coating ₹80–₹120. Range ₹80–₹160. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 140, 125, 100 → 125). Sources do not say whether tile removal and re-tiling are included; assume re-tiling is extra. All national figures; no Pune-specific figure for this scope was found. Component fractions are an editorial split, except that labour, preparation and repair together are set to 75%, following NoBroker's statement that labour is about 75% of bathroom waterproofing cost. Verifier (2026-10-06): NoBroker does not say whether its per-sq-ft rates apply to floor area or treated area. Studio Matrx states its rates per sq ft of treated area. The ServiceDef presets use treated area (about 80 sq ft per bathroom), so the expected cost per bathroom is about ₹6,400 (budget), ₹10,000 (standard) and ₹14,000 (premium). That sits between NoBroker Pune's ₹2,000–₹4,000 per bathroom and Leakfoe's ₹24,000, and within Studio Matrx's ₹7,000–₹22,000."
+  },
+  {
+    "id": "bathroom-waterproofing-full-sunken-slab-premium",
+    "service_id": "bathroom-waterproofing",
+    "scope_id": "full-sunken-slab",
+    "material_id": "pu-membrane",
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 90,
+      "expected": 175,
+      "high": 200
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.2,
+      "labour": 0.45,
+      "preparation": 0.18,
+      "repair": 0.12,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/bathroom-waterproofing-cost",
+        "title": "Bathroom Waterproofing Cost - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Full treatment (sunken slab + floor + joints): Rs. 160 to Rs. 200/sq ft"
+      },
+      {
+        "url": "https://constructionestimatorindia.com/bathroom-construction-cost-in-india/",
+        "title": "Bathroom Construction Cost in India 2026: Complete Guide with Estimates & Expert Tips - Construction Estimator India",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Polyurethane membranes (₹150–₹200/sq ft) offer superior durability for 10–15 years and are recommended for bathrooms above the ground floor."
+      },
+      {
+        "url": "https://www.studiomatrx.org/guides/bathroom-construction-cost-india",
+        "title": "Bathroom Construction Cost in India (2026): Full Line-Item Breakdown",
+        "publisher": "Studio Matrx",
+        "retrieved_at": "2026-10-06",
+        "quote": "Expect ₹90–₹200 per sq ft of treated area, or ₹8,000–₹16,000 for a 40 sq ft bath."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: NoBroker 'full treatment (sunken slab + floor + joints)' ₹160–₹200 per sq ft (system not named); Construction Estimator India PU membranes ₹150–₹200, recommended for bathrooms above the ground floor; Studio Matrx bathroom waterproofing ₹90–₹200 per sq ft of treated area (2026). Range ₹90–₹200. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 180, 175, 145 → 175). Material set to PU because it is the premium system named for this case; a cementitious system for the same scope would sit lower. Re-tiling and sunken-slab refilling materials are not clearly included in any source. National figures. Component fractions are an editorial split, except that labour, preparation and repair together are set to 75%, following NoBroker's statement that labour is about 75% of bathroom waterproofing cost. Verifier (2026-10-06): NoBroker does not say whether its per-sq-ft rates apply to floor area or treated area. Studio Matrx states its rates per sq ft of treated area. The ServiceDef presets use treated area (about 80 sq ft per bathroom), so the expected cost per bathroom is about ₹6,400 (budget), ₹10,000 (standard) and ₹14,000 (premium). That sits between NoBroker Pune's ₹2,000–₹4,000 per bathroom and Leakfoe's ₹24,000, and within Studio Matrx's ₹7,000–₹22,000."
+  },
+  {
+    "id": "external-wall-waterproofing-coating-budget",
+    "service_id": "external-wall-waterproofing",
+    "scope_id": "coating-only",
+    "material_id": "exterior-waterproof-coating",
+    "tier": "budget",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 27,
+      "expected": 45,
+      "high": 60
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.38,
+      "labour": 0.35,
+      "preparation": 0.15,
+      "repair": 0.05,
+      "transport": 0.03,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+        "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "External Wall (paint surface): ₹27-33/sqft"
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/waterproofing-cost-in-pune",
+        "title": "Waterproofing Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Exterior Wall Waterproofing: ₹30–₹60 per sqft"
+      },
+      {
+        "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+        "title": "What is the waterproofing cost per sq ft in India? in Pune",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Polymer coating (external walls): ₹30–60/sqft"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: AapkaPainter external wall waterproofing ₹27–₹33 per sq ft on a painted surface (₹28–₹35 on concrete); NoBroker Pune exterior wall ₹30–₹60; Biddaro Pune polymer coating for external walls ₹30–₹60. Range ₹27–₹60. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 31, 45, 45 → 45; AapkaPainter's two surface ranges combined to ₹27–₹35). Excludes scaffolding unless the contractor includes it. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): NoBroker's Bangalore, Chennai and Hyderabad figures for exterior walls are also ₹30–₹60, so its 'Pune' figure looks templated rather than Pune-specific."
+  },
+  {
+    "id": "external-wall-waterproofing-crack-repair-elastomeric-standard",
+    "service_id": "external-wall-waterproofing",
+    "scope_id": "crack-repair-and-coating",
+    "material_id": "elastomeric-wall-coating",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 25,
+      "expected": 60,
+      "high": 100
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.35,
+      "labour": 0.32,
+      "preparation": 0.15,
+      "repair": 0.12,
+      "transport": 0.03,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/forum/what-is-the-exterior-wall-waterproofing-cost-in-india/",
+        "title": "Exterior Wall Waterproofing Cost Calculator: Calculate Here",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Crack filling + elastomeric coating ranges from Rs. 35 to Rs. 80 per sq ft"
+      },
+      {
+        "url": "https://www.asianpaints.com/blogs/exterior-wall-waterproofing-seepage-solutions.html",
+        "title": "How to Waterproof Exterior Walls & Stop Water Seepage",
+        "publisher": "Asian Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "In India, exterior waterproofing usually ranges between ₹25 to ₹80 per sq ft, depending on the system and quality."
+      },
+      {
+        "url": "https://www.asianpaints.com/blogs/waterproofing-cost-in-india.html",
+        "title": "Waterproofing Cost in India: Budget by Area",
+        "publisher": "Asian Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "External wall waterproofing typically costs ₹35 to ₹100 per sq ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: NoBroker crack filling + elastomeric coating ₹35–₹80 per sq ft; Asian Paints exterior waterproofing ₹25–₹80 (exterior-wall article) and external wall waterproofing ₹35–₹100 (cost article). Asian Paints' two pages count as one publisher. Range ₹25–₹100. Expected = median of the publishers' midpoints, rounded to the nearest ₹5 (ties down): NoBroker 57.5; Asian Paints counts once, at the median of its two figures (52.5, 67.5 → 60); median 58.75 → 60. National figures. Heavy crack repair is priced separately by some contractors; NoBroker's Pune page lists crack filling at ₹100–₹150 per running foot. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): expected corrected from ₹55 to ₹60; the builder had counted Asian Paints' two pages as two midpoints, which breaks the stated one-publisher-one-midpoint rule."
+  },
+  {
+    "id": "external-wall-waterproofing-elastomeric-premium",
+    "service_id": "external-wall-waterproofing",
+    "scope_id": "crack-repair-and-coating",
+    "material_id": "elastomeric-wall-coating",
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 50,
+      "expected": 100,
+      "high": 150
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.4,
+      "labour": 0.3,
+      "preparation": 0.15,
+      "repair": 0.1,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/forum/what-is-the-exterior-wall-waterproofing-cost-in-india/",
+        "title": "Exterior Wall Waterproofing Cost Calculator: Calculate Here",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium waterproof paint systems range from Rs. 60 to Rs. 150 per sq ft"
+      },
+      {
+        "url": "https://www.99acres.com/articles/damp-proofing.html",
+        "title": "Damp proofing: Meaning, Types, Methods, Advantages and Cost",
+        "publisher": "99acres",
+        "retrieved_at": "2026-10-06",
+        "quote": "The price of damp proofing services in India ranges between Rs 50 and Rs 150 per sq ft"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: NoBroker premium waterproof paint systems ₹60–₹150 per sq ft; 99acres damp-proofing services ₹50–₹150 per sq ft. The 99acres figure covers damp-proofing services generally, not only external walls, so it is weaker corroboration. Range ₹50–₹150. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 105, 100 → 102.5 → 100). National figures; no Pune-specific premium figure found. Component fractions are an editorial split for the calculator, not taken from a source."
+  },
+  {
+    "id": "basement-waterproofing-cementitious-budget",
+    "service_id": "basement-waterproofing",
+    "scope_id": null,
+    "material_id": "polymer-cementitious-coating",
+    "tier": "budget",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 75,
+      "expected": 130,
+      "high": 200
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.3,
+      "labour": 0.38,
+      "preparation": 0.17,
+      "repair": 0.08,
+      "transport": 0.03,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/waterproofing-cost-in-pune",
+        "title": "Waterproofing Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basement Waterproofing: ₹75–₹100 per sqft"
+      },
+      {
+        "url": "https://www.nobroker.in/forum/how-much-it-cost-to-waterproof-a-basement/",
+        "title": "How Much it Cost to Waterproof a Basement",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Cementitious waterproofing costs Rs. 100 to Rs. 200 per sq. ft. and is a low-cost waterproofing technology widely utilised in basements and bathrooms."
+      },
+      {
+        "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+        "title": "What is the waterproofing cost per sq ft in India? in Pune",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Terrace waterproofing costs ₹50–150/sqft; bathroom waterproofing ₹40–100/sqft; basement ₹80–200/sqft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: NoBroker Pune basement waterproofing ₹75–₹100 per sq ft; NoBroker cementitious waterproofing ₹100–₹200 (national, same publisher); Biddaro Pune basement ₹80–₹200. Independent publishers: NoBroker and Biddaro. Range ₹75–₹200. Expected = median of the publishers' midpoints, rounded to the nearest ₹5 (ties down): NoBroker counts once, at the median of its two figures (87.5, 150 → 118.75); Biddaro 140; median 129.4 → 130. Scope left null; cementitious work on an existing basement is normally done from the inside. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): expected corrected from ₹140 to ₹130 (NoBroker had been counted twice). Two caveats. First, NoBroker's ₹75–₹100 and Biddaro's ₹80–₹200 are all-method basement figures; only NoBroker's ₹100–₹200 names a cementitious system. Second, NoBroker's Bangalore and Hyderabad pages show the same ₹75–₹100 basement range, so the 'Pune' page figure looks templated rather than Pune-specific. Budget expected (₹130) is above the external-membrane standard model (₹115). That model covers a different scope (new construction, before backfilling), so the two are not directly comparable."
+  },
+  {
+    "id": "basement-waterproofing-crystalline-standard",
+    "service_id": "basement-waterproofing",
+    "scope_id": null,
+    "material_id": "crystalline",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 40,
+      "expected": 150,
+      "high": 320
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.4,
+      "labour": 0.3,
+      "preparation": 0.15,
+      "repair": 0.08,
+      "transport": 0.03,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/forum/how-much-it-cost-to-waterproof-a-basement/",
+        "title": "How Much it Cost to Waterproof a Basement",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Crystalline waterproofing costs Rs. 150 to Rs. 320 per sq. ft. and is ideal for basements that experience strong water pressure."
+      },
+      {
+        "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+        "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+        "publisher": "Studio Matrx",
+        "retrieved_at": "2026-10-06",
+        "quote": "Crystalline/integral: N/A (concrete-bound), life of structure, ₹40–90 per sq ft"
+      },
+      {
+        "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+        "title": "What is the waterproofing cost per sq ft in India? in Pune",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Crystalline waterproofing: ₹120–180/sqft"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: NoBroker crystalline waterproofing ₹150–₹320 per sq ft; Studio Matrx crystalline/integral ₹40–₹90 (2026); Biddaro Pune crystalline waterproofing ₹120–₹180. The sources disagree strongly. Studio Matrx says its ₹40–₹90 is material + labour, so the gap is not a material-only versus applied-cost difference; the cause is unexplained. The range is widened to ₹40–₹320 as required. Expected = median of the cited sources' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 235, 65, 150 → 150). Treat this model as low-confidence until a Pune quote or a third independent source narrows it. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): Biddaro quote switched from its combined 'crystalline/epoxy injection (basement)' row (₹100–₹200), which was also used in the injection model, to its dedicated 'crystalline waterproofing' row (₹120–₹180). Both rows were in the same Biddaro search result. Removed the builder's guess that Studio Matrx's figure was material-only: the search text says 'material + labour'. Low, expected and high are unchanged."
+  },
+  {
+    "id": "basement-waterproofing-external-membrane-standard",
+    "service_id": "basement-waterproofing",
+    "scope_id": "external-new-construction",
+    "material_id": "external-membrane",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 80,
+      "expected": 115,
+      "high": 150
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.48,
+      "labour": 0.3,
+      "preparation": 0.08,
+      "repair": 0.02,
+      "transport": 0.05,
+      "waste": 0.07
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.studiomatrx.org/guides/waterproofing-guide",
+        "title": "Waterproofing Guide for Indian Homes — Complete Zone-by-Zone Guide — Terrace, Bathroom, Basement, Walls & Tanks",
+        "publisher": "Studio Matrx",
+        "retrieved_at": "2026-10-06",
+        "quote": "The external membrane (positive side) method is applied on the outside of basement walls before backfilling, with a cost of ₹80-150 per sqft, and is best for new construction as it is the most effective approach."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/parking-area-construction-cost-in-india/",
+        "title": "Parking Area Construction Cost in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "For basement parking, waterproofing (external + internal) costs ₹80–₹150/sq ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: Studio Matrx external (positive-side) membrane ₹80–₹150 per sq ft, for new construction; Construction Estimator India basement parking waterproofing (external + internal) ₹80–₹150. Range ₹80–₹150, expected ₹115 (both midpoints 115). Only applies before backfilling. Asian Paints gives ₹120–₹300 for basement waterproofing in general (system and scope not stated); it is not used here. National figures. Component fractions are an editorial split for the calculator, not taken from a source."
+  },
+  {
+    "id": "basement-waterproofing-injection-grouting-premium",
+    "service_id": "basement-waterproofing",
+    "scope_id": "active-leak-injection",
+    "material_id": "pu-injection-grout",
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 100,
+      "expected": 205,
+      "high": 350
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.38,
+      "labour": 0.37,
+      "preparation": 0.1,
+      "repair": 0.1,
+      "transport": 0.03,
+      "waste": 0.02
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/forum/how-much-it-cost-to-waterproof-a-basement/",
+        "title": "How Much it Cost to Waterproof a Basement",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Injection grouting costs Rs. 180 to Rs. 350 per sq. ft. and is recommended for active water leaks, wall cracks, and construction joints."
+      },
+      {
+        "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+        "title": "What is the waterproofing cost per sq ft in India? in Pune",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Crystalline/epoxy injection (basement): ₹100–200/sqft"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited: NoBroker injection grouting ₹180–₹350 per sq ft, for active leaks, wall cracks and construction joints; Biddaro Pune crystalline/epoxy injection for basements ₹100–₹200. Range ₹100–₹350. Expected = median of the publishers' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 265, 150 → 207.5 → 205). Per-sq-ft rate for treating a basement with active leaks; for a single leak point see the leakage-repair model, which is priced per injection point. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): removed the Asian Paints source (basement ₹120–₹300). It does not name a system; the builder excluded the same figure from the external-membrane model for that reason. It may also sit on Asian Paints' calculator page rather than the cited blog, because the two searches ranked them differently. Expected moved from ₹210 to ₹205; the range is unchanged."
+  },
+  {
+    "id": "leakage-repair-injection-grouting-standard",
+    "service_id": "leakage-repair",
+    "scope_id": "injection-grouting",
+    "material_id": "pu-injection-grout",
+    "tier": "standard",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 500,
+      "expected": 2000,
+      "high": 3000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.35,
+      "labour": 0.4,
+      "preparation": 0.1,
+      "repair": 0.08,
+      "transport": 0.05,
+      "waste": 0.02
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/forum/what-is-the-cost-of-interior-wall-seepage-repair/",
+        "title": "What is the Cost of Interior Wall Seepage Repair 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Injection grouting for severe seepage ranges from Rs. 500 to Rs. 1,200 per point."
+      },
+      {
+        "url": "https://aapkapainter.com/services/grouting/injection/pu-injection-grouting/mumbai",
+        "title": "Best PU Injection Grouting Services in mumbai| Aapkapainter",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "The cost of PU injection grouting in India ranges from Rs. 2000-3000 per nozzle, though this depends on area, surface and other conditions."
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/polymer-injection-grouting-service-24385305233.html",
+        "title": "Polymer Injection Grouting Service at ₹ 2000/per injection onwards in Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Tarmic Waterproofing Company offers Polymer Injection Grouting Service in Pune, Maharashtra at ₹2000/per injection onwards."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit = one injection point (nozzle/port). Cited: NoBroker injection grouting for severe seepage ₹500–₹1,200 per point (grout type not named); AapkaPainter PU injection grouting ₹2,000–₹3,000 per nozzle (page for Mumbai; the same sentence appears on its Delhi page); IndiaMART Pune seller Tarmic Waterproofing (Lohegaon) polymer injection grouting ₹2,000 per injection onwards. Prices cluster at two levels. The two sources that name a PU or polymer grout, which is this model's material, are both at ₹2,000 or more. NoBroker's lower figure does not name the grout. Range widened to ₹500–₹3,000. Expected = median of publisher midpoints (NoBroker 850, AapkaPainter 2,500, IndiaMART 2,000 → 2,000), rounded to ₹50. No source states a minimum job value, so min_job_inr is null. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): removed the IndiaMART Pune injection-grouting directory source ('pressure grouting service at ₹700 per point'). The same search also returned IndiaMART's separate Pressure Grouting Pune directory, so the cited URL cannot be confirmed as the page with that figure. 'Pressure grouting' may also mean a cement grout, not PU. Without it, IndiaMART's midpoint is the Tarmic listing, and the expected value moves from ₹850 to ₹2,000. This figure is sensitive to which sources are included; D03f should find more per-point PU quotes for Pune."
+  }
+]

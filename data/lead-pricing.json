@@ -1,0 +1,21 @@
+{
+  "currency": "INR",
+  "exclusive_multiplier": 2.5,
+  "prices": [
+    { "service_id": "painting", "grade": "A", "price_inr": 400 },
+    { "service_id": "painting", "grade": "B", "price_inr": 325 },
+    { "service_id": "painting", "grade": "C", "price_inr": 0 },
+    { "service_id": "waterproofing", "grade": "A", "price_inr": 500 },
+    { "service_id": "waterproofing", "grade": "B", "price_inr": 400 },
+    { "service_id": "waterproofing", "grade": "C", "price_inr": 0 },
+    { "service_id": "bathroom-renovation", "grade": "A", "price_inr": 800 },
+    { "service_id": "bathroom-renovation", "grade": "B", "price_inr": 650 },
+    { "service_id": "bathroom-renovation", "grade": "C", "price_inr": 0 },
+    { "service_id": "modular-kitchen", "grade": "A", "price_inr": 1000 },
+    { "service_id": "modular-kitchen", "grade": "B", "price_inr": 800 },
+    { "service_id": "modular-kitchen", "grade": "C", "price_inr": 0 },
+    { "service_id": "house-construction", "grade": "A", "price_inr": 3000 },
+    { "service_id": "house-construction", "grade": "B", "price_inr": 2250 },
+    { "service_id": "house-construction", "grade": "C", "price_inr": 0 }
+  ]
+}

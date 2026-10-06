@@ -1,0 +1,1326 @@
+{
+  "id": "waterproofing",
+  "name": "Waterproofing",
+  "parent_id": null,
+  "unit": "sqft",
+  "area_presets": [
+    {
+      "preset": "terrace",
+      "label": "Building terrace, 1,000 sq ft",
+      "quantity": 1000,
+      "assumption": "Example terrace of 1,000 sq ft, the size Biddaro uses in its Pune cost example. Measure your own terrace and include parapet upturns, which AapkaPainter lists as part of the area priced for terrace work.",
+      "sources": [
+        {
+          "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+          "title": "What is the waterproofing cost per sq ft in India? in Pune",
+          "publisher": "Biddaro",
+          "retrieved_at": "2026-10-06",
+          "quote": "A 1000 sq ft terrace costs ₹40,000–₹1,00,000 using crystalline or PU waterproofing systems."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+          "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "The waterproofing cost will include factors like surface area, parapet area for terraces, the material used for waterproofing, the type of surface that needs to be waterproofed, and if any previous work has been done on the surface."
+        }
+      ]
+    },
+    {
+      "preset": "independent_house",
+      "label": "Independent house roof, 900 sq ft",
+      "quantity": 900,
+      "assumption": "Roof slab of 900 sq ft, the example size in Dr. Fixit's roof waterproofing cost guide. We assume the roof area is roughly the house footprint; this is a planning assumption, not a sourced figure. Add parapet upturns to the measured area.",
+      "sources": [
+        {
+          "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+          "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+          "publisher": "Pidilite Industries (Dr. Fixit)",
+          "retrieved_at": "2026-10-06",
+          "quote": "For example, on a 900 sq ft roof, this basic coating could cost about ₹31,500–₹40,500."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+          "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "The waterproofing cost will include factors like surface area, parapet area for terraces, the material used for waterproofing, the type of surface that needs to be waterproofed, and if any previous work has been done on the surface."
+        }
+      ]
+    }
+  ],
+  "scope_options": [
+    {
+      "id": "surface-treatment",
+      "label": "Treat the existing surface",
+      "description": "Clean, repair cracks and joints, then apply a coating or membrane over the existing sound surface without removing tiles or screed."
+    },
+    {
+      "id": "strip-and-redo",
+      "label": "Remove and redo",
+      "description": "Remove failed layers, tiles or filling down to the slab, then rebuild the waterproofing system and its protective finish."
+    },
+    {
+      "id": "new-construction",
+      "label": "During construction",
+      "description": "Waterproofing applied while the building is being built, before finishes are laid or soil is backfilled."
+    },
+    {
+      "id": "targeted-repair",
+      "label": "Targeted leak repair",
+      "description": "Seal a specific leak, crack or joint, for example by injection grouting, without treating the whole surface."
+    }
+  ],
+  "materials": [
+    {
+      "id": "acrylic-roof-coating",
+      "label": "Acrylic roof coating (basic coating system)",
+      "description": "A brush- or roller-applied waterproof coating laid over a cleaned terrace after cracks are repaired. Dr. Fixit puts a basic coating system at about ₹35–₹45 per sq ft and lists Roofseal Classic at ₹465 per litre; AapkaPainter prices Roofseal Classic on a concrete terrace at ₹55 per sq ft including application.",
+      "sources": [
+        {
+          "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+          "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+          "publisher": "Pidilite Industries (Dr. Fixit)",
+          "retrieved_at": "2026-10-06",
+          "quote": "For a basic coating system, the cost is approximately ₹35–₹45 per sq ft."
+        },
+        {
+          "url": "https://www.drfixit.co.in/resources/blog/home-care-decor/what-to-expect-from-dr-fixit-waterproofing-solutions-price-and-more",
+          "title": "What to Expect from Dr. Fixit: Waterproofing Price and Solutions",
+          "publisher": "Pidilite Industries (Dr. Fixit)",
+          "retrieved_at": "2026-10-06",
+          "quote": "Dr. Fixit Roofseal Classic is available at Rs. 465 for 1 litre"
+        },
+        {
+          "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+          "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Terrace Waterproofing (Concrete Surface) with Roofseal classic: ₹55/sqft"
+        }
+      ]
+    },
+    {
+      "id": "liquid-applied-membrane",
+      "label": "Liquid-applied membrane (elastomeric)",
+      "description": "A flexible coating applied as a liquid that cures into a seamless, elastic membrane. Dr. Fixit describes it as suited to roofs and external surfaces exposed to weather and prices it at about ₹65–₹85 per sq ft; Biddaro lists Dr. Fixit liquid membrane work in Pune at ₹80–₹120 per sq ft. Dr. Fixit Roofseal Ultra is sold as an elastomeric roof coating of this type.",
+      "sources": [
+        {
+          "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+          "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+          "publisher": "Pidilite Industries (Dr. Fixit)",
+          "retrieved_at": "2026-10-06",
+          "quote": "Liquid-applied membrane systems are flexible coatings applied in liquid form that cure into a seamless, elastic membrane, best suited for roofs and external surfaces exposed to weathering."
+        },
+        {
+          "url": "https://www.drfixit.co.in/products/dr-fixit-roofseal-ultra/detail",
+          "title": "Dr. Fixit Roofseal Ultra - Elastomeric Roof Coating",
+          "publisher": "Pidilite Industries (Dr. Fixit)",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        },
+        {
+          "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+          "title": "What is the waterproofing cost per sq ft in India? in Pune",
+          "publisher": "Biddaro",
+          "retrieved_at": "2026-10-06",
+          "quote": "Liquid membrane (Dr. Fixit): ₹80–120/sqft"
+        }
+      ]
+    },
+    {
+      "id": "app-membrane",
+      "label": "APP/SBS modified bitumen membrane (torch-on)",
+      "description": "A factory-made modified bitumen sheet bonded to the slab with a torch. Aecord describes torch-on APP/SBS membranes as suited to older terraces with recurrent dampness and gives a 6–10 year life; Studio Matrx gives 10–15 years and 30–50% elongation.",
+      "sources": [
+        {
+          "url": "https://aecord.com/blog/terrace-waterproofing-cost-india-2026",
+          "title": "Terrace Waterproofing Cost India 2026: Updated Rates, Material Breakdown & Expert Guide",
+          "publisher": "Aecord",
+          "retrieved_at": "2026-10-06",
+          "quote": "APP/SBS Torch-On Membranes cost ₹80–₹160 per sq. ft. and are best for older terraces experiencing recurrent dampness and heavy seepage, with an expected lifespan of 6-10 years."
+        },
+        {
+          "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+          "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+          "publisher": "Studio Matrx",
+          "retrieved_at": "2026-10-06",
+          "quote": "Sheet — bituminous (APP/SBS): 30–50% elongation, 10–15 years durability, ₹60–120 per sq ft"
+        }
+      ]
+    },
+    {
+      "id": "pu-membrane",
+      "label": "Polyurethane (PU) liquid membrane",
+      "description": "A liquid polyurethane coating that cures into a seamless, rubbery membrane. Studio Matrx gives 300–500% elongation and 12–20 years of durability and notes it needs a bone-dry, primed surface because trapped moisture causes blisters. Aecord gives 10–15 years for PU terrace coatings. Construction Estimator India recommends PU membranes for bathrooms above the ground floor.",
+      "sources": [
+        {
+          "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+          "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+          "publisher": "Studio Matrx",
+          "retrieved_at": "2026-10-06",
+          "quote": "It costs ₹80–160 per sq ft and demands a bone-dry, primed substrate, because PU and trapped moisture make blisters."
+        },
+        {
+          "url": "https://aecord.com/blog/terrace-waterproofing-cost-india-2026",
+          "title": "Terrace Waterproofing Cost India 2026: Updated Rates, Material Breakdown & Expert Guide",
+          "publisher": "Aecord",
+          "retrieved_at": "2026-10-06",
+          "quote": "Polyurethane (PU) Coating costs ₹140–₹300 per sq. ft. and is recommended for premium modern roofs requiring maximum elasticity and thermal comfort, with a lifespan of 10-15 years."
+        },
+        {
+          "url": "https://constructionestimatorindia.com/bathroom-construction-cost-in-india/",
+          "title": "Bathroom Construction Cost in India 2026: Complete Guide with Estimates & Expert Tips - Construction Estimator India",
+          "publisher": "Construction Estimator India",
+          "retrieved_at": "2026-10-06",
+          "quote": "Polyurethane membranes (₹150–₹200/sq ft) offer superior durability for 10–15 years and are recommended for bathrooms above the ground floor."
+        }
+      ]
+    },
+    {
+      "id": "brickbat-coba",
+      "label": "Brickbat coba (traditional)",
+      "description": "A traditional terrace treatment in which broken brick pieces set in mortar are laid over the slab, usually to form the drainage slope, and finished with a top layer. It is normally done at construction or when the terrace finish is fully re-laid. Biddaro lists ₹50–₹80 per sq ft in Pune; Pune sellers on IndiaMART list ₹81–₹145 per sq ft.",
+      "sources": [
+        {
+          "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+          "title": "What is the waterproofing cost per sq ft in India? in Pune",
+          "publisher": "Biddaro",
+          "retrieved_at": "2026-10-06",
+          "quote": "Brick bat coba (traditional): ₹50–80/sqft"
+        },
+        {
+          "url": "https://www.indiamart.com/proddetail/brick-coba-waterproofing-service-11245684530.html",
+          "title": "Brick Coba Waterproofing Service at ₹ 81/square feet in Pune",
+          "publisher": "IndiaMART",
+          "retrieved_at": "2026-10-06",
+          "quote": "Brick Coba Waterproofing Service at ₹ 81/square feet in Pune"
+        },
+        {
+          "url": "https://www.indiamart.com/proddetail/brick-bat-coba-service-27548986355.html",
+          "title": "Brick Bat Coba Service at ₹ 145/square feet in Pune",
+          "publisher": "IndiaMART",
+          "retrieved_at": "2026-10-06",
+          "quote": "Brick Bat Coba Service at ₹ 145/square feet in Pune"
+        }
+      ]
+    },
+    {
+      "id": "polymer-cementitious-coating",
+      "label": "Polymer-modified cementitious coating",
+      "description": "A cement-based waterproof coating mixed with a polymer, often supplied as two components, brushed on in coats. Studio Matrx recommends at least 2 coats, and 3 in shower zones, tanks and terraces, and notes that with 5–15% elongation it cracks if the surface below cracks. Dr. Fixit Pidifin 2K is an example product.",
+      "sources": [
+        {
+          "url": "https://www.studiomatrx.org/guides/cementitious-waterproofing-india",
+          "title": "Cementitious Waterproofing India: Coatings, Coats & Cost (2026)",
+          "publisher": "Studio Matrx",
+          "retrieved_at": "2026-10-06",
+          "quote": "The minimum recommended is 2 coats, with three coats for shower zones, tanks and terraces."
+        },
+        {
+          "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+          "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+          "publisher": "Studio Matrx",
+          "retrieved_at": "2026-10-06",
+          "quote": "However, its weakness is rigidity — 5–15% elongation means it cracks if the substrate cracks."
+        },
+        {
+          "url": "https://www.drfixit.co.in/products/dr-fixit-pidifin-2k/detail",
+          "title": "Dr. Fixit Pidifin 2K: Cementitious Coating for Waterproofing",
+          "publisher": "Pidilite Industries (Dr. Fixit)",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "exterior-waterproof-coating",
+      "label": "Exterior waterproof coating (acrylic)",
+      "description": "A waterproof top coat for external walls. Asian Paints describes acrylic waterproof coatings as suited to moderate climates and budget-friendly. AapkaPainter prices external wall waterproofing at ₹27–₹33 per sq ft on a painted surface. Dr. Fixit Raincoat Select is sold as an exterior wall waterproofing coating.",
+      "sources": [
+        {
+          "url": "https://www.asianpaints.com/blogs/exterior-wall-waterproofing-seepage-solutions.html",
+          "title": "How to Waterproof Exterior Walls & Stop Water Seepage",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Popular waterproof coating options include acrylic waterproof coatings (good for moderate climates and budget-friendly), elastomeric coatings (flexible and ideal for cracks and harsh weather), and liquid membrane coatings (providing seamless, long-lasting protection)."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+          "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "External Wall (paint surface): ₹27-33/sqft"
+        },
+        {
+          "url": "https://www.drfixit.co.in/products/dr-fixit-raincoat-select/detail",
+          "title": "Dr. Fixit Raincoat Select - Exterior Wall Waterproofing",
+          "publisher": "Pidilite Industries (Dr. Fixit)",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "elastomeric-wall-coating",
+      "label": "Elastomeric wall coating with crack repair",
+      "description": "A thicker, flexible wall coating applied after cracks are filled. Asian Paints describes elastomeric coatings as flexible and suited to cracks and harsh weather. NoBroker prices crack filling plus elastomeric coating at ₹35–₹80 per sq ft and premium waterproof paint systems at ₹60–₹150 per sq ft.",
+      "sources": [
+        {
+          "url": "https://www.asianpaints.com/blogs/exterior-wall-waterproofing-seepage-solutions.html",
+          "title": "How to Waterproof Exterior Walls & Stop Water Seepage",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Popular waterproof coating options include acrylic waterproof coatings (good for moderate climates and budget-friendly), elastomeric coatings (flexible and ideal for cracks and harsh weather), and liquid membrane coatings (providing seamless, long-lasting protection)."
+        },
+        {
+          "url": "https://www.nobroker.in/forum/what-is-the-exterior-wall-waterproofing-cost-in-india/",
+          "title": "Exterior Wall Waterproofing Cost Calculator: Calculate Here",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Crack filling + elastomeric coating ranges from Rs. 35 to Rs. 80 per sq ft"
+        },
+        {
+          "url": "https://www.nobroker.in/forum/what-is-the-exterior-wall-waterproofing-cost-in-india/",
+          "title": "Exterior Wall Waterproofing Cost Calculator: Calculate Here",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Premium waterproof paint systems range from Rs. 60 to Rs. 150 per sq ft"
+        }
+      ]
+    },
+    {
+      "id": "crystalline",
+      "label": "Crystalline waterproofing",
+      "description": "A treatment for concrete whose chemicals react with water to form crystals inside the concrete pores. Studio Matrx notes it self-seals fine cracks but works only in dense concrete and does not suit cracks that move. NoBroker describes it as suited to basements under strong water pressure.",
+      "sources": [
+        {
+          "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+          "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+          "publisher": "Studio Matrx",
+          "retrieved_at": "2026-10-06",
+          "quote": "Crystalline membranes are self-healing for fine cracks and are permanent, but only work in dense concrete and are not suitable for movement."
+        },
+        {
+          "url": "https://www.nobroker.in/forum/how-much-it-cost-to-waterproof-a-basement/",
+          "title": "How Much it Cost to Waterproof a Basement",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Crystalline waterproofing costs Rs. 150 to Rs. 320 per sq. ft. and is ideal for basements that experience strong water pressure."
+        }
+      ]
+    },
+    {
+      "id": "external-membrane",
+      "label": "External (positive-side) basement membrane",
+      "description": "A membrane applied to the outside face of basement walls before the soil is backfilled. Studio Matrx describes this as the most effective basement method for new construction, at ₹80–₹150 per sq ft. Dr. Fixit Bitufix is sold for below-ground waterproofing.",
+      "sources": [
+        {
+          "url": "https://www.studiomatrx.org/guides/waterproofing-guide",
+          "title": "Waterproofing Guide for Indian Homes — Complete Zone-by-Zone Guide — Terrace, Bathroom, Basement, Walls & Tanks",
+          "publisher": "Studio Matrx",
+          "retrieved_at": "2026-10-06",
+          "quote": "The external membrane (positive side) method is applied on the outside of basement walls before backfilling, with a cost of ₹80-150 per sqft, and is best for new construction as it is the most effective approach."
+        },
+        {
+          "url": "https://www.drfixit.co.in/products/dr-fixit-bitufix/detail",
+          "title": "Dr. Fixit Bitufix: The Solution for Below Ground Waterproofing",
+          "publisher": "Pidilite Industries (Dr. Fixit)",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "pu-injection-grout",
+      "label": "PU / polymer injection grout",
+      "description": "A grout pumped under pressure into a crack or joint through drilled holes (ports) to stop water coming through. NoBroker recommends injection grouting for active water leaks, wall cracks and construction joints. AapkaPainter lists Dr. Fixit PU Grouting material at ₹300 per kg.",
+      "sources": [
+        {
+          "url": "https://www.nobroker.in/forum/how-much-it-cost-to-waterproof-a-basement/",
+          "title": "How Much it Cost to Waterproof a Basement",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Injection grouting costs Rs. 180 to Rs. 350 per sq. ft. and is recommended for active water leaks, wall cracks, and construction joints."
+        },
+        {
+          "url": "https://aapkapainter.com/products/waterproofing/dr-fixit-price/pu-grouting",
+          "title": "Dr Fixit PU Grouting Professional's Choice for Waterproofing",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Dr Fixit PU Grouting is available at ₹300 per 1kg and ₹8000 per 25kg."
+        },
+        {
+          "url": "https://www.indiamart.com/proddetail/polymer-injection-grouting-service-24385305233.html",
+          "title": "Polymer Injection Grouting Service at ₹ 2000/per injection onwards in Pune",
+          "publisher": "IndiaMART",
+          "retrieved_at": "2026-10-06",
+          "quote": "Tarmic Waterproofing Company offers Polymer Injection Grouting Service in Pune, Maharashtra at ₹2000/per injection onwards."
+        }
+      ]
+    }
+  ],
+  "duration_days": {
+    "min": 1,
+    "max": 15,
+    "basis": "Planning range across sub-services, not a sourced total. A Pune injection grouting listing on IndiaMART states 1–2 days and Pune APP membrane listings state about 5 days. Larger terrace, external wall and basement jobs take longer, and coatings need dry weather and drying time between coats."
+  },
+  "questions_to_ask": [
+    "Where exactly is the water coming from, and how did you confirm it (water test, moisture meter or opening up the area)?",
+    "Which system will you use: brand, product name, number of coats and quantity per sq ft?",
+    "Will you apply over the existing surface or remove old layers first, and why?",
+    "How will you treat cracks, construction joints, pipe openings, drain outlets and wall-floor junctions?",
+    "How will you measure the area, and are parapets, upturns and skirting included in the quoted sq ft?",
+    "Does the price include surface preparation, crack repair, any protective screed or tiles, debris removal, scaffolding and cleanup?",
+    "What warranty do you give in writing, who backs it (you or the manufacturer), and what does it exclude?",
+    "How will you test the work before handover, for example a ponding or flood test, and for how long?"
+  ],
+  "common_mistakes": [
+    "Comparing per-sq-ft rates without comparing scope; one quote may include crack repair, primer, extra coats and a protective layer while another does not.",
+    "Painting over a damp patch inside the home instead of fixing the source on the terrace, in the bathroom, on the external wall or in a pipe.",
+    "Applying a coating on a damp surface; Studio Matrx notes PU needs a bone-dry, primed surface because trapped moisture causes blisters.",
+    "Using a rigid cementitious coating where the surface moves or cracks; Studio Matrx gives two-component cementitious coatings 5–15% elongation, so they crack if the base cracks.",
+    "Skipping detailing at drain outlets, pipe openings, parapet junctions and wall-floor corners.",
+    "Leaving the work until the monsoon has started, when surfaces stay wet.",
+    "Accepting a verbal warranty, or one that does not name the product, the area and the exclusions."
+  ],
+  "quote_checklist": [
+    "Area in sq ft and how it was measured (including parapets, upturns or skirting)",
+    "Cause of the leak and how it was diagnosed",
+    "System and products by brand and name, with number of coats",
+    "Surface preparation: cleaning, removal of loose or old layers, crack and joint repair",
+    "Detailing at drains, pipes, corners and junctions",
+    "Protective layer or finish (screed, tiles or top coat), if any",
+    "Testing before handover (ponding or flood test) and its duration",
+    "Written warranty: period, issuer and exclusions",
+    "Start date, duration and weather needed",
+    "Exclusions: tiling, plumbing, painting, scaffolding, debris removal",
+    "Payment schedule linked to stages of work"
+  ],
+  "faq": [
+    {
+      "q": "How much does waterproofing cost in Pune?",
+      "a": "It depends on the area treated and the system. Our draft cost models, built from sources retrieved in October 2026 (many undated), give these per-sq-ft ranges: terrace ₹35–₹100 for coatings, ₹65–₹120 for liquid membranes, ₹25–₹160 for APP membrane and ₹80–₹300 for PU; bathrooms ₹40–₹200 per sq ft of treated area; external walls ₹25–₹150; basements ₹40–₹350. Injection grouting for a specific leak is priced per point, about ₹500–₹3,000. These are indicative ranges, not quotations."
+    },
+    {
+      "q": "Who pays for terrace waterproofing in a housing society?",
+      "a": "In a Maharashtra co-operative housing society the terrace is a common area. Housing Society Times cites Bye-law No. 68 of the model bye-laws for this, which makes the society responsible for its upkeep and waterproofing. Check the bye-laws your society has adopted."
+    },
+    {
+      "q": "When should waterproofing be done?",
+      "a": "In dry weather, before the monsoon. Coatings and membranes need a dry surface; Studio Matrx notes PU in particular needs a bone-dry, primed surface. If seepage shows during the monsoon, use that time to trace the source and plan the work."
+    },
+    {
+      "q": "How long does waterproofing last?",
+      "a": "It depends on the system and the workmanship. Studio Matrx gives about 6–10 years for acrylic/liquid coatings, 8–12 years for two-component cementitious coatings, 10–15 years for APP/SBS sheet membranes and 12–20 years for PU. Aecord gives 6–10 years for torch-on APP/SBS membranes and 10–15 years for PU coatings. Ask for the warranty period in writing."
+    },
+    {
+      "q": "Can a bathroom leak be fixed without breaking tiles?",
+      "a": "Sometimes. NoBroker lists 'basic coating + grouting' at ₹80–₹120 per sq ft. If water is getting into the sunken slab or a pipe is leaking, the floor usually has to be opened; NoBroker prices full sunken-slab treatment at ₹160–₹200 per sq ft."
+    },
+    {
+      "q": "What is injection grouting?",
+      "a": "A repair in which grout is pumped into a leaking crack or joint through drilled ports. NoBroker recommends it for active water leaks, wall cracks and construction joints. It is usually priced per injection point."
+    },
+    {
+      "q": "Why do waterproofing quotes vary so much?",
+      "a": "Quotes differ in scope (preparation, crack repair, number of coats, protective layer), product and surface condition. Pune listings show the spread: IndiaMART sellers advertise APP membrane work in Pune at mostly ₹25 to ₹80 per sq ft, while Leakfoe, a Pune contractor, calls ₹200–₹300 per sq ft the acceptable rate for residential terraces. Ask each contractor to price the same scope."
+    }
+  ],
+  "prose_status": "draft",
+  "sub_services": [
+    {
+      "id": "terrace-waterproofing",
+      "name": "Terrace waterproofing",
+      "parent_id": "waterproofing",
+      "unit": "sqft",
+      "area_presets": [
+        {
+          "preset": "terrace",
+          "label": "Building terrace, 1,000 sq ft",
+          "quantity": 1000,
+          "assumption": "Example terrace of 1,000 sq ft, the size Biddaro uses in its Pune cost example. Measure your own terrace and include parapet upturns, which AapkaPainter lists as part of the area priced for terrace work.",
+          "sources": [
+            {
+              "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+              "title": "What is the waterproofing cost per sq ft in India? in Pune",
+              "publisher": "Biddaro",
+              "retrieved_at": "2026-10-06",
+              "quote": "A 1000 sq ft terrace costs ₹40,000–₹1,00,000 using crystalline or PU waterproofing systems."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+              "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "The waterproofing cost will include factors like surface area, parapet area for terraces, the material used for waterproofing, the type of surface that needs to be waterproofed, and if any previous work has been done on the surface."
+            }
+          ]
+        },
+        {
+          "preset": "independent_house",
+          "label": "Independent house roof, 900 sq ft",
+          "quantity": 900,
+          "assumption": "Roof slab of 900 sq ft, the example size in Dr. Fixit's roof waterproofing cost guide. We assume the roof area is roughly the house footprint; this is a planning assumption, not a sourced figure. Add parapet upturns to the measured area.",
+          "sources": [
+            {
+              "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+              "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": "For example, on a 900 sq ft roof, this basic coating could cost about ₹31,500–₹40,500."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+              "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "The waterproofing cost will include factors like surface area, parapet area for terraces, the material used for waterproofing, the type of surface that needs to be waterproofed, and if any previous work has been done on the surface."
+            }
+          ]
+        }
+      ],
+      "scope_options": [
+        {
+          "id": "surface-coating",
+          "label": "Coating over the existing surface",
+          "description": "Clean the terrace, repair cracks and joints, then apply a coating or liquid membrane over the existing sound surface without removing tiles or screed."
+        },
+        {
+          "id": "strip-and-relay",
+          "label": "Remove old layers and re-lay",
+          "description": "Remove failed coatings, tiles or screed down to a sound base, correct the slope, then lay a new waterproofing system and protective finish."
+        },
+        {
+          "id": "new-slab",
+          "label": "New construction",
+          "description": "Waterproofing laid on a new roof slab before the final finish, for example brickbat coba or a membrane under a screed."
+        }
+      ],
+      "materials": [
+        {
+          "id": "acrylic-roof-coating",
+          "label": "Acrylic roof coating (basic coating system)",
+          "description": "A brush- or roller-applied waterproof coating laid over a cleaned terrace after cracks are repaired. Dr. Fixit puts a basic coating system at about ₹35–₹45 per sq ft and lists Roofseal Classic at ₹465 per litre; AapkaPainter prices Roofseal Classic on a concrete terrace at ₹55 per sq ft including application.",
+          "sources": [
+            {
+              "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+              "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": "For a basic coating system, the cost is approximately ₹35–₹45 per sq ft."
+            },
+            {
+              "url": "https://www.drfixit.co.in/resources/blog/home-care-decor/what-to-expect-from-dr-fixit-waterproofing-solutions-price-and-more",
+              "title": "What to Expect from Dr. Fixit: Waterproofing Price and Solutions",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": "Dr. Fixit Roofseal Classic is available at Rs. 465 for 1 litre"
+            },
+            {
+              "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+              "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Terrace Waterproofing (Concrete Surface) with Roofseal classic: ₹55/sqft"
+            }
+          ]
+        },
+        {
+          "id": "liquid-applied-membrane",
+          "label": "Liquid-applied membrane (elastomeric)",
+          "description": "A flexible coating applied as a liquid that cures into a seamless, elastic membrane. Dr. Fixit describes it as suited to roofs and external surfaces exposed to weather and prices it at about ₹65–₹85 per sq ft; Biddaro lists Dr. Fixit liquid membrane work in Pune at ₹80–₹120 per sq ft. Dr. Fixit Roofseal Ultra is sold as an elastomeric roof coating of this type.",
+          "sources": [
+            {
+              "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+              "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": "Liquid-applied membrane systems are flexible coatings applied in liquid form that cure into a seamless, elastic membrane, best suited for roofs and external surfaces exposed to weathering."
+            },
+            {
+              "url": "https://www.drfixit.co.in/products/dr-fixit-roofseal-ultra/detail",
+              "title": "Dr. Fixit Roofseal Ultra - Elastomeric Roof Coating",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            },
+            {
+              "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+              "title": "What is the waterproofing cost per sq ft in India? in Pune",
+              "publisher": "Biddaro",
+              "retrieved_at": "2026-10-06",
+              "quote": "Liquid membrane (Dr. Fixit): ₹80–120/sqft"
+            }
+          ]
+        },
+        {
+          "id": "app-membrane",
+          "label": "APP/SBS modified bitumen membrane (torch-on)",
+          "description": "A factory-made modified bitumen sheet bonded to the slab with a torch. Aecord describes torch-on APP/SBS membranes as suited to older terraces with recurrent dampness and gives a 6–10 year life; Studio Matrx gives 10–15 years and 30–50% elongation.",
+          "sources": [
+            {
+              "url": "https://aecord.com/blog/terrace-waterproofing-cost-india-2026",
+              "title": "Terrace Waterproofing Cost India 2026: Updated Rates, Material Breakdown & Expert Guide",
+              "publisher": "Aecord",
+              "retrieved_at": "2026-10-06",
+              "quote": "APP/SBS Torch-On Membranes cost ₹80–₹160 per sq. ft. and are best for older terraces experiencing recurrent dampness and heavy seepage, with an expected lifespan of 6-10 years."
+            },
+            {
+              "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+              "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "Sheet — bituminous (APP/SBS): 30–50% elongation, 10–15 years durability, ₹60–120 per sq ft"
+            }
+          ]
+        },
+        {
+          "id": "pu-membrane",
+          "label": "Polyurethane (PU) liquid membrane",
+          "description": "A liquid polyurethane coating that cures into a seamless, rubbery membrane. Studio Matrx gives 300–500% elongation and 12–20 years of durability and notes it needs a bone-dry, primed surface because trapped moisture causes blisters. Aecord gives 10–15 years for PU terrace coatings. Construction Estimator India recommends PU membranes for bathrooms above the ground floor.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+              "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "It costs ₹80–160 per sq ft and demands a bone-dry, primed substrate, because PU and trapped moisture make blisters."
+            },
+            {
+              "url": "https://aecord.com/blog/terrace-waterproofing-cost-india-2026",
+              "title": "Terrace Waterproofing Cost India 2026: Updated Rates, Material Breakdown & Expert Guide",
+              "publisher": "Aecord",
+              "retrieved_at": "2026-10-06",
+              "quote": "Polyurethane (PU) Coating costs ₹140–₹300 per sq. ft. and is recommended for premium modern roofs requiring maximum elasticity and thermal comfort, with a lifespan of 10-15 years."
+            },
+            {
+              "url": "https://constructionestimatorindia.com/bathroom-construction-cost-in-india/",
+              "title": "Bathroom Construction Cost in India 2026: Complete Guide with Estimates & Expert Tips - Construction Estimator India",
+              "publisher": "Construction Estimator India",
+              "retrieved_at": "2026-10-06",
+              "quote": "Polyurethane membranes (₹150–₹200/sq ft) offer superior durability for 10–15 years and are recommended for bathrooms above the ground floor."
+            }
+          ]
+        },
+        {
+          "id": "brickbat-coba",
+          "label": "Brickbat coba (traditional)",
+          "description": "A traditional terrace treatment in which broken brick pieces set in mortar are laid over the slab, usually to form the drainage slope, and finished with a top layer. It is normally done at construction or when the terrace finish is fully re-laid. Biddaro lists ₹50–₹80 per sq ft in Pune; Pune sellers on IndiaMART list ₹81–₹145 per sq ft.",
+          "sources": [
+            {
+              "url": "https://www.biddaro.com/ask/city/pune/waterproofing-cost-per-sq-ft-india",
+              "title": "What is the waterproofing cost per sq ft in India? in Pune",
+              "publisher": "Biddaro",
+              "retrieved_at": "2026-10-06",
+              "quote": "Brick bat coba (traditional): ₹50–80/sqft"
+            },
+            {
+              "url": "https://www.indiamart.com/proddetail/brick-coba-waterproofing-service-11245684530.html",
+              "title": "Brick Coba Waterproofing Service at ₹ 81/square feet in Pune",
+              "publisher": "IndiaMART",
+              "retrieved_at": "2026-10-06",
+              "quote": "Brick Coba Waterproofing Service at ₹ 81/square feet in Pune"
+            },
+            {
+              "url": "https://www.indiamart.com/proddetail/brick-bat-coba-service-27548986355.html",
+              "title": "Brick Bat Coba Service at ₹ 145/square feet in Pune",
+              "publisher": "IndiaMART",
+              "retrieved_at": "2026-10-06",
+              "quote": "Brick Bat Coba Service at ₹ 145/square feet in Pune"
+            }
+          ]
+        }
+      ],
+      "duration_days": {
+        "min": 3,
+        "max": 7,
+        "basis": "Planning estimate for a dry-weather job on about 1,000 sq ft. Pune APP membrane listings on IndiaMART state a service duration of about 5 days. Studio Matrx recommends three coats for cementitious coatings on terraces, with drying time between coats. Removing old layers and running a ponding test add days."
+      },
+      "questions_to_ask": [
+        "Is the terrace slope adequate, and will you correct low spots where water stands?",
+        "Will the existing tiles, screed or old coating be removed, or will the new system go over them?",
+        "How will you treat the parapet-to-slab junction, drain outlets and pipe or cable openings?",
+        "Which product will you use, how many coats, and are a primer and reinforcing mesh included?",
+        "Will the finished surface stay exposed, or be covered with screed or tiles, and is that in the price?",
+        "Can the finished surface take foot traffic, water tank stands or solar panel frames?",
+        "How long will the ponding test run, and will you check the ceilings of the flats below?"
+      ],
+      "common_mistakes": [
+        "Coating a terrace with poor slope, so water still stands on it after the work.",
+        "Leaving parapet junctions, drain outlets and pipe openings untreated.",
+        "Applying PU or a membrane on a damp slab; Studio Matrx notes PU blisters when moisture is trapped under it.",
+        "Choosing only on the per-sq-ft rate without comparing expected life: Studio Matrx gives acrylic/liquid coatings 6–10 years and PU 12–20 years.",
+        "Letting water tanks, solar frames or heavy items be dragged over a fresh coating.",
+        "Skipping the ponding test before handover."
+      ],
+      "quote_checklist": [
+        "Measured area in sq ft, including parapet upturns",
+        "Slope correction and removal of old layers, if any",
+        "Crack and joint repair method",
+        "Treatment of drain outlets, parapet junctions and pipe openings",
+        "Product names, primer, number of coats and reinforcing mesh",
+        "Protective screed, tiles or top coat, if included",
+        "Ponding test and its duration",
+        "Written warranty: period, issuer and exclusions",
+        "Debris removal and cleanup"
+      ],
+      "faq": [
+        {
+          "q": "What does terrace waterproofing cost in Pune per sq ft?",
+          "a": "It depends on the system. Our draft cost models, built from cited sources, give: acrylic coating ₹35–₹100 per sq ft (about ₹55 expected), liquid-applied membrane ₹65–₹120 (about ₹85), APP membrane ₹25–₹160 (about ₹90), brickbat coba ₹50–₹145 (about ₹85) and PU membrane ₹80–₹300 (about ₹215). NoBroker's Pune page lists terrace waterproofing at ₹35–₹60 per sq ft. These are indicative ranges, not quotations."
+        },
+        {
+          "q": "How much would a 1,000 sq ft terrace cost?",
+          "a": "Multiply the rate by the measured area including parapet upturns. At the expected rates above, 1,000 sq ft comes to about ₹55,000 with an acrylic coating, ₹85,000 with a liquid membrane or brickbat coba, ₹90,000 with APP membrane and ₹2,15,000 with PU. Biddaro's Pune example puts a 1,000 sq ft terrace at ₹40,000–₹1,00,000 with crystalline or PU systems."
+        },
+        {
+          "q": "Which terrace system should I choose?",
+          "a": "Coatings are the lowest-cost option and go over a sound existing surface. Liquid-applied membranes cure into a seamless, elastic layer. Aecord describes torch-on APP/SBS membranes as suited to older terraces with recurrent dampness. Studio Matrx describes PU as suited to exposed terraces and roof decks, with 300–500% elongation, but it needs a bone-dry, primed surface. Brickbat coba is a traditional method laid at construction or when the terrace is fully re-laid."
+        },
+        {
+          "q": "Who pays for terrace waterproofing in a housing society?",
+          "a": "In a Maharashtra co-operative housing society the terrace is a common area. Housing Society Times cites Bye-law No. 68 of the model bye-laws for this, which makes the society responsible for its upkeep and waterproofing. Check the bye-laws your society has adopted and raise the work with the managing committee."
+        },
+        {
+          "q": "How long does terrace waterproofing take?",
+          "a": "Plan for about 3–7 days on a 1,000 sq ft terrace in dry weather. Pune APP membrane listings on IndiaMART state about 5 days. Coatings need drying time between coats, and the job should end with a ponding test."
+        }
+      ],
+      "prose_status": "draft",
+      "sub_services": []
+    },
+    {
+      "id": "bathroom-waterproofing",
+      "name": "Bathroom waterproofing",
+      "parent_id": "waterproofing",
+      "unit": "sqft",
+      "area_presets": [
+        {
+          "preset": "1bhk",
+          "label": "1 BHK, one bathroom",
+          "quantity": 80,
+          "assumption": "1 bathroom × about 80 sq ft of treated area each (floor plus wall upturns and shower zone). Studio Matrx prices a typical 40 sq ft bathroom at ₹8,000–₹16,000 and at ₹90–₹200 per sq ft of treated area, which works out to roughly 80–90 sq ft treated per bathroom. The bathroom count (one per bedroom) is our planning assumption, not a sourced figure; change it to match your flat.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/bathroom-construction-cost-india",
+              "title": "Bathroom Construction Cost in India (2026): Full Line-Item Breakdown",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "Expect ₹90–₹200 per sq ft of treated area, or ₹8,000–₹16,000 for a 40 sq ft bath."
+            }
+          ]
+        },
+        {
+          "preset": "2bhk",
+          "label": "2 BHK, two bathrooms",
+          "quantity": 160,
+          "assumption": "2 bathrooms × about 80 sq ft of treated area each (floor plus wall upturns and shower zone). Studio Matrx prices a typical 40 sq ft bathroom at ₹8,000–₹16,000 and at ₹90–₹200 per sq ft of treated area, which works out to roughly 80–90 sq ft treated per bathroom. The bathroom count (one per bedroom) is our planning assumption, not a sourced figure; change it to match your flat.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/bathroom-construction-cost-india",
+              "title": "Bathroom Construction Cost in India (2026): Full Line-Item Breakdown",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "Expect ₹90–₹200 per sq ft of treated area, or ₹8,000–₹16,000 for a 40 sq ft bath."
+            }
+          ]
+        },
+        {
+          "preset": "3bhk",
+          "label": "3 BHK, three bathrooms",
+          "quantity": 240,
+          "assumption": "3 bathrooms × about 80 sq ft of treated area each (floor plus wall upturns and shower zone). Studio Matrx prices a typical 40 sq ft bathroom at ₹8,000–₹16,000 and at ₹90–₹200 per sq ft of treated area, which works out to roughly 80–90 sq ft treated per bathroom. The bathroom count (one per bedroom) is our planning assumption, not a sourced figure; change it to match your flat.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/bathroom-construction-cost-india",
+              "title": "Bathroom Construction Cost in India (2026): Full Line-Item Breakdown",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "Expect ₹90–₹200 per sq ft of treated area, or ₹8,000–₹16,000 for a 40 sq ft bath."
+            }
+          ]
+        },
+        {
+          "preset": "4bhk",
+          "label": "4 BHK, four bathrooms",
+          "quantity": 320,
+          "assumption": "4 bathrooms × about 80 sq ft of treated area each (floor plus wall upturns and shower zone). Studio Matrx prices a typical 40 sq ft bathroom at ₹8,000–₹16,000 and at ₹90–₹200 per sq ft of treated area, which works out to roughly 80–90 sq ft treated per bathroom. The bathroom count (one per bedroom) is our planning assumption, not a sourced figure; change it to match your flat.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/bathroom-construction-cost-india",
+              "title": "Bathroom Construction Cost in India (2026): Full Line-Item Breakdown",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "Expect ₹90–₹200 per sq ft of treated area, or ₹8,000–₹16,000 for a 40 sq ft bath."
+            }
+          ]
+        }
+      ],
+      "scope_options": [
+        {
+          "id": "grout-and-coat",
+          "label": "Re-grout and coat",
+          "description": "Clean and re-fill tile joints and apply a waterproof coating without breaking tiles. NoBroker lists this as 'basic coating + grouting'."
+        },
+        {
+          "id": "floor-and-joints",
+          "label": "Floor and joints",
+          "description": "Waterproof the bathroom floor and the floor-to-wall joints. NoBroker lists this as 'standard waterproofing (floor + joints)'. Ask whether tile removal and re-tiling are included."
+        },
+        {
+          "id": "full-sunken-slab",
+          "label": "Full sunken-slab treatment",
+          "description": "Open the floor, treat the sunken slab, floor and joints, then refill and re-finish. NoBroker lists this as 'full treatment (sunken slab + floor + joints)'."
+        }
+      ],
+      "materials": [
+        {
+          "id": "polymer-cementitious-coating",
+          "label": "Polymer-modified cementitious coating",
+          "description": "A cement-based waterproof coating mixed with a polymer, often supplied as two components, brushed on in coats. Studio Matrx recommends at least 2 coats, and 3 in shower zones, tanks and terraces, and notes that with 5–15% elongation it cracks if the surface below cracks. Dr. Fixit Pidifin 2K is an example product.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/cementitious-waterproofing-india",
+              "title": "Cementitious Waterproofing India: Coatings, Coats & Cost (2026)",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "The minimum recommended is 2 coats, with three coats for shower zones, tanks and terraces."
+            },
+            {
+              "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+              "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "However, its weakness is rigidity — 5–15% elongation means it cracks if the substrate cracks."
+            },
+            {
+              "url": "https://www.drfixit.co.in/products/dr-fixit-pidifin-2k/detail",
+              "title": "Dr. Fixit Pidifin 2K: Cementitious Coating for Waterproofing",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "pu-membrane",
+          "label": "Polyurethane (PU) liquid membrane",
+          "description": "A liquid polyurethane coating that cures into a seamless, rubbery membrane. Studio Matrx gives 300–500% elongation and 12–20 years of durability and notes it needs a bone-dry, primed surface because trapped moisture causes blisters. Aecord gives 10–15 years for PU terrace coatings. Construction Estimator India recommends PU membranes for bathrooms above the ground floor.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+              "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "It costs ₹80–160 per sq ft and demands a bone-dry, primed substrate, because PU and trapped moisture make blisters."
+            },
+            {
+              "url": "https://aecord.com/blog/terrace-waterproofing-cost-india-2026",
+              "title": "Terrace Waterproofing Cost India 2026: Updated Rates, Material Breakdown & Expert Guide",
+              "publisher": "Aecord",
+              "retrieved_at": "2026-10-06",
+              "quote": "Polyurethane (PU) Coating costs ₹140–₹300 per sq. ft. and is recommended for premium modern roofs requiring maximum elasticity and thermal comfort, with a lifespan of 10-15 years."
+            },
+            {
+              "url": "https://constructionestimatorindia.com/bathroom-construction-cost-in-india/",
+              "title": "Bathroom Construction Cost in India 2026: Complete Guide with Estimates & Expert Tips - Construction Estimator India",
+              "publisher": "Construction Estimator India",
+              "retrieved_at": "2026-10-06",
+              "quote": "Polyurethane membranes (₹150–₹200/sq ft) offer superior durability for 10–15 years and are recommended for bathrooms above the ground floor."
+            }
+          ]
+        }
+      ],
+      "duration_days": {
+        "min": 3,
+        "max": 7,
+        "basis": "Planning estimate for one bathroom, excluding plumbing changes. Studio Matrx recommends at least 2 coats of cementitious coating and 3 in shower zones, with drying between coats; a flood test should follow before tiles are laid. Opening a sunken slab and re-tiling add days."
+      },
+      "questions_to_ask": [
+        "Is the leak coming from the floor, the wall joints, a pipe or the floor trap, and how was that checked?",
+        "Will you break the floor tiles, and is re-tiling included in this price?",
+        "If the bathroom has a sunken slab, will you remove the filling and treat the slab itself?",
+        "Which coating will you use, how many coats, and how high up the walls will it go in the shower area?",
+        "Will you seal around the floor trap, pipe openings and the door threshold?",
+        "How long will the flood test run before tiles are laid?",
+        "Will concealed pipes be pressure-tested before the floor is closed?"
+      ],
+      "common_mistakes": [
+        "Re-grouting tiles when the water is actually coming from a leaking pipe or the sunken slab.",
+        "Waterproofing the floor only and stopping at the floor-wall joint in the shower area.",
+        "Leaving the floor trap and pipe openings unsealed.",
+        "Laying tiles before a flood test shows the coating holds water.",
+        "Using a rigid cementitious coating over a base that is cracking; Studio Matrx notes it cracks with the surface below.",
+        "Comparing a per-bathroom price with a per-sq-ft price without checking what area and work each includes."
+      ],
+      "quote_checklist": [
+        "Diagnosis of the leak source",
+        "Whether tiles are removed and whether re-tiling is included",
+        "Sunken-slab filling removal and refilling, if needed",
+        "Product names, number of coats and wall height treated",
+        "Sealing at floor trap, pipe openings and door threshold",
+        "Flood test before tiling and its duration",
+        "Plumbing repairs: included or excluded",
+        "Debris removal",
+        "Written warranty: period, issuer and exclusions"
+      ],
+      "faq": [
+        {
+          "q": "What does bathroom waterproofing cost in Pune?",
+          "a": "Our draft models give ₹40–₹120 per sq ft of treated area for re-grouting and coating, ₹80–₹160 for floor and joints, and ₹90–₹200 for full sunken-slab treatment. Per-bathroom prices vary widely by scope: NoBroker's Pune page lists ₹2,000–₹4,000 per bathroom, and Studio Matrx gives ₹7,000 (budget) to ₹22,000 (luxury) for a typical 40 sq ft bathroom. These are indicative ranges, not quotations."
+        },
+        {
+          "q": "Can a bathroom leak be fixed without breaking tiles?",
+          "a": "Sometimes. NoBroker lists 'basic coating + grouting' at ₹80–₹120 per sq ft, which works on the joints and surface. If water is getting into the sunken slab or a pipe is leaking, the floor usually has to be opened; NoBroker prices full treatment of the sunken slab, floor and joints at ₹160–₹200 per sq ft. Ask whether re-tiling is included."
+        },
+        {
+          "q": "Why is labour such a large part of the price?",
+          "a": "Most of the work is preparation, careful application and testing. NoBroker states that labour is about 75% of the total cost of bathroom waterproofing."
+        },
+        {
+          "q": "Should I choose a cementitious coating or a PU membrane?",
+          "a": "Studio Matrx notes cementitious coatings bond well to concrete and plaster but are rigid, so they crack if the base cracks; it recommends at least 2 coats and 3 in shower zones. PU membranes are flexible. Construction Estimator India prices PU membranes at ₹150–₹200 per sq ft and recommends them for bathrooms above the ground floor."
+        },
+        {
+          "q": "What area is measured for bathroom waterproofing?",
+          "a": "The treated area is the floor plus the wall upturns and the shower zone, not just the floor. Studio Matrx's figures for a 40 sq ft bathroom work out to roughly 80–90 sq ft of treated area. Ask each contractor to state the area they measured."
+        }
+      ],
+      "prose_status": "draft",
+      "sub_services": []
+    },
+    {
+      "id": "external-wall-waterproofing",
+      "name": "External wall waterproofing",
+      "parent_id": "waterproofing",
+      "unit": "sqft",
+      "area_presets": [
+        {
+          "preset": "independent_house",
+          "label": "Two-storey independent house, about 2,000 sq ft of wall",
+          "quantity": 2000,
+          "assumption": "Planning example, not a sourced figure: a two-storey house on a 900 sq ft footprint (about 30 × 30 ft, the roof size in Dr. Fixit's example) has about 120 ft of perimeter × 20 ft of height = 2,400 sq ft of wall; deducting about 15% for windows and doors gives about 2,000 sq ft. Measure your walls for a real estimate.",
+          "sources": [
+            {
+              "url": "https://www.drfixit.co.in/resources/blog/new-home/protection-and-peace-roof-waterproofing-cost-explained",
+              "title": "Roof Waterproofing Cost Guide for Your Home - Dr. Fixit",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": "For example, on a 900 sq ft roof, this basic coating could cost about ₹31,500–₹40,500."
+            }
+          ]
+        }
+      ],
+      "scope_options": [
+        {
+          "id": "coating-only",
+          "label": "Waterproof coating only",
+          "description": "Clean the wall and apply a waterproof exterior coating over a sound surface with no significant cracks."
+        },
+        {
+          "id": "crack-repair-and-coating",
+          "label": "Crack repair and coating",
+          "description": "Open and fill cracks, then apply a flexible (elastomeric) waterproof coating system over the wall."
+        }
+      ],
+      "materials": [
+        {
+          "id": "exterior-waterproof-coating",
+          "label": "Exterior waterproof coating (acrylic)",
+          "description": "A waterproof top coat for external walls. Asian Paints describes acrylic waterproof coatings as suited to moderate climates and budget-friendly. AapkaPainter prices external wall waterproofing at ₹27–₹33 per sq ft on a painted surface. Dr. Fixit Raincoat Select is sold as an exterior wall waterproofing coating.",
+          "sources": [
+            {
+              "url": "https://www.asianpaints.com/blogs/exterior-wall-waterproofing-seepage-solutions.html",
+              "title": "How to Waterproof Exterior Walls & Stop Water Seepage",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Popular waterproof coating options include acrylic waterproof coatings (good for moderate climates and budget-friendly), elastomeric coatings (flexible and ideal for cracks and harsh weather), and liquid membrane coatings (providing seamless, long-lasting protection)."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+              "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "External Wall (paint surface): ₹27-33/sqft"
+            },
+            {
+              "url": "https://www.drfixit.co.in/products/dr-fixit-raincoat-select/detail",
+              "title": "Dr. Fixit Raincoat Select - Exterior Wall Waterproofing",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "elastomeric-wall-coating",
+          "label": "Elastomeric wall coating with crack repair",
+          "description": "A thicker, flexible wall coating applied after cracks are filled. Asian Paints describes elastomeric coatings as flexible and suited to cracks and harsh weather. NoBroker prices crack filling plus elastomeric coating at ₹35–₹80 per sq ft and premium waterproof paint systems at ₹60–₹150 per sq ft.",
+          "sources": [
+            {
+              "url": "https://www.asianpaints.com/blogs/exterior-wall-waterproofing-seepage-solutions.html",
+              "title": "How to Waterproof Exterior Walls & Stop Water Seepage",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Popular waterproof coating options include acrylic waterproof coatings (good for moderate climates and budget-friendly), elastomeric coatings (flexible and ideal for cracks and harsh weather), and liquid membrane coatings (providing seamless, long-lasting protection)."
+            },
+            {
+              "url": "https://www.nobroker.in/forum/what-is-the-exterior-wall-waterproofing-cost-in-india/",
+              "title": "Exterior Wall Waterproofing Cost Calculator: Calculate Here",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Crack filling + elastomeric coating ranges from Rs. 35 to Rs. 80 per sq ft"
+            },
+            {
+              "url": "https://www.nobroker.in/forum/what-is-the-exterior-wall-waterproofing-cost-in-india/",
+              "title": "Exterior Wall Waterproofing Cost Calculator: Calculate Here",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Premium waterproof paint systems range from Rs. 60 to Rs. 150 per sq ft"
+            }
+          ]
+        }
+      ],
+      "duration_days": {
+        "min": 4,
+        "max": 12,
+        "basis": "Planning estimate; no source gave a duration for this work. Time depends on wall area, scaffolding or rope access, the amount of crack repair and the number of coats, and coatings need dry weather between coats."
+      },
+      "questions_to_ask": [
+        "Is the dampness coming through the external wall, or from a terrace, balcony, window frame or pipe?",
+        "How will cracks be opened and filled before coating, and with which product?",
+        "Is the product a waterproof coating system or an exterior paint, and how many coats will you apply?",
+        "Are scaffolding or rope access and their safety arrangements included in the price?",
+        "Will window sills, frames and pipe openings be sealed?",
+        "Does the warranty cover the coating only or leak-free walls, and what does it exclude?",
+        "For a society building, which wall faces are included and how will residents be informed?"
+      ],
+      "common_mistakes": [
+        "Coating over cracks without repairing them first.",
+        "Treating the wall when water is entering through window frames, sills or pipe openings.",
+        "Using an ordinary exterior paint where the wall has cracks; Asian Paints describes elastomeric coatings as the flexible option for cracks.",
+        "Applying coatings during or just after rain.",
+        "Leaving scaffolding or access out of the quote, so it appears later as an extra.",
+        "Treating only the damp patch instead of the whole affected wall face."
+      ],
+      "quote_checklist": [
+        "Measured wall area in sq ft",
+        "Crack repair method and product",
+        "Primer, product names and number of coats",
+        "Sealing at windows, sills and pipe openings",
+        "Scaffolding or rope access",
+        "Protection of windows, floors and plants during work",
+        "Cleanup and debris removal",
+        "Written warranty: period, issuer and exclusions"
+      ],
+      "faq": [
+        {
+          "q": "What does external wall waterproofing cost in Pune?",
+          "a": "Our draft models give ₹27–₹60 per sq ft for a waterproof coating only (about ₹45 expected), ₹25–₹100 for crack repair with an elastomeric coating (about ₹60) and ₹50–₹150 for premium systems (about ₹100). NoBroker's Pune page lists exterior wall waterproofing at ₹30–₹60 per sq ft. These are indicative ranges, not quotations."
+        },
+        {
+          "q": "What is the difference between acrylic and elastomeric coatings?",
+          "a": "Asian Paints describes acrylic waterproof coatings as suited to moderate climates and budget-friendly, and elastomeric coatings as flexible and suited to cracks and harsh weather. Liquid membrane coatings give a seamless layer."
+        },
+        {
+          "q": "Do cracks need to be repaired before coating?",
+          "a": "Yes. Coating over open cracks leaves a path for water. NoBroker prices crack filling plus an elastomeric coating at ₹35–₹80 per sq ft, and its Pune page lists crack filling on its own at ₹100–₹150 per running foot."
+        },
+        {
+          "q": "What affects the price of external wall waterproofing?",
+          "a": "Asian Paints lists total wall area, surface condition, crack repair, the extent of seepage damage, the system chosen, the number of coats, labour and application complexity, and access to the building."
+        },
+        {
+          "q": "Is a premium system worth it?",
+          "a": "It depends on the wall. NoBroker prices premium waterproof paint systems at ₹60–₹150 per sq ft against ₹35–₹60 for a basic waterproof coating. A wall with many cracks or heavy rain exposure gains more from a flexible, crack-bridging system; ask for the expected life and warranty in writing before choosing."
+        }
+      ],
+      "prose_status": "draft",
+      "sub_services": []
+    },
+    {
+      "id": "basement-waterproofing",
+      "name": "Basement waterproofing",
+      "parent_id": "waterproofing",
+      "unit": "sqft",
+      "area_presets": [],
+      "scope_options": [
+        {
+          "id": "internal-retrofit",
+          "label": "Treatment from inside (existing basement)",
+          "description": "Treat the inside face of the walls and floor of an existing basement, the negative side, with a coating or crystalline system."
+        },
+        {
+          "id": "external-new-construction",
+          "label": "External membrane (new construction)",
+          "description": "Apply a membrane to the outside face of the basement walls before backfilling, the positive side. Studio Matrx describes this as the most effective method for new construction."
+        },
+        {
+          "id": "active-leak-injection",
+          "label": "Injection for active leaks",
+          "description": "Inject grout into cracks and construction joints where water is coming through, usually before or alongside a coating."
+        }
+      ],
+      "materials": [
+        {
+          "id": "polymer-cementitious-coating",
+          "label": "Polymer-modified cementitious coating",
+          "description": "A cement-based waterproof coating mixed with a polymer, often supplied as two components, brushed on in coats. Studio Matrx recommends at least 2 coats, and 3 in shower zones, tanks and terraces, and notes that with 5–15% elongation it cracks if the surface below cracks. Dr. Fixit Pidifin 2K is an example product.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/cementitious-waterproofing-india",
+              "title": "Cementitious Waterproofing India: Coatings, Coats & Cost (2026)",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "The minimum recommended is 2 coats, with three coats for shower zones, tanks and terraces."
+            },
+            {
+              "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+              "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "However, its weakness is rigidity — 5–15% elongation means it cracks if the substrate cracks."
+            },
+            {
+              "url": "https://www.drfixit.co.in/products/dr-fixit-pidifin-2k/detail",
+              "title": "Dr. Fixit Pidifin 2K: Cementitious Coating for Waterproofing",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "crystalline",
+          "label": "Crystalline waterproofing",
+          "description": "A treatment for concrete whose chemicals react with water to form crystals inside the concrete pores. Studio Matrx notes it self-seals fine cracks but works only in dense concrete and does not suit cracks that move. NoBroker describes it as suited to basements under strong water pressure.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/waterproofing-membrane-types-india",
+              "title": "Waterproofing Membrane Types India: Cementitious vs Acrylic vs PU vs Sheet vs Crystalline",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "Crystalline membranes are self-healing for fine cracks and are permanent, but only work in dense concrete and are not suitable for movement."
+            },
+            {
+              "url": "https://www.nobroker.in/forum/how-much-it-cost-to-waterproof-a-basement/",
+              "title": "How Much it Cost to Waterproof a Basement",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Crystalline waterproofing costs Rs. 150 to Rs. 320 per sq. ft. and is ideal for basements that experience strong water pressure."
+            }
+          ]
+        },
+        {
+          "id": "external-membrane",
+          "label": "External (positive-side) basement membrane",
+          "description": "A membrane applied to the outside face of basement walls before the soil is backfilled. Studio Matrx describes this as the most effective basement method for new construction, at ₹80–₹150 per sq ft. Dr. Fixit Bitufix is sold for below-ground waterproofing.",
+          "sources": [
+            {
+              "url": "https://www.studiomatrx.org/guides/waterproofing-guide",
+              "title": "Waterproofing Guide for Indian Homes — Complete Zone-by-Zone Guide — Terrace, Bathroom, Basement, Walls & Tanks",
+              "publisher": "Studio Matrx",
+              "retrieved_at": "2026-10-06",
+              "quote": "The external membrane (positive side) method is applied on the outside of basement walls before backfilling, with a cost of ₹80-150 per sqft, and is best for new construction as it is the most effective approach."
+            },
+            {
+              "url": "https://www.drfixit.co.in/products/dr-fixit-bitufix/detail",
+              "title": "Dr. Fixit Bitufix: The Solution for Below Ground Waterproofing",
+              "publisher": "Pidilite Industries (Dr. Fixit)",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "pu-injection-grout",
+          "label": "PU / polymer injection grout",
+          "description": "A grout pumped under pressure into a crack or joint through drilled holes (ports) to stop water coming through. NoBroker recommends injection grouting for active water leaks, wall cracks and construction joints. AapkaPainter lists Dr. Fixit PU Grouting material at ₹300 per kg.",
+          "sources": [
+            {
+              "url": "https://www.nobroker.in/forum/how-much-it-cost-to-waterproof-a-basement/",
+              "title": "How Much it Cost to Waterproof a Basement",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Injection grouting costs Rs. 180 to Rs. 350 per sq. ft. and is recommended for active water leaks, wall cracks, and construction joints."
+            },
+            {
+              "url": "https://aapkapainter.com/products/waterproofing/dr-fixit-price/pu-grouting",
+              "title": "Dr Fixit PU Grouting Professional's Choice for Waterproofing",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Dr Fixit PU Grouting is available at ₹300 per 1kg and ₹8000 per 25kg."
+            },
+            {
+              "url": "https://www.indiamart.com/proddetail/polymer-injection-grouting-service-24385305233.html",
+              "title": "Polymer Injection Grouting Service at ₹ 2000/per injection onwards in Pune",
+              "publisher": "IndiaMART",
+              "retrieved_at": "2026-10-06",
+              "quote": "Tarmic Waterproofing Company offers Polymer Injection Grouting Service in Pune, Maharashtra at ₹2000/per injection onwards."
+            }
+          ]
+        }
+      ],
+      "duration_days": {
+        "min": 5,
+        "max": 15,
+        "basis": "Planning estimate; no source gave a duration for basement work. Time depends on the area, whether active leaks must be injected first, surface preparation, and curing between coats."
+      },
+      "questions_to_ask": [
+        "Is water coming through the walls, the floor, construction joints or cracks, and is any leak active?",
+        "What is the groundwater level at this site, and does it rise in the monsoon?",
+        "Will you treat from inside or outside, and why that side?",
+        "Will active leaks be injected before the coating is applied?",
+        "Which product will you use, how many coats, and how will the concrete surface be prepared?",
+        "How will water that still collects be drained or pumped?",
+        "What warranty applies, and does it cover water under pressure?"
+      ],
+      "common_mistakes": [
+        "Coating over an active leak without stopping it first; NoBroker recommends injection grouting for active leaks, wall cracks and construction joints.",
+        "Skipping the external membrane during construction; Studio Matrx calls it the most effective method, and it can only be applied before backfilling.",
+        "Using a crystalline treatment on weak or moving concrete; Studio Matrx notes it works only in dense concrete and does not suit movement.",
+        "Ignoring the groundwater level when choosing the system.",
+        "Comparing basement quotes per sq ft without checking whether walls, floor and joints are all included.",
+        "Treating basement dampness as a paint problem and repainting the walls."
+      ],
+      "quote_checklist": [
+        "Measured wall and floor area in sq ft",
+        "Diagnosis: active leaks, cracks, joints, groundwater level",
+        "Side of treatment (inside or outside)",
+        "Injection of cracks and joints: number of points or area",
+        "Product names, number of coats and surface preparation",
+        "Drainage or pumping arrangements, if any",
+        "Testing before handover",
+        "Written warranty: period, issuer and exclusions"
+      ],
+      "faq": [
+        {
+          "q": "What does basement waterproofing cost in Pune?",
+          "a": "Our draft models give ₹75–₹200 per sq ft for a cementitious treatment (about ₹130 expected), ₹40–₹320 for crystalline (about ₹150), ₹80–₹150 for an external membrane during construction (about ₹115) and ₹100–₹350 for injection grouting of active leaks (about ₹205). NoBroker's Pune page lists basement waterproofing at ₹75–₹100 per sq ft. These are indicative ranges, not quotations."
+        },
+        {
+          "q": "Why does basement waterproofing cost more than other areas?",
+          "a": "Asian Paints notes basement work is more complex because underground moisture pressure is higher. Active leaks often need injection before any coating, which NoBroker prices at ₹180–₹350 per sq ft."
+        },
+        {
+          "q": "Should a basement be waterproofed from inside or outside?",
+          "a": "For a new building, Studio Matrx describes an external membrane applied before backfilling as the most effective method. In an existing basement the outside is usually no longer reachable, so treatment is done from inside with cementitious or crystalline systems, with injection at active leaks."
+        },
+        {
+          "q": "What is crystalline waterproofing?",
+          "a": "Chemicals in the coating react with water to grow crystals inside the concrete pores. Studio Matrx notes it self-seals fine cracks but works only in dense concrete and does not suit moving cracks. NoBroker describes it as suited to basements under strong water pressure."
+        },
+        {
+          "q": "How is an active basement leak stopped?",
+          "a": "By injection grouting: grout is pumped into the crack or joint through drilled ports. NoBroker recommends it for active water leaks, wall cracks and construction joints."
+        }
+      ],
+      "prose_status": "draft",
+      "sub_services": []
+    },
+    {
+      "id": "leakage-repair",
+      "name": "Leakage repair",
+      "parent_id": "waterproofing",
+      "unit": "unit",
+      "area_presets": [],
+      "scope_options": [
+        {
+          "id": "injection-grouting",
+          "label": "Injection grouting (per point)",
+          "description": "Drill ports along the leaking crack or joint and inject grout under pressure to stop water coming through. Priced per injection point or nozzle."
+        },
+        {
+          "id": "source-repair",
+          "label": "Fix the source",
+          "description": "Repair the source of the water, such as the terrace, bathroom, external wall or a pipe. This is priced under the related waterproofing service or as plumbing work."
+        }
+      ],
+      "materials": [
+        {
+          "id": "pu-injection-grout",
+          "label": "PU / polymer injection grout",
+          "description": "A grout pumped under pressure into a crack or joint through drilled holes (ports) to stop water coming through. NoBroker recommends injection grouting for active water leaks, wall cracks and construction joints. AapkaPainter lists Dr. Fixit PU Grouting material at ₹300 per kg.",
+          "sources": [
+            {
+              "url": "https://www.nobroker.in/forum/how-much-it-cost-to-waterproof-a-basement/",
+              "title": "How Much it Cost to Waterproof a Basement",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Injection grouting costs Rs. 180 to Rs. 350 per sq. ft. and is recommended for active water leaks, wall cracks, and construction joints."
+            },
+            {
+              "url": "https://aapkapainter.com/products/waterproofing/dr-fixit-price/pu-grouting",
+              "title": "Dr Fixit PU Grouting Professional's Choice for Waterproofing",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Dr Fixit PU Grouting is available at ₹300 per 1kg and ₹8000 per 25kg."
+            },
+            {
+              "url": "https://www.indiamart.com/proddetail/polymer-injection-grouting-service-24385305233.html",
+              "title": "Polymer Injection Grouting Service at ₹ 2000/per injection onwards in Pune",
+              "publisher": "IndiaMART",
+              "retrieved_at": "2026-10-06",
+              "quote": "Tarmic Waterproofing Company offers Polymer Injection Grouting Service in Pune, Maharashtra at ₹2000/per injection onwards."
+            }
+          ]
+        }
+      ],
+      "duration_days": {
+        "min": 1,
+        "max": 2,
+        "basis": "A Pune polymer injection grouting listing on IndiaMART states a service duration of 1–2 days. Finding the source of a leak may need a separate inspection visit, and fixing the source is a separate job."
+      },
+      "questions_to_ask": [
+        "Where is the water entering, and how did you trace it?",
+        "How many injection points do you expect, and how will the final count be decided?",
+        "Which grout will you use, PU or another type, and why?",
+        "Will this fix the source of the water, or only the point where it shows inside?",
+        "Does the price include re-plastering and painting over the repaired area?",
+        "What happens if the leak returns in the next monsoon?"
+      ],
+      "common_mistakes": [
+        "Agreeing to a per-point price without agreeing the number of points or a maximum.",
+        "Injecting the visible crack while the source on the terrace, bathroom or external wall stays untreated.",
+        "Repainting a damp ceiling or wall before the leak has stopped.",
+        "Comparing per-point and per-sq-ft prices directly; contractors use both units for injection grouting.",
+        "Not checking concealed plumbing lines before treating a wall or ceiling leak as a waterproofing failure.",
+        "Accepting the repair without a written guarantee covering the next monsoon."
+      ],
+      "quote_checklist": [
+        "Location of the leak and how the source was traced",
+        "Price per injection point and the estimated number of points",
+        "A maximum total if more points are needed",
+        "Grout type and product name",
+        "Making good: plaster and paint over the repaired area",
+        "Whether the source of the water is also being repaired",
+        "Written guarantee period"
+      ],
+      "faq": [
+        {
+          "q": "What does leakage repair by injection grouting cost in Pune?",
+          "a": "It is usually priced per injection point. Our draft model gives ₹500–₹3,000 per point, about ₹2,000 expected. NoBroker lists ₹500–₹1,200 per point for severe seepage, AapkaPainter ₹2,000–₹3,000 per nozzle, and a Pune seller on IndiaMART lists polymer injection grouting at ₹2,000 per injection onwards. These are indicative ranges, not quotations."
+        },
+        {
+          "q": "Why do some contractors price injection grouting per sq ft?",
+          "a": "Contractors use different units. NoBroker also lists injection grouting at ₹180–₹350 per sq ft for basements. Ask for the number of points and a maximum total so quotes can be compared."
+        },
+        {
+          "q": "How long does injection grouting take?",
+          "a": "A Pune polymer injection grouting listing on IndiaMART states 1–2 days. Re-plastering and painting may take longer once the area has dried."
+        },
+        {
+          "q": "Will injection grouting stop the leak for good?",
+          "a": "It seals the crack or joint it is injected into. If water keeps reaching the structure from a failed terrace, bathroom or external wall, that source also needs repair, or water may find another path."
+        },
+        {
+          "q": "What grout is used?",
+          "a": "Polyurethane (PU) grout is common for active leaks; AapkaPainter lists Dr. Fixit PU Grouting at ₹300 per kg. A Pune listing on IndiaMART offers polymer injection grouting using drilled holes. Ask the contractor to name the product."
+        }
+      ],
+      "prose_status": "draft",
+      "sub_services": []
+    }
+  ]
+}

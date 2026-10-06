@@ -1,0 +1,2 @@
+place_name,locality_id,visited_at,dish_id,price_paid_inr,rating,would_recommend,tags,notes
+EXAMPLE Biryani House,wakad,2026-10-04,biryani,260,4,true,family|late_night,"EXAMPLE note: generous portion, rice slightly oily"

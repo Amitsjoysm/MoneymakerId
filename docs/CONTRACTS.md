@@ -128,15 +128,17 @@ Dish = { id: string; name: string; parent_id: string | null; aliases: string[]; 
 
 // data/services/{service_id}.json → ServiceDef (one file per top-level service; sub-services nested)
 ServiceDef = { id: string; name: string; parent_id: string | null; unit: CostUnit;
-  area_presets: { preset: AreaPreset; label: string; quantity: number; assumption: string; sources: SourceRef[] }[];
+  area_presets: { preset: AreaPreset; label: string; quantity: number; assumption: string; sources: SourceRef[] }[];  // may be []: calculator then asks for a custom quantity
   scope_options: { id: string; label: string; description: string }[];
   materials: { id: string; label: string; description: string; sources: SourceRef[] }[];
-  duration_days: { min: number; max: number; basis: string };
+  duration_days: { min: number; max: number; basis: string } | null;   // null when unsourced; pages hide it
   questions_to_ask: string[]; common_mistakes: string[]; quote_checklist: string[];
   faq: { q: string; a: string }[];
   prose_status: ProseStatus; sub_services: ServiceDef[] }
 
-// data/cost-models/{service_id}.json → CostModel[]   (≥ 1 model per tier for EVERY service id in §4a)
+// data/cost-models/{service_id}.json → CostModel[]
+//   Coverage rule: every LEAF service id (no sub-services) needs ≥ 1 sourced model to have a cost guide; one per tier is the target.
+//   A PARENT service with sub-services (waterproofing, painting) needs no own models: its cost guide aggregates its sub-services' models.
 CostModel = { id: string; service_id: string; scope_id: string | null; material_id: string | null; tier: Tier;
   unit: CostUnit; rate_inr: { low: number; expected: number; high: number };   // per unit
   min_job_inr: number | null;
@@ -169,7 +171,7 @@ CostModel = { id: string; service_id: string; scope_id: string | null; material_
 
 **Construction services, top level:** `waterproofing`, `painting`, `bathroom-renovation`, `modular-kitchen`, `house-construction`
 - **Sub-services:** `terrace-waterproofing`, `bathroom-waterproofing`, `external-wall-waterproofing`, `basement-waterproofing`, `leakage-repair` (under `waterproofing`) · `interior-painting`, `exterior-painting` (under `painting`)
-- **City cost-guide slug:** `{service_id}-cost` for all 12 service ids, e.g. `terrace-waterproofing-cost`, `house-construction-cost`. Its title says "per sq ft".
+- **City cost-guide slug:** `{service_id}-cost` for all 12 service ids, e.g. `terrace-waterproofing-cost`, `house-construction-cost`. Only the house-construction guide's title says "per sq ft"; other titles use the model's own unit.
 - **Reserved slugs** (never used as a locality, dish or service ID): `late-night-food`, `budget-food`, `veg-food`, `veg`, `late-night`, `family`, `office-lunch`, `under-*`, anything ending in `-cost`, `ask`, `about`, `api`, `mr`, `hi`, `ui-fixtures`
 
 ---

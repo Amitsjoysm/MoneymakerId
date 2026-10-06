@@ -1,0 +1,58 @@
+[
+  {
+    "host": "construction",
+    "page_types": ["service_cost", "locality_service", "calculator", "provider", "city_hub", "locality_hub", "service_city"],
+    "slots": ["AD_SLOT_AFTER_RESULTS", "AD_SLOT_FOOTER"],
+    "devices": ["mobile", "desktop"],
+    "provider": "adsense",
+    "enabled": false
+  },
+  {
+    "host": "construction",
+    "page_types": ["service_cost", "locality_service", "calculator", "provider", "city_hub", "locality_hub", "service_city"],
+    "slots": ["AD_SLOT_SIDEBAR"],
+    "devices": ["desktop"],
+    "provider": "adsense",
+    "enabled": false
+  },
+  {
+    "host": "food",
+    "page_types": ["dish_locality", "dish_city", "locality_hub", "food_intent", "locality_food_intent", "place"],
+    "slots": ["AD_SLOT_AFTER_INTRO", "AD_SLOT_AFTER_RESULTS", "AD_SLOT_BEFORE_FAQ", "AD_SLOT_FOOTER"],
+    "devices": ["mobile", "desktop"],
+    "provider": "adsense",
+    "enabled": true
+  },
+  {
+    "host": "food",
+    "page_types": ["dish_locality", "dish_city", "locality_hub", "food_intent", "locality_food_intent", "place"],
+    "slots": ["AD_SLOT_SIDEBAR"],
+    "devices": ["desktop"],
+    "provider": "adsense",
+    "enabled": true
+  },
+  {
+    "host": "food",
+    "page_types": ["locality_hub", "dish_locality"],
+    "slots": ["AD_SLOT_TOP"],
+    "devices": ["mobile", "tablet", "desktop"],
+    "provider": "sponsorship",
+    "enabled": true
+  },
+  {
+    "host": "main",
+    "page_types": ["locality_guide"],
+    "slots": ["AD_SLOT_AFTER_INTRO", "AD_SLOT_BEFORE_FAQ", "AD_SLOT_FOOTER"],
+    "devices": ["mobile", "desktop"],
+    "provider": "adsense",
+    "enabled": true
+  },
+  {
+    "host": "main",
+    "page_types": ["locality_guide"],
+    "slots": ["AD_SLOT_SIDEBAR"],
+    "devices": ["desktop"],
+    "provider": "adsense",
+    "enabled": true
+  }
+]

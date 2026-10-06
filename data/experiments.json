@@ -1,0 +1,13 @@
+[
+  {
+    "id": "construction-lead-page-ads",
+    "host": "construction",
+    "page_types": ["service_cost", "locality_service"],
+    "variants": [
+      { "id": "control", "weight": 0.5, "params": { "adsense": false } },
+      { "id": "ads", "weight": 0.5, "params": { "adsense": true, "slots": ["AD_SLOT_AFTER_RESULTS", "AD_SLOT_FOOTER"] } }
+    ],
+    "guardrail_metric": "quote_submit",
+    "active": false
+  }
+]

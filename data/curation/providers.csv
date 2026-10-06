@@ -1,0 +1,2 @@
+name,locality_id,address,phone,website,services,service_localities,specializations,experience_years,accepts_leads,min_job_inr,source_url,retrieved_at
+EXAMPLE Waterproofing Works,wagholi,"EXAMPLE Office 0, Sample Road, Wagholi, Pune",,https://example.com/,terrace-waterproofing|bathroom-waterproofing|leakage-repair,wagholi|kharadi|lohegaon,Terrace waterproofing|Bathroom leak repair,8,true,15000,owner,2026-10-06

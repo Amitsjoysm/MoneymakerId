@@ -1,0 +1,117 @@
+{
+  "id": "bathroom-renovation",
+  "name": "Bathroom Renovation",
+  "parent_id": null,
+  "unit": "sqft",
+  "area_presets": [],
+  "scope_options": [
+    {
+      "id": "full-renovation",
+      "label": "Full renovation",
+      "description": "Old tiles, fixtures and concealed pipes are removed down to the floor slab and wall plaster. The work then covers new concealed plumbing, floor and wall waterproofing, new floor and wall tiles, sanitaryware, taps and shower fittings, and electrical points. Quantity is the bathroom's floor area in sq ft."
+    },
+    {
+      "id": "retile-and-refit",
+      "label": "Retile and refit (keep existing pipes)",
+      "description": "Floor and wall tiles and the fixtures are replaced and the floor is re-waterproofed, but the existing concealed supply and drain lines are kept after a leak or pressure check. Quantity is the bathroom's floor area in sq ft."
+    },
+    {
+      "id": "retiling-only",
+      "label": "Retiling only",
+      "description": "Floor and wall tiles are removed and replaced, with the floor waterproofing redone under the new floor tiles. Sanitaryware and taps are refitted or priced separately. Quantity is the bathroom's floor area in sq ft."
+    }
+  ],
+  "materials": [
+    {
+      "id": "ceramic-tiles",
+      "label": "Ceramic tiles",
+      "description": "Glazed tiles with a clay body. If they are used on a wet bathroom floor, choose a slip-resistant (matt or anti-skid) finish.",
+      "sources": []
+    },
+    {
+      "id": "vitrified-tiles",
+      "label": "Vitrified tiles",
+      "description": "Tiles fired to a dense body (glazed vitrified, double-charge or full-body), for bathroom floors or walls. If they are used on a wet bathroom floor, choose a slip-resistant finish.",
+      "sources": []
+    },
+    {
+      "id": "large-format-designer-tiles",
+      "label": "Large-format or designer tiles",
+      "description": "Large porcelain slabs or patterned feature tiles.",
+      "sources": []
+    },
+    {
+      "id": "natural-stone",
+      "label": "Natural stone",
+      "description": "Marble or granite, for example on floors, vanity counters or door thresholds.",
+      "sources": []
+    }
+  ],
+  "duration_days": {
+    "min": 0,
+    "max": 0,
+    "basis": "NOT SOURCED. Placeholder only: research on 2026-10-06 was blocked (WebSearch budget exhausted, publisher sites blocked by the egress proxy). Do not display; replace with a sourced range before review."
+  },
+  "questions_to_ask": [
+    "Is your quote a rate per sq ft of floor area, a lump sum per bathroom, or itemised, and what exactly does it include?",
+    "Will you remove the old tiles down to the slab, or lay new tiles over the existing ones?",
+    "Which waterproofing product and method will you use on the floor and shower walls, and how far up the walls will it go?",
+    "Will you do a water (ponding) test after waterproofing and before tiling, and can I be present for it?",
+    "Are the concealed pipes being replaced? If so, which pipe material and brand will you use, and will you pressure-test them before closing the walls?",
+    "Which brands and model numbers of tiles, sanitaryware and taps does the quote assume, and who buys them?",
+    "Is debris removal from the building included in the price?",
+    "What warranty do you give on waterproofing and on workmanship, and will you put it in writing?",
+    "Will you follow the society's working hours and its rules on noise, lift use and debris?"
+  ],
+  "common_mistakes": [
+    "Retiling without redoing the waterproofing underneath, so any existing leak into the flat below can continue.",
+    "Laying new tiles over old ones to save demolition cost, which raises the floor level and hides any failed waterproofing.",
+    "Not checking the floor slope towards the floor trap before tiling, which leaves water standing in corners.",
+    "Using glossy tiles on a wet bathroom floor instead of a slip-resistant grade.",
+    "Comparing quotes that assume different tile, sanitaryware and tap brands as if they covered the same scope.",
+    "Closing the walls without pressure-testing new concealed supply lines.",
+    "Paying most of the amount upfront instead of linking payments to completed stages.",
+    "Starting demolition without informing the society office and the flat below."
+  ],
+  "quote_checklist": [
+    "Scope in writing: demolition, plumbing, waterproofing, tiling, sanitaryware, taps and shower fittings, electrical points, ceiling, debris removal",
+    "Measured floor area, and the wall tiling height or wall area",
+    "Tile type, size and brand, or a stated price allowance per sq ft or per box",
+    "Waterproofing product, number of coats and where it is applied (floor, wall upturn, shower walls, around the floor trap and pipe openings)",
+    "Plumbing pipe material and brand, and the number of inlet and outlet points",
+    "Sanitaryware and tap brands and model numbers, or a stated allowance amount",
+    "Who supplies materials (contractor or owner) and who bears breakage and extra wastage",
+    "Debris removal and transport: included or extra",
+    "Timeline with a stage-wise payment schedule",
+    "Written warranty on waterproofing and workmanship",
+    "Whether GST is included or extra"
+  ],
+  "faq": [
+    {
+      "q": "How is a bathroom renovation usually priced?",
+      "a": "A contractor may quote a rate per sq ft of bathroom floor area, a lump sum per bathroom, or an itemised list with demolition, plumbing, waterproofing, tiling and fixtures priced separately. An itemised quote is the easiest to compare. Check which basis each quote uses before comparing totals."
+    },
+    {
+      "q": "Does a bathroom renovation need new waterproofing?",
+      "a": "If the floor tiles are being removed, the floor should be waterproofed again before new tiles go down. This includes the joint between floor and wall and the areas around the floor trap and pipe openings. Ask the contractor to water-test the floor before tiling."
+    },
+    {
+      "q": "Can new tiles be laid over old tiles?",
+      "a": "It is sometimes done, but it raises the floor level, hides any existing waterproofing failure and can change the slope towards the drain. If a contractor recommends it, ask how they will handle the door threshold and the floor trap level."
+    },
+    {
+      "q": "Should I buy tiles and fittings myself or let the contractor supply them?",
+      "a": "Either works. If you buy them, the contractor's quote for those items should be labour-only and should say who bears breakage and extra wastage. If the contractor supplies them, ask for brand and model numbers in writing so you can check prices."
+    },
+    {
+      "q": "Do I need to inform my housing society?",
+      "a": "Check with your society office before work starts. Your society may have rules on working hours, noise, lift use and debris disposal. Inform the flat below as well, because demolition and waterproofing work affects the ceiling under your bathroom."
+    },
+    {
+      "q": "Is a renovation a good time to replace concealed pipes?",
+      "a": "If the walls and floor are being opened anyway, replacing old or corroded pipes at the same time avoids breaking new tiles later. If you keep the existing pipes, ask for a pressure test before tiling."
+    }
+  ],
+  "prose_status": "draft",
+  "sub_services": []
+}

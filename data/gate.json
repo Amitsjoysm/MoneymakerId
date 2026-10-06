@@ -1,0 +1,87 @@
+{
+  "pages": {
+    "food:dish_locality": {
+      "min_entities": 3,
+      "min_evidence": 6,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": {}
+    },
+    "food:food_intent": {
+      "min_entities": 3,
+      "min_evidence": 3,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": {}
+    },
+    "food:locality_food_intent": {
+      "min_entities": 3,
+      "min_evidence": 3,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": {}
+    },
+    "food:dish_city": {
+      "min_entities": 5,
+      "min_evidence": 5,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": { "min_localities": 2 }
+    },
+    "food:locality_hub": {
+      "min_entities": 5,
+      "min_evidence": 5,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": {}
+    },
+    "food:place": {
+      "min_entities": 1,
+      "min_evidence": 0,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": { "min_grounded_claims": 3, "min_independent_sources": 2 }
+    },
+    "construction:service_cost": {
+      "min_entities": 0,
+      "min_evidence": 0,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": true,
+      "extra": { "min_sources": 2 }
+    },
+    "construction:locality_service": {
+      "min_entities": 0,
+      "min_evidence": 0,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": { "min_local_facts": 3, "min_providers": 2, "min_quotes": 3, "min_factor_sources": 2 }
+    },
+    "main:locality_guide": {
+      "min_entities": 0,
+      "min_evidence": 0,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": true,
+      "extra": { "min_words": 400 }
+    }
+  },
+  "hysteresis_ratio": 0.8,
+  "noindex_grace_days": 30
+}

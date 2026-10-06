@@ -1,0 +1,175 @@
+{
+  "id": "modular-kitchen",
+  "name": "Modular Kitchen",
+  "parent_id": null,
+  "unit": "sqft",
+  "area_presets": [],
+  "scope_options": [
+    {
+      "id": "cabinets-only",
+      "label": "Modular cabinets only",
+      "description": "Factory-made base, wall and tall cabinets: carcasses, shutters, hinges, drawer channels, handles and plinth, installed on an existing platform or floor. Countertop, sink, tap, appliances, tiling, plumbing and electrical work are excluded or priced separately. Quantity is the total front area of the cabinets in sq ft (width × height of each unit)."
+    },
+    {
+      "id": "cabinets-and-countertop",
+      "label": "Cabinets with countertop",
+      "description": "Everything in 'Modular cabinets only', plus a stone countertop with sink and hob cut-outs, and fitting of the sink and tap. Appliances and wall (dado) tiling are excluded or priced separately. Quantity is the total front area of the cabinets in sq ft."
+    },
+    {
+      "id": "full-kitchen-remodel",
+      "label": "Full kitchen remodel",
+      "description": "Removal of the old platform and cabinets, changes to plumbing and electrical points, wall and floor tiling where needed, new countertop, cabinets, sink and tap, fitting of the chimney and hob, and debris removal. Quantity is the total front area of the new cabinets in sq ft; civil, plumbing and electrical items should also be listed separately in the quote."
+    },
+    {
+      "id": "shutter-replacement",
+      "label": "Shutter replacement (keep existing cabinets)",
+      "description": "The existing cabinet boxes are kept after checking they are sound. Only the shutters, handles and hinges are replaced, and drawer channels where needed. Quantity is the total shutter area in sq ft."
+    }
+  ],
+  "materials": [
+    {
+      "id": "bwp-plywood",
+      "label": "BWP plywood carcass",
+      "description": "Plywood bonded with boiling-water-proof (BWP) grade adhesive, used for cabinet boxes. It is the grade to ask for in the sink unit and other base units that may get wet.",
+      "sources": []
+    },
+    {
+      "id": "bwr-mr-plywood",
+      "label": "BWR or MR plywood carcass",
+      "description": "Plywood bonded with boiling-water-resistant (BWR) or moisture-resistant (MR) grade adhesive. These grades are rated below BWP for water exposure.",
+      "sources": []
+    },
+    {
+      "id": "hdhmr-board",
+      "label": "HDHMR board",
+      "description": "High-density, high-moisture-resistance fibreboard, an engineered board used for carcasses and shutters as an alternative to plywood.",
+      "sources": []
+    },
+    {
+      "id": "particle-board-mdf",
+      "label": "Particle board or MDF",
+      "description": "Engineered boards made from wood particles (particle board) or wood fibres (MDF), often supplied pre-laminated.",
+      "sources": []
+    },
+    {
+      "id": "laminate-finish",
+      "label": "Laminate shutters",
+      "description": "Decorative laminate sheets pressed onto the shutter board, available in matt, textured and gloss surfaces. The edges are sealed with edge banding.",
+      "sources": []
+    },
+    {
+      "id": "acrylic-finish",
+      "label": "Acrylic shutters",
+      "description": "Acrylic sheets bonded to the shutter board, giving a smooth, even face.",
+      "sources": []
+    },
+    {
+      "id": "membrane-finish",
+      "label": "Membrane (PVC foil) shutters",
+      "description": "PVC foil vacuum-pressed onto shaped MDF shutters, which allows grooved or routed shutter designs.",
+      "sources": []
+    },
+    {
+      "id": "pu-lacquer-finish",
+      "label": "PU or lacquer painted shutters",
+      "description": "Polyurethane (PU) paint or lacquer sprayed onto MDF or HDHMR shutters and cured, in matt or gloss.",
+      "sources": []
+    },
+    {
+      "id": "veneer-finish",
+      "label": "Wood veneer shutters",
+      "description": "A thin layer of natural wood pressed onto the shutter board and finished with polish or a PU coat.",
+      "sources": []
+    },
+    {
+      "id": "granite-countertop",
+      "label": "Granite countertop",
+      "description": "Natural granite slab used for the kitchen countertop, cut on site or in a workshop for the sink and hob.",
+      "sources": []
+    },
+    {
+      "id": "quartz-countertop",
+      "label": "Quartz countertop",
+      "description": "Engineered stone made from crushed quartz and resin, used as a countertop slab.",
+      "sources": []
+    }
+  ],
+  "duration_days": {
+    "min": 0,
+    "max": 0,
+    "basis": "NOT SOURCED. Placeholder only: research on 2026-10-06 was blocked (WebSearch budget exhausted, publisher sites blocked by the egress proxy). Do not display; replace with a sourced range (design sign-off to installation, by scope) before review."
+  },
+  "questions_to_ask": [
+    "Is your price a rate per sq ft of cabinet front area, a rate per running foot of counter, or a lump sum, and what quantity did you measure for my kitchen?",
+    "Which board will you use for the carcasses and for the shutters, in which grade, thickness and brand, and is the sink unit made from a water-resistant grade?",
+    "Which shutter finish is quoted, what finish is on the inner face of the shutters, and how are the edges sealed?",
+    "Which brands of hinges, drawer channels, baskets and lift-up fittings are included, are they soft-close, and how many drawers and baskets does the quote cover?",
+    "Is the countertop included? If so, which stone, what thickness and edge profile, and are the sink and hob cut-outs included?",
+    "Are the sink, tap, chimney, hob, removal of the old platform, plumbing and electrical changes and dado tiling included, excluded or extra?",
+    "Will I get a measured drawing (2D or 3D) showing every cabinet's width, height and depth to sign off before production starts?",
+    "Will you re-measure on site after the plumbing, electrical and tiling work is finished?",
+    "What is the schedule from design sign-off to installation, and how are payments linked to stages?",
+    "What warranty do you give on the boards, the hardware and the workmanship, and will you put it in writing?"
+  ],
+  "common_mistakes": [
+    "Finalising cabinet sizes before choosing the chimney, hob, oven, dishwasher, refrigerator and water purifier, so appliances do not fit their spaces.",
+    "Letting the kitchen be measured for production before plumbing, electrical points and wall tiling are finished.",
+    "Accepting a moisture-sensitive board for the sink unit, where water from the tap, waste pipe and cleaning collects.",
+    "Comparing quotes that assume different boards, finishes or hardware brands as if they covered the same kitchen.",
+    "Comparing a rate per sq ft with a rate per running foot or a lump sum without converting to the same basis.",
+    "Not planning corner units, so corner space is lost or drawers and handles clash when opened.",
+    "Not planning sockets for the chimney, microwave, mixer, water purifier and under-cabinet lights before tiling.",
+    "Paying most of the amount upfront instead of linking payments to design sign-off, delivery and installation."
+  ],
+  "quote_checklist": [
+    "Rate basis (sq ft of cabinet front area, running feet or lump sum) and the measured quantity",
+    "A drawing showing every cabinet's width, height and depth, and the layout",
+    "Carcass board: type, grade, thickness and brand",
+    "Shutter board and finish: type, brand, inner-face finish and edge sealing",
+    "Hardware: brands of hinges, drawer channels, baskets and lift-up fittings, whether soft-close, and the count of each",
+    "Countertop: material, thickness, edge profile, cut-outs and backsplash",
+    "Sink, tap, chimney, hob and other appliances: included, excluded or a stated allowance",
+    "Civil, plumbing and electrical work, removal of the old platform and dado tiling: included or extra",
+    "Handles, plinth or skirting and loft units: included or extra",
+    "Transport, installation and debris removal: included or extra",
+    "Schedule from design sign-off to installation, with a stage-wise payment plan",
+    "Written warranty on boards, hardware and workmanship",
+    "Whether GST is included or extra"
+  ],
+  "faq": [
+    {
+      "q": "How is a modular kitchen priced?",
+      "a": "A quote may be given as a rate per sq ft of cabinet front area, a rate per running foot of counter, or a lump sum for the whole kitchen. Ask each firm to state the measured quantity and the basis, and to list the countertop, appliances and civil work separately, so that you compare the same scope."
+    },
+    {
+      "q": "What might not be included in a modular kitchen quote?",
+      "a": "It differs between firms. Items that may be priced separately include the countertop, sink and tap, chimney and hob, removal of the old platform, plumbing and electrical changes, and dado tiling. Ask for every item to be marked included, excluded or extra."
+    },
+    {
+      "q": "Which board should be used for the sink unit?",
+      "a": "The sink unit is exposed to water from the tap, the waste pipe, leaks and cleaning. Ask for a water-resistant board there, such as BWP-grade plywood, and check that all cut edges and pipe openings are sealed."
+    },
+    {
+      "q": "What is the difference between laminate, acrylic, membrane and PU shutters?",
+      "a": "Laminate is a decorative sheet pressed onto the board, in matt, textured or gloss. Acrylic is a smooth acrylic sheet bonded to the board. Membrane is PVC foil pressed onto shaped MDF. PU is paint or lacquer sprayed onto the board. Ask to see a physical sample of the exact finish and colour quoted, and ask how scratches and edge damage are repaired."
+    },
+    {
+      "q": "Can I keep my existing stone platform?",
+      "a": "It may be possible. Base cabinets can be fitted under an existing stone platform, but the masonry supports underneath can limit cabinet and drawer widths. Ask the firm to inspect the platform and say whether keeping it changes the design or the price."
+    },
+    {
+      "q": "When should the kitchen be measured?",
+      "a": "The final measurement for production should be taken after plumbing, electrical points and wall tiling are finished, because these change the usable space. Ask the firm to re-measure on site and to confirm the drawing with you before production starts."
+    },
+    {
+      "q": "How long does a modular kitchen take?",
+      "a": "It depends on design approval, factory production, delivery and installation, and on any civil, plumbing or electrical work needed first. Ask for a written schedule from design sign-off to handover, with dates for delivery and installation."
+    },
+    {
+      "q": "Do I need to inform my housing society?",
+      "a": "Check with your society office before work starts. Ask about permitted working hours and any rules on noise, lift use and debris disposal, especially if the old platform has to be broken out."
+    }
+  ],
+  "prose_status": "draft",
+  "sub_services": []
+}

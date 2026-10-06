@@ -43,7 +43,7 @@ The goal is local search traffic, turned into revenue: construction leads first,
 | Wave | Milestone | State |
 |---|---|---|
 | Plan, contracts, task graph | — | ✅ done (plan approved by owner 6 Oct 2026) |
-| 1: data and docs (D01–D06, DOC1) | M1 data | 🔄 in progress |
+| 1: data and docs (D01–D06, DOC1) | M1 data | 🔄 partial (waterproofing, configs, CSV, docs done); research retries batched per turn |
 | 2–7: scaffold → M1 construction launch | M0/M1 | ⛔ blocked on npm access |
 | 8–12: admin, food, pipeline + Ask, hardening, Marathi/Hindi | M2–M6 | ⏳ not started |
 
@@ -54,6 +54,7 @@ The goal is local search traffic, turned into revenue: construction leads first,
 - accounts and keys, listed in `docs/DEPLOY.md`
 
 ## Progress log (newest first; one line per meaningful change)
+- 2026-10-06: Wave 1 first pass. Done: waterproofing pack (16 cited models, citations verified against search transcripts), D04 configs, D05 CSV templates, DOC1 deploy/policy/legal drafts. Not done: painting (timeout), bathroom/kitchen/house-construction (0 models), D01a/D01b/D02 (API overload), D06a/b (no search budget). **Lesson: WebSearch is capped at 200 calls per turn, shared by all agents. Research now runs in batches across turns with per-agent search budgets; verifiers check citations against the builder's transcript.** Contract: parent services aggregate their sub-services' models; unsourced durations and presets are null.
 - 2026-10-06: Task-graph audit (40 findings) applied. CONTRACTS v2 adds `admin_api`, derived shapes (§6a), the build manifest, literal spec values (§8a) and DOM attributes (§7a). TASKS v2 adds sub-waves, splits large cards, gives every card acceptance criteria, and adds gap-fill tasks D01c and D03f. The original spec is now in `docs/Makemoney.txt`. GitHub push now works.
 - 2026-10-06: Skills installed into `.claude/` (Superpowers, Impeccable, code-review-graph); SessionStart hook and `.mcp.json` added; this CLAUDE.md created.
 - 2026-10-06: Wave 1 started: two parallel workflows (5 construction service packs; localities, dishes, configs, CSV templates, locality guides, docs), each research task followed by an adversarial verifier.

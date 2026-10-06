@@ -1,0 +1,2 @@
+place_name,locality_id,dish_id,variant_label,price_inr,source_url,retrieved_at,valid_until
+EXAMPLE Biryani House,wakad,biryani,"Chicken biryani, full plate",249,https://example.com/menu,2026-10-06,

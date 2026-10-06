@@ -1,0 +1,76 @@
+{
+  "months": {
+    "1": {
+      "services": ["waterproofing", "terrace-waterproofing", "bathroom-renovation", "modular-kitchen", "leakage-repair", "painting", "house-construction"],
+      "headline": "Plan your waterproofing before the monsoon",
+      "cta": "Estimate waterproofing cost",
+      "module": "monsoon-reminder"
+    },
+    "2": {
+      "services": ["waterproofing", "terrace-waterproofing", "bathroom-renovation", "modular-kitchen", "painting", "house-construction"],
+      "headline": "Get waterproofing sorted well before the monsoon",
+      "cta": "Estimate waterproofing cost",
+      "module": "monsoon-reminder"
+    },
+    "3": {
+      "services": ["waterproofing", "terrace-waterproofing", "external-wall-waterproofing", "bathroom-waterproofing", "bathroom-renovation", "modular-kitchen", "painting", "house-construction"],
+      "headline": "Compare waterproofing options before the monsoon",
+      "cta": "Estimate waterproofing cost",
+      "module": "monsoon-reminder"
+    },
+    "4": {
+      "services": ["waterproofing", "terrace-waterproofing", "external-wall-waterproofing", "bathroom-waterproofing", "basement-waterproofing", "painting", "bathroom-renovation", "modular-kitchen", "house-construction"],
+      "headline": "Waterproofing your terrace or walls this season? Check the cost first",
+      "cta": "Estimate waterproofing cost",
+      "module": null
+    },
+    "5": {
+      "services": ["waterproofing", "terrace-waterproofing", "external-wall-waterproofing", "bathroom-waterproofing", "basement-waterproofing", "painting", "bathroom-renovation", "modular-kitchen", "house-construction"],
+      "headline": "Check your terrace, walls and bathrooms for leaks before the monsoon",
+      "cta": "Get a free waterproofing quote",
+      "module": null
+    },
+    "6": {
+      "services": ["leakage-repair", "waterproofing", "terrace-waterproofing", "bathroom-waterproofing", "external-wall-waterproofing", "painting", "bathroom-renovation", "modular-kitchen", "house-construction"],
+      "headline": "Leak or seepage during the rains? See typical repair costs",
+      "cta": "Estimate leak repair cost",
+      "module": null
+    },
+    "7": {
+      "services": ["leakage-repair", "waterproofing", "terrace-waterproofing", "bathroom-waterproofing", "external-wall-waterproofing", "painting", "bathroom-renovation", "modular-kitchen", "house-construction"],
+      "headline": "Water coming through the roof or walls? Start with the repair cost",
+      "cta": "Estimate leak repair cost",
+      "module": null
+    },
+    "8": {
+      "services": ["leakage-repair", "waterproofing", "terrace-waterproofing", "bathroom-waterproofing", "external-wall-waterproofing", "painting", "bathroom-renovation", "modular-kitchen", "house-construction"],
+      "headline": "Leak or seepage during the rains? See typical repair costs",
+      "cta": "Get a free leak repair quote",
+      "module": null
+    },
+    "9": {
+      "services": ["leakage-repair", "waterproofing", "terrace-waterproofing", "external-wall-waterproofing", "bathroom-waterproofing", "painting", "bathroom-renovation", "modular-kitchen", "house-construction"],
+      "headline": "Still seeing seepage? Estimate the repair and plan proper waterproofing",
+      "cta": "Estimate leak repair cost",
+      "module": null
+    },
+    "10": {
+      "services": ["painting", "interior-painting", "exterior-painting", "leakage-repair", "waterproofing", "bathroom-renovation", "modular-kitchen", "house-construction"],
+      "headline": "Getting the house painted before Diwali? Check the cost first",
+      "cta": "Estimate painting cost",
+      "module": null
+    },
+    "11": {
+      "services": ["painting", "interior-painting", "bathroom-renovation", "modular-kitchen", "leakage-repair", "exterior-painting", "waterproofing", "house-construction"],
+      "headline": "Planning painting, bathroom or kitchen work? Compare costs first",
+      "cta": "Estimate painting cost",
+      "module": null
+    },
+    "12": {
+      "services": ["bathroom-renovation", "modular-kitchen", "leakage-repair", "waterproofing", "painting", "house-construction"],
+      "headline": "Renovating a bathroom or kitchen? See typical costs in Pune",
+      "cta": "Estimate bathroom renovation cost",
+      "module": null
+    }
+  }
+}
