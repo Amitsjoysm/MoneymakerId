@@ -1,0 +1,19 @@
+# dependencies and build output
+node_modules/
+dist/
+.astro/
+.wrangler/
+coverage/
+playwright-report/
+test-results/
+
+# secrets
+.env
+.env.*
+!.env.example
+.dev.vars
+
+# local tool state
+.code-review-graph/
+.impeccable/build/
+.DS_Store

@@ -10,6 +10,10 @@ Implements [`PLAN.md`](PLAN.md) (approved) against [`CONTRACTS.md`](CONTRACTS.md
 4. **Done means the Acceptance commands pass.** Logic is built test-first (red, then green, then refactor). The agent finishes with a short report: files changed, tests added, open issues.
 5. **The orchestrator checks between waves:** it re-runs every acceptance command, runs a cross-task review, then commits and pushes. Only then does the next wave start.
 6. 🔌 = needs npm access · 🔑 = needs a real external account or key (otherwise built against mocks and fixtures) · 🧑 = needs owner input or review.
+7. **Skills are mandatory** (installed in `.claude/skills/`; see `CLAUDE.md`):
+   - Every logic task uses `test-driven-development` and finishes with `verification-before-completion`.
+   - **Every UI task** (T03, A01–A03, AD1/AD2*, M01*, F01–F02) uses the `impeccable` skill. T03 starts with `/impeccable init`, which produces `PRODUCT.md` + `DESIGN.md` from plan §15, and ends with `/impeccable audit`. Page tasks run `/impeccable critique` and `/impeccable polish` on their pages before acceptance.
+   - The orchestrator dispatches waves with `subagent-driven-development` and reviews each wave with `requesting-code-review` (plus the code-review-graph `review-changes` skill once the graph is available).
 
 ---
 

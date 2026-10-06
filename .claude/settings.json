@@ -1,0 +1,28 @@
+{
+  "enabledMcpjsonServers": ["code-review-graph"],
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/session-start.sh",
+            "timeout": 1800
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cat >/dev/null; command -v code-review-graph >/dev/null 2>&1 && cd \"$CLAUDE_PROJECT_DIR\" && code-review-graph update --skip-flows >/dev/null 2>&1; exit 0",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}
