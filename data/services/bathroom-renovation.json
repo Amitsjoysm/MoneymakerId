@@ -71,7 +71,7 @@
     {
       "id": "ceramic-tiles",
       "label": "Ceramic tiles",
-      "description": "Glazed tiles with a clay body. RealCostIQ pairs ceramic tiles with its budget package, and Asian Paints puts ceramic tile prices at about ₹60–₹200 per sq ft. Design Cafe advises anti-skid tiles for the floor.",
+      "description": "RealCostIQ pairs ceramic tiles with its budget package, and Asian Paints puts ceramic tile prices at about ₹60–₹200 per sq ft. Design Cafe advises anti-skid tiles for the floor.",
       "sources": [
         {
           "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
@@ -99,7 +99,7 @@
     {
       "id": "vitrified-tiles",
       "label": "Vitrified tiles",
-      "description": "Tiles fired to a dense body, used on bathroom floors and walls. RealCostIQ pairs vitrified tiles with its standard package (₹1–₹1.5 lakh for a 5×7 ft bathroom), and Aecord lists them in mid-range Pune renovations. Choose a slip-resistant finish for a wet floor.",
+      "description": "RealCostIQ pairs vitrified tiles with its standard package (₹1–₹1.5 lakh for a 5×7 ft bathroom), and Aecord lists them in mid-range Pune renovations. Design Cafe advises anti-skid tiles for the floor.",
       "sources": [
         {
           "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
@@ -127,7 +127,7 @@
     {
       "id": "large-format-designer-tiles",
       "label": "Large-format, imported or designer tiles",
-      "description": "Large porcelain slabs, imported tiles or patterned feature tiles. Asian Paints, Aecord and RealCostIQ list them in premium and luxury renovations.",
+      "description": "Large-format porcelain or marble slabs and imported tiles. Asian Paints, Aecord and RealCostIQ list them in premium and luxury renovations.",
       "sources": [
         {
           "url": "https://www.beautifulhomes.asianpaints.com/blogs/estimate-home-interior-cost.html",
@@ -155,7 +155,7 @@
     {
       "id": "natural-stone",
       "label": "Natural stone",
-      "description": "Marble or granite, for example on floors, vanity counters or door thresholds. Aecord lists large-format Italian marble slabs among premium Pune renovations.",
+      "description": "Marble. Aecord lists large-format Italian marble slabs among premium and luxury Pune renovations. No source in this pack prices stone separately.",
       "sources": [
         {
           "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
@@ -169,7 +169,7 @@
     {
       "id": "sanitaryware-and-cp-fittings",
       "label": "Sanitaryware and CP fittings",
-      "description": "The WC, wash basin, taps, diverter and shower. RealCostIQ estimates CP fittings, shower cubicle, geyser and exhaust fan at roughly 38–39% of a renovation's cost and sanitaryware at roughly 20%. Aecord and RealCostIQ name Jaquar and Cera for mid-range work; RealCostIQ names Kohler and American Standard for luxury work.",
+      "description": "The WC, wash basin, taps and shower. RealCostIQ estimates CP fittings, shower cubicle, geyser and exhaust fan at roughly 38–39% of a renovation's cost and sanitaryware at roughly 20%. Aecord names Jaquar and Cera for mid-range Pune work, and RealCostIQ names them for its standard package; RealCostIQ names Kohler and American Standard for its luxury package.",
       "sources": [
         {
           "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
@@ -184,6 +184,13 @@
           "publisher": "Aecord",
           "retrieved_at": "2026-10-06",
           "quote": "This typically includes a complete overhaul with vitrified tiles, branded sanitaryware (Jaquar, Cera), minor plumbing relocations, and new lighting."
+        },
+        {
+          "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+          "title": "Bathroom Renovation Cost Calculator India 2026",
+          "publisher": "RealCostIQ",
+          "retrieved_at": "2026-10-06",
+          "quote": "Standard renovation (5×7 ft, 35 sqft): ₹1L–₹1.5L – includes vitrified tiles, branded CP (Jaquar/Cera), shower, vanity"
         },
         {
           "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",

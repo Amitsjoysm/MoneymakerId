@@ -1,1 +1,394 @@
-[]
+[
+  {
+    "id": "modular-kitchen-laminate-board-budget",
+    "service_id": "modular-kitchen",
+    "scope_id": null,
+    "material_id": "particle-board-mdf",
+    "tier": "budget",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 80000,
+      "expected": 205000,
+      "high": 260000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.74,
+      "labour": 0.15,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.04,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/interiors/design-guides/modular-kitchen-cost-in-pune/",
+        "title": "Modular Kitchen Cost and Design Guide in Pune 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Low-cost modular kitchens in Pune cost 1.5L-2.5L, with straight or L-shaped layouts, laminate finishes, granite counters, and only essential accessories."
+      },
+      {
+        "url": "https://www.nobroker.in/interiors/design-guides/kitchen-interior-design/",
+        "title": "Kitchen Interior Design Cost India| Modular kitchen price 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Budget packages (₹1.8-2.6L) are made of particle board or MDF with laminates, mid-range (₹2.7-3.8L) are made of BWR plywood with quality finishes."
+      },
+      {
+        "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+        "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "Low-budget designs range from ₹80,000 – ₹1.5 lakh for smaller kitchens."
+      },
+      {
+        "url": "https://www.livspace.com/in/interiors/kitchen-price-calculator",
+        "title": "Modular Kitchen Cost Calculator",
+        "publisher": "Livspace",
+        "retrieved_at": "2026-10-06",
+        "quote": "Laminate costs ₹1.5L – ₹2.5L and is budget-friendly and durable, ideal for essential kitchens with simple designs."
+      },
+      {
+        "url": "https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/",
+        "title": "Best Modular Kitchens In Pune At Best Prices",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic modular kitchens (₹2–2.5 Lakhs) are perfect for 1–2 BHK homes and include laminate finishes, standard hardware, and essential storage modules like base and overhead cabinets."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit: one complete kitchen (lump sum per kitchen), not per sq ft; publishers' per-sq-ft figures use different areas (kitchen floor, cabinet or shutter area, running feet) and are not mixed in. None of the sources says whether GST is included. Budget tier = laminate shutters on particle board or MDF, any layout. Cited per-kitchen figures (₹ lakh): NoBroker Pune low-cost 1.5–2.5 (laminate, granite counter, essential accessories) and NoBroker budget packages 1.8–2.6 (particle board or MDF with laminates; NoBroker lists a basic chimney, hob and sink in this package); HomeLane low-budget 0.8–1.5 for smaller kitchens (national); Livspace laminate kitchens 1.5–2.5 (national; from Livspace's kitchen cost calculator page, not its cost-per-sq-ft article); Design Cafe Pune basic 2–2.5 (laminate, standard hardware, base and overhead cabinets, for 1–2 BHK homes). Only NoBroker names the board; the others name only the laminate finish. HomeLane's figure is for smaller kitchens and sets the low end. Range widened to cover all sources. Expected = median of one midpoint per publisher (a publisher's own median when it gives two figures), rounded to the nearest ₹5,000, ties down (midpoints in lakh: NoBroker 2.1, HomeLane 1.15, Livspace 2, Design Cafe 2.25 → ₹205,000). Inclusions differ: NoBroker's package includes basic appliances, the others do not say. Component fractions are an editorial assumption for the calculator, not taken from a source: factory-made cabinets, shutters, hardware and countertop as materials, installation as labour, site measurement and design as preparation, and no repair share for new work. Unpinned search text attributed to NoBroker/Livspace pages put installation or labour at 10–25% of the total; 0.15 sits inside that band. No source gives a minimum job value or a Pune locality difference. Quotes come from search-result text because page fetches were blocked; re-check each figure against the live page before review."
+  },
+  {
+    "id": "modular-kitchen-bwr-plywood-standard",
+    "service_id": "modular-kitchen",
+    "scope_id": null,
+    "material_id": "bwr-plywood",
+    "tier": "standard",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 200000,
+      "expected": 325000,
+      "high": 380000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.74,
+      "labour": 0.15,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.04,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+        "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "Mid-range kitchens priced at ₹2 lakh – ₹3.5 lakh include BWR plywood cabinets, high-quality laminates or acrylic finishes, and storage accessories."
+      },
+      {
+        "url": "https://www.nobroker.in/interiors/design-guides/kitchen-interior-design/",
+        "title": "Kitchen Interior Design Cost India| Modular kitchen price 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Budget packages (₹1.8-2.6L) are made of particle board or MDF with laminates, mid-range (₹2.7-3.8L) are made of BWR plywood with quality finishes."
+      },
+      {
+        "url": "https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/",
+        "title": "Best Modular Kitchens In Pune At Best Prices",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "Mid-range modular kitchens (₹3–3.5 Lakhs) offer a semi-premium feel with a mix of laminate and glass finishes, ideal for mid-sized families looking for improved aesthetics and better storage."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit: one complete kitchen (lump sum per kitchen), not per sq ft; publishers' per-sq-ft figures use different areas (kitchen floor, cabinet or shutter area, running feet) and are not mixed in. None of the sources says whether GST is included. Standard tier = BWR or BWP plywood cabinets with laminate shutters, any layout. Cited per-kitchen figures (₹ lakh): HomeLane mid-range 2–3.5 (BWR plywood cabinets, high-quality laminates or acrylic finishes, storage accessories; national); NoBroker mid-range packages 2.7–3.8 (BWR plywood with quality finishes; national); Design Cafe Pune mid-range 3–3.5 (a mix of laminate and glass finishes). The finish is not strictly laminate in every source: HomeLane allows acrylic and Design Cafe adds glass, both of which this site files under premium. Range widened to cover all sources. Expected = median of one midpoint per publisher, rounded to the nearest ₹5,000, ties down (midpoints in lakh: HomeLane 2.75, NoBroker 3.25, Design Cafe 3.25 → ₹325,000). Component fractions are an editorial assumption for the calculator, not taken from a source: factory-made cabinets, shutters, hardware and countertop as materials, installation as labour, site measurement and design as preparation, and no repair share for new work. Unpinned search text attributed to NoBroker/Livspace pages put installation or labour at 10–25% of the total; 0.15 sits inside that band. No source gives a minimum job value or a Pune locality difference. Quotes come from search-result text because page fetches were blocked; re-check each figure against the live page before review."
+  },
+  {
+    "id": "modular-kitchen-acrylic-pu-premium",
+    "service_id": "modular-kitchen",
+    "scope_id": null,
+    "material_id": "acrylic-finish",
+    "tier": "premium",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 250000,
+      "expected": 450000,
+      "high": 700000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.74,
+      "labour": 0.15,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.04,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.livspace.com/in/interiors/kitchen-price-calculator",
+        "title": "Modular Kitchen Cost Calculator",
+        "publisher": "Livspace",
+        "retrieved_at": "2026-10-06",
+        "quote": "Acrylic ranges from ₹2.5L – ₹4L and is a mid-range premium option with a high-gloss, sleek finish for a modern look."
+      },
+      {
+        "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+        "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "Luxury kitchens at ₹4 lakh – ₹5 lakh or more feature premium finishes like Italian veneers, acrylics, glass shutters, built-in appliances, and advanced hardware systems."
+      },
+      {
+        "url": "https://www.nobroker.in/interiors/design-guides/modular-kitchen-cost-in-pune/",
+        "title": "Modular Kitchen Cost and Design Guide in Pune 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium Package typically includes acrylic/membrane finishes, quartz countertops, premium appliances, and high-end hardware like Hettich mechanisms."
+      },
+      {
+        "url": "https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/",
+        "title": "Best Modular Kitchens In Pune At Best Prices",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium modular kitchens (₹4 Lakhs and above) feature high-end finishes such as acrylic, PU, or membrane with soft-close drawers, intelligent corner units, and integrated lighting."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit: one complete kitchen (lump sum per kitchen), not per sq ft; publishers' per-sq-ft figures use different areas (kitchen floor, cabinet or shutter area, running feet) and are not mixed in. None of the sources says whether GST is included. Premium tier = acrylic, PU, membrane, veneer or glass shutters, any layout. Cited per-kitchen figures (₹ lakh): Livspace acrylic 2.5–4 and PU 3–5 (national; from Livspace's kitchen cost calculator page, not its cost-per-sq-ft article); HomeLane luxury 4–5 'or more' (Italian veneers, acrylics, glass shutters, built-in appliances; national); NoBroker Pune premium bands L-shaped 4.1–5.5, U-shaped 5.3–7 and parallel 4.9–6.5 (its premium package lists acrylic or membrane finishes, quartz countertops, premium appliances and Hettich hardware); Design Cafe Pune premium '₹4 Lakhs and above' (acrylic, PU or membrane), with acrylic from ₹3 lakh and PU from ₹4.5 lakh. Design Cafe's figures are open-ended, so they give no midpoint; they sit inside the range. Range widened to cover all sources; the high end is NoBroker's U-shaped premium band. Expected = median of one midpoint per publisher (a publisher's own median when it gives several figures), rounded to the nearest ₹5,000, ties down (midpoints in lakh: Livspace 3.625, HomeLane 4.5, NoBroker 5.7 → ₹450,000). HomeLane's and NoBroker's premium figures include appliances; Livspace's do not say, so the upper half of the range may include appliances. Component fractions are an editorial assumption for the calculator, not taken from a source: factory-made cabinets, shutters, hardware and countertop as materials, installation as labour, site measurement and design as preparation, and no repair share for new work. Unpinned search text attributed to NoBroker/Livspace pages put installation or labour at 10–25% of the total; 0.15 sits inside that band. No source gives a minimum job value or a Pune locality difference. Quotes come from search-result text because page fetches were blocked; re-check each figure against the live page before review."
+  },
+  {
+    "id": "modular-kitchen-straight-standard",
+    "service_id": "modular-kitchen",
+    "scope_id": "straight",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 110000,
+      "expected": 240000,
+      "high": 450000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.74,
+      "labour": 0.15,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.04,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cost-pune/",
+        "title": "2026 Modular Kitchen Cost in Pune: Price & Design Tips",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "Straight kitchens are the most economical for smaller flats, and can start around INR 1.1 to INR 2 lakhs."
+      },
+      {
+        "url": "https://www.nobroker.in/interiors/design-guides/modular-kitchen-cost-in-pune/",
+        "title": "Modular Kitchen Cost and Design Guide in Pune 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Modular kitchen prices in Pune depend on the type of kitchen: straight (1.5L-4.5L), L-shaped (2L-5.5L), and U-shaped (2.8L-7L)."
+      },
+      {
+        "url": "https://www.designcafe.com/blog/modular-kitchen-interiors/kitchen-interior-design-cost-in-mumbai/",
+        "title": "Kitchen Interior Design Cost in Mumbai: 2026 Price Guide",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "Popular kitchen styles include L-shaped kitchens ₹2.5 lakh–₹4.5 lakh, parallel kitchens ₹3 lakh–₹5 lakh, and straight kitchens ₹1.8 lakh–₹3 lakh."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit: one complete kitchen (lump sum per kitchen), not per sq ft; publishers' per-sq-ft figures use different areas (kitchen floor, cabinet or shutter area, running feet) and are not mixed in. None of the sources says whether GST is included. Layout model filed under the standard tier. Only NoBroker splits layouts by finish grade (low-cost, mid-range, premium); where it does, its mid-range band is used. The other publishers give one range per layout covering all finishes, so low and high here span budget to premium finishes. Cited per-kitchen figures for a straight kitchen (₹ lakh): HomeLane Pune 'around' 1.1–2 for smaller flats; NoBroker Pune 1.5–4.5 (no finish split for straight kitchens); Design Cafe Mumbai 1.8–3. HomeLane's national page gives 0.75–1.5 (not used; the Pune figure is preferred). Range widened to cover the cited sources. Expected = median of one midpoint per publisher, rounded to the nearest ₹5,000, ties down (midpoints in lakh: HomeLane 1.55, NoBroker 3, Design Cafe 2.4 → ₹240,000). Component fractions are an editorial assumption for the calculator, not taken from a source: factory-made cabinets, shutters, hardware and countertop as materials, installation as labour, site measurement and design as preparation, and no repair share for new work. Unpinned search text attributed to NoBroker/Livspace pages put installation or labour at 10–25% of the total; 0.15 sits inside that band. No source gives a minimum job value or a Pune locality difference. Quotes come from search-result text because page fetches were blocked; re-check each figure against the live page before review."
+  },
+  {
+    "id": "modular-kitchen-l-shaped-standard",
+    "service_id": "modular-kitchen",
+    "scope_id": "l-shaped",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 150000,
+      "expected": 335000,
+      "high": 500000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.74,
+      "labour": 0.15,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.04,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cost-pune/",
+        "title": "2026 Modular Kitchen Cost in Pune: Price & Design Tips",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "L-shaped kitchens are the most popular in Pune apartments, usually ranging between INR 2.4 to INR 3 lakhs depending on materials, finish, area and storage depth."
+      },
+      {
+        "url": "https://www.nobroker.in/interiors/design-guides/modular-kitchen-cost-in-pune/",
+        "title": "Modular Kitchen Cost and Design Guide in Pune 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Mid-range: ₹2.9L - ₹4L"
+      },
+      {
+        "url": "https://www.designcafe.com/blog/modular-kitchen-interiors/kitchen-interior-design-cost-in-mumbai/",
+        "title": "Kitchen Interior Design Cost in Mumbai: 2026 Price Guide",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "Popular kitchen styles include L-shaped kitchens ₹2.5 lakh–₹4.5 lakh, parallel kitchens ₹3 lakh–₹5 lakh, and straight kitchens ₹1.8 lakh–₹3 lakh."
+      },
+      {
+        "url": "https://www.designcafe.com/blog/modular-kitchen-interiors/modular-kitchen-cost-ahmedabad/",
+        "title": "How Much Does a Modular Kitchen Cost in Ahmedabad?",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "In Ahmedabad: L-shaped kitchens cost ₹2.5–₹5 lakh, while U-shaped kitchens cost ₹4–₹6 lakh"
+      },
+      {
+        "url": "https://www.beautifulhomes.asianpaints.com/sleek-kitchens/l-shaped.html",
+        "title": "L-Shaped Modular Kitchen Designs for Modern Homes",
+        "publisher": "Asian Paints (Beautiful Homes)",
+        "retrieved_at": "2026-10-06",
+        "quote": "The estimated cost range for an L-shaped modular kitchen is Rs. 1.5 lakh – Rs. 5 lakh+, depending on size, materials, and finishes."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit: one complete kitchen (lump sum per kitchen), not per sq ft; publishers' per-sq-ft figures use different areas (kitchen floor, cabinet or shutter area, running feet) and are not mixed in. None of the sources says whether GST is included. Layout model filed under the standard tier. Only NoBroker splits layouts by finish grade (low-cost, mid-range, premium); where it does, its mid-range band is used. The other publishers give one range per layout covering all finishes, so low and high here span budget to premium finishes. Cited per-kitchen figures for an L-shaped kitchen (₹ lakh): HomeLane Pune 2.4–3; NoBroker Pune mid-range 2.9–4 for an 8×6 ft L-shaped kitchen with 14 ft of workspace (its low-cost band is 2–2.8 and premium 4.1–5.5); Design Cafe Mumbai 2.5–4.5 and Ahmedabad 2.5–5; Asian Paints (Beautiful Homes) 1.5–5 '+' (national). Range widened to cover all sources. Expected = median of one midpoint per publisher (Design Cafe's own median of its two city figures), rounded to the nearest ₹5,000, ties down (midpoints in lakh: HomeLane 2.7, NoBroker 3.45, Design Cafe 3.625, Asian Paints (Beautiful Homes) 3.25 → ₹335,000). Component fractions are an editorial assumption for the calculator, not taken from a source: factory-made cabinets, shutters, hardware and countertop as materials, installation as labour, site measurement and design as preparation, and no repair share for new work. Unpinned search text attributed to NoBroker/Livspace pages put installation or labour at 10–25% of the total; 0.15 sits inside that band. No source gives a minimum job value or a Pune locality difference. Quotes come from search-result text because page fetches were blocked; re-check each figure against the live page before review."
+  },
+  {
+    "id": "modular-kitchen-u-shaped-standard",
+    "service_id": "modular-kitchen",
+    "scope_id": "u-shaped",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 180000,
+      "expected": 455000,
+      "high": 600000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.74,
+      "labour": 0.15,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.04,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/interiors/design-guides/modular-kitchen-cost-in-pune/",
+        "title": "Modular Kitchen Cost and Design Guide in Pune 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Mid-range: ₹3.9L - ₹5.2L"
+      },
+      {
+        "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-prices-in-india/",
+        "title": "Decoding Modular Kitchen Prices in India with Real Costs",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "Straight Kitchen: ₹75,000-1,50,000; L-Shaped Kitchen: ₹150,000–300,000; U-Shaped Kitchen: ₹1,80,000-3,50,000; Island Kitchen: ₹2,50,000-5,00,000+."
+      },
+      {
+        "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cost-pune/",
+        "title": "2026 Modular Kitchen Cost in Pune: Price & Design Tips",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "U-shaped kitchens start from INR 3 lakhs and go upward."
+      },
+      {
+        "url": "https://www.designcafe.com/blog/modular-kitchen-interiors/modular-kitchen-cost-ahmedabad/",
+        "title": "How Much Does a Modular Kitchen Cost in Ahmedabad?",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "In Ahmedabad: L-shaped kitchens cost ₹2.5–₹5 lakh, while U-shaped kitchens cost ₹4–₹6 lakh"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit: one complete kitchen (lump sum per kitchen), not per sq ft; publishers' per-sq-ft figures use different areas (kitchen floor, cabinet or shutter area, running feet) and are not mixed in. None of the sources says whether GST is included. Layout model filed under the standard tier. Only NoBroker splits layouts by finish grade (low-cost, mid-range, premium); where it does, its mid-range band is used. The other publishers give one range per layout covering all finishes, so low and high here span budget to premium finishes. Cited per-kitchen figures for a U-shaped kitchen (₹ lakh): NoBroker Pune mid-range 3.9–5.2 for a 10×8×6 ft U-shaped kitchen with 24 ft of workspace (low-cost 2.8–3.8, premium 5.3–7); HomeLane national 1.8–3.5, while HomeLane's Pune page says U-shaped kitchens start from 3 (open-ended, so no midpoint; it conflicts with the national figure and points to higher Pune prices); Design Cafe Ahmedabad 4–6. Range widened to cover the closed ranges. Expected = median of one midpoint per publisher, rounded to the nearest ₹5,000, ties down (midpoints in lakh: NoBroker 4.55, HomeLane 2.65, Design Cafe 5 → ₹455,000). No Pune figure for this layout comes from a second publisher with a closed range. Component fractions are an editorial assumption for the calculator, not taken from a source: factory-made cabinets, shutters, hardware and countertop as materials, installation as labour, site measurement and design as preparation, and no repair share for new work. Unpinned search text attributed to NoBroker/Livspace pages put installation or labour at 10–25% of the total; 0.15 sits inside that band. No source gives a minimum job value or a Pune locality difference. Quotes come from search-result text because page fetches were blocked; re-check each figure against the live page before review."
+  },
+  {
+    "id": "modular-kitchen-parallel-standard",
+    "service_id": "modular-kitchen",
+    "scope_id": "parallel",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 200000,
+      "expected": 400000,
+      "high": 500000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.74,
+      "labour": 0.15,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.04,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/interiors/design-guides/modular-kitchen-cost-in-pune/",
+        "title": "Modular Kitchen Cost and Design Guide in Pune 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Mid-range: ₹3.6L - ₹4.8L"
+      },
+      {
+        "url": "https://www.livspace.com/in/magazine/modular-kitchen-cost-per-sq-ft",
+        "title": "Modular Kitchen Cost Per Sq. Ft. in 2026: Everything You Need to Know About Pricing",
+        "publisher": "Livspace",
+        "retrieved_at": "2026-10-06",
+        "quote": "Straight/Parallel Kitchen: Average size 80-100 sq. ft., cost range ₹2 Lakhs–₹3.8 Lakhs, with cost per sq. ft. of ₹2,600–₹4,000"
+      },
+      {
+        "url": "https://www.designcafe.com/blog/modular-kitchen-interiors/kitchen-interior-design-cost-in-mumbai/",
+        "title": "Kitchen Interior Design Cost in Mumbai: 2026 Price Guide",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "Popular kitchen styles include L-shaped kitchens ₹2.5 lakh–₹4.5 lakh, parallel kitchens ₹3 lakh–₹5 lakh, and straight kitchens ₹1.8 lakh–₹3 lakh."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit: one complete kitchen (lump sum per kitchen), not per sq ft; publishers' per-sq-ft figures use different areas (kitchen floor, cabinet or shutter area, running feet) and are not mixed in. None of the sources says whether GST is included. Layout model filed under the standard tier. Only NoBroker splits layouts by finish grade (low-cost, mid-range, premium); where it does, its mid-range band is used. The other publishers give one range per layout covering all finishes, so low and high here span budget to premium finishes. Cited per-kitchen figures for a parallel kitchen (₹ lakh): NoBroker Pune mid-range 3.6–4.8 for a kitchen with 12×5 ft on both walls and 24 ft of workspace (low-cost 2.5–3.5, premium 4.9–6.5); Livspace 2–3.8 for an average 80–100 sq ft kitchen (national; the cited row is labelled 'Straight/Parallel' in one search reading and 'Parallel' in another, so Livspace is used only for this model); Design Cafe Mumbai 3–5. NoBroker's reference parallel kitchen has more workspace (24 ft) than its L-shaped one (14 ft), which is why this model is above the L-shaped model. Range widened to cover all sources. Expected = median of one midpoint per publisher, rounded to the nearest ₹5,000, ties down (midpoints in lakh: NoBroker 4.2, Livspace 2.9, Design Cafe 4 → ₹400,000). Component fractions are an editorial assumption for the calculator, not taken from a source: factory-made cabinets, shutters, hardware and countertop as materials, installation as labour, site measurement and design as preparation, and no repair share for new work. Unpinned search text attributed to NoBroker/Livspace pages put installation or labour at 10–25% of the total; 0.15 sits inside that band. No source gives a minimum job value or a Pune locality difference. Quotes come from search-result text because page fetches were blocked; re-check each figure against the live page before review."
+  }
+]

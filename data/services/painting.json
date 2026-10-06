@@ -558,7 +558,7 @@
     {
       "id": "exterior-texture",
       "label": "Exterior texture finish",
-      "description": "A textured exterior coating. Nerolac puts basic exterior texture finishes at around ₹60 per sq ft, with layered textures costing more; AapkaPainter gives ₹55–₹85 per sq ft (labour and material) in Chennai.",
+      "description": "A textured exterior coating. Nerolac puts basic exterior texture finishes at around ₹60 per sq ft, with layered textures costing more; a search of Nerolac's site also returned the statement that labour cost is extra, so that figure may not include labour. AapkaPainter gives ₹55–₹85 per sq ft (labour and material) in Chennai. Because the two figures may not be on the same basis, no cost model is offered for exterior texture yet.",
       "sources": [
         {
           "url": "https://www.nerolac.com/wall-paint/exterior-wall-texture-design",
@@ -573,6 +573,13 @@
           "publisher": "AapkaPainter",
           "retrieved_at": "2026-10-06",
           "quote": "For textured exterior finishes in Chennai, labour-only rates are ₹20–35/sq ft and labour + material rates are ₹55–85/sq ft."
+        },
+        {
+          "url": "https://www.nerolac.com/wall-paint/exterior-wall-texture-design",
+          "title": "Exterior Wall Texture Design",
+          "publisher": "Kansai Nerolac Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Labour cost is extra and will vary depending on the overall skill and experience of the labour employed"
         }
       ]
     }
@@ -617,7 +624,7 @@
   "faq": [
     {
       "q": "How much does house painting cost in Pune per sq ft?",
-      "a": "It depends on the paint grade and on how much preparation the walls need. Our draft models, built from sources retrieved in October 2026 (several of them national rather than Pune-specific), give these labour-and-material rates per sq ft of paintable area. Interior: distemper ₹7–₹20 (expected ₹12), entry-level emulsion ₹9–₹30 (₹15), premium emulsion such as Apcolite ₹14–₹40 (₹22), luxury emulsion such as Royale ₹23–₹55 (₹35), texture ₹80–₹400 (₹140). Exterior: entry-level emulsion ₹13–₹30 (₹18), weatherproof emulsion ₹18–₹45 (₹32), premium weatherproof systems ₹20–₹68 (₹37), texture ₹55–₹85 (₹65). These are indicative ranges, not quotations."
+      "a": "It depends on the paint grade and on how much preparation the walls need. Our draft models, built from sources retrieved in October 2026 (several of them national rather than Pune-specific), give these labour-and-material rates per sq ft of paintable area. Interior: distemper ₹7–₹20 (expected ₹12), entry-level emulsion ₹9–₹30 (₹15), premium emulsion such as Apcolite ₹14–₹40 (₹22), luxury emulsion such as Royale ₹23–₹55 (₹35), texture ₹80–₹400 (₹140). Exterior: entry-level emulsion ₹13–₹30 (₹18), weatherproof emulsion ₹18–₹45 (₹32), premium weatherproof systems ₹20–₹68 (₹37). Exterior texture has no model yet: AapkaPainter gives ₹55–₹85 per sq ft (labour and material, Chennai) and Nerolac about ₹60 for basic finishes, possibly without labour. These are indicative ranges, not quotations."
     },
     {
       "q": "How is paintable area worked out from carpet area?",
@@ -1308,7 +1315,7 @@
         {
           "id": "exterior-texture",
           "label": "Exterior texture finish",
-          "description": "A textured exterior coating. Nerolac puts basic exterior texture finishes at around ₹60 per sq ft, with layered textures costing more; AapkaPainter gives ₹55–₹85 per sq ft (labour and material) in Chennai.",
+          "description": "A textured exterior coating. Nerolac puts basic exterior texture finishes at around ₹60 per sq ft, with layered textures costing more; a search of Nerolac's site also returned the statement that labour cost is extra, so that figure may not include labour. AapkaPainter gives ₹55–₹85 per sq ft (labour and material) in Chennai. Because the two figures may not be on the same basis, no cost model is offered for exterior texture yet.",
           "sources": [
             {
               "url": "https://www.nerolac.com/wall-paint/exterior-wall-texture-design",
@@ -1323,6 +1330,13 @@
               "publisher": "AapkaPainter",
               "retrieved_at": "2026-10-06",
               "quote": "For textured exterior finishes in Chennai, labour-only rates are ₹20–35/sq ft and labour + material rates are ₹55–85/sq ft."
+            },
+            {
+              "url": "https://www.nerolac.com/wall-paint/exterior-wall-texture-design",
+              "title": "Exterior Wall Texture Design",
+              "publisher": "Kansai Nerolac Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Labour cost is extra and will vary depending on the overall skill and experience of the labour employed"
             }
           ]
         }
@@ -1361,7 +1375,7 @@
       "faq": [
         {
           "q": "How much does exterior painting cost per sq ft in Pune?",
-          "a": "Our draft models give these labour-and-material rates per sq ft of exterior wall: entry-level emulsion such as Ace ₹13–₹30 (expected ₹18), weatherproof emulsion such as Apex ₹18–₹45 (₹32), premium systems such as Apex Ultima or Ultima Protek ₹20–₹68 (₹37) and texture ₹55–₹85 (₹65). AapkaPainter's Pune figures (₹26–₹40 standard, ₹42–₹68 premium) are higher than the national figures."
+          "a": "Our draft models give these labour-and-material rates per sq ft of exterior wall: entry-level emulsion such as Ace ₹13–₹30 (expected ₹18), weatherproof emulsion such as Apex ₹18–₹45 (₹32), premium systems such as Apex Ultima or Ultima Protek ₹20–₹68 (₹37). There is no exterior texture model yet: AapkaPainter gives ₹55–₹85 per sq ft (labour and material, Chennai) and Nerolac about ₹60 for basic finishes, possibly without labour, so the two cannot be combined. AapkaPainter's Pune figures (₹26–₹40 standard, ₹42–₹68 premium) are higher than the national figures."
         },
         {
           "q": "Why does exterior painting cost more than interior painting?",

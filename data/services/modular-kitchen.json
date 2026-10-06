@@ -2,106 +2,327 @@
   "id": "modular-kitchen",
   "name": "Modular Kitchen",
   "parent_id": null,
-  "unit": "sqft",
+  "unit": "unit",
   "area_presets": [],
   "scope_options": [
     {
-      "id": "cabinets-only",
-      "label": "Modular cabinets only",
-      "description": "Factory-made base, wall and tall cabinets: carcasses, shutters, hinges, drawer channels, handles and plinth, installed on an existing platform or floor. Countertop, sink, tap, appliances, tiling, plumbing and electrical work are excluded or priced separately. Quantity is the total front area of the cabinets in sq ft (width × height of each unit)."
+      "id": "straight",
+      "label": "Straight (single-wall) kitchen",
+      "description": "All base and wall cabinets run along one wall. Priced as one complete kitchen: carcasses, shutters, hinges, drawer channels, handles and fitting. Whether the countertop, sink, chimney, hob, accessories and civil, plumbing or electrical work are included differs between firms, so check each quote."
     },
     {
-      "id": "cabinets-and-countertop",
-      "label": "Cabinets with countertop",
-      "description": "Everything in 'Modular cabinets only', plus a stone countertop with sink and hob cut-outs, and fitting of the sink and tap. Appliances and wall (dado) tiling are excluded or priced separately. Quantity is the total front area of the cabinets in sq ft."
+      "id": "l-shaped",
+      "label": "L-shaped kitchen",
+      "description": "Cabinets run along two adjoining walls and meet at one corner. Priced as one complete kitchen. NoBroker's Pune price bands use an 8×6 ft L-shaped kitchen with 14 ft of workspace as the reference size."
     },
     {
-      "id": "full-kitchen-remodel",
-      "label": "Full kitchen remodel",
-      "description": "Removal of the old platform and cabinets, changes to plumbing and electrical points, wall and floor tiling where needed, new countertop, cabinets, sink and tap, fitting of the chimney and hob, and debris removal. Quantity is the total front area of the new cabinets in sq ft; civil, plumbing and electrical items should also be listed separately in the quote."
+      "id": "u-shaped",
+      "label": "U-shaped kitchen",
+      "description": "Cabinets run along three walls, with two corners. Priced as one complete kitchen. NoBroker's Pune price bands use a 10×8×6 ft U-shaped kitchen with 24 ft of workspace as the reference size."
     },
     {
-      "id": "shutter-replacement",
-      "label": "Shutter replacement (keep existing cabinets)",
-      "description": "The existing cabinet boxes are kept after checking they are sound. Only the shutters, handles and hinges are replaced, and drawer channels where needed. Quantity is the total shutter area in sq ft."
+      "id": "parallel",
+      "label": "Parallel (galley) kitchen",
+      "description": "Cabinets run along two facing walls with a walkway between them. Priced as one complete kitchen. NoBroker's Pune price bands use 12×5 ft on both walls, 24 ft of workspace, as the reference size."
     }
   ],
   "materials": [
     {
-      "id": "bwp-plywood",
-      "label": "BWP plywood carcass",
-      "description": "Plywood bonded with boiling-water-proof (BWP) grade adhesive, used for cabinet boxes. It is the grade to ask for in the sink unit and other base units that may get wet.",
-      "sources": []
+      "id": "particle-board-mdf",
+      "label": "Particle board or MDF carcass",
+      "description": "Engineered boards made from wood particles (particle board) or wood fibres (MDF), used for cabinet boxes and shutters. Livspace lists MDF at ₹40–₹90 and particle board at ₹30–₹60 per sq ft of board; HomeLane gives ₹60–₹120 per sq ft for MDF. NoBroker describes its budget kitchen packages as particle board or MDF with laminates.",
+      "sources": [
+        {
+          "url": "https://www.livspace.com/in/magazine/mdf-vs-particle-board-differences-everything-you-need-to-know",
+          "title": "MDF vs Particle Board Differences: Everything You Need to Know",
+          "publisher": "Livspace",
+          "retrieved_at": "2026-10-06",
+          "quote": "MDF costs ₹40 – ₹90 per sq. ft., compared to particle board at ₹30 – ₹60 per sq. ft."
+        },
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+          "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "MDF is the least expensive, at INR 60-120 per sq. ft."
+        },
+        {
+          "url": "https://www.nobroker.in/interiors/design-guides/kitchen-interior-design/",
+          "title": "Kitchen Interior Design Cost India| Modular kitchen price 2026",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Budget packages (₹1.8-2.6L) are made of particle board or MDF with laminates, mid-range (₹2.7-3.8L) are made of BWR plywood with quality finishes."
+        }
+      ]
     },
     {
-      "id": "bwr-mr-plywood",
-      "label": "BWR or MR plywood carcass",
-      "description": "Plywood bonded with boiling-water-resistant (BWR) or moisture-resistant (MR) grade adhesive. These grades are rated below BWP for water exposure.",
-      "sources": []
+      "id": "bwr-plywood",
+      "label": "BWR plywood carcass",
+      "description": "Plywood bonded with boiling-water-resistant (BWR) adhesive, used for cabinet boxes. HomeLane and NoBroker both describe their mid-range kitchens as built with BWR plywood, and HomeLane's Pune guide recommends BWP or BWR plywood for Pune's humidity.",
+      "sources": [
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+          "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "Mid-range kitchens priced at ₹2 lakh – ₹3.5 lakh include BWR plywood cabinets, high-quality laminates or acrylic finishes, and storage accessories."
+        },
+        {
+          "url": "https://www.nobroker.in/interiors/design-guides/kitchen-interior-design/",
+          "title": "Kitchen Interior Design Cost India| Modular kitchen price 2026",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Budget packages (₹1.8-2.6L) are made of particle board or MDF with laminates, mid-range (₹2.7-3.8L) are made of BWR plywood with quality finishes."
+        },
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cost-pune/",
+          "title": "2026 Modular Kitchen Cost in Pune: Price & Design Tips",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "BWP/BWR plywood interiors are recommended for Pune's humidity; laminate shutters are the most economical choice."
+        }
+      ]
+    },
+    {
+      "id": "bwp-plywood",
+      "label": "BWP plywood carcass",
+      "description": "Plywood bonded with boiling-water-proof (BWP) adhesive, used for cabinet boxes. HomeLane says BWP or BWR plywood is used for the core because it resists moisture better than MDF or particle board. NoBroker gives ₹1,800–₹2,800 per sq ft for mid-range kitchens built in BWP plywood with laminate or membrane shutters.",
+      "sources": [
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-prices-in-india/",
+          "title": "Decoding Modular Kitchen Prices in India with Real Costs",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "BWP or BWR plywood is used for the core because it resists moisture better than MDF or particle board."
+        },
+        {
+          "url": "https://www.nobroker.in/forum/what-is-bwp-plywood-modular-kitchen-cost/",
+          "title": "What is BWP Plywood Price in Modular Kitchen 2026",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Standard or mid-range kitchens using BWP plywood with laminate or membrane finish cost Rs. 1,800 to Rs. 2,800 per sq ft."
+        },
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cost-pune/",
+          "title": "2026 Modular Kitchen Cost in Pune: Price & Design Tips",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "BWP/BWR plywood interiors are recommended for Pune's humidity; laminate shutters are the most economical choice."
+        }
+      ]
     },
     {
       "id": "hdhmr-board",
       "label": "HDHMR board",
-      "description": "High-density, high-moisture-resistance fibreboard, an engineered board used for carcasses and shutters as an alternative to plywood.",
-      "sources": []
-    },
-    {
-      "id": "particle-board-mdf",
-      "label": "Particle board or MDF",
-      "description": "Engineered boards made from wood particles (particle board) or wood fibres (MDF), often supplied pre-laminated.",
-      "sources": []
+      "description": "HDHMR board, an engineered board offered for kitchen cabinets and furniture. HomeLane publishes an HDHMR guide for kitchen cabinets and home furniture, and Design Cafe one for home interiors; both were seen only as page titles, so no properties or prices are cited here. Ask the firm for the brand, thickness and grade quoted.",
+      "sources": [
+        {
+          "url": "https://www.homelane.com/design-ideas/home-interior-design/hdhmr-board-materials/",
+          "title": "HDHMR Board Guide for Kitchen Cabinets and Home Furniture",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        },
+        {
+          "url": "https://www.designcafe.com/blog/home-interiors/hdhmr-sheets-guide/",
+          "title": "HDHMR Sheet Guide for Home Interiors, Benefits And Design Tips",
+          "publisher": "Design Cafe",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
     },
     {
       "id": "laminate-finish",
       "label": "Laminate shutters",
-      "description": "Decorative laminate sheets pressed onto the shutter board, available in matt, textured and gloss surfaces. The edges are sealed with edge banding.",
-      "sources": []
+      "description": "Decorative laminate sheets pressed onto the shutter board. HomeLane says laminates come in glossy, matte and textured varieties and lists a laminate finish at ₹700–₹900 per sq ft. Design Cafe lists laminate kitchens in Pune from ₹1.5 lakh.",
+      "sources": [
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+          "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "Laminates are available in glossy, matte, or textured varieties and are stylish, affordable, and easy to maintain."
+        },
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-prices-in-india/",
+          "title": "Decoding Modular Kitchen Prices in India with Real Costs",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "Laminate Finish: ₹700-900 per sq ft; Acrylic Finish: ₹1500+ per sq ft; Membrane/PVC Finish: ₹1,100-1,400 per sq ft; Polyester Finish: ₹1,100-1,500 per sq ft; Solid Wood: ₹1,800-3,000+ per sq ft."
+        },
+        {
+          "url": "https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/",
+          "title": "Best Modular Kitchens In Pune At Best Prices",
+          "publisher": "Design Cafe",
+          "retrieved_at": "2026-10-06",
+          "quote": "Popular finish options in Pune include laminated finishes starting from ₹1.5 lakhs, acrylic finishes from ₹3 lakhs, veneer finishes from ₹4 lakhs, and polyurethane finishes from ₹4.5 lakhs."
+        }
+      ]
     },
     {
       "id": "acrylic-finish",
       "label": "Acrylic shutters",
-      "description": "Acrylic sheets bonded to the shutter board, giving a smooth, even face.",
-      "sources": []
+      "description": "Acrylic sheets bonded to the shutter board. Livspace gives acrylic shutter prices from ₹1,500 to ₹5,500 per sq ft; HomeLane gives ₹1,500–₹3,500 per sq ft for acrylic kitchens. Design Cafe lists acrylic kitchens in Pune from ₹3 lakh.",
+      "sources": [
+        {
+          "url": "https://www.livspace.com/in/magazine/materials-101-acrylic-kitchen-cabinets",
+          "title": "A 2026 Guide to Acrylic Kitchen Cabinets in India (Costs Included!)",
+          "publisher": "Livspace",
+          "retrieved_at": "2026-10-06",
+          "quote": "Premium acrylic finish costs ₹5,500 per sq ft (shutter price), though acrylic finishes start from ₹1500/sq. ft. (shutter price)"
+        },
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+          "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "The acrylic modular kitchen price in India can range from ₹ 1,500 to ₹ 3,500 per square foot."
+        },
+        {
+          "url": "https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/",
+          "title": "Best Modular Kitchens In Pune At Best Prices",
+          "publisher": "Design Cafe",
+          "retrieved_at": "2026-10-06",
+          "quote": "Popular finish options in Pune include laminated finishes starting from ₹1.5 lakhs, acrylic finishes from ₹3 lakhs, veneer finishes from ₹4 lakhs, and polyurethane finishes from ₹4.5 lakhs."
+        }
+      ]
     },
     {
       "id": "membrane-finish",
       "label": "Membrane (PVC foil) shutters",
-      "description": "PVC foil vacuum-pressed onto shaped MDF shutters, which allows grooved or routed shutter designs.",
-      "sources": []
+      "description": "Livspace describes membrane as PVC foil wrapped around MDF or HDF-HMR board under high vacuum pressure. HomeLane lists a membrane/PVC finish at ₹1,100–₹1,400 per sq ft.",
+      "sources": [
+        {
+          "url": "https://www.livspace.com/in/magazine/materials101-laminate-membrane-guide",
+          "title": "What is a Membrane Finish, and Why Should You Choose It?",
+          "publisher": "Livspace",
+          "retrieved_at": "2026-10-06",
+          "quote": "Membrane is essentially Polyvinyl Chloride (PVC) foil that is wrapped around either MDF or HDF-HMR under a high vacuum pressure to produce a membrane finish panel."
+        },
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-prices-in-india/",
+          "title": "Decoding Modular Kitchen Prices in India with Real Costs",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "Laminate Finish: ₹700-900 per sq ft; Acrylic Finish: ₹1500+ per sq ft; Membrane/PVC Finish: ₹1,100-1,400 per sq ft; Polyester Finish: ₹1,100-1,500 per sq ft; Solid Wood: ₹1,800-3,000+ per sq ft."
+        }
+      ]
     },
     {
-      "id": "pu-lacquer-finish",
-      "label": "PU or lacquer painted shutters",
-      "description": "Polyurethane (PU) paint or lacquer sprayed onto MDF or HDHMR shutters and cured, in matt or gloss.",
-      "sources": []
+      "id": "pu-finish",
+      "label": "PU (polyurethane) painted shutters",
+      "description": "Polyurethane (PU) paint applied over the shutter board. HomeLane says PU finishes come in many colours, patterns and textures and cost more than other finishes. Design Cafe lists PU kitchens in Pune from ₹4.5 lakh.",
+      "sources": [
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+          "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "PU finishes are available in many vibrant colours, patterns and textures, and are relatively more expensive than other finishes."
+        },
+        {
+          "url": "https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/",
+          "title": "Best Modular Kitchens In Pune At Best Prices",
+          "publisher": "Design Cafe",
+          "retrieved_at": "2026-10-06",
+          "quote": "Popular finish options in Pune include laminated finishes starting from ₹1.5 lakhs, acrylic finishes from ₹3 lakhs, veneer finishes from ₹4 lakhs, and polyurethane finishes from ₹4.5 lakhs."
+        }
+      ]
     },
     {
       "id": "veneer-finish",
       "label": "Wood veneer shutters",
-      "description": "A thin layer of natural wood pressed onto the shutter board and finished with polish or a PU coat.",
-      "sources": []
+      "description": "A thin layer of natural wood on the shutter board. Design Cafe lists veneer kitchens in Pune from ₹4 lakh, and HomeLane lists Italian veneers among the finishes in its luxury kitchens.",
+      "sources": [
+        {
+          "url": "https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/",
+          "title": "Best Modular Kitchens In Pune At Best Prices",
+          "publisher": "Design Cafe",
+          "retrieved_at": "2026-10-06",
+          "quote": "Popular finish options in Pune include laminated finishes starting from ₹1.5 lakhs, acrylic finishes from ₹3 lakhs, veneer finishes from ₹4 lakhs, and polyurethane finishes from ₹4.5 lakhs."
+        },
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+          "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "Luxury kitchens at ₹4 lakh – ₹5 lakh or more feature premium finishes like Italian veneers, acrylics, glass shutters, built-in appliances, and advanced hardware systems."
+        }
+      ]
+    },
+    {
+      "id": "glass-shutters",
+      "label": "Glass shutters",
+      "description": "Shutters with glass panels, usually for wall units. Design Cafe's mid-range Pune kitchens mix laminate and glass finishes, and HomeLane lists glass shutters among the finishes in its luxury kitchens.",
+      "sources": [
+        {
+          "url": "https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/",
+          "title": "Best Modular Kitchens In Pune At Best Prices",
+          "publisher": "Design Cafe",
+          "retrieved_at": "2026-10-06",
+          "quote": "Mid-range modular kitchens (₹3–3.5 Lakhs) offer a semi-premium feel with a mix of laminate and glass finishes, ideal for mid-sized families looking for improved aesthetics and better storage."
+        },
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/",
+          "title": "Modern Modular Kitchen Cabinets Design for Stylish Homes",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "Luxury kitchens at ₹4 lakh – ₹5 lakh or more feature premium finishes like Italian veneers, acrylics, glass shutters, built-in appliances, and advanced hardware systems."
+        }
+      ]
     },
     {
       "id": "granite-countertop",
       "label": "Granite countertop",
-      "description": "Natural granite slab used for the kitchen countertop, cut on site or in a workshop for the sink and hob.",
-      "sources": []
+      "description": "Natural granite slab used for the countertop, with cut-outs for the sink and hob. HomeLane's Pune guide says granite usually adds ₹100–₹300 per sq ft including polishing and fixing. Livspace says granite costs less than quartz.",
+      "sources": [
+        {
+          "url": "https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cost-pune/",
+          "title": "2026 Modular Kitchen Cost in Pune: Price & Design Tips",
+          "publisher": "HomeLane",
+          "retrieved_at": "2026-10-06",
+          "quote": "For countertops, granite is the most economical and durable, usually adding INR 100–300 per sq. ft. including polishing and fixing."
+        },
+        {
+          "url": "https://www.livspace.com/in/magazine/materials101-granite-vs-quartz-countertops",
+          "title": "Granite vs Quartz: Cost-Effective Factors When Picking the Best Kitchen Countertop",
+          "publisher": "Livspace",
+          "retrieved_at": "2026-10-06",
+          "quote": "The cost of quartz kitchen countertops may significantly increase as it is manmade and its price is determined by the manufacturer, while granite countertops are made from 100% natural granite and cost comparatively less than quartz."
+        }
+      ]
     },
     {
       "id": "quartz-countertop",
       "label": "Quartz countertop",
-      "description": "Engineered stone made from crushed quartz and resin, used as a countertop slab.",
-      "sources": []
+      "description": "Engineered stone countertop. Livspace notes that quartz is man-made and its price is set by the manufacturer. NoBroker lists quartz countertops in its premium Pune kitchen package.",
+      "sources": [
+        {
+          "url": "https://www.livspace.com/in/magazine/materials101-granite-vs-quartz-countertops",
+          "title": "Granite vs Quartz: Cost-Effective Factors When Picking the Best Kitchen Countertop",
+          "publisher": "Livspace",
+          "retrieved_at": "2026-10-06",
+          "quote": "The cost of quartz kitchen countertops may significantly increase as it is manmade and its price is determined by the manufacturer, while granite countertops are made from 100% natural granite and cost comparatively less than quartz."
+        },
+        {
+          "url": "https://www.nobroker.in/interiors/design-guides/modular-kitchen-cost-in-pune/",
+          "title": "Modular Kitchen Cost and Design Guide in Pune 2026",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Premium Package typically includes acrylic/membrane finishes, quartz countertops, premium appliances, and high-end hardware like Hettich mechanisms."
+        }
+      ]
     }
   ],
   "duration_days": {
-    "min": 0,
-    "max": 0,
-    "basis": "NOT SOURCED. Placeholder only: research on 2026-10-06 was blocked (WebSearch budget exhausted, publisher sites blocked by the egress proxy). Do not display; replace with a sourced range (design sign-off to installation, by scope) before review."
+    "min": 28,
+    "max": 45,
+    "basis": "From design sign-off to handover for a standard kitchen. Design Cafe gives about 4–6 weeks (28–42 days) for design, factory manufacturing and installation, of which on-site installation is 4–7 days once plumbing, electrical and civil work are finished. HomeLane gives about 45 days for most standard projects from the first design conversation to handover. Civil changes, custom elements and site delays add time."
   },
   "questions_to_ask": [
-    "Is your price a rate per sq ft of cabinet front area, a rate per running foot of counter, or a lump sum, and what quantity did you measure for my kitchen?",
-    "Which board will you use for the carcasses and for the shutters, in which grade, thickness and brand, and is the sink unit made from a water-resistant grade?",
+    "Is your price a lump sum for the whole kitchen, a rate per sq ft or a rate per running foot? If it is per sq ft, is that per sq ft of kitchen floor, cabinet front or shutter area, and what quantity did you measure?",
+    "Which board will you use for the carcasses and for the shutters, in which grade, thickness and brand, and is the sink unit made from a water-resistant grade such as BWP plywood?",
     "Which shutter finish is quoted, what finish is on the inner face of the shutters, and how are the edges sealed?",
     "Which brands of hinges, drawer channels, baskets and lift-up fittings are included, are they soft-close, and how many drawers and baskets does the quote cover?",
     "Is the countertop included? If so, which stone, what thickness and edge profile, and are the sink and hob cut-outs included?",
@@ -116,14 +337,15 @@
     "Letting the kitchen be measured for production before plumbing, electrical points and wall tiling are finished.",
     "Accepting a moisture-sensitive board for the sink unit, where water from the tap, waste pipe and cleaning collects.",
     "Comparing quotes that assume different boards, finishes or hardware brands as if they covered the same kitchen.",
-    "Comparing a rate per sq ft with a rate per running foot or a lump sum without converting to the same basis.",
+    "Comparing a rate per sq ft with a rate per running foot or a lump sum without converting all of them to a total for the same kitchen.",
+    "Comparing package prices without checking which ones include a chimney, hob, sink or other appliances.",
     "Not planning corner units, so corner space is lost or drawers and handles clash when opened.",
     "Not planning sockets for the chimney, microwave, mixer, water purifier and under-cabinet lights before tiling.",
     "Paying most of the amount upfront instead of linking payments to design sign-off, delivery and installation."
   ],
   "quote_checklist": [
-    "Rate basis (sq ft of cabinet front area, running feet or lump sum) and the measured quantity",
-    "A drawing showing every cabinet's width, height and depth, and the layout",
+    "Price basis (lump sum, sq ft of a stated area, or running feet) and the measured quantity",
+    "Layout and a drawing showing every cabinet's width, height and depth",
     "Carcass board: type, grade, thickness and brand",
     "Shutter board and finish: type, brand, inner-face finish and edge sealing",
     "Hardware: brands of hinges, drawer channels, baskets and lift-up fittings, whether soft-close, and the count of each",
@@ -138,32 +360,32 @@
   ],
   "faq": [
     {
-      "q": "How is a modular kitchen priced?",
-      "a": "A quote may be given as a rate per sq ft of cabinet front area, a rate per running foot of counter, or a lump sum for the whole kitchen. Ask each firm to state the measured quantity and the basis, and to list the countertop, appliances and civil work separately, so that you compare the same scope."
+      "q": "How much does a modular kitchen cost in Pune?",
+      "a": "It depends on the layout, the cabinet board and the shutter finish. Our draft cost models, built from publisher price guides retrieved in October 2026, give these ranges per kitchen: about ₹80,000–₹2.6 lakh for a budget laminate kitchen on particle board or MDF, ₹2–₹3.8 lakh for a standard BWR-plywood kitchen, and ₹2.5–₹7 lakh for a premium acrylic or PU kitchen. By layout, NoBroker's Pune guide gives ₹1.5–₹4.5 lakh for a straight kitchen, ₹2–₹5.5 lakh for an L-shaped kitchen and ₹2.8–₹7 lakh for a U-shaped kitchen. These are indicative ranges, not quotations."
+    },
+    {
+      "q": "Why do per-sq-ft prices for modular kitchens differ so much?",
+      "a": "Publishers measure different areas. Livspace quotes ₹2,600–₹4,000 per sq ft of kitchen floor area for an 80–100 sq ft parallel kitchen. HomeLane gives ₹1,200–₹2,500 per sq ft for Pune and ₹700–₹900 per sq ft for a laminate finish. NoBroker quotes Pune base units at ₹4,000–₹8,000 per running foot. Ask every firm which area its rate uses, and compare the total for your kitchen."
     },
     {
       "q": "What might not be included in a modular kitchen quote?",
-      "a": "It differs between firms. Items that may be priced separately include the countertop, sink and tap, chimney and hob, removal of the old platform, plumbing and electrical changes, and dado tiling. Ask for every item to be marked included, excluded or extra."
+      "a": "It differs between firms. NoBroker lists a basic chimney, hob and sink in its budget package, and HomeLane lists built-in appliances in its luxury kitchens, while other price guides do not say. HomeLane's Pune guide says basic accessories such as cutlery trays and soft-close hinges add ₹18,000–₹35,000. Ask for the countertop, sink and tap, appliances, accessories, removal of the old platform, plumbing and electrical changes and dado tiling to be marked included, excluded or extra."
     },
     {
       "q": "Which board should be used for the sink unit?",
-      "a": "The sink unit is exposed to water from the tap, the waste pipe, leaks and cleaning. Ask for a water-resistant board there, such as BWP-grade plywood, and check that all cut edges and pipe openings are sealed."
+      "a": "The sink unit is exposed to water from the tap, the waste pipe, leaks and cleaning. HomeLane's Pune guide recommends BWP or BWR plywood for Pune's humidity. Ask which board and grade the sink unit uses, and check that cut edges and pipe openings are sealed."
     },
     {
       "q": "What is the difference between laminate, acrylic, membrane and PU shutters?",
-      "a": "Laminate is a decorative sheet pressed onto the board, in matt, textured or gloss. Acrylic is a smooth acrylic sheet bonded to the board. Membrane is PVC foil pressed onto shaped MDF. PU is paint or lacquer sprayed onto the board. Ask to see a physical sample of the exact finish and colour quoted, and ask how scratches and edge damage are repaired."
-    },
-    {
-      "q": "Can I keep my existing stone platform?",
-      "a": "It may be possible. Base cabinets can be fitted under an existing stone platform, but the masonry supports underneath can limit cabinet and drawer widths. Ask the firm to inspect the platform and say whether keeping it changes the design or the price."
-    },
-    {
-      "q": "When should the kitchen be measured?",
-      "a": "The final measurement for production should be taken after plumbing, electrical points and wall tiling are finished, because these change the usable space. Ask the firm to re-measure on site and to confirm the drawing with you before production starts."
+      "a": "Laminate is a decorative sheet pressed onto the board, in glossy, matte or textured surfaces. Acrylic is an acrylic sheet bonded to the board. Livspace describes membrane as PVC foil wrapped around MDF or HDF-HMR board under vacuum. PU is polyurethane paint applied over the board. HomeLane's guides put acrylic at roughly 15–30% and PU at roughly 30–45% above laminate; Design Cafe says acrylic can raise shutter-related costs by 15–30% over basic laminate. Ask to see a sample of the exact finish and colour quoted."
     },
     {
       "q": "How long does a modular kitchen take?",
-      "a": "It depends on design approval, factory production, delivery and installation, and on any civil, plumbing or electrical work needed first. Ask for a written schedule from design sign-off to handover, with dates for delivery and installation."
+      "a": "Design Cafe gives about 4–6 weeks from design to installation, and HomeLane about 45 days for most standard projects. Design Cafe puts on-site installation at 4–7 days once plumbing, electrical and civil work are finished. Civil changes and custom elements add time, so ask for a written schedule with dates for design sign-off, delivery and installation."
+    },
+    {
+      "q": "When should the kitchen be measured?",
+      "a": "Take the final measurement for production after plumbing, electrical points and wall tiling are finished, because these change the usable space. Ask the firm to re-measure on site and to confirm the drawing with you before production starts."
     },
     {
       "q": "Do I need to inform my housing society?",

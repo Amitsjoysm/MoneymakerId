@@ -1,186 +1,241 @@
-# Research log: modular-kitchen (D03, Wave 1)
+TASK-MARKER: retryA-modular-kitchen
 
-- **Date:** 2026-10-06
+# Research log: modular-kitchen service pack (D03, retry A)
+
 - **Owner files:** `data/services/modular-kitchen.json`, `data/cost-models/modular-kitchen.json`, this log
-- **Status:** **BLOCKED. No sources were gathered, so no cost model is included.** This pack needs a re-run when web research is available.
+- **Researched:** 2026-10-06. Every `retrieved_at` and `reviewed_at` is `2026-10-06`, and every `valid_until` is `2027-04-04`.
+- **Status:** everything is `draft`. The owner must review the prose before it can render on an indexable page.
+- **Result:** 7 cost models covering all 3 tiers (budget, standard, premium), each with 3–4 independent publishers, and a ServiceDef with 4 layout scopes, 12 sourced materials and a sourced `duration_days`. `area_presets` is `[]` (see §2).
+- **This run replaces the blocked first run.** That run gathered no sources. Its query table and reachability tests are no longer relevant and are not repeated here. §7 lists what was kept from its ServiceDef draft.
 
-## Why it is blocked
+## 1. Method and constraints
 
-1. **WebSearch:** both queries returned *"Web search was not performed: this turn's web search budget is used up (limit: 200 WebSearch calls per turn, shared by every agent in it)"*. The parallel Wave 1 agents had already used the shared budget before this task's first query.
-2. **WebFetch:** every publisher domain tried was blocked by the egress proxy (`EGRESS_BLOCKED`) or returned "unable to fetch". The URLs below were only reachability tests. **No content was retrieved from any of them, and none is cited anywhere.**
+1. **WebSearch only.** 34 WebSearch calls were made, within the 35-call budget. Call 34 ran two internal queries, so it may count twice against the shared cap, and I stopped there. WebFetch was not used. The first run found every publisher domain blocked (`EGRESS_BLOCKED`).
+2. **Attribution by domain-restricted search.** Every query except #10 used `allowed_domains`, so the publisher of each figure is certain. The exact page is the result whose title matches the figure's topic. Where I ran a pinning query with the figure's own wording and the page came first, confidence is **high**. Otherwise it is **medium**, or **low** where the publisher has several candidate pages (§4).
+3. **Quotes** are copied character-for-character from the WebSearch output, which is the search tool's rendering of the page (snippet text). Markdown bold markers were dropped. No quote has been checked against the live page. The reviewer should open each URL and confirm the wording and figures before marking anything `reviewed`. The two HDHMR guides were seen only as titles, so they carry `quote: null`.
+4. **Publishers that returned nothing usable:**
+   - housing.com returned no links (#13). Its tool summary was not grounded in any page and is not used.
+   - urbancompany.com returned layout articles with no prices (#14).
+   - 99acres.com returned a 2024 article (#15), used only in §6.
+   - indiamart.com Pune listings quote per sq ft (#16), which does not fit the per-kitchen unit (§2).
+5. **Rules applied to every model:**
+   - `low` = the lowest cited low and `high` = the highest cited high, so the range widens whenever sources disagree.
+   - `expected` = the median of one midpoint per publisher, rounded to the nearest ₹5,000 with ties rounded down. When a publisher gives several closed ranges, its own median midpoint is used.
+   - Open-ended figures ("from ₹3 lakh", "₹4 lakh and above") give no midpoint. They are cited only where they sit inside the range.
+   - Pages from the same publisher count as one publisher.
+   - `min_job_inr` is `null` and `locality_factors` is `[]`: no source states a minimum order or a Pune locality difference.
+   - `components` is a labelled editorial assumption, the same for all models: materials 0.74, labour 0.15, preparation 0.03, repair 0, transport 0.04, waste 0.04. Search text from NoBroker or Livspace pages, not pinned to a page and not cited, put installation or labour at 10–25% of the total ("installation expenses usually comprise 10% to 15% of the total kitchen cost"; labour "forming 15–25% of total project cost"). 0.15 sits inside that band.
+   - **GST:** none of the sources says whether its figures include GST. This is stated in every model's notes.
 
-Under the source-integrity rules (only pages actually seen; ≥ 2 independent publishers per model), nothing could be cited. So:
-- `data/cost-models/modular-kitchen.json` is `[]`. No model met the ≥ 2 independent sources rule, because none had any source.
-- `data/services/modular-kitchen.json` is a skeleton. It holds only taxonomy and editorial guidance that makes no numeric claims: scope options, material definitions, questions, mistakes, the quote checklist and an FAQ. It has `area_presets: []`, every `materials[].sources: []`, and a **placeholder `duration_days` of `{min: 0, max: 0}`** whose `basis` says NOT SOURCED. The contract does not make `duration_days` nullable, so a sentinel was the only shape-valid option. It must be replaced before review.
-- **The material descriptions are unsourced definitions** (BWP / BWR / MR plywood grades, HDHMR, particle board / MDF, laminate, acrylic, membrane, PU, veneer, granite, quartz). They avoid price and durability comparisons, but a reviewer should check them against manufacturer pages (for example Greenply, CenturyPly, Action Tesa, Merino, Hettich, Hafele, Ebco) and add `sources` during the re-run.
-- `sub_services` is `[]`. §4a defines no sub-services for `modular-kitchen`.
+## 2. Unit decision: `unit` (one kitchen), with layouts as scopes
 
-## Queries run
+**Chosen:** `unit` = price per complete kitchen. `scope_options` are the four layouts: `straight`, `l-shaped`, `u-shaped` and `parallel`. All 7 models use `unit`, and none is per sq ft.
 
-| # | Tool | Query / URL | Result |
+**Why not sq ft.** Every publisher found gives whole-kitchen prices in lakh, by layout, by tier or by finish:
+- HomeLane: Pune and national, by layout and tier
+- NoBroker: Pune, by layout × tier and by package
+- Design Cafe: Pune tiers and finishes; Mumbai and Ahmedabad layouts
+- Livspace: by finish and layout
+- Asian Paints (Beautiful Homes): by layout
+- 99acres: by layout
+
+Their per-sq-ft figures use at least three different areas that cannot be converted without unsourced assumptions:
+- **Kitchen floor area.** Livspace gives ₹2,600–₹4,000 per sq ft for an average 80–100 sq ft parallel kitchen.
+- **Shutter or finish area.** HomeLane gives laminate at ₹700–₹900 and acrylic at ₹1,500+ per sq ft. Livspace gives acrylic shutters at ₹1,500–₹5,500 per sq ft. NoBroker's Pune text gives shutter finishes of laminate ₹400–₹800 and acrylic ₹1,000–₹1,600.
+- **Running feet.** NoBroker Pune gives base units at ₹4,000–₹8,000 per ft and wall units at ₹3,500–₹6,500 per ft.
+- **Unstated.** HomeLane gives ₹1,200–₹2,500 per sq ft for Pune. Design Cafe gives ₹900–₹1,600 per sq ft for cabinets and shutters. IndiaMART Pune listings range from ₹1,050 to ₹5,500 per sq ft.
+
+A per-sq-ft model would also need sourced cabinet areas for each BHK, and none was found.
+
+**Consequence for `area_presets`.** With a per-kitchen unit the quantity is 1 kitchen for every BHK. Presets would all give the same estimate, so `area_presets` is `[]` and the calculator asks for the quantity. Layout (scope) and tier carry the size and grade difference. The scope descriptions give NoBroker's reference sizes for each layout.
+
+**Contract note for the orchestrator.** `CONTRACTS §4a` says that only the house-construction guide title uses "per sq ft", so a per-kitchen unit needs no title change. The calculator (C02, A02) must handle `unit: 'unit'`, with quantity = number of kitchens, and an empty preset list.
+
+## 3. Queries run
+
+"Domains" = the `allowed_domains` filter. All queries ran in standard mode.
+
+| # | Domains | Query | Useful result |
 |---|---|---|---|
-| 1 | WebSearch (standard) | `modular kitchen cost per sq ft Pune 2025` | not performed: search budget used up |
-| 2 | WebSearch (standard) | `modular kitchen price per square feet India 2026 laminate acrylic PU` | not performed: search budget used up |
-| 3 | WebFetch | `www.nobroker.in` (article path test) | EGRESS_BLOCKED |
-| 4 | WebFetch | `www.livspace.com` (article path test) | EGRESS_BLOCKED |
-| 5 | WebFetch | `housing.com` (article path test) | EGRESS_BLOCKED |
-| 6 | WebFetch | `www.homelane.com` (article path test) | EGRESS_BLOCKED |
-| 7 | WebFetch | `www.asianpaints.com` (article path test) | EGRESS_BLOCKED |
-| 8 | WebFetch | `www.magicbricks.com` (article path test) | unable to fetch |
-| 9 | WebFetch | `www.magicbricks.com/blog/` | unable to fetch |
-| 10 | WebFetch | `en.wikipedia.org` (reachability test) | EGRESS_BLOCKED |
-| 11 | WebFetch | `www.99acres.com` (article path test) | EGRESS_BLOCKED |
-| 12 | WebFetch | `www.urbancompany.com` (article path test) | EGRESS_BLOCKED |
-| 13 | WebFetch | `aapkapainter.com` | EGRESS_BLOCKED |
-| 14 | WebFetch | `www.designcafe.com` (article path test) | EGRESS_BLOCKED |
-| 15 | WebFetch | `timesofindia.indiatimes.com` | unable to fetch |
-| 16 | WebFetch | `www.indiamart.com` | EGRESS_BLOCKED |
-| 17 | WebFetch | `www.squareyards.com` (article path test) | EGRESS_BLOCKED |
-| 18 | WebFetch | `economictimes.indiatimes.com` | unable to fetch |
-| 19 | WebFetch | `www.hindustantimes.com` | unable to fetch |
-| 20 | WebFetch | `www.hettich.com/en-in` | EGRESS_BLOCKED |
-| 21 | WebFetch | `www.greenply.com` | EGRESS_BLOCKED |
-| 22 | WebFetch | `www.centuryply.com` | EGRESS_BLOCKED |
-| 23 | WebFetch | `www.ebco.in` | EGRESS_BLOCKED |
-| 24 | WebFetch | `www.hafeleindia.com` | EGRESS_BLOCKED |
-| 25 | WebFetch | `www.sleekworld.com` | EGRESS_BLOCKED |
+| 1 | nobroker.in | modular kitchen cost per sq ft Pune 2025 laminate acrylic | NB_PUNE overall and layout figures; per-sq-ft text (not used) |
+| 2 | homelane.com | modular kitchen cost per sq ft price guide laminate acrylic PU | HomeLane finish per sq ft; acrylic +15–25%, PU +30–45% |
+| 3 | homelane.com | HomeLane 2026 Modular Kitchen Cost in Pune price per sq ft L-shaped U-shaped parallel | HL_PUNE layouts, granite, accessories (pinned) |
+| 4 | homelane.com | modular kitchen cost Pune laminate finish per sq ft acrylic PU finish per sq ft plywood carcass | HL_PUNE plywood recommendation |
+| 5 | livspace.com | modular kitchen price per sq ft India laminate acrylic PU membrane cost | LS finish per-kitchen figures; acrylic shutter prices |
+| 6 | designcafe.com | modular kitchen cost Pune 2026 price L-shaped U-shaped straight parallel laminate acrylic | DC tiers and layouts (pinned later) |
+| 7 | livspace.com | modular kitchen cost calculator L-shaped U-shaped parallel straight kitchen price range lakh | LS layout table, version 1 (see conflict C1) |
+| 8 | homelane.com | HomeLane modular kitchen cost calculator Pune L-shaped kitchen price Essentials Premium Luxe | No package-tier prices; repeats HL_PUNE |
+| 9 | nobroker.in | Modular Kitchen Cost and Design Guide in Pune 2026 straight L-shaped U-shaped parallel price low-cost premium | NB_PUNE layout × tier bands (pinned) |
+| 10 | — | L-shaped modular kitchen price India laminate vs acrylic vs PU per kitchen table 2026 | Pointer to Beautiful Homes; nothing citable |
+| 11 | beautifulhomes.asianpaints.com | modular kitchen India design cost price laminate acrylic L-shaped parallel lakh | BH layout figures (page not pinned) |
+| 12 | designcafe.com | Design Cafe modular kitchen price L-shaped kitchen laminate finish acrylic finish cost table parallel U-shaped | DC national layouts (page not pinned); acrylic +15–30% |
+| 13 | housing.com | modular kitchen cost price per sq ft India L-shaped U-shaped parallel laminate acrylic | No links (gap) |
+| 14 | urbancompany.com | modular kitchen price Pune L-shaped straight parallel starting price | No prices (gap) |
+| 15 | 99acres.com | modular kitchen cost India price L-shaped U-shaped parallel straight laminate acrylic lakh | 2024 article (not used in models) |
+| 16 | indiamart.com | modular kitchen Pune price L shape kitchen laminate plywood | Pune per-sq-ft listings (unit mismatch; not used) |
+| 17 | livspace.com | low cost modular kitchen price guide particle board MDF vs plywood laminate kitchen cost lakh | LS board prices; LS cost-per-sq-ft page identified |
+| 18 | nobroker.in | mid-range modular kitchen BWP plywood laminate cost lakh Pune budget MDF particle board kitchen cost | NB package bands; NB_BWP |
+| 19 | nobroker.in | "Budget packages" particle board or MDF with laminates ₹1.8-2.6L mid-range BWR plywood ₹2.7-3.8L modular kitchen | NB_KID packages (pinned) and package inclusions |
+| 20 | homelane.com | Decoding Modular Kitchen Prices in India with Real Costs budget mid-range premium kitchen lakh plywood laminate | HL_INDIA layouts, finishes, core material |
+| 21 | homelane.com | "Mid-Range Kitchens" ₹2 lakh – ₹3.5 lakh BWR plywood cabinets … | HL_CAB mid-range (pinned to the cabinet-design page) |
+| 22 | homelane.com | Modern Modular Kitchen Cabinets Design "Budget Kitchens" "Premium Kitchens" lakh MDF laminate acrylic PU cabinets cost | HL_CAB budget, luxury, MDF, laminate, acrylic and PU text |
+| 23 | designcafe.com | "Basic modular kitchens" ₹2–2.5 Lakhs … "Premium modular kitchens" ₹4 Lakhs Pune | DC_PUNE tiers and finishes (pinned) |
+| 24 | designcafe.com | Pune "L-shaped kitchens" ₹2.5 lakh–₹4.5 lakh "parallel kitchens" … | DC layout figures are from the **Mumbai** page (DC_MUM) |
+| 25 | livspace.com, homelane.com, designcafe.com | how long does modular kitchen installation take days from design to installation | "around 45 days" (HL_45), "4–6 weeks" |
+| 26 | designcafe.com | modular kitchen installation timeline weeks design manufacturing on-site installation working days | DC_TIME 4–6 weeks; on-site 4–7 days |
+| 27 | livspace.com, nobroker.in | kitchen countertop price per sq ft granite vs quartz India | LS_GQ granite vs quartz |
+| 28 | livspace.com, homelane.com, designcafe.com | HDHMR board vs BWP plywood kitchen cabinets moisture resistance difference BWR MR grade | HDHMR guide titles (HL_HDHMR, DC_HDHMR) |
+| 29 | livspace.com | Modular Kitchen Cost Per Sq. Ft. 2026 straight kitchen average size 50–70 sq. ft. … | LS layout table, version 2 (conflict C1); parallel row confirmed |
+| 30 | livspace.com | Livspace modular kitchen cost by finish "Laminate" ₹1.5L – ₹2.5L … | Did not pin the finish figures (see §4, LS_SQFT) |
+| 31 | designcafe.com | "U-shaped kitchens cost" ₹4–₹6 lakh L-shaped ₹2.5 to ₹5 lakh … | DC layout figures are from the **Ahmedabad** page (DC_AMD) |
+| 32 | beautifulhomes.asianpaints.com | L-shaped modular kitchen design estimated cost range Rs. 1.5 lakh – Rs. 5 lakh+ … | BH_L (Sleek Kitchens L-shaped page) |
+| 33 | nobroker.in, homelane.com, livspace.com | modular kitchen cost breakdown percentage cabinets hardware accessories countertop installation labour share of total cost | Labour share 10–25% (unpinned; used only to justify the component assumption) |
+| 34 | livspace.com, homelane.com | what is membrane finish kitchen shutters PVC foil … ; PU finish … (the tool ran two internal queries) | LS_MEMB definition; PU text (not pinned; PU description kept minimal) |
 
-I stopped after these tests. Per the tool's instructions, I did not route around the limit through search engines via curl, third-party readers, proxies or archives.
+## 4. Sources and what each supports
 
-## Sources
+Confidence = confidence that the figure is on **this exact URL**. The publisher is certain in every row.
 
-None. No `SourceRef` appears in any of this pack's files.
+| Key | Publisher | URL | What it supports | Key quote (as seen in search output) | Confidence |
+|---|---|---|---|---|---|
+| NB_PUNE | NoBroker | https://www.nobroker.in/interiors/design-guides/modular-kitchen-cost-in-pune/ | Pune overall (₹1.5–8 L); layouts (straight 1.5–4.5, L 2–5.5, U 2.8–7); layout × tier bands for L, U and parallel; low-cost and premium package contents; base and wall units per ft | "Modular kitchen prices in Pune depend on the type of kitchen: straight (1.5L-4.5L), L-shaped (2L-5.5L), and U-shaped (2.8L-7L)." | High: the page title was in queries 9 and 1. The band lines ("Mid-range: ₹2.9L - ₹4L" and the others) appeared under headings for each layout. |
+| NB_KID | NoBroker | https://www.nobroker.in/interiors/design-guides/kitchen-interior-design/ | Budget packages ₹1.8–2.6 L (particle board/MDF + laminate, including a basic chimney, hob and sink); mid-range ₹2.7–3.8 L (BWR plywood); high-end ₹4 L+ (marine plywood, acrylic) | "Budget packages (₹1.8-2.6L) are made of particle board or MDF with laminates, mid-range (₹2.7-3.8L) are made of BWR plywood with quality finishes." | Medium-high: first result of pinning query 19 |
+| NB_BWP | NoBroker | https://www.nobroker.in/forum/what-is-bwp-plywood-modular-kitchen-cost/ | BWP plywood kitchens ₹1,800–2,800 per sq ft (material description only) | "Standard or mid-range kitchens using BWP plywood with laminate or membrane finish cost Rs. 1,800 to Rs. 2,800 per sq ft." | Medium: the page topic matches |
+| HL_PUNE | HomeLane | https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cost-pune/ | Pune layouts (L 2.4–3 L, straight 1.1–2 L, U from 3 L); granite ₹100–300/sq ft; BWP/BWR plywood for Pune; accessories ₹18,000–35,000; ₹1,200–2,500/sq ft | "L-shaped kitchens are the most popular in Pune apartments, usually ranging between INR 2.4 to INR 3 lakhs depending on materials, finish, area and storage depth." | High: the page title was in query 3 |
+| HL_INDIA | HomeLane | https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-prices-in-india/ | National layouts (straight 0.75–1.5 L, L 1.5–3 L, U 1.8–3.5 L, island 2.5–5 L+); finish per sq ft; BWP/BWR core | "Straight Kitchen: ₹75,000-1,50,000; L-Shaped Kitchen: ₹150,000–300,000; U-Shaped Kitchen: ₹1,80,000-3,50,000; Island Kitchen: ₹2,50,000-5,00,000+." | Medium: query 20 used the page title, but other HomeLane city pages were returned too |
+| HL_CAB | HomeLane | https://www.homelane.com/design-ideas/modular-kitchen-design/modular-kitchen-cabinet-design/ | Tiers: low-budget ₹0.8–1.5 L, mid-range ₹2–3.5 L (BWR plywood), luxury ₹4–5 L+ (veneer, acrylic, glass, built-in appliances); MDF, laminate, acrylic and PU text | "Mid-range kitchens priced at ₹2 lakh – ₹3.5 lakh include BWR plywood cabinets, high-quality laminates or acrylic finishes, and storage accessories." | Medium: first result in pinning queries 21 and 22 |
+| HL_45 | HomeLane | https://www.homelane.com/interior-design/modular-kitchen-design | About 45 days from first design conversation to handover | "For most standard projects, the entire journey—from the first design conversation to final handover—takes around 45 days." | **Low-medium.** Query 25 mixed three publishers. The 45-day text did not appear in the Design Cafe-only query 26, so it is attributed to HomeLane's first-listed page. |
+| HL_HDHMR | HomeLane | https://www.homelane.com/design-ideas/home-interior-design/hdhmr-board-materials/ | HDHMR exists as a kitchen-cabinet board (title only) | null | Title only |
+| DC_PUNE | Design Cafe | https://www.designcafe.com/interior-design/modular-kitchen-design/city/pune/ | Pune tiers: basic ₹2–2.5 L, mid-range ₹3–3.5 L, premium ₹4 L+; finishes: laminate from 1.5 L, acrylic from 3 L, veneer from 4 L, PU from 4.5 L | "Basic modular kitchens (₹2–2.5 Lakhs) are perfect for 1–2 BHK homes and include laminate finishes, standard hardware, and essential storage modules like base and overhead cabinets." | High: first result of pinning query 23. The title was seen as both "Best Modular Kitchens In Pune At Best Prices" and "Best Modular Kitchen Designs In Pune"; the first is used. |
+| DC_MUM | Design Cafe | https://www.designcafe.com/blog/modular-kitchen-interiors/kitchen-interior-design-cost-in-mumbai/ | **Mumbai** layouts: L 2.5–4.5 L, parallel 3–5 L, straight 1.8–3 L | "Popular kitchen styles include L-shaped kitchens ₹2.5 lakh–₹4.5 lakh, parallel kitchens ₹3 lakh–₹5 lakh, and straight kitchens ₹1.8 lakh–₹3 lakh." | Medium: query 24's summary named Mumbai as the source city |
+| DC_AMD | Design Cafe | https://www.designcafe.com/blog/modular-kitchen-interiors/modular-kitchen-cost-ahmedabad/ | **Ahmedabad** layouts: L 2.5–5 L, U 4–6 L | "In Ahmedabad: L-shaped kitchens cost ₹2.5–₹5 lakh, while U-shaped kitchens cost ₹4–₹6 lakh" | Medium (query 31) |
+| DC_TIME | Design Cafe | https://www.designcafe.com/interior-design/modular-kitchen-design/ | 4–6 weeks from design to installation; on-site installation 4–7 days | "The entire process of designing and installing a modular kitchen usually takes around 4–6 weeks" | Medium: first result in query 26 |
+| DC_HDHMR | Design Cafe | https://www.designcafe.com/blog/home-interiors/hdhmr-sheets-guide/ | HDHMR (title only) | null | Title only |
+| LS_SQFT | Livspace | https://www.livspace.com/in/magazine/modular-kitchen-cost-per-sq-ft | Per-kitchen figures by finish (laminate 1.5–2.5 L, acrylic 2.5–4 L, PU 3–5 L); parallel row (80–100 sq ft, ₹2–3.8 L, ₹2,600–4,000/sq ft); city variation of 15–20% | "Laminate: ₹1.5L – ₹2.5L (budget-friendly and durable)" | **Low-medium.** Pinning query 30 did not return the finish lines. The page is the likeliest of the Livspace results in queries 5 and 17. The parallel row is medium (query 29 used the page title). |
+| LS_ACR | Livspace | https://www.livspace.com/in/magazine/materials-101-acrylic-kitchen-cabinets | Acrylic shutter price ₹1,500–5,500/sq ft | "Premium acrylic finish costs ₹5,500 per sq ft (shutter price), though acrylic finishes start from ₹1500/sq. ft. (shutter price)" | Medium |
+| LS_MDF | Livspace | https://www.livspace.com/in/magazine/mdf-vs-particle-board-differences-everything-you-need-to-know | Board prices: MDF ₹40–90, particle board ₹30–60 per sq ft | "MDF costs ₹40 – ₹90 per sq. ft., compared to particle board at ₹30 – ₹60 per sq. ft." | Medium |
+| LS_MEMB | Livspace | https://www.livspace.com/in/magazine/materials101-laminate-membrane-guide | Membrane definition | "Membrane is essentially Polyvinyl Chloride (PVC) foil that is wrapped around either MDF or HDF-HMR under a high vacuum pressure to produce a membrane finish panel." | Medium |
+| LS_GQ | Livspace | https://www.livspace.com/in/magazine/materials101-granite-vs-quartz-countertops | Quartz is man-made and priced by the maker; granite costs less | "The cost of quartz kitchen countertops may significantly increase as it is manmade and its price is determined by the manufacturer, while granite countertops are made from 100% natural granite and cost comparatively less than quartz." | Medium (query 27 also covered NoBroker) |
+| BH_L | Asian Paints (Beautiful Homes) | https://www.beautifulhomes.asianpaints.com/sleek-kitchens/l-shaped.html | L-shaped ₹1.5–5 L+ (national) | "The estimated cost range for an L-shaped modular kitchen is Rs. 1.5 lakh – Rs. 5 lakh+, depending on size, materials, and finishes." | Medium. Query 11 listed a second Beautiful Homes L-shaped page (`/interior-design-ideas/l-shaped-modular-kitchen-design.html`); pinning query 32 listed this one. |
 
-## Conflicts
+**Seen but not cited:**
+- Beautiful Homes per-sq-ft finish prices (laminate ₹700–1,200, acrylic ₹1,200–1,500) and the parallel "₹1.5 lakh+" figure: the page was not pinned.
+- Design Cafe national layouts from query 12 (L ₹2.5–5 L, U ₹4–6 L): the same figures as DC_AMD, so they were not counted twice.
+- HomeLane per-sq-ft range for tier-2 cities (₹1,200–2,500): sq-ft basis.
+- IndiaMART Pune listings: per sq ft.
+- 99acres 2024 layout prices: older than 2025, and its U-shaped range (₹55,000–1.5 L) is below its own L-shaped range.
+- Godrej Properties, interiorcompany.com and tinttoneandshade.com: appeared in unrestricted query 10, but no figure was attributable.
 
-None to resolve, because no data was gathered.
+## 5. Cost models: derivation, conflicts and resolution
 
-## Gaps (all open)
+All figures are ₹ lakh per kitchen. "Mid" = the publisher's midpoint used for `expected`.
 
-- **Every cost model** (target ≥ 10 across scope × material × tier, each with ≥ 2 independent publishers).
-- **`area_presets`:** typical cabinet front area (or running feet of counter) for a 1/2/3/4 BHK flat's kitchen and for an independent house, with sources. Layout matters too (straight, L-shaped, U-shaped, parallel, island). `terrace` is not relevant to this service.
-- **`materials[].sources`:** board grades for carcasses (BWP / BWR / MR plywood, HDHMR, particle board / MDF), shutter finishes, countertop stones.
-- **`duration_days`:** a sourced min/max from design sign-off to installation, by scope.
-- **`min_job_inr`:** whether Pune firms state a minimum order value.
-- **Locality factors:** none expected unless a source shows a Pune locality difference.
-
-## Plan for the re-run
-
-**Unit (decision to confirm).** `sqft` of cabinet front area: the width × height of every base, wall and tall unit, including lofts if quoted. This matches the contract's "per sq ft" title for `{service}-cost` pages. The re-run must check which basis Pune and Indian sources actually use:
-- If most sources quote **per sq ft**, keep `sqft`. Sources that give a **lump sum per kitchen** or **per layout** (for example "L-shaped kitchen for a 2BHK") must be converted using a sourced cabinet area, with the conversion stated in `notes`.
-- If most sources quote **per running foot**, the orchestrator should decide whether to switch `unit` to `rft`. That change touches `data/services/modular-kitchen.json`, which D03f does not own.
-
-**Planned models (ids are proposals; `material_id` is the shutter finish unless noted):**
-
-| id | scope_id | material_id | tier |
+| Model id | Cited figures (publisher: range → mid) | Result low / expected / high (₹) | Conflict and resolution |
 |---|---|---|---|
-| `modular-kitchen-cabinets-laminate-budget` | cabinets-only | laminate-finish | budget |
-| `modular-kitchen-cabinets-laminate-standard` | cabinets-only | laminate-finish | standard |
-| `modular-kitchen-cabinets-membrane-standard` | cabinets-only | membrane-finish | standard |
-| `modular-kitchen-cabinets-acrylic-standard` | cabinets-only | acrylic-finish | standard |
-| `modular-kitchen-cabinets-acrylic-premium` | cabinets-only | acrylic-finish | premium |
-| `modular-kitchen-cabinets-pu-premium` | cabinets-only | pu-lacquer-finish | premium |
-| `modular-kitchen-cabinets-veneer-premium` | cabinets-only | veneer-finish | premium |
-| `modular-kitchen-countertop-granite-budget` | cabinets-and-countertop | granite-countertop | budget |
-| `modular-kitchen-countertop-granite-standard` | cabinets-and-countertop | granite-countertop | standard |
-| `modular-kitchen-countertop-quartz-premium` | cabinets-and-countertop | quartz-countertop | premium |
-| `modular-kitchen-remodel-budget` | full-kitchen-remodel | null | budget |
-| `modular-kitchen-remodel-standard` | full-kitchen-remodel | null | standard |
-| `modular-kitchen-remodel-premium` | full-kitchen-remodel | null | premium |
-| `modular-kitchen-shutters-laminate-budget` | shutter-replacement | laminate-finish | budget |
-| `modular-kitchen-shutters-acrylic-standard` | shutter-replacement | acrylic-finish | standard |
-| `modular-kitchen-shutters-pu-premium` | shutter-replacement | pu-lacquer-finish | premium |
+| modular-kitchen-laminate-board-budget | NoBroker: Pune low-cost 1.5–2.5 (2.0) and budget package 1.8–2.6 (2.2) → 2.1; HomeLane low-budget 0.8–1.5 → 1.15; Livspace laminate 1.5–2.5 → 2.0; Design Cafe Pune basic 2–2.5 → 2.25 | 80,000 / 205,000 / 260,000 | HomeLane's figure is for smaller kitchens and sets the low end. Only NoBroker names the board (particle board or MDF). NoBroker's package includes a basic chimney, hob and sink, while the other sources do not say what is included. All of this is in the notes. |
+| modular-kitchen-bwr-plywood-standard | HomeLane mid-range 2–3.5 → 2.75; NoBroker mid-range package 2.7–3.8 → 3.25; Design Cafe Pune mid-range 3–3.5 → 3.25 | 200,000 / 325,000 / 380,000 | The finish varies: HomeLane allows acrylic, Design Cafe mixes in glass, and NoBroker says "quality finishes". Filed as standard because all three are the publishers' mid tiers and two name BWR plywood. |
+| modular-kitchen-acrylic-pu-premium | Livspace acrylic 2.5–4 (3.25) and PU 3–5 (4.0) → 3.625; HomeLane luxury 4–5+ → 4.5; NoBroker Pune premium L 4.1–5.5 (4.8), U 5.3–7 (6.15), P 4.9–6.5 (5.7) → 5.7; Design Cafe Pune premium "₹4 L and above" (open-ended, no midpoint) | 250,000 / 450,000 / 700,000 | NoBroker's and HomeLane's premium figures include appliances, so the upper half may include them. Design Cafe's open-ended figures (acrylic from 3, PU from 4.5) sit inside the range. |
+| modular-kitchen-straight-standard | HomeLane Pune 1.1–2 → 1.55; NoBroker Pune 1.5–4.5 → 3.0; Design Cafe Mumbai 1.8–3 → 2.4 | 110,000 / 240,000 / 450,000 | NoBroker gives no finish split for straight kitchens, so its full range is used. HomeLane's national 0.75–1.5 is not used, because the Pune figure is preferred. |
+| modular-kitchen-l-shaped-standard | HomeLane Pune 2.4–3 → 2.7; NoBroker Pune mid-range 2.9–4 → 3.45; Design Cafe Mumbai 2.5–4.5 (3.5) and Ahmedabad 2.5–5 (3.75) → 3.625; Asian Paints (BH) 1.5–5+ → 3.25 | 150,000 / 335,000 / 500,000 | Wide range, because only NoBroker splits by tier. NoBroker's other bands: low-cost 2–2.8, premium 4.1–5.5. |
+| modular-kitchen-u-shaped-standard | NoBroker Pune mid-range 3.9–5.2 → 4.55; HomeLane national 1.8–3.5 → 2.65 (HomeLane Pune "from 3", open-ended); Design Cafe Ahmedabad 4–6 → 5.0 | 180,000 / 455,000 / 600,000 | **C2:** HomeLane's national U-shaped range (to 3.5) conflicts with its Pune page ("from 3 lakhs and go upward"). Only the closed national range gives a midpoint, and both are cited. No second Pune closed range was found. |
+| modular-kitchen-parallel-standard | NoBroker Pune mid-range 3.6–4.8 → 4.2; Livspace 2–3.8 → 2.9; Design Cafe Mumbai 3–5 → 4.0 | 200,000 / 400,000 / 500,000 | This model is higher than the L-shaped one. NoBroker's reference parallel kitchen has 24 ft of counter against 14 ft for its L-shaped one, which explains it. |
 
-**Queries to run (standard mode first, extended mode when results are thin):**
-- `modular kitchen cost per sq ft Pune 2025` / `2026`, and `modular kitchen price Pune 2BHK L-shaped`
-- `modular kitchen cost per sq ft India laminate acrylic PU membrane` (NoBroker, Housing.com, MagicBricks, 99acres, UrbanCompany, Livspace, HomeLane, Design Cafe)
-- `modular kitchen cost per running foot India` (to settle the unit question)
-- `BWP plywood vs HDHMR kitchen cabinet price per sq ft` and plywood or board manufacturer price lists (Greenply, CenturyPly, Action Tesa, Merino)
-- `granite vs quartz kitchen countertop price per sq ft Pune`
-- `kitchen shutter replacement cost per sq ft India`
-- `old kitchen platform removal cost Pune` and `kitchen renovation cost Pune` (full remodel)
-- `modular kitchen installation time days India` (duration)
-- Hardware price pages: Hettich, Hafele, Ebco (hinges, channels, baskets)
-- News: Times of India Pune or Hindustan Times on home interiors or kitchen price trends in 2025–26
+**Layout models are filed under `standard`.** Only NoBroker publishes layout × finish bands. For L-shaped, U-shaped and parallel, its mid-range band is used. The other publishers give one range per layout across all finishes, so these models' low and high span budget to premium finishes. If the calculator selects a layout with the budget or premium tier, no layout model matches. It should fall back to the scope-null tier model, which is a decision for C02.
 
-## Verification (adversarial check, 2026-10-06)
+**C1: the Livspace layout table read two ways.**
+- Query 7 returned four rows: straight (50–70 sq ft, ₹1.5–2.5 L); L-shaped (70–100, ₹2–3.5 L); U-shaped (90–120, ₹2.5–4 L); parallel (80–100, ₹2–3.8 L).
+- Query 29 returned "Straight/Parallel 80–100, ₹2–3.8 L"; "L-Shaped 90–120, ₹2.5–4 L"; and a U-shaped "starting" figure of ₹1,83,170–2,10,646. The labels look shifted by one row.
 
-**Outcome: the pack is still BLOCKED.** The cost-model file stays `[]`, and no sources were added. Eight unsourced wording problems in the ServiceDef were fixed (listed below). Nothing in the pack cites a source, so there was nothing to fabricate and nothing fabricated was found.
+Only the 80–100 sq ft, ₹2–3.8 L row is the same in both readings, and both readings tie it to parallel kitchens. Livspace is therefore used only for the parallel model. Its straight, L-shaped and U-shaped rows are left out until the page is checked.
 
-### Research access during verification
+## 6. ServiceDef: what changed from the first-run draft
 
-| # | Tool | Query / URL | Result |
+- **Unit:** `sqft` → `unit` (§2).
+- **Scopes:** the four inclusion-based scopes are replaced by the four layouts. Those were cabinets-only, cabinets-and-countertop, full-kitchen-remodel and shutter-replacement, and no source priced them per kitchen. The old inclusion items are kept in the questions and quote checklist.
+- **Materials:**
+  - Every material now has 2–3 sources.
+  - Removed: `bwr-mr-plywood`, because MR grade text came only from an unpinned result.
+  - Split: BWR and BWP plywood are now separate entries.
+  - Renamed: `pu-lacquer-finish` → `pu-finish`. "Lacquer" was unsourced.
+  - Added: `glass-shutters`, because the sources name glass as a finish.
+  - Rewritten from sourced text: the descriptions of particle board/MDF, membrane, acrylic, granite and quartz.
+  - HDHMR: definition only, citing two guide titles with `quote: null`.
+- **Duration:** the `{0,0}` placeholder is replaced by 28–45 days, from Design Cafe's 4–6 weeks and HomeLane's ~45 days. On-site installation is 4–7 days per Design Cafe.
+- **Questions, mistakes and checklist:** kept from the first run. Edited: question 1 and checklist item 1 (price basis), and question 2 (BWP as an example for the sink unit). Added mistake: comparing packages without checking appliance inclusion, based on NoBroker's budget package and HomeLane's luxury tier. Totals: 10 questions, 9 mistakes, 13 checklist items.
+- **FAQ:** 8 entries.
+  - Added: "How much does a modular kitchen cost in Pune?" and "Why do per-sq-ft prices differ so much?"
+  - Rewritten with publisher-attributed figures: inclusions, sink board, finishes and duration.
+  - Kept unchanged: measurement timing and the housing-society entry, which are procedural advice.
+  - Dropped: "Can I keep my existing stone platform?". Its claim that masonry supports limit cabinet widths had no source.
+
+## 7. Gaps (open)
+
+- **Layout × tier models.** No second publisher splits layouts by finish. Budget and premium cells for each layout need a source beyond NoBroker.
+- **Island kitchens.** Only HomeLane's national figure (₹2.5–5 L+) was found. Island has no scope and no model.
+- **Shutter replacement and full remodel.** No per-kitchen source was found, so these have no scope and no model.
+- **`area_presets`:** intentionally `[]` (§2). A per-sq-ft calculator would need sourced cabinet areas for each BHK.
+- **GST basis:** unknown for every figure.
+- **Pune-specific figures:** Design Cafe's layout figures come from its Mumbai and Ahmedabad pages, labelled in the notes. Livspace, HomeLane national and Beautiful Homes figures are national.
+- **Publishers without data:** Housing.com and Urban Company. Magicbricks and news sites were not tried, because the previous pack found them refused.
+- **To re-check before review:** the pages marked low or medium in §4, especially LS_SQFT's finish figures and HL_45.
+
+## 8. Verification
+
+- `node scripts/data-coverage.mjs` shows no ERROR line for modular-kitchen and no tier-gap warning (all 3 tiers have a model). The run reports 10 errors, all for files owned by other tasks: `data/localities.json`, `data/dishes.json` and 8 locality guides. The modular-kitchen warnings are the shared locality-facts coverage warnings.
+- A stricter local check passed:
+  - exact §4 key sets
+  - every `scope_id` and `material_id` exists in the ServiceDef
+  - `unit` is `unit` in the ServiceDef and in all models
+  - integer rates with low ≤ expected ≤ high
+  - components sum to 1.00
+  - ≥ 2 publishers per model (each has 3–4), with no duplicate URL inside a model
+  - all dates and statuses correct
+- A superlative scan of the prose I wrote found none. "Most" appears only as a quantifier.
+
+## Verification (transcript-based, 2026-10-06)
+
+Independent check of this pack against the builder's own session transcript. Where this section and §1–§8 disagree, this section supersedes them.
+
+### Method
+
+1. **Transcript.** I located the builder transcript by its TASK-MARKER. It is the workflow agent file with 34 WebSearch calls. The newer marker match is this verifier's own session, which contains no builder searches. I extracted all 34 WebSearch result texts (link lists plus result text). There were no WebFetch calls.
+2. **Ref test.** Every SourceRef in both JSON files was tested: 28 material refs, 28 model refs, 0 preset refs and 0 locality-factor refs, 56 in all. A ref passes only if three things hold:
+   - its `url` is in a result's link list;
+   - the `title` matches that link's title;
+   - the `quote` appears verbatim, ignoring markdown bold and whitespace, **in the same result that lists the URL**. This is a co-occurrence test: a quote taken from a result that did not list the cited page is treated as misattributed.
+3. **Recompute.** I recomputed every model from the per-publisher figures in its notes, after checking each figure against the transcript. Rule: one midpoint per publisher (the publisher's own median when it gives several closed ranges), then the median across publishers, rounded to the nearest ₹5,000 with ties rounded down. I also checked that low and high cover the cited sources, along with units, components, dates and status.
+4. **Spot checks.** I ran 3 WebSearch calls of the 5 allowed:
+
+| # | Domains | Query | Result |
 |---|---|---|---|
-| V1 | WebSearch (standard) | `modular kitchen cost per sq ft Pune 2025` | not performed: the turn's search budget (200 calls, shared by all agents) is used up |
-| V2 | WebFetch | `https://www.nobroker.in/blog/modular-kitchen-cost/` | EGRESS_BLOCKED |
-| V3 | WebFetch | `https://www.godrejinterio.com/` | EGRESS_BLOCKED |
-| V4 | WebFetch | `https://www.decorpot.com/` | EGRESS_BLOCKED |
-| V5 | WebFetch | `https://www.bonito.in/` | EGRESS_BLOCKED |
+| V1 | livspace.com | Modular Kitchen Cost Per Sq. Ft. 2026 cost by finish Laminate ₹1.5L – ₹2.5L budget-friendly and durable Acrylic ₹2.5L – ₹4L PU Finish ₹3L – ₹5L | Figures returned. The cost-per-sq-ft article was **not** in the link list; `kitchen-price-calculator` was. |
+| V2 | homelane.com | modular kitchen from the first design conversation to final handover takes around 45 days | "For most standard projects, the entire journey from the first design conversation to final handover takes around 45 days." HomeLane-only result, with `homelane.com/interior-design/modular-kitchen-design` listed first. **HL_45 is confirmed** at the publisher level. |
+| V3 | livspace.com | Livspace modular kitchen cost calculator price by finish laminate acrylic PU lakh budget-friendly high-gloss sleek finish luxury seamless | Figures returned, and the result text names "Livspace's calculator". Both the article and `kitchen-price-calculator` were listed. |
 
-The permission classifier refused a check of the egress proxy status, and I did not pursue it. I did not route around either limit. The domains above were reachability tests only, and none of them is cited.
+### Findings
 
-### 1. Shape check
+- **53 of 56 refs passed as written.** No fabricated URL, title, publisher or quote was found: every URL, title and quote occurs in the builder's results.
+- **3 refs failed the co-occurrence test**, all of them Livspace refs citing `https://www.livspace.com/in/magazine/modular-kitchen-cost-per-sq-ft` (LS_SQFT):
+  - **Budget model**, quote "Laminate: ₹1.5L – ₹2.5L (budget-friendly and durable)". The verbatim text is only in builder result #5, whose link list does not include the article. Misattributed.
+  - **Premium model**, quote "Acrylic: ₹2.5L – ₹4L (mid-range premium option with a high-gloss, sleek finish)". Also only in result #5, without the article. Misattributed.
+  - **Parallel model**, quote "Cost Range: ₹2 Lakhs–₹3.8 Lakhs". The verbatim text is only in builder result #7, whose link list does not include the article. Result #29, which lists the article first, carries the same figure in different wording.
+- **Where the Livspace finish figures come from.** Four result sets carry them: builder #5 and #17, and verifier V1 and V3. The only Livspace page listed in all four is `https://www.livspace.com/in/interiors/kitchen-price-calculator` ("Modular Kitchen Cost Calculator"). The article appears in only two (#17 and V3), and the builder's own pinning query #30 did not confirm it. The figures are therefore re-attributed to the calculator page, at medium page-level confidence. The publisher (Livspace) is certain.
+- **Model values reproduce exactly.** All 7 expected values reproduce under the documented rule: 205,000; 325,000; 450,000; 240,000; 335,000; 455,000; 400,000. All lows and highs cover their cited closed ranges.
+- **Structure is correct.** Units are `unit` everywhere, matching the ServiceDef. Components sum to 1.00. Rates are integers with low ≤ expected ≤ high. Every model has 3–4 publishers and no duplicate URLs. `valid_until` is 2027-04-04 and status is `draft`.
+- **GST and labour basis.** No source states its GST basis. All figures are installed per-kitchen prices, so no material-only figure is mixed with labour-included ones. Appliance inclusion still differs between publishers, as already flagged in the notes.
+- **Prose figures checked.** Figures in the FAQ, the duration basis and the material descriptions all trace to the results. These include ₹1,200–2,500/sq ft for Pune, accessories at ₹18,000–35,000, "4–6 weeks", "4 to 7 days", "around 45 days" and NoBroker's per-running-foot rates. "HomeLane's guides put acrylic at roughly 15–30%" combines two HomeLane results (15–25% and 20–30%) and is accurate.
 
-`validate_pack.py` (Python standard library only, kept in the verifier's scratchpad) checks the following against CONTRACTS §4/§4a:
-- exact key sets for `ServiceDef`, area presets, scopes, materials, `duration_days`, FAQ, `CostModel`, components, `locality_factors` and `SourceRef`
-- enums (`CostUnit`, `AreaPreset`, `Tier`, `ProseStatus`) and slug and reserved-slug rules
-- that each model's `scope_id` and `material_id` exist in the ServiceDef, and that its `unit` matches the ServiceDef unit
-- integer `rate_inr` with low ≤ expected ≤ high
-- components summing to 1 ± 0.01
-- ≥ 2 sources from different publishers, with no duplicate URLs
-- `retrieved_at` and `reviewed_at` = 2026-10-06, `valid_until` = 2027-04-04 (+180 days), and `status` / `prose_status` = `draft`
-- money, %, superlative and digit claims in unsourced prose
+### Changes made
 
-Tests of the checker itself:
-- **Mutation test:** a scratch copy of the pack with one valid model and 9 deliberately broken models (bad rate order, components sum of 1.2, same publisher twice, wrong `valid_until`, `reviewed` status, unknown `material_id`, `rft` unit mismatch, bad tier, non-integer rate). All 9 were caught, and the valid model passed.
-- **Control run:** on the waterproofing pack (read only), its 16 models passed every model check.
+1. **`modular-kitchen-laminate-board-budget`.** The Livspace ref now points to `https://www.livspace.com/in/interiors/kitchen-price-calculator` ("Modular Kitchen Cost Calculator"), with the verbatim V3 quote "Laminate costs ₹1.5L – ₹2.5L and is budget-friendly and durable, ideal for essential kitchens with simple designs." The notes name the calculator page. Figures and rates are unchanged.
+2. **`modular-kitchen-acrylic-pu-premium`.** The Livspace ref is re-attributed to the same calculator page, with the verbatim V3 quote "Acrylic ranges from ₹2.5L – ₹4L and is a mid-range premium option with a high-gloss, sleek finish for a modern look." The notes name the calculator page. Figures and rates are unchanged.
+3. **`modular-kitchen-parallel-standard`.** The Livspace ref keeps the article URL. Its quote is replaced with result #29's verbatim text, the result that lists the article first: "Straight/Parallel Kitchen: Average size 80-100 sq. ft., cost range ₹2 Lakhs–₹3.8 Lakhs, with cost per sq. ft. of ₹2,600–₹4,000". The notes now record that the row reads "Straight/Parallel" in one search reading and "Parallel" in the other (conflict C1). Rates are unchanged.
+4. **NoBroker reference sizes.** The source says "workspace" (for example "8×6 ft, 14 ft workspace"), and the pack had rendered it as "of counter". It now says "of workspace" in 3 ServiceDef scope descriptions and in the L-shaped, U-shaped and parallel notes. The parallel note now gives the numbers: "more workspace (24 ft) than its L-shaped one (14 ft)".
+5. **`hdhmr-board` description.** Removed the acronym expansion and the "alternative to plywood" claim, which no result supported because both refs are title-only. Corrected "Design Cafe ... guides on HDHMR for kitchen cabinets": its title says "for Home Interiors". The description now states only what the two titles support.
+6. **No model was deleted.** No ref was removed outright, and every model keeps 3–4 publishers.
 
-**Result for this pack:** 0 errors and 17 warnings, before and after the fixes:
-- `area_presets` is empty
-- all 11 `materials[].sources` are empty
-- `duration_days` is a 0..0 placeholder
-- no model in any of the 3 tiers
-- 0 models against the D03 target of 10
+### Remaining caveats
 
-`node scripts/data-coverage.mjs` reports no error for modular-kitchen, only the three "no model for modular-kitchen/{tier}" warnings. Its exit code 1 comes from files owned by other tasks.
-
-### 2. Sources
-
-The pack has **0 cited claims**, so there was nothing to re-check against the web. A grep found 0 occurrences of `http` in the service and cost-model files. The builder's 23 WebFetch reachability tests (22 domains) appear only in this log's query table. I confirmed these builder statements:
-- the cost-model file is `[]`
-- the counts are 4 scopes, 11 materials, 10 questions, 8 mistakes, 13 checklist items, 8 FAQs, 0 area presets and 0 sub-services
-- `data-coverage.mjs` reports no errors for the pack
-- the search budget is used up and the publisher domains are blocked
-
-### 3. Content review and sanity check (by reading only, no web confirmation available)
-
-I reviewed all 4 scope descriptions, 11 material descriptions, 8 FAQ answers, 10 questions, 8 mistakes and 13 checklist items. The default was to remove or neutralise any claim that could not be confirmed:
-
-| # | Where | Problem | Change |
-|---|---|---|---|
-| 1 | scope `cabinets-and-countertop` | It included "the backsplash between the countertop and the wall units". The quote checklist and FAQ treat dado tiling as a separate, possibly extra item, so the scope was ambiguous for pricing. | Wall (dado) tiling is now stated as excluded or priced separately. |
-| 2 | material `particle-board-mdf` | "used in lower-cost and ready-made modular units" is an unsourced price comparison. | Sentence removed. |
-| 3 | material `acrylic-finish` | "high-gloss" was stated as the only acrylic finish, which is unsourced. | Changed to "a smooth, even face". The gloss and matt options need a source on the re-run. |
-| 4 | FAQ "How is a modular kitchen priced?" | "Quotes come in three forms" is an unsourced, exhaustive claim about market practice. | Changed to "A quote may be given as …". |
-| 5 | FAQ "Which board … sink unit?" | "the cabinet most exposed to water" is an unsourced superlative. | Changed to "exposed to water from the tap, the waste pipe, leaks and cleaning". |
-| 6 | FAQ "laminate, acrylic, membrane and PU" | "Acrylic is a glossy sheet" has the same problem as #3. | Changed to "a smooth acrylic sheet". |
-| 7 | FAQ "existing stone platform" | "Often, yes" is an unsourced frequency claim. | Changed to "It may be possible". |
-| 8 | FAQ "housing society" | "Societies commonly set …" is an unsourced claim. | Rewritten as advice on what to ask the society office. |
-
-**Kept, but the re-run must source or cut them:** the remaining material definitions. They read as standard technical definitions:
-- BWP, BWR and MR plywood grades: check the grade names against IS 303 and IS 710 or a plywood maker's page, because BWR naming varies between standards revisions and brands
-- HDHMR as a high-density fibreboard
-- membrane as PVC foil pressed onto MDF
-- PU, veneer, granite and quartz
-
-The questions, mistakes and checklist are procedural advice with no numeric or comparative claims.
-
-**Unit and sanity risks for the re-run.** There are no rates, so there are no unit mix-ups to fix yet.
-- **The unit is sq ft of cabinet front area.** Indian quotes "per sq ft" can mean kitchen floor area or carcass area. Others are per running foot or a lump sum per kitchen. Every model's `notes` must state the conversion. The calculator (plan §11) cannot turn a rate into a kitchen estimate until `area_presets` holds sourced cabinet-front areas per BHK.
-- **`full-kitchen-remodel` per sq ft of cabinet front.** Civil, plumbing, electrical and tiling costs do not scale with cabinet area. A per-sq-ft rate would have to be a sourced whole-kitchen figure divided by a sourced cabinet area, stated in `notes`. Otherwise the orchestrator should leave this scope out of the cost models.
-- **Countertop models.** `material_id` holds the stone, so the cabinet board and finish assumed must be stated in `notes`. Stone is usually priced per sq ft of slab or per running foot of counter, and needs a stated conversion.
-- **Tier spread.** When models are added, check that the budget-to-premium ratio and the tier-to-finish mapping (laminate budget; acrylic, PU or veneer premium) match the sources, rather than assuming a multiplier.
-
-**Still open (cannot be fixed by this pack's owner):**
-- **`duration_days` is `{min: 0, max: 0}`.** `CONTRACTS §4` gives no nullable shape, and a page that ignores `basis` would show "0–0 days". This is a contract-change request for the orchestrator: allow `duration_days: null`, or require pages to hide it when `max = 0`.
-- **The modular-kitchen budget, standard and premium cost-model cells are empty.** The re-run plan above, D03f, or a re-run with search budget must fill them.
+- **Page-level attribution is inferred.** For every figure, the page comes from the search tool's synthesized text plus its link list. No page has been fetched. The Livspace calculator attribution is medium confidence. Re-open the pages before review.
+- **The research log's §1–§8 is not rewritten.** It still describes LS_SQFT as the source of the finish figures and rates HL_45 as low-medium confidence. Read those rows with this section.
+- **`node scripts/data-coverage.mjs`** shows 0 ERROR lines for modular-kitchen after these changes. Its 10 errors are files owned by other tasks: `data/localities.json`, `data/dishes.json` and 8 locality guides.

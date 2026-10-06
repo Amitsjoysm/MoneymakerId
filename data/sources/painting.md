@@ -113,7 +113,7 @@ Publisher is certain for every source (domain-restricted query). "Page" confiden
 | Construction Estimator India | https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/ | distemper, luxury, exterior weatherproof, texture, Tractor | 34 | medium (an interior-only CEI page was also returned) |
 | Biddaro | https://www.biddaro.com/cost/painting | grade table, exterior inclusions, 1,500 sq ft example | 30, 31 | high (first result both times). Biddaro appears to be a programmatic Q&A site; weaker evidence |
 | IndiaMART | four `proddetail` listings (Royale Lustre ₹34 Pune, Royale Shyne ₹28, Luster ₹35 Pune, internal/external ₹16 Pune) | single-seller listed prices; quote = listing title | 20, 37 | high (title is the quote) |
-| Kansai Nerolac Paints | https://www.nerolac.com/wall-paint/exterior-wall-texture-design | exterior texture ~₹60 | 23 | high (title match) |
+| Kansai Nerolac Paints | https://www.nerolac.com/wall-paint/exterior-wall-texture-design | exterior texture ~₹60 (material description only after verification); "Labour cost is extra" (verification spot check V1) | 23, V1 | high for ~₹60 (title match); medium for the labour sentence (V1 returned 10 Nerolac pages) |
 | Kansai Nerolac Paints | wall-paint/difference-between-distemper-paint-and-emulsion-paint; wall-paint/what-is-paint-coverage; wall-paint/what-is-emulsion-paint | distemper vs emulsion, coverage | 23 | medium |
 | Berger Paints | https://www.bergerpaints.com/blogs/tips-before-getting-your-home-painted | fresh painting coats | 7 | medium-low |
 | Berger Paints | https://www.bergerpaints.com/blogs/cost-to-paint-interiors-safely | 1,000 sq ft house example | 18 | medium |
@@ -122,7 +122,7 @@ Publisher is certain for every source (domain-restricted query). "Page" confiden
 
 ## 4. Cost models (12) and their sources
 
-All 12 models have ≥ 2 publishers. Five have exactly two: `interior-painting-fresh-standard`, `interior-painting-repaint-standard`, `interior-painting-lustre-standard`, `exterior-painting-premium-weatherproof-premium` and `exterior-painting-texture-premium`. Tier coverage: interior budget 2, standard 4, premium 2; exterior budget 1, standard 1, premium 2 (all 6 cells filled).
+**After verification: 11 models** (`exterior-painting-texture-premium` was removed; see the Verification section at the end). All 11 have ≥ 2 publishers. Four have exactly two: `interior-painting-fresh-standard`, `interior-painting-repaint-standard`, `interior-painting-lustre-standard` and `exterior-painting-premium-weatherproof-premium`. Tier coverage: interior budget 2, standard 4, premium 2; exterior budget 1, standard 1, premium 1 (all 6 cells filled).
 
 ### `interior-painting-distemper-budget`
 
@@ -256,9 +256,9 @@ All 12 models have ≥ 2 publishers. Five have exactly two: `interior-painting-f
 | AAP_EXT_PROTEK | AapkaPainter | 30–50 | https://aapkapainter.com/resources/painting-cost-calculator |
 | CEI_EXT | Construction Estimator India | 20–50 | https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/ |
 
-### `exterior-painting-texture-premium`
+### `exterior-painting-texture-premium` (REMOVED in verification)
 
-`exterior-painting` · tier `premium` · scope `None` · material `exterior-texture` · ₹55–₹85 per sq ft, expected ₹65. Publisher midpoints: Kansai Nerolac Paints 60, AapkaPainter 70.
+This model was removed on 2026-10-06; see the Verification section. As built, it was: `exterior-painting` · tier `premium` · scope `None` · material `exterior-texture` · ₹55–₹85 per sq ft, expected ₹65. Publisher midpoints: Kansai Nerolac Paints 60, AapkaPainter 70.
 
 | Key | Publisher | Figure (₹/sq ft) | Page |
 |---|---|---|---|
@@ -287,10 +287,61 @@ All 12 models have ≥ 2 publishers. Five have exactly two: `interior-painting-f
 
 ## 7. Gaps
 
-- **No Pune exterior texture rate** and no Pune-specific premium exterior figure other than AapkaPainter's; `exterior-painting-premium-weatherproof-premium` and `exterior-painting-texture-premium` rest on two publishers each.
+- **No Pune exterior texture rate** and no Pune-specific premium exterior figure other than AapkaPainter's; `exterior-painting-premium-weatherproof-premium` rests on two publishers. **No exterior texture model** (removed in verification): only one all-in figure (AapkaPainter Chennai ₹55–₹85) is available, and Nerolac's ~₹60 may exclude labour.
 - **No exterior fresh-vs-repaint split** and no exterior lustre/enamel figures.
 - **No second source for 4 BHK carpet area** or for a typical independent-house size.
 - **No minimum job values, locality factors or GST statements** in any source.
 - **Publishers that returned nothing usable:** housing.com (no links, query 17), Dulux India (coverage only, query 29), Berger (no per-grade per-sq-ft rates; its exterior cost page is titled 2021 and was not used), 99acres (no painting results in query 10 or 27), magicbricks and news sites were not tried because the waterproofing run found them refused.
 - **Not pinned to a publisher, so not used:** "Berger WeatherCoat is classified as an economy exterior paint with all-inclusive costs of ₹15–₹22 per sq ft" and "exterior painting with scaffolding adds ₹5–10 per sq ft to labour charges" (query 28, three domains); "For Premium (Apex Ultima) exterior painting, the cost ranges from ₹30 – ₹50 per square foot" and the Delhi Painting Company / Deccan Clap figures (query 33, open search); "Wall textures and design finishes start from ₹50 per sq ft" and "material costs range from ₹25–80/sq ft with labour + material ranging from ₹45–150/sq ft" (query 24, two domains).
 - **Re-check before review:** every quote comes from search-result text; open each URL and confirm wording and figures before marking anything `reviewed`.
+
+
+## Verification (transcript-based, 2026-10-06)
+
+TASK-MARKER: retryA-painting (verifier pass)
+
+**Method.** I found the builder transcript (`subagents/workflows/wf_648354b3-820/agent-a6f18a26b2fc639e1.jsonl`; the newer file matching the marker is this verification session) and extracted every WebSearch result (42) and WebFetch result (2, both `EGRESS_BLOCKED`) with `python3 -I`. A script walked every SourceRef in both JSON files (models, materials, presets) and checked four things: the `url` appears in a result's link list; the `title` matches that link's title; the `quote` appears verbatim in the result text (ignoring `**` bold markers and whitespace); and the `url` and the quote appear in the **same** result. For quotes from results that listed links on more than one domain, publisher attribution was checked by hand. I then recomputed every model's `expected` with the documented rule (median of one midpoint per publisher, nearest ₹1, ties down), checked that `low`/`high` cover every cited figure, and checked units, components, ids, dates and statuses. Prose claims without a SourceRef (FAQ, mistakes, durations, notes) were grepped against the result text.
+
+**Ref check result (as built).** 185 SourceRefs checked. 169 carry a quote, and all 169 match on url, title and verbatim quote in the same search result. The other 16 have `quote: null`: Asian Paints product pages (Tractor, Apcolite, Royale, Ace, Apex, Apex Ultima, Apex Ultima Protek) and the NoBroker lustre forum page, each counted twice because parent and sub-service duplicate the materials. Their url and title match a returned link exactly; they back only product identity or titles, which is what the prose uses them for. **No fabricated or misattributed ref was found.**
+
+Six quotes came from results whose links spanned more than one domain:
+- AapkaPainter texture ₹80–₹400 and Chennai exterior texture: well supported, because the AapkaPainter link titles carry the figure or the city.
+- NoBroker 1 BHK 450–600 sq ft and Square Yards 2 BHK and 3 BHK carpet areas (query 10): plausible, but the page attribution is medium confidence.
+
+All six were kept.
+
+**Recomputed values.** All 12 as-built `expected` values reproduce exactly: 12, 15, 22, 35, 140, 39, 30, 31, 18, 32, 37 and 65. Every `low`/`high` covers its cited figures. Other checks that passed:
+- All units are `sqft`, matching all three ServiceDef nodes.
+- Components sum to 1.00 in every model.
+- `material_id` and `scope_id` exist in the sub-service.
+- Statuses are `draft`, `valid_until` is 2027-04-04, and every `retrieved_at` is 2026-10-06.
+
+The prose numbers were also checked against the result text:
+- FAQ BHK totals: 2,400 × ₹12, 15, 22 and 35 gives ₹28,800, 36,000, 52,800 and 84,000.
+- Paint quantity: 1,500 ÷ (55 to 65) gives 23–27 L.
+- The repaint discount is 23%.
+- Durations: NoBroker 3–5, 5–7 (5–15) and 2–6 days; AapkaPainter 4–5 days.
+- Berger 24–48 h after rain, NoBroker 4 h, and Nerolac ceilings or low-traffic rooms.
+- Package prices: Urban Company ₹12,999 and HomeTriangle ₹12,899.
+- Labour-only ranges, and the Asian Paints 55%–65% material share. The text reads "55% to 65%".
+
+**Spot checks this session (3 WebSearch calls of the 5 allowed, plus 1 WebFetch that was refused):**
+- V1 `nerolac.com`, "exterior wall texture design cost per square foot India labour material ₹60". The result repeats the ~₹60 figure and also says "Labour cost is extra and will vary depending on the overall skill and experience of the labour employed". The same sentence then continues "with rates including labour + material + taxes and other operational expenses", so the result contradicts itself. WebFetch of the Nerolac page was `EGRESS_BLOCKED`, so the conflict could not be settled.
+- V2 `nobroker.in`, "exterior texture painting cost per sq ft with labour Pune". This returned only NoBroker's general Pune texture figure (Rs 80–200, the same figure the interior texture model already uses) and texture labour of ₹15–₹40 nationally. Nothing was exterior-specific, so there is no second all-in exterior texture source.
+- V3 `aapkapainter.com`, "4 BHK painting cost 1,800–2,400 sq ft carpet area paintable area". The result text calls 1,800–2,400 sq ft a "carpet area", but my query used those words, so this is weak confirmation. Not cited.
+
+**Changes made**
+
+1. **Deleted `exterior-painting-texture-premium`** (cost-models file, 12 → 11 models). Its two figures may not share a basis. AapkaPainter's ₹55–₹85 is explicitly labour plus material. Nerolac's ~₹60 is stated without a basis in the builder's result, and V1 says labour is extra. Under the no-mixed-bases rule Nerolac could not stay in the model, which would leave one publisher, so the model was removed. The exterior premium tier is still covered by `exterior-painting-premium-weatherproof-premium`.
+2. **`exterior-texture` material** (parent and `exterior-painting`): I rewrote the description to say that Nerolac's figure may not include labour and that no exterior texture model is offered yet. I also added a SourceRef: Nerolac, exterior-wall-texture-design, quote "Labour cost is extra and will vary depending on the overall skill and experience of the labour employed", from V1. Its page attribution is medium confidence.
+3. **FAQ edits.** I removed "texture ₹55–₹85 (₹65)" from the parent's "How much does house painting cost in Pune per sq ft?" answer and from the exterior "How much does exterior painting cost per sq ft in Pune?" answer. Both now say that exterior texture has no model, and give the two figures with the basis caveat.
+4. **`interior-painting-lustre-standard` notes.** I added that neither source says whether paint is included, and that treating both figures as labour plus material is an assumption. The numbers are unchanged.
+5. **This log.** I updated the §4 header (11 models, 4 with exactly two publishers, exterior premium 1), marked the removed model's section, updated the Nerolac row in §3 and the exterior texture gap in §7, and added this section.
+
+**Checked but not changed**
+- **4 BHK preset (6,400 sq ft).** This still rests on one source for size. The same AapkaPainter cost list gives a 3 BHK as 1,200–1,600 sq ft, which is above the 1,000–1,450 sq ft carpet range on AapkaPainter's paintable-area page (builder query 39). The list may therefore use a larger area basis, and the preset may run high. The preset text already labels the carpet-area reading as an assumption.
+- **Tier mapping asymmetry.** AapkaPainter's Pune exterior grade labels ("standard emulsion" ₹26–₹40, "premium options" ₹42–₹68) are used in the models, while its Pune interior grade labels are not. This is documented in §1.6 and §5.3. Using the interior labels would move only `interior-painting-basic-emulsion-budget` (15 → 16, if "standard emulsion" ₹20–₹30 were added); the luxury model would stay at 35.
+- **Unstated inclusions.** Several single-figure sources do not itemise what they include: NoBroker's paint-type list (distemper ₹7 and ₹8, texture ₹80–₹200), Asian Paints, Construction Estimator India, Biddaro, Urban Company, and the HomeTriangle and IndiaMART listed prices. The magnitudes fit all-in service rates, and each model draws on 4–6 publishers, so no other model was changed. Re-check inclusions on the live pages before review.
+- **Component splits** remain a labelled editorial split. NoBroker's "labour is about 3/2 of material" sits against the Asian Paints 55%–65% material share; this is recorded in §5.4.
+
+**Coverage script.** `node scripts/data-coverage.mjs` reports 10 ERROR lines, all for missing files in other packs (`data/localities.json`, `data/dishes.json` and 8 locality guides). There are **0 painting errors**. The painting tier cells are all filled: interior 3/3, exterior 3/3.

@@ -516,7 +516,7 @@
     "reviewed_at": "2026-10-06",
     "valid_until": "2027-04-04",
     "status": "draft",
-    "notes": "Rate per sq ft for a lustre (sheen) finish in Pune. Cited: NoBroker Pune lustre paints ₹26–₹30; IndiaMART seller listing 'Luster Paint Service' ₹35 per sq ft in Pune. Range ₹26–₹35. Expected = median of the two publisher midpoints, nearest ₹1, ties down (28 and 35 → 31.5 → 31). Neither source states what preparation or how many coats are included, so treat this as indicative only; the IndiaMART figure is a single seller's listed price. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+    "notes": "Rate per sq ft for a lustre (sheen) finish in Pune. Cited: NoBroker Pune lustre paints ₹26–₹30; IndiaMART seller listing 'Luster Paint Service' ₹35 per sq ft in Pune. Range ₹26–₹35. Expected = median of the two publisher midpoints, nearest ₹1, ties down (28 and 35 → 31.5 → 31). Neither source states what preparation, how many coats or whether the paint itself is included. Both are quoted as painting or service rates, so the model treats them as labour-and-material rates; that is an assumption, not a stated basis. Treat this model as indicative only; the IndiaMART figure is a single seller's listed price. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
   },
   {
     "id": "exterior-painting-economy-emulsion-budget",
@@ -702,48 +702,5 @@
     "valid_until": "2027-04-04",
     "status": "draft",
     "notes": "Labour-and-material rate per sq ft of exterior wall for a premium weatherproof or elastomeric exterior system (for example Asian Paints Apex Ultima or Apex Ultima Protek). Cited: AapkaPainter Pune premium exterior with waterproofing treatment ₹42–₹68, metro Apex Ultima ₹22–₹35 and metro Apex Ultima Protek ₹30–₹50; Construction Estimator India exterior weatherproof paint (names Apex Ultima and Nerolac Excel) ₹20–₹50 (national). Range ₹20–₹68. Expected = median of publisher midpoints, nearest ₹1, ties down (AapkaPainter's own median 40, CEI 35 → 37.5 → 37). Only two publishers give a premium-specific exterior figure; AapkaPainter's Pune figure is the only Pune one and is well above the national figures, so a Pune job with full crack treatment may land in the upper half of this range. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
-  },
-  {
-    "id": "exterior-painting-texture-premium",
-    "service_id": "exterior-painting",
-    "scope_id": null,
-    "material_id": "exterior-texture",
-    "tier": "premium",
-    "unit": "sqft",
-    "rate_inr": {
-      "low": 55,
-      "expected": 65,
-      "high": 85
-    },
-    "min_job_inr": null,
-    "components": {
-      "materials": 0.45,
-      "labour": 0.38,
-      "preparation": 0.08,
-      "repair": 0.04,
-      "transport": 0.02,
-      "waste": 0.03
-    },
-    "locality_factors": [],
-    "sources": [
-      {
-        "url": "https://www.nerolac.com/wall-paint/exterior-wall-texture-design",
-        "title": "Exterior Wall Texture Design",
-        "publisher": "Kansai Nerolac Paints",
-        "retrieved_at": "2026-10-06",
-        "quote": "For exterior wall texture design in India, basic finishes might cost around ₹60 per square foot, while fancy or layered textures cost more, with rates varying locally."
-      },
-      {
-        "url": "https://aapkapainter.com/blog/painting-cost-per-sq-ft-in-chennai-labour-material-rates-explained/",
-        "title": "Painting Cost Per Sq Ft in Chennai: Labour & Material Rates (2026)",
-        "publisher": "AapkaPainter",
-        "retrieved_at": "2026-10-06",
-        "quote": "For textured exterior finishes in Chennai, labour-only rates are ₹20–35/sq ft and labour + material rates are ₹55–85/sq ft."
-      }
-    ],
-    "reviewed_at": "2026-10-06",
-    "valid_until": "2027-04-04",
-    "status": "draft",
-    "notes": "Labour-and-material rate per sq ft for a textured exterior finish. Cited: Nerolac about ₹60 for basic exterior texture finishes, with layered textures costing more (national); AapkaPainter Chennai textured exterior ₹55–₹85 labour + material (its labour-only rate is ₹20–₹35). Range ₹55–₹85. Expected = median of the two publisher midpoints, nearest ₹1, ties down (60 and 70 → 65). No Pune-specific exterior texture rate was found; both figures are from outside Pune. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
   }
 ]

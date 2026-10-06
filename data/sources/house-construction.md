@@ -153,3 +153,86 @@ Counts: 12 questions, 9 mistakes, 14 checklist items and 8 FAQs.
   - a regex scan of the prose for superlatives, which found none
 
   It passed.
+
+## 8. Verification (transcript-based, 2026-10-06)
+
+Verifier pass by a separate agent. The checks used the builder's own transcript, and 4 spot-check WebSearch calls were made (budget 5).
+
+### 8.1 Method
+
+1. **Transcript.** The builder's transcript is `agent-a73fe90d005e2127d.jsonl` in workflow `wf_648354b3-820`. The newest file that matched the marker was the verifier's own transcript, so it was skipped. It holds 36 WebSearch results and 1 WebFetch result (`EGRESS_BLOCKED`), which matches the builder's stated count of 36 searches.
+2. **Source refs.** Each of the 36 SourceRefs in both JSON files was checked: 2 in the preset, 7 in materials, and 27 in models. For each one, the check confirmed that:
+   - the URL appears in a result's link list,
+   - the title and URL appear together as a pair,
+   - the quote appears verbatim, ignoring `**` and whitespace, and
+   - the quote appears in the same result that lists the URL.
+
+   **36 of 36 matched.** None was fabricated, so none was removed. The 5 quote-null refs are title-only refs on materials; each title and URL pair is present.
+3. **Attribution.** Where a publisher returned several pages, attribution was checked further:
+   - **Brick & Bolt packages:** the publisher is certain (a search limited to bricknbolt.com). The exact Pune page is medium confidence.
+   - **Construction Estimator India city table (₹1,700–2,500 basic, ₹2,800–4,200 premium):** two searches limited to constructionestimatorindia.com (builder queries 5 and 6) confirm the publisher. A verifier search for those figures returned `cost-of-building-a-house-in-india` as the top result.
+   - **Construction Estimator India labour-only (₹300–500):** found through a search limited to that domain. The 3BHK page was the top result.
+4. **Note claims.** Every figure cited in the model notes and the log was traced to result text, including figures used only as cross-checks:
+   - Godrej's "Dec 27, 2024" date
+   - the InfraLens zone table and its 25–28% labour share
+   - NoBroker's 20–25% labour share (Pune) and 15–20% (1,200 sq ft guide)
+   - NoBroker's 600 sq ft labour-only figure of ₹300–500
+   - the Brick & Bolt tile allowances (₹50 to ₹160)
+   - the Brick & Bolt Ghaziabad grey-structure rate of ₹1,100–1,400
+   - Studio Matrx's shell rate of ₹1,500–2,000 and its G+1 build time of about 12 months
+   - Brick & Bolt's 8 to 18 months
+   - 99acres' 2022 reference
+   - Home Bazaar's ₹1,500–2,500
+
+   All were found in the results.
+
+### 8.2 Recomputation
+
+Each expected value is the median of one midpoint per publisher, rounded to the nearest ₹25 with ties rounded down.
+
+| Model | Publisher midpoints | Median | Stored | Covers all sources |
+|---|---|---|---|---|
+| turnkey-budget | 1,600 SY · 1,715 BB · 1,825 CEI · 2,000 NB · 2,007 IL | 1,825 | 1,825 ✓ | 1,300–2,500 ✓ |
+| turnkey-standard | 1,750 GOD · 2,000 SY · 2,110 BB · 2,150 CEI · 2,450 NB · 2,573 IL | 2,130 → 2,125 | 2,125 ✓ | 1,500–2,700 ✓ |
+| turnkey-premium | 2,500 SY · 2,735 BB · 3,000 NB · 3,000 GOD · 3,250 CEI · 3,474 IL | 3,000 | 3,000 ✓ | 2,270–4,200 ✓ |
+| grey-structure-standard | 1,050 HB · 1,150 CEI | 1,100 | 1,100 ✓ | 800–1,500 ✓ |
+| labour-only-standard | 400 CEI · 450 NB | 425 | 425 ✓ | 300–550 ✓ |
+
+All five models also pass these checks:
+- integer rates with low ≤ expected ≤ high
+- unit `sqft`, the same as the ServiceDef unit
+- a `scope_id` that exists in the ServiceDef
+- components summing to 1.000
+- 2 or more distinct publishers
+- `valid_until` 2027-04-04 and status `draft`
+
+The scopes are kept apart: turnkey (material and labour), structure only, and labour only.
+
+### 8.3 Spot checks (WebSearch, 4 calls)
+
+| # | Domains | Query (short) | Finding |
+|---|---|---|---|
+| V1 | bricknbolt.com | Brick & Bolt Pune packages, GST | Same prices: ₹1,680, ₹1,840, ₹2,110 and ₹2,270. The search summary again labels them "Inclusive of GST". It describes Basic as "a budget package" and Classic as "the best seller", which fits the price-based tier mapping. |
+| V2 | nobroker.in, constructionestimatorindia.com, infralens.in, squareyards.com | Pune cost per sq ft, GST included or extra | The tiers matched. Two GST statements contradict each other, and neither can be tied to a page: "the rates are inclusive of GST and labor" and "add 8–12% for permits, architect fees, GST, and contingencies". |
+| V3 | constructionestimatorindia.com | City-wise rates, Pune ₹1,700–2,500 basic and ₹2,800–4,200 premium | The top result was `cost-of-building-a-house-in-india`, which supports the CEI_HOUSE attribution. |
+| V4 | homebazaar.com | Home Bazaar RCC cost, ₹900–1,200 | The same page, now titled "What Is The Construction Cost In Pune 2026?". The RCC figure is given separately from the citywide average of ₹1,500–2,500, which supports reading it as a structure-only rate. |
+
+### 8.4 Changes made
+
+1. **`data/cost-models/house-construction.json`:**
+   - **Turnkey budget, standard and premium:** added a verifier note to each model's `notes`. It says that the GST basis across publishers is unresolved (V1, V2), and that figures may differ by the GST amount. For budget and premium, the note also records that V3 supports the CEI_HOUSE attribution. Rates, sources and components are unchanged.
+   - **Grey structure standard:** changed the Home Bazaar SourceRef `title` from "…Pune 2025?" to the current "What Is The Construction Cost In Pune 2026?" (V4). The URL and quote are unchanged. Added a verifier note.
+   - **Labour-only standard:** added a verifier note ("no change").
+2. **`data/services/house-construction.json`:**
+   - **`fly-ash-brick` description:** removed the unsourced clause "a residue from coal-fired power stations". No search result stated it.
+   - **`aac-block` description:** removed the unsourced clause "which are factory-made, laid with a block adhesive or cement mortar". No search result stated it.
+   - **`duration_days.basis`:** removed "with planning and approvals counted in its stages". In the builder's query 27, the stage-by-stage breakdown (planning and approvals 1–3 months, totalling 10–18 months) cannot be tied to the stage-wise guide rather than to the Bangalore timeline guide in the same result. Its total also differs from the 8 to 18 months used. `min` and `max` are unchanged.
+3. **No model was removed and no rate was changed.**
+
+### 8.5 Still open (for owner review)
+
+- **GST basis:** this is the main open risk. Brick & Bolt's packages are labelled GST-inclusive in search summaries, and the other publishers are unknown or contradictory. If Construction Estimator India and NoBroker turn out to be GST-exclusive, the turnkey models mix bases. In that case, either drop Brick & Bolt's package figures or gross the others up.
+- **Brick & Bolt tier mapping:** the packages are mapped by price, so the package named "Premium" sits in the standard tier. This is a judgement call.
+  - If Brick & Bolt's package figures were dropped, Brick & Bolt would rest on its Pune guide only. The expected values would then be: budget 1,825 (no change), standard 2,175, and premium 3,100, with premium `low` rising to 2,500.
+- **Live-page checks:** all quotes come from search-tool summary text, and no page was opened. Re-check each quote against the live page before marking anything `reviewed`.
+- **Earlier gaps (§6) remain:** 5 models, not 8. The labour-only rate is national, there is no Pune locality factor and no minimum job size, and the gate path (c) facts belong to another task.
