@@ -1,0 +1,1387 @@
+{
+  "id": "painting",
+  "name": "House painting",
+  "parent_id": null,
+  "unit": "sqft",
+  "area_presets": [
+    {
+      "preset": "1bhk",
+      "label": "1 BHK flat, about 1,600 sq ft to paint",
+      "quantity": 1600,
+      "assumption": "Carpet area of 500 sq ft × 3.2 = 1,600 sq ft of wall and ceiling area. 500 sq ft is inside AapkaPainter's 1 BHK range (400–650 sq ft carpet) and NoBroker's 450–600 sq ft. The 3.2 multiplier is AapkaPainter's working figure; Asian Paints' budget calculator uses 2.5 and NoBroker uses 3.5, which would give 1,250–1,750 sq ft for the same flat. AapkaPainter puts a 1 BHK at 1,200–2,000 sq ft of paintable area. A quote should be based on measured walls and ceilings.",
+      "sources": [
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+        },
+        {
+          "url": "https://aapkapainter.com/blog/1bhk-vs-2bhk-vs-3bhk-painting-cost/",
+          "title": "1 BHK vs 2 BHK vs 3 BHK Painting Cost: What's the Real Difference? (2026)",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "For 1 BHK (400–650 sq ft carpet), paintable area is 1,200–2,000 sq ft; for 2 BHK (700–1,050 sq ft carpet), it's 2,000–3,200 sq ft; and for 3 BHK (1,000–1,450 sq ft carpet), it's 2,800–4,400 sq ft."
+        },
+        {
+          "url": "https://www.nobroker.in/forum/how-much-square-feet-required-for-1-bhk/",
+          "title": "What is 1 BHK Carpet Area In Square Feet",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "One-bedroom houses typically range in size from 450 to 600 square feet."
+        },
+        {
+          "url": "https://www.asianpaints.com/resources/tools/paint-budget-calculator.html",
+          "title": "Paint Budget Calculator for House Painting Cost",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "The painting area is estimated by multiplying the carpet area by 2.5."
+        },
+        {
+          "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+          "title": "Paint Cost Calculator",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+        }
+      ]
+    },
+    {
+      "preset": "2bhk",
+      "label": "2 BHK flat, about 2,400 sq ft to paint",
+      "quantity": 2400,
+      "assumption": "Carpet area of 750 sq ft × 3.2 = 2,400 sq ft of wall and ceiling area. 750 sq ft is inside AapkaPainter's 2 BHK range (700–1,050 sq ft carpet) and Square Yards' 600–950 sq ft. With Asian Paints' 2.5 or NoBroker's 3.5 multiplier the same flat would be 1,875–2,625 sq ft. AapkaPainter puts a 2 BHK at 2,000–3,200 sq ft of paintable area.",
+      "sources": [
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+        },
+        {
+          "url": "https://aapkapainter.com/blog/1bhk-vs-2bhk-vs-3bhk-painting-cost/",
+          "title": "1 BHK vs 2 BHK vs 3 BHK Painting Cost: What's the Real Difference? (2026)",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "For 1 BHK (400–650 sq ft carpet), paintable area is 1,200–2,000 sq ft; for 2 BHK (700–1,050 sq ft carpet), it's 2,000–3,200 sq ft; and for 3 BHK (1,000–1,450 sq ft carpet), it's 2,800–4,400 sq ft."
+        },
+        {
+          "url": "https://www.squareyards.com/blog/what-is-2-bhk",
+          "title": "What is 2 BHK Apartment? Size, Carpet Area, Advantages and Comparison Guide",
+          "publisher": "Square Yards",
+          "retrieved_at": "2026-10-06",
+          "quote": "Carpet area usually ranges from 600 to 950 sqft depending on city and project."
+        },
+        {
+          "url": "https://www.asianpaints.com/resources/tools/paint-budget-calculator.html",
+          "title": "Paint Budget Calculator for House Painting Cost",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "The painting area is estimated by multiplying the carpet area by 2.5."
+        },
+        {
+          "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+          "title": "Paint Cost Calculator",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+        }
+      ]
+    },
+    {
+      "preset": "3bhk",
+      "label": "3 BHK flat, about 3,520 sq ft to paint",
+      "quantity": 3520,
+      "assumption": "Carpet area of 1,100 sq ft × 3.2 = 3,520 sq ft of wall and ceiling area. 1,100 sq ft is inside AapkaPainter's 3 BHK range (1,000–1,450 sq ft carpet) and Square Yards' 850–1,200 sq ft for a standard 3 BHK; Square Yards also says the configuration usually delivers 1,100–1,400 sq ft in Pune, without saying whether that is carpet area. With the 2.5 or 3.5 multiplier the flat would be 2,750–3,850 sq ft; AapkaPainter gives 2,800–4,400 sq ft.",
+      "sources": [
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+        },
+        {
+          "url": "https://aapkapainter.com/blog/1bhk-vs-2bhk-vs-3bhk-painting-cost/",
+          "title": "1 BHK vs 2 BHK vs 3 BHK Painting Cost: What's the Real Difference? (2026)",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "For 1 BHK (400–650 sq ft carpet), paintable area is 1,200–2,000 sq ft; for 2 BHK (700–1,050 sq ft carpet), it's 2,000–3,200 sq ft; and for 3 BHK (1,000–1,450 sq ft carpet), it's 2,800–4,400 sq ft."
+        },
+        {
+          "url": "https://www.squareyards.com/sale/guides/what-is-3-bhk",
+          "title": "What is 3 BHK Flat: Size, Layout, Advantages and Buyer Guide (2026)",
+          "publisher": "Square Yards",
+          "retrieved_at": "2026-10-06",
+          "quote": "a standard 3 BHK flat has a carpet area of 850 to 1200 sqft, with premium 3 BHKs running 1400 to 1800 sqft."
+        },
+        {
+          "url": "https://www.squareyards.com/sale/guides/what-is-3-bhk",
+          "title": "What is 3 BHK Flat: Size, Layout, Advantages and Buyer Guide (2026)",
+          "publisher": "Square Yards",
+          "retrieved_at": "2026-10-06",
+          "quote": "In Pune, Ahmedabad, and Hyderabad, the same configuration usually delivers 1100 to 1400 sqft."
+        },
+        {
+          "url": "https://www.asianpaints.com/resources/tools/paint-budget-calculator.html",
+          "title": "Paint Budget Calculator for House Painting Cost",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "The painting area is estimated by multiplying the carpet area by 2.5."
+        },
+        {
+          "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+          "title": "Paint Cost Calculator",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+        }
+      ]
+    },
+    {
+      "preset": "4bhk",
+      "label": "4 BHK flat, about 6,400 sq ft to paint",
+      "quantity": 6400,
+      "assumption": "Carpet area of 2,000 sq ft × 3.2 = 6,400 sq ft of wall and ceiling area. AapkaPainter's 4 BHK cost example uses 1,800–2,400 sq ft; its 1 BHK example in the same list states carpet area, so we read this as carpet area too. 2,000 sq ft is our pick inside that range; no second source for 4 BHK size was found. With the 2.5 or 3.5 multiplier the flat would be 5,000–7,000 sq ft.",
+      "sources": [
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "4 BHK (1,800–2,400 sq ft) costs ₹55,000–₹75,000 (Economy), ₹90,000–₹1,20,000 (Premium), or ₹1,50,000–₹2,20,000 (Luxury)"
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+        },
+        {
+          "url": "https://www.asianpaints.com/resources/tools/paint-budget-calculator.html",
+          "title": "Paint Budget Calculator for House Painting Cost",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "The painting area is estimated by multiplying the carpet area by 2.5."
+        },
+        {
+          "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+          "title": "Paint Cost Calculator",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+        }
+      ]
+    },
+    {
+      "preset": "independent_house",
+      "label": "Independent house interior, about 3,200 sq ft to paint",
+      "quantity": 3200,
+      "assumption": "Example house of 1,000 sq ft (the size in Berger's interior painting cost example) × 3.2 = 3,200 sq ft of wall and ceiling area. The multipliers are stated for flats; a house with a staircase, double-height spaces or higher ceilings will have more wall area, so this preset is a planning assumption, not a sourced figure for houses.",
+      "sources": [
+        {
+          "url": "https://www.bergerpaints.com/blogs/cost-to-paint-interiors-safely",
+          "title": "Cost To Paint Interiors Safely?",
+          "publisher": "Berger Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "For a 1000 square foot house, painting it with emulsion or distemper in interiors would cost between ₹75,000 to 1.5L."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+        },
+        {
+          "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+          "title": "Paint Cost Calculator",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+        }
+      ]
+    }
+  ],
+  "scope_options": [
+    {
+      "id": "fresh-painting",
+      "label": "Fresh painting",
+      "description": "For new plaster, or walls being redone from the base: one or two coats of wall putty, a coat of primer, then two or more coats of paint. Berger lists 1–2 coats of putty, a primer coat and at least 2–3 coats of paint for fresh painting."
+    },
+    {
+      "id": "repaint",
+      "label": "Repaint",
+      "description": "For walls that already have a sound putty base: clean, scrape loose paint, touch up putty where needed, then primer and two coats of paint. AapkaPainter puts a repaint 25–40% below fresh painting and HomeTriangle 15–25% below, because less putty is needed."
+    }
+  ],
+  "materials": [
+    {
+      "id": "putty-and-primer",
+      "label": "Wall putty and primer (undercoats)",
+      "description": "Undercoats applied before the paint. Berger states that fresh painting needs 1–2 coats of putty, a coat of primer and at least 2–3 coats of paint. AapkaPainter attributes the higher cost of fresh painting to full putty work (two coats) and primer, and puts a repaint over sound walls 25–40% lower.",
+      "sources": [
+        {
+          "url": "https://www.bergerpaints.com/blogs/tips-before-getting-your-home-painted",
+          "title": "Read This Before Getting Your Home Painted!",
+          "publisher": "Berger Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Fresh painting requires 1-2 coats of putty, a coat of primer and at least 2-3 coats of paint"
+        },
+        {
+          "url": "https://aapkapainter.com/blog/how-to-calculate-painting-cost-per-sq-ft/",
+          "title": "How to Calculate Painting Cost Per Sq Ft: Step-by-Step Guide (2026)",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Fresh painting costs ₹18–35/sq ft because it includes full putty work (2 coats), primer, and paint."
+        },
+        {
+          "url": "https://aapkapainter.com/blog/how-to-calculate-painting-cost-per-sq-ft/",
+          "title": "How to Calculate Painting Cost Per Sq Ft: Step-by-Step Guide (2026)",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Fresh painting needs full putty and primer; a repaint over sound walls usually costs 25–40% less."
+        }
+      ]
+    },
+    {
+      "id": "distemper",
+      "label": "Distemper",
+      "description": "A low-cost water-based finish. Nerolac describes distemper as more economical than emulsion but less resistant to stains and moisture, with coverage of about 130–150 sq ft per litre; NoBroker notes it is not waterproof.",
+      "sources": [
+        {
+          "url": "https://www.nerolac.com/wall-paint/difference-between-distemper-paint-and-emulsion-paint",
+          "title": "Distemper Paint - Distemper vs Emulsion, Key Differences, Meaning - Nerolac",
+          "publisher": "Kansai Nerolac Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Unlike emulsion paint, which offers a more durable and washable surface, distemper is typically more economical but less resistant to stains and moisture"
+        },
+        {
+          "url": "https://www.nerolac.com/wall-paint/what-is-paint-coverage",
+          "title": "What is Paint Coverage? How much paint do you need to paint a room? - Nerolac",
+          "publisher": "Kansai Nerolac Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Emulsion paint coverage is approximately 90 square feet per litre, while distemper paint coverage is around 130-150 square feet per litre."
+        },
+        {
+          "url": "https://www.nobroker.in/painting-services/home-painting-ideas/painting-costs-in-pune/",
+          "title": "Painting Cost in Pune in 2026 - Starting at ₹8 Per Sq. Ft.",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Distemper paint: Rs. 7/sq. ft., budget-friendly but not waterproof"
+        }
+      ]
+    },
+    {
+      "id": "basic-emulsion",
+      "label": "Entry-level emulsion (for example Asian Paints Tractor Emulsion)",
+      "description": "A water-based emulsion that Nerolac describes as low-odour, fast-drying and more washable than distemper. AapkaPainter groups Tractor Emulsion as its economy grade, lists it at ₹185 per litre (1 L) and gives coverage of 130–150 sq ft per litre.",
+      "sources": [
+        {
+          "url": "https://www.nerolac.com/wall-paint/what-is-emulsion-paint",
+          "title": "Emulsion Paint",
+          "publisher": "Kansai Nerolac Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Emulsion paint is a water-based coating with low odour, fast drying, and better washability than distemper"
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Economy paints use Tractor Emulsion, Premium uses Apcolite, and Luxury uses Royale."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Tractor Emulsion costs ₹185/litre (1L), Apcolite Premium Emulsion ₹340/litre, and Royale Luxury Emulsion ₹560/litre."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Standard emulsion (Asian Paints Tractor) provides coverage of 12–14 sq m per litre (130–150 sq ft/litre), while Premium emulsion (Asian Paints Royale) covers 10–12 sq m per litre (110–130 sq ft/litre)."
+        },
+        {
+          "url": "https://www.asianpaints.com/paint-products/interior-wall-paints/tractor.html",
+          "title": "Tractor Emulsion Paints By Asian Paints",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "premium-emulsion",
+      "label": "Premium emulsion (for example Asian Paints Apcolite)",
+      "description": "A mid-range emulsion. Asian Paints positions Apcolite as a mid-range option below Royale and puts Apcolite Premium Emulsion at roughly ₹300–₹350 per litre; AapkaPainter lists it at ₹340 per litre.",
+      "sources": [
+        {
+          "url": "https://www.asianpaints.com/blogs/royale-vs-apcolite-price-finish-features-comparison.html",
+          "title": "Royale vs Apcolite: Difference in Price, Finish & Features",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Royale and Apcolite are two popular interior wall paints, with Royale positioned as a premium luxury emulsion and Apcolite as a reliable mid-range option."
+        },
+        {
+          "url": "https://www.asianpaints.com/blogs/royale-vs-apcolite-price-finish-features-comparison.html",
+          "title": "Royale vs Apcolite: Difference in Price, Finish & Features",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Royale paints are typically around ₹425–₹600 per litre, while Apcolite Premium Emulsion is roughly ₹300–₹350 per litre."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Tractor Emulsion costs ₹185/litre (1L), Apcolite Premium Emulsion ₹340/litre, and Royale Luxury Emulsion ₹560/litre."
+        },
+        {
+          "url": "https://www.asianpaints.com/paint-products/interior-wall-paints/apcolite.html",
+          "title": "Asian Paints Apcolite Premium Emulsion Paints - Elevate your interiors",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "luxury-emulsion",
+      "label": "Luxury emulsion (for example Asian Paints Royale)",
+      "description": "A higher-priced washable emulsion. Asian Paints positions Royale as its premium luxury emulsion at around ₹425–₹600 per litre; AapkaPainter lists Royale at ₹560 per litre with coverage of 110–130 sq ft per litre. Asian Paints notes that on premium jobs the paint, not labour, becomes the larger cost.",
+      "sources": [
+        {
+          "url": "https://www.asianpaints.com/blogs/royale-vs-apcolite-price-finish-features-comparison.html",
+          "title": "Royale vs Apcolite: Difference in Price, Finish & Features",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Royale and Apcolite are two popular interior wall paints, with Royale positioned as a premium luxury emulsion and Apcolite as a reliable mid-range option."
+        },
+        {
+          "url": "https://www.asianpaints.com/blogs/royale-vs-apcolite-price-finish-features-comparison.html",
+          "title": "Royale vs Apcolite: Difference in Price, Finish & Features",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "Royale paints are typically around ₹425–₹600 per litre, while Apcolite Premium Emulsion is roughly ₹300–₹350 per litre."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Tractor Emulsion costs ₹185/litre (1L), Apcolite Premium Emulsion ₹340/litre, and Royale Luxury Emulsion ₹560/litre."
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Standard emulsion (Asian Paints Tractor) provides coverage of 12–14 sq m per litre (130–150 sq ft/litre), while Premium emulsion (Asian Paints Royale) covers 10–12 sq m per litre (110–130 sq ft/litre)."
+        },
+        {
+          "url": "https://www.asianpaints.com/blogs/painting-cost-per-sq-ft-india.html",
+          "title": "Painting Cost Per Sq Ft in India: Labour, Material & City Rates",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "For premium painting jobs, the paint price becomes the bigger expense because luxury emulsions and washable paints are expensive."
+        },
+        {
+          "url": "https://www.asianpaints.com/paint-products/interior-wall-paints/royale.html",
+          "title": "Royale Luxury Emulsion Paints By Asian Paints",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "lustre-finish",
+      "label": "Lustre (sheen) finish",
+      "description": "A sheen finish that Pune sources price separately from emulsions: NoBroker lists lustre paints at ₹26–₹30 per sq ft and an IndiaMART seller lists a lustre paint service at ₹35 per sq ft in Pune.",
+      "sources": [
+        {
+          "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+          "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Lustre Paints: Rs 26/sq. ft to Rs 30/ sq. ft"
+        },
+        {
+          "url": "https://www.indiamart.com/proddetail/luster-paint-service-2850870405988.html",
+          "title": "Luster Paint Service at ₹ 35/square feet in Pune",
+          "publisher": "IndiaMART",
+          "retrieved_at": "2026-10-06",
+          "quote": "Luster Paint Service at ₹ 35/square feet in Pune"
+        },
+        {
+          "url": "https://www.nobroker.in/forum/what-is-luster-paint-rate-in-pune/",
+          "title": "What is the Luster Paint Rate in Pune",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "interior-texture",
+      "label": "Interior texture finish",
+      "description": "A raised or patterned finish, usually on a feature wall. AapkaPainter lists 12 texture types at ₹80–₹400 per sq ft; NoBroker gives ₹80–₹200 per sq ft in Pune; Construction Estimator India gives ₹80–₹200 for specialised textures such as Royale Play.",
+      "sources": [
+        {
+          "url": "https://aapkapainter.com/blog/what-is-texture-painting-and-types/",
+          "title": "What is Texture Painting? 12 Types, Cost (₹80–400/sqft) & ...",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Texture painting transforms flat walls into surfaces with depth and character, with prices ranging from ₹80 to ₹400 per sqft."
+        },
+        {
+          "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+          "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Texture paint: Rs. 80-200 per square foot"
+        },
+        {
+          "url": "https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/",
+          "title": "Cost of Painting a House in India 2026",
+          "publisher": "Construction Estimator India",
+          "retrieved_at": "2026-10-06",
+          "quote": "Texture painting (specialized/Royal Play) costs ₹80 – ₹200 per sq. ft."
+        }
+      ]
+    },
+    {
+      "id": "exterior-economy-emulsion",
+      "label": "Entry-level exterior emulsion (for example Asian Paints Ace)",
+      "description": "An entry-level exterior emulsion. The Asian Paints product page title describes Ace Exterior Emulsion as water resistant with a 4-year warranty; NoBroker lists it at ₹301 per litre; AapkaPainter prices Ace exterior work in Hyderabad at ₹14–₹22 per sq ft including labour.",
+      "sources": [
+        {
+          "url": "https://www.asianpaints.com/paint-products/exterior-wall-paints/ace-exterior-emulsion.html",
+          "title": "Ace Exterior Emulsion - Water Resistant with 4-Year Warranty",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        },
+        {
+          "url": "https://www.nobroker.in/blog/best-paint-for-exterior-walls/",
+          "title": "10 Best Paint for Exterior Walls with Prices in India",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Ace exterior Emulsion (₹301/litre) protects your wall from rain, heat & dust while keeping them looking fresh."
+        },
+        {
+          "url": "https://aapkapainter.com/blog/painting-cost-in-hyderabad/",
+          "title": "Painting Cost in Hyderabad: Know Your Budget & Options",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "₹14–22/sq ft (Ace Exterior Emulsion), ₹17–26/sq ft (Apex Exterior Emulsion), and ₹25–38/sq ft (Apex Ultima Protek)"
+        }
+      ]
+    },
+    {
+      "id": "exterior-weatherproof-emulsion",
+      "label": "Weatherproof exterior emulsion (for example Asian Paints Apex)",
+      "description": "A standard weatherproof exterior emulsion. NoBroker's 1,000 sq ft example uses Apex Weatherproof at ₹494 per litre, coverage of 55–65 sq ft per litre for 2 coats, one coat of exterior primer and two top coats; Biddaro prices Apex/weatherproof exterior work at ₹18–₹35 per sq ft.",
+      "sources": [
+        {
+          "url": "https://www.nobroker.in/forum/how-much-does-it-cost-to-paint-1000-sq-ft-house-exterior/",
+          "title": "How Much Does It Cost to Paint 1000 Sq Ft House Exterior 2026",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "For a 1000 sq ft exterior with Apex Weatherproof paint: Paint price is ₹494 per litre with coverage of 55-65 sq. ft. per litre for 2 coats, labour rate of Rs. 13 per sq. ft., and including 1 coat exterior primer plus 2 coats weatherproof paint with minor crack repairs included."
+        },
+        {
+          "url": "https://www.biddaro.com/cost/painting",
+          "title": "House Painting Cost in India 2026",
+          "publisher": "Biddaro",
+          "retrieved_at": "2026-10-06",
+          "quote": "Interior Emulsion (2 coats) costs ₹12–₹22 per sq ft, Interior Luxury Emulsion costs ₹22–₹40 per sq ft, and Exterior Apex/Weatherproof Paint costs ₹18–₹35 per sq ft."
+        },
+        {
+          "url": "https://www.asianpaints.com/paint-products/exterior-wall-paints/apex.html",
+          "title": "Apex - Exterior Emulsion Paint by Asian Paints",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "exterior-premium-weatherproof",
+      "label": "Premium weatherproof or elastomeric exterior system (for example Apex Ultima, Apex Ultima Protek)",
+      "description": "Higher-grade exterior systems. AapkaPainter prices Apex Ultima at ₹22–₹35 and Apex Ultima Protek, which it calls an elastomeric or anti-crack tier, at ₹30–₹50 per sq ft including labour; NoBroker lists Apex Ultima Protek at ₹836 per litre.",
+      "sources": [
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Apex Ultima: ₹22–35 per sq ft (Premium tier)"
+        },
+        {
+          "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+          "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "Apex Ultima Protek: ₹30–50 per sq ft (Elastomeric/Anti-crack tier)"
+        },
+        {
+          "url": "https://www.nobroker.in/forum/what-is-the-coverage-of-1-litre-apex-ultima/",
+          "title": "What is the Asian Paints Ultima Protek Coverage Per Litre",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "Asian Paints Apex Ultima Protek costs Rs. 836 per litre"
+        },
+        {
+          "url": "https://www.asianpaints.com/paint-products/exterior-wall-paints/apex-ultima.html",
+          "title": "Apex Ultima - PU Serum Power with Colour Stay Pro",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        },
+        {
+          "url": "https://www.asianpaints.com/paint-products/exterior-wall-paints/apex-ultima-protek.html",
+          "title": "Apex Ultima Protek - Durable Home Lamination Solution",
+          "publisher": "Asian Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
+    },
+    {
+      "id": "exterior-texture",
+      "label": "Exterior texture finish",
+      "description": "A textured exterior coating. Nerolac puts basic exterior texture finishes at around ₹60 per sq ft, with layered textures costing more; AapkaPainter gives ₹55–₹85 per sq ft (labour and material) in Chennai.",
+      "sources": [
+        {
+          "url": "https://www.nerolac.com/wall-paint/exterior-wall-texture-design",
+          "title": "Exterior Wall Texture Design",
+          "publisher": "Kansai Nerolac Paints",
+          "retrieved_at": "2026-10-06",
+          "quote": "For exterior wall texture design in India, basic finishes might cost around ₹60 per square foot, while fancy or layered textures cost more, with rates varying locally."
+        },
+        {
+          "url": "https://aapkapainter.com/blog/painting-cost-per-sq-ft-in-chennai-labour-material-rates-explained/",
+          "title": "Painting Cost Per Sq Ft in Chennai: Labour & Material Rates (2026)",
+          "publisher": "AapkaPainter",
+          "retrieved_at": "2026-10-06",
+          "quote": "For textured exterior finishes in Chennai, labour-only rates are ₹20–35/sq ft and labour + material rates are ₹55–85/sq ft."
+        }
+      ]
+    }
+  ],
+  "duration_days": {
+    "min": 2,
+    "max": 7,
+    "basis": "Planning range across sub-services, not a sourced total: NoBroker gives 3–5 days for a 2 BHK interior, 5–7 days for a 3 BHK interior (up to 15 days in some cases) and 2–6 days for a house exterior. Interior and exterior work done together take longer."
+  },
+  "questions_to_ask": [
+    "Is your rate per sq ft of paintable wall and ceiling area, and how will you measure it (room by room, with doors and windows deducted)?",
+    "Which brand and product will you use on each surface, and will the paint arrive in sealed containers that I can check?",
+    "Is this priced as fresh painting (full putty, primer and two coats) or as a repaint (putty touch-up, primer and two coats)?",
+    "How will you treat damp patches, cracks and peeling paint before painting, and is that included in the rate?",
+    "Are ceilings, doors, windows, grills and other wood or metal surfaces included, or priced separately?",
+    "For exterior work, is scaffolding or rope access included, and who is responsible for site safety?",
+    "Does the price include GST, furniture moving and covering, and cleanup?",
+    "How many painters will work, how many days will the job take, and what warranty will you give in writing?"
+  ],
+  "common_mistakes": [
+    "Comparing per-sq-ft rates without checking what they include; sources quote labour-only rates (for example AapkaPainter's ₹16–₹26 per sq ft in Pune) alongside all-inclusive rates with paint, putty and primer.",
+    "Treating carpet area as paintable area; wall and ceiling area is about 2.5 to 3.5 times the carpet area (Asian Paints uses 2.5, AapkaPainter 3.2, NoBroker 3.5).",
+    "Painting over damp or seeping walls without fixing the source; Asian Paints notes that moisture trapped under the paint film causes blistering, peeling and flaking within weeks or months.",
+    "Skipping putty and primer on new or patchy plaster to save cost; Berger lists 1–2 coats of putty and a primer coat as part of fresh painting.",
+    "Painting exteriors in the monsoon or straight after rain; Berger advises waiting 24–48 hours after rainfall, and NoBroker notes that rain within about 4 hours of a coat can wash the film away.",
+    "Accepting a quote that names only a grade such as 'premium emulsion' instead of the brand and product, which makes quotes impossible to compare.",
+    "Choosing distemper for walls that need regular cleaning; Nerolac describes distemper as less resistant to stains and moisture than emulsion."
+  ],
+  "quote_checklist": [
+    "Paintable area in sq ft and how it was measured (walls, ceilings, deductions for doors and windows)",
+    "Surfaces included: walls, ceilings, doors, windows, grills, exterior parapets and compound walls",
+    "Brand and product for each surface, with number of coats",
+    "Preparation: cleaning, scraping, crack filling, number of putty coats, primer",
+    "Treatment of damp or seepage before painting, or a note that it is excluded",
+    "Scaffolding or rope access for exterior work",
+    "Furniture moving, floor and fitting protection, and cleanup",
+    "Number of painters, start date and duration",
+    "Written warranty: period, issuer and exclusions",
+    "Whether GST is included",
+    "Payment schedule linked to stages of work"
+  ],
+  "faq": [
+    {
+      "q": "How much does house painting cost in Pune per sq ft?",
+      "a": "It depends on the paint grade and on how much preparation the walls need. Our draft models, built from sources retrieved in October 2026 (several of them national rather than Pune-specific), give these labour-and-material rates per sq ft of paintable area. Interior: distemper ₹7–₹20 (expected ₹12), entry-level emulsion ₹9–₹30 (₹15), premium emulsion such as Apcolite ₹14–₹40 (₹22), luxury emulsion such as Royale ₹23–₹55 (₹35), texture ₹80–₹400 (₹140). Exterior: entry-level emulsion ₹13–₹30 (₹18), weatherproof emulsion ₹18–₹45 (₹32), premium weatherproof systems ₹20–₹68 (₹37), texture ₹55–₹85 (₹65). These are indicative ranges, not quotations."
+    },
+    {
+      "q": "How is paintable area worked out from carpet area?",
+      "a": "Paintable area is the wall and ceiling surface to be painted, which is larger than the floor area. Asian Paints' budget calculator multiplies carpet area by 2.5, AapkaPainter uses 3.2 (it says 3 to 3.5) and NoBroker uses 3.5. Our presets use 3.2, so a 2 BHK with 750 sq ft of carpet area is taken as about 2,400 sq ft. For a quote, NoBroker suggests measuring the length and height of each wall, subtracting windows and doors, and adding the ceilings."
+    },
+    {
+      "q": "What does it cost to paint a 2 BHK flat in Pune?",
+      "a": "With the 2,400 sq ft preset and the expected rates in our draft models, interior painting comes to about ₹28,800 with distemper, ₹36,000 with an entry-level emulsion, ₹52,800 with a premium emulsion and ₹84,000 with a luxury emulsion. AapkaPainter quotes ₹38,000–₹60,000 for a standard 2 BHK interior in Pune. Urban Company (from ₹12,999) and HomeTriangle (from ₹12,899) advertise starting prices for unfurnished 2 BHK flats in Pune; HomeTriangle says the final price is set after a site visit."
+    },
+    {
+      "q": "Should I choose distemper or emulsion?",
+      "a": "Distemper costs less (₹7–₹20 per sq ft in our model against ₹9–₹30 for an entry-level emulsion). Nerolac describes it as less resistant to stains and moisture than emulsion and suggests it for ceilings and low-traffic rooms; NoBroker notes it is not waterproof. Nerolac describes emulsion as water-based, low-odour and more washable than distemper, which matters on walls that get wiped often."
+    },
+    {
+      "q": "How long does painting take?",
+      "a": "NoBroker gives about 3–5 days for a 2 BHK flat and 5–7 days for a 3 BHK, and says some jobs take up to 15 days. AapkaPainter says two painters finish a 2 BHK in 4–5 working days including drying time between coats. NoBroker gives 2–6 days for a house exterior, depending on size, crew and weather."
+    },
+    {
+      "q": "Do the rates include labour and GST?",
+      "a": "The models use rates that include paint, putty, primer and labour wherever the source says so. Labour-only rates vary widely between sources: Asian Paints gives ₹8–₹25 per sq ft nationally, HomeTriangle ₹4–₹12, AapkaPainter ₹16–₹26 for a full interior job in Pune and NoBroker ₹20–₹50 in Pune. None of the sources says whether GST is included, so ask the contractor to state it."
+    },
+    {
+      "q": "When should exterior painting be done?",
+      "a": "Outside the monsoon, on dry walls. Berger advises waiting 24–48 hours after rainfall before painting, provided there is airflow, and NoBroker notes that rain within about 4 hours of a coat can wash the paint film away. Fix leaks and seepage first: Asian Paints notes that moisture trapped under paint causes blistering and peeling."
+    }
+  ],
+  "prose_status": "draft",
+  "sub_services": [
+    {
+      "id": "interior-painting",
+      "name": "Interior painting",
+      "parent_id": "painting",
+      "unit": "sqft",
+      "area_presets": [
+        {
+          "preset": "1bhk",
+          "label": "1 BHK flat, about 1,600 sq ft to paint",
+          "quantity": 1600,
+          "assumption": "Carpet area of 500 sq ft × 3.2 = 1,600 sq ft of wall and ceiling area. 500 sq ft is inside AapkaPainter's 1 BHK range (400–650 sq ft carpet) and NoBroker's 450–600 sq ft. The 3.2 multiplier is AapkaPainter's working figure; Asian Paints' budget calculator uses 2.5 and NoBroker uses 3.5, which would give 1,250–1,750 sq ft for the same flat. AapkaPainter puts a 1 BHK at 1,200–2,000 sq ft of paintable area. A quote should be based on measured walls and ceilings.",
+          "sources": [
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+            },
+            {
+              "url": "https://aapkapainter.com/blog/1bhk-vs-2bhk-vs-3bhk-painting-cost/",
+              "title": "1 BHK vs 2 BHK vs 3 BHK Painting Cost: What's the Real Difference? (2026)",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "For 1 BHK (400–650 sq ft carpet), paintable area is 1,200–2,000 sq ft; for 2 BHK (700–1,050 sq ft carpet), it's 2,000–3,200 sq ft; and for 3 BHK (1,000–1,450 sq ft carpet), it's 2,800–4,400 sq ft."
+            },
+            {
+              "url": "https://www.nobroker.in/forum/how-much-square-feet-required-for-1-bhk/",
+              "title": "What is 1 BHK Carpet Area In Square Feet",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "One-bedroom houses typically range in size from 450 to 600 square feet."
+            },
+            {
+              "url": "https://www.asianpaints.com/resources/tools/paint-budget-calculator.html",
+              "title": "Paint Budget Calculator for House Painting Cost",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "The painting area is estimated by multiplying the carpet area by 2.5."
+            },
+            {
+              "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+              "title": "Paint Cost Calculator",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+            }
+          ]
+        },
+        {
+          "preset": "2bhk",
+          "label": "2 BHK flat, about 2,400 sq ft to paint",
+          "quantity": 2400,
+          "assumption": "Carpet area of 750 sq ft × 3.2 = 2,400 sq ft of wall and ceiling area. 750 sq ft is inside AapkaPainter's 2 BHK range (700–1,050 sq ft carpet) and Square Yards' 600–950 sq ft. With Asian Paints' 2.5 or NoBroker's 3.5 multiplier the same flat would be 1,875–2,625 sq ft. AapkaPainter puts a 2 BHK at 2,000–3,200 sq ft of paintable area.",
+          "sources": [
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+            },
+            {
+              "url": "https://aapkapainter.com/blog/1bhk-vs-2bhk-vs-3bhk-painting-cost/",
+              "title": "1 BHK vs 2 BHK vs 3 BHK Painting Cost: What's the Real Difference? (2026)",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "For 1 BHK (400–650 sq ft carpet), paintable area is 1,200–2,000 sq ft; for 2 BHK (700–1,050 sq ft carpet), it's 2,000–3,200 sq ft; and for 3 BHK (1,000–1,450 sq ft carpet), it's 2,800–4,400 sq ft."
+            },
+            {
+              "url": "https://www.squareyards.com/blog/what-is-2-bhk",
+              "title": "What is 2 BHK Apartment? Size, Carpet Area, Advantages and Comparison Guide",
+              "publisher": "Square Yards",
+              "retrieved_at": "2026-10-06",
+              "quote": "Carpet area usually ranges from 600 to 950 sqft depending on city and project."
+            },
+            {
+              "url": "https://www.asianpaints.com/resources/tools/paint-budget-calculator.html",
+              "title": "Paint Budget Calculator for House Painting Cost",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "The painting area is estimated by multiplying the carpet area by 2.5."
+            },
+            {
+              "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+              "title": "Paint Cost Calculator",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+            }
+          ]
+        },
+        {
+          "preset": "3bhk",
+          "label": "3 BHK flat, about 3,520 sq ft to paint",
+          "quantity": 3520,
+          "assumption": "Carpet area of 1,100 sq ft × 3.2 = 3,520 sq ft of wall and ceiling area. 1,100 sq ft is inside AapkaPainter's 3 BHK range (1,000–1,450 sq ft carpet) and Square Yards' 850–1,200 sq ft for a standard 3 BHK; Square Yards also says the configuration usually delivers 1,100–1,400 sq ft in Pune, without saying whether that is carpet area. With the 2.5 or 3.5 multiplier the flat would be 2,750–3,850 sq ft; AapkaPainter gives 2,800–4,400 sq ft.",
+          "sources": [
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+            },
+            {
+              "url": "https://aapkapainter.com/blog/1bhk-vs-2bhk-vs-3bhk-painting-cost/",
+              "title": "1 BHK vs 2 BHK vs 3 BHK Painting Cost: What's the Real Difference? (2026)",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "For 1 BHK (400–650 sq ft carpet), paintable area is 1,200–2,000 sq ft; for 2 BHK (700–1,050 sq ft carpet), it's 2,000–3,200 sq ft; and for 3 BHK (1,000–1,450 sq ft carpet), it's 2,800–4,400 sq ft."
+            },
+            {
+              "url": "https://www.squareyards.com/sale/guides/what-is-3-bhk",
+              "title": "What is 3 BHK Flat: Size, Layout, Advantages and Buyer Guide (2026)",
+              "publisher": "Square Yards",
+              "retrieved_at": "2026-10-06",
+              "quote": "a standard 3 BHK flat has a carpet area of 850 to 1200 sqft, with premium 3 BHKs running 1400 to 1800 sqft."
+            },
+            {
+              "url": "https://www.squareyards.com/sale/guides/what-is-3-bhk",
+              "title": "What is 3 BHK Flat: Size, Layout, Advantages and Buyer Guide (2026)",
+              "publisher": "Square Yards",
+              "retrieved_at": "2026-10-06",
+              "quote": "In Pune, Ahmedabad, and Hyderabad, the same configuration usually delivers 1100 to 1400 sqft."
+            },
+            {
+              "url": "https://www.asianpaints.com/resources/tools/paint-budget-calculator.html",
+              "title": "Paint Budget Calculator for House Painting Cost",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "The painting area is estimated by multiplying the carpet area by 2.5."
+            },
+            {
+              "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+              "title": "Paint Cost Calculator",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+            }
+          ]
+        },
+        {
+          "preset": "4bhk",
+          "label": "4 BHK flat, about 6,400 sq ft to paint",
+          "quantity": 6400,
+          "assumption": "Carpet area of 2,000 sq ft × 3.2 = 6,400 sq ft of wall and ceiling area. AapkaPainter's 4 BHK cost example uses 1,800–2,400 sq ft; its 1 BHK example in the same list states carpet area, so we read this as carpet area too. 2,000 sq ft is our pick inside that range; no second source for 4 BHK size was found. With the 2.5 or 3.5 multiplier the flat would be 5,000–7,000 sq ft.",
+          "sources": [
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "4 BHK (1,800–2,400 sq ft) costs ₹55,000–₹75,000 (Economy), ₹90,000–₹1,20,000 (Premium), or ₹1,50,000–₹2,20,000 (Luxury)"
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+            },
+            {
+              "url": "https://www.asianpaints.com/resources/tools/paint-budget-calculator.html",
+              "title": "Paint Budget Calculator for House Painting Cost",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "The painting area is estimated by multiplying the carpet area by 2.5."
+            },
+            {
+              "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+              "title": "Paint Cost Calculator",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+            }
+          ]
+        },
+        {
+          "preset": "independent_house",
+          "label": "Independent house interior, about 3,200 sq ft to paint",
+          "quantity": 3200,
+          "assumption": "Example house of 1,000 sq ft (the size in Berger's interior painting cost example) × 3.2 = 3,200 sq ft of wall and ceiling area. The multipliers are stated for flats; a house with a staircase, double-height spaces or higher ceilings will have more wall area, so this preset is a planning assumption, not a sourced figure for houses.",
+          "sources": [
+            {
+              "url": "https://www.bergerpaints.com/blogs/cost-to-paint-interiors-safely",
+              "title": "Cost To Paint Interiors Safely?",
+              "publisher": "Berger Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "For a 1000 square foot house, painting it with emulsion or distemper in interiors would cost between ₹75,000 to 1.5L."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Painted wall and ceiling area is roughly 3 to 3.5 times the carpet area of a typical Indian flat, with 3.2 used as a working figure."
+            },
+            {
+              "url": "https://www.nobroker.in/painting-services/painting-cost-calculator",
+              "title": "Paint Cost Calculator",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "To calculate paintable area, multiply your carpet area by 3.5 to get an approximation of the total wall area."
+            }
+          ]
+        }
+      ],
+      "scope_options": [
+        {
+          "id": "fresh-painting",
+          "label": "Fresh painting",
+          "description": "For new plaster, or walls being redone from the base: one or two coats of wall putty, a coat of primer, then two or more coats of paint. Berger lists 1–2 coats of putty, a primer coat and at least 2–3 coats of paint for fresh painting."
+        },
+        {
+          "id": "repaint",
+          "label": "Repaint",
+          "description": "For walls that already have a sound putty base: clean, scrape loose paint, touch up putty where needed, then primer and two coats of paint. AapkaPainter puts a repaint 25–40% below fresh painting and HomeTriangle 15–25% below, because less putty is needed."
+        }
+      ],
+      "materials": [
+        {
+          "id": "putty-and-primer",
+          "label": "Wall putty and primer (undercoats)",
+          "description": "Undercoats applied before the paint. Berger states that fresh painting needs 1–2 coats of putty, a coat of primer and at least 2–3 coats of paint. AapkaPainter attributes the higher cost of fresh painting to full putty work (two coats) and primer, and puts a repaint over sound walls 25–40% lower.",
+          "sources": [
+            {
+              "url": "https://www.bergerpaints.com/blogs/tips-before-getting-your-home-painted",
+              "title": "Read This Before Getting Your Home Painted!",
+              "publisher": "Berger Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Fresh painting requires 1-2 coats of putty, a coat of primer and at least 2-3 coats of paint"
+            },
+            {
+              "url": "https://aapkapainter.com/blog/how-to-calculate-painting-cost-per-sq-ft/",
+              "title": "How to Calculate Painting Cost Per Sq Ft: Step-by-Step Guide (2026)",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Fresh painting costs ₹18–35/sq ft because it includes full putty work (2 coats), primer, and paint."
+            },
+            {
+              "url": "https://aapkapainter.com/blog/how-to-calculate-painting-cost-per-sq-ft/",
+              "title": "How to Calculate Painting Cost Per Sq Ft: Step-by-Step Guide (2026)",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Fresh painting needs full putty and primer; a repaint over sound walls usually costs 25–40% less."
+            }
+          ]
+        },
+        {
+          "id": "distemper",
+          "label": "Distemper",
+          "description": "A low-cost water-based finish. Nerolac describes distemper as more economical than emulsion but less resistant to stains and moisture, with coverage of about 130–150 sq ft per litre; NoBroker notes it is not waterproof.",
+          "sources": [
+            {
+              "url": "https://www.nerolac.com/wall-paint/difference-between-distemper-paint-and-emulsion-paint",
+              "title": "Distemper Paint - Distemper vs Emulsion, Key Differences, Meaning - Nerolac",
+              "publisher": "Kansai Nerolac Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Unlike emulsion paint, which offers a more durable and washable surface, distemper is typically more economical but less resistant to stains and moisture"
+            },
+            {
+              "url": "https://www.nerolac.com/wall-paint/what-is-paint-coverage",
+              "title": "What is Paint Coverage? How much paint do you need to paint a room? - Nerolac",
+              "publisher": "Kansai Nerolac Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Emulsion paint coverage is approximately 90 square feet per litre, while distemper paint coverage is around 130-150 square feet per litre."
+            },
+            {
+              "url": "https://www.nobroker.in/painting-services/home-painting-ideas/painting-costs-in-pune/",
+              "title": "Painting Cost in Pune in 2026 - Starting at ₹8 Per Sq. Ft.",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Distemper paint: Rs. 7/sq. ft., budget-friendly but not waterproof"
+            }
+          ]
+        },
+        {
+          "id": "basic-emulsion",
+          "label": "Entry-level emulsion (for example Asian Paints Tractor Emulsion)",
+          "description": "A water-based emulsion that Nerolac describes as low-odour, fast-drying and more washable than distemper. AapkaPainter groups Tractor Emulsion as its economy grade, lists it at ₹185 per litre (1 L) and gives coverage of 130–150 sq ft per litre.",
+          "sources": [
+            {
+              "url": "https://www.nerolac.com/wall-paint/what-is-emulsion-paint",
+              "title": "Emulsion Paint",
+              "publisher": "Kansai Nerolac Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Emulsion paint is a water-based coating with low odour, fast drying, and better washability than distemper"
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Economy paints use Tractor Emulsion, Premium uses Apcolite, and Luxury uses Royale."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Tractor Emulsion costs ₹185/litre (1L), Apcolite Premium Emulsion ₹340/litre, and Royale Luxury Emulsion ₹560/litre."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Standard emulsion (Asian Paints Tractor) provides coverage of 12–14 sq m per litre (130–150 sq ft/litre), while Premium emulsion (Asian Paints Royale) covers 10–12 sq m per litre (110–130 sq ft/litre)."
+            },
+            {
+              "url": "https://www.asianpaints.com/paint-products/interior-wall-paints/tractor.html",
+              "title": "Tractor Emulsion Paints By Asian Paints",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "premium-emulsion",
+          "label": "Premium emulsion (for example Asian Paints Apcolite)",
+          "description": "A mid-range emulsion. Asian Paints positions Apcolite as a mid-range option below Royale and puts Apcolite Premium Emulsion at roughly ₹300–₹350 per litre; AapkaPainter lists it at ₹340 per litre.",
+          "sources": [
+            {
+              "url": "https://www.asianpaints.com/blogs/royale-vs-apcolite-price-finish-features-comparison.html",
+              "title": "Royale vs Apcolite: Difference in Price, Finish & Features",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Royale and Apcolite are two popular interior wall paints, with Royale positioned as a premium luxury emulsion and Apcolite as a reliable mid-range option."
+            },
+            {
+              "url": "https://www.asianpaints.com/blogs/royale-vs-apcolite-price-finish-features-comparison.html",
+              "title": "Royale vs Apcolite: Difference in Price, Finish & Features",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Royale paints are typically around ₹425–₹600 per litre, while Apcolite Premium Emulsion is roughly ₹300–₹350 per litre."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Tractor Emulsion costs ₹185/litre (1L), Apcolite Premium Emulsion ₹340/litre, and Royale Luxury Emulsion ₹560/litre."
+            },
+            {
+              "url": "https://www.asianpaints.com/paint-products/interior-wall-paints/apcolite.html",
+              "title": "Asian Paints Apcolite Premium Emulsion Paints - Elevate your interiors",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "luxury-emulsion",
+          "label": "Luxury emulsion (for example Asian Paints Royale)",
+          "description": "A higher-priced washable emulsion. Asian Paints positions Royale as its premium luxury emulsion at around ₹425–₹600 per litre; AapkaPainter lists Royale at ₹560 per litre with coverage of 110–130 sq ft per litre. Asian Paints notes that on premium jobs the paint, not labour, becomes the larger cost.",
+          "sources": [
+            {
+              "url": "https://www.asianpaints.com/blogs/royale-vs-apcolite-price-finish-features-comparison.html",
+              "title": "Royale vs Apcolite: Difference in Price, Finish & Features",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Royale and Apcolite are two popular interior wall paints, with Royale positioned as a premium luxury emulsion and Apcolite as a reliable mid-range option."
+            },
+            {
+              "url": "https://www.asianpaints.com/blogs/royale-vs-apcolite-price-finish-features-comparison.html",
+              "title": "Royale vs Apcolite: Difference in Price, Finish & Features",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "Royale paints are typically around ₹425–₹600 per litre, while Apcolite Premium Emulsion is roughly ₹300–₹350 per litre."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Tractor Emulsion costs ₹185/litre (1L), Apcolite Premium Emulsion ₹340/litre, and Royale Luxury Emulsion ₹560/litre."
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Standard emulsion (Asian Paints Tractor) provides coverage of 12–14 sq m per litre (130–150 sq ft/litre), while Premium emulsion (Asian Paints Royale) covers 10–12 sq m per litre (110–130 sq ft/litre)."
+            },
+            {
+              "url": "https://www.asianpaints.com/blogs/painting-cost-per-sq-ft-india.html",
+              "title": "Painting Cost Per Sq Ft in India: Labour, Material & City Rates",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "For premium painting jobs, the paint price becomes the bigger expense because luxury emulsions and washable paints are expensive."
+            },
+            {
+              "url": "https://www.asianpaints.com/paint-products/interior-wall-paints/royale.html",
+              "title": "Royale Luxury Emulsion Paints By Asian Paints",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "lustre-finish",
+          "label": "Lustre (sheen) finish",
+          "description": "A sheen finish that Pune sources price separately from emulsions: NoBroker lists lustre paints at ₹26–₹30 per sq ft and an IndiaMART seller lists a lustre paint service at ₹35 per sq ft in Pune.",
+          "sources": [
+            {
+              "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+              "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Lustre Paints: Rs 26/sq. ft to Rs 30/ sq. ft"
+            },
+            {
+              "url": "https://www.indiamart.com/proddetail/luster-paint-service-2850870405988.html",
+              "title": "Luster Paint Service at ₹ 35/square feet in Pune",
+              "publisher": "IndiaMART",
+              "retrieved_at": "2026-10-06",
+              "quote": "Luster Paint Service at ₹ 35/square feet in Pune"
+            },
+            {
+              "url": "https://www.nobroker.in/forum/what-is-luster-paint-rate-in-pune/",
+              "title": "What is the Luster Paint Rate in Pune",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "interior-texture",
+          "label": "Interior texture finish",
+          "description": "A raised or patterned finish, usually on a feature wall. AapkaPainter lists 12 texture types at ₹80–₹400 per sq ft; NoBroker gives ₹80–₹200 per sq ft in Pune; Construction Estimator India gives ₹80–₹200 for specialised textures such as Royale Play.",
+          "sources": [
+            {
+              "url": "https://aapkapainter.com/blog/what-is-texture-painting-and-types/",
+              "title": "What is Texture Painting? 12 Types, Cost (₹80–400/sqft) & ...",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Texture painting transforms flat walls into surfaces with depth and character, with prices ranging from ₹80 to ₹400 per sqft."
+            },
+            {
+              "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+              "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Texture paint: Rs. 80-200 per square foot"
+            },
+            {
+              "url": "https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/",
+              "title": "Cost of Painting a House in India 2026",
+              "publisher": "Construction Estimator India",
+              "retrieved_at": "2026-10-06",
+              "quote": "Texture painting (specialized/Royal Play) costs ₹80 – ₹200 per sq. ft."
+            }
+          ]
+        }
+      ],
+      "duration_days": {
+        "min": 3,
+        "max": 7,
+        "basis": "NoBroker gives about 3–5 days for a 2 BHK flat and 5–7 days for a 3 BHK, adding that the total can range from 5 to 15 days. AapkaPainter says a team of 2 painters completes a 2 BHK in 4–5 working days including drying time between coats. Fresh painting with full putty work, larger homes and smaller crews take longer."
+      },
+      "questions_to_ask": [
+        "Is your rate per sq ft of paintable area, and will you measure walls and ceilings room by room, deducting doors and windows?",
+        "Which brand and product will you use on the walls and on the ceilings in each room?",
+        "Is the job priced as fresh painting (full putty, primer and two coats) or as a repaint (putty touch-up, primer and two coats)?",
+        "How many coats of putty, primer and paint are included?",
+        "How will you treat damp patches, cracks and peeling paint, and is that included?",
+        "Are doors, windows, grills, wardrobes and ceilings included or priced separately?",
+        "Will you move and cover furniture, floors and fittings, and clean up afterwards?",
+        "How many painters will work and how many days will the job take, including drying time between coats?"
+      ],
+      "common_mistakes": [
+        "Comparing rates without checking inclusions; a labour-only rate looks cheaper than an all-inclusive rate but excludes paint, putty and primer.",
+        "Using carpet area as the paintable area; walls and ceilings add up to about 2.5–3.5 times the carpet area.",
+        "Painting over damp or seeping walls; Asian Paints notes that trapped moisture breaks the bond between paint and wall.",
+        "Skipping putty or primer on new or patchy plaster; Berger lists 1–2 putty coats and a primer coat for fresh painting.",
+        "Using distemper on walls that need regular wiping, such as kitchens and children's rooms; Nerolac describes it as less resistant to stains and moisture.",
+        "Rushing coats; AapkaPainter's 4–5 day estimate for a 2 BHK includes drying time between coats.",
+        "Pricing a whole flat at the texture rate; NoBroker describes texture paint as suited to statement or accent walls, and texture is priced per sq ft of the textured wall only."
+      ],
+      "quote_checklist": [
+        "Paintable area per room, including ceilings, and the measurement method",
+        "Brand and product for walls and ceilings in each room",
+        "Fresh painting or repaint, with number of putty, primer and paint coats",
+        "Damp, crack and peeling-paint treatment",
+        "Doors, windows, grills and wardrobes: included or separate",
+        "Furniture moving, covering and cleanup",
+        "Number of painters, start date and duration",
+        "Written warranty and whether GST is included"
+      ],
+      "faq": [
+        {
+          "q": "How much does interior painting cost per sq ft in Pune?",
+          "a": "Our draft models give these labour-and-material rates per sq ft of paintable area: distemper ₹7–₹20 (expected ₹12), entry-level emulsion ₹9–₹30 (₹15), premium emulsion ₹14–₹40 (₹22), lustre finish ₹26–₹35 (₹31), luxury emulsion ₹23–₹55 (₹35) and texture ₹80–₹400 (₹140). Several sources are national. Most Pune figures (NoBroker, AapkaPainter, HomeTriangle and IndiaMART listings) fall inside these ranges; AapkaPainter's Pune 'ultra-premium' finishes at ₹58–₹82 and the top of NoBroker's ₹12–₹60 emulsion range sit above them."
+        },
+        {
+          "q": "How much more does fresh painting cost than a repaint?",
+          "a": "Fresh painting needs full putty work and primer. Our draft models put fresh painting at ₹18–₹62 per sq ft (expected ₹39) and a repaint at ₹12–₹53 (expected ₹30) when the paint grade is not specified. AapkaPainter says a repaint over sound walls costs 25–40% less and HomeTriangle 15–25% less."
+        },
+        {
+          "q": "How do I estimate the area of my flat?",
+          "a": "Multiply carpet area by 2.5 to 3.5 (Asian Paints uses 2.5, AapkaPainter 3.2, NoBroker 3.5). Our presets use 3.2: about 1,600 sq ft for a 1 BHK, 2,400 for a 2 BHK, 3,520 for a 3 BHK and 6,400 for a 4 BHK. A quote should be based on measured walls and ceilings."
+        },
+        {
+          "q": "How long does interior painting take?",
+          "a": "NoBroker gives about 3–5 days for a 2 BHK and 5–7 days for a 3 BHK, and up to 15 days in some cases. AapkaPainter says two painters finish a 2 BHK in 4–5 working days including drying time."
+        },
+        {
+          "q": "Is texture priced for the whole flat?",
+          "a": "No. NoBroker describes texture paint as suited to statement or accent walls, and it is priced per sq ft of the textured wall only: ₹80–₹400 per sq ft in our draft model, depending on the texture type. The other walls are priced at the rate of the paint used on them."
+        }
+      ],
+      "prose_status": "draft",
+      "sub_services": []
+    },
+    {
+      "id": "exterior-painting",
+      "name": "Exterior painting",
+      "parent_id": "painting",
+      "unit": "sqft",
+      "area_presets": [
+        {
+          "preset": "independent_house",
+          "label": "Independent house exterior, 1,500 sq ft of wall",
+          "quantity": 1500,
+          "assumption": "Example of 1,500 sq ft of exterior wall, the size Biddaro uses in its exterior cost example; NoBroker's example uses 1,000 sq ft. Exterior area is not derived from carpet area: measure the length and height of each face, subtract large openings, and add parapets and compound walls if they are to be painted. Exterior painting of an apartment building is usually a whole-building job, so no flat presets are offered.",
+          "sources": [
+            {
+              "url": "https://www.biddaro.com/cost/painting",
+              "title": "House Painting Cost in India 2026",
+              "publisher": "Biddaro",
+              "retrieved_at": "2026-10-06",
+              "quote": "A 1,500 sq ft exterior costs approximately ₹30,000–₹55,000."
+            },
+            {
+              "url": "https://www.nobroker.in/forum/how-much-does-it-cost-to-paint-1000-sq-ft-house-exterior/",
+              "title": "How Much Does It Cost to Paint 1000 Sq Ft House Exterior 2026",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "In India, the average cost to paint 1000 sq ft house exterior ranges from Rs. 13 to Rs. 70 per sq ft."
+            }
+          ]
+        }
+      ],
+      "scope_options": [
+        {
+          "id": "repaint",
+          "label": "Repaint an exterior",
+          "description": "Clean and scrape the existing surface, repair minor cracks, then one coat of exterior primer and two coats of exterior paint, as in NoBroker's 1,000 sq ft Apex example."
+        },
+        {
+          "id": "fresh-painting",
+          "label": "New exterior plaster",
+          "description": "First painting of new external plaster: exterior primer followed by two coats of exterior emulsion. The sources reviewed did not give separate rates for fresh exterior work, so the same cost models apply."
+        }
+      ],
+      "materials": [
+        {
+          "id": "exterior-economy-emulsion",
+          "label": "Entry-level exterior emulsion (for example Asian Paints Ace)",
+          "description": "An entry-level exterior emulsion. The Asian Paints product page title describes Ace Exterior Emulsion as water resistant with a 4-year warranty; NoBroker lists it at ₹301 per litre; AapkaPainter prices Ace exterior work in Hyderabad at ₹14–₹22 per sq ft including labour.",
+          "sources": [
+            {
+              "url": "https://www.asianpaints.com/paint-products/exterior-wall-paints/ace-exterior-emulsion.html",
+              "title": "Ace Exterior Emulsion - Water Resistant with 4-Year Warranty",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            },
+            {
+              "url": "https://www.nobroker.in/blog/best-paint-for-exterior-walls/",
+              "title": "10 Best Paint for Exterior Walls with Prices in India",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Ace exterior Emulsion (₹301/litre) protects your wall from rain, heat & dust while keeping them looking fresh."
+            },
+            {
+              "url": "https://aapkapainter.com/blog/painting-cost-in-hyderabad/",
+              "title": "Painting Cost in Hyderabad: Know Your Budget & Options",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "₹14–22/sq ft (Ace Exterior Emulsion), ₹17–26/sq ft (Apex Exterior Emulsion), and ₹25–38/sq ft (Apex Ultima Protek)"
+            }
+          ]
+        },
+        {
+          "id": "exterior-weatherproof-emulsion",
+          "label": "Weatherproof exterior emulsion (for example Asian Paints Apex)",
+          "description": "A standard weatherproof exterior emulsion. NoBroker's 1,000 sq ft example uses Apex Weatherproof at ₹494 per litre, coverage of 55–65 sq ft per litre for 2 coats, one coat of exterior primer and two top coats; Biddaro prices Apex/weatherproof exterior work at ₹18–₹35 per sq ft.",
+          "sources": [
+            {
+              "url": "https://www.nobroker.in/forum/how-much-does-it-cost-to-paint-1000-sq-ft-house-exterior/",
+              "title": "How Much Does It Cost to Paint 1000 Sq Ft House Exterior 2026",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "For a 1000 sq ft exterior with Apex Weatherproof paint: Paint price is ₹494 per litre with coverage of 55-65 sq. ft. per litre for 2 coats, labour rate of Rs. 13 per sq. ft., and including 1 coat exterior primer plus 2 coats weatherproof paint with minor crack repairs included."
+            },
+            {
+              "url": "https://www.biddaro.com/cost/painting",
+              "title": "House Painting Cost in India 2026",
+              "publisher": "Biddaro",
+              "retrieved_at": "2026-10-06",
+              "quote": "Interior Emulsion (2 coats) costs ₹12–₹22 per sq ft, Interior Luxury Emulsion costs ₹22–₹40 per sq ft, and Exterior Apex/Weatherproof Paint costs ₹18–₹35 per sq ft."
+            },
+            {
+              "url": "https://www.asianpaints.com/paint-products/exterior-wall-paints/apex.html",
+              "title": "Apex - Exterior Emulsion Paint by Asian Paints",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "exterior-premium-weatherproof",
+          "label": "Premium weatherproof or elastomeric exterior system (for example Apex Ultima, Apex Ultima Protek)",
+          "description": "Higher-grade exterior systems. AapkaPainter prices Apex Ultima at ₹22–₹35 and Apex Ultima Protek, which it calls an elastomeric or anti-crack tier, at ₹30–₹50 per sq ft including labour; NoBroker lists Apex Ultima Protek at ₹836 per litre.",
+          "sources": [
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Apex Ultima: ₹22–35 per sq ft (Premium tier)"
+            },
+            {
+              "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+              "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "Apex Ultima Protek: ₹30–50 per sq ft (Elastomeric/Anti-crack tier)"
+            },
+            {
+              "url": "https://www.nobroker.in/forum/what-is-the-coverage-of-1-litre-apex-ultima/",
+              "title": "What is the Asian Paints Ultima Protek Coverage Per Litre",
+              "publisher": "NoBroker",
+              "retrieved_at": "2026-10-06",
+              "quote": "Asian Paints Apex Ultima Protek costs Rs. 836 per litre"
+            },
+            {
+              "url": "https://www.asianpaints.com/paint-products/exterior-wall-paints/apex-ultima.html",
+              "title": "Apex Ultima - PU Serum Power with Colour Stay Pro",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            },
+            {
+              "url": "https://www.asianpaints.com/paint-products/exterior-wall-paints/apex-ultima-protek.html",
+              "title": "Apex Ultima Protek - Durable Home Lamination Solution",
+              "publisher": "Asian Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": null
+            }
+          ]
+        },
+        {
+          "id": "exterior-texture",
+          "label": "Exterior texture finish",
+          "description": "A textured exterior coating. Nerolac puts basic exterior texture finishes at around ₹60 per sq ft, with layered textures costing more; AapkaPainter gives ₹55–₹85 per sq ft (labour and material) in Chennai.",
+          "sources": [
+            {
+              "url": "https://www.nerolac.com/wall-paint/exterior-wall-texture-design",
+              "title": "Exterior Wall Texture Design",
+              "publisher": "Kansai Nerolac Paints",
+              "retrieved_at": "2026-10-06",
+              "quote": "For exterior wall texture design in India, basic finishes might cost around ₹60 per square foot, while fancy or layered textures cost more, with rates varying locally."
+            },
+            {
+              "url": "https://aapkapainter.com/blog/painting-cost-per-sq-ft-in-chennai-labour-material-rates-explained/",
+              "title": "Painting Cost Per Sq Ft in Chennai: Labour & Material Rates (2026)",
+              "publisher": "AapkaPainter",
+              "retrieved_at": "2026-10-06",
+              "quote": "For textured exterior finishes in Chennai, labour-only rates are ₹20–35/sq ft and labour + material rates are ₹55–85/sq ft."
+            }
+          ]
+        }
+      ],
+      "duration_days": {
+        "min": 2,
+        "max": 6,
+        "basis": "NoBroker gives 2–6 days to paint a house exterior: 3–4 days for small to medium homes and 5–6 days for larger ones, depending on size, number of painters and weather. Rain stops work; Berger advises waiting 24–48 hours after rainfall before painting."
+      },
+      "questions_to_ask": [
+        "How will you measure the exterior area, and are parapets, compound walls, grills and window frames included?",
+        "Which exterior product and primer will you use, and how many coats of each?",
+        "How will you clean the walls and treat cracks, algae and peeling paint before priming?",
+        "Is scaffolding or rope access included in the rate, and who is responsible for safety?",
+        "What will you do if it rains during the job, and how long will you wait before the next coat?",
+        "What warranty do you give in writing, and does the paint maker's product warranty apply to this job?",
+        "How many painters will work and how many days will the job take?"
+      ],
+      "common_mistakes": [
+        "Painting during the monsoon or straight after rain; Berger advises waiting 24–48 hours after rainfall, and NoBroker notes that rain within about 4 hours of a coat can wash it off.",
+        "Painting over seepage instead of fixing the leak first; Asian Paints notes that moisture under the paint film leads to blistering and peeling.",
+        "Skipping crack repair and exterior primer; NoBroker's Apex example includes one primer coat and minor crack repairs before two top coats.",
+        "Comparing rates without checking whether scaffolding or rope access is included.",
+        "Choosing a product only on price without comparing the warranty periods manufacturers state; the Asian Paints product page title lists a 4-year warranty for Ace Exterior Emulsion, which AapkaPainter groups with economy paints.",
+        "Estimating paint by guesswork; NoBroker gives 55–65 sq ft per litre for two coats of Apex, so coverage should be checked against the measured area."
+      ],
+      "quote_checklist": [
+        "Exterior wall area in sq ft and what it includes (parapets, compound walls, grills)",
+        "Product and primer, with number of coats",
+        "Cleaning, crack repair and algae treatment",
+        "Scaffolding or rope access",
+        "Rain plan and expected duration",
+        "Written warranty: period, issuer and exclusions",
+        "Whether GST is included"
+      ],
+      "faq": [
+        {
+          "q": "How much does exterior painting cost per sq ft in Pune?",
+          "a": "Our draft models give these labour-and-material rates per sq ft of exterior wall: entry-level emulsion such as Ace ₹13–₹30 (expected ₹18), weatherproof emulsion such as Apex ₹18–₹45 (₹32), premium systems such as Apex Ultima or Ultima Protek ₹20–₹68 (₹37) and texture ₹55–₹85 (₹65). AapkaPainter's Pune figures (₹26–₹40 standard, ₹42–₹68 premium) are higher than the national figures."
+        },
+        {
+          "q": "Why does exterior painting cost more than interior painting?",
+          "a": "Asian Paints notes that outdoor surfaces need weather-resistant paint and more preparation, and HomeTriangle adds that exteriors often need scaffolding. HomeTriangle puts all-inclusive exterior rates at ₹13–₹50 per sq ft against ₹8–₹40 for interiors."
+        },
+        {
+          "q": "What does an exterior repaint include?",
+          "a": "NoBroker's 1,000 sq ft Apex example includes one coat of exterior primer, two coats of weatherproof paint and minor crack repairs. AapkaPainter's exterior rates include surface preparation, primer, two coats and labour. Confirm whether scaffolding, algae treatment and grills are included."
+        },
+        {
+          "q": "How much exterior paint will I need?",
+          "a": "NoBroker gives coverage of 55–65 sq ft per litre for two coats of Apex. At that rate, 1,500 sq ft of wall needs roughly 23–27 litres of top coat, plus primer. Check the coverage printed for the product you choose."
+        },
+        {
+          "q": "How long does exterior painting take?",
+          "a": "NoBroker gives 2–6 days for a house exterior: 3–4 days for small to medium homes and 5–6 days for larger ones. Rain adds days, because Berger advises waiting 24–48 hours after rainfall before painting."
+        }
+      ],
+      "prose_status": "draft",
+      "sub_services": []
+    }
+  ]
+}

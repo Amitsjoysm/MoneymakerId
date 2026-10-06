@@ -1,1 +1,451 @@
-[]
+[
+  {
+    "id": "bathroom-renovation-budget",
+    "service_id": "bathroom-renovation",
+    "scope_id": null,
+    "material_id": null,
+    "tier": "budget",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 25000,
+      "expected": 50000,
+      "high": 100000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.7,
+      "labour": 0.2,
+      "preparation": 0.04,
+      "repair": 0.02,
+      "transport": 0.02,
+      "waste": 0.02
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/renovation/home-renovation-in-pune",
+        "title": "High-Quality Home Renovation in Pune with NoBroker",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic fittings & tiles: ₹40K – ₹70K"
+      },
+      {
+        "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+        "title": "Bathroom Renovation Cost Calculator India 2026",
+        "publisher": "RealCostIQ",
+        "retrieved_at": "2026-10-06",
+        "quote": "Budget (basic tiles/fittings): ₹0.50L–₹1L per bathroom"
+      },
+      {
+        "url": "https://www.comaron.com/blog/bathroom-renovation-cost-india-2026-complete-breakdown",
+        "title": "Bathroom Renovation Cost India 2026 - Complete Per Sq Ft Guide",
+        "publisher": "Comaron",
+        "retrieved_at": "2026-10-06",
+        "quote": "A basic bathroom renovation in India typically includes new tiles, basic fittings, waterproofing, and labor, with costs ranging between Rs. 30,000 and Rs. 60,000 for a standard 6x8 feet bathroom."
+      },
+      {
+        "url": "https://www.designcafe.com/blog/bathroom-interiors/budget-friendly-bathroom-renovation-tips/",
+        "title": "Budget-Friendly Bathroom Renovation Ideas for Modern Style",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "a basic renovation for a small bathroom (25 to 35 sq. ft.) with simple tiles and standard fittings typically costs around Rs. 25,000 to Rs. 60,000."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Per bathroom, budget tier (basic tiles and fittings; scope varies by source). Cited: NoBroker 'Basic fittings & tiles' ₹40,000–₹70,000 (Pune page); RealCostIQ budget ₹50,000–₹1,00,000 (national); Comaron basic renovation with new tiles, fittings and waterproofing ₹30,000–₹60,000 for a 6×8 ft bathroom (national); Design Cafe small bathroom (25–35 sq ft) with simple tiles and standard fittings ₹25,000–₹60,000 (national). Range widened to cover all four: ₹25,000–₹1,00,000. Expected = median of the cited publishers' midpoints (one per publisher), rounded to the nearest ₹500 with ties rounded down (midpoints 42,500, 45,000, 55,000, 75,000 → 50,000). The low end reflects small bathrooms; the national sources describe bathrooms of 25–48 sq ft. Components are an editorial split anchored on RealCostIQ (CP fittings, cubicle, geyser and exhaust ~38–39%, sanitaryware ~20%, labour ~18%) and 99acres (labour 20–25% of the total); preparation, repair, transport and waste are labelled assumptions, not sourced. GST: none of these sources says whether its total includes GST; NoBroker and Livspace quote some line items (plumbing, waterproofing) as 'plus 18% GST', so treat the range as GST basis not stated. All figures are labour-included totals per bathroom; Livspace's ₹1.25–₹2 lakh figure excludes tiles and fixtures and is therefore not used. Quotes were taken from search-result text because page fetches were blocked (EGRESS_BLOCKED); re-check against the live pages before review."
+  },
+  {
+    "id": "bathroom-renovation-standard",
+    "service_id": "bathroom-renovation",
+    "scope_id": null,
+    "material_id": null,
+    "tier": "standard",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 40000,
+      "expected": 165000,
+      "high": 250000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.7,
+      "labour": 0.2,
+      "preparation": 0.04,
+      "repair": 0.02,
+      "transport": 0.02,
+      "waste": 0.02
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/renovation/home-renovation-in-pune",
+        "title": "High-Quality Home Renovation in Pune with NoBroker",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Mid-range bathroom upgrade: ₹70K – ₹1.1 Lakhs"
+      },
+      {
+        "url": "https://www.beautifulhomes.asianpaints.com/blogs/estimate-home-interior-cost.html",
+        "title": "Interior Design Cost Calculator: Room by Room Guide",
+        "publisher": "Asian Paints (Beautiful Homes)",
+        "retrieved_at": "2026-10-06",
+        "quote": "Standard bathroom work covers wall and floor tiling, sanitaryware, fittings, vanity, mirror, and lighting, with costs ranging from ₹80,000–₹2 lakh."
+      },
+      {
+        "url": "https://www.homelane.com/design-ideas/bathroom-design/bathroom-renovation-cost/",
+        "title": "Bathroom Renovation Cost in India 2026",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "A mid-range renovation factors in new tiles, fittings, and minor layout upgrades, costing between INR 80,000 to INR 2.5 lakh, depending on the materials and brands you are choosing."
+      },
+      {
+        "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+        "title": "Bathroom Renovation Cost Calculator India 2026",
+        "publisher": "RealCostIQ",
+        "retrieved_at": "2026-10-06",
+        "quote": "Mid-range (branded fittings): ₹1L–₹2.50L per bathroom"
+      },
+      {
+        "url": "https://www.comaron.com/blog/bathroom-renovation-cost-india-2026-complete-breakdown",
+        "title": "Bathroom Renovation Cost India 2026 - Complete Per Sq Ft Guide",
+        "publisher": "Comaron",
+        "retrieved_at": "2026-10-06",
+        "quote": "The average Indian homeowner spends Rs. 40,000-80,000 on a mid-range bathroom renovation, which typically lasts 10-15 years with proper maintenance."
+      },
+      {
+        "url": "https://www.contractorbhai.com/what-decides-cost-of-bathroom-renovation-in-mumbai-or-pune-or-bangalore-etc/",
+        "title": "What decides cost of Bathroom Renovation in Mumbai or Pune or Bangalore etc - ContractorBhai",
+        "publisher": "ContractorBhai",
+        "retrieved_at": "2026-10-06",
+        "quote": "Most contractors reported homeowners spending 1.5 to 2 lakhs rupees on bathroom renovations in cities like Mumbai and Pune."
+      },
+      {
+        "url": "https://citidesignstudio.com/services/home-renovation-services-pune",
+        "title": "Home Renovation Services Pune",
+        "publisher": "Citi Design Studio",
+        "retrieved_at": "2026-10-06",
+        "quote": "offers modern bathroom upgrades for ₹1-2.5 lakhs with 15-20 days completion time"
+      },
+      {
+        "url": "https://www.livspace.com/in/magazine/bathroom-renovation-cost",
+        "title": "Bathroom Renovation Cost 2026: Design Inspo and Materials Included",
+        "publisher": "Livspace",
+        "retrieved_at": "2026-10-06",
+        "quote": "A compact bathroom with standard finishes, tiling, vanity, and shower setup starts from ₹60,000."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Per bathroom, standard (mid-range) tier: new tiles, branded fittings and sanitaryware. Cited: NoBroker mid-range upgrade ₹70,000–₹1,10,000 (Pune page); Asian Paints standard bathroom work ₹80,000–₹2,00,000 (national); HomeLane mid-range with new tiles, fittings and minor layout upgrades ₹80,000–₹2,50,000 (national); RealCostIQ mid-range ₹1,00,000–₹2,50,000 (national); Comaron mid-range ₹40,000–₹80,000 (national); ContractorBhai 'homeowners spending 1.5 to 2 lakhs' in Mumbai and Pune; Citi Design Studio, a Pune firm, ₹1,00,000–₹2,50,000 for bathroom upgrades. Livspace says a compact bathroom with standard finishes starts from ₹60,000; it gives no upper figure, so it is not in the median. Sources disagree widely (Comaron's mid-range is below NoBroker's), so the range is widened to ₹40,000–₹2,50,000. Expected = median of the cited publishers' midpoints (one per publisher), rounded to the nearest ₹500 with ties rounded down (midpoints 60,000, 90,000, 1,40,000, 1,65,000, 1,75,000, 1,75,000, 1,75,000 → 1,65,000). Components are an editorial split anchored on RealCostIQ (CP fittings, cubicle, geyser and exhaust ~38–39%, sanitaryware ~20%, labour ~18%) and 99acres (labour 20–25% of the total); preparation, repair, transport and waste are labelled assumptions, not sourced. GST: none of these sources says whether its total includes GST; NoBroker and Livspace quote some line items (plumbing, waterproofing) as 'plus 18% GST', so treat the range as GST basis not stated. All figures are labour-included totals per bathroom; Livspace's ₹1.25–₹2 lakh figure excludes tiles and fixtures and is therefore not used. Quotes were taken from search-result text because page fetches were blocked (EGRESS_BLOCKED); re-check against the live pages before review."
+  },
+  {
+    "id": "bathroom-renovation-premium",
+    "service_id": "bathroom-renovation",
+    "scope_id": null,
+    "material_id": null,
+    "tier": "premium",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 110000,
+      "expected": 350000,
+      "high": 500000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.72,
+      "labour": 0.18,
+      "preparation": 0.04,
+      "repair": 0.02,
+      "transport": 0.02,
+      "waste": 0.02
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/renovation/home-renovation-in-pune",
+        "title": "High-Quality Home Renovation in Pune with NoBroker",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium bathroom renovation: ₹1.1 – ₹1.5 Lakhs"
+      },
+      {
+        "url": "https://www.beautifulhomes.asianpaints.com/home-decor-price-calculator.html",
+        "title": "Interior Design Cost Calculator: Plan your Room Decor with Ease",
+        "publisher": "Asian Paints (Beautiful Homes)",
+        "retrieved_at": "2026-10-06",
+        "quote": "premium bathroom design ideas range from Rs. 2 lakh – Rs. 5 lakh+"
+      },
+      {
+        "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+        "title": "Bathroom Renovation Cost Calculator India 2026",
+        "publisher": "RealCostIQ",
+        "retrieved_at": "2026-10-06",
+        "quote": "Luxury (imported/designer): ₹2.50L–₹5L per bathroom"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Per bathroom, premium tier: branded or imported fittings, large-format or designer tiles. Cited: NoBroker premium renovation ₹1,10,000–₹1,50,000 (Pune page); Asian Paints premium bathroom design ₹2,00,000–₹5,00,000+ (national); RealCostIQ luxury (imported/designer) ₹2,50,000–₹5,00,000 (national). NoBroker's premium band is much lower than the other two; the range is widened to ₹1,10,000–₹5,00,000 to cover all three. Expected = median of the cited publishers' midpoints (one per publisher), rounded to the nearest ₹500 with ties rounded down (midpoints 1,30,000, 3,50,000, 3,75,000 → 3,50,000). Asian Paints and RealCostIQ give open-ended upper figures ('5 lakh+'); larger bathrooms and luxury fit-outs can exceed the high value. For premium full renovations in Pune see bathroom-renovation-full-premium. Components are an editorial split anchored on RealCostIQ (CP fittings, cubicle, geyser and exhaust ~38–39%, sanitaryware ~20%, labour ~18%) and 99acres (labour 20–25% of the total); preparation, repair, transport and waste are labelled assumptions, not sourced. GST: none of these sources says whether its total includes GST; NoBroker and Livspace quote some line items (plumbing, waterproofing) as 'plus 18% GST', so treat the range as GST basis not stated. All figures are labour-included totals per bathroom; Livspace's ₹1.25–₹2 lakh figure excludes tiles and fixtures and is therefore not used. Quotes were taken from search-result text because page fetches were blocked (EGRESS_BLOCKED); re-check against the live pages before review."
+  },
+  {
+    "id": "bathroom-renovation-cosmetic-refresh-budget",
+    "service_id": "bathroom-renovation",
+    "scope_id": "cosmetic-refresh",
+    "material_id": null,
+    "tier": "budget",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 30000,
+      "expected": 56000,
+      "high": 80000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.78,
+      "labour": 0.16,
+      "preparation": 0.02,
+      "repair": 0.01,
+      "transport": 0.02,
+      "waste": 0.01
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.homelane.com/design-ideas/bathroom-design/bathroom-renovation-cost/",
+        "title": "Bathroom Renovation Cost in India 2026",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "A basic bathroom makeover includes repainting, replacing fixtures, and updating accessories, typically costing around INR 30,000 to INR 80,000."
+      },
+      {
+        "url": "https://www.interiordecordesigns.in/articles/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026): Complete Price Breakdown",
+        "publisher": "Interior Decor Designs",
+        "retrieved_at": "2026-10-06",
+        "quote": "Cosmetic refresh: New CP fittings, sanitaryware swap, paint/mirror, no tile or waterproofing work — ₹35,000–₹80,000"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Per bathroom, cosmetic refresh: new taps and fittings, sanitaryware swap, paint and accessories, with no retiling and no waterproofing work. Cited: HomeLane basic makeover ₹30,000–₹80,000 (national); Interior Decor Designs cosmetic refresh ₹35,000–₹80,000 (national). Expected = median of the cited publishers' midpoints (one per publisher), rounded to the nearest ₹500 with ties rounded down (midpoints 55,000, 57,500 → 56,250 → 56,000). The two sources agree closely. Tier is set to budget because this is the lowest-cost scope; the sources do not grade fittings. Components weight materials higher because there is little civil work; this is a labelled assumption. GST: none of these sources says whether its total includes GST; NoBroker and Livspace quote some line items (plumbing, waterproofing) as 'plus 18% GST', so treat the range as GST basis not stated. All figures are labour-included totals per bathroom; Livspace's ₹1.25–₹2 lakh figure excludes tiles and fixtures and is therefore not used. Quotes were taken from search-result text because page fetches were blocked (EGRESS_BLOCKED); re-check against the live pages before review."
+  },
+  {
+    "id": "bathroom-renovation-retile-refit-budget",
+    "service_id": "bathroom-renovation",
+    "scope_id": "retile-and-refit",
+    "material_id": null,
+    "tier": "budget",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 25000,
+      "expected": 60000,
+      "high": 140000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.66,
+      "labour": 0.22,
+      "preparation": 0.05,
+      "repair": 0.02,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.designcafe.com/blog/bathroom-interiors/budget-friendly-bathroom-renovation-tips/",
+        "title": "Budget-Friendly Bathroom Renovation Ideas for Modern Style",
+        "publisher": "Design Cafe",
+        "retrieved_at": "2026-10-06",
+        "quote": "a basic renovation for a small bathroom (25 to 35 sq. ft.) with simple tiles and standard fittings typically costs around Rs. 25,000 to Rs. 60,000."
+      },
+      {
+        "url": "https://www.nobroker.in/renovation/home-renovation-in-pune",
+        "title": "High-Quality Home Renovation in Pune with NoBroker",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic fittings & tiles: ₹40K – ₹70K"
+      },
+      {
+        "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+        "title": "Bathroom Renovation Cost Calculator India 2026",
+        "publisher": "RealCostIQ",
+        "retrieved_at": "2026-10-06",
+        "quote": "Budget refresh (5×5 ft, 25 sqft): ₹50K–₹80K – includes ceramic tiles, local fittings, basic WC + basin, paint"
+      },
+      {
+        "url": "https://www.interiordecordesigns.in/articles/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026): Complete Price Breakdown",
+        "publisher": "Interior Decor Designs",
+        "retrieved_at": "2026-10-06",
+        "quote": "Partial renovation: Re-tiling + new fittings, waterproofing untouched (only viable if under 5 years old) — ₹70,000–₹1.4L"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Per bathroom, new tiles and fittings with the existing waterproofing and concealed pipes kept. Cited: Design Cafe small bathroom with simple tiles and standard fittings ₹25,000–₹60,000; NoBroker basic fittings & tiles ₹40,000–₹70,000 (Pune page); RealCostIQ budget refresh (5×5 ft) with ceramic tiles, local fittings, basic WC and basin ₹50,000–₹80,000; Interior Decor Designs partial renovation (re-tiling and new fittings, waterproofing untouched) ₹70,000–₹1,40,000. Interior Decor Designs does not grade its partial-renovation band and it sets the high end; the other three describe basic fittings. Expected = median of the cited publishers' midpoints (one per publisher), rounded to the nearest ₹500 with ties rounded down (midpoints 42,500, 55,000, 65,000, 1,05,000 → 60,000). Interior Decor Designs says this scope is only viable if the existing waterproofing is under 5 years old. Design Cafe, NoBroker and RealCostIQ do not say whether waterproofing is redone. Components are an editorial split anchored on RealCostIQ (CP fittings, cubicle, geyser and exhaust ~38–39%, sanitaryware ~20%, labour ~18%) and 99acres (labour 20–25% of the total); preparation, repair, transport and waste are labelled assumptions, not sourced. GST: none of these sources says whether its total includes GST; NoBroker and Livspace quote some line items (plumbing, waterproofing) as 'plus 18% GST', so treat the range as GST basis not stated. All figures are labour-included totals per bathroom; Livspace's ₹1.25–₹2 lakh figure excludes tiles and fixtures and is therefore not used. Quotes were taken from search-result text because page fetches were blocked (EGRESS_BLOCKED); re-check against the live pages before review."
+  },
+  {
+    "id": "bathroom-renovation-full-budget",
+    "service_id": "bathroom-renovation",
+    "scope_id": "full-renovation",
+    "material_id": null,
+    "tier": "budget",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 30000,
+      "expected": 74000,
+      "high": 160000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.64,
+      "labour": 0.22,
+      "preparation": 0.06,
+      "repair": 0.03,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.interiordecordesigns.in/articles/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026): Complete Price Breakdown",
+        "publisher": "Interior Decor Designs",
+        "retrieved_at": "2026-10-06",
+        "quote": "For a typical full renovation (5×7–6×8 ft bathroom), costs in Pune range from ₹1.1–1.6L for budget tier, ₹1.6–2.5L for mid-range, and ₹3.4L+ for premium."
+      },
+      {
+        "url": "https://www.comaron.com/blog/bathroom-renovation-cost-india-2026-complete-breakdown",
+        "title": "Bathroom Renovation Cost India 2026 - Complete Per Sq Ft Guide",
+        "publisher": "Comaron",
+        "retrieved_at": "2026-10-06",
+        "quote": "A basic bathroom renovation in India typically includes new tiles, basic fittings, waterproofing, and labor, with costs ranging between Rs. 30,000 and Rs. 60,000 for a standard 6x8 feet bathroom."
+      },
+      {
+        "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+        "publisher": "Aecord",
+        "retrieved_at": "2026-10-06",
+        "quote": "Pune's essential tier for bathroom renovation ranges from ₹58,000 to ₹90,000."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Per bathroom, full renovation at budget finish. Cited: Interior Decor Designs Pune full renovation (5×7 to 6×8 ft) budget tier ₹1,10,000–₹1,60,000; Comaron basic renovation including new tiles, fittings and waterproofing ₹30,000–₹60,000 for a 6×8 ft bathroom (national); Aecord Pune essential tier ₹58,000–₹90,000 (Aecord does not describe the essential tier's scope). The sources disagree by more than 2×; the range is widened to ₹30,000–₹1,60,000. Expected = median of the cited publishers' midpoints (one per publisher), rounded to the nearest ₹500 with ties rounded down (midpoints 45,000, 74,000, 1,35,000 → 74,000). Only Interior Decor Designs states demolition and new plumbing explicitly; treat the lower figures as smaller scopes. Components are an editorial split anchored on RealCostIQ (CP fittings, cubicle, geyser and exhaust ~38–39%, sanitaryware ~20%, labour ~18%) and 99acres (labour 20–25% of the total); preparation, repair, transport and waste are labelled assumptions, not sourced. GST: none of these sources says whether its total includes GST; NoBroker and Livspace quote some line items (plumbing, waterproofing) as 'plus 18% GST', so treat the range as GST basis not stated. All figures are labour-included totals per bathroom; Livspace's ₹1.25–₹2 lakh figure excludes tiles and fixtures and is therefore not used. Quotes were taken from search-result text because page fetches were blocked (EGRESS_BLOCKED); re-check against the live pages before review."
+  },
+  {
+    "id": "bathroom-renovation-full-standard",
+    "service_id": "bathroom-renovation",
+    "scope_id": "full-renovation",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 105000,
+      "expected": 186000,
+      "high": 250000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.64,
+      "labour": 0.22,
+      "preparation": 0.06,
+      "repair": 0.03,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.interiordecordesigns.in/articles/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026): Complete Price Breakdown",
+        "publisher": "Interior Decor Designs",
+        "retrieved_at": "2026-10-06",
+        "quote": "For a typical full renovation (5×7–6×8 ft bathroom), costs in Pune range from ₹1.1–1.6L for budget tier, ₹1.6–2.5L for mid-range, and ₹3.4L+ for premium."
+      },
+      {
+        "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+        "publisher": "Aecord",
+        "retrieved_at": "2026-10-06",
+        "quote": "Mid-range comfort renovations in Pune cost between ₹1,05,000 to ₹2,30,000."
+      },
+      {
+        "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+        "publisher": "Aecord",
+        "retrieved_at": "2026-10-06",
+        "quote": "This typically includes a complete overhaul with vitrified tiles, branded sanitaryware (Jaquar, Cera), minor plumbing relocations, and new lighting."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Per bathroom, full renovation at mid-range finish, Pune. Cited: Interior Decor Designs Pune mid-range ₹1,60,000–₹2,50,000; Aecord Pune mid-range ₹1,05,000–₹2,30,000, which Aecord describes as a complete overhaul with vitrified tiles, branded sanitaryware and minor plumbing relocations. Expected = median of the cited publishers' midpoints (one per publisher), rounded to the nearest ₹500 with ties rounded down (midpoints 1,67,500, 2,05,000 → 1,86,250 → 1,86,000). Not used: NoBroker's untiered 'Tier-2 Cities like Pune' full-renovation range of ₹1,80,000–₹4,80,000, and RealCostIQ's 'Full upgrade' package (₹1,50,000–₹2,50,000), whose tier is unclear. Conflict: Aecord puts labour alone for a complete 40 sq ft renovation in Mumbai and Pune at ₹60,000–₹1,20,000, a far larger share than the 18–25% used for components. Components are an editorial split anchored on RealCostIQ (CP fittings, cubicle, geyser and exhaust ~38–39%, sanitaryware ~20%, labour ~18%) and 99acres (labour 20–25% of the total); preparation, repair, transport and waste are labelled assumptions, not sourced. GST: none of these sources says whether its total includes GST; NoBroker and Livspace quote some line items (plumbing, waterproofing) as 'plus 18% GST', so treat the range as GST basis not stated. All figures are labour-included totals per bathroom; Livspace's ₹1.25–₹2 lakh figure excludes tiles and fixtures and is therefore not used. Quotes were taken from search-result text because page fetches were blocked (EGRESS_BLOCKED); re-check against the live pages before review."
+  },
+  {
+    "id": "bathroom-renovation-full-premium",
+    "service_id": "bathroom-renovation",
+    "scope_id": "full-renovation",
+    "material_id": null,
+    "tier": "premium",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 250000,
+      "expected": 425000,
+      "high": 1400000
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.72,
+      "labour": 0.18,
+      "preparation": 0.04,
+      "repair": 0.02,
+      "transport": 0.02,
+      "waste": 0.02
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.interiordecordesigns.in/articles/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026): Complete Price Breakdown",
+        "publisher": "Interior Decor Designs",
+        "retrieved_at": "2026-10-06",
+        "quote": "For a typical full renovation (5×7–6×8 ft bathroom), costs in Pune range from ₹1.1–1.6L for budget tier, ₹1.6–2.5L for mid-range, and ₹3.4L+ for premium."
+      },
+      {
+        "url": "https://www.homelane.com/design-ideas/bathroom-design/bathroom-renovation-cost/",
+        "title": "Bathroom Renovation Cost in India 2026",
+        "publisher": "HomeLane",
+        "retrieved_at": "2026-10-06",
+        "quote": "A full remodel includes stripping the existing bathroom and making plumbing changes, redoing the waterproofing, and using premium finishes, with costs ranging from INR 2.5 lakh to INR 6 lakh or more."
+      },
+      {
+        "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+        "publisher": "Aecord",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium and luxury bathroom renovations in Pune range from ₹2,50,000 to ₹14,00,000+."
+      },
+      {
+        "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+        "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+        "publisher": "Aecord",
+        "retrieved_at": "2026-10-06",
+        "quote": "These typically feature large-format Italian marble/porcelain slabs, smart toilets, rainfall shower systems, custom vanities, and integrated automation."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Per bathroom, full renovation at premium finish. Cited: Interior Decor Designs Pune premium ₹3,40,000+ (lower bound only; used as its point figure); HomeLane full remodel with plumbing changes, new waterproofing and premium finishes ₹2,50,000–₹6,00,000+ (national); Aecord Pune premium and luxury ₹2,50,000–₹14,00,000+, which includes smart toilets, rainfall showers and automation. The range is widened to ₹2,50,000–₹14,00,000 to cover Aecord's luxury upper figure. Expected = median of the cited publishers' midpoints (one per publisher), rounded to the nearest ₹500 with ties rounded down (midpoints 3,40,000, 4,25,000, 8,25,000 → 4,25,000). Moving the WC or shower point is part of HomeLane's scope; Interior Decor Designs prices a full renovation with layout change at ₹2,50,000–₹4,50,000 nationally. Components are an editorial split anchored on RealCostIQ (CP fittings, cubicle, geyser and exhaust ~38–39%, sanitaryware ~20%, labour ~18%) and 99acres (labour 20–25% of the total); preparation, repair, transport and waste are labelled assumptions, not sourced. GST: none of these sources says whether its total includes GST; NoBroker and Livspace quote some line items (plumbing, waterproofing) as 'plus 18% GST', so treat the range as GST basis not stated. All figures are labour-included totals per bathroom; Livspace's ₹1.25–₹2 lakh figure excludes tiles and fixtures and is therefore not used. Quotes were taken from search-result text because page fetches were blocked (EGRESS_BLOCKED); re-check against the live pages before review."
+  }
+]

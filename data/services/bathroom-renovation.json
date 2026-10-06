@@ -2,114 +2,272 @@
   "id": "bathroom-renovation",
   "name": "Bathroom Renovation",
   "parent_id": null,
-  "unit": "sqft",
-  "area_presets": [],
+  "unit": "unit",
+  "area_presets": [
+    {
+      "preset": "1bhk",
+      "label": "1 BHK flat, 1 bathroom",
+      "quantity": 1,
+      "assumption": "One bathroom, as Square Yards describes a typical 1 BHK flat. Change the count if your flat differs.",
+      "sources": [
+        {
+          "url": "https://www.squareyards.com/blog/what-is-2-bhk",
+          "title": "What is 2 BHK Apartment? Size, Carpet Area, Advantages and Comparison Guide",
+          "publisher": "Square Yards",
+          "retrieved_at": "2026-10-06",
+          "quote": "A 1 BHK flat typically includes 1 bedroom and 1 bathroom."
+        }
+      ]
+    },
+    {
+      "preset": "2bhk",
+      "label": "2 BHK flat, 2 bathrooms",
+      "quantity": 2,
+      "assumption": "Two bathrooms, one attached to the master bedroom and one common, as Square Yards describes a typical 2 BHK flat. Change the count if your flat differs.",
+      "sources": [
+        {
+          "url": "https://www.squareyards.com/blog/what-is-2-bhk",
+          "title": "What is 2 BHK Apartment? Size, Carpet Area, Advantages and Comparison Guide",
+          "publisher": "Square Yards",
+          "retrieved_at": "2026-10-06",
+          "quote": "It typically includes two bathrooms (one attached to the master bedroom and one common bathroom accessible from the hall) and usually one or two balconies."
+        }
+      ]
+    },
+    {
+      "preset": "3bhk",
+      "label": "3 BHK flat, 3 bathrooms",
+      "quantity": 3,
+      "assumption": "Three bathrooms (two attached, one common), one of the 3 BHK layouts Square Yards describes. Square Yards notes that the number of bathrooms in a 3 BHK varies, so enter your own count if it differs.",
+      "sources": [
+        {
+          "url": "https://www.squareyards.com/blog/3-bhk-house-plan-dseart",
+          "title": "12 Outstanding 3 BHK house plan For Indian Homes",
+          "publisher": "Square Yards",
+          "retrieved_at": "2026-10-06",
+          "quote": "Some 3 BHK units have 3 bedrooms, 2 attached bathrooms and 1 common bathroom"
+        }
+      ]
+    }
+  ],
   "scope_options": [
     {
-      "id": "full-renovation",
-      "label": "Full renovation",
-      "description": "Old tiles, fixtures and concealed pipes are removed down to the floor slab and wall plaster. The work then covers new concealed plumbing, floor and wall waterproofing, new floor and wall tiles, sanitaryware, taps and shower fittings, and electrical points. Quantity is the bathroom's floor area in sq ft."
+      "id": "cosmetic-refresh",
+      "label": "Cosmetic refresh",
+      "description": "New taps and shower fittings, a sanitaryware swap, paint and a mirror. No retiling and no waterproofing work. Quantity is the number of bathrooms."
     },
     {
       "id": "retile-and-refit",
-      "label": "Retile and refit (keep existing pipes)",
-      "description": "Floor and wall tiles and the fixtures are replaced and the floor is re-waterproofed, but the existing concealed supply and drain lines are kept after a leak or pressure check. Quantity is the bathroom's floor area in sq ft."
+      "label": "Retile and refit (keep waterproofing and pipes)",
+      "description": "New floor and wall tiles and new fittings, keeping the existing waterproofing and concealed supply and drain lines. Interior Decor Designs says this is only viable if the existing waterproofing is under 5 years old; ask for a leak and pressure check first. Quantity is the number of bathrooms."
     },
     {
-      "id": "retiling-only",
-      "label": "Retiling only",
-      "description": "Floor and wall tiles are removed and replaced, with the floor waterproofing redone under the new floor tiles. Sanitaryware and taps are refitted or priced separately. Quantity is the bathroom's floor area in sq ft."
+      "id": "full-renovation",
+      "label": "Full renovation",
+      "description": "Old tiles and fittings are removed down to the slab. The work then covers new waterproofing, concealed plumbing, floor and wall tiles, sanitaryware, taps and shower fittings, and electrical points. Moving the WC or shower to a new position costs extra. Quantity is the number of bathrooms."
     }
   ],
   "materials": [
     {
       "id": "ceramic-tiles",
       "label": "Ceramic tiles",
-      "description": "Glazed tiles with a clay body. If they are used on a wet bathroom floor, choose a slip-resistant (matt or anti-skid) finish.",
-      "sources": []
+      "description": "Glazed tiles with a clay body. RealCostIQ pairs ceramic tiles with its budget package, and Asian Paints puts ceramic tile prices at about ₹60–₹200 per sq ft. Design Cafe advises anti-skid tiles for the floor.",
+      "sources": [
+        {
+          "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+          "title": "Bathroom Renovation Cost Calculator India 2026",
+          "publisher": "RealCostIQ",
+          "retrieved_at": "2026-10-06",
+          "quote": "Budget refresh (5×5 ft, 25 sqft): ₹50K–₹80K – includes ceramic tiles, local fittings, basic WC + basin, paint"
+        },
+        {
+          "url": "https://www.beautifulhomes.asianpaints.com/blogs/bathroom-renovation-cost.html",
+          "title": "Affordable Bathroom Renovation Cost: Get",
+          "publisher": "Asian Paints (Beautiful Homes)",
+          "retrieved_at": "2026-10-06",
+          "quote": "Ceramic tiles can cost anywhere between ₹60 to ₹200 per square feet."
+        },
+        {
+          "url": "https://www.designcafe.com/blog/bathroom-interiors/budget-friendly-bathroom-renovation-tips/",
+          "title": "Budget-Friendly Bathroom Renovation Ideas for Modern Style",
+          "publisher": "Design Cafe",
+          "retrieved_at": "2026-10-06",
+          "quote": "Choose anti-skid tiles for the floor and moisture-resistant tiles with suitable finishes for the walls."
+        }
+      ]
     },
     {
       "id": "vitrified-tiles",
       "label": "Vitrified tiles",
-      "description": "Tiles fired to a dense body (glazed vitrified, double-charge or full-body), for bathroom floors or walls. If they are used on a wet bathroom floor, choose a slip-resistant finish.",
-      "sources": []
+      "description": "Tiles fired to a dense body, used on bathroom floors and walls. RealCostIQ pairs vitrified tiles with its standard package (₹1–₹1.5 lakh for a 5×7 ft bathroom), and Aecord lists them in mid-range Pune renovations. Choose a slip-resistant finish for a wet floor.",
+      "sources": [
+        {
+          "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+          "title": "Bathroom Renovation Cost Calculator India 2026",
+          "publisher": "RealCostIQ",
+          "retrieved_at": "2026-10-06",
+          "quote": "Standard renovation (5×7 ft, 35 sqft): ₹1L–₹1.5L – includes vitrified tiles, branded CP (Jaquar/Cera), shower, vanity"
+        },
+        {
+          "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+          "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+          "publisher": "Aecord",
+          "retrieved_at": "2026-10-06",
+          "quote": "This typically includes a complete overhaul with vitrified tiles, branded sanitaryware (Jaquar, Cera), minor plumbing relocations, and new lighting."
+        },
+        {
+          "url": "https://www.designcafe.com/blog/bathroom-interiors/budget-friendly-bathroom-renovation-tips/",
+          "title": "Budget-Friendly Bathroom Renovation Ideas for Modern Style",
+          "publisher": "Design Cafe",
+          "retrieved_at": "2026-10-06",
+          "quote": "Choose anti-skid tiles for the floor and moisture-resistant tiles with suitable finishes for the walls."
+        }
+      ]
     },
     {
       "id": "large-format-designer-tiles",
-      "label": "Large-format or designer tiles",
-      "description": "Large porcelain slabs or patterned feature tiles.",
-      "sources": []
+      "label": "Large-format, imported or designer tiles",
+      "description": "Large porcelain slabs, imported tiles or patterned feature tiles. Asian Paints, Aecord and RealCostIQ list them in premium and luxury renovations.",
+      "sources": [
+        {
+          "url": "https://www.beautifulhomes.asianpaints.com/blogs/estimate-home-interior-cost.html",
+          "title": "Interior Design Cost Calculator: Room by Room Guide",
+          "publisher": "Asian Paints (Beautiful Homes)",
+          "retrieved_at": "2026-10-06",
+          "quote": "Premium bathrooms with imported fixtures, large-format tiles, and rain showers go considerably higher, sometimes dramatically so."
+        },
+        {
+          "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+          "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+          "publisher": "Aecord",
+          "retrieved_at": "2026-10-06",
+          "quote": "These typically feature large-format Italian marble/porcelain slabs, smart toilets, rainfall shower systems, custom vanities, and integrated automation."
+        },
+        {
+          "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+          "title": "Bathroom Renovation Cost Calculator India 2026",
+          "publisher": "RealCostIQ",
+          "retrieved_at": "2026-10-06",
+          "quote": "Luxury makeover (6×9 ft+, 54 sqft+): ₹2.5L–₹5L+ – includes imported tiles, Kohler/American Standard, rain shower, steam"
+        }
+      ]
     },
     {
       "id": "natural-stone",
       "label": "Natural stone",
-      "description": "Marble or granite, for example on floors, vanity counters or door thresholds.",
-      "sources": []
+      "description": "Marble or granite, for example on floors, vanity counters or door thresholds. Aecord lists large-format Italian marble slabs among premium Pune renovations.",
+      "sources": [
+        {
+          "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+          "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+          "publisher": "Aecord",
+          "retrieved_at": "2026-10-06",
+          "quote": "These typically feature large-format Italian marble/porcelain slabs, smart toilets, rainfall shower systems, custom vanities, and integrated automation."
+        }
+      ]
+    },
+    {
+      "id": "sanitaryware-and-cp-fittings",
+      "label": "Sanitaryware and CP fittings",
+      "description": "The WC, wash basin, taps, diverter and shower. RealCostIQ estimates CP fittings, shower cubicle, geyser and exhaust fan at roughly 38–39% of a renovation's cost and sanitaryware at roughly 20%. Aecord and RealCostIQ name Jaquar and Cera for mid-range work; RealCostIQ names Kohler and American Standard for luxury work.",
+      "sources": [
+        {
+          "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+          "title": "Bathroom Renovation Cost Calculator India 2026",
+          "publisher": "RealCostIQ",
+          "retrieved_at": "2026-10-06",
+          "quote": "CP fittings, shower cubicle, geyser and exhaust fan together account for roughly 38–39% of the total cost, sanitaryware (WC and wash basin) for roughly 20%, and labour for roughly 18%."
+        },
+        {
+          "url": "https://aecord.com/blog/bathroom-renovation-cost-india-2026",
+          "title": "Bathroom Renovation Cost in India (2026 Guide): Complete Budget & Pricing Breakdown",
+          "publisher": "Aecord",
+          "retrieved_at": "2026-10-06",
+          "quote": "This typically includes a complete overhaul with vitrified tiles, branded sanitaryware (Jaquar, Cera), minor plumbing relocations, and new lighting."
+        },
+        {
+          "url": "https://realcostiq.com/in/bathroom-renovation-cost-calculator/",
+          "title": "Bathroom Renovation Cost Calculator India 2026",
+          "publisher": "RealCostIQ",
+          "retrieved_at": "2026-10-06",
+          "quote": "Luxury makeover (6×9 ft+, 54 sqft+): ₹2.5L–₹5L+ – includes imported tiles, Kohler/American Standard, rain shower, steam"
+        }
+      ]
     }
   ],
   "duration_days": {
-    "min": 0,
-    "max": 0,
-    "basis": "NOT SOURCED. Placeholder only: research on 2026-10-06 was blocked (WebSearch budget exhausted, publisher sites blocked by the egress proxy). Do not display; replace with a sourced range before review."
+    "min": 10,
+    "max": 35,
+    "basis": "Interior Decor Designs gives a typical timeline of 10–15 days, and Citi Design Studio, a Pune firm, gives 15–20 days for bathroom upgrades. NoBroker gives 2–4 weeks for small bathrooms and 3–5 weeks for a full renovation, and says rush jobs can finish in 10–14 days at 15–20% extra cost. Waterproofing needs curing time before tiling, and moving pipes or the WC adds days."
   },
   "questions_to_ask": [
-    "Is your quote a rate per sq ft of floor area, a lump sum per bathroom, or itemised, and what exactly does it include?",
-    "Will you remove the old tiles down to the slab, or lay new tiles over the existing ones?",
-    "Which waterproofing product and method will you use on the floor and shower walls, and how far up the walls will it go?",
+    "Is your price a lump sum per bathroom, a rate per sq ft, or itemised? If it is per sq ft, is that the floor area or the total tiled area of floor and walls?",
+    "Will you remove the old tiles down to the slab, or keep the existing waterproofing and pipes? If you keep them, how will you check them first?",
+    "Which waterproofing product will you use, how many coats, and how far up the walls will it go in the shower area?",
     "Will you do a water (ponding) test after waterproofing and before tiling, and can I be present for it?",
-    "Are the concealed pipes being replaced? If so, which pipe material and brand will you use, and will you pressure-test them before closing the walls?",
-    "Which brands and model numbers of tiles, sanitaryware and taps does the quote assume, and who buys them?",
-    "Is debris removal from the building included in the price?",
+    "Are the concealed supply and drain pipes being replaced? Which pipe brand will you use, and will you pressure-test them before closing the walls?",
+    "Which brands and model numbers of tiles, sanitaryware, taps and shower fittings does the quote assume, and who buys them?",
+    "Does the price include demolition, debris removal from the building, electrical points, false ceiling and painting?",
+    "Is GST included in the price or extra?",
     "What warranty do you give on waterproofing and on workmanship, and will you put it in writing?",
-    "Will you follow the society's working hours and its rules on noise, lift use and debris?"
+    "How many working days will the job take, and will we have a usable bathroom during the work?"
   ],
   "common_mistakes": [
-    "Retiling without redoing the waterproofing underneath, so any existing leak into the flat below can continue.",
+    "Retiling without redoing the waterproofing underneath when the old waterproofing is not recent, so any existing leak into the flat below can continue.",
     "Laying new tiles over old ones to save demolition cost, which raises the floor level and hides any failed waterproofing.",
     "Not checking the floor slope towards the floor trap before tiling, which leaves water standing in corners.",
-    "Using glossy tiles on a wet bathroom floor instead of a slip-resistant grade.",
-    "Comparing quotes that assume different tile, sanitaryware and tap brands as if they covered the same scope.",
+    "Using glossy tiles on a wet bathroom floor instead of an anti-skid grade.",
+    "Comparing a per-bathroom lump sum with a per-sq-ft rate, or quotes that assume different tile and fitting brands, as if they covered the same scope.",
+    "Moving the WC or shower to a new position without budgeting for the extra plumbing work.",
     "Closing the walls without pressure-testing new concealed supply lines.",
     "Paying most of the amount upfront instead of linking payments to completed stages.",
     "Starting demolition without informing the society office and the flat below."
   ],
   "quote_checklist": [
-    "Scope in writing: demolition, plumbing, waterproofing, tiling, sanitaryware, taps and shower fittings, electrical points, ceiling, debris removal",
-    "Measured floor area, and the wall tiling height or wall area",
-    "Tile type, size and brand, or a stated price allowance per sq ft or per box",
+    "Price basis stated: per bathroom, per sq ft (and of which area), or itemised",
+    "Scope in writing: demolition, plumbing, waterproofing, tiling, sanitaryware, taps and shower fittings, electrical points, false ceiling, painting, debris removal",
+    "Bathroom floor size, and the wall tiling height",
+    "Tile type, size and brand, or a stated price allowance per sq ft",
     "Waterproofing product, number of coats and where it is applied (floor, wall upturn, shower walls, around the floor trap and pipe openings)",
-    "Plumbing pipe material and brand, and the number of inlet and outlet points",
-    "Sanitaryware and tap brands and model numbers, or a stated allowance amount",
+    "Plumbing pipe brand and the number of inlet and outlet points, and whether any point is being moved",
+    "Sanitaryware and CP fitting brands and model numbers, or a stated allowance amount",
     "Who supplies materials (contractor or owner) and who bears breakage and extra wastage",
-    "Debris removal and transport: included or extra",
-    "Timeline with a stage-wise payment schedule",
+    "Timeline in working days, with a stage-wise payment schedule",
     "Written warranty on waterproofing and workmanship",
     "Whether GST is included or extra"
   ],
   "faq": [
     {
-      "q": "How is a bathroom renovation usually priced?",
-      "a": "A contractor may quote a rate per sq ft of bathroom floor area, a lump sum per bathroom, or an itemised list with demolition, plumbing, waterproofing, tiling and fixtures priced separately. An itemised quote is the easiest to compare. Check which basis each quote uses before comparing totals."
+      "q": "How much does a bathroom renovation cost in Pune?",
+      "a": "Our draft cost models, built from sources retrieved in October 2026, give these ranges per bathroom: budget ₹25,000–₹1,00,000 (expected about ₹50,000), standard ₹40,000–₹2,50,000 (about ₹1,65,000) and premium ₹1,10,000–₹5,00,000 (about ₹3,50,000). For a full renovation down to the slab in Pune, Interior Decor Designs gives ₹1.1–1.6 lakh (budget), ₹1.6–2.5 lakh (mid-range) and ₹3.4 lakh or more (premium) for a 5×7 to 6×8 ft bathroom. These are indicative ranges, not quotations."
+    },
+    {
+      "q": "Why do bathroom renovation quotes vary so much?",
+      "a": "Quotes differ in scope (a cosmetic refresh, retiling, or a full renovation with new waterproofing and pipes), in tile and fitting brands, and in bathroom size. RealCostIQ estimates that CP fittings, shower cubicle, geyser and exhaust fan make up roughly 38–39% of the cost and sanitaryware roughly 20%, so the brands chosen change the total a lot. Ask each contractor to price the same scope and brands."
+    },
+    {
+      "q": "How is a bathroom renovation priced?",
+      "a": "Most of the guides we used quote a lump sum per bathroom. Some Pune contractors listed on IndiaMART quote a rate per sq ft instead, and an itemised quote prices demolition, plumbing, waterproofing, tiling and fittings separately. If a quote is per sq ft, ask whether it means the floor area or the total tiled area of floor and walls, because the tiled wall area is usually larger than the floor."
+    },
+    {
+      "q": "How long does a bathroom renovation take?",
+      "a": "Interior Decor Designs gives 10–15 days as typical, and Citi Design Studio in Pune gives 15–20 days. NoBroker gives 2–4 weeks for a small bathroom and 3–5 weeks for a full renovation, because waterproofing needs time to cure before tiling. Moving pipes or the WC adds time."
     },
     {
       "q": "Does a bathroom renovation need new waterproofing?",
-      "a": "If the floor tiles are being removed, the floor should be waterproofed again before new tiles go down. This includes the joint between floor and wall and the areas around the floor trap and pipe openings. Ask the contractor to water-test the floor before tiling."
+      "a": "If the floor tiles are being removed, the floor should be waterproofed again before new tiles go down. Interior Decor Designs says keeping the old waterproofing is only viable if it is under 5 years old. As a line item, NoBroker puts bathroom waterproofing at about ₹8,000–₹10,000 per bathroom plus 18% GST, and Livspace says it starts from ₹12,000 plus GST. Ask for a water test before tiling."
     },
     {
-      "q": "Can new tiles be laid over old tiles?",
-      "a": "It is sometimes done, but it raises the floor level, hides any existing waterproofing failure and can change the slope towards the drain. If a contractor recommends it, ask how they will handle the door threshold and the floor trap level."
+      "q": "Does moving the WC or shower add to the cost?",
+      "a": "Yes. Interior Decor Designs prices a full renovation with a layout change, such as moving the WC or shower point or adding a wet-dry partition, at ₹2.5–4.5 lakh. HomeLane says keeping the existing layout can save ₹20,000 to ₹80,000 by avoiding plumbing changes."
     },
     {
-      "q": "Should I buy tiles and fittings myself or let the contractor supply them?",
-      "a": "Either works. If you buy them, the contractor's quote for those items should be labour-only and should say who bears breakage and extra wastage. If the contractor supplies them, ask for brand and model numbers in writing so you can check prices."
+      "q": "How many bathrooms does the calculator assume for a flat?",
+      "a": "One for a 1 BHK, two for a 2 BHK (one attached, one common) and three for a 3 BHK, based on layouts Square Yards describes. Bathroom counts vary by project, especially in 3 BHK flats, so enter your own number if it differs."
     },
     {
       "q": "Do I need to inform my housing society?",
       "a": "Check with your society office before work starts. Your society may have rules on working hours, noise, lift use and debris disposal. Inform the flat below as well, because demolition and waterproofing work affects the ceiling under your bathroom."
-    },
-    {
-      "q": "Is a renovation a good time to replace concealed pipes?",
-      "a": "If the walls and floor are being opened anyway, replacing old or corroded pipes at the same time avoids breaking new tiles later. If you keep the existing pipes, ask for a pressure test before tiling."
     }
   ],
   "prose_status": "draft",

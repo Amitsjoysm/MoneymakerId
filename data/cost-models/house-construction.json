@@ -1,1 +1,336 @@
-[]
+[
+  {
+    "id": "house-construction-turnkey-budget",
+    "service_id": "house-construction",
+    "scope_id": "turnkey",
+    "material_id": null,
+    "tier": "budget",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 1300,
+      "expected": 1825,
+      "high": 2500
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.68,
+      "labour": 0.22,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.03,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/blog/construction-cost-in-pune/",
+        "title": "Construction Costs in Pune per Sq.Ft (2026 Update)",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Different construction qualities are priced as follows: Basic Quality ₹1,800 – ₹2,200, Standard Quality ₹2,200 – ₹2,700, and Premium Quality ₹2,800 – ₹3,200+ per sq ft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/construction-cost-estimator-in-pune/",
+        "title": "Construction Cost Estimator in Pune - Construction Estimator India",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Low-Cost Residential: ₹1,300 – ₹1,800 per sq. ft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/cost-of-building-a-house-in-india/",
+        "title": "Cost of Building a House in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "For Pune, basic construction costs ₹1,700-2,500 per sq ft, while premium rates go up to ₹2,800-4,200 per sq ft."
+      },
+      {
+        "url": "https://www.squareyards.com/blog/construction-cost-in-pune-smrthme",
+        "title": "Construction Cost in Pune 2026 — Per Sq Ft Rates",
+        "publisher": "Square Yards",
+        "retrieved_at": "2026-10-06",
+        "quote": "The cost of a simple house with standard materials ranges from ₹1,400 to ₹1,800 per square foot, which includes essential fittings and finishes without luxury features."
+      },
+      {
+        "url": "https://www.bricknbolt.com/blogs-and-articles/construction-guide/construction-cost-in-pune",
+        "title": "House Construction Cost in Pune",
+        "publisher": "Brick & Bolt",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic residential construction may start around ₹1,600–₹1,900 per sq ft, while standard homes often fall around ₹1,900–₹2,500 per sq ft. Premium or luxury specifications can go higher."
+      },
+      {
+        "url": "https://www.bricknbolt.com/construction-company-pune",
+        "title": "Construction Company in Pune",
+        "publisher": "Brick & Bolt",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic: ₹1,680 per sqft"
+      },
+      {
+        "url": "https://infralens.in/prices/pune",
+        "title": "Construction Cost per Sqft in Pune 2026 — ₹2,573",
+        "publisher": "InfraLens",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic quality starts at ~₹2,007/sqft, Premium at ~₹3,474/sqft, and Luxury at ~₹4,760/sqft. Pune construction cost: ₹2,573/sqft Standard, ₹3,474 Premium as of August 2026."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited Pune figures per sq ft for basic or budget specification: NoBroker basic ₹1,800–₹2,200; Construction Estimator India low-cost ₹1,300–₹1,800 (Pune estimator page) and basic ₹1,700–₹2,500 (its city table); Square Yards basic ₹1,400–₹1,800; Brick & Bolt basic ₹1,600–₹1,900 (Pune guide) and its Basic package ₹1,680; InfraLens basic from ~₹2,007. Sources disagree, so the range is widened to ₹1,300–₹2,500. Expected = median of one midpoint per publisher (a publisher with several figures contributes the median of its own midpoints), rounded to the nearest ₹25 with ties down: midpoints 1,600 (Square Yards), 1,715 (Brick & Bolt), 1,825 (Construction Estimator India), 2,000 (NoBroker), 2,007 (InfraLens) → 1,825. Brick & Bolt's packages (Basic, Classic, Premium, Royale, Luxury Homes) are mapped to tiers by price position, not by name: Basic → budget. Brick & Bolt also showed an older Pune price set (Basic ₹1,560) on another page; the current set is used. Unit is sq ft of built-up area summed across floors; most sources state only 'per sq ft' without naming the area measure, so check the measure on any quote. Material-and-labour (turnkey) rates throughout; no labour-only or shell-only figure is mixed in. GST basis is not stated by most sources; the search summary labelled Brick & Bolt's package prices as inclusive of GST, which was not checked against the page. Quotes were taken from search-result text because page fetches were blocked (bricknbolt.com returned EGRESS_BLOCKED); re-check each figure against the live page before review. Locality factors are left empty: Square Yards says Baner, Kothrud and Viman Nagar cost more than Wagholi and Hinjewadi, while InfraLens' zone table puts Hinjewadi above Kothrud and Baner, so the sources disagree. Component fractions: labour 0.22 sits inside NoBroker's Pune figure of labour at 20-25% of total cost (InfraLens gives 25-28% for Pune; NoBroker's national 1,200 sq ft guide gives 15-20%); the 0.10 for preparation, transport and waste is an editorial assumption, and materials take the remaining 0.68. The same split is used for all three turnkey tiers."
+  },
+  {
+    "id": "house-construction-turnkey-standard",
+    "service_id": "house-construction",
+    "scope_id": "turnkey",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 1500,
+      "expected": 2125,
+      "high": 2700
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.68,
+      "labour": 0.22,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.03,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/blog/construction-cost-in-pune/",
+        "title": "Construction Costs in Pune per Sq.Ft (2026 Update)",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Different construction qualities are priced as follows: Basic Quality ₹1,800 – ₹2,200, Standard Quality ₹2,200 – ₹2,700, and Premium Quality ₹2,800 – ₹3,200+ per sq ft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/construction-cost-estimator-in-pune/",
+        "title": "Construction Cost Estimator in Pune - Construction Estimator India",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Standard Residential: ₹1,800 – ₹2,500 per sq. ft."
+      },
+      {
+        "url": "https://www.squareyards.com/blog/construction-cost-in-pune-smrthme",
+        "title": "Construction Cost in Pune 2026 — Per Sq Ft Rates",
+        "publisher": "Square Yards",
+        "retrieved_at": "2026-10-06",
+        "quote": "Using better-quality materials, branded fittings, and a modern design increases the cost to ₹1,800 – ₹2,200 per square foot"
+      },
+      {
+        "url": "https://www.bricknbolt.com/blogs-and-articles/construction-guide/construction-cost-in-pune",
+        "title": "House Construction Cost in Pune",
+        "publisher": "Brick & Bolt",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic residential construction may start around ₹1,600–₹1,900 per sq ft, while standard homes often fall around ₹1,900–₹2,500 per sq ft. Premium or luxury specifications can go higher."
+      },
+      {
+        "url": "https://www.bricknbolt.com/construction-company-pune",
+        "title": "Construction Company in Pune",
+        "publisher": "Brick & Bolt",
+        "retrieved_at": "2026-10-06",
+        "quote": "Classic: ₹1,840 per sqft"
+      },
+      {
+        "url": "https://www.bricknbolt.com/construction-company-pune",
+        "title": "Construction Company in Pune",
+        "publisher": "Brick & Bolt",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium: ₹2,110 per sqft"
+      },
+      {
+        "url": "https://infralens.in/prices/pune",
+        "title": "Construction Cost per Sqft in Pune 2026 — ₹2,573",
+        "publisher": "InfraLens",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic quality starts at ~₹2,007/sqft, Premium at ~₹3,474/sqft, and Luxury at ~₹4,760/sqft. Pune construction cost: ₹2,573/sqft Standard, ₹3,474 Premium as of August 2026."
+      },
+      {
+        "url": "https://www.godrejproperties.com/blog/construction-cost-in-pune",
+        "title": "Understanding Construction Costs in Pune: A Comprehensive Guide",
+        "publisher": "Godrej Properties",
+        "retrieved_at": "2026-10-06",
+        "quote": "Using standard materials costs around ₹1,500–₹2,000 per sq ft. Premium materials, like imported tiles or branded fittings, can push costs to ₹3,000 or more per sq ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited Pune figures per sq ft for standard or mid-range specification: NoBroker standard ₹2,200–₹2,700; Construction Estimator India standard residential ₹1,800–₹2,500; Square Yards mid-range ₹1,800–₹2,200; Brick & Bolt standard homes ₹1,900–₹2,500 (Pune guide) plus its Classic ₹1,840 and Premium ₹2,110 packages; InfraLens standard ₹2,573 (August 2026); Godrej Properties 'standard materials' ₹1,500–₹2,000 (blog dated December 2024, older and lower than the 2026 figures). Range widened to ₹1,500–₹2,700. Expected = median of one midpoint per publisher, nearest ₹25, ties down: 1,750 (Godrej Properties), 2,000 (Square Yards), 2,110 (Brick & Bolt: median of 2,200, 1,840 and 2,110), 2,150 (Construction Estimator India), 2,450 (NoBroker), 2,573 (InfraLens) → 2,130 → 2,125. Brick & Bolt's Classic and Premium packages are mapped to the standard tier by price position: both sit inside the other publishers' standard ranges. The Pune package list in search results gave floor-tile allowances rising from about ₹50 per sq ft (Basic) to ₹160 per sq ft (Royale), which shows how much of the tier difference is finishing allowances. Unit is sq ft of built-up area summed across floors; most sources state only 'per sq ft' without naming the area measure, so check the measure on any quote. Material-and-labour (turnkey) rates throughout; no labour-only or shell-only figure is mixed in. GST basis is not stated by most sources; the search summary labelled Brick & Bolt's package prices as inclusive of GST, which was not checked against the page. Quotes were taken from search-result text because page fetches were blocked (bricknbolt.com returned EGRESS_BLOCKED); re-check each figure against the live page before review. Locality factors are left empty: Square Yards says Baner, Kothrud and Viman Nagar cost more than Wagholi and Hinjewadi, while InfraLens' zone table puts Hinjewadi above Kothrud and Baner, so the sources disagree. Component fractions: labour 0.22 sits inside NoBroker's Pune figure of labour at 20-25% of total cost (InfraLens gives 25-28% for Pune; NoBroker's national 1,200 sq ft guide gives 15-20%); the 0.10 for preparation, transport and waste is an editorial assumption, and materials take the remaining 0.68. The same split is used for all three turnkey tiers."
+  },
+  {
+    "id": "house-construction-turnkey-premium",
+    "service_id": "house-construction",
+    "scope_id": "turnkey",
+    "material_id": null,
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 2270,
+      "expected": 3000,
+      "high": 4200
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.68,
+      "labour": 0.22,
+      "preparation": 0.03,
+      "repair": 0.0,
+      "transport": 0.03,
+      "waste": 0.04
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/blog/construction-cost-in-pune/",
+        "title": "Construction Costs in Pune per Sq.Ft (2026 Update)",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Different construction qualities are priced as follows: Basic Quality ₹1,800 – ₹2,200, Standard Quality ₹2,200 – ₹2,700, and Premium Quality ₹2,800 – ₹3,200+ per sq ft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/construction-cost-estimator-in-pune/",
+        "title": "Construction Cost Estimator in Pune - Construction Estimator India",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium Residential: ₹2,500 – ₹3,500+ per sq. ft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/cost-of-building-a-house-in-india/",
+        "title": "Cost of Building a House in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "For Pune, basic construction costs ₹1,700-2,500 per sq ft, while premium rates go up to ₹2,800-4,200 per sq ft."
+      },
+      {
+        "url": "https://www.squareyards.com/blog/construction-cost-in-pune-smrthme",
+        "title": "Construction Cost in Pune 2026 — Per Sq Ft Rates",
+        "publisher": "Square Yards",
+        "retrieved_at": "2026-10-06",
+        "quote": "If you choose premium materials, high-end finishes, and custom features, the cost can go beyond ₹2,500 per square foot"
+      },
+      {
+        "url": "https://www.bricknbolt.com/blogs-and-articles/construction-guide/construction-cost-in-pune",
+        "title": "House Construction Cost in Pune",
+        "publisher": "Brick & Bolt",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium specifications at ₹3,200 per sq ft may reach ₹32 lakh or more"
+      },
+      {
+        "url": "https://www.bricknbolt.com/construction-company-pune",
+        "title": "Construction Company in Pune",
+        "publisher": "Brick & Bolt",
+        "retrieved_at": "2026-10-06",
+        "quote": "Royale: ₹2,270 per sqft"
+      },
+      {
+        "url": "https://infralens.in/prices/pune",
+        "title": "Construction Cost per Sqft in Pune 2026 — ₹2,573",
+        "publisher": "InfraLens",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic quality starts at ~₹2,007/sqft, Premium at ~₹3,474/sqft, and Luxury at ~₹4,760/sqft. Pune construction cost: ₹2,573/sqft Standard, ₹3,474 Premium as of August 2026."
+      },
+      {
+        "url": "https://www.godrejproperties.com/blog/construction-cost-in-pune",
+        "title": "Understanding Construction Costs in Pune: A Comprehensive Guide",
+        "publisher": "Godrej Properties",
+        "retrieved_at": "2026-10-06",
+        "quote": "Using standard materials costs around ₹1,500–₹2,000 per sq ft. Premium materials, like imported tiles or branded fittings, can push costs to ₹3,000 or more per sq ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited Pune figures per sq ft for premium specification: NoBroker premium ₹2,800–₹3,200+; Construction Estimator India premium residential ₹2,500–₹3,500+ (Pune estimator page) and premium ₹2,800–₹4,200 (its city table); Square Yards luxury 'beyond ₹2,500'; Brick & Bolt premium example ₹3,200 (Pune guide) and Royale package ₹2,270; InfraLens premium ~₹3,474; Godrej Properties premium materials '₹3,000 or more' (December 2024). Open-ended figures ('₹X+', 'beyond ₹X', '₹X or more') are counted at X, which pulls the expected value down slightly. Range widened to ₹2,270–₹4,200. Expected = median of one midpoint per publisher: 2,500 (Square Yards), 2,735 (Brick & Bolt: median of 2,270 and 3,200), 3,000 (NoBroker), 3,000 (Godrej Properties), 3,250 (Construction Estimator India: median of 3,000 and 3,500), 3,474 (InfraLens) → 3,000. Brick & Bolt's Royale package is mapped to premium by price position; its Luxury Homes package had no price in the results. Luxury specifications sit above this range: InfraLens gives ~₹4,760 for luxury and Construction Estimator India ₹3,500–₹6,000+ for luxury villas; those are not included here. Unit is sq ft of built-up area summed across floors; most sources state only 'per sq ft' without naming the area measure, so check the measure on any quote. Material-and-labour (turnkey) rates throughout; no labour-only or shell-only figure is mixed in. GST basis is not stated by most sources; the search summary labelled Brick & Bolt's package prices as inclusive of GST, which was not checked against the page. Quotes were taken from search-result text because page fetches were blocked (bricknbolt.com returned EGRESS_BLOCKED); re-check each figure against the live page before review. Locality factors are left empty: Square Yards says Baner, Kothrud and Viman Nagar cost more than Wagholi and Hinjewadi, while InfraLens' zone table puts Hinjewadi above Kothrud and Baner, so the sources disagree. Component fractions: labour 0.22 sits inside NoBroker's Pune figure of labour at 20-25% of total cost (InfraLens gives 25-28% for Pune; NoBroker's national 1,200 sq ft guide gives 15-20%); the 0.10 for preparation, transport and waste is an editorial assumption, and materials take the remaining 0.68. The same split is used for all three turnkey tiers."
+  },
+  {
+    "id": "house-construction-grey-structure-standard",
+    "service_id": "house-construction",
+    "scope_id": "grey-structure",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 800,
+      "expected": 1100,
+      "high": 1500
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.62,
+      "labour": 0.28,
+      "preparation": 0.04,
+      "repair": 0.0,
+      "transport": 0.03,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://constructionestimatorindia.com/construction-cost-estimator-in-pune/",
+        "title": "Construction Cost Estimator in Pune - Construction Estimator India",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Civil & Structural Works: ₹800 – ₹1,500 per sq. ft., including excavation, foundation, RCC framework, columns, beams, slabs, masonry, and waterproofing"
+      },
+      {
+        "url": "https://www.homebazaar.com/knowledge/what-is-construction-cost-in-pune/",
+        "title": "What Is The Construction Cost In Pune 2025?",
+        "publisher": "Home Bazaar",
+        "retrieved_at": "2026-10-06",
+        "quote": "The RCC construction cost in Pune is Rs 900-1200 per sqft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Cited Pune figures per sq ft for structural (shell) work with materials and labour: Construction Estimator India civil and structural works ₹800–₹1,500 (excavation, foundation, RCC frame, slabs, masonry, waterproofing); Home Bazaar RCC construction ₹900–₹1,200. Neither source sells a named 'grey structure' package, and neither separates specification tiers, so this is one model at the standard tier. What counts as grey structure varies (plaster, tanks and conduits may or may not be in), so compare quotes item by item. Range ₹800–₹1,500. Expected = median of the two publishers' midpoints (1,150 and 1,050) = 1,100. Cross-checks not used as sources: NoBroker's Pune guide puts civil work at 45-50% of total cost, which on its standard ₹2,200–₹2,700 gives roughly ₹990–₹1,350; Brick & Bolt's Ghaziabad guide gives grey structure at ₹1,100–₹1,400 (another city); a national Studio Matrx figure of ₹1,500–₹2,000 for the shell was seen in a general search but could not be tied to one page, and is higher than both Pune sources. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review. GST basis not stated. Locality factors left empty (no Pune locality data for shell work). Component fractions: materials 0.62 and labour 0.28 follow Construction Estimator India's split of RCC work into materials 60-65%, labour 25-30% and overheads 10% (its national RCC cost guide, seen only in search text); the remaining 0.10 is split editorially into preparation 0.04 (excavation and site work), transport 0.03 and waste 0.03."
+  },
+  {
+    "id": "house-construction-labour-only-standard",
+    "service_id": "house-construction",
+    "scope_id": "labour-only",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 300,
+      "expected": 425,
+      "high": 550
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.0,
+      "labour": 1.0,
+      "preparation": 0.0,
+      "repair": 0.0,
+      "transport": 0.0,
+      "waste": 0.0
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/blog/1200-sq-ft-house-construction-cost/",
+        "title": "1200 Sq Ft House Construction Cost in India 2026",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Labor-only rates when directly hiring labor are ₹350–₹550 per sq ft, which transfers full responsibility for materials, supervision, and timelines to the owner."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/3bhk-house-construction-cost-in-india/",
+        "title": "3BHK House Construction Cost in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Labour contract rates range from ₹300 – ₹500 per sq. ft. for a total labor-only package in India."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "National figures, not Pune-specific: no Pune labour-only rate per sq ft was found. NoBroker gives ₹350–₹550 per sq ft for labour-only work in its 1,200 sq ft guide (its 600 sq ft guide showed ₹300–₹500 in search text); Construction Estimator India gives ₹300–₹500 per sq ft for a labour-only package. Labour-only basis only: the owner buys all materials, which are not in this rate. Range ₹300–₹550. Expected = median of the two publishers' midpoints (450 and 400) = 425. Not mixed in: InfraLens puts labour at 25-28% of a Pune standard build, about ₹550–₹755 per sq ft; that is the labour share inside a turnkey rate, not a labour-contract price. Construction Estimator India says a labour-only contract can save 10-15% over turnkey if the owner has time to supervise. Check whether shuttering, scaffolding, curing and site water are in the labour rate. Components: the rate is labour by definition (labour 1.0); materials, transport and waste are paid by the owner outside it. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review. GST basis not stated."
+  }
+]

@@ -1,0 +1,749 @@
+[
+  {
+    "id": "interior-painting-distemper-budget",
+    "service_id": "interior-painting",
+    "scope_id": null,
+    "material_id": "distemper",
+    "tier": "budget",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 7,
+      "expected": 12,
+      "high": 20
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.42,
+      "labour": 0.4,
+      "preparation": 0.1,
+      "repair": 0.03,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper paint: Rs. 8 per square foot"
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/home-painting-ideas/painting-costs-in-pune/",
+        "title": "Painting Cost in Pune in 2026 - Starting at ₹8 Per Sq. Ft.",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper paint: Rs. 7/sq. ft., budget-friendly but not waterproof"
+      },
+      {
+        "url": "https://aapkapainter.com/blog/painting-cost-in-pune/",
+        "title": "Discover Budget-Friendly Painting Costs in Pune 2025 - Per Square Foot Pricing",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Interior painting in Pune ranges from ₹11–17 per sq ft for economy distemper, ₹20–30 for standard emulsion, ₹36–55 for premium emulsion, and ₹58–82 for ultra-premium finishes."
+      },
+      {
+        "url": "https://aapkapainter.com/blog/painting-labour-cost-per-sq-ft-in-pune/",
+        "title": "Painting Labour Cost Per Sq Ft in Pune: 2026 Rates & Key Factors",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "When combining labour and material, the rates are: Economy (Distemper/whitewash) ₹10–₹15, Standard Interior emulsion ₹18–₹26, and Premium (Royale/Silk emulsion) ₹28–₹42 per sq ft."
+      },
+      {
+        "url": "https://www.asianpaints.com/blogs/painting-cost-per-sq-ft-india.html",
+        "title": "Painting Cost Per Sq Ft in India: Labour, Material & City Rates",
+        "publisher": "Asian Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper painting starts at ₹10–15 per sq. ft., while premium options like emulsion can range from ₹20–40 per sq. ft."
+      },
+      {
+        "url": "https://hometriangle.com/blogs/house-painting-cost-in-india-2026-the-complete-homeowners-guide/",
+        "title": "House Painting Cost in India 2026 — Per Sq Ft & BHK Rates",
+        "publisher": "HomeTriangle",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper costs ₹8–₹12 per sq ft, standard emulsion ₹14–₹20 per sq ft, premium emulsion ₹20–₹28 per sq ft, and luxury (Royale-grade) ₹28–₹40 per sq ft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/",
+        "title": "Cost of Painting a House in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper (economy/basic) costs ₹8 – ₹20 per sq. ft., with brands including Asian Paints Tractor Distemper and Berger Bison."
+      },
+      {
+        "url": "https://www.biddaro.com/cost/painting",
+        "title": "House Painting Cost in India 2026",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper is cheapest at ₹8–15/sqft"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rates per sq ft of paintable area for distemper. Cited: NoBroker Pune ₹8 and ₹7 (single figures, likely entry prices); AapkaPainter Pune economy distemper ₹11–₹17 and, on its Pune labour-cost page, distemper/whitewash ₹10–₹15 (labour + material); Asian Paints ₹10–₹15 (national); HomeTriangle ₹8–₹12 (national); Construction Estimator India ₹8–₹20 (national, names Tractor Distemper and Berger Bison); Biddaro ₹8–₹15 (national). Range widened to ₹7–₹20 to cover all. Expected = median of publisher midpoints, rounded to the nearest ₹1 with ties rounded down (NoBroker 7.5, HomeTriangle 10, Biddaro 11.5, Asian Paints 12.5, AapkaPainter 13.25, CEI 14 → 12). Pune figures (NoBroker, AapkaPainter) sit on both sides of the national ones. Scope (fresh or repaint) is not stated by most sources. No source says whether GST is included. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "interior-painting-basic-emulsion-budget",
+    "service_id": "interior-painting",
+    "scope_id": null,
+    "material_id": "basic-emulsion",
+    "tier": "budget",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 9,
+      "expected": 15,
+      "high": 30
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.42,
+      "labour": 0.4,
+      "preparation": 0.1,
+      "repair": 0.03,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "For interior painting, starting prices per square foot include Tractor UNO at ₹7, Tractor Emulsion at ₹9, Premium Emulsion at ₹14, and Royal Luxury Emulsion at ₹23."
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Standard emulsion painting with putty, primer, and 2 coats of Tractor or Apcolite ranges from Rs. 20 to Rs. 30 per sq ft."
+      },
+      {
+        "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+        "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Economy emulsion (Tractor/Ace): ₹12–18/sq ft"
+      },
+      {
+        "url": "https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/",
+        "title": "Cost of Painting a House in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Asian Paints Tractor Emulsion costs around ₹12–₹18/sq. ft. total"
+      },
+      {
+        "url": "https://hometriangle.com/blogs/house-painting-cost-in-india-2026-the-complete-homeowners-guide/",
+        "title": "House Painting Cost in India 2026 — Per Sq Ft & BHK Rates",
+        "publisher": "HomeTriangle",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper costs ₹8–₹12 per sq ft, standard emulsion ₹14–₹20 per sq ft, premium emulsion ₹20–₹28 per sq ft, and luxury (Royale-grade) ₹28–₹40 per sq ft."
+      },
+      {
+        "url": "https://hometriangle.com/pune/house-painting",
+        "title": "House Painting Service in Pune",
+        "publisher": "HomeTriangle",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic Interior Painting costs ₹12/sq ft, while Premium Interior Painting costs ₹20/sq ft. Exterior Wall Painting is also priced at ₹20/sq ft."
+      },
+      {
+        "url": "https://www.biddaro.com/cost/painting",
+        "title": "House Painting Cost in India 2026",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Interior Emulsion (2 coats) costs ₹12–₹22 per sq ft, Interior Luxury Emulsion costs ₹22–₹40 per sq ft, and Exterior Apex/Weatherproof Paint costs ₹18–₹35 per sq ft."
+      },
+      {
+        "url": "https://www.urbancompany.com/articles/room-painting-cost-everything-you-need-to-know",
+        "title": "Room painting cost: Everything You Need to Know",
+        "publisher": "Urban Company",
+        "retrieved_at": "2026-10-06",
+        "quote": "the cost can range from INR 10 to INR 20 per square foot for standard paints, and for premium paints, the cost can go up to INR 30 to INR 50 per square foot."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rates per sq ft for an entry-level emulsion such as Asian Paints Tractor Emulsion. Cited: NoBroker Pune starting price ₹9 for Tractor Emulsion, and ₹20–₹30 for putty, primer and 2 coats of Tractor or Apcolite (a fresh-paint job; also cited in the standard model); AapkaPainter economy emulsion (Tractor/Ace) ₹12–₹18 (metro rate, includes putty, primer, 2 coats and labour); Construction Estimator India Tractor Emulsion ₹12–₹18 total (national); HomeTriangle standard emulsion ₹14–₹20 (national) and its Pune 'Basic Interior Painting' ₹12 (grade not named; treated as entry level); Biddaro interior emulsion, 2 coats, ₹12–₹22 (national); Urban Company 'standard paints' ₹10–₹20 (national). Range ₹9–₹30. Expected = median of publisher midpoints, nearest ₹1, ties down (HomeTriangle 14.5, AapkaPainter 15, CEI 15, Urban Company 15, NoBroker 17, Biddaro 17 → 15). NoBroker's ₹9 is a starting price and its ₹20–₹30 includes full putty work, which explains the spread. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "interior-painting-premium-emulsion-standard",
+    "service_id": "interior-painting",
+    "scope_id": null,
+    "material_id": "premium-emulsion",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 14,
+      "expected": 22,
+      "high": 40
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.5,
+      "labour": 0.32,
+      "preparation": 0.1,
+      "repair": 0.03,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "For interior painting, starting prices per square foot include Tractor UNO at ₹7, Tractor Emulsion at ₹9, Premium Emulsion at ₹14, and Royal Luxury Emulsion at ₹23."
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Standard emulsion painting with putty, primer, and 2 coats of Tractor or Apcolite ranges from Rs. 20 to Rs. 30 per sq ft."
+      },
+      {
+        "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+        "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium emulsion (Apcolite/Apex): ₹18–28/sq ft"
+      },
+      {
+        "url": "https://hometriangle.com/blogs/house-painting-cost-in-india-2026-the-complete-homeowners-guide/",
+        "title": "House Painting Cost in India 2026 — Per Sq Ft & BHK Rates",
+        "publisher": "HomeTriangle",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper costs ₹8–₹12 per sq ft, standard emulsion ₹14–₹20 per sq ft, premium emulsion ₹20–₹28 per sq ft, and luxury (Royale-grade) ₹28–₹40 per sq ft."
+      },
+      {
+        "url": "https://hometriangle.com/pune/house-painting",
+        "title": "House Painting Service in Pune",
+        "publisher": "HomeTriangle",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic Interior Painting costs ₹12/sq ft, while Premium Interior Painting costs ₹20/sq ft. Exterior Wall Painting is also priced at ₹20/sq ft."
+      },
+      {
+        "url": "https://www.asianpaints.com/blogs/painting-cost-per-sq-ft-india.html",
+        "title": "Painting Cost Per Sq Ft in India: Labour, Material & City Rates",
+        "publisher": "Asian Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper painting starts at ₹10–15 per sq. ft., while premium options like emulsion can range from ₹20–40 per sq. ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rates per sq ft for a mid-range premium emulsion such as Asian Paints Apcolite. Cited: NoBroker Pune starting price ₹14 for premium emulsion, and ₹20–₹30 for putty, primer and 2 coats of Tractor or Apcolite; AapkaPainter premium emulsion (Apcolite/Apex) ₹18–₹28 (metro rate, includes putty, primer, 2 coats and labour); HomeTriangle premium emulsion ₹20–₹28 (national) and its Pune 'Premium Interior Painting' ₹20 (grade not named); Asian Paints emulsion ₹20–₹40 (national; Asian Paints does not name the grade, it contrasts emulsion with distemper). Range ₹14–₹40. Expected = median of publisher midpoints, nearest ₹1, ties down (NoBroker 19.5, HomeTriangle 22, AapkaPainter 23, Asian Paints 30 → 22.5 → 22). AapkaPainter's Pune page also gives ₹20–₹30 for 'standard emulsion' and ₹36–₹55 for 'premium emulsion' without naming products; those were not used because the grade cannot be matched to a product. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "interior-painting-luxury-emulsion-premium",
+    "service_id": "interior-painting",
+    "scope_id": null,
+    "material_id": "luxury-emulsion",
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 23,
+      "expected": 35,
+      "high": 55
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.58,
+      "labour": 0.27,
+      "preparation": 0.08,
+      "repair": 0.02,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "For interior painting, starting prices per square foot include Tractor UNO at ₹7, Tractor Emulsion at ₹9, Premium Emulsion at ₹14, and Royal Luxury Emulsion at ₹23."
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium emulsion painting with putty, primer, and 2 coats of Royale Matt or Shyne ranges from Rs. 35 to Rs. 55 per sq ft."
+      },
+      {
+        "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+        "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Luxury emulsion (Royale/Aspira): ₹28–45/sq ft"
+      },
+      {
+        "url": "https://aapkapainter.com/blog/painting-labour-cost-per-sq-ft-in-pune/",
+        "title": "Painting Labour Cost Per Sq Ft in Pune: 2026 Rates & Key Factors",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "When combining labour and material, the rates are: Economy (Distemper/whitewash) ₹10–₹15, Standard Interior emulsion ₹18–₹26, and Premium (Royale/Silk emulsion) ₹28–₹42 per sq ft."
+      },
+      {
+        "url": "https://hometriangle.com/blogs/house-painting-cost-in-india-2026-the-complete-homeowners-guide/",
+        "title": "House Painting Cost in India 2026 — Per Sq Ft & BHK Rates",
+        "publisher": "HomeTriangle",
+        "retrieved_at": "2026-10-06",
+        "quote": "Distemper costs ₹8–₹12 per sq ft, standard emulsion ₹14–₹20 per sq ft, premium emulsion ₹20–₹28 per sq ft, and luxury (Royale-grade) ₹28–₹40 per sq ft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/",
+        "title": "Cost of Painting a House in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Premium/luxury emulsion costs ₹25 – ₹55 per sq. ft., with brands including Asian Paints Royale Luxury, Berger Silk, and Nerolac Impressions."
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/asian-paints-royale-lustre-interior-paint-27088860730.html",
+        "title": "Asian Paints Royale Lustre Interior Paint, 10 ltr at ₹ 34/sq ft in Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Asian Paints Royale Lustre Interior Paint, 10 ltr at ₹ 34/sq ft in Pune"
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/interior-asian-royale-shyne-13778928412.html",
+        "title": "Interior Asian Royale Shyne at ₹ 28/square feet",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Interior Asian Royale Shyne at ₹ 28/square feet"
+      },
+      {
+        "url": "https://www.urbancompany.com/articles/room-painting-cost-everything-you-need-to-know",
+        "title": "Room painting cost: Everything You Need to Know",
+        "publisher": "Urban Company",
+        "retrieved_at": "2026-10-06",
+        "quote": "the cost can range from INR 10 to INR 20 per square foot for standard paints, and for premium paints, the cost can go up to INR 30 to INR 50 per square foot."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rates per sq ft for a luxury emulsion such as Asian Paints Royale. Cited: NoBroker Pune starting price ₹23 for Royale luxury emulsion, and ₹35–₹55 for putty, primer and 2 coats of Royale Matt or Shyne; AapkaPainter luxury emulsion (Royale/Aspira) ₹28–₹45 (metro) and Pune Royale/Silk ₹28–₹42 (labour + material); HomeTriangle luxury (Royale-grade) ₹28–₹40 (national); Construction Estimator India premium/luxury emulsion ₹25–₹55 (national); IndiaMART seller listings: Royale Lustre ₹34 per sq ft in Pune and Royale Shyne ₹28 per sq ft (the Shyne listing's title does not name a city; the search result said it includes two coats of putty and primer); Urban Company 'premium paints' ₹30–₹50 (national). Range ₹23–₹55. Expected = median of publisher midpoints, nearest ₹1, ties down (IndiaMART 31, NoBroker 34, HomeTriangle 34, AapkaPainter 35.75, CEI 40, Urban Company 40 → 34.875 → 35). Asian Paints notes that on premium jobs the paint, not labour, becomes the larger cost, which is why the materials share is set higher here. AapkaPainter's Pune page also lists 'premium emulsion' at ₹36–₹55 and 'ultra-premium finishes' at ₹58–₹82 without naming products; they were not used because the products cannot be matched to this grade, but a Pune job with a top-end product may cost more than this range. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "interior-painting-texture-premium",
+    "service_id": "interior-painting",
+    "scope_id": null,
+    "material_id": "interior-texture",
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 80,
+      "expected": 140,
+      "high": 400
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.45,
+      "labour": 0.4,
+      "preparation": 0.08,
+      "repair": 0.02,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Texture paint: Rs. 80-200 per square foot"
+      },
+      {
+        "url": "https://aapkapainter.com/blog/what-is-texture-painting-and-types/",
+        "title": "What is Texture Painting? 12 Types, Cost (₹80–400/sqft) & ...",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Texture painting transforms flat walls into surfaces with depth and character, with prices ranging from ₹80 to ₹400 per sqft."
+      },
+      {
+        "url": "https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/",
+        "title": "Cost of Painting a House in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Texture painting (specialized/Royal Play) costs ₹80 – ₹200 per sq. ft."
+      },
+      {
+        "url": "https://hometriangle.com/pune/house-painting",
+        "title": "House Painting Service in Pune",
+        "publisher": "HomeTriangle",
+        "retrieved_at": "2026-10-06",
+        "quote": "Texture Painting & Wall Art costs ₹100/sq ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rates per sq ft of textured wall (usually one feature wall, not the whole flat). Cited: NoBroker Pune ₹80–₹200; AapkaPainter ₹80–₹400 across 12 texture types (national; its type list runs from sand texture at ₹80–₹110 to 3D or panel effects at ₹300–₹400); Construction Estimator India ₹80–₹200 for specialised textures such as Royale Play (national); HomeTriangle Pune 'Texture Painting & Wall Art' ₹100 (a listed price, likely a starting rate). Range ₹80–₹400. Expected = median of publisher midpoints, nearest ₹1, ties down (HomeTriangle 100, NoBroker 140, CEI 140, AapkaPainter 240 → 140). The spread reflects texture type: simple sand or roller textures sit near the low end, layered and 3D effects near the top. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "interior-painting-fresh-standard",
+    "service_id": "interior-painting",
+    "scope_id": "fresh-painting",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 18,
+      "expected": 39,
+      "high": 62
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.48,
+      "labour": 0.3,
+      "preparation": 0.15,
+      "repair": 0.02,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://aapkapainter.com/blog/how-to-calculate-painting-cost-per-sq-ft/",
+        "title": "How to Calculate Painting Cost Per Sq Ft: Step-by-Step Guide (2026)",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Fresh painting costs ₹18–35/sq ft because it includes full putty work (2 coats), primer, and paint."
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Fresh painting costs Rs 43 – Rs 62 per sq. ft. (approx), while repainting costs Rs 32 – Rs 53 per sq. ft. (approx)."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rate per sq ft for a fresh paint job (full putty, primer and paint) where the source does not name the paint grade; filed as 'standard'. Cited: AapkaPainter fresh painting ₹18–₹35 with two coats of putty, primer and paint (national); NoBroker Pune fresh painting ₹43–₹62 (approx). Range ₹18–₹62. Expected = median of the two publisher midpoints, nearest ₹1, ties down (26.5 and 52.5 → 39.5 → 39). The sources disagree widely; NoBroker's Pune figure sits above its own ₹20–₹30 figure for putty, primer and 2 coats of Tractor or Apcolite, so it probably assumes a higher paint grade or more preparation than AapkaPainter's. Use the paint-grade models for a closer estimate once the product is known. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "interior-painting-repaint-standard",
+    "service_id": "interior-painting",
+    "scope_id": "repaint",
+    "material_id": null,
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 12,
+      "expected": 30,
+      "high": 53
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.47,
+      "labour": 0.33,
+      "preparation": 0.1,
+      "repair": 0.05,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://aapkapainter.com/blog/how-to-calculate-painting-cost-per-sq-ft/",
+        "title": "How to Calculate Painting Cost Per Sq Ft: Step-by-Step Guide (2026)",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Repainting costs ₹12–25/sq ft because the putty base already exists — only touch-up, primer, and paint are needed."
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Fresh painting costs Rs 43 – Rs 62 per sq. ft. (approx), while repainting costs Rs 32 – Rs 53 per sq. ft. (approx)."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rate per sq ft for repainting walls that already have a putty base (touch-up, primer and two coats) where the source does not name the paint grade; filed as 'standard'. Cited: AapkaPainter repainting ₹12–₹25 (national); NoBroker Pune repainting ₹32–₹53 (approx). Range ₹12–₹53. Expected = median of the two publisher midpoints, nearest ₹1, ties down (18.5 and 42.5 → 30.5 → 30). Relative to the fresh-paint model (₹39) this is about 23% lower, in line with HomeTriangle's 15–25% and AapkaPainter's 25–40% repaint discount. As with the fresh-paint model, NoBroker's Pune figures are well above AapkaPainter's national ones. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "interior-painting-lustre-standard",
+    "service_id": "interior-painting",
+    "scope_id": null,
+    "material_id": "lustre-finish",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 26,
+      "expected": 31,
+      "high": 35
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.5,
+      "labour": 0.32,
+      "preparation": 0.1,
+      "repair": 0.03,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Lustre Paints: Rs 26/sq. ft to Rs 30/ sq. ft"
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/luster-paint-service-2850870405988.html",
+        "title": "Luster Paint Service at ₹ 35/square feet in Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Luster Paint Service at ₹ 35/square feet in Pune"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Rate per sq ft for a lustre (sheen) finish in Pune. Cited: NoBroker Pune lustre paints ₹26–₹30; IndiaMART seller listing 'Luster Paint Service' ₹35 per sq ft in Pune. Range ₹26–₹35. Expected = median of the two publisher midpoints, nearest ₹1, ties down (28 and 35 → 31.5 → 31). Neither source states what preparation or how many coats are included, so treat this as indicative only; the IndiaMART figure is a single seller's listed price. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "exterior-painting-economy-emulsion-budget",
+    "service_id": "exterior-painting",
+    "scope_id": null,
+    "material_id": "exterior-economy-emulsion",
+    "tier": "budget",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 13,
+      "expected": 18,
+      "high": 30
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.4,
+      "labour": 0.38,
+      "preparation": 0.1,
+      "repair": 0.05,
+      "transport": 0.04,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://aapkapainter.com/blog/painting-cost-in-hyderabad/",
+        "title": "Painting Cost in Hyderabad: Know Your Budget & Options",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "₹14–22/sq ft (Ace Exterior Emulsion), ₹17–26/sq ft (Apex Exterior Emulsion), and ₹25–38/sq ft (Apex Ultima Protek)"
+      },
+      {
+        "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+        "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Apex Exterior Emulsion: ₹15–22 per sq ft (Economy tier)"
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/asian-paints-home-painting-cost",
+        "title": "Asian Paints Home Painting Cost - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Exterior wall painting costs range from ₹15 to ₹30 per sq. ft. with Asian Paints products."
+      },
+      {
+        "url": "https://www.nobroker.in/painting-services/painting-cost-in-pune",
+        "title": "Painting Cost in Pune - Price Per SqFt & Labour Charges",
+        "publisher": "NoBroker",
+        "retrieved_at": "2026-10-06",
+        "quote": "Exterior paints cost Rs 13+ associated with labour charges."
+      },
+      {
+        "url": "https://www.indiamart.com/proddetail/internal-and-external-painting-services-2850868908212.html",
+        "title": "Internal And External Painting services at ₹ 16/square feet in Pune",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Internal And External Painting services at ₹ 16/square feet in Pune"
+      },
+      {
+        "url": "https://hometriangle.com/pune/house-painting",
+        "title": "House Painting Service in Pune",
+        "publisher": "HomeTriangle",
+        "retrieved_at": "2026-10-06",
+        "quote": "Basic Interior Painting costs ₹12/sq ft, while Premium Interior Painting costs ₹20/sq ft. Exterior Wall Painting is also priced at ₹20/sq ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rate per sq ft of exterior wall for an entry-level exterior emulsion (for example Asian Paints Ace). Cited: AapkaPainter Hyderabad Ace Exterior Emulsion ₹14–₹22 and its metro rate for Apex Exterior Emulsion, which it calls its economy tier, ₹15–₹22 (both include surface preparation, primer, 2 coats and labour); NoBroker exterior wall painting with Asian Paints products ₹15–₹30 (national) and its Pune page's 'Rs 13+' starting price for exterior paint with labour; IndiaMART Pune seller listing ₹16 per sq ft for internal and external painting (grade and inclusions not stated); HomeTriangle Pune 'Exterior Wall Painting' ₹20 (a listed price, grade not named). Range ₹13–₹30. Expected = median of publisher midpoints, nearest ₹1, ties down (IndiaMART 16, NoBroker 17.75, AapkaPainter 18.25, HomeTriangle 20 → 18). Scaffolding or rope access for upper floors is often quoted separately; check whether it is included. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "exterior-painting-weatherproof-emulsion-standard",
+    "service_id": "exterior-painting",
+    "scope_id": null,
+    "material_id": "exterior-weatherproof-emulsion",
+    "tier": "standard",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 18,
+      "expected": 32,
+      "high": 45
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.47,
+      "labour": 0.33,
+      "preparation": 0.1,
+      "repair": 0.05,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://aapkapainter.com/blog/painting-cost-in-pune/",
+        "title": "Discover Budget-Friendly Painting Costs in Pune 2025 - Per Square Foot Pricing",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Exterior painting costs ₹26–40 per sq ft for standard emulsion and ₹42–68 per sq ft for premium options with waterproofing treatment."
+      },
+      {
+        "url": "https://www.biddaro.com/cost/painting",
+        "title": "House Painting Cost in India 2026",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Interior Emulsion (2 coats) costs ₹12–₹22 per sq ft, Interior Luxury Emulsion costs ₹22–₹40 per sq ft, and Exterior Apex/Weatherproof Paint costs ₹18–₹35 per sq ft."
+      },
+      {
+        "url": "https://www.biddaro.com/cost/painting",
+        "title": "House Painting Cost in India 2026",
+        "publisher": "Biddaro",
+        "retrieved_at": "2026-10-06",
+        "quote": "Exterior painting in India costs ₹18–₹35 per sq ft including primer, putty, and 2 coats of weatherproof paint."
+      },
+      {
+        "url": "https://www.asianpaints.com/blogs/painting-rates-in-hyderabad.html",
+        "title": "Painting Rates in Hyderabad : Cost Per Sq Ft & Labour",
+        "publisher": "Asian Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "exterior painting generally costs between ₹20 and ₹45 per sq ft in many metro cities"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rate per sq ft of exterior wall for a standard weatherproof exterior emulsion (for example Asian Paints Apex). Cited: AapkaPainter Pune standard exterior emulsion ₹26–₹40; Biddaro Apex/weatherproof exterior paint ₹18–₹35 (national; its page also says this includes primer, putty and 2 coats); Asian Paints exterior painting ₹20–₹45 in many metro cities (from its Hyderabad rates page; grade not named). Range ₹18–₹45. Expected = median of publisher midpoints, nearest ₹1, ties down (Biddaro 26.5, Asian Paints 32.5, AapkaPainter 33 → 32). AapkaPainter's own metro page puts Apex lower, at ₹15–₹22, and calls it economy; its Pune page is higher than its metro page for every exterior grade. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "exterior-painting-premium-weatherproof-premium",
+    "service_id": "exterior-painting",
+    "scope_id": null,
+    "material_id": "exterior-premium-weatherproof",
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 20,
+      "expected": 37,
+      "high": 68
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.55,
+      "labour": 0.28,
+      "preparation": 0.08,
+      "repair": 0.04,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://aapkapainter.com/blog/painting-cost-in-pune/",
+        "title": "Discover Budget-Friendly Painting Costs in Pune 2025 - Per Square Foot Pricing",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Exterior painting costs ₹26–40 per sq ft for standard emulsion and ₹42–68 per sq ft for premium options with waterproofing treatment."
+      },
+      {
+        "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+        "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Apex Ultima: ₹22–35 per sq ft (Premium tier)"
+      },
+      {
+        "url": "https://aapkapainter.com/resources/painting-cost-calculator",
+        "title": "House Painting Cost Calculator: Free Per Sq Ft Estimate 2026",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Apex Ultima Protek: ₹30–50 per sq ft (Elastomeric/Anti-crack tier)"
+      },
+      {
+        "url": "https://constructionestimatorindia.com/cost-of-painting-a-house-in-india/",
+        "title": "Cost of Painting a House in India 2026",
+        "publisher": "Construction Estimator India",
+        "retrieved_at": "2026-10-06",
+        "quote": "Exterior weatherproof paint costs ₹20 – ₹50 per sq. ft., with brands including Asian Paints Apex Ultima and Nerolac Excel."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rate per sq ft of exterior wall for a premium weatherproof or elastomeric exterior system (for example Asian Paints Apex Ultima or Apex Ultima Protek). Cited: AapkaPainter Pune premium exterior with waterproofing treatment ₹42–₹68, metro Apex Ultima ₹22–₹35 and metro Apex Ultima Protek ₹30–₹50; Construction Estimator India exterior weatherproof paint (names Apex Ultima and Nerolac Excel) ₹20–₹50 (national). Range ₹20–₹68. Expected = median of publisher midpoints, nearest ₹1, ties down (AapkaPainter's own median 40, CEI 35 → 37.5 → 37). Only two publishers give a premium-specific exterior figure; AapkaPainter's Pune figure is the only Pune one and is well above the national figures, so a Pune job with full crack treatment may land in the upper half of this range. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  },
+  {
+    "id": "exterior-painting-texture-premium",
+    "service_id": "exterior-painting",
+    "scope_id": null,
+    "material_id": "exterior-texture",
+    "tier": "premium",
+    "unit": "sqft",
+    "rate_inr": {
+      "low": 55,
+      "expected": 65,
+      "high": 85
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.45,
+      "labour": 0.38,
+      "preparation": 0.08,
+      "repair": 0.04,
+      "transport": 0.02,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://www.nerolac.com/wall-paint/exterior-wall-texture-design",
+        "title": "Exterior Wall Texture Design",
+        "publisher": "Kansai Nerolac Paints",
+        "retrieved_at": "2026-10-06",
+        "quote": "For exterior wall texture design in India, basic finishes might cost around ₹60 per square foot, while fancy or layered textures cost more, with rates varying locally."
+      },
+      {
+        "url": "https://aapkapainter.com/blog/painting-cost-per-sq-ft-in-chennai-labour-material-rates-explained/",
+        "title": "Painting Cost Per Sq Ft in Chennai: Labour & Material Rates (2026)",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "For textured exterior finishes in Chennai, labour-only rates are ₹20–35/sq ft and labour + material rates are ₹55–85/sq ft."
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Labour-and-material rate per sq ft for a textured exterior finish. Cited: Nerolac about ₹60 for basic exterior texture finishes, with layered textures costing more (national); AapkaPainter Chennai textured exterior ₹55–₹85 labour + material (its labour-only rate is ₹20–₹35). Range ₹55–₹85. Expected = median of the two publisher midpoints, nearest ₹1, ties down (60 and 70 → 65). No Pune-specific exterior texture rate was found; both figures are from outside Pune. GST treatment is not stated. Component fractions are an editorial split for the calculator, anchored to Asian Paints' statement that material is about 55–65% of a painting budget and labour 35–45%, and HomeTriangle's statement that labour is 30–55% of the all-in rate; they are not taken from a source for this model. Quotes were taken from search-result text because page fetches were blocked; re-check against the live pages before review."
+  }
+]

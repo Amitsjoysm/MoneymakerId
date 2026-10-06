@@ -3,7 +3,30 @@
   "name": "House Construction",
   "parent_id": null,
   "unit": "sqft",
-  "area_presets": [],
+  "area_presets": [
+    {
+      "preset": "independent_house",
+      "label": "Independent house, 1,200 sq ft built-up",
+      "quantity": 1200,
+      "assumption": "Example built-up area of 1,200 sq ft, the size Square Yards uses for a 30×40 ft house in its Pune cost example and NoBroker uses in its 1,200 sq ft house cost guide. Treat it as a planning example only: add up the built-up area of every floor of your own plan, so a two-storey house has the area of both floors.",
+      "sources": [
+        {
+          "url": "https://www.squareyards.com/blog/construction-cost-in-pune-smrthme",
+          "title": "Construction Cost in Pune 2026 — Per Sq Ft Rates",
+          "publisher": "Square Yards",
+          "retrieved_at": "2026-10-06",
+          "quote": "A 30×40 ft house (1,200 sq. ft) in Pune costs between ₹16.8 lakh to ₹30 lakh, depending on materials, labour, and location."
+        },
+        {
+          "url": "https://www.nobroker.in/blog/1200-sq-ft-house-construction-cost/",
+          "title": "1200 Sq Ft House Construction Cost in India 2026",
+          "publisher": "NoBroker",
+          "retrieved_at": "2026-10-06",
+          "quote": "On average, construction costs range from ₹18-₹20 lakhs (basic), ₹21-26 lakh (standard), to ₹26-₹35 lakh (premium)."
+        }
+      ]
+    }
+  ],
   "scope_options": [
     {
       "id": "turnkey",
@@ -25,32 +48,85 @@
     {
       "id": "red-clay-brick",
       "label": "Fired clay bricks (red bricks)",
-      "description": "Walls built from fired clay bricks laid in cement mortar, inside a reinforced cement concrete (RCC) frame.",
-      "sources": []
+      "description": "Walls built from fired clay bricks laid in cement mortar, inside a reinforced cement concrete (RCC) frame. Brick & Bolt describes red bricks as moulded from clay and fired at high temperature. Published wall-work rates for brick masonry are per sq ft of wall, not of built-up area, so they cannot be compared directly with per sq ft house rates.",
+      "sources": [
+        {
+          "url": "https://www.bricknbolt.com/blogs-and-articles/construction-guide/fly-ash-bricks-vs-red-bricks",
+          "title": "Differences Between Fly Ash Bricks & Red Bricks which is best",
+          "publisher": "Brick & Bolt",
+          "retrieved_at": "2026-10-06",
+          "quote": "Red bricks involve the moulding of clay and firing at high temperatures"
+        },
+        {
+          "url": "https://constructionestimatorindia.com/brick-masonry-cost-per-square-foot-in-india/",
+          "title": "Brick Masonry Cost Per Square Foot in India 2026",
+          "publisher": "Construction Estimator India",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
     },
     {
       "id": "aac-block",
       "label": "AAC blocks",
-      "description": "Walls built from autoclaved aerated concrete (AAC) blocks, which are factory-made, laid with a block adhesive or cement mortar inside an RCC frame.",
-      "sources": []
+      "description": "Walls built from autoclaved aerated concrete (AAC) blocks, which are factory-made, laid with a block adhesive or cement mortar inside an RCC frame. Brick & Bolt and Construction Estimator India publish comparisons of AAC blocks with red bricks and AAC wall-work rates; those rates are per sq ft of wall, not of built-up area.",
+      "sources": [
+        {
+          "url": "https://www.bricknbolt.com/blogs-and-articles/construction-guide/aac-blocks-vs-red-brick-which-is-better",
+          "title": "AAC Blocks Vs Red Bricks: How to Make the Right Choice",
+          "publisher": "Brick & Bolt",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        },
+        {
+          "url": "https://constructionestimatorindia.com/aac-block-work-cost-per-sq-ft-in-india/",
+          "title": "AAC Block Work Cost Per Sq Ft in India 2026",
+          "publisher": "Construction Estimator India",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
     },
     {
       "id": "fly-ash-brick",
       "label": "Fly ash bricks",
-      "description": "Walls built from bricks made with fly ash, a residue from coal-fired power stations, laid in cement mortar inside an RCC frame.",
-      "sources": []
+      "description": "Walls built from bricks made with fly ash, a residue from coal-fired power stations, laid in cement mortar inside an RCC frame. Brick & Bolt notes that fly ash bricks use industrial waste.",
+      "sources": [
+        {
+          "url": "https://www.bricknbolt.com/blogs-and-articles/construction-guide/fly-ash-bricks-vs-red-bricks",
+          "title": "Differences Between Fly Ash Bricks & Red Bricks which is best",
+          "publisher": "Brick & Bolt",
+          "retrieved_at": "2026-10-06",
+          "quote": "Fly ash bricks utilise industrial waste, which makes them eco-friendly."
+        }
+      ]
     },
     {
       "id": "concrete-block",
       "label": "Concrete blocks (solid or hollow)",
-      "description": "Walls built from cement concrete blocks, solid or hollow, laid in cement mortar inside an RCC frame.",
-      "sources": []
+      "description": "Walls built from cement concrete blocks, solid or hollow, laid in cement mortar inside an RCC frame. Brick & Bolt publishes guides comparing cement blocks with bricks and describing block types.",
+      "sources": [
+        {
+          "url": "https://www.bricknbolt.com/blogs-and-articles/construction-guide/bricks-vs-cement-blocks",
+          "title": "Bricks vs. Cement Blocks - Key Differences Explained",
+          "publisher": "Brick & Bolt",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        },
+        {
+          "url": "https://www.bricknbolt.com/blogs-and-articles/construction-guide/cement-block-types-uses",
+          "title": "Types & Uses of Cement Blocks - Guide for Modern Construction",
+          "publisher": "Brick & Bolt",
+          "retrieved_at": "2026-10-06",
+          "quote": null
+        }
+      ]
     }
   ],
   "duration_days": {
-    "min": 0,
-    "max": 0,
-    "basis": "NOT SOURCED. Placeholder only: research on 2026-10-06 was blocked (WebSearch budget exhausted, publisher sites blocked by the egress proxy). Do not display; replace with a sourced range (from foundation work to handover, by scope and number of floors) before review."
+    "min": 240,
+    "max": 540,
+    "basis": "Whole construction period for a typical independent house, converted at 30 days per month. Brick & Bolt's stage-wise timeline guide (national) gives 8 to 18 months for a standard residential house, with planning and approvals counted in its stages; Studio Matrx's construction timeline guide (national) gives about 12 months for a ground-plus-one house from approved drawings to occupancy-certificate handover, and says a monsoon-affected schedule adds 1 to 2 months. Neither figure is Pune-specific. Larger houses, more floors and work during June to September take longer."
   },
   "questions_to_ask": [
     "Is your rate per sq ft worked out on built-up area, carpet area or some other measure, and how do you count balconies, the staircase, the parking floor and the open terrace?",
@@ -61,6 +137,7 @@
     "Is there a price escalation clause for steel and cement, and exactly how is it calculated?",
     "What are the payment stages (for example plinth, each slab, brickwork, plaster, finishing), and is each payment due only after that stage is complete?",
     "For a turnkey quote, what allowances are included for tiles, doors, windows, sanitaryware, taps, electrical switches and paint, and are they stated by brand and model or as an amount per sq ft or per piece?",
+    "For a package rate, what allowance does each item carry (for example the price per sq ft of floor tiles, the door type and the paint system), and what happens to the price if I choose items above the allowance?",
     "Who supervises the site day to day, and will the structural engineer inspect the reinforcement before each concrete pour?",
     "Who pays for water and electricity during construction, and are curing, shuttering, scaffolding and debris removal included?",
     "What warranty or defect-liability period do you give on the structure, waterproofing and workmanship, and will it be written into the contract?"
@@ -95,7 +172,7 @@
   "faq": [
     {
       "q": "How is house construction priced?",
-      "a": "Quotes come in a few forms: a rate per sq ft of built-up area for a finished (turnkey) house, a rate per sq ft for the grey structure only, a labour-only rate where the owner buys the materials, or an itemised bill of quantities. An itemised quote, or a per sq ft rate backed by a written specification, is the easiest to compare. Check which form each quote uses before comparing totals."
+      "a": "Quotes come in a few forms: a rate per sq ft of built-up area for a finished (turnkey) house, a rate per sq ft for the grey structure only, a labour-only rate where the owner buys the materials, or an itemised bill of quantities. An itemised quote, or a per sq ft rate backed by a written specification, is easier to compare. Check which form each quote uses before comparing totals."
     },
     {
       "q": "What is the difference between a grey structure quote and a turnkey quote?",
@@ -120,6 +197,10 @@
     {
       "q": "How should payments to a construction contractor be scheduled?",
       "a": "Link each payment to a completed stage that you can check, for example plinth, each slab, brickwork, plaster and finishing, rather than paying large amounts upfront. Write the schedule into the contract and keep a record of each payment against its stage."
+    },
+    {
+      "q": "How long does it take to build an independent house?",
+      "a": "National guides from Brick & Bolt and Studio Matrx put a typical house at roughly 8 to 18 months, and a ground-plus-one house at about a year from approved drawings to handover. Approvals, the number of floors, design changes and monsoon months can all add time, so ask the contractor for a stage-wise schedule in writing."
     }
   ],
   "prose_status": "draft",
