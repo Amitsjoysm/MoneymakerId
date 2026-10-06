@@ -152,7 +152,7 @@ Every URL has a trailing slash, a lowercase ASCII slug, a self-referencing canon
 |---|---|
 | `/` | Seasonal "What do you need?" picker, calculator, popular services, localities |
 | `/pune/` | City hub: services, costs, Construction Pulse |
-| `/pune/{service}-cost/` | City cost guide. Includes sub-service guides such as `terrace-waterproofing-cost`, `interior-painting-cost` (1/2/3 BHK), `exterior-painting-cost`, `bathroom-waterproofing-cost`, `house-construction-cost-per-sq-ft`. Each covers: tiers, inclusions, materials, duration, local factors, questions to ask, common mistakes, quote checklist, FAQ |
+| `/pune/{service}-cost/` | City cost guide. Includes sub-service guides such as `terrace-waterproofing-cost`, `interior-painting-cost` (1/2/3 BHK), `exterior-painting-cost`, `bathroom-waterproofing-cost`, `house-construction-cost` (titled "House Construction Cost per Sq Ft in Pune"). Each covers: tiers, inclusions, materials, duration, local factors, questions to ask, common mistakes, quote checklist, FAQ |
 | `/pune/{service}/` | City contractors page ("Waterproofing contractors in Pune") |
 | `/pune/{locality}/` | Locality hub: services, local cost drivers, providers |
 | `/pune/{locality}/{service}/` | Local cost + "what drives cost here" + providers + inline quote |
@@ -187,7 +187,7 @@ Also on the root domain:
 `robots.txt`, `sitemap.xml` (index → per-type sitemaps), `llms.txt`, a real 404 page (`not_found_handling: "404-page"`), and a `_headers` file (§17).
 
 ### Quality gate (spec §4, §57, §62)
-The gate runs per page type, and every threshold lives in `config/gate.json`. The build report prints each page's score.
+The gate runs per page type, and every threshold lives in `data/gate.json`. The build report prints each page's score.
 
 **Food**
 | Page type | Built and indexed when |

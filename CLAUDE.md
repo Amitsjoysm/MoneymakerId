@@ -35,7 +35,7 @@ The goal is local search traffic, turned into revenue: construction leads first,
 ## Environment notes
 - Node 22 and pnpm 10 are installed. Python 3.13 and `uv` are available.
 - This environment's network policy currently **blocks `registry.npmjs.org` and PyPI**. The owner must allow them under Settings → Network access. Until then, no package installs or builds are possible, and code-review-graph cannot be installed.
-- **GitHub push returns 403** until the Claude GitHub App is installed on `Amitsjoysm/MoneymakerId` and the owner's GitHub account is linked. Commits stay local until then.
+- **GitHub push works** (fixed by the owner on 2026-10-06). Push with `git push -u origin claude/relaxed-sagan-uipz8o`.
 - `.claude/hooks/session-start.sh` installs dependencies and code-review-graph and builds the graph. It is fail-soft.
 
 ## Status (update after every wave)
@@ -49,12 +49,12 @@ The goal is local search traffic, turned into revenue: construction leads first,
 
 **Owner inputs pending:**
 - npm/PyPI network access
-- GitHub App access
 - legal placeholders (`{{LEGAL_NAME}}`, `{{CONTACT_EMAIL}}`, `{{GRIEVANCE_OFFICER}}`, `{{POSTAL_ADDRESS}}`)
 - review of AI-drafted prose (cost guides, locality guides)
 - accounts and keys, listed in `docs/DEPLOY.md`
 
 ## Progress log (newest first; one line per meaningful change)
+- 2026-10-06: Task-graph audit (40 findings) applied. CONTRACTS v2 adds `admin_api`, derived shapes (§6a), the build manifest, literal spec values (§8a) and DOM attributes (§7a). TASKS v2 adds sub-waves, splits large cards, gives every card acceptance criteria, and adds gap-fill tasks D01c and D03f. The original spec is now in `docs/Makemoney.txt`. GitHub push now works.
 - 2026-10-06: Skills installed into `.claude/` (Superpowers, Impeccable, code-review-graph); SessionStart hook and `.mcp.json` added; this CLAUDE.md created.
 - 2026-10-06: Wave 1 started: two parallel workflows (5 construction service packs; localities, dishes, configs, CSV templates, locality guides, docs), each research task followed by an adversarial verifier.
 - 2026-10-06: CONTRACTS.md and TASKS.md written; the task graph sent for independent audit.

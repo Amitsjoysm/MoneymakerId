@@ -1,0 +1,2371 @@
+Yes. I’d make one important correction to the monetization plan: ads should be a secondary revenue stream, not the main business model. The main monetization for the construction vertical should be qualified leads/featured businesses; food can combine ads, affiliate/outbound actions, and paid featured listings.
+
+Also, because you want locality SEO, I would not generate thousands of AI pages automatically. Google explicitly emphasizes original, useful content and warns against thin/low-value pages; that matters both for search and AdSense approval. 
+G
+Google Support
++2
+
+Below is the final implementation-ready MVP.
+
+MarketMind AI — Final MVP
+Parent brand: MarketMind AI
+Parent domain: marketmindai.com
+
+Products
+Food: food.marketmindai.com
+
+Construction: construction.marketmindai.com
+
+Launch geography
+Pune, Maharashtra, India
+
+Primary contact
+Sarbanand
+WhatsApp: 9834346179
+
+The contact should be presented as the MarketMind AI platform contact, not as the phone number of individual restaurants or contractors.
+
+1. Product Vision
+MarketMind AI is a local decision engine.
+
+Instead of being another generic directory, it answers:
+
+Food
+"I'm craving something. Where should I go?"
+
+Construction
+"I need something built/repaired. What will it cost and who can do it?"
+
+The system combines:
+
+localities
+
+structured business information
+
+current web evidence
+
+prices
+
+services/dishes
+
+freshness
+
+recommendations
+
+cost estimates
+
+lead generation
+
+featured listings
+
+advertising
+
+2. Domain Architecture
+marketmindai.com
+│
+├── food.marketmindai.com
+│
+└── construction.marketmindai.com
+
+Recommended long-term URL architecture:
+
+food.marketmindai.com/pune/
+food.marketmindai.com/pune/hinjewadi/
+food.marketmindai.com/pune/hinjewadi/biryani/
+
+construction.marketmindai.com/pune/
+construction.marketmindai.com/pune/waterproofing/
+construction.marketmindai.com/pune/wakad/waterproofing/
+
+Do NOT create a subdomain for every locality.
+
+Locality belongs in the URL path.
+
+3. SEO Strategy
+The SEO strategy is:
+
+CITY
+ ↓
+LOCALITY
+ ↓
+INTENT
+ ↓
+CATEGORY
+ ↓
+SPECIFIC NEED
+
+Examples:
+
+Best Biryani in Pune
+
+Best Biryani in Hinjewadi
+
+Best Chicken Biryani in Hinjewadi
+
+Best Biryani Under ₹300 in Hinjewadi
+
+Best Late-Night Biryani in Hinjewadi
+
+Best Biryani Near Hinjewadi Phase 1
+
+Construction:
+
+Waterproofing Cost in Pune
+
+Waterproofing Cost in Wakad
+
+Terrace Waterproofing Cost in Wakad
+
+Waterproofing Contractors in Wakad
+
+Best Waterproofing Contractors Near Hinjewadi
+
+4. IMPORTANT SEO RULE
+Do not create pages simply because a keyword exists.
+
+A page becomes indexable only when:
+
+useful data
++
+local relevance
++
+unique information
++
+sufficient evidence
++
+meaningful user intent
+
+are all present.
+
+publish_page = (
+    evidence_count >= MIN_EVIDENCE
+    and entity_count >= MIN_ENTITIES
+    and locality_relevance >= MIN_RELEVANCE
+    and unique_content_score >= MIN_CONTENT
+)
+
+Otherwise:
+
+NOINDEX
+
+This protects the site from becoming a mass-produced thin-content site.
+
+Google states that AdSense sites should have unique, high-quality content and useful navigation, and its guidance also flags insufficient original content as an approval problem. 
+G
+Google Support
++2
+
+5. Locality Intelligence
+Create a canonical Pune locality database.
+
+Initial locations:
+
+Pune
+├── Hinjewadi
+│   ├── Phase 1
+│   ├── Phase 2
+│   └── Phase 3
+├── Wakad
+├── Baner
+├── Balewadi
+├── Aundh
+├── Kothrud
+├── Viman Nagar
+├── Kharadi
+├── Hadapsar
+├── Koregaon Park
+├── Shivajinagar
+├── Camp
+├── Kondhwa
+├── Wagholi
+├── Lohegaon
+├── Pimple Saudagar
+├── Pimple Nilakh
+├── Pimpri
+├── Chinchwad
+└── Magarpatta
+
+Each locality should have:
+
+id
+name
+slug
+city
+latitude
+longitude
+aliases
+parent_locality
+neighbouring_localities
+commercial_centres
+landmarks
+office_clusters
+residential_clusters
+
+6. Locality SEO Intelligence
+For every locality maintain:
+
+search_intent
+food_categories
+construction_categories
+popular_dishes
+price_segments
+landmarks
+nearby_localities
+business_density
+data_quality
+last_updated
+
+This enables pages such as:
+
+Food in Hinjewadi
+Food near Rajiv Gandhi Infotech Park
+Biryani in Hinjewadi
+Samosa in Hinjewadi
+Late-night food in Hinjewadi
+Budget food in Hinjewadi
+
+7. Food Product
+Core promise
+Tell us what you're craving. We'll help you find where to get it in Pune.
+
+Homepage:
+
+What are you craving?
+
+[Biryani]
+[Samosa]
+[Misal]
+[Vada Pav]
+[Momos]
+[Dosa]
+[Pizza]
+[Burger]
+[Shawarma]
+[Poha]
+[Thali]
+[Something Spicy]
+[Something Sweet]
+
+Location:
+
+📍 Hinjewadi
+
+Budget:
+
+₹
+₹₹
+₹₹₹
+
+8. Food Categories
+Initial dishes:
+
+biryani
+samosa
+vada pav
+misal pav
+momos
+dosa
+pizza
+burger
+poha
+pav bhaji
+shawarma
+chole bhature
+thali
+kebab
+sandwich
+
+Later:
+
+desserts
+ice cream
+cakes
+south indian
+north indian
+street food
+maharashtrian
+chinese
+cafe
+breakfast
+late night food
+healthy food
+vegetarian
+non vegetarian
+
+9. Food "Craving" Engine
+The user shouldn't need to know restaurant names.
+
+Inputs:
+
+craving
+location
+budget
+veg/nonveg
+distance
+open_now
+dine_in
+takeaway
+delivery
+
+Example:
+
+Craving:
+spicy
+
+Location:
+Wakad
+
+Budget:
+₹300
+
+Preference:
+non-veg
+
+System maps:
+
+spicy
+ ↓
+biryani
+kebab
+shawarma
+misal
+chicken
+
+Then ranks candidates.
+
+10. Food Temperature / Excitement Layer
+Every locality/category page can have a dynamic status:
+
+🔥 HOT NOW
+Strong current demand/evidence.
+
+🌡️ WARM
+Good established options.
+
+❄️ COLD
+Limited current evidence/activity.
+
+🚀 TRENDING
+Rapidly increasing mentions/search interest.
+
+💎 HIDDEN GEM
+Strong quality signals but relatively low visibility.
+
+💰 BEST VALUE
+Strong quality-to-price ratio.
+
+🌙 LATE NIGHT
+Strong late-night availability evidence.
+
+👨‍👩‍👧 FAMILY PICK
+Good family-oriented signals.
+
+🧑‍💻 OFFICE LUNCH
+Useful around office/business clusters.
+
+These labels should be data-derived, not invented by the LLM.
+
+Example:
+
+🔥 HOT IN HINJEWADI
+
+Chicken Biryani
+
+12 strong local signals
+recent menu evidence
+high recommendation score
+
+11. Food Page Template
+Example:
+
+# Best Biryani in Hinjewadi, Pune
+
+🔥 HOT RIGHT NOW
+
+Updated: 6 October 2026
+
+Looking for biryani in Hinjewadi?
+Here are the strongest options based on
+available local evidence, price, relevance,
+reviews and freshness.
+
+[Best Overall]
+[Under ₹300]
+[Chicken]
+[Mutton]
+[Open Now]
+[Near Me]
+
+Then:
+
+Top Recommendations
+
+1. Restaurant A
+2. Restaurant B
+3. Restaurant C
+
+Then:
+
+Best Chicken Biryani
+Best Mutton Biryani
+Best Budget Biryani
+Best Family Option
+Best Late-Night Option
+
+Then:
+
+Nearby:
+Biryani in Wakad
+Biryani in Baner
+Biryani in Balewadi
+
+12. Food Ranking
+food_score =
+    relevance             × 0.20
+  + rating_strength       × 0.20
+  + review_strength       × 0.15
+  + dish_evidence         × 0.15
+  + freshness             × 0.10
+  + value                 × 0.10
+  + locality_match        × 0.10
+
+Normalize:
+
+0.0 → 1.0
+
+Store every component.
+
+13. Excitement Algorithm
+Example:
+
+hot_score =
+    recent_mentions       × 0.25
+  + freshness             × 0.20
+  + demand_signal         × 0.20
+  + engagement            × 0.15
+  + quality               × 0.20
+
+Classification:
+
+0.80–1.00 = 🔥 HOT
+0.65–0.79 = 🚀 TRENDING
+0.50–0.64 = 🌡️ WARM
+0.35–0.49 = 💎 HIDDEN GEM
+0.00–0.34 = ❄️ COLD
+
+Do not show a temperature label unless enough evidence exists.
+
+14. Construction Product
+Core promise:
+
+Understand the cost, find the right service, and request local quotes.
+
+Homepage:
+
+What do you need?
+
+[House Construction]
+[Waterproofing]
+[Painting]
+[Bathroom Renovation]
+[Modular Kitchen]
+[Tiling]
+[Plumbing]
+[Electrical]
+[False Ceiling]
+
+15. Construction Cost Engine
+Inputs:
+
+service
+city
+locality
+area
+quality
+material
+scope
+timeline
+
+Output:
+
+LOW
+EXPECTED
+HIGH
+
+Example:
+
+Terrace Waterproofing
+
+Area:
+1,000 sq ft
+
+Estimated:
+
+Budget:
+₹XX,XXX–₹XX,XXX
+
+Standard:
+₹XX,XXX–₹XX,XXX
+
+Premium:
+₹XX,XXX–₹XX,XXX
+
+Include:
+
+materials
+labour
+preparation
+repair
+transport
+waste
+
+16. Construction Local SEO
+Pages:
+
+/construction-cost/pune/waterproofing
+/construction-cost/pune/painting
+/construction-cost/pune/bathroom-renovation
+
+/pune/wakad/waterproofing-contractors
+/pune/hinjewadi/painting-contractors
+/pune/baner/bathroom-renovation
+
+Each page should contain:
+
+estimated cost
+local factors
+provider list
+questions to ask
+material options
+duration
+common mistakes
+quote checklist
+
+17. Construction Ranking
+provider_score =
+    service_match          × 0.25
+  + locality_match         × 0.15
+  + specialization         × 0.15
+  + review_strength        × 0.15
+  + verification           × 0.15
+  + freshness              × 0.10
+  + experience             × 0.05
+
+Sponsored providers never automatically become #1.
+
+18. Featured Businesses
+Create:
+
+/featured
+
+and:
+
+/feature-your-business
+
+Food CTA:
+
+Want more customers to discover your restaurant?
+
+Construction CTA:
+
+Want more qualified enquiries from Pune customers?
+
+19. Feature Your Business Page
+# Get Featured on MarketMind AI
+
+Reach people actively searching for
+food and local services in Pune.
+
+Available for:
+
+Restaurants
+Cloud kitchens
+Cafes
+Food businesses
+Contractors
+Builders
+Painters
+Waterproofing companies
+Renovation companies
+Home-service providers
+
+Form:
+
+Business name
+Category
+Locality
+Website
+Phone
+WhatsApp
+Email
+Description
+Services
+Preferred placement
+
+Contact:
+
+Sarbanand
+WhatsApp: 9834346179
+
+20. Featured Listing Types
+Free
+basic listing
+business information
+organic eligibility
+
+Featured
+featured badge
+enhanced profile
+additional photos
+services/dishes
+CTA
+priority discovery area
+
+Premium
+featured locality placement
+enhanced profile
+lead reporting
+promotional placement
+campaign analytics
+
+All paid placements must be clearly identified.
+
+21. Advertising System
+Build an internal ad-slot abstraction.
+
+AD_SLOT_TOP
+AD_SLOT_AFTER_INTRO
+AD_SLOT_AFTER_RESULTS
+AD_SLOT_SIDEBAR
+AD_SLOT_BEFORE_FAQ
+AD_SLOT_FOOTER
+
+The application decides:
+
+show_ad(slot, page_type, device)
+
+rather than hard-coding ads into templates.
+
+22. Ad Placement
+Food page
+HEADER
+ ↓
+SEARCH
+ ↓
+AD
+ ↓
+INTRO
+ ↓
+TOP RECOMMENDATIONS
+ ↓
+AD
+ ↓
+CATEGORY SECTIONS
+ ↓
+AD
+ ↓
+LOCALITY LINKS
+ ↓
+FAQ
+ ↓
+AD
+ ↓
+FOOTER
+
+Construction
+HEADER
+ ↓
+COST CALCULATOR
+ ↓
+AD
+ ↓
+ESTIMATE
+ ↓
+PROVIDERS
+ ↓
+AD
+ ↓
+GET QUOTES
+ ↓
+FAQ
+ ↓
+FOOTER
+
+Do not overload pages with ads.
+
+The recommendation itself must remain visually dominant.
+
+23. Ad Platforms
+Priority 1 — Google AdSense
+This should be the primary display-ad target.
+
+Google AdSense
+
+Google's Auto ads can automatically place ads based on page layout and can use in-page, overlay and other formats. 
+G
+Google Support
++1
+
+However:
+
+Do not apply immediately after launching a pile of automatically generated pages.
+
+First establish:
+
+original content
+
+useful pages
+
+navigation
+
+privacy/legal pages
+
+real traffic
+
+quality data
+
+good UX
+
+Google explicitly says sites need original, useful content and sufficient quality for AdSense approval. 
+G
+Google Support
++1
+
+24. AdSense + Subdomain Architecture
+There is an important implementation detail.
+
+Google currently says a standard AdSense site submission is a domain rather than an arbitrary subdomain. 
+G
+Google Support
++1
+
+Therefore design the platform so the parent ownership/AdSense setup is handled correctly rather than assuming:
+
+food.marketmindai.com
+construction.marketmindai.com
+
+can simply be added independently as ordinary AdSense sites.
+
+The application should keep the ad configuration abstracted so the same publisher configuration can be applied wherever Google permits it.
+
+Also implement ads.txt correctly. Google recommends ads.txt and requires the publisher ID to be correctly represented when applicable. 
+G
+Google Support
+
+25. AdSense Configuration
+When approved:
+
+Auto Ads: ON
+Banner ads: ON
+Multiplex: evaluate later
+Anchor: evaluate
+Vignette: conservative
+
+Google allows Auto ads to be customized and specific pages/areas can be excluded. 
+G
+Google Support
++1
+
+Do not put aggressive ads:
+
+immediately beside buttons
+
+directly above navigation
+
+over recommendation cards
+
+inside quote forms
+
+where users may accidentally click them
+
+26. Priority 2 — Media.net
+Media.net
+
+Consider it as an additional contextual/display option if accepted.
+
+Media.net requires publishers to own/control the inventory and has inventory-quality requirements including Better Ads Standards. 
+M
+Media.net
+
+Do not run multiple ad networks blindly on every page.
+
+Use experiments.
+
+27. Priority 3 — Infolinks
+Infolinks
+
+Can be tested as a secondary network after the site has traffic.
+
+Infolinks says publisher applications go through a quality review before approval. 
+S
+sites0001.infolinks.com
+
+I would test it only if:
+
+AdSense unavailable
+OR
+AdSense RPM is weak
+
+28. Priority 4 — PropellerAds / Similar Networks
+PropellerAds
+
+Can be evaluated as a fallback monetization source.
+
+But I would not make aggressive pop/redirect/onclick advertising part of the core product.
+
+Your site is a local decision engine; users need to trust it.
+
+PropellerAds itself publishes landing-page and advertising-quality rules, including restrictions around poor-quality pages and unwanted automatic downloads. 
+P
+PropellerAds Help Center
++1
+
+29. Recommended Monetization Stack
+Start:
+
+PRIMARY
+────────
+Featured businesses
+Construction leads
+
+SECONDARY
+──────────
+AdSense
+
+TERTIARY
+─────────
+Affiliate/outbound partnerships
+Direct advertising
+
+OPTIONAL
+────────
+Media.net
+Infolinks
+Other approved networks
+
+Do not make low-quality display advertising the business model.
+
+30. Direct Advertising
+This can eventually become more valuable than programmatic ads.
+
+Create:
+
+/advertise
+
+Offer:
+
+Restaurant spotlight
+Locality sponsorship
+Construction service sponsorship
+Featured provider
+Sponsored guide
+Banner placement
+
+Example:
+
+Hinjewadi Food Guide — Sponsored by XYZ
+
+Clearly label sponsored content.
+
+31. Ad Inventory Database
+ad_slots
+-------------
+id
+name
+page_type
+position
+device
+provider
+active
+priority
+start_date
+end_date
+campaign_id
+
+campaigns
+id
+advertiser
+budget
+pricing_model
+creative
+target_locality
+target_category
+start_date
+end_date
+status
+
+32. Revenue Tracking
+Track:
+
+impression
+click
+CTR
+campaign
+slot
+page
+locality
+device
+
+Never store unnecessary personal information.
+
+33. Food Revenue
+Potential:
+
+display ads
+featured restaurants
+direct sponsorship
+affiliate/order clicks
+reservation/referral partnerships
+
+34. Construction Revenue
+Potential:
+
+qualified leads
+featured providers
+premium listings
+sponsored local pages
+direct advertising
+quote-generation partnerships
+
+Construction should eventually have the higher revenue per visitor.
+
+35. Contact Strategy
+Primary platform CTA:
+
+Need help?
+
+WhatsApp Sarbanand
+9834346179
+
+But do not make this the CTA on every single card.
+
+Use:
+
+/feature-your-business
+/contact
+/get-featured
+/get-quotes
+
+The number should represent MarketMind AI, not imply that Sarbanand personally provides the listed services.
+
+36. WhatsApp CTA
+Use a clear button:
+
+💬 Talk to MarketMind AI
+
+Secondary text:
+
+For business listings, featured placements
+and local discovery partnerships.
+
+Construction:
+
+💬 Need help finding a contractor?
+
+37. SEO Metadata Engine
+Every indexable page receives:
+
+title
+meta_description
+canonical
+robots
+og:title
+og:description
+og:image
+twitter:title
+twitter:description
+breadcrumbs
+schema
+
+38. Dynamic Title Templates
+Food:
+
+Best {dish} in {locality}, Pune | MarketMind AI
+
+Examples:
+
+Best Biryani in Hinjewadi, Pune | MarketMind AI
+
+Best Samosa in Wakad, Pune | MarketMind AI
+
+Construction:
+
+{Service} Cost in {locality}, Pune | MarketMind AI
+
+Example:
+
+Waterproofing Cost in Wakad, Pune | MarketMind AI
+
+39. Meta Description Templates
+Food:
+
+Discover highly rated {dish} options in
+{locality}, Pune. Compare price, location,
+freshness and our latest recommendations.
+
+Construction:
+
+Estimate {service} costs in {locality}, Pune,
+understand pricing factors and find local
+providers for quotes.
+
+Never generate deceptive descriptions.
+
+40. H1 Rules
+Exactly one primary H1.
+
+Example:
+
+Best Biryani in Hinjewadi, Pune
+
+Then H2:
+
+Top Biryani Places
+Best Chicken Biryani
+Best Mutton Biryani
+Budget Biryani
+Late-Night Options
+Nearby Areas
+
+41. Internal Linking Engine
+Every page gets:
+
+parent locality
+parent category
+nearby localities
+related dishes/services
+related intent pages
+
+Example:
+
+Biryani in Hinjewadi
+
+Related:
+Biryani in Wakad
+Biryani in Baner
+Chicken Biryani in Hinjewadi
+Late Night Food in Hinjewadi
+Budget Food in Hinjewadi
+
+Do not generate hundreds of irrelevant links.
+
+42. Breadcrumbs
+Example:
+
+Home
+→ Food
+→ Pune
+→ Hinjewadi
+→ Biryani
+
+Construction:
+
+Home
+→ Construction
+→ Pune
+→ Wakad
+→ Waterproofing
+
+43. Structured Data
+Implement appropriate structured data only when the underlying information is accurate and eligible.
+
+Possible types:
+
+BreadcrumbList
+LocalBusiness
+Restaurant
+FAQPage where appropriate
+WebSite
+WebPage
+
+Do not create fake ratings or review markup.
+
+44. Restaurant Data
+Store:
+
+name
+address
+locality
+city
+geo
+phone
+website
+opening_hours
+price_range
+dishes
+services
+evidence
+last_verified
+confidence
+
+45. Construction Provider Data
+Store:
+
+name
+address
+service_area
+phone
+website
+services
+specializations
+experience
+evidence
+verification_status
+last_verified
+confidence
+
+46. Evidence Layer
+Every important claim requires:
+
+source
+source_url
+retrieved_at
+claim
+confidence
+valid_until
+
+Example:
+
+claim:
+Chicken Biryani ₹249
+
+source:
+official menu
+
+retrieved:
+2026-10-06
+
+confidence:
+0.96
+
+47. Data Freshness
+Use three levels.
+
+HOT DATA
+Refresh frequently:
+
+hours
+prices
+offers
+availability
+
+WARM DATA
+Refresh periodically:
+
+menu
+services
+specialties
+contact
+
+COLD DATA
+Refresh slowly:
+
+address
+historical information
+long-term descriptions
+
+48. Search Architecture
+User:
+
+best biryani near me
+
+System:
+
+intent parser
+ ↓
+locality resolver
+ ↓
+database
+ ↓
+ranking
+ ↓
+cached result
+
+Only use Exa/Firecrawl when data is missing/stale.
+
+49. Exa
+Use Exa for:
+
+business discovery
+official websites
+new sources
+fresh information
+research
+
+Do not call it for every page view.
+
+50. Firecrawl
+Use Firecrawl for:
+
+menus
+service pages
+pricing
+official websites
+contact pages
+
+Do not crawl complete websites unnecessarily.
+
+51. Groq
+Use Groq for:
+
+entity normalization
+dish classification
+service classification
+ambiguous matching
+review signal extraction
+content summarization
+
+Never make Groq the authoritative source for:
+
+price
+address
+opening hours
+distance
+ranking
+
+52. API Key Management
+Create a provider gateway:
+
+ExaGateway
+FirecrawlGateway
+GroqGateway
+
+All requests pass through it.
+
+Store:
+
+provider
+credential_id
+usage
+quota
+last_used
+error_count
+cooldown
+
+Multiple keys should only be used in accordance with each provider's terms. Never use account/key rotation to bypass restrictions or rate limits.
+
+53. Cache Strategy
+Browser
+ ↓
+Cloudflare
+ ↓
+Static HTML
+ ↓
+small application cache
+ ↓
+Supabase
+
+No Redis initially.
+
+54. Static SEO Generation
+Pages should be generated from:
+
+Supabase
+ ↓
+ranking
+ ↓
+SEO engine
+ ↓
+HTML
+ ↓
+Cloudflare
+
+A user should not cause an Exa or Firecrawl request.
+
+55. Autonomous Refresh
+Nightly:
+
+01:00 discovery
+02:00 stale source refresh
+03:00 extraction
+04:00 normalization
+05:00 ranking
+06:00 SEO regeneration
+06:30 sitemap
+07:00 database backup
+07:30 health report
+
+Use jitter.
+
+56. Search Demand Prioritization
+Research priority:
+
+traffic potential
+×
+commercial value
+×
+freshness need
+×
+data quality
+
+This means popular/high-value pages receive more resources.
+
+57. SEO Page Scoring
+seo_score =
+    demand                 × 0.20
+  + data_quality           × 0.25
+  + locality_specificity   × 0.20
+  + commercial_intent      × 0.15
+  + content_depth          × 0.10
+  + freshness              × 0.10
+
+Publish only above threshold.
+
+58. Sitemap
+Automatically generate:
+
+/sitemap.xml
+/sitemap-food.xml
+/sitemap-construction.xml
+/sitemap-localities.xml
+
+Include only:
+
+HTTP 200
+indexable
+canonical
+quality-approved
+
+59. Robots
+Generate correctly.
+
+Never accidentally:
+
+Disallow: /
+
+in production.
+
+60. Canonicals
+Every page has:
+
+<link rel="canonical" ...>
+
+Prevent duplicate URLs from:
+
+filters
+tracking parameters
+sorting
+pagination variants
+
+61. Page Types
+Food
+city
+locality
+dish
+dish + locality
+budget
+diet
+occasion
+late-night
+
+Construction
+city
+service
+service + locality
+cost
+provider
+cost calculator
+
+62. Do Not Launch All Combinations
+Example:
+
+15 dishes
+×
+20 localities
+×
+10 filters
+
+does NOT automatically equal:
+
+3,000 pages.
+
+Only publish pages with real utility.
+
+63. Ad-Free Critical Pages
+Initially exclude ads from:
+
+contact
+privacy
+terms
+quote form
+feature-your-business
+payment pages
+
+Keep conversion-focused pages clean.
+
+Google's Auto ads system allows page/section exclusions. 
+G
+Google Support
+
+64. Homepage Ads
+Keep the homepage mostly clean.
+
+Food:
+
+hero
+craving search
+popular categories
+popular localities
+small ad
+
+Construction:
+
+cost calculator
+popular services
+locality discovery
+small ad
+
+The homepage should sell the product, not advertisements.
+
+65. Mobile UX
+Pune traffic will likely contain substantial mobile usage.
+
+Design:
+
+mobile-first
+large CTA
+sticky but dismissible action
+fast loading
+minimal JavaScript
+
+Avoid:
+
+huge hero images
+autoplay video
+heavy animations
+large JS bundles
+intrusive popups
+
+66. Performance Targets
+cached page:
+<300 ms server-side
+
+LCP:
+target <2.5 sec
+
+CLS:
+<0.1
+
+minimal JS
+
+compressed HTML
+
+WebP/AVIF images
+
+lazy-load below-fold images
+
+67. Database
+Supabase PostgreSQL.
+
+Core tables:
+
+cities
+localities
+businesses
+restaurants
+dishes
+restaurant_dishes
+construction_services
+providers
+cost_models
+sources
+evidence
+observations
+ranking_runs
+recommendations
+leads
+featured_listings
+advertisers
+campaigns
+ad_slots
+ad_events
+queries
+jobs
+api_credentials
+system_events
+
+68. Historical Observations
+Never overwrite valuable data without retaining history.
+
+observations
+
+entity_id
+attribute
+value
+observed_at
+source_id
+confidence
+extractor_version
+
+This becomes your future training/recommendation dataset.
+
+69. Future Training Dataset
+Preserve:
+
+query
+location
+constraints
+candidate businesses
+evidence
+ranking
+user action
+conversion
+feedback
+
+Eventually:
+
+query
+→ candidate set
+→ ranking
+→ click
+→ conversion
+
+becomes a powerful learning-to-rank dataset.
+
+70. Ads vs Recommendation Integrity
+Maintain two independent scores:
+
+organic_score
+commercial_score
+
+Paid businesses can receive:
+
+Sponsored
+Featured
+Promoted
+
+but never silently manipulate organic ranking.
+
+71. Trust Labels
+Use:
+
+✓ Verified
+Recently checked
+Source-backed
+Price last checked
+Hours last checked
+
+Avoid:
+
+#1 BEST IN PUNE
+
+unless you can substantiate exactly what "best" means.
+
+Prefer:
+
+Our top recommendation based on current available evidence.
+
+72. Food "What's Hot" Module
+Homepage:
+
+🔥 What's Hot in Pune
+
+Biryani in Hinjewadi
+Misal in Kothrud
+Momos in Wakad
+Late-night food in Viman Nagar
+
+This automatically changes based on the excitement engine.
+
+73. Locality Pulse
+Every locality gets:
+
+🔥 Food Pulse
+
+Most searched:
+Biryani
+
+Trending:
+Momos
+
+Best value:
+Samosa
+
+Late night:
+Biryani
+
+New/interesting:
+Business X
+
+Only show sections when sufficient data exists.
+
+74. Construction "What's Moving"
+🏗️ Construction Pulse
+
+Popular services:
+
+Waterproofing
+Painting
+Bathroom renovation
+
+Most searched locality:
+
+Wakad
+
+Rising demand:
+
+Terrace waterproofing
+
+Again, data-driven.
+
+75. Locality Landing Page
+Example:
+
+# Food in Hinjewadi, Pune
+
+🔥 What's hot
+💰 Best value
+🌙 Late-night
+🍛 Popular dishes
+📍 Nearby options
+
+Biryani
+Samosa
+Misal
+Momos
+
+Nearby:
+Wakad
+Baner
+Balewadi
+
+76. Locality Construction Page
+# Construction & Home Services in Hinjewadi
+
+Popular services:
+
+Waterproofing
+Painting
+Renovation
+Plumbing
+Electrical
+
+Typical project costs
+
+Local providers
+
+Get quotes
+
+77. Business Profile
+Food:
+
+/business/restaurant-slug
+
+Contains:
+
+overview
+popular dishes
+price
+locality
+hours
+contact
+website
+evidence
+last verified
+recommendation categories
+
+Construction:
+
+/provider/provider-slug
+
+Contains:
+
+services
+coverage
+specializations
+contact
+evidence
+verification
+quote CTA
+
+78. Business Claim Page
+Create:
+
+/claim-business
+
+CTA:
+
+Is this your business?
+
+Benefits:
+
+correct your information
+add services
+add menu
+add website
+request verification
+request featured placement
+
+79. Business Verification
+Initially:
+
+website evidence
+phone verification where appropriate
+business-provided evidence
+manual review when necessary
+
+Never automatically mark a business "verified" merely because an LLM found it.
+
+80. Analytics
+Track anonymous events:
+
+page_view
+search
+filter
+recommendation_click
+website_click
+call_click
+direction_click
+quote_start
+quote_submit
+featured_click
+ad_impression
+ad_click
+
+Avoid collecting unnecessary personal data.
+
+81. Core Business Metrics
+Food
+organic visitors
+searches
+recommendation CTR
+outbound CTR
+featured enquiries
+ad RPM
+
+Construction
+organic visitors
+calculator completions
+provider CTR
+quote starts
+qualified leads
+lead conversion
+revenue/lead
+
+82. Monetization Priority
+Food
+1. Featured listings
+2. Display advertising
+3. Affiliate/referral partnerships
+4. Direct sponsorship
+
+Construction
+1. Qualified leads
+2. Featured providers
+3. Premium listings
+4. Direct sponsorship
+5. Display advertising
+
+83. Direct Advertiser Page
+/advertise
+
+Advertise to Pune customers
+actively searching for local food
+and construction services.
+
+Target by:
+
+Locality
+Category
+Intent
+Budget
+
+Offer:
+
+Featured listing
+Sponsored locality
+Sponsored category
+Banner
+Lead generation
+
+84. Ad Experimentation
+Do not guess.
+
+A/B test:
+
+ad density
+slot
+format
+CTA
+featured placement
+
+Measure:
+
+revenue
+CTR
+bounce
+conversion
+page speed
+
+Never optimize ad revenue at the expense of recommendation conversion.
+
+85. Legal/Trust Pages
+Parent domain:
+
+/about
+/contact
+/privacy
+/terms
+/cookie-policy
+/advertise
+/feature-your-business
+
+Food:
+
+/food/about
+
+Construction:
+
+/construction/about
+
+86. Disclosure
+Featured:
+
+Featured placement is paid.
+
+Advertising:
+
+Advertisement
+
+Affiliate:
+
+We may receive a commission from some links.
+
+Construction:
+
+Cost estimates are indicative and should not be treated as quotations.
+
+87. Data Policy
+For scraped/public data:
+
+source attribution
+retrieval date
+minimal reproduction
+derived information
+
+Do not blindly reproduce:
+
+copyrighted articles
+
+complete reviews
+
+proprietary databases
+
+images without rights
+
+The system should derive structured information rather than becoming a content-copying engine.
+
+88. VM #1
+Nginx
+Web application
+API
+Static page serving
+
+No heavy worker workloads.
+
+89. VM #2
+Scheduler
+Research
+Extraction
+Normalization
+Ranking
+SEO generation
+Sitemap
+Monitoring
+Backup
+
+Concurrency:
+
+2–4 workers initially
+
+90. Cloudflare
+Use:
+
+DNS
+HTTPS
+CDN
+cache
+basic protection
+compression
+
+Cache aggressively:
+
+HTML
+CSS
+JS
+images
+public API responses
+
+91. Failure Tolerance
+If Exa fails:
+
+serve database
+
+If Firecrawl fails:
+
+retain previous evidence
+
+If Groq fails:
+
+deterministic processing
+
+If worker VM fails:
+
+website continues serving
+
+If Supabase temporarily fails:
+
+cached/static pages continue where possible
+
+92. No AI Dependency During Page Views
+This is mandatory.
+
+USER
+ ↓
+CDN
+ ↓
+STATIC PAGE
+
+not:
+
+USER
+ ↓
+Groq
+ ↓
+Exa
+ ↓
+Firecrawl
+ ↓
+database
+ ↓
+page
+
+The second architecture will be slow and expensive.
+
+93. Autonomous Pipeline
+CRON
+ ↓
+Find stale/high-value entities
+ ↓
+Exa discovery
+ ↓
+Firecrawl extraction
+ ↓
+Hash comparison
+ ↓
+Changed?
+ ├── NO → stop
+ └── YES
+       ↓
+    Normalize
+       ↓
+    Groq if needed
+       ↓
+    Evidence
+       ↓
+    Database
+       ↓
+    Recalculate ranking
+       ↓
+    Regenerate affected pages
+       ↓
+    Sitemap
+
+94. Resource Optimization
+Never:
+
+crawl everything
+LLM everything
+refresh everything
+generate everything
+
+Instead:
+
+high-value
++
+stale
++
+volatile
++
+commercially useful
+
+gets priority.
+
+95. Database Size Optimization
+Supabase Free should store:
+
+structured data
+evidence
+metadata
+hashes
+URLs
+scores
+observations
+
+Avoid permanently storing:
+
+raw HTML
+large images
+duplicate documents
+entire websites
+
+The current Supabase Free database quota is 500 MB, so the MVP must actively control storage growth.
+
+96. Image Strategy
+Do not download every image you discover.
+
+Prefer:
+
+business-provided images
+licensed images
+your own generated assets
+small optimized thumbnails
+
+Store image URLs/metadata where legally appropriate.
+
+97. Food MVP Launch
+Initial target:
+
+Pune
+20 localities
+15 major food categories
+500+ useful business records
+100–200 genuinely useful pages
+
+Do not force all pages live.
+
+98. Construction MVP Launch
+Initial target:
+
+Pune
+20 localities
+5 core services
+100+ provider records
+50+ cost models
+
+99. First Construction Services
+waterproofing
+painting
+bathroom renovation
+modular kitchen
+house construction
+
+100. First Food Categories
+biryani
+samosa
+misal
+vada pav
+momos
+dosa
+pizza
+burger
+shawarma
+poha
+pav bhaji
+thali
+kebab
+sandwich
+desserts
+
+101. Launch Sequence
+Week 1
+domain
+DNS
+VMs
+Cloudflare
+Supabase
+repository
+deployment
+
+Week 2
+database
+food ingestion
+construction ingestion
+Exa
+Firecrawl
+Groq
+
+Week 3
+ranking
+SEO engine
+food pages
+construction pages
+locality pages
+
+Week 4
+automation
+analytics
+featured businesses
+quote system
+ad infrastructure
+
+102. Launch Gate
+Do not launch publicly until:
+
+HTTPS ✓
+mobile ✓
+404 handling ✓
+canonical ✓
+sitemap ✓
+robots ✓
+schema ✓
+privacy ✓
+terms ✓
+contact ✓
+business claim ✓
+source attribution ✓
+data freshness ✓
+
+103. Ad Launch Gate
+Do not put ads everywhere on day one.
+
+First:
+
+useful content
+↓
+indexation
+↓
+real users
+↓
+quality validation
+↓
+AdSense application
+↓
+approval
+↓
+controlled Auto Ads
+
+Google's current guidance says the site must be live, contain enough content for review, be navigable, and comply with its policies before activation. 
+G
+Google Support
+
+104. Recommended Initial Ad Layout
+Desktop
+[Header]
+
+[Search]
+
+[Small Ad]
+
+[Main Recommendations]    [Ad]
+
+[Supporting Content]
+
+[Ad]
+
+[FAQ]
+
+[Footer]
+
+Mobile
+[Header]
+
+[Search]
+
+[Recommendations]
+
+[Ad]
+
+[Supporting content]
+
+[Ad]
+
+[CTA]
+
+Keep the first screen focused on the user's task.
+
+105. Revenue Flywheel
+LOCAL DATA
+    ↓
+BETTER PAGES
+    ↓
+SEO TRAFFIC
+    ↓
+USER SEARCHES
+    ↓
+BETTER RECOMMENDATIONS
+    ↓
+CLICKS
+    ↓
+BUSINESS LEADS
+    ↓
+FEATURED BUSINESSES
+    ↓
+REVENUE
+    ↓
+MORE DATA
+
+Advertising becomes an additional layer rather than the foundation.
+
+106. Final Recommended URLs
+Parent
+marketmindai.com
+
+Food
+food.marketmindai.com
+
+Examples:
+
+food.marketmindai.com/pune
+food.marketmindai.com/pune/biryani
+food.marketmindai.com/pune/hinjewadi
+food.marketmindai.com/pune/hinjewadi/biryani
+food.marketmindai.com/pune/wakad/samosa
+food.marketmindai.com/pune/baner/misal-pav
+
+Construction
+construction.marketmindai.com
+
+Examples:
+
+construction.marketmindai.com/pune
+construction.marketmindai.com/pune/waterproofing-cost
+construction.marketmindai.com/pune/wakad/waterproofing
+construction.marketmindai.com/pune/baner/painting
+
+107. Final Recommendation
+GO
+Use:
+
+marketmindai.com
+food.marketmindai.com
+construction.marketmindai.com
+
+with:
+
+Pune
+ ↓
+Locality
+ ↓
+Intent
+ ↓
+Recommendation
+
+The strongest differentiator should be:
+
+Fresh, evidence-backed local recommendations rather than another static "Top 10" directory.
+
+108. Final MVP Stack
+                 MARKETMIND AI
+                       │
+          ┌────────────┴────────────┐
+          │                         │
+         FOOD                 CONSTRUCTION
+          │                         │
+       Pune DB                   Pune DB
+          │                         │
+          └────────────┬────────────┘
+                       │
+                SHARED ENGINE
+                       │
+       ┌───────────────┼────────────────┐
+       │               │                │
+      EXA          FIRECRAWL           GROQ
+       │               │                │
+       └───────────────┼────────────────┘
+                       │
+                 SUPABASE
+                       │
+             ┌─────────┴─────────┐
+             │                   │
+           RANKER             SEO ENGINE
+             │                   │
+             └─────────┬─────────┘
+                       │
+                  STATIC HTML
+                       │
+                    CLOUDFLARE
+                       │
+                     USERS
+                       │
+             ┌─────────┴─────────┐
+             │                   │
+             ADS              LEADS
+             │                   │
+          AdSense          Construction
+          Media.net        Featured
+          Others           Businesses
+
+109. Success Definition
+The MVP is successful when a Pune user searches:
+
+"best biryani in Hinjewadi"
+
+and gets a page that is:
+
+fast
+local
+fresh
+useful
+evidence-backed
+easy to compare
+easy to act on
+
+And when a person searches:
+
+"waterproofing cost in Wakad"
+
+they get:
+
+realistic estimate
+cost explanation
+local providers
+fresh evidence
+quote CTA
+
+At that point, MarketMind AI is not merely an SEO website.
+
+It is a:
+
+local intent → information → recommendation → transaction engine.
+
+110. Immediate Build Order
+Build only these first:
+
+1. marketmindai.com
+2. food.marketmindai.com
+3. construction.marketmindai.com
+4. Pune locality database
+5. Supabase schema
+6. Exa gateway
+7. Firecrawl gateway
+8. Groq gateway
+9. Evidence system
+10. Food ranking
+11. Construction cost engine
+12. SEO engine
+13. Static page generation
+14. Featured business system
+15. Lead system
+16. Ad-slot system
+17. Automated refresh
+18. Monitoring
+19. Sitemap
+20. Analytics
+
+Then launch.
+
+Do not add another city until Pune demonstrates actual organic demand and commercial conversion.
+
+My strongest recommendation
+For monetization, I'd make the hierarchy:
+
+Construction: leads > featured businesses > direct sponsorship > ads
+
+Food: featured businesses > direct sponsorship/affiliate > ads
+
+That's because one qualified construction lead can potentially be worth far more to a contractor than dozens or hundreds of display-ad clicks.
+
+For programmatic advertising, I'd start with Google AdSense, then test Media.net, and only use more aggressive networks cautiously. AdSense supports Auto Ads and automatic placement, which fits your "minimum intervention" requirement. 
+G
+Google Support
++1
+
+One subtle point: because Google's current AdSense site-management rules distinguish ordinary domains from arbitrary subdomains, I would design the ad layer so you aren't hard-wired to treating each subdomain as a separately registered AdSense property. 
+G
+Google Support
++1
+
+Also, do not put your WhatsApp number into every structured business record. Keep 9834346179 specifically associated with MarketMind AI's contact/featured-business/lead pages. That prevents users or future models from mistaking your number for a restaurant or contractor's contact.
+
+This version is the one I'd hand to the coding agent. The next artifact should be the actual README.md + supabase_schema.sql + .env.example + database seed files + implementation task list, rather than another conceptual specification.
