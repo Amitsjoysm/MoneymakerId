@@ -45,8 +45,11 @@ const checkFact = (f, where) => {
 
 // --- localities ---
 const locs = readJson('data/localities.json');
+// Staging facts files (merged into localities.json by the orchestrator): --facts <file>, or every data/sources/locality-facts*.json.
 const factsArg = process.argv.indexOf('--facts');
-const factsFile = factsArg > -1 ? process.argv[factsArg + 1] : 'data/sources/locality-facts.json';
+const srcDir = join(root, 'data/sources');
+const factsFiles = factsArg > -1 ? [process.argv[factsArg + 1]]
+  : (existsSync(srcDir) ? readdirSync(srcDir).filter((f) => /^locality-facts.*\.json$/.test(f)).map((f) => `data/sources/${f}`) : []);
 if (Array.isArray(locs)) {
   const byId = new Map(locs.map((l) => [l.id, l]));
   for (const id of [...LOCALITIES, ...PHASES]) if (!byId.has(id)) err(`localities: missing ${id}`);
@@ -73,9 +76,17 @@ if (Array.isArray(locs)) {
 }
 
 // --- facts coverage (merged into localities or still in the staging file) ---
-const staged = existsSync(join(root, factsFile)) ? readJson(factsFile) : null;
-const factsFor = (id) => [...((Array.isArray(locs) ? locs.find((l) => l.id === id)?.construction_facts : null) ?? []), ...((staged && staged[id]) ?? [])];
-if (staged) for (const [id, facts] of Object.entries(staged)) facts.forEach((f, i) => checkFact(f, `${factsFile}[${id}][${i}]`));
+const staged = {};
+for (const f of factsFiles) {
+  const data = existsSync(join(root, f)) ? readJson(f) : null;
+  if (!data) continue;
+  for (const [id, facts] of Object.entries(data)) {
+    if (!PRIORITY.includes(id)) err(`${f}: ${id} is not a priority locality`);
+    facts.forEach((x, i) => checkFact(x, `${f}[${id}][${i}]`));
+    staged[id] = [...(staged[id] ?? []), ...facts];
+  }
+}
+const factsFor = (id) => [...((Array.isArray(locs) ? locs.find((l) => l.id === id)?.construction_facts : null) ?? []), ...(staged[id] ?? [])];
 const coverage = [];
 for (const loc of PRIORITY) {
   const facts = factsFor(loc);
