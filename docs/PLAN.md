@@ -1,6 +1,6 @@
 # MarketMind AI: Build Plan v2
 
-**Status:** DRAFT v2, waiting for owner approval. No application code is written until this plan is approved.
+**Status:** APPROVED by the owner on 6 October 2026. Work is broken into dependency-mapped tasks in [`docs/TASKS.md`](TASKS.md), built against the shared interfaces in [`docs/CONTRACTS.md`](CONTRACTS.md).
 **Date:** 6 October 2026
 **Inputs:** `Makemoney.txt` (the MarketMind AI Final MVP spec, cited as "spec §N"), the owner's answers (§1), a fact-check of every vendor dependency (Appendix), and an independent three-critic review covering spec coverage, technical risk and revenue (43 findings, all addressed below).
 
@@ -441,7 +441,7 @@ Each budget is set in config and can be raised from the admin.
   1. The form posts with `keepalive`, carrying an idempotency UUID.
   2. A thank-you state shows a reference number and "We'll WhatsApp you within 2 working hours", plus a **one-tap "Send on WhatsApp" button** (a real link to `wa.me/919834346179?text=…` with the reference code). It is never an automatic redirect, which iPhones and in-app browsers block.
   3. If the database write fails, the Worker stores the lead in **Workers KV (outbox)** and the admin replays it. No lead is lost.
-- **Instant owner alert** for every lead and for the health report (channel: see Q-D).
+- **Instant owner alert** for every lead and for the health report, via **Telegram and email**.
 - **Lead grade A/B/C** (`leadScore()`, built test-first):
   - **Inputs:** timeline, ownership, property type, estimate size, served area, valid phone, WhatsApp confirmed, notes.
   - **Qualified:** grade A/B + contact confirmed + timeline ≤ 3 months.
@@ -725,8 +725,8 @@ Each milestone ends with its checks green, a commit and a push to `claude/relaxe
 
 ---
 
-## Open questions (to answer before approval)
-- **Q-D Instant alerts** (new leads, health report): Telegram bot, email, or both? Both are free.
+## Resolved questions
+- **Q-D Instant alerts:** **both**. A Telegram bot sends instant push alerts with a tap-to-WhatsApp link, and Cloudflare Email Routing sends an email copy as a searchable record. Both cover new leads, disabled keys, the dead-man alert and the daily health report.
 
 ## Appendix: sources checked on 6 Oct 2026
 - AdSense: sites and subdomains [12170421](https://support.google.com/adsense/answer/12170421), Auto ads exclusions [9262311](https://support.google.com/adsense/answer/9262311), ads.txt [12171612](https://support.google.com/adsense/answer/12171612), [7679060](https://support.google.com/adsense/answer/7679060), [9785052](https://support.google.com/adsense/answer/9785052), CMP requirement [13554116](https://support.google.com/adsense/answer/13554116), eligibility [9724](https://support.google.com/adsense/answer/9724), required privacy content [1348695](https://support.google.com/adsense/answer/1348695)
