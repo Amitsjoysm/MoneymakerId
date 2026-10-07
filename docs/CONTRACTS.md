@@ -10,7 +10,7 @@ This is the single source of truth for names, shapes and interfaces. Every task 
 
 | Topic | Rule |
 |---|---|
-| Language / runtime | TypeScript `strict` and ESM only. Builds and the pipeline run on Node ≥ 22.12; `/api/*` and admin run on the Cloudflare Workers runtime. |
+| Language / runtime | TypeScript `strict` and ESM only. Builds and the pipeline run on Node ≥ 22.18 (TypeScript type stripping on by default; relative imports use the `.ts` extension, and only erasable TypeScript is allowed: no enums, namespaces or parameter properties); `/api/*` and admin run on the Cloudflare Workers runtime. |
 | Package manager | pnpm workspaces. Dependencies are declared **only** in T00. A later task that needs a new dependency reports it and does not install it. |
 | Reference-data IDs | Lowercase ASCII slugs, also used in URLs: `pune`, `hinjewadi`, `hinjewadi-phase-1`, `chicken-biryani`, `terrace-waterproofing` |
 | Record IDs | `uuid` v4: `gen_random_uuid()` in Postgres, or `crypto.randomUUID()` for client idempotency keys |

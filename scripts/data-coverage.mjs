@@ -12,26 +12,109 @@ const err = (m) => errors.push(m);
 const warn = (m) => warnings.push(m);
 const readJson = (p) => {
   const file = join(root, p);
-  if (!existsSync(file)) { err(`missing ${p}`); return null; }
-  try { return JSON.parse(readFileSync(file, 'utf8')); } catch (e) { err(`${p}: invalid JSON (${e.message})`); return null; }
+  if (!existsSync(file)) {
+    err(`missing ${p}`);
+    return null;
+  }
+  try {
+    return JSON.parse(readFileSync(file, 'utf8'));
+  } catch (e) {
+    err(`${p}: invalid JSON (${e.message})`);
+    return null;
+  }
 };
 
-const LOCALITIES = ['hinjewadi', 'wakad', 'baner', 'balewadi', 'aundh', 'kothrud', 'viman-nagar', 'kharadi', 'hadapsar', 'koregaon-park', 'shivajinagar', 'camp', 'kondhwa', 'wagholi', 'lohegaon', 'pimple-saudagar', 'pimple-nilakh', 'pimpri', 'chinchwad', 'magarpatta'];
+const LOCALITIES = [
+  'hinjewadi',
+  'wakad',
+  'baner',
+  'balewadi',
+  'aundh',
+  'kothrud',
+  'viman-nagar',
+  'kharadi',
+  'hadapsar',
+  'koregaon-park',
+  'shivajinagar',
+  'camp',
+  'kondhwa',
+  'wagholi',
+  'lohegaon',
+  'pimple-saudagar',
+  'pimple-nilakh',
+  'pimpri',
+  'chinchwad',
+  'magarpatta',
+];
 const PHASES = ['hinjewadi-phase-1', 'hinjewadi-phase-2', 'hinjewadi-phase-3'];
-const PRIORITY = ['hinjewadi', 'wakad', 'baner', 'kharadi', 'hadapsar', 'wagholi', 'pimple-saudagar', 'kothrud'];
-const DISHES = ['biryani', 'samosa', 'vada-pav', 'misal-pav', 'momos', 'dosa', 'pizza', 'burger', 'poha', 'pav-bhaji', 'shawarma', 'chole-bhature', 'thali', 'kebab', 'sandwich', 'desserts'];
-const TOP_SERVICES = ['waterproofing', 'painting', 'bathroom-renovation', 'modular-kitchen', 'house-construction'];
-const SUB_SERVICES = { waterproofing: ['terrace-waterproofing', 'bathroom-waterproofing', 'external-wall-waterproofing', 'basement-waterproofing', 'leakage-repair'], painting: ['interior-painting', 'exterior-painting'] };
+const PRIORITY = [
+  'hinjewadi',
+  'wakad',
+  'baner',
+  'kharadi',
+  'hadapsar',
+  'wagholi',
+  'pimple-saudagar',
+  'kothrud',
+];
+const DISHES = [
+  'biryani',
+  'samosa',
+  'vada-pav',
+  'misal-pav',
+  'momos',
+  'dosa',
+  'pizza',
+  'burger',
+  'poha',
+  'pav-bhaji',
+  'shawarma',
+  'chole-bhature',
+  'thali',
+  'kebab',
+  'sandwich',
+  'desserts',
+];
+const TOP_SERVICES = [
+  'waterproofing',
+  'painting',
+  'bathroom-renovation',
+  'modular-kitchen',
+  'house-construction',
+];
+const SUB_SERVICES = {
+  waterproofing: [
+    'terrace-waterproofing',
+    'bathroom-waterproofing',
+    'external-wall-waterproofing',
+    'basement-waterproofing',
+    'leakage-repair',
+  ],
+  painting: ['interior-painting', 'exterior-painting'],
+};
 const ALL_SERVICES = [...TOP_SERVICES, ...Object.values(SUB_SERVICES).flat()];
 const TIERS = ['budget', 'standard', 'premium'];
-const RESERVED = /^(late-night-food|budget-food|veg-food|veg|late-night|family|office-lunch|ask|about|api|mr|hi|ui-fixtures)$|^under-|-cost$/;
-const FACT_TOPICS = ['housing_stock', 'building_age', 'water', 'soil', 'rainfall', 'rules', 'access', 'demand', 'other'];
+const RESERVED =
+  /^(late-night-food|budget-food|veg-food|veg|late-night|family|office-lunch|ask|about|api|mr|hi|ui-fixtures)$|^under-|-cost$/;
+const FACT_TOPICS = [
+  'housing_stock',
+  'building_age',
+  'water',
+  'soil',
+  'rainfall',
+  'rules',
+  'access',
+  'demand',
+  'other',
+];
 
 function checkSourceRef(s, where) {
   if (!s || typeof s !== 'object') return err(`${where}: SourceRef missing`);
-  for (const k of ['url', 'title', 'publisher', 'retrieved_at']) if (!s[k]) err(`${where}: SourceRef.${k} missing`);
+  for (const k of ['url', 'title', 'publisher', 'retrieved_at'])
+    if (!s[k]) err(`${where}: SourceRef.${k} missing`);
   if (s.url && !/^https:\/\//.test(s.url)) err(`${where}: SourceRef.url must be https (${s.url})`);
-  if (s.retrieved_at && !/^\d{4}-\d{2}-\d{2}$/.test(s.retrieved_at)) err(`${where}: retrieved_at must be YYYY-MM-DD`);
+  if (s.retrieved_at && !/^\d{4}-\d{2}-\d{2}$/.test(s.retrieved_at))
+    err(`${where}: retrieved_at must be YYYY-MM-DD`);
   if (!('quote' in s)) err(`${where}: SourceRef.quote key missing (use null)`);
 }
 const checkFact = (f, where) => {
@@ -48,8 +131,14 @@ const locs = readJson('data/localities.json');
 // Staging facts files (merged into localities.json by the orchestrator): --facts <file>, or every data/sources/locality-facts*.json.
 const factsArg = process.argv.indexOf('--facts');
 const srcDir = join(root, 'data/sources');
-const factsFiles = factsArg > -1 ? [process.argv[factsArg + 1]]
-  : (existsSync(srcDir) ? readdirSync(srcDir).filter((f) => /^locality-facts.*\.json$/.test(f)).map((f) => `data/sources/${f}`) : []);
+const factsFiles =
+  factsArg > -1
+    ? [process.argv[factsArg + 1]]
+    : existsSync(srcDir)
+      ? readdirSync(srcDir)
+          .filter((f) => /^locality-facts.*\.json$/.test(f))
+          .map((f) => `data/sources/${f}`)
+      : [];
 if (Array.isArray(locs)) {
   const byId = new Map(locs.map((l) => [l.id, l]));
   for (const id of [...LOCALITIES, ...PHASES]) if (!byId.has(id)) err(`localities: missing ${id}`);
@@ -57,19 +146,32 @@ if (Array.isArray(locs)) {
   if (landmarks.length < 8) err(`localities: ${landmarks.length} landmarks, need ≥ 8`);
   for (const l of locs) {
     const w = `localities[${l.id}]`;
-    if (!LOCALITIES.includes(l.id) && !PHASES.includes(l.id) && !/^near-[a-z0-9-]+$/.test(l.id)) err(`${w}: id not in §4a`);
+    if (!LOCALITIES.includes(l.id) && !PHASES.includes(l.id) && !/^near-[a-z0-9-]+$/.test(l.id))
+      err(`${w}: id not in §4a`);
     if (l.kind === 'landmark' && !byId.has(l.parent_id)) err(`${w}: landmark needs a valid parent`);
     if (RESERVED.test(l.id)) err(`${w}: reserved slug`);
     if (typeof l.geo?.lat !== 'number' || typeof l.geo?.lng !== 'number') err(`${w}: geo missing`);
-    else if (l.geo.lat < 18.3 || l.geo.lat > 18.8 || l.geo.lng < 73.6 || l.geo.lng > 74.2) err(`${w}: geo outside Pune bounds`);
+    else if (l.geo.lat < 18.3 || l.geo.lat > 18.8 || l.geo.lng < 73.6 || l.geo.lng > 74.2)
+      err(`${w}: geo outside Pune bounds`);
     checkSourceRef(l.geo_source, `${w}.geo_source`);
-    if (!['PMC', 'PCMC', 'PMRDA', 'cantonment', 'other'].includes(l.jurisdiction)) err(`${w}: bad jurisdiction`);
+    if (!['PMC', 'PCMC', 'PMRDA', 'cantonment', 'other'].includes(l.jurisdiction))
+      err(`${w}: bad jurisdiction`);
     if ((l.neighbours ?? []).length > 6) err(`${w}: > 6 neighbours`);
     for (const n of l.neighbours ?? []) {
       if (!byId.has(n)) err(`${w}: unknown neighbour ${n}`);
       else if (!(byId.get(n).neighbours ?? []).includes(l.id)) err(`${w}: neighbour ${n} not symmetric`);
     }
-    for (const k of ['aliases', 'pincodes', 'landmarks', 'commercial_centres', 'office_clusters', 'residential_clusters', 'construction_facts', 'food_notes']) if (!Array.isArray(l[k])) err(`${w}: ${k} must be an array`);
+    for (const k of [
+      'aliases',
+      'pincodes',
+      'landmarks',
+      'commercial_centres',
+      'office_clusters',
+      'residential_clusters',
+      'construction_facts',
+      'food_notes',
+    ])
+      if (!Array.isArray(l[k])) err(`${w}: ${k} must be an array`);
     (l.construction_facts ?? []).forEach((f, i) => checkFact(f, `${w}.construction_facts[${i}]`));
     if (!l.i18n || !('mr' in l.i18n) || !('hi' in l.i18n)) err(`${w}: i18n.mr/hi keys missing`);
   }
@@ -86,7 +188,10 @@ for (const f of factsFiles) {
     staged[id] = [...(staged[id] ?? []), ...facts];
   }
 }
-const factsFor = (id) => [...((Array.isArray(locs) ? locs.find((l) => l.id === id)?.construction_facts : null) ?? []), ...(staged[id] ?? [])];
+const factsFor = (id) => [
+  ...((Array.isArray(locs) ? locs.find((l) => l.id === id)?.construction_facts : null) ?? []),
+  ...(staged[id] ?? []),
+];
 const coverage = [];
 for (const loc of PRIORITY) {
   const facts = factsFor(loc);
@@ -109,9 +214,14 @@ if (Array.isArray(dishes)) {
   for (const d of dishes) {
     const w = `dishes[${d.id}]`;
     if (RESERVED.test(d.id)) err(`${w}: reserved slug`);
-    if (d.parent_id && (!ids.has(d.parent_id) || !d.id.endsWith(`-${d.parent_id}`))) err(`${w}: variant id must be {variant}-{parent}`);
+    if (d.parent_id && (!ids.has(d.parent_id) || !d.id.endsWith(`-${d.parent_id}`)))
+      err(`${w}: variant id must be {variant}-{parent}`);
     if (!DISHES.includes(d.id) && !d.parent_id) err(`${w}: unknown top-level dish`);
-    if (!Array.isArray(d.price_bands_inr) || d.price_bands_inr.some((b, i, a) => !Number.isInteger(b) || (i && b <= a[i - 1]))) err(`${w}: price_bands_inr must be ascending integers`);
+    if (
+      !Array.isArray(d.price_bands_inr) ||
+      d.price_bands_inr.some((b, i, a) => !Number.isInteger(b) || (i && b <= a[i - 1]))
+    )
+      err(`${w}: price_bands_inr must be ascending integers`);
     if (!(d.price_sanity_inr?.min < d.price_sanity_inr?.max)) err(`${w}: price_sanity_inr invalid`);
     if (!['veg', 'non_veg', 'egg', 'both'].includes(d.diet)) err(`${w}: bad diet`);
   }
@@ -126,8 +236,10 @@ for (const s of TOP_SERVICES) {
   if (def) {
     if (def.id !== s) err(`services/${s}: id mismatch`);
     const subIds = (def.sub_services ?? []).map((x) => x.id);
-    for (const sub of SUB_SERVICES[s] ?? []) if (!subIds.includes(sub)) err(`services/${s}: missing sub-service ${sub}`);
-    for (const k of ['questions_to_ask', 'common_mistakes']) if ((def[k] ?? []).length < 6) err(`services/${s}: ${k} < 6`);
+    for (const sub of SUB_SERVICES[s] ?? [])
+      if (!subIds.includes(sub)) err(`services/${s}: missing sub-service ${sub}`);
+    for (const k of ['questions_to_ask', 'common_mistakes'])
+      if ((def[k] ?? []).length < 6) err(`services/${s}: ${k} < 6`);
     if ((def.faq ?? []).length < 5) err(`services/${s}: faq < 5`);
   }
   const models = readJson(`data/cost-models/${s}.json`);
@@ -135,15 +247,22 @@ for (const s of TOP_SERVICES) {
   const ids = new Set();
   for (const m of models) {
     const w = `cost-models/${s}[${m.id}]`;
-    if (ids.has(m.id)) err(`${w}: duplicate id`); ids.add(m.id);
-    if (![s, ...(SUB_SERVICES[s] ?? [])].includes(m.service_id)) err(`${w}: service_id ${m.service_id} not in this pack`);
+    if (ids.has(m.id)) err(`${w}: duplicate id`);
+    ids.add(m.id);
+    if (![s, ...(SUB_SERVICES[s] ?? [])].includes(m.service_id))
+      err(`${w}: service_id ${m.service_id} not in this pack`);
     if (!TIERS.includes(m.tier)) err(`${w}: bad tier`);
     const r = m.rate_inr ?? {};
-    if (![r.low, r.expected, r.high].every(Number.isInteger) || !(r.low <= r.expected && r.expected <= r.high)) err(`${w}: rate_inr must be integers with low ≤ expected ≤ high`);
+    if (
+      ![r.low, r.expected, r.high].every(Number.isInteger) ||
+      !(r.low <= r.expected && r.expected <= r.high)
+    )
+      err(`${w}: rate_inr must be integers with low ≤ expected ≤ high`);
     const sum = Object.values(m.components ?? {}).reduce((a, b) => a + b, 0);
     if (Math.abs(sum - 1) > 0.01) err(`${w}: components sum ${sum.toFixed(3)} ≠ 1`);
     const publishers = new Set((m.sources ?? []).map((x) => (x.publisher ?? '').trim().toLowerCase()));
-    if ((m.sources ?? []).length < 2 || publishers.size < 2) err(`${w}: needs ≥ 2 sources from different publishers`);
+    if ((m.sources ?? []).length < 2 || publishers.size < 2)
+      err(`${w}: needs ≥ 2 sources from different publishers`);
     (m.sources ?? []).forEach((x, i) => checkSourceRef(x, `${w}.sources[${i}]`));
     if (!/^\d{4}-\d{2}-\d{2}$/.test(m.valid_until ?? '')) err(`${w}: valid_until missing`);
     modelCells[`${m.service_id}|${m.tier}`] = (modelCells[`${m.service_id}|${m.tier}`] ?? 0) + 1;
@@ -151,43 +270,66 @@ for (const s of TOP_SERVICES) {
 }
 // Leaf services need ≥ 1 sourced model for a cost guide; parents (with sub-services) aggregate their subs (CONTRACTS §4).
 const LEAF_SERVICES = ALL_SERVICES.filter((s) => !SUB_SERVICES[s]);
-const missingCells = LEAF_SERVICES.flatMap((s) => TIERS.filter((t) => !modelCells[`${s}|${t}`]).map((t) => `${s}/${t}`));
+const missingCells = LEAF_SERVICES.flatMap((s) =>
+  TIERS.filter((t) => !modelCells[`${s}|${t}`]).map((t) => `${s}/${t}`),
+);
 const guidesWithoutModels = LEAF_SERVICES.filter((s) => !TIERS.some((t) => modelCells[`${s}|${t}`]));
-for (const s of guidesWithoutModels) warn(`cost models: ${s} has no model — its cost guide cannot pass the gate`);
-for (const c of missingCells) if (!guidesWithoutModels.includes(c.split('/')[0])) warn(`cost models: tier gap ${c} (target, not a gate blocker)`);
+for (const s of guidesWithoutModels)
+  warn(`cost models: ${s} has no model — its cost guide cannot pass the gate`);
+for (const c of missingCells)
+  if (!guidesWithoutModels.includes(c.split('/')[0]))
+    warn(`cost models: tier gap ${c} (target, not a gate blocker)`);
 
 // --- configs, CSV templates, guides ---
-for (const f of ['seasonal-calendar', 'lead-pricing', 'gate', 'ad-slots', 'experiments', 'aggregators']) readJson(`data/${f}.json`);
+for (const f of ['seasonal-calendar', 'lead-pricing', 'gate', 'ad-slots', 'experiments', 'aggregators'])
+  readJson(`data/${f}.json`);
 const CSV = {
-  'places.csv': 'name,kind,locality_id,address,lat,lng,phone,website,cuisines,diet,price_level,service_modes,opening_hours,tags,source_url,retrieved_at,valid_until',
-  'place_dishes.csv': 'place_name,locality_id,dish_id,variant_label,price_inr,source_url,retrieved_at,valid_until',
-  'providers.csv': 'name,locality_id,address,phone,website,services,service_localities,specializations,experience_years,accepts_leads,min_job_inr,source_url,retrieved_at',
-  'experiences.csv': 'place_name,locality_id,visited_at,dish_id,price_paid_inr,rating,would_recommend,tags,notes',
+  'places.csv':
+    'name,kind,locality_id,address,lat,lng,phone,website,cuisines,diet,price_level,service_modes,opening_hours,tags,source_url,retrieved_at,valid_until',
+  'place_dishes.csv':
+    'place_name,locality_id,dish_id,variant_label,price_inr,source_url,retrieved_at,valid_until',
+  'providers.csv':
+    'name,locality_id,address,phone,website,services,service_localities,specializations,experience_years,accepts_leads,min_job_inr,source_url,retrieved_at',
+  'experiences.csv':
+    'place_name,locality_id,visited_at,dish_id,price_paid_inr,rating,would_recommend,tags,notes',
   'local_facts.csv': 'locality_id,topic,services,text,source_url,source_title,publisher,retrieved_at',
 };
 for (const [f, header] of Object.entries(CSV)) {
   const p = join(root, 'data/curation', f);
-  if (!existsSync(p)) { err(`missing data/curation/${f}`); continue; }
+  if (!existsSync(p)) {
+    err(`missing data/curation/${f}`);
+    continue;
+  }
   const lines = readFileSync(p, 'utf8').split(/\r?\n/).filter(Boolean);
   if (lines[0] !== header) err(`data/curation/${f}: header differs from CONTRACTS §6`);
-  if (lines.slice(1).filter((l) => l.startsWith('EXAMPLE') || l.startsWith('"EXAMPLE')).length !== 1) err(`data/curation/${f}: needs exactly one EXAMPLE row`);
+  if (lines.slice(1).filter((l) => l.startsWith('EXAMPLE') || l.startsWith('"EXAMPLE')).length !== 1)
+    err(`data/curation/${f}: needs exactly one EXAMPLE row`);
 }
 const guideDir = join(root, 'content/locality-guides');
 const guides = existsSync(guideDir) ? readdirSync(guideDir).filter((f) => f.endsWith('.md')) : [];
-for (const loc of PRIORITY) if (!guides.includes(`${loc}.md`)) err(`content/locality-guides/${loc}.md missing`);
+for (const loc of PRIORITY)
+  if (!guides.includes(`${loc}.md`)) err(`content/locality-guides/${loc}.md missing`);
 for (const g of guides) {
   const text = readFileSync(join(guideDir, g), 'utf8');
   const m = text.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
-  if (!m) { err(`${g}: frontmatter missing`); continue; }
+  if (!m) {
+    err(`${g}: frontmatter missing`);
+    continue;
+  }
   if (!/status:\s*(draft|reviewed)/.test(m[1])) err(`${g}: frontmatter status missing`);
-  const words = m[2].replace(/<!--[\s\S]*?-->/g, '').split(/\s+/).filter(Boolean).length;
+  const words = m[2]
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .split(/\s+/)
+    .filter(Boolean).length;
   if (words < 400) err(`${g}: ${words} body words (< 400)`);
 }
 
 // --- report ---
 console.log('\nFacts coverage (priority locality × top-level service, need ≥ 3 each):');
 console.table(coverage);
-console.log(`Cost guides with models: ${LEAF_SERVICES.length - guidesWithoutModels.length}/${LEAF_SERVICES.length} leaf services (+2 parent guides that aggregate); tier cells ${LEAF_SERVICES.length * TIERS.length - missingCells.length}/${LEAF_SERVICES.length * TIERS.length}`);
+console.log(
+  `Cost guides with models: ${LEAF_SERVICES.length - guidesWithoutModels.length}/${LEAF_SERVICES.length} leaf services (+2 parent guides that aggregate); tier cells ${LEAF_SERVICES.length * TIERS.length - missingCells.length}/${LEAF_SERVICES.length * TIERS.length}`,
+);
 for (const w of warnings) console.log(`WARN  ${w}`);
 for (const e of errors) console.log(`ERROR ${e}`);
 console.log(`\n${errors.length} error(s), ${warnings.length} coverage warning(s)`);

@@ -185,7 +185,8 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
   - bindings: KV `LEADS_OUTBOX`, `send_email`, rate limit
   - admin: `triggers.crons` (01:0x and 07:30 IST, written in UTC) plus a custom entry point that re-exports `scheduled`
   - `buildHeaders({ launched, hashes })` exported from `scripts/headers.mjs`
-- **Acceptance:** all four apps build; `wrangler deploy --dry-run` works for each.
+  - `packages/edge/src/worker-env.d.ts`: the `Cloudflare.Env` binding types (LEADS_OUTBOX, send_email, rate limit, and the §10 runtime vars) used by `@mm/edge` tests
+- **Acceptance:** all four apps build and pass `astro check` (app typechecks moved here from T00); `wrangler deploy --dry-run` works for each.
 
 ## Wave 4 (🔌; all test-first)
 
@@ -220,7 +221,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
   - a fixture catalogue
 - **Acceptance:** a loader error throws; fixtures validate; the build check flags any "Example" business when `DATA_SOURCE=supabase`.
 
-**E03 · Alerts** (`packages/edge/src/alerts/**`)
+**E03 · Alerts** (`packages/edge/src/alerts/**`; may add bindings to T00's `packages/edge/vitest.config.ts`)
 - **Depends on:** T01
 - **Deliverables:** Telegram and email senders with templates (lead, key disabled, dead-man, health). They never throw.
 - **Acceptance:** mocked-fetch tests; message length limits.
@@ -240,7 +241,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 ## Wave 5 (🔌)
 
 **E02 · Edge handlers**
-- **Owns:** `packages/edge/src/{lead,event,feedback,turnstile,visitor}/**`, `apps/{main,food,construction}/src/pages/api/{lead,event}.ts`, `apps/{food,construction}/src/pages/api/feedback.ts`
+- **Owns:** `packages/edge/src/{lead,event,feedback,turnstile,visitor}/**`, `apps/{main,food,construction}/src/pages/api/{lead,event}.ts`, `apps/{food,construction}/src/pages/api/feedback.ts`; may add bindings to T00's `packages/edge/vitest.config.ts`
 - **Depends on:** E01, E03, C06, T02b
 - **Deliverables:**
   - Origin check, 16 KB limit, Turnstile, visitor HMAC (IPv6 /64), burst limits
@@ -284,7 +285,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 - **Acceptance:** < 3 KB gzipped; sends nothing when events are disabled.
 
 **AD1a · Admin shell and Access**
-- **Owns:** `apps/admin/src/{middleware.ts,lib/** (except lib/photos/),layouts/**}`, `apps/admin/src/pages/index.astro` (replaces T05's placeholder)
+- **Owns:** `apps/admin/src/{middleware.ts,lib/** (except lib/photos/),layouts/**}`, `apps/admin/src/pages/index.astro` (replaces T05's placeholder), `apps/admin/vitest.config.ts` (the admin Workers-runtime test project)
 - **Depends on:** T03, T05, E01
 - **Deliverables:** JWT verification (cached JWKS, `aud`/`iss`/`exp`); a server-only secret-key client; the Today shell, which imports `components/today/*` when present.
 - **Acceptance:** forged, expired and wrong-`aud` tokens → 403; no secret in client bundles.
@@ -363,7 +364,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 - **Acceptance:** fails on a fixture build that has too few pages; passes on a complete fixture.
 
 **Q01 · E2E + Lighthouse (M1)**
-- **Owns:** `e2e/m1/**`, `lighthouserc.json`
+- **Owns:** `e2e/m1/**`, `lighthouserc.json`; modifies T00's `playwright.config.ts` (baseURL, webServer)
 - **Depends on:** A01, A02, A03, E02
 - **Deliverables:** calculator → quote → thank-you (the exact `wa.me` URL); a lead that survives a database 503; keyboard-only completion; axe 0 violations; Lighthouse on one page of each M1 type.
 - **Acceptance:** `pnpm test:e2e` and `pnpm lhci` pass locally against `astro preview` with fixtures.
@@ -414,7 +415,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 ## Wave 10: M4
 
 **P03 · Live Ask** 🔑 (Wave 10a)
-- **Owns:** `packages/edge/src/ask/**`, `apps/{food,construction}/src/pages/api/ask.ts`, `apps/{food,construction}/src/pages/api/ask/**`
+- **Owns:** `packages/edge/src/ask/**`, `apps/{food,construction}/src/pages/api/ask.ts`, `apps/{food,construction}/src/pages/api/ask/**`; may add bindings to T00's `packages/edge/vitest.config.ts`
 - **Depends on:** E01, E02, P01, P02a, P02b, C01, C03, T02b
 - **Deliverables:** the plan §9 flow, with `ask_search` for the instant answer, `autoPublish` before commit, and the 50/day cap.
 - **Acceptance:** ≤ 20 subrequests on the worst error path; CPU per lookup is logged.
