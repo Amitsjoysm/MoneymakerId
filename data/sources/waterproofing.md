@@ -270,3 +270,77 @@ Unit is ₹ per sq ft unless stated. "Mid" = midpoint used for the expected valu
 5. **Leakage expected value:** ₹2,000 rests on 3 publishers whose figures fall in two clusters. Add more per-point PU injection quotes before publishing.
 6. **Brickbat coba description:** the sentence on how it is laid (slope forming, done at construction or full re-lay) is general knowledge; the cited sources support only the prices.
 7. **Candidate third source** for the terrace liquid-membrane model (currently Dr. Fixit and Biddaro only): NoBroker's bathroom page summary lists "Liquid applied membrane: ₹65 to ₹100 per sq. ft." (builder calls 21 and 25). It was not added because the page attribution is medium and the context is bathrooms.
+
+## 9. Leakage-repair tier gaps (D03g, 2026-10-06)
+
+TASK-MARKER: batchB-D03g
+
+- **Owner task:** D03g · fill the `leakage-repair` budget and premium tier gaps. I edited only `data/cost-models/waterproofing.json` and this log. No installs, no commits, and no change to any existing model. A script checked that all 16 earlier models are unchanged (equal as parsed JSON objects).
+- **Rule for adding a tier:** at least 2 independent publishers giving a per-point price (or a per-job price that converts to per point on a stated basis) for a grout or spec that clearly belongs to that tier. Method as in §1.6: low = lowest cited low, high = highest cited high, expected = median of one midpoint per publisher, rounded to the nearest ₹50 with ties rounded down.
+- **Result:** **budget model added** (`leakage-repair-cement-injection-budget`, ₹450 / ₹550 / ₹700 per point). **Premium model not added**: no source was found (§9.4).
+
+### 9.1 How pages were read this time
+
+Unlike §1 and §8, pages could be opened. Plain HTTPS through `curl` worked for nobroker.in, aapkapainter.com, indiamart.com (`dir.` and `m.` hosts; `www.indiamart.com/proddetail/…` returned HTTP 429), tradeindia.com, gharkabudget.com and bnpmindia.com. Text was pulled out with a stdlib `html.parser` script run under `python3 -I`, and pages were treated as data only. justdial.com (curl HTTP 403; WebFetch `EGRESS_BLOCKED`), sulekha.com (403) and happho.com (HTTP 500) could not be opened. **Both quotes in the new model were checked against the live page text**, ignoring whitespace. Each is a table row or a listing name plus its price, which the page shows in separate cells.
+
+### 9.2 Queries run (12 of 12 WebSearch calls used)
+
+| # | Mode | Domains | Query | Useful result |
+|---|---|---|---|---|
+| G1 | std | — | injection grouting rate per point India cement epoxy PU nozzle price | IndiaMART seller "Grouting Specialist" (opened: cementitious ₹450/point and PU ₹1,500/point); AapkaPainter PU city pages |
+| G2 | std | — | cement injection grouting rate per nozzle Rs leakage repair contractor India | Only IndiaMART national directories, priced per sq ft or per kg (opened; no per-point figures) |
+| G3 | std | nobroker.in | injection grouting cost per nozzle epoxy PU cement leakage | Only per-sq-ft figures; nothing per point |
+| G4 | ext | — | PU injection grouting cost per point 2026 India ceiling seepage epoxy injection per point price guide | Pointed to the AapkaPainter calculator (opened: "Cement injection grouting 700 per nozzle", "PU injection grouting 2400 per nozzle") and to GharKaBudget (opened: per-bathroom and per-sq-ft figures only) |
+| G5 | std | — | epoxy injection grouting charges per point India crack repair rate "per point" | Same IndiaMART seller; a 2018 BNPM tender enquiry (opened: quantities only, no rates); unverifiable `lovable.app` pages and a spam-like "cost guide" domain (not used) |
+| G6 | ext | — | waterproofing injection grouting rate per hole OR "per packer" OR "per nozzle" Pune Mumbai contractor price list | Pune seller Aqua Protect Adhesives and IndiaMART Mumbai directories (opened): prices per sq ft or per kg only; Pune seller Aqua Engineering (opened): no prices |
+| G7 | std | aecord.com, studiomatrx.org, constructionestimatorindia.com, biddaro.com, leakfoe.com, gharkabudget.com, drfixit.co.in, asianpaints.com, 99acres.com, housing.com | injection grouting cost per point nozzle port PU epoxy acrylic | GharKaBudget only (opened: "Crack chasing & epoxy injection ₹35–70/sqft"); other results were US patents |
+| G8 | std | — | epoxy injection grouting rate per nozzle Rs structural crack injection price India | Epoxy prices only per kg, sq m, sq ft or square inch |
+| G9 | std | sulekha.com, urbancompany.com, justdial.com, housejoy.in, squareyards.com, makaan.com, homelane.com, civiljungle.com, gharpedia.com, happho.com | injection grouting price per point leakage waterproofing rate card | Summary: Mumbai pressure injection grouting "₹100 - ₹200 per point"; Justdial and Sulekha pages blocked (403) |
+| G10 | ext | — | epoxy resin crack injection cost per packer OR per port OR per point India ₹ 2026 structural crack repair contractor | US-only results (USD per linear foot or per crack); nothing for India |
+| G11 | std | justdial.com | pressure grouting services Mumbai per point price | Summary: "N S Engineers & Contractors in Navi Mumbai offers Pressure Grouting Services and Pressure Injection Grouting Services at ₹100 - ₹200 per point." The page could not be opened. |
+| G12 | std | tradeindia.com, exportersindia.com, dial4trade.com, justdial.com, aapkapainter.com, nobroker.in | epoxy injection grouting service price per point | Epoxy injection only per sq ft (₹180, ₹550, ₹800); TradeIndia PU pages opened, with no per-point prices |
+
+Pages opened with curl without spending a search: the existing leakage sources (NoBroker seepage forum; AapkaPainter PU injection Mumbai page), AapkaPainter's **Pune** PU injection and Pune cement injection pages and its grouting hub (links found on the Mumbai page), and IndiaMART's Pune injection-grouting and pressure-grouting directories.
+
+### 9.3 Budget model: `leakage-repair-cement-injection-budget`
+
+| Publisher | URL | What the live page shows (verbatim) | Midpoint |
+|---|---|---|---|
+| AapkaPainter | https://aapkapainter.com/resources/waterproofing-price-calculator | Table "Additional cost", row 5: "Cement injection grouting" / "700 per nozzle". Row 6 of the same table: "PU injection grouting" / "2400 per nozzle". | 700 |
+| IndiaMART (seller: Grouting Specialists Private Limited, Chennai) | https://m.indiamart.com/grouting-specialist/epoxy-grouting-services.html | Listing "Cementitious Injection Grouting" / "₹ 450/point" (property type Commercial, applicable area Floor). The same seller lists "PU Injection Grouting Service" at "₹ 1,500/per point". | 450 |
+
+- **Result:** low 450, high 700, expected = median(450, 700) = 575, which is a tie between ₹550 and ₹600, so it rounds down to **₹550**.
+- **Why this is a separate, lower tier:** both publishers price cement injection at about 30% of their own PU per-point price (700 / 2,400 and 450 / 1,500). The tier is therefore set by the grout type, within the same publisher, not by guesswork.
+- **`material_id` = `null`:** the `leakage-repair` ServiceDef has only `pu-injection-grout`, and I do not own `data/services/waterproofing.json`. **Request to the ServiceDef owner:** add a cement-grout material (for example `cement-injection-grout`, with these two sources) and then set this model's `material_id`.
+- **Components** are an editorial split (materials 0.25, labour 0.45, preparation 0.12, repair 0.08, transport 0.07, waste 0.03; sum 1.00), not sourced. `min_job_inr` is null and `locality_factors` is empty: no source gives either.
+- **Weaknesses:** there are only two publishers, and **neither figure is from Pune** (one is a national calculator, the other a Chennai seller listing for commercial floors). Treat as low-confidence. Status `draft`.
+
+### 9.4 Premium tier: not added
+
+- **What was looked for:** a per-point price for a grout or spec above standard PU injection (epoxy resin, acrylic gel, or PU with a stated warranty or extra scope), from at least 2 publishers.
+- **What was found:** epoxy injection prices appear only per kg, per sq m, per sq ft or per square inch (IndiaMART, TradeIndia), or per sq ft of crack area (GharKaBudget ₹35–70). Per-point figures exist only for cement grout (now the budget model) and PU, which is already the standard model's material: AapkaPainter ₹2,000–3,000 per nozzle (also on its **Pune** page: "Rs. 2000-3000 /Nozzle") and ₹2,400 per nozzle (calculator); Tarmic ₹2,000 per injection onwards; Grouting Specialists ₹1,500 per point. A premium PU model would reuse the standard model's material and sources with no sourced difference in spec, so it was not created.
+- **Per-job figures cannot be converted:** GharKaBudget's "PU/epoxy pressure-injection through small drilled ports plus re-grouting, for ₹8,000–25,000 per bathroom" gives no number of ports. Any per-point figure derived from it would rest on an invented port count.
+- **Indian structural-crack rates by length** (per running metre) were not found for epoxy. US guides (USD per linear foot) are out of scope.
+
+### 9.5 Figures seen but not used
+
+| Figure | Publisher / page | Why not used |
+|---|---|---|
+| Pressure grouting ₹100–₹200 per point (Navi Mumbai) | Justdial (search summary, G9 and G11) | The page is blocked (403 and `EGRESS_BLOCKED`), so the listing could not be pinned to a URL. The grout type is not named. It would lower the budget low end to ₹100 if confirmed. |
+| Cement injection grouting "Rs. 650-800 /Sqft" (Pune page) | AapkaPainter, `/services/grouting/injection/cement-injection-grouting/pune` | The unit is per sq ft. It conflicts with the same publisher's calculator figure (₹700 per nozzle), which falls inside 650–800, so the "/Sqft" label may be wrong. It is not used in a per-point model. |
+| PU injection ₹1,500 per point | IndiaMART (Grouting Specialists, Chennai) | PU belongs to the existing standard model, which this task may not change. **Candidate for the standard model:** IndiaMART's midpoint would become median(2,000, 1,500) = 1,750, and the model's expected value would move from ₹2,000 to ₹1,750. Reported, not applied. |
+| IndiaMART Pune injection-grouting directory: listings at ₹45–₹7,000 "/ sq ft" and ₹130–₹3,500 "/ Kg" | IndiaMART | Mixed or implausible units (a PU listing at "₹ 2,000 / sq ft" for "Upto 50 rft" coverage). Only Tarmic's listing, already cited, is per injection. |
+| IndiaMART Pune pressure-grouting directory: "₹ 900 / Square Inch", "₹ 8,000 / Per Toilet onwards", "₹ 800 / onwards" | IndiaMART | Units are not per point. The "₹700 per point" figure that §8 removed is not on the live page today. |
+| Crack chasing and epoxy injection ₹35–70 per sq ft; bathroom injection ₹8,000–25,000 | GharKaBudget | Unit is sq ft or per bathroom (see §9.4). The site says its rates come from contractor quotations in Q2–Q3 2026, but it gives no Pune figure. |
+| Epoxy injection ₹180, ₹550, ₹800 per sq ft | TradeIndia / NoBroker (search summaries G3, G12) | Per sq ft, not per point. |
+
+### 9.6 Note on an existing source (no change made)
+
+The live NoBroker seepage page (opened by curl) reads: "Injection grouting for severe seepage: Ranges from Rs. 500 to Rs. 1,200 per point". The standard model's quote, "Injection grouting for severe seepage ranges from Rs. 500 to Rs. 1,200 per point.", is the search tool's rendering of that line. The figures match, but the wording differs slightly. The page also gives "Basic crack filling: Ranges from Rs. 20 to Rs. 40 per sq ft" and a bedroom-wall total of Rs. 8,000 to Rs. 30,000. Under "do not change existing models", I left the quote as it is. The owner may want to replace it with the live wording.
+
+### 9.7 Open items
+
+1. `leakage-repair/premium` is still a tier gap; the coverage script now reports 29 of 30 tier cells. To close it, the next pass needs per-point epoxy or acrylic injection prices from 2 publishers, ideally Pune contractors, or a per-job price with a stated number of ports.
+2. A ServiceDef material for cement grout is needed (see §9.3).
+3. Whether to add Grouting Specialists' ₹1,500 per point to the standard model (see §9.5) is the owner's decision.
+4. There is still no Pune-specific per-point price for cement grout.

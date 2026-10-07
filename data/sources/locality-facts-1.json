@@ -1,0 +1,1000 @@
+{
+  "hinjewadi": [
+    {
+      "id": "hinjewadi-demand-1",
+      "topic": "demand",
+      "text": "Hinjewadi is home to the Rajiv Gandhi Infotech Park, a 2,800-acre technology and business park built by MIDC that hosts offices of over 800 companies. In September 2026 the Pune district collector said more than five lakh people travel to and from Hinjawadi every day.",
+      "services": [
+        "waterproofing",
+        "painting",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hinjawadi",
+          "title": "Hinjawadi",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "It houses the Rajiv Gandhi Infotech Park, a large tech and business park spread over 2,800 acres, which was built by the Maharashtra Industrial Development Corporation."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-deputy-cm-sunetra-pawar-announces-special-task-force-to-tackle-hinjawadis-traffic-infrastructure-crisis",
+          "title": "Pune: Deputy CM Sunetra Pawar Announces Special Task Force To Tackle Hinjawadi’s Traffic, Infrastructure Crisis",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "Collector Jitendra Dudi said more than five lakh people travel to and from Hinjawadi every day, while limited entry and exit routes contribute to severe traffic congestion."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hinjewadi-housing_stock-1",
+      "topic": "housing_stock",
+      "text": "New housing in Hinjewadi includes large high-rise apartment projects; in October 2025 Shriram Properties signed a joint development agreement for a roughly 0.7 million sq ft high-rise mixed-use residential project there. In September 2026 the Hinjewadi–Wakad–Tathawade–Punawale belt was reported to have seen extensive growth in housing projects.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://realtynmore.com/shriram-properties-signs-jda-for-0-7-msf-development-with-%e2%82%b9700-cr-gdv-potential-in-hinjewadi/",
+          "title": "Shriram Properties Signs JDA for 0.7 MSF development with ₹700 Cr GDV Potential in Hinjewadi",
+          "publisher": "RealtynMore",
+          "retrieved_at": "2026-10-06",
+          "quote": "The company is now embarking on the second project in Hinjewadi, Pune in the form of a high-rise mixed-use development that redefines urban living and lifestyle experiences."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/pune/pune-heavy-rain-hinjewadi-wakad-tathawade-punawale-waterlogging-agn97",
+          "title": "Pune: Heavy Rain Leaves Hinjewadi, Wakad, Tathawade and Punawale Waterlogged",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-06",
+          "quote": "The rapidly developing belt of Wakad, Tathawade, Punawale and Hinjewadi has seen extensive growth in housing projects, commercial establishments and IT companies."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hinjewadi-building_age-1",
+      "topic": "building_age",
+      "text": "Much of the residential development in the Hinjewadi–Maan–Marunji area is recent: August 2026 reports describe rapid urbanisation and a sharp rise in the IT industry and population over the past few years. Residents say roads, water supply and other civic infrastructure have not kept pace with this growth.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://www.thebridgechronicle.com/pune/pune-hinjewadi-residents-it-workers-protest-civic-infrastructure-agn97",
+          "title": "Pune: Hinjewadi Residents and IT Workers Plan Protest Over Civic Infrastructure",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-06",
+          "quote": "The area has seen rapid urbanisation and a sharp rise in the IT industry and population over the past few years."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-hinjawadi-maan-marunji-residents-to-protest-on-6th-sept-over-traffic-roads-water-crisis",
+          "title": "Pune: Hinjawadi, Maan & Marunji Residents To Protest On 6th Sept Over Traffic, Roads & Water Crisis",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "The demand comes amid rapid urbanisation in the area, which has led to a sharp increase in residential and commercial development and placed additional pressure on existing civic infrastructure."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hinjewadi-rules-1",
+      "topic": "rules",
+      "text": "Hinjewadi is not inside a municipal corporation: civic responsibilities are split between MIDC, PMRDA and local gram panchayats, with the Zilla Parishad and the state PWD also active in the IT park area. A proposal to merge Hinjewadi, Maan, Marunji and four other villages into the Pimpri Chinchwad Municipal Corporation, approved by the PCMC general body in 2015, got a fresh push from the Chief Minister in September 2026 but had not been finalised at the time of that report.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-hinjewadi-merger-with-pcmc-gets-fresh-push-cm-fadnavis-says-decision-soon/",
+          "title": "Pune: Hinjewadi Merger With PCMC Gets Fresh Push, CM Fadnavis Says Decision Soon",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "Hinjewadi, which houses a major IT hub employing a large number of people, has for years faced infrastructure and civic issues amid fragmented jurisdiction involving the Maharashtra Industrial Development Corporation (MIDC), Pune Metropolitan Region Development Authority (PMRDA) and local gram panchayats."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-pmrda-throws-up-hands-ahead-of-monsoon-says-dont-blame-us-alone-if-hinjawadi-floods-again",
+          "title": "Pune: PMRDA Throws Up Hands Ahead Of Monsoon, Says ‘Don’t Blame Us Alone If Hinjawadi Floods Again’",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "Speaking to the press recently, Dr Chaudhari explained that multiple government agencies like PMRDA, Maharashtra Industrial Development Corporation (MIDC), local Gram Panchayats, Pune Zilla Parishad, and the state’s Public Works Department (PWD) operate in the Hinjawadi IT Park area."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hinjewadi-rules-2",
+      "topic": "rules",
+      "text": "In its jurisdiction, which covers parts of the Hinjawadi area, PMRDA requires developers to obtain a groundwater availability certificate from the Groundwater Surveys and Development Agency before it approves new building proposals or occupancy certificates; in August 2026 this was reported to be delaying approvals by up to two months. Hinjawadi–Maan–Marunji residents have also demanded that PMRDA stop granting new construction and housing permissions until water is assured for existing societies.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-pmrdas-mandatory-groundwater-certificate-delays-building-approvals-by-up-to-two-months/",
+          "title": "Pune: PMRDA's Mandatory Groundwater Certificate Delays Building Approvals by Up to Two Months",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "The Pune Metropolitan Region Development Authority (PMRDA) has made it mandatory for developers to obtain a groundwater availability certificate from the Groundwater Surveys and Development Agency (GSDA) while seeking approval for new building proposals and occupancy certificates."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-hinjawadi-maan-marunji-residents-to-protest-on-6th-sept-over-traffic-roads-water-crisis",
+          "title": "Pune: Hinjawadi, Maan & Marunji Residents To Protest On 6th Sept Over Traffic, Roads & Water Crisis",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "They have also demanded that the Pune Metropolitan Region Development Authority (PMRDA) stop granting new construction and housing permissions until adequate water is assured for existing housing societies."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-pmrda-throws-up-hands-ahead-of-monsoon-says-dont-blame-us-alone-if-hinjawadi-floods-again",
+          "title": "Pune: PMRDA Throws Up Hands Ahead Of Monsoon, Says ‘Don’t Blame Us Alone If Hinjawadi Floods Again’",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "Some parts of Hinjawadi IT Park fall under the authority."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hinjewadi-water-1",
+      "topic": "water",
+      "text": "Housing societies near the Hinjewadi IT parks have long depended on private water tankers; a 2018 report said they had to rely completely on tankers while adjoining villages received piped water every two days for 20 minutes. In June 2026 a Maharashtra Jeevan Pradhikaran water supply scheme for Hinjawadi's IT companies was reported stalled because its water quota had not been sanctioned, while PMRDA sought 1.2 TMC from Mulshi Dam for a permanent supply.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://supriyassule.in/khadakwasla-vidhansabha/pune-city/pune-city/hinjewadi-water-shortage-draw-water-from-mulshi-else-buy-suggests-mp-supriya-sule",
+          "title": "Hinjewadi water shortage: Draw water from Mulshi, else buy, suggests MP Supriya Sule",
+          "publisher": "supriyassule.in (reproduces a Hindustan Times report, 27 April 2018)",
+          "retrieved_at": "2026-10-06",
+          "quote": "While villages adjoining Hinjewadi receive water supply every two days for 20 minutes, housing societies near IT Parks in Hinjewadi have to completely rely on water tankers."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-pmrda-seeks-12-tmc-water-from-mulshi-dam-to-ensure-drinking-water-supply-for-hinjawadi-it-hub",
+          "title": "Pune: PMRDA Seeks 1.2 TMC Water From Mulshi Dam To Ensure Drinking Water Supply For Hinjawadi IT Hub",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "However, work on the scheme has remained stalled as the water quota has not yet been sanctioned."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hinjewadi-rainfall-1",
+      "topic": "rainfall",
+      "text": "Roads in the Hinjawadi IT Park flood during intense monsoon bursts: on 7 June 2025 a downpour of only a few minutes submerged parts of Telco Road and Landewadi, and heavy waterlogging recurred on 22 June 2025. The flooding was traced to natural streams and nullahs blocked by encroachments and to a failed drainage system.",
+      "services": [
+        "waterproofing",
+        "external-wall-waterproofing",
+        "basement-waterproofing",
+        "exterior-painting",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-hinjawadi-it-park-flooded-after-heavy-downpour-roads-submerged-two-wheelers-swept-away/",
+          "title": "Pune: Hinjawadi IT Park Flooded After Heavy Downpour; Roads Submerged, Two-Wheelers Swept Away",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "Despite lasting only a few minutes, the intense downpour flooded roads rapidly, particularly in parts of Telco Road and Landewadi, where videos showed motorcycles being swept away by strong water currents."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-pmrda-throws-up-hands-ahead-of-monsoon-says-dont-blame-us-alone-if-hinjawadi-floods-again",
+          "title": "Pune: PMRDA Throws Up Hands Ahead Of Monsoon, Says ‘Don’t Blame Us Alone If Hinjawadi Floods Again’",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "It was diagnosed that this situation arose due to the blocking of natural streams and nullahs by encroachments and the failure of the drainage system."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hinjewadi-rainfall-2",
+      "topic": "rainfall",
+      "text": "Waterlogging recurred on 21 September 2026, when water reached knee level at Bodkewadi Phata on the Hinjewadi–Maan Road. In June 2025 an IT employees' forum had found drainage channels in the IT park blocked by mud, weeds, construction debris and material from the ongoing metro work.",
+      "services": [
+        "waterproofing",
+        "basement-waterproofing",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.thebridgechronicle.com/pune/pune-heavy-rain-hinjewadi-wakad-tathawade-punawale-waterlogging-agn97",
+          "title": "Pune: Heavy Rain Leaves Hinjewadi, Wakad, Tathawade and Punawale Waterlogged",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-06",
+          "quote": "At Bodkewadi Phata on the Hinjewadi-Maan Road, water reached knee level, making it difficult for two-wheeler riders and pedestrians to pass."
+        },
+        {
+          "url": "https://www.punekarnews.in/pune-hinjawadi-it-park-turns-into-water-park-mla-rohit-pawar-demands-water-transport-services/",
+          "title": "Pune: Hinjawadi IT Park Turns into ‘Water Park’; MLA Rohit Pawar Demands Water Transport Services",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "We found drainage channels completely blocked by mud, weeds, construction debris, and materials from ongoing metro work"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hinjewadi-access-1",
+      "topic": "access",
+      "text": "Hinjawadi has severe peak-hour congestion, and Wikipedia records that heavy motor vehicles are barred from entering during peak hours. In September 2026 the district collector cited limited entry and exit routes, and authorities listed peak-hour heavy-vehicle restrictions among their immediate traffic measures.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hinjawadi",
+          "title": "Hinjawadi",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "Accordingly, the HMVs (Heavy Motor Vehicles) are barred from entering Hinjawadi during these hours."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-deputy-cm-sunetra-pawar-announces-special-task-force-to-tackle-hinjawadis-traffic-infrastructure-crisis",
+          "title": "Pune: Deputy CM Sunetra Pawar Announces Special Task Force To Tackle Hinjawadi’s Traffic, Infrastructure Crisis",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "As immediate measures, authorities have proposed deploying 100 Maharashtra Security Force personnel, restricting heavy vehicles during peak hours and considering changes in IT companies' working hours."
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "wakad": [
+    {
+      "id": "wakad-demand-1",
+      "topic": "demand",
+      "text": "Wakad grew as a residential suburb for people working in the Rajiv Gandhi Infotech Park in neighbouring Hinjawadi. In April 2017 The Times of India reported Wakad as the fastest-growing area in Pimpri Chinchwad, with the maximum number of building permissions.",
+      "services": [
+        "waterproofing",
+        "painting",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Wakad",
+          "title": "Wakad",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "Given its proximity to Rajiv Gandhi Infotech Park in Hinjawadi, Wakad has recently emerged to be a popular neighbourhood for techies and experts."
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/city/pune/wakad-fastest-growing-area-in-pcmc-followed-by-ravet-and-punawale/articleshow/57967872.cms",
+          "title": "Wakad fastest growing area in PCMC, followed by Ravet and Punawale",
+          "publisher": "The Times of India",
+          "retrieved_at": "2026-10-06",
+          "quote": "Wakad is growing at a fast pace and has received the maximum number of building permission."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-building_age-1",
+      "topic": "building_age",
+      "text": "Much of Wakad's apartment stock is of recent construction: by 2017 the area had seen a decade of fast development as thousands of IT professionals bought flats in what had been a fringe village. Building has continued since, and in September 2026 the Wakad–Tathawade–Punawale–Hinjewadi belt was reported to have seen extensive growth in housing projects.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://timesofindia.indiatimes.com/city/pune/wakad-fastest-growing-area-in-pcmc-followed-by-ravet-and-punawale/articleshow/57967872.cms",
+          "title": "Wakad fastest growing area in PCMC, followed by Ravet and Punawale",
+          "publisher": "The Times of India",
+          "retrieved_at": "2026-10-06",
+          "quote": "The areas of Sangvi, Pimple Saudagar, Pimple Nilakh and Wakad witnessed fast development in the past decade due to their proximity to Hinjewadi IT Park as thousands of IT professionals bought flats in these villages (fringe areas)."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/pune/pune-heavy-rain-hinjewadi-wakad-tathawade-punawale-waterlogging-agn97",
+          "title": "Pune: Heavy Rain Leaves Hinjewadi, Wakad, Tathawade and Punawale Waterlogged",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-06",
+          "quote": "The rapidly developing belt of Wakad, Tathawade, Punawale and Hinjewadi has seen extensive growth in housing projects, commercial establishments and IT companies."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-housing_stock-1",
+      "topic": "housing_stock",
+      "text": "Wakad has many large multi-building housing societies; September 2026 reporting names Yashone Central in Wakad with 412 flats, and the Kalpataru Exquisite complex in Kaspate Wasti has several lift-served buildings with underground basement parking.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-pavana-dam-full-yet-pcmc-societies-rely-on-tankers-for-water/",
+          "title": "Pune: Pavana Dam Full, Yet PCMC Societies Rely on Tankers For Water",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "At Yashone Central Housing Society in Wakad, residents of 412 flats are hiring nearly 12 private tankers a day."
+        },
+        {
+          "url": "https://www.mypunepulse.com/pune-news-600-residents-of-kalpataru-exquisite-society-in-wakad-sans-water-supply-for-last-48-hours/",
+          "title": "Pune News: 600 Residents Of Kalpataru Exquisite Society In Wakad Sans Water Supply For Last 48 Hours",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-06",
+          "quote": "Mane, chairman of Crescendo building from Kalpataru Exquisite society, said that one lift from each building has been activated."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-rules-1",
+      "topic": "rules",
+      "text": "Wakad is within the Pimpri Chinchwad Municipal Corporation (PCMC), which grants building permissions there. PCMC requires builders to give written undertakings to arrange water for residents until the municipal supply network is functional before completion or possession certificates are issued, and in March 2026 it said this obligation continues until the Bhama Askhed water scheme is fully operational.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Wakad",
+          "title": "Wakad",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "In the last four years, the Pimpri Chinchwad municipal corporation has granted the maximum number of building permissions for projects in the area to Wakad and its surrounding areas."
+        },
+        {
+          "url": "https://www.punekarnews.in/pimpri-chinchwad-pcmc-says-builders-must-provide-water-till-bhama-askhed-project-becomes-operational/",
+          "title": "Pimpri Chinchwad: PCMC Says Builders Must Provide Water Till Bhama Askhed Project Becomes Operational",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "Officials said builders are required to submit written undertakings stating that they will provide water arrangements until the municipal supply network becomes functional before civic bodies issue completion or possession certificates for projects."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-water-1",
+      "topic": "water",
+      "text": "PCMC supplies water to Wakad on alternate days, and in September 2026 the shortage there was described as particularly acute, with some large societies hiring private tankers every day even during the monsoon. A housing society federation listed 36 affected societies across Wakad, Pimple Saudagar, Tathawade, Thergaon and Punawale.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-pavana-dam-full-yet-pcmc-societies-rely-on-tankers-for-water/",
+          "title": "Pune: Pavana Dam Full, Yet PCMC Societies Rely on Tankers For Water",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "The shortage is particularly acute in Wakad and Thergaon, where the Pimpri Chinchwad Municipal Corporation (PCMC) supplies water on alternate days."
+        },
+        {
+          "url": "https://www.punekarnews.in/pune-why-tankers-during-monsoon-housing-society-federation-meets-pcmc-over-water-shortage-tanker-dependence/",
+          "title": "Pune: ‘Why Tankers During Monsoon?’ Housing Society Federation Meets PCMC Over Water Shortage, Tanker Dependence",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "The federation had earlier submitted a list of 36 affected societies from Wakad, Pimple Saudagar, Tathawade, Thergaon and Punawale."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-water-2",
+      "topic": "water",
+      "text": "Many Wakad societies have old wells that supply water during summer, but Wikipedia notes that underground water levels are falling fast as the area is paved over.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Wakad",
+          "title": "Wakad",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "As a result, the underground water levels are going down very fast. Many societies have old wells which provide water during summers."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-rainfall-1",
+      "topic": "rainfall",
+      "text": "During the heavy rain of 24–25 July 2024, the underground basement of Kalpataru Exquisite in Kaspate Wasti, Wakad, flooded: lifts had to be shut down because their panels in the basement were submerged, and drinking-water tanks were also submerged, leaving about 600 residents without water for 48 hours.",
+      "services": [
+        "waterproofing",
+        "basement-waterproofing",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/pune-news-600-residents-of-kalpataru-exquisite-society-in-wakad-sans-water-supply-for-last-48-hours/",
+          "title": "Pune News: 600 Residents Of Kalpataru Exquisite Society In Wakad Sans Water Supply For Last 48 Hours",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-06",
+          "quote": "But the lift panels are all in the basement area which is flooded and hence for a few hours we had shut down the working of lifts to curb any untowards incident."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-rainfall-2",
+      "topic": "rainfall",
+      "text": "In August 2020, when Mulshi Dam released water into the Mula River, low-lying riverbank areas including Wakad were put on flood alert. In July 2026 Baner–Balewadi residents alleged that riverbed filling in the Pimple Nilakh and Wakad stretches for a riverfront project had narrowed the channel; the allegation had not been independently verified.",
+      "services": [
+        "waterproofing",
+        "basement-waterproofing",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/flood-alert-for-baner-wakad-pimple-nilakh-aundh-khadki-as-mulshi-dam-releases-water-in-mula-river/",
+          "title": "Flood Alert For Baner, Wakad, Sangvi, Pimple Nilakh, Aundh, Khadki As Mulshi Dam Releases Water in Mula River",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "Areas like Dapodi, Pimple Nilakh, Wakad have also been alerted."
+        },
+        {
+          "url": "https://www.punekarnews.in/pune-baner-balewadi-residents-seek-technical-probe-into-mula-riverfront-project-over-flooding-concerns/",
+          "title": "Pune: Baner-Balewadi Residents Seek Technical Probe Into Mula Riverfront Project Over Flooding Concerns",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "According to local residents, large quantities of fill material and debris have been dumped into the riverbed in the Pimple Nilakh and Wakad stretches as part of the riverfront development project."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-rainfall-3",
+      "topic": "rainfall",
+      "text": "A thunderstorm on 21 September 2026 waterlogged several major roads in Wakad, Hinjewadi, Tathawade and Punawale, and the report said the drainage network in several pockets of this fast-growing belt remains inadequate for heavy rainfall.",
+      "services": [
+        "waterproofing",
+        "external-wall-waterproofing",
+        "exterior-painting",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.thebridgechronicle.com/pune/pune-heavy-rain-hinjewadi-wakad-tathawade-punawale-waterlogging-agn97",
+          "title": "Pune: Heavy Rain Leaves Hinjewadi, Wakad, Tathawade and Punawale Waterlogged",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-06",
+          "quote": "Heavy rain accompanied by thunderstorms lashed Hinjewadi and surrounding areas at around 2.30 pm on Monday (September 21), leaving several major roads in Hinjewadi IT Park, Wakad, Tathawade and Punawale waterlogged."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-soil-1",
+      "topic": "soil",
+      "text": "Wakad was farmland before it urbanised; its soil is described as rich, fertile black soil on which farmers grew sugarcane, groundnut and onion.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Wakad",
+          "title": "Wakad",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "rich, fertile, black soil of Wakad helped farmers grow sugarcane, groundnut and onion in abundance."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wakad-access-1",
+      "topic": "access",
+      "text": "Wakad's internal roads have repeatedly been dug up for pipeline and gas-line work. In August 2026 residents of the Hinjawadi corridor listed the Wakad–Hinjawadi flyover and Bhumkar Chowk among the area's major congestion points.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Wakad",
+          "title": "Wakad",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "Past 4 years the citizens have been facing issues with dug up roads for different pipelines and gas lines."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-hinjawadi-maan-marunji-residents-to-protest-on-6th-sept-over-traffic-roads-water-crisis",
+          "title": "Pune: Hinjawadi, Maan & Marunji Residents To Protest On 6th Sept Over Traffic, Roads & Water Crisis",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "The plan should cover major congestion points such as Wakad-Hinjawadi Flyover, Bhumkar Chowk, Tathawade and the Punawale underpasses."
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "baner": [
+    {
+      "id": "baner-demand-1",
+      "topic": "demand",
+      "text": "Baner is a residential and commercial hub of west Pune, with large parts occupied by IT companies. In August 2026 Baner–Balewadi was described as one of Pune's major residential and IT hubs that has seen rapid residential and commercial development in recent years.",
+      "services": [
+        "waterproofing",
+        "painting",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Baner",
+          "title": "Baner",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "Baner is a residential and commercial hub of Pune and large portions are occupied by various IT companies."
+        },
+        {
+          "url": "https://www.punekarnews.in/pune-traffic-alert-why-baner-balewadi-roads-are-getting-more-congested-every-day/",
+          "title": "Pune Traffic Alert: Why Baner-Balewadi Roads Are Getting More Congested Every Day",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "According to residents, the area has witnessed rapid residential and commercial development in recent years, but road infrastructure and traffic management have not kept pace with the growing number of vehicles."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "baner-building_age-1",
+      "topic": "building_age",
+      "text": "Baner was an agricultural village on Pune's outskirts; after 2005 an influx of IT industries and residential complexes replaced much of its farming, and it was later merged into the city.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Baner",
+          "title": "Baner",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "After 2005, due to the influx of IT industries and residential complexes, Baner began losing its reputation as an agricultural center."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Baner-Pashan_Biodiversity_Park",
+          "title": "Baner-Pashan Biodiversity Park",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "As a result, the Baner and Pashan suburbs were directly affected due to their close proximity to the IT Park."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "baner-housing_stock-1",
+      "topic": "housing_stock",
+      "text": "Baner's housing includes multi-building apartment societies as well as bungalows: in the August 2019 flooding, residents of the seven-building Saidutta society in Baner had to leave their flats, and water reached the first floor of a bungalow in Prathamesh Park near Balewadi Phata.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://www.thebridgechronicle.com/pune/heavy-rains-distrupt-life-baner-and-balewadi-38799",
+          "title": "Heavy rains distrupt life in Baner and Balewadi",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-06",
+          "quote": "There are seven buildings in our society."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "baner-rules-1",
+      "topic": "rules",
+      "text": "Baner is within Pune Municipal Corporation limits and is served by PMC's Aundh-Baner ward office. Baner Hill is part of the Baner-Pashan Biodiversity Park (BDP) being developed by PMC; in July 2026 PMC officials said private road construction and hill excavation were not permitted in the BDP area and referred an unauthorised hill-cutting site to PMC's Building Department.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-baner-hill-excavation-under-scrutiny-pmc-says-activity-in-bdp-area-is-illegal-building-department-initiates-action/",
+          "title": "Pune: Baner Hill Excavation Under Scrutiny; PMC Says Activity in BDP Area is Illegal, Building Department Initiates Action",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "Officials also confirmed that the road construction at the location is being carried out privately and that no such activity is permitted within the Biodiversity Park (BDP) area."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Baner-Pashan_Biodiversity_Park",
+          "title": "Baner-Pashan Biodiversity Park",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "The Baner-Pashan Biodiversity Park is a proposed 200 hectare protected region currently under development in the Baner and Pashan suburbs of Pune, India by the Pune Municipal Corporation."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "baner-soil-1",
+      "topic": "soil",
+      "text": "Baner lies on the foothills of Baner Hill at an average elevation of about 570 m, and the Ramnadi river flows through it. Encroachment and construction have narrowed the Ramnadi's channel, and of the roughly 416 streams that fed it, 106 no longer exist.",
+      "services": [
+        "waterproofing",
+        "basement-waterproofing",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Baner",
+          "title": "Baner",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "Baner lies on the foothills of the hills comprising the Baner-Pashan Biodiversity Park."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Ramnadi",
+          "title": "Ramnadi",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "The Ramnadi is fed by around 416 streams out of which 106 no longer exist."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "baner-rainfall-1",
+      "topic": "rainfall",
+      "text": "Baner has a record of riverside flooding: in 2019 Ramnadi flooding in the Aundh–Baner area led to the evacuation of over 2,000 people, and in early August 2019 water more than six feet deep entered Saidutta society in Baner and Prathamesh Society at Balewadi Phata.",
+      "services": [
+        "waterproofing",
+        "basement-waterproofing",
+        "external-wall-waterproofing",
+        "exterior-painting",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Ramnadi",
+          "title": "Ramnadi",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "In 2019 heavy monsoon rains led to flooding on the river's banks mainly in the Aundh-Baner region of Pune, over 2,000 people were evacuated during the aftermath."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/pune/heavy-rains-distrupt-life-baner-and-balewadi-38799",
+          "title": "Heavy rains distrupt life in Baner and Balewadi",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-06",
+          "quote": "Waterlogging of more than six feet has taken place in Prathamesh Society situated at Balewadi Phata and Saidutta society in Baner."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "baner-rainfall-2",
+      "topic": "rainfall",
+      "text": "In July 2026 a rise in the Mula River waterlogged riverside parts of Baner and Balewadi, and floodwater entered homes and societies in some low-lying areas around Prathamesh Park and the Jupiter Hospital locality. Residents blamed upstream riverbed filling for a riverfront project; the claim had not been independently verified.",
+      "services": [
+        "waterproofing",
+        "basement-waterproofing",
+        "external-wall-waterproofing",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/pune-baner-balewadi-residents-blame-pcmc-river-rejuvenation-project-for-worsening-floods-demand-probe/",
+          "title": "Pune: Baner-Balewadi Residents Blame PCMC River Rejuvenation Project For Worsening Floods, Demand Probe",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-06",
+          "quote": "With continuous rain over the past few days causing a sharp rise in the Mula River’s water level, several riverside areas in Baner and Balewadi have witnessed severe waterlogging, while floodwater has entered residential societies and homes in some locations."
+        },
+        {
+          "url": "https://www.punekarnews.in/pune-baner-balewadi-residents-seek-technical-probe-into-mula-riverfront-project-over-flooding-concerns/",
+          "title": "Pune: Baner-Balewadi Residents Seek Technical Probe Into Mula Riverfront Project Over Flooding Concerns",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "In some low-lying residential areas, floodwaters reportedly entered homes, prompting residents to question whether the river’s natural flow has been altered by the riverfront development works."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "baner-water-1",
+      "topic": "water",
+      "text": "Baner–Balewadi societies have relied heavily on private water tankers because of inadequate PMC supply; in June 2023 more than 500 residents protested over it. In 2023 PMC was laying a separate line under its 24x7 water supply scheme from the Warje pumping station to the Pashan overhead tank to supply the area.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/pune-over-500-frustrated-baner-balewadi-residents-protest-against-pmc-for-neglecting-basic-amenities/",
+          "title": "Pune : Over 500 Frustrated Baner Balewadi Residents Protest Against PMC For Neglecting Basic Amenities",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-06",
+          "quote": "The problem of inadequate water supply persists throughout the area, be it Baner, Balewadi, or Baner Pashan Link Road."
+        },
+        {
+          "url": "https://www.mypunepulse.com/baner-balewadi-residents-to-receive-water-from-warje-pumping-station-work-for-separate-pipeline-to-begin-shortly/",
+          "title": "Baner-Balewadi residents to receive water from Warje Pumping station, work for separate pipeline to begin shortly",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-06",
+          "quote": "This water line comes under the 24 by 7 water supply scheme, where a separate water supply line is being constructed from Warje Pumping station to the Pashan overhead tank."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "baner-access-1",
+      "topic": "access",
+      "text": "Pune Metro Line 3 construction along Baner Road and Baner–Mahalunge Road constricted lanes, broke pavements and clogged stormwater drains, causing long gridlocks in heavy rain in September 2025. In August 2026 residents still reported heavy peak-hour congestion at Baner–Balewadi junctions including Kalamkar Chowk, Mamta Chowk and Radha Chowk.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-heavy-rain-metro-work-turn-hinjawadi-baner-aundh-balewadi-mahalunge-roads-into-gridlock-zones",
+          "title": "Pune: Heavy Rain, Metro Work Turn Hinjawadi, Baner, Aundh, Balewadi & Mahalunge Roads Into Gridlock Zones",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "Though assuring a respite for more than four lakh daily commuters on its completion (now postponed to 2026 from the initial March 2025 deadline), the current construction has constricted lanes, broken pavements and clogged stormwater drains."
+        },
+        {
+          "url": "https://www.punekarnews.in/pune-traffic-alert-why-baner-balewadi-roads-are-getting-more-congested-every-day/",
+          "title": "Pune Traffic Alert: Why Baner-Balewadi Roads Are Getting More Congested Every Day",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "They have pointed to congestion at several important junctions, including Dasara Chowk, Mamta Chowk, Radha Chowk, Croma on Baner Road, Kalamkar Chowk, the Kia showroom underpass and Nannavare Chowk."
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "kharadi": [
+    {
+      "id": "kharadi-demand-1",
+      "topic": "demand",
+      "text": "Kharadi is one of Pune's IT hubs, with EON IT Park and Pune's only World Trade Centre, and offices of firms such as Barclays, Citigroup and Zensar. As early as 2011 it was described as a preferred residential and business destination on Pune's eastern corridor.",
+      "services": [
+        "waterproofing",
+        "painting",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kharadi",
+          "title": "Kharadi",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "Pune's only World Trade Centre is located in the area."
+        },
+        {
+          "url": "https://www.thehindubusinessline.com/news/variety/Kharadi-rises-in-the-east/article20112357.ece",
+          "title": "Kharadi rises in the east",
+          "publisher": "The Hindu BusinessLine",
+          "retrieved_at": "2026-10-06",
+          "quote": "Kharadi is one such location that is seen as the preferred residential and business destination."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kharadi-building_age-1",
+      "topic": "building_age",
+      "text": "Kharadi was a village until an IT boom that began around 2005–06 brought multinational offices; residential projects followed, and development has continued at a rapid pace into the 2020s.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kharadi",
+          "title": "Kharadi",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "Originally a village, the IT boom, beginning in roughly 2005, established major Multinational corporations in the area."
+        },
+        {
+          "url": "https://www.thehindubusinessline.com/news/variety/Kharadi-rises-in-the-east/article20112357.ece",
+          "title": "Kharadi rises in the east",
+          "publisher": "The Hindu BusinessLine",
+          "retrieved_at": "2026-10-06",
+          "quote": "The boom in Kharadi started about five years ago with several IT companies coming up."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kharadi-housing_stock-1",
+      "topic": "housing_stock",
+      "text": "Kharadi has many large housing societies: in May 2026 its housing societies' welfare association said over 50 societies with about 25,000–30,000 residents were affected by water shortage, and a single complex, Nyati Elysia, houses about 3,000 residents.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-water-crisis-kharadi-residents-hold-hunger-strike-over-pmc-supply-failure/",
+          "title": "Pune Water Crisis: Kharadi Residents Hold Hunger Strike Over PMC Supply Failure",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "In the letter, KHSWA stated that over 50 housing societies, representing around 25,000 to 30,000 residents, are affected by the water shortage in Kharadi."
+        },
+        {
+          "url": "https://www.mypunepulse.com/pune-3000-nyati-elysia-residents-in-kharadi-experience-relief-as-pmc-resolves-water-crisis/",
+          "title": "Pune: 3,000 Nyati Elysia Residents In Kharadi Experience Relief As PMC Resolves Water Crisis",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-06",
+          "quote": "After prolonged water scarcity, 3,000 residents of Nyati Elysia in Kharadi have finally seen much-needed relief, following prompt intervention by the Pune Municipal Corporation (PMC)."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kharadi-water-1",
+      "topic": "water",
+      "text": "Kharadi has a long-running municipal water shortfall: in May 2026 residents held a hunger strike over irregular PMC supply and heavy dependence on private tankers. PMC then promised to fill tanks in Survey No. 58, commission the Survey No. 38 overhead tank and survey a piped water network for the whole locality.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-water-crisis-kharadi-residents-hold-hunger-strike-over-pmc-supply-failure/",
+          "title": "Pune Water Crisis: Kharadi Residents Hold Hunger Strike Over PMC Supply Failure",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "The agitation, which began at 9:30 AM, highlighted long-standing issues such as irregular municipal water supply, heavy dependence on private tankers, and rising maintenance costs for residents."
+        },
+        {
+          "url": "https://www.punekarnews.in/pune-pmc-promises-relief-as-kharadi-residents-end-fast-over-water-supply-issues/",
+          "title": "Pune: PMC Promises Relief as Kharadi Residents End Fast Over Water Supply Issues",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "As a longer-term step, the PMC confirmed that a detailed survey for a piped water supply network across Kharadi will begin from Saturday."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kharadi-rainfall-1",
+      "topic": "rainfall",
+      "text": "Parts of Kharadi waterlog quickly in heavy rain: in June 2025 poor drainage near P. L. Pathare/Gera Ground by EON IT Park left the road hard to pass even for four-wheelers, and unseasonal rain on 2 April 2026 caused severe waterlogging in Kharadi and nearby suburbs within 15–20 minutes, with water up to knee height in places.",
+      "services": [
+        "waterproofing",
+        "external-wall-waterproofing",
+        "basement-waterproofing",
+        "exterior-painting",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/pune-overflowing-water-near-eon-it-park-in-kharadi-disrupts-daily-commute/",
+          "title": "Pune: Overflowing Water Near EON IT Park In Kharadi Disrupts Daily Commute",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-06",
+          "quote": "Due to waterlogging and poor drainage, four-wheelers are struggling to pass through the area."
+        },
+        {
+          "url": "https://www.mypunepulse.com/pune-heavy-rain-floods-roads-within-minutes-waterlogging-hits-daily-life/",
+          "title": "Pune: Heavy Rain Floods Roads Within Minutes, Waterlogging Hits Daily Life",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-06",
+          "quote": "Heavy showers in areas such as Kharadi, Chandan Nagar, and nearby suburbs led to severe waterlogging within just 15–20 minutes."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kharadi-rainfall-2",
+      "topic": "rainfall",
+      "text": "Kharadi lies on the banks of the Mula-Mutha river; in July 2026 the swollen river submerged the low-lying unpaved road linking Keshav Nagar and Kharadi.",
+      "services": [
+        "waterproofing",
+        "basement-waterproofing",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kharadi",
+          "title": "Kharadi",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-06",
+          "quote": "Kharadi is a suburb located in the Eastern Metropolitan Corridor of Pune, India, on the banks of the Mula-Mutha river that serves as a hub for information technology and business parks."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-mula-mutha-river-swells-after-heavy-rain-submerges-keshav-nagarkharadi-link-road",
+          "title": "Pune: Mula-Mutha River Swells After Heavy Rain, Submerges Keshav Nagar–Kharadi Link Road",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-06",
+          "quote": "Continuous heavy rainfall across Pune has caused the water level in the Mula-Mutha River to rise sharply, submerging the low-lying kacha (unpaved) road connecting Keshav Nagar and Kharadi and disrupting local connectivity."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kharadi-access-1",
+      "topic": "access",
+      "text": "Preparatory work on the Ramwadi–Wagholi Metro extension began in September 2026 along Nagar Road, with a Kharadi Bypass station planned on a double-decker structure carrying the metro above a six-lane elevated road. Commuters fear the barricading will further reduce road space on the already congested Nagar Road corridor.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-work-begins-on-ramwadi-wagholi-metro-stretch-traffic-management-emerges-as-key-concern/",
+          "title": "Pune: Work Begins on Ramwadi-Wagholi Metro Stretch, Traffic Management Emerges as Key Concern",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "Four stations are planned along this section — Vimannagar, Somnathnagar, Kharadi Bypass and Tuljabhavani Chowk."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/pune/pune-ramwadi-wagholi-metro-extension-work-begins-traffic-concerns-agn97",
+          "title": "Pune: Ramwadi–Wagholi Metro Extension Work Begins, Traffic Management Concerns Rise",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-06",
+          "quote": "They fear that expanding barricading and construction activity could reduce road space and add to existing congestion."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kharadi-rules-1",
+      "topic": "rules",
+      "text": "Kharadi's municipal water supply and civic services are the responsibility of the Pune Municipal Corporation (PMC). In May 2026 Kharadi residents' demands to PMC included a halt to new project approvals until adequate water infrastructure is in place.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/pune-water-crisis-kharadi-residents-hold-hunger-strike-over-pmc-supply-failure/",
+          "title": "Pune Water Crisis: Kharadi Residents Hold Hunger Strike Over PMC Supply Failure",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "Additionally, residents have demanded the appointment of a dedicated nodal officer for Kharadi and a halt to new project approvals until adequate water infrastructure is in place."
+        },
+        {
+          "url": "https://www.punekarnews.in/pune-pmc-promises-relief-as-kharadi-residents-end-fast-over-water-supply-issues/",
+          "title": "Pune: PMC Promises Relief as Kharadi Residents End Fast Over Water Supply Issues",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-06",
+          "quote": "The Pune Municipal Corporation (PMC) has promised time-bound measures to address persistent water supply issues in Kharadi after residents launched a protest and began a fast seeking immediate intervention."
+        }
+      ],
+      "status": "draft"
+    }
+  ]
+}

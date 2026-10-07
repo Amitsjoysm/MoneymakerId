@@ -34,7 +34,7 @@ The goal is local search traffic, turned into revenue: construction leads first,
 
 ## Environment notes
 - Node 22 and pnpm 10 are installed. Python 3.13 and `uv` are available.
-- This environment's network policy currently **blocks `registry.npmjs.org` and PyPI**. The owner must allow them under Settings → Network access. Until then, no package installs or builds are possible, and code-review-graph cannot be installed.
+- **Package registries in cloud sessions:** the container's `NO_PROXY` sends npm/PyPI around the agent proxy into a blocked direct route. The session-start hook fixes this for new sessions; **mid-session (and in sub-agents) run `. .claude/hooks/registry-proxy-env.sh` before any `pnpm`/`npm`/`pip`/`uv` command.** code-review-graph is installed by the hook (`~/.local/bin/code-review-graph`) and served to Claude via `.mcp.json`.
 - **GitHub push works** (fixed by the owner on 2026-10-06). Push with `git push -u origin claude/relaxed-sagan-uipz8o`.
 - `.claude/hooks/session-start.sh` installs dependencies and code-review-graph and builds the graph. It is fail-soft.
 
@@ -44,16 +44,16 @@ The goal is local search traffic, turned into revenue: construction leads first,
 |---|---|---|
 | Plan, contracts, task graph | — | ✅ done (plan approved by owner 6 Oct 2026) |
 | 1: data and docs (D01–D06, DOC1) | M1 data | 🔄 partial (waterproofing, configs, CSV, docs done); research retries batched per turn |
-| 2–7: scaffold → M1 construction launch | M0/M1 | ⛔ blocked on npm access |
+| 2–7: scaffold → M1 construction launch | M0/M1 | 🔄 unblocked: npm works via the proxy fix; Wave 2 (T00) next |
 | 8–12: admin, food, pipeline + Ask, hardening, Marathi/Hindi | M2–M6 | ⏳ not started |
 
 **Owner inputs pending:**
-- npm/PyPI network access
 - legal placeholders (`{{LEGAL_NAME}}`, `{{CONTACT_EMAIL}}`, `{{GRIEVANCE_OFFICER}}`, `{{POSTAL_ADDRESS}}`)
 - review of AI-drafted prose (cost guides, locality guides)
 - accounts and keys, listed in `docs/DEPLOY.md`
 
 ## Progress log (newest first; one line per meaningful change)
+- 2026-10-07: npm and PyPI unblocked. The owner's network change worked, but NO_PROXY bypassed the proxy; fixed with `.claude/hooks/registry-proxy-env.sh` (wired into the session-start hook). code-review-graph installed and its graph built. Batch B mostly hit the usage limit: only D03g finished (leakage-repair budget model, 29/30 tier cells); D01a, D01b-1/2 and AGG need a re-run. `data/sources/locality-facts-1.json` is a partial, unverified D01b-1 draft.
 - 2026-10-06: Retry A verified. 47 cost models now give all 10 leaf construction services a cited cost guide (tier cells 28/30); citations checked against builder transcripts. Batch B launched: localities (D01a), facts for 40 locality×service pairs (D01b-1/2), leakage-repair tiers (D03g), aggregator ownership. Agents now also fetch pages with Bash curl (Wikipedia, PMRDA, metro and publisher sites work; WebFetch is mostly blocked). npm and PyPI are still blocked ("Host not in allowlist").
 - 2026-10-06: Wave 1 first pass. Done: waterproofing pack (16 cited models, citations verified against search transcripts), D04 configs, D05 CSV templates, DOC1 deploy/policy/legal drafts. Not done: painting (timeout), bathroom/kitchen/house-construction (0 models), D01a/D01b/D02 (API overload), D06a/b (no search budget). **Lesson: WebSearch is capped at 200 calls per turn, shared by all agents. Research now runs in batches across turns with per-agent search budgets; verifiers check citations against the builder's transcript.** Contract: parent services aggregate their sub-services' models; unsourced durations and presets are null.
 - 2026-10-06: Task-graph audit (40 findings) applied. CONTRACTS v2 adds `admin_api`, derived shapes (§6a), the build manifest, literal spec values (§8a) and DOM attributes (§7a). TASKS v2 adds sub-waves, splits large cards, gives every card acceptance criteria, and adds gap-fill tasks D01c and D03f. The original spec is now in `docs/Makemoney.txt`. GitHub push now works.

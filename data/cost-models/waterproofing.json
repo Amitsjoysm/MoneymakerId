@@ -750,6 +750,49 @@
     "notes": "Cited: NoBroker injection grouting ₹180–₹350 per sq ft, for active leaks, wall cracks and construction joints; Biddaro Pune crystalline/epoxy injection for basements ₹100–₹200. Range ₹100–₹350. Expected = median of the publishers' midpoints, rounded to the nearest ₹5 (ties down) (midpoints 265, 150 → 207.5 → 205). Per-sq-ft rate for treating a basement with active leaks; for a single leak point see the leakage-repair model, which is priced per injection point. Component fractions are an editorial split for the calculator, not taken from a source. Verifier (2026-10-06): removed the Asian Paints source (basement ₹120–₹300). It does not name a system; the builder excluded the same figure from the external-membrane model for that reason. It may also sit on Asian Paints' calculator page rather than the cited blog, because the two searches ranked them differently. Expected moved from ₹210 to ₹205; the range is unchanged."
   },
   {
+    "id": "leakage-repair-cement-injection-budget",
+    "service_id": "leakage-repair",
+    "scope_id": "injection-grouting",
+    "material_id": null,
+    "tier": "budget",
+    "unit": "unit",
+    "rate_inr": {
+      "low": 450,
+      "expected": 550,
+      "high": 700
+    },
+    "min_job_inr": null,
+    "components": {
+      "materials": 0.25,
+      "labour": 0.45,
+      "preparation": 0.12,
+      "repair": 0.08,
+      "transport": 0.07,
+      "waste": 0.03
+    },
+    "locality_factors": [],
+    "sources": [
+      {
+        "url": "https://aapkapainter.com/resources/waterproofing-price-calculator",
+        "title": "Waterproofing Cost: Roof & Terrace from ₹20/sqft",
+        "publisher": "AapkaPainter",
+        "retrieved_at": "2026-10-06",
+        "quote": "Cement injection grouting 700 per nozzle"
+      },
+      {
+        "url": "https://m.indiamart.com/grouting-specialist/epoxy-grouting-services.html",
+        "title": "Epoxy Grouting Services - Bathroom Epoxy Tile Joint Grouting Services Service Provider from Chennai",
+        "publisher": "IndiaMART",
+        "retrieved_at": "2026-10-06",
+        "quote": "Cementitious Injection Grouting ₹ 450/point"
+      }
+    ],
+    "reviewed_at": "2026-10-06",
+    "valid_until": "2027-04-04",
+    "status": "draft",
+    "notes": "Unit = one injection point (nozzle/port). Budget tier = cement (cementitious) grout injected through the same drilled ports as the standard PU model. Cited: AapkaPainter's waterproofing price calculator, 'Additional cost' table row 'Cement injection grouting | 700 per nozzle' (national page, no city named; the same table prices PU injection grouting at 2400 per nozzle); IndiaMART seller listing by Grouting Specialists Private Limited, Chennai, 'Cementitious Injection Grouting ₹ 450/point' (listing details: property type Commercial, applicable area Floor; the same seller lists PU Injection Grouting Service at ₹ 1,500/per point). Both publishers price cement injection at about 30% of their own PU per-point price, which is why this sits below the standard PU model. Neither figure is Pune-specific: no Pune per-point cement-grout price was found. Range = ₹450–₹700 (lowest and highest cited). Expected = median of publisher midpoints (IndiaMART 450, AapkaPainter 700 → 575), rounded to the nearest ₹50 with ties down → 550. Only two publishers, so treat as low-confidence. material_id is null because the leakage-repair ServiceDef defines no cement-grout material (only pu-injection-grout); the ServiceDef owner may add one. Not used: AapkaPainter's Pune cement injection grouting service page shows 'Rs. 650-800 /Sqft' (per sq ft, a different unit from its own calculator's per-nozzle figure); a Justdial search summary of '₹100 - ₹200 per point' for pressure grouting in Navi Mumbai (page blocked, grout type not named, listing not pinned). No source states a minimum job value, so min_job_inr is null. Component fractions are an editorial split for the calculator, not taken from a source; the lower material share than the PU model is an assumption. Added by D03g (2026-10-06)."
+  },
+  {
     "id": "leakage-repair-injection-grouting-standard",
     "service_id": "leakage-repair",
     "scope_id": "injection-grouting",

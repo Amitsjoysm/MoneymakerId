@@ -13,6 +13,15 @@ cd "$ROOT" || exit 0
 log() { echo "[session-start] $*" >&2; }
 
 if [ "${CLAUDE_CODE_REMOTE:-}" = "true" ]; then
+  # Route package registries through the agent proxy (see registry-proxy-env.sh) and persist that
+  # for the session's Bash commands.
+  . "$ROOT/.claude/hooks/registry-proxy-env.sh"
+  if [ "${MM_REGISTRY_VIA_PROXY:-}" = "1" ] && [ -n "${CLAUDE_ENV_FILE:-}" ]; then
+    for v in NO_PROXY no_proxy npm_config_noproxy GLOBAL_AGENT_NO_PROXY; do
+      printf "export %s='%s'\n" "$v" "${!v}" >> "$CLAUDE_ENV_FILE"
+    done
+  fi
+
   if [ -f package.json ] && command -v pnpm >/dev/null 2>&1; then
     timeout 900 pnpm install >&2 || log "pnpm install failed. Check that registry.npmjs.org is allowed in the environment's network settings."
   fi
