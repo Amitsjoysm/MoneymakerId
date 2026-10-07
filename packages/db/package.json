@@ -1,0 +1,19 @@
+{
+  "name": "@mm/db",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./client": "./src/client/index.ts",
+    "./admin": "./src/admin/index.ts",
+    "./catalogue": "./src/catalogue/index.ts",
+    "./fixtures": "./src/fixtures/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@mm/core": "workspace:*"
+  }
+}

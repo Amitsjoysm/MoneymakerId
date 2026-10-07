@@ -1,0 +1,22 @@
+{
+  "name": "@mm/providers",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./pool": "./src/pool/index.ts",
+    "./exa": "./src/exa/index.ts",
+    "./firecrawl": "./src/firecrawl/index.ts",
+    "./groq": "./src/groq/index.ts",
+    "./errors": "./src/errors/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@mm/core": "workspace:*",
+    "@mm/db": "workspace:*",
+    "zod": "catalog:"
+  }
+}

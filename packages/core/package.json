@@ -1,0 +1,30 @@
+{
+  "name": "@mm/core",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./schema": "./src/schema/index.ts",
+    "./config": "./src/config/index.ts",
+    "./constants": "./src/constants/index.ts",
+    "./locality": "./src/locality/index.ts",
+    "./intent": "./src/intent/index.ts",
+    "./cost": "./src/cost/index.ts",
+    "./ranking": "./src/ranking/index.ts",
+    "./labels": "./src/labels/index.ts",
+    "./gate": "./src/gate/index.ts",
+    "./seo": "./src/seo/index.ts",
+    "./links": "./src/links/index.ts",
+    "./i18n": "./src/i18n/index.ts",
+    "./leads": "./src/leads/index.ts",
+    "./monetization": "./src/monetization/index.ts",
+    "./season": "./src/season/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "zod": "catalog:"
+  }
+}

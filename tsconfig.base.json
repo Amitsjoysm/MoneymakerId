@@ -1,0 +1,24 @@
+{
+  // Shared compiler options. Packages are consumed as TypeScript source (no build step), by Vitest,
+  // Astro/Vite and Node's type stripping (the `mm` CLI). So: relative imports carry the `.ts`
+  // extension, and only erasable syntax is allowed (no enums, namespaces or parameter properties).
+  "compilerOptions": {
+    "target": "ES2024",
+    "lib": ["ES2024"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "moduleDetection": "force",
+    "types": ["node"],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "noEmit": true
+  }
+}

@@ -17,3 +17,11 @@ test-results/
 .code-review-graph/
 .impeccable/build/
 .DS_Store
+
+# pnpm, Vitest, Playwright, Lighthouse CI and lint output
+.pnpm-store/
+pnpm-debug.log*
+blob-report/
+.lighthouseci/
+.eslintcache
+*.tsbuildinfo

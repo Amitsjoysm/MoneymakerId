@@ -1,0 +1,22 @@
+{
+  "name": "@mm/extract",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./deterministic": "./src/deterministic/index.ts",
+    "./grounding": "./src/grounding/index.ts",
+    "./independence": "./src/independence/index.ts",
+    "./groq-normalise": "./src/groq-normalise/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@mm/core": "workspace:*",
+    "@mm/providers": "workspace:*",
+    "tldts": "catalog:",
+    "zod": "catalog:"
+  }
+}

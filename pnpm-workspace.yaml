@@ -1,0 +1,52 @@
+# MarketMind AI monorepo (docs/CONTRACTS.md §1, §2).
+# Every third-party version is pinned exactly, once, in the catalog below. Workspace
+# package.json files refer to it as "catalog:". Only T00 declares dependencies; a later
+# task that needs a new one reports it instead of installing it.
+packages:
+  - packages/*
+  - apps/*
+
+catalog:
+  # Astro and Cloudflare
+  astro: 7.3.6
+  '@astrojs/cloudflare': 14.3.4
+  '@astrojs/check': 0.9.10
+  wrangler: 4.148.0
+  '@cloudflare/workers-types': 5.20261007.1
+
+  # Runtime libraries
+  zod: 4.6.5
+  tldts: 7.4.16
+  # Variable display font with Latin and Devanagari subsets (T03 owns the final choice).
+  '@fontsource-variable/anek-devanagari': 5.3.0
+
+  # Language and lint
+  # typescript stays on 6.0.x: typescript-eslint 8.71 allows <6.1.0, @astrojs/check allows ^5 || ^6.
+  typescript: 6.0.3
+  '@types/node': 22.20.5
+  eslint: 10.12.0
+  '@eslint/js': 10.0.1
+  typescript-eslint: 8.71.1
+  eslint-plugin-astro: 3.2.1
+  globals: 17.13.0
+  prettier: 3.9.9
+  prettier-plugin-astro: 1.1.0
+
+  # Tests
+  # vitest stays on 4.1.x: @cloudflare/vitest-pool-workers 0.22 requires vitest ^4.1.0.
+  vitest: 4.1.11
+  '@cloudflare/vitest-pool-workers': 0.22.0
+  fast-check: 4.10.2
+  '@playwright/test': 1.63.0
+  '@axe-core/playwright': 4.13.0
+  '@lhci/cli': 0.15.1
+
+  # Database CLI (migrations, pgTAP)
+  supabase: 2.120.0
+
+# pnpm 10 blocks dependency build scripts unless they are listed here.
+onlyBuiltDependencies:
+  - esbuild
+  - workerd
+  - sharp
+  - supabase

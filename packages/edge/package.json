@@ -1,0 +1,29 @@
+{
+  "name": "@mm/edge",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./lead": "./src/lead/index.ts",
+    "./event": "./src/event/index.ts",
+    "./feedback": "./src/feedback/index.ts",
+    "./turnstile": "./src/turnstile/index.ts",
+    "./visitor": "./src/visitor/index.ts",
+    "./alerts": "./src/alerts/index.ts",
+    "./ask": "./src/ask/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@mm/core": "workspace:*",
+    "@mm/db": "workspace:*",
+    "@mm/providers": "workspace:*",
+    "@mm/extract": "workspace:*",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "catalog:"
+  }
+}

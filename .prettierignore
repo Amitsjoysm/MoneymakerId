@@ -1,0 +1,20 @@
+# Generated, vendored or curated content that Prettier must not reformat.
+node_modules
+dist
+.astro
+.wrangler
+coverage
+playwright-report
+test-results
+pnpm-lock.yaml
+.claude
+.superpowers
+.code-review-graph
+.impeccable
+data
+content
+docs
+supabase/migrations
+# Owned by the orchestrator and the Wave 1 data tasks; not reformatted by T00.
+CLAUDE.md
+scripts/data-coverage.mjs

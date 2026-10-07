@@ -1,0 +1,24 @@
+{
+  "name": "@mm/app-construction",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "catalog:",
+    "astro": "catalog:",
+    "@mm/core": "workspace:*",
+    "@mm/db": "workspace:*",
+    "@mm/edge": "workspace:*",
+    "@mm/ui": "workspace:*"
+  },
+  "devDependencies": {
+    "@astrojs/check": "catalog:",
+    "wrangler": "catalog:"
+  }
+}

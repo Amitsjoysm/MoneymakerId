@@ -1,0 +1,25 @@
+{
+  "name": "@mm/ui",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tokens.css": "./src/tokens.css",
+    "./layouts/*": "./src/layouts/*",
+    "./components/*": "./src/components/*",
+    "./islands/lead-form": "./src/islands/lead-form/index.ts",
+    "./islands/analytics": "./src/islands/analytics/index.ts",
+    "./islands/slot-expiry": "./src/islands/slot-expiry/index.ts",
+    "./islands/experiments": "./src/islands/experiments/index.ts",
+    "./islands/*": "./src/islands/*"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@fontsource-variable/anek-devanagari": "catalog:",
+    "@mm/core": "workspace:*",
+    "astro": "catalog:"
+  }
+}

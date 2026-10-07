@@ -1,0 +1,43 @@
+{
+  "name": "marketmind-ai",
+  "private": true,
+  "type": "module",
+  "version": "0.0.0",
+  "description": "MarketMind AI: Pune local decision engine (Astro 7 monorepo on Cloudflare Workers).",
+  "packageManager": "pnpm@10.28.0",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r --filter \"./packages/*\" typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run --config vitest.workspace.ts --passWithNoTests",
+    "test:db": "supabase test db",
+    "test:e2e": "playwright test --pass-with-no-tests",
+    "lhci": "node scripts/lhci.mjs",
+    "build": "pnpm -r --filter \"./apps/*\" build",
+    "checks": "node scripts/run-if-present.mjs scripts/run-checks.mjs",
+    "launch:check": "node scripts/run-if-present.mjs scripts/launch-check.mjs",
+    "mm": "node packages/pipeline/src/cli.ts"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "catalog:",
+    "@cloudflare/vitest-pool-workers": "catalog:",
+    "@eslint/js": "catalog:",
+    "@lhci/cli": "catalog:",
+    "@playwright/test": "catalog:",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "eslint-plugin-astro": "catalog:",
+    "fast-check": "catalog:",
+    "globals": "catalog:",
+    "prettier": "catalog:",
+    "prettier-plugin-astro": "catalog:",
+    "supabase": "catalog:",
+    "typescript": "catalog:",
+    "typescript-eslint": "catalog:",
+    "vitest": "catalog:"
+  }
+}

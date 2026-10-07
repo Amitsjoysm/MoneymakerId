@@ -1,0 +1,6 @@
+{
+  // Root project: the repo-level config files, so editors type-check them. Packages have their own
+  // tsconfig.json (run by `pnpm typecheck`); apps are checked with `astro check` (T05).
+  "extends": "./tsconfig.base.json",
+  "include": ["vitest.workspace.ts", "playwright.config.ts", "packages/*/vitest.config.ts"]
+}
