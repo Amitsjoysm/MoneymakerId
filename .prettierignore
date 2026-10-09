@@ -15,6 +15,3 @@ data
 content
 docs
 supabase/migrations
-# Owned by the orchestrator and the Wave 1 data tasks; not reformatted by T00.
-CLAUDE.md
-scripts/data-coverage.mjs

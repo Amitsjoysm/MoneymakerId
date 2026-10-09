@@ -1,0 +1,8 @@
+{
+  // Checks @mm/core's test files (and the source they import) with Node types. Vitest's own types pull
+  // @types/node into a program, so tests must not share one with the source-only check in tsconfig.json.
+  "extends": "./tsconfig.json",
+  "compilerOptions": { "types": ["node"] },
+  "include": ["src"],
+  "exclude": []
+}

@@ -6,6 +6,10 @@
 // Command modules are imported only when needed: running one command loads just that module, and
 // `--help` loads all of them but survives a module that fails to load. Runs directly under Node's
 // TypeScript type stripping, so keep this file free of runtime dependencies.
+//
+// Failures print only the error message (no stack, so nothing sensitive leaks into logs by default).
+// Set MM_DEBUG=1 to print the full stack, and the stacks of any `cause`s, for a failed command.
+import { realpathSync } from 'node:fs';
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -35,6 +39,8 @@ export interface MainOptions {
   dir?: string;
   out?: (text: string) => void;
   err?: (text: string) => void;
+  /** Environment to read MM_DEBUG from. Defaults to process.env. */
+  env?: Readonly<Record<string, string | undefined>>;
 }
 
 const COMMANDS_DIR = fileURLToPath(new URL('./commands/', import.meta.url));
@@ -117,11 +123,41 @@ async function helpText(dir: string, files: readonly CommandFile[]): Promise<str
   return formatHelp(entries);
 }
 
+const MAX_CAUSE_DEPTH = 5;
+
+/** The message alone, or with `debug` the stack followed by the stack of each `cause` (bounded depth). */
+function describeError(error: unknown, debug: boolean): string {
+  if (!debug) return error instanceof Error ? error.message : String(error);
+  const parts: string[] = [];
+  let current: unknown = error;
+  for (let depth = 0; depth <= MAX_CAUSE_DEPTH && current !== undefined; depth++) {
+    const text = current instanceof Error ? (current.stack ?? current.message) : String(current);
+    parts.push(depth === 0 ? text : `Caused by: ${text}`);
+    current = current instanceof Error ? current.cause : undefined;
+  }
+  return parts.join('\n');
+}
+
+/**
+ * True when `moduleUrl` is the file Node was started with (`argv[1]`). Both sides are resolved to real
+ * paths: Node reports `argv[1]` as given, but `import.meta.url` of the main module is its real path, so
+ * a symlink or bin shim (`node_modules/.bin/mm`, a `ln -s`) would otherwise never match.
+ */
+export function isEntryPoint(argv1: string | undefined, moduleUrl: string): boolean {
+  if (argv1 === undefined) return false;
+  try {
+    return realpathSync(argv1) === realpathSync(fileURLToPath(moduleUrl));
+  } catch {
+    return false;
+  }
+}
+
 /** Runs the CLI and returns the process exit code: 0 ok, 1 command failed, 2 unknown command. */
 export async function main(argv: readonly string[], options: MainOptions = {}): Promise<number> {
   const dir = options.dir ?? COMMANDS_DIR;
   const out = options.out ?? ((text: string) => console.log(text));
   const err = options.err ?? ((text: string) => console.error(text));
+  const debug = (options.env ?? process.env).MM_DEBUG === '1';
   const files = await listCommandFiles(dir);
   const [name, ...args] = argv;
 
@@ -137,11 +173,11 @@ export async function main(argv: readonly string[], options: MainOptions = {}): 
   try {
     return await (await loadCommand(dir, file)).run(args);
   } catch (error) {
-    err(`mm ${name}: ${error instanceof Error ? error.message : String(error)}`);
+    err(`mm ${name}: ${describeError(error, debug)}`);
     return 1;
   }
 }
 
-if (process.argv[1] !== undefined && pathToFileURL(process.argv[1]).href === import.meta.url) {
+if (isEntryPoint(process.argv[1], import.meta.url)) {
   process.exitCode = await main(process.argv.slice(2));
 }

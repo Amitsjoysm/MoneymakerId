@@ -1,8 +1,13 @@
-import { mkdtemp, mkdir, rm, writeFile } from 'node:fs/promises';
+import { spawnSync } from 'node:child_process';
+import { mkdtemp, mkdir, rm, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { commandNameFromFile, formatHelp, listCommandFiles, loadCommand, main } from './cli.ts';
+import { commandNameFromFile, formatHelp, isEntryPoint, listCommandFiles, loadCommand, main } from './cli.ts';
+
+const CLI_PATH = fileURLToPath(new URL('./cli.ts', import.meta.url));
+const CLI_URL = pathToFileURL(CLI_PATH).href;
 
 describe('commandNameFromFile', () => {
   it('replaces only the first dash with a colon', () => {
@@ -39,6 +44,61 @@ describe('formatHelp', () => {
     expect(help).toContain('Import a CSV');
     expect(help).toContain('rank');
     expect(help).not.toContain('no commands yet');
+  });
+});
+
+describe('isEntryPoint', () => {
+  let dir: string;
+  beforeEach(async () => {
+    dir = await mkdtemp(join(tmpdir(), 'mm-entry-'));
+  });
+  afterEach(async () => {
+    await rm(dir, { recursive: true, force: true });
+  });
+
+  it('is true when argv[1] is the module file itself', () => {
+    expect(isEntryPoint(CLI_PATH, CLI_URL)).toBe(true);
+  });
+
+  it('is true when argv[1] is a symlink to the module file, as with a bin shim', async () => {
+    const link = join(dir, 'mm');
+    await symlink(CLI_PATH, link);
+    expect(isEntryPoint(link, CLI_URL)).toBe(true);
+  });
+
+  it('is false for another file, a missing file and no argv[1]', async () => {
+    const other = join(dir, 'other.ts');
+    await writeFile(other, 'export {};\n');
+    expect(isEntryPoint(other, CLI_URL)).toBe(false);
+    expect(isEntryPoint(join(dir, 'missing.ts'), CLI_URL)).toBe(false);
+    expect(isEntryPoint(undefined, CLI_URL)).toBe(false);
+  });
+});
+
+describe('running as a script', () => {
+  let dir: string;
+  beforeEach(async () => {
+    dir = await mkdtemp(join(tmpdir(), 'mm-bin-'));
+  });
+  afterEach(async () => {
+    await rm(dir, { recursive: true, force: true });
+  });
+
+  const runWith = (entry: string) =>
+    spawnSync(process.execPath, [entry, '--help'], { encoding: 'utf8', env: { ...process.env } });
+
+  it('prints help when started directly', () => {
+    const result = runWith(CLI_PATH);
+    expect(result.status).toBe(0);
+    expect(result.stdout).toContain('Usage: mm');
+  });
+
+  it('prints help when started through a symlink (a bin shim must not silently do nothing)', async () => {
+    const link = join(dir, 'mm');
+    await symlink(CLI_PATH, link);
+    const result = runWith(link);
+    expect(result.status).toBe(0);
+    expect(result.stdout).toContain('Usage: mm');
   });
 });
 
@@ -136,6 +196,28 @@ describe('discovery and dispatch', () => {
     await writeCommand('rank.ts', 'Rank things', "(() => { throw new Error('boom'); })()");
     expect(await main(['rank'], { dir, ...io })).toBe(1);
     expect(err.join('\n')).toContain('boom');
+  });
+
+  it('prints only the message, not a stack, when a command throws and MM_DEBUG is not set', async () => {
+    await writeCommand('rank.ts', 'Rank things', "(() => { throw new Error('boom'); })()");
+    expect(await main(['rank'], { dir, ...io, env: {} })).toBe(1);
+    expect(err.join('\n')).toBe('mm rank: boom');
+    expect(await main(['rank'], { dir, ...io, env: { MM_DEBUG: '0' } })).toBe(1);
+    expect(err.at(-1)).toBe('mm rank: boom');
+  });
+
+  it('prints the error stack when a command throws and MM_DEBUG=1', async () => {
+    await writeCommand('rank.ts', 'Rank things', "(() => { throw new Error('boom'); })()");
+    expect(await main(['rank'], { dir, ...io, env: { MM_DEBUG: '1' } })).toBe(1);
+    const text = err.join('\n');
+    expect(text).toContain('mm rank: Error: boom');
+    expect(text).toMatch(/\n\s+at .*rank\.ts/);
+  });
+
+  it('prints the underlying cause too under MM_DEBUG=1 when a command cannot be loaded', async () => {
+    await writeBrokenCommand('import-csv.ts');
+    expect(await main(['import:csv'], { dir, ...io, env: { MM_DEBUG: '1' } })).toBe(1);
+    expect(err.join('\n')).toMatch(/Caused by: \w*Error/);
   });
 
   it('exits 1 and names the file when the requested command cannot be loaded', async () => {

@@ -6,10 +6,10 @@
   "description": "MarketMind AI: Pune local decision engine (Astro 7 monorepo on Cloudflare Workers).",
   "packageManager": "pnpm@10.28.0",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.18.0"
   },
   "scripts": {
-    "typecheck": "pnpm -r --filter \"./packages/*\" typecheck",
+    "typecheck": "pnpm -r --filter \"./packages/*\" typecheck && tsc -p tsconfig.json",
     "lint": "eslint .",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

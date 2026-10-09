@@ -1,4 +1,9 @@
 {
+  // @mm/core also runs on the Cloudflare Workers runtime (via @mm/edge and the apps), so its source is
+  // checked with no ambient Node types: `process`, `Buffer` and `node:*` imports are errors here.
+  // Test files run under Node and are checked by tsconfig.test.json instead (`pnpm typecheck` runs both).
   "extends": "../../tsconfig.base.json",
-  "include": ["src"]
+  "compilerOptions": { "types": [] },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts"]
 }
