@@ -45,12 +45,12 @@ The goal is local search traffic, turned into revenue: construction leads first,
 
 ## Status (update after every wave)
 
-| Wave                                                        | Milestone | State                                                                                  |
-| ----------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------- |
-| Plan, contracts, task graph                                 | —         | ✅ done (plan approved by owner 6 Oct 2026)                                            |
-| 1: data and docs (D01–D06, DOC1)                            | M1 data   | 🔄 partial (waterproofing, configs, CSV, docs done); research retries batched per turn |
-| 2–7: scaffold → M1 construction launch                      | M0/M1     | 🔄 unblocked: npm works via the proxy fix; Wave 2 (T00) next                           |
-| 8–12: admin, food, pipeline + Ask, hardening, Marathi/Hindi | M2–M6     | ⏳ not started                                                                         |
+| Wave                                                        | Milestone | State                                                                                      |
+| ----------------------------------------------------------- | --------- | ------------------------------------------------------------------------------------------ |
+| Plan, contracts, task graph                                 | —         | ✅ done (plan approved by owner 6 Oct 2026)                                                |
+| 1: data and docs (D01–D06, DOC1)                            | M1 data   | 🔄 partial (waterproofing, configs, CSV, docs done); research retries batched per turn     |
+| 2–7: scaffold → M1 construction launch                      | M0/M1     | 🔄 Wave 2 (T00 scaffold) ✅; Wave 3 (T01 schemas, T02a DB, T04 CI, T05 app shells) running |
+| 8–12: admin, food, pipeline + Ask, hardening, Marathi/Hindi | M2–M6     | ⏳ not started                                                                             |
 
 **Owner inputs pending:**
 
@@ -60,6 +60,7 @@ The goal is local search traffic, turned into revenue: construction leads first,
 
 ## Progress log (newest first; one line per meaningful change)
 
+- 2026-10-09: T00 scaffold complete and reviewed (pnpm monorepo, pinned toolchain, 7 packages with stubs, auto-discovering `mm` CLI with 25 tests; fix round 1 clean). Docker runs in-session, so the database uses a real local Supabase. Wave 3 dispatched in parallel. Wave 1 completion is running (verifiers for guides and facts; builds for localities, more facts, dishes; DPDP legal check).
 - 2026-10-07: Started the Subagent-Driven Development run (ledger: `.superpowers/sdd/TASKS/progress.md`, git-ignored). Wave 2 T00 (scaffold) is dispatched with task review. Wave 1 retries are running: D01a, D01b-1/2, D06a/b and AGG (≈191 of 200 searches). D02 and DOC1 legal verification follow in the next turn.
 - 2026-10-07: npm and PyPI unblocked. The owner's network change worked, but NO_PROXY bypassed the proxy; fixed with `.claude/hooks/registry-proxy-env.sh` (wired into the session-start hook). code-review-graph installed and its graph built. Batch B mostly hit the usage limit: only D03g finished (leakage-repair budget model, 29/30 tier cells); D01a, D01b-1/2 and AGG need a re-run. `data/sources/locality-facts-1.json` is a partial, unverified D01b-1 draft.
 - 2026-10-06: Retry A verified. 47 cost models now give all 10 leaf construction services a cited cost guide (tier cells 28/30); citations checked against builder transcripts. Batch B launched: localities (D01a), facts for 40 locality×service pairs (D01b-1/2), leakage-repair tiers (D03g), aggregator ownership. Agents now also fetch pages with Bash curl (Wikipedia, PMRDA, metro and publisher sites work; WebFetch is mostly blocked). npm and PyPI are still blocked ("Host not in allowlist").
