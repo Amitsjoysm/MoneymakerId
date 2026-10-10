@@ -1,0 +1,1 @@
+!function(){var a=1,b="padding-padding-padding",k="gsk_FAKEFIXTURENOTAREALKEY1111111111",c=2;console.log(a,b,k,c)}();

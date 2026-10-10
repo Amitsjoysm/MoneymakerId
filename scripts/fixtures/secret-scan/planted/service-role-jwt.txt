@@ -1,0 +1,2 @@
+# Planted fixture for scripts/secret-scan.test.mjs. The token uses alg "none" and a fake signature.
+const key = "eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaXNzIjoiZml4dHVyZS1ub3QtcmVhbCJ9.FAKE-SIGNATURE-NOT-REAL";

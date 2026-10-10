@@ -1,0 +1,1048 @@
+{
+  "hadapsar": [
+    {
+      "id": "hadapsar-housing_stock-1",
+      "topic": "housing_stock",
+      "text": "Integrated townships are a visible part of Hadapsar's housing. Magarpatta is a 182-hectare gated community where, per Wikipedia, construction began in 2000 and continues as of 2025, with apartment clusters of 5 to 11 floors plus row-house and bungalow clusters; Amanora Park Town is a 400-acre township with an independent sewage management system and a separate power grid. Wikipedia's Hadapsar article adds that Amanora Park Town contains Pune's tallest buildings.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Magarpatta",
+          "title": "Magarpatta",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Construction began in 2000 and continues as of 2025."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Amanora_Park_Town",
+          "title": "Amanora Park Town",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "The project is built over 400 acres of land with an independent sewage management system and separate power grid."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Hadapsar",
+          "title": "Hadapsar",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Amanora Park Town contains Pune's tallest buildings."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hadapsar-building_age-1",
+      "topic": "building_age",
+      "text": "Wikipedia says Hadapsar has developed into a major industrial area since 1990, and that construction at the Magarpatta township began in 2000 and was still continuing in 2025. Pune Pulse reported on 20 June 2026 that Ganga Village Cooperative Housing Society on Handewadi Road (672 apartment owners), described as the first housing society in the Hadapsar region to benefit from a state land-ownership policy, had registered a conveyance deed with its developer nearly 18 years earlier.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hadapsar",
+          "title": "Hadapsar",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Since 1990, Hadapsar developed into a major industrial area and is now one of the developed areas of Pune."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Magarpatta",
+          "title": "Magarpatta",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Construction began in 2000 and continues as of 2025."
+        },
+        {
+          "url": "https://www.mypunepulse.com/pune-672-homeowners-of-ganga-village-society-on-handewadi-road-become-legal-owners-of-11-5-acre-land-after-18-year-wait/",
+          "title": "Pune: 672 Homeowners Of Ganga Village Society On Handewadi Road Become Legal Owners Of 11.5-Acre Land After 18-Year Wait",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "According to society representatives, a conveyance deed had been registered with the developer nearly 18 years ago."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hadapsar-rules-1",
+      "topic": "rules",
+      "text": "Wikipedia lists Hadapsar (Sadesatra Nali) among eleven villages merged into the Pune Municipal Corporation in July 2017. In September 2024 the Maharashtra government asked PMC for its opinion on forming a new municipal corporation for the Hadapsar and Wagholi areas, which drew mixed reactions from residents. After a 1 July 2026 PMC demolition drive that covered Hadapsar and Manjari among seven areas, a PMC deputy commissioner urged people not to buy plots in unauthorized layouts or build illegally in newly merged villages before the PMC Development Plan is approved.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Pune_Municipal_Corporation",
+          "title": "Pune Municipal Corporation",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "The merged villages include: Uruli Devachi, Phursungi, Bavdhan Budruk, Lohegaon (remaining), Hadapsar (Sadesatra Nali), Mundhwa (Keshavnagar area), Shivane (remaining), Dhayari (remaining), Undri, Ambegaon Khurda and Ambegaon Budruk."
+        },
+        {
+          "url": "https://www.freepressjournal.in/amp/pune/pune-proposal-to-form-separate-municipal-corporation-for-hadapsar-wagholi-receives-mixed-reactions",
+          "title": "Pune: Proposal To Form Separate Municipal Corporation For Hadapsar & Wagholi Receives Mixed Reactions",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-09",
+          "quote": "The Maharashtra government has asked the Pune Municipal Corporation (PMC) for its opinion about the formation of a new municipal corporation for Hadapsar and Wagholi areas or a separate municipal council for Wagholi."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=238800",
+          "title": "Pune: PMC Demolishes 1.54 Lakh Sq Ft of Illegal Constructions Across Seven Areas, Seizes 27,000 Metal Sheets",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "Issuing a strong warning after the operation, Deputy Commissioner Somnath Bankar urged citizens not to purchase plots in unauthorized layouts or undertake illegal construction in newly merged villages before the Pune Municipal Corporation’s Development Plan (DP) is approved."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hadapsar-water-1",
+      "topic": "water",
+      "text": "At a September 2025 meeting of the water committee set up under the Bombay High Court's PIL 126/2023, representatives of nearly 250 housing societies from Hadapsar, Mundhwa-Keshavnagar, Lohegaon, Wagholi, Kharadi and nearby areas raised water scarcity, and Keshavnagar and Mundhwa societies cited the burden of buying tanker water. In September 2026 Punekar News reported that residents in several parts of Hadapsar continued to face difficulties with drinking water supply.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/?p=166262",
+          "title": "Water Crisis In Pune: 250 Housing Societies Voice Grievances In High Court-Mandated Meeting At PMC",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "A meeting of the Water Committee, constituted under the directions of the Bombay High Court in PIL 126/2023, was held at the Pune Municipal Corporation (PMC) to address water scarcity issues faced by housing societies in Lohegaon, Wagholi, Manjari Budruk, Hadapsar, Mundhwa Keshavnagar, Kharadi, and nearby regions."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=244918",
+          "title": "Pune: Thousands of Litres of Drinking Water Wasted From Leaking Tank in Hadapsar; Shiv Sena Demands Immediate Repair",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "The incident comes at a time when residents in several parts of Hadapsar continue to face difficulties with drinking water supply."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hadapsar-rainfall-1",
+      "topic": "rainfall",
+      "text": "Punekar News reported on 6 July 2026 that heavy monsoon showers again exposed long-standing waterlogging in Hadapsar, Manjari and Mohammadwadi: residents of Shriram Colony (Kale Borate Nagar) said rainwater has collected every monsoon for 15 years, and severe waterlogging with rainwater entering residential premises and parking areas was reported at places including Sasane Nagar, Handewadi Road and Mohammadwadi Gaothan. On 17 August 2024 The Bridge Chronicle reported that a sudden downpour caused knee-deep waterlogging and that the Hadapsar region was particularly affected.",
+      "services": [
+        "waterproofing",
+        "basement-waterproofing",
+        "exterior-painting",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/?p=239302",
+          "title": "Persistent Waterlogging Continues to Trouble Hadapsar, Manjari and Mohammadwadi; Residents Demand Permanent Drainage Solution",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "Several other areas, including Sasane Nagar, Sayyed Nagar, both railway underpasses, Magarpatta City’s western entrance, Noble Hospital, Kirtane Baug, Sasane Nagar Road, Handewadi Road, and Mohammadwadi Gaothan, have also reported severe waterlogging, with rainwater entering residential premises and parking areas, disrupting traffic and daily life."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/news/unexpected-downpour-in-pune-leads-to-severe-waterlogging-across-city",
+          "title": "Unexpected Downpour in Pune Leads to Severe Waterlogging Across City",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "After a ten-day break, heavy rains returned to Pune, causing knee-deep waterlogging in several areas within minutes. The Hadapsar region was particularly affected, with significant flooding reported."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hadapsar-access-1",
+      "topic": "access",
+      "text": "The Union Cabinet approved Pune Metro Line 4 (Kharadi-Hadapsar-Swargate-Khadakwasla) in November 2025, running along Solapur Road and Magarpatta Road. On 17 July 2026 The Bridge Chronicle reported that the existing Magarpatta flyover will be demolished because it obstructs the proposed Swargate-Hadapsar Metro alignment, with construction of a new double-decker flyover expected to begin in January 2027.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-pune-metro-rail-project-phase-2-kharadi-khadakwasla-line-4-nal-stop-warje-manik-baug-line-4a",
+          "title": "Cabinet approves Pune Metro Rail Project Phase-2: Kharadi–Khadakwasla (Line 4) & Nal Stop–Warje–Manik Baug (Line 4A)",
+          "publisher": "Prime Minister of India (pmindia.gov.in)",
+          "retrieved_at": "2026-10-09",
+          "quote": "the Union Cabinet chaired by the Prime Minister, Shri Narendra Modi, today has approved Line 4 (Kharadi–Hadapsar–Swargate–Khadakwasla) and Line 4A (Nal Stop–Warje–Manik Baug) under Phase-2 of the Pune Metro Rail Project."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/amp/story/pune/pune-36-5-km-elevated-corridor-metro-expansion-solapur-road-flyovers-agn97",
+          "title": "Pune to Get 36.5-km Elevated Corridor: Metro Expansion, Hadapsar–Yavat Six-Lane Road and Magarpatta Flyover Rebuild to Ease Solapur Road Traffic",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "As part of the Metro expansion from Swargate to Hadapsar, the existing Magarpatta flyover will be demolished because it obstructs the proposed Metro alignment."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "hadapsar-demand-1",
+      "topic": "demand",
+      "text": "Wikipedia describes Hadapsar as a major industrial area with employers such as the Serum Institute of India, Honeywell and Bharat Forge, and with three special economic zones (Magarpatta, Amanora Park Town and SP Infocity). In November 2025 the Maharashtra Cabinet Infrastructure Committee approved two further Metro Phase-2 corridors out of Hadapsar, together 16 km with 14 elevated stations.",
+      "services": [
+        "waterproofing",
+        "painting",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Hadapsar",
+          "title": "Hadapsar",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Hadapsar has 3 special economic zones (SEZ): Magarpatta, Amanora Park Town, and SP Infocity."
+        },
+        {
+          "url": "https://swarajyamag.com/amp/story/news-brief/maharashtra-cabinet-clears-rs-5704-crore-pune-metro-phase-2-extensions-to-loni-kalbhor-and-saswad",
+          "title": "Maharashtra Cabinet Clears Rs 5,704 Crore Pune Metro Phase-2 Extensions To Loni Kalbhor And Saswad",
+          "publisher": "Swarajya",
+          "retrieved_at": "2026-10-09",
+          "quote": "The two extensions together will span 16 km, featuring 14 elevated stations"
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "wagholi": [
+    {
+      "id": "wagholi-building_age-1",
+      "topic": "building_age",
+      "text": "ANAROCK's Prashant Thakur wrote in Punekar News in January 2018 that Wagholi has been under transformation since 2007 and that, of about 22,000 new residential units launched between 2013 and Q3 2017, more than 80% were launched in 2013-15. As one example, a May 2025 report on a society on Wagholi-Lohgaon Road (80 flats in two seven-storey buildings) says its residents were handed possession in 2018.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/?p=20244",
+          "title": "Pune’s Wagholi - From Industrial Area to Hot Residential Destination",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "The supply of new residential launches in Wagholi was around 22,000 units between 2013 and Q3 2017. More than 80% of the units were launched during the period 2013-15, after which launches declined significantly."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=206527",
+          "title": "Pune: Wagholi Residents Still Await Basic Facilities Seven Years After Possession, Lift Room Collapse Sparks Safety Fears",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "Despite being handed possession in 2018, residents say key facilities like lifts have never been operational."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-housing_stock-1",
+      "topic": "housing_stock",
+      "text": "Wagholi has more than 250 housing societies, according to the director of the Wagholi Housing Societies Association quoted in August 2025. ANAROCK's analysis, published in January 2018, said the micro-market is well known for its affordable housing developments.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/?p=215880",
+          "title": "Pune: Wagholi Split Into Two Wards for PMC Elections, Residents Raise Concerns",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "But Wagholi, which has over 250 housing societies, has now been split between Ward 3 (Lohgaon–Wagholi) and Ward 4 (Kharadi–Wagholi)."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=20244",
+          "title": "Pune’s Wagholi - From Industrial Area to Hot Residential Destination",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "as a result, the micro market is well known for its affordable housing developments"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-rules-1",
+      "topic": "rules",
+      "text": "Wikipedia says Wagholi was added to the Pune Municipal Corporation area in 2021, and the Wagholi Housing Societies Association said it was merged on 1 July 2021. ANAROCK noted in 2018 that the housing boom had been helped by Wagholi falling under a Gram Panchayat area, with low registration costs and easy legal procedures. In August 2025 PMC's draft ward structure split Wagholi between the Lohgaon-Wagholi and Kharadi-Wagholi wards.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Wagholi,_Pune",
+          "title": "Wagholi, Pune",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Wagholi was added to the area under Pune Municipal Corporation in 2021."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=126081",
+          "title": "Pune: Alleged Attempt Made To De-Merge Wagholi From PMC, WHSA Opposes Move",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "“After years of struggle and multiple follow-ups, Wagholi was finally merged with the Pune Municipal Corporation (PMC) on 1st July 2021."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=20244",
+          "title": "Pune’s Wagholi - From Industrial Area to Hot Residential Destination",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "The housing boom in Wagholi kicked off primarily on account of vast availability of land parcels at affordable prices, low registration costs and easy legal procedures, as it falls under a Gram Panchayat area."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=215880",
+          "title": "Pune: Wagholi Split Into Two Wards for PMC Elections, Residents Raise Concerns",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "As per the draft plan, Wagholi has been divided into two separate wards."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-rules-2",
+      "topic": "rules",
+      "text": "PMC demolished about 75,000 sq ft of illegal constructions in the Lohgaon-to-Wagholi belt on 4 March 2026, and a 1 July 2026 drive covering seven areas including Wagholi came with an official warning against illegal construction in newly merged villages before the PMC Development Plan is approved. PMRDA, after complaints from residents of Wagholi and other fringe areas, said in October 2025 that Assistant Town Planners must now inspect sites physically before it grants construction permission within its jurisdiction.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/?p=229848",
+          "title": "Pune: PMC Demolishes 75,000 Sq Ft of Illegal Constructions in Lohgaon–Wagholi Anti-Encroachment Drive",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "The Pune Municipal Corporation (PMC) on Wednesday carried out a major anti-encroachment drive in the Lohgaon to Wagholi belt, demolishing around 75,000 square feet of illegal constructions, officials said."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=238800",
+          "title": "Pune: PMC Demolishes 1.54 Lakh Sq Ft of Illegal Constructions Across Seven Areas, Seizes 27,000 Metal Sheets",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "In a major crackdown on illegal constructions, the Pune Municipal Corporation (PMC) demolished unauthorized structures and fencing spread across nearly 1.54 lakh square feet in seven parts of the city, including Pune Peth, Wagholi, Kharadi, Manjari, Hadapsar, Kondhwa Khurd and Saibaba Nagar."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=220617",
+          "title": "PMRDA Cracks Down on Builders Over Rule Violations in Pune Fringe Areas",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "In a major procedural reform, the PMRDA has made physical inspection by Assistant Town Planners mandatory before granting construction permission within its jurisdiction."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-water-1",
+      "topic": "water",
+      "text": "At the September 2025 PMC water committee meeting held under the Bombay High Court's PIL 126/2023, nearly 250 housing societies raised water scarcity and societies from Wagholi and Kharadi raised similar grievances. In June 2026, after PMC began alternate-day supply on 15 June with a 25% cut, residents of Wagholi were among those who reported delayed supply, low pressure and, in some cases, no supply at all.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/?p=166262",
+          "title": "Water Crisis In Pune: 250 Housing Societies Voice Grievances In High Court-Mandated Meeting At PMC",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "Societies from Wagholi and Kharadi also raised similar grievances."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/amp/story/pune/pune-alternate-day-water-supply-1200-complaints-pmc-water-crisis-agn97",
+          "title": "Pune Water Crisis: 1,200 Complaints Since Alternate-Day Water Supply Began",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "Residents from Navi Peth, Narayan Peth, Sadashiv Peth, Somwar Peth, Kothrud, Karvenagar, Warje, Sutardara, Baner, Kharadi, Lohegaon, Wagholi, Kalyani Nagar, Vadgaonsheri, Kalas and Dhanori have reported delayed water supply, low pressure and, in some cases, no supply at all."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-water-2",
+      "topic": "water",
+      "text": "Team WACO, a Wagholi residents' group, said in July 2023 that Wagholi requires 3.7 crore litres of clean water while the Wagheshwar Water Supply Plant can provide only 50 lakh litres. In June 2023 PMC's water supply head said the estimate for water supply work for Lohegaon and Wagholi had been approved, that the work would take around 7 to 8 months, and that residents would then get daily supply; these sources do not say whether the work was completed.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/?p=51338",
+          "title": "Pune News : Over 500 Residents Of Wagholi Participate in Protest by TEAM WACO At PMC, Demanding Better Roads and Water Supply",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "Wagholi requires 3.7 crore litres of clean water. However, apart from only Wagheshwar Water Supply Plant, which has a capacity of providing only 50 lakh litres of water, Wagholi residents regularly face water problems."
+        },
+        {
+          "url": "https://www.mypunepulse.com/?p=49344",
+          "title": "Pune : Lohegaon & Wagholi Residents Compelled To Buy Tanker Water At Exorbitant Prices Amidst Water Shortage",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "Rest assured, after the water supply work, which will complete in around 7 to 8 months, Lohegaon & Wagholi Residents will get water supply every day."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-rainfall-1",
+      "topic": "rainfall",
+      "text": "Punekar News reported on 29 September 2026 that Wagholi was among the places where roads were waterlogged after about an hour of heavy rain, and The Bridge Chronicle on 30 September 2026 listed Wagholi among the areas that reported waterlogging on 28 September despite pre-monsoon drain work. PMC had identified 201 waterlogging-prone spots across the city.",
+      "services": [
+        "waterproofing",
+        "exterior-painting",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/?p=245973",
+          "title": "Pune Roads Waterlogged After Heavy Rain, Raising Questions Over PMC Monsoon Works",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "Waterlogging was reported in parts of central Pune as well as Wagholi, Ambethan Temple Road, Upper Depot, Bibwewadi, Gokulnagar, Kamathe Nagar, Yewalewadi and the VIT College Road area in Kondhwa."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/amp/story/pune/pune-roads-flooded-drainage-civic-lapses-agn97",
+          "title": "Pune Roads Flooded Despite Crores Spent on Drainage, Heavy Rain Exposes Civic Lapses",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "The administration had identified 201 waterlogging-prone spots across the city and claimed to have implemented measures to improve drainage."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-other-1",
+      "topic": "other",
+      "text": "Pune Pulse reported in November 2024 that residents of Wagholi, particularly in the Ivy Estate area, faced severe drainage and sewage problems with roads flooded by sewage and drainage water, and that PMC had issued notices to societies while residents blamed improper drainage infrastructure. In September 2023 the Team WACO group said there was \"no proper drainage system in Wagholi at all\".",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/pune-wagholi-residents-demand-urgent-action-on-severe-drainage-and-sewage-issues/",
+          "title": "Pune: Wagholi Residents Demand Urgent Action On Severe Drainage And Sewage Issues",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "The situation has become increasingly dire, with roads flooded with sewage and drainage water, creating unsanitary conditions and endangering public health."
+        },
+        {
+          "url": "https://www.mypunepulse.com/?p=55914",
+          "title": "Pune : Wagholi Residents Express Concern Over Lack of Basic Facilities Despite Paying High Taxes",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "There is no proper drainage system in Wagholi at all."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-access-1",
+      "topic": "access",
+      "text": "The Ramwadi-Wagholi Metro corridor (Corridor 2B) was approved by the Union Cabinet, and in July 2026 Maha Metro invited bids for four elevated stations on its first phase, with most of the elevated structure to run above Nagar Road. In April 2026 PMC's standing committee approved a proposal to develop the Kesnand Phata-Dube Nagar Phata road in Wagholi (Road No. 68) as a model road, with planned widening, footpaths and improved drainage.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.pmindia.gov.in/en/news_updates/cabinet-approves-pune-metro-rail-project-phase-2-vanaz-to-chandani-chowk-corridor-2a-ramwadi-to-wagholi-vitthalwadi-corridor-2b-extension-of-the-existing-pune-metro-phase-i-vanaz-ramw/",
+          "title": "Cabinet approves Pune Metro Rail Project Phase-2: Vanaz to Chandani Chowk (Corridor 2A) & Ramwadi to Wagholi/Vitthalwadi (Corridor 2B), extension of the Existing Pune Metro Phase–I (Vanaz-Ramwadi)",
+          "publisher": "Prime Minister of India (pmindia.gov.in)",
+          "retrieved_at": "2026-10-09",
+          "quote": "These two elevated corridors will span 12.75 km and include 13 stations, connecting fast-developing suburbs such as Chandani Chowk, Bavdhan, Kothrud, Kharadi, and Wagholi."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=240289",
+          "title": "Pune: Ramwadi–Wagholi Metro Gets Moving As Bids Invited for Four Stations",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "The tenders cover stations at Kalyaninagar, Somnath Nagar, Kharadi and Tuljabhavani Chowk on the 11.6-km corridor, which will eventually comprise 11 stations."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=233610",
+          "title": "Pune: PMC Approves ‘World-Class’ Road Project in Wagholi to Ease Traffic",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "The Pune Municipal Corporation (PMC) standing committee has approved a proposal to develop the Kesnand Phata–Dube Nagar Phata road in Wagholi as a “world-class” model road, aimed at improving infrastructure and easing traffic congestion in the rapidly growing suburb."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "wagholi-demand-1",
+      "topic": "demand",
+      "text": "ANAROCK's research head wrote in January 2018 that Wagholi had changed from an industrial area into a sought-after residential destination, with growth drivers including affordable projects and proximity to the Kharadi IT hub. Punekar News said in August 2025 that Wagholi had witnessed rapid urbanisation over the past decade, and Wikipedia describes it as a residential hub because of its proximity to IT parks.",
+      "services": [
+        "waterproofing",
+        "painting",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/?p=20244",
+          "title": "Pune’s Wagholi - From Industrial Area to Hot Residential Destination",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "The major growth drivers that contributed to the development of Wagholi include the presence of affordable projects, proximity to the IT hub of Kharadi, and excellent connectivity to Pune Airport as well as other parts of the city."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=215880",
+          "title": "Pune: Wagholi Split Into Two Wards for PMC Elections, Residents Raise Concerns",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "The announcement has sparked debate among citizens, as Wagholi has witnessed rapid urbanisation over the past decade but continues to grapple with basic civic issues such as poor road connectivity, erratic water supply, and electricity shortages."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Wagholi,_Pune",
+          "title": "Wagholi, Pune",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Wagholi has been a residential hub since it is in proximity to various IT Parks."
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "pimple-saudagar": [
+    {
+      "id": "pimple-saudagar-housing_stock-1",
+      "topic": "housing_stock",
+      "text": "Large multi-building housing societies exist in Pimple Saudagar. One example, Roseland Residency, was described by the Times of India in March 2017 as spread over 12 acres with 1,000 flats in 30 buildings, and by The Bridge Chronicle in February 2025 as a society of 4,500 people.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://timesofindia.indiatimes.com/city/pune/pimple-saudagar-society-uses-rainwater-harvesting-to-beat-water-woes/articleshow/57696782.cms",
+          "title": "Pimple Saudagar society uses rainwater harvesting to beat water woes",
+          "publisher": "The Times of India",
+          "retrieved_at": "2026-10-09",
+          "quote": "The society is spread over 12 acres comprising 1,000 flats in 30 buildings."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/news/pimple-saudagar-water-crisis-roseland-residency-residents-forced-to-buy-tanker-water",
+          "title": "Pimple Saudagar Water Crisis: Roseland Residency Residents Forced to Buy Tanker Water",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "Residents of Roseland Residency, a housing society in Pimple Saudagar with 4,500 people"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-building_age-1",
+      "topic": "building_age",
+      "text": "Some Pimple Saudagar society buildings are well over a decade old: Roseland Residency told the Times of India in March 2017 that it began rainwater harvesting in 2009, so at least some of its buildings date from 2009 or earlier. In February 2025 a resident of the Siddhivinayak Ginger society on Kunal Icon Road told Pune Pulse that the area's water problem had persisted for 18 years.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen"
+      ],
+      "sources": [
+        {
+          "url": "https://timesofindia.indiatimes.com/city/pune/pimple-saudagar-society-uses-rainwater-harvesting-to-beat-water-woes/articleshow/57696782.cms",
+          "title": "Pimple Saudagar society uses rainwater harvesting to beat water woes",
+          "publisher": "The Times of India",
+          "retrieved_at": "2026-10-09",
+          "quote": "In 2009, we started implementing rainwater harvesting to recharge groundwater so that we can draw from the borewells and reduce our dependence on tankers."
+        },
+        {
+          "url": "https://www.mypunepulse.com/pune-news-pimple-saudagar-residents-raise-alarm-over-water-crisis/",
+          "title": "Pune News: Pimple Saudagar Residents Raise Alarm Over Water Crisis",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "The crisis is not new, with Siddhivinayak Ginger society resident Virendra Chavan pointing out that the issue has persisted for 18 years."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-demand-1",
+      "topic": "demand",
+      "text": "Pune Pulse reported on 3 April 2026 that Pimple Saudagar, \"known as a fast-developing residential and IT hub\", has seen a sharp rise in population over the past few years, with large housing societies, schools and commercial establishments, and that a proposal for its own police station had gone to the state government. The Free Press Journal called it a fast-growing residential and commercial area in September 2024, when PCMC approved widening Kunal Icon Road.",
+      "services": [
+        "waterproofing",
+        "painting",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/pimple-saudagar-set-to-get-its-own-police-station-proposal-sent-to-state-government/",
+          "title": "Pimple Saudagar Set to Get Its Own Police Station, Proposal Sent to State Government",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "Pimple Saudagar, known as a fast-developing residential and IT hub, has witnessed a sharp rise in population over the past few years."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pcmc-approves-55-crore-pimple-saudagars-shivar-chowk-kunal-icon-road-development-project-to-ease-traffic",
+          "title": "PCMC Approves ₹55 Crore Pimple Saudagar's Shivar Chowk-Kunal Icon Road Development Project to Ease Traffic",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-09",
+          "quote": "It will help alleviate the heavy traffic congestion in this fast-growing residential and commercial area."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-rules-1",
+      "topic": "rules",
+      "text": "Wikipedia describes Pimple Saudagar as a neighbourhood in Pimpri-Chinchwad, which is governed by the Pimpri-Chinchwad Municipal Corporation (PCMC). On 29 September 2025 PCMC gave the Deputy Registrar a list of 1,686 unauthorized constructions in the blue floodline zones of the Pavana, Mula and Indrayani rivers and said such properties should not be sold, bought or registered; its Zone D list (Wakad Gaothan, Pimple Saudagar, Rahatni, Pimple Nilakh) accounted for 391.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Pimple_Saudagar",
+          "title": "Pimple Saudagar",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Pimple Saudagar is a neighbourhood in the city of Pimpri-Chinchwad, India."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Pimpri-Chinchwad_Municipal_Corporation",
+          "title": "Pimpri-Chinchwad Municipal Corporation",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Pimpri Chinchwad Municipal Corporation (PCMC) is the civic body that governs the city of Pimpri-Chinchwad"
+        },
+        {
+          "url": "https://www.mypunepulse.com/?p=170498",
+          "title": "Pune: PCMC Submits List Of 1,686 Unauthorized Constructions In Blue Floodline Zones Of Pavana, Mula and Indrayani Rivers",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "D Zone: 391 (Wakad Gaothan, Pimple Saudagar, Rahatni, Pimple Nilakh)"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-rules-2",
+      "topic": "rules",
+      "text": "According to a May 2025 Pune Pulse report, the Water Resources Department mapped a Blue Line (25-year floodplain) and Red Line (100-year floodplain) for the Pavana, Indrayani and Mula, and construction is strictly prohibited within the Blue Line. The same report says former PCMC standing committee chairperson Seema Sawale alleged that the revised Development Plan shows Survey No. 182 in Pimple Saudagar outside the Blue Line although Irrigation Department maps place it in the floodplain; these are allegations, not findings.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/?p=148206",
+          "title": "Massive Irregularities in Floodline Markings of Revised DP to Favour Influential Landowners: Seema Sawale",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "She cited examples such as Survey Nos. 1670 and 281 in Chikhali, Survey Nos. 58, 59, 60, 75, 76, and 77 in Moshi, Survey Nos. 105, 102, 101, 100, and 99 in Rahatani, Survey No. 182 in Pimple Saudagar, and Survey Nos. 55 and 56 in Kiwale."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-water-1",
+      "topic": "water",
+      "text": "PCMC started an alternate-day water supply scheme on 25 November 2019, and the Free Press Journal reported on 7 October 2026 that Pimpri-Chinchwad needs 770 million litres a day but gets 665 MLD, with a further 10% cut planned from 16 October 2026. On 5 October 2026 the same paper reported that residents of at least 34 large housing societies in PCMC still depend on private tankers despite the full Pavana Dam, mainly in rapidly developing areas including Pimple Saudagar.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.freepressjournal.in/pune/pimpri-chinchwad-already-gets-less-than-its-need-now-faces-10-more-water-cut-from-oct-16",
+          "title": "Pimpri-Chinchwad Already Gets Less Than Its Need, Now Faces 10% More Water Cut From Oct 16",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-09",
+          "quote": "Although Pimpri-Chinchwad requires 770 million litres per day (MLD) of water, the city manages to get only 665 MLD due to several reasons, including leakage, water theft and inadequate water resources."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pimpri-chinchwad-water-crisis-34-housing-societies-demand-audit-as-residents-depend-on-tankers-despite-full-pavana-dam",
+          "title": "Pimpri-Chinchwad Water Crisis: 34 Housing Societies Demand Audit As Residents Depend On Tankers Despite Full Pavana Dam",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-09",
+          "quote": "The affected societies are mainly in rapidly developing areas such as Wakad, Punawale, Tathawade, Thergaon, Shani Mandir Road and Pimple Saudagar."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-water-2",
+      "topic": "water",
+      "text": "In February 2025 The Bridge Chronicle reported that Roseland Residency in Pimple Saudagar was already buying tanker water, with PCMC supplying 2.5 to 3.5 lakh litres every two days against a need of 5.5 lakh, and that its rainwater harvesting system had become ineffective as borewell levels fell. In March 2017 the society's chairman had told the Times of India that rainwater harvesting meant it no longer needed tankers in summer, and in February 2025 Pune Pulse reported residents of multiple societies along Kunal Icon Road raising water-supply complaints.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.thebridgechronicle.com/news/pimple-saudagar-water-crisis-roseland-residency-residents-forced-to-buy-tanker-water",
+          "title": "Pimple Saudagar Water Crisis: Roseland Residency Residents Forced to Buy Tanker Water",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "The Pimpri-Chinchwad Municipal Corporation (PCMC) currently provides only 2.5 to 3.5 lakh liters of water every two days, while the society requires 5.5 lakh liters."
+        },
+        {
+          "url": "https://www.mypunepulse.com/pune-news-pimple-saudagar-residents-raise-alarm-over-water-crisis/",
+          "title": "Pune News: Pimple Saudagar Residents Raise Alarm Over Water Crisis",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "The residents of multiple housing societies along Kunal Icon Road have expressed growing frustration over the persistent water supply issues, urging the Pimpri Chinchwad Municipal Corporation (PCMC) to intervene on priority."
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/city/pune/pimple-saudagar-society-uses-rainwater-harvesting-to-beat-water-woes/articleshow/57696782.cms",
+          "title": "Pimple Saudagar society uses rainwater harvesting to beat water woes",
+          "publisher": "The Times of India",
+          "retrieved_at": "2026-10-09",
+          "quote": "We don’t need any water tankers in summer."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-rainfall-1",
+      "topic": "rainfall",
+      "text": "Pune Pulse reported in October 2020 that recent rains had caused waterlogging at many places in Pimple Saudagar, including inside societies and at PK Chowk and Zinzurde Farms, and that an inspection found the storm water line was too small, so a larger line was to be laid. On 26 May 2025 Punekar News reported flooding at Sangvi Phata that forced temporary road closures affecting commuters heading to Pimple Saudagar. On 4 July 2026 PCMC's plan for a signal-free PK Chowk included a 900 mm stormwater pipeline to prevent waterlogging.",
+      "services": [
+        "waterproofing",
+        "exterior-painting",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.mypunepulse.com/?p=3289",
+          "title": "New storm water lines to be laid in Pimple Saudagar",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "It was found that the water logging was caused due to insufficient size of the storm water line."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=207564",
+          "title": "Pune: Rain Havoc in Pimpri-Chinchwad, Flooded Roads, Clogged Infrastructure Expose PCMC’s Poor Monsoon Preparedness",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "In Sangvi Phata, flooding forced temporary road closures, severely affecting commuters heading to Pimple Saudagar, Pimple Gurav, and Navi Sangvi."
+        },
+        {
+          "url": "https://www.mypunepulse.com/pune-good-news-for-pimple-saudagar-residents-as-two-busy-junctions-p-k-chowk-and-kalptaru-chowk-to-become-signal-free/",
+          "title": "Pune: Good News For Pimple Saudagar Residents As Two Busy Junctions P K Chowk And Kalptaru Chowk To Become Signal-Free",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "Installation of a 900 mm diameter stormwater drainage pipeline to prevent waterlogging."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-access-1",
+      "topic": "access",
+      "text": "In September 2024 PCMC approved a project to widen and modernise Kunal Icon Road (Shivar Chowk to Govind Garden Chowk) with footpaths, parking and a rainwater drainage system, to be completed within 30 months of a planned late-September 2024 start; the fetched sources do not report its current status. On 4 July 2026 Pune Pulse reported that PCMC plans grade separators to make PK Chowk and Kalpataru Chowk signal-free.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.freepressjournal.in/pune/pcmc-approves-55-crore-pimple-saudagars-shivar-chowk-kunal-icon-road-development-project-to-ease-traffic",
+          "title": "PCMC Approves ₹55 Crore Pimple Saudagar's Shivar Chowk-Kunal Icon Road Development Project to Ease Traffic",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-09",
+          "quote": "This will include provisions for pedestrian-friendly footpaths, planned parking spaces, and a drainage system to manage rainwater efficiently."
+        },
+        {
+          "url": "https://www.mypunepulse.com/pune-good-news-for-pimple-saudagar-residents-as-two-busy-junctions-p-k-chowk-and-kalptaru-chowk-to-become-signal-free/",
+          "title": "Pune: Good News For Pimple Saudagar Residents As Two Busy Junctions P K Chowk And Kalptaru Chowk To Become Signal-Free",
+          "publisher": "Pune Pulse",
+          "retrieved_at": "2026-10-09",
+          "quote": "the Pimpri-Chinchwad Municipal Corporation (PCMC) has unveiled plans to make the busy PK Chowk and Kalptaru Chowk completely signal-free through the construction of grade separators."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "pimple-saudagar-access-2",
+      "topic": "access",
+      "text": "PCMC built a two-lane bridge linking Pimprigaon and Pimple Saudagar about 30 years before 2020, and in February 2020 the Times of India reported that it was inadequate for the increasing traffic and that PCMC had finalised the design of a parallel bridge. In August 2025 The Bridge Chronicle reported that MahaMetro had submitted a DPR for a proposed Nigdi-Chakan metro route covering areas including Wakad, Pimple Saudagar and Pimple Gurav.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://timesofindia.indiatimes.com/articleshow/74035726.cms",
+          "title": "PCMC to construct parallel Pimpri-Pimple Saudagar bridge",
+          "publisher": "The Times of India",
+          "retrieved_at": "2026-10-09",
+          "quote": "The existing two-lane bridge has proved to be inadequate to handle the increasing vehicular traffic, resulting in snarls almost every day."
+        },
+        {
+          "url": "https://en.wikipedia.org/wiki/Pimple_Saudagar",
+          "title": "Pimple Saudagar",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "A two lane bridge was constructed about 30 years back by the Pimpri Chinchwad Municipal Corporation (PCMC) to connect Pimprigaon with Pimple Saudagar."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/news/pune-metro-expansion-nigdi-to-chakan-route-dpr-submitted-to-pcmc",
+          "title": "Pune Metro Expansion: Nigdi-Chakan Route DPR Submitted for Approval",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "The proposed route will cover key residential, IT, and industrial zones, including Wakad, Pimple Saudagar, Pimple Gurav, Bhosari, and Chakan."
+        }
+      ],
+      "status": "draft"
+    }
+  ],
+  "kothrud": [
+    {
+      "id": "kothrud-housing_stock-1",
+      "topic": "housing_stock",
+      "text": "Wikipedia describes Kothrud as a primarily residential suburb where the single largest economic activity in recent years has been residential construction, mostly redevelopment of older buildings into taller ones. The Times of India reported on 26 March 2025 that redevelopment in Kothrud was at an all-time high.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kothrud",
+          "title": "Kothrud",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Throughout recent years, the single largest economic activity throughout this area has been the construction of residential buildings, mostly as redevelopment of older buildings leading to taller buildings and the urban issues owing to relentlessly increasing density."
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/city/pune/liveability-declines-in-punes-kothrud-one-of-asias-fastest-developing-suburbs/articleshow/119496926.cms",
+          "title": "Liveability declines in Pune’s Kothrud, one of Asia’s fastest developing suburbs",
+          "publisher": "The Times of India",
+          "retrieved_at": "2026-10-09",
+          "quote": "Redevelopment in the area is also at an all-time high."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kothrud-building_age-1",
+      "topic": "building_age",
+      "text": "Wikipedia calls Kothrud one of the earliest and now largest suburbs of Pune. A report by the redevelopment advisory Dreams Redeveloped, based on MahaRERA data and covered by Punekar News on 6 October 2026, found that 244 of the 410 MahaRERA-registered projects it identified in Kothrud, nearly 60%, carried a redevelopment signal, and that redevelopment's share of new Pune RERA registrations rose from 3.6% in 2017 to between 23% and 26% a year since 2023.",
+      "services": [
+        "painting",
+        "interior-painting",
+        "exterior-painting",
+        "waterproofing",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kothrud",
+          "title": "Kothrud",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Kothrud, one of the earliest and now largest suburbs of Pune, is bounded between Vetal Tekdi hills on the North and Karve Nagar and Mutha river on the South."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=246424",
+          "title": "Kothrud Emerges as Pune’s Redevelopment Epicentre, Finds MahaRERA Analysis",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "In Kothrud, 244 of the 410 MahaRERA-registered projects identified in the area carried a redevelopment signal, accounting for nearly 60% of registrations there."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kothrud-demand-1",
+      "topic": "demand",
+      "text": "Wikipedia says the many large educational institutions in Kothrud mean a substantial student population and a proportionate housing, food and service economy. The Times of India noted in March 2025 that, more than a decade earlier, the Guinness Book of World Records had named Kothrud one of the fastest developing suburbs in Asia.",
+      "services": [
+        "waterproofing",
+        "painting",
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kothrud",
+          "title": "Kothrud",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "The presence of many large educational institutions has meant a substantial student population and a proportionate housing, food and service economy."
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/city/pune/liveability-declines-in-punes-kothrud-one-of-asias-fastest-developing-suburbs/articleshow/119496926.cms",
+          "title": "Liveability declines in Pune’s Kothrud, one of Asia’s fastest developing suburbs",
+          "publisher": "The Times of India",
+          "retrieved_at": "2026-10-09",
+          "quote": "More than a decade ago, the Guinness Book Of World Records named Kothrud as one of the fastest developing suburbs in Asia."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kothrud-rules-1",
+      "topic": "rules",
+      "text": "Mahatma Tekdi, a hill zone within the Kothrud-Warje hill complex, falls under the biodiversity park (BDP) reservation, and in November 2024 excavation there was halted after a complaint to PMC. In March 2023 PMC removed illegally erected sheds on a hill at Jijainagar in Kothrud.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.freepressjournal.in/amp/pune/pune-excavation-work-at-mahatma-tekdi-halted-after-complaint-to-pmc",
+          "title": "Pune: Excavation Work At Mahatma Tekdi Halted After Complaint To PMC",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-09",
+          "quote": "Mahatma Tekdi, an eco-sensitive hill zone surviving within the Kothrud-Warje hill complex, falls under the biodiversity park (BDP) reservation, which is meant to safeguard the city's green cover and biodiversity."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=134318",
+          "title": "Pune: PMC Takes Action On Illegal Encroachments On Hills; Issue Revealed Due To Vigilance Of Citizens",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "At Jijainagar in Kothrud, sheds were set up illegally."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kothrud-water-1",
+      "topic": "water",
+      "text": "The Bridge Chronicle reported on 24 June 2026 that Kothrud, Bavdhan, Erandwane and nearby areas faced acute water shortage under PMC's alternate-day supply, with low pressure keeping water from reaching overhead tanks in many apartment complexes. On 25 June 2026 it reported nearly 1,200 complaints in the first nine days of alternate-day supply from 15 June, with Kothrud, Karvenagar, Warje and Sutardara among the areas reporting delayed or no supply.",
+      "services": [
+        "bathroom-renovation",
+        "modular-kitchen",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.thebridgechronicle.com/pune/pune-water-shortage-western-suburbs-supply-crisis-agn97",
+          "title": "Pune Water Shortage: Residents in Western Suburbs Struggle as Supply Falls Short",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "Residents say the reduced pressure is preventing water from reaching overhead tanks in many apartment complexes."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/amp/story/pune/pune-alternate-day-water-supply-1200-complaints-pmc-water-crisis-agn97",
+          "title": "Pune Water Crisis: 1,200 Complaints Since Alternate-Day Water Supply Began",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "Residents from Navi Peth, Narayan Peth, Sadashiv Peth, Somwar Peth, Kothrud, Karvenagar, Warje, Sutardara, Baner, Kharadi, Lohegaon, Wagholi, Kalyani Nagar, Vadgaonsheri, Kalas and Dhanori have reported delayed water supply, low pressure and, in some cases, no supply at all."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kothrud-soil-1",
+      "topic": "soil",
+      "text": "Wikipedia says groundwater is accessible through the year in most parts of Kothrud, thanks largely to the underlying geology and the large unconfined aquifers held in and recharged by the Vetal Tekdi hill complex. Question of Cities reported in April 2024, in connection with a proposed 30-metre link road between Paud Road and Senapati Bapat Road across Vetal Tekdi, that PMC's own reports said further degradation of the land surface was likely to damage the fractured or jointed section of the basalt rock and disturb the continuity of groundwater movement.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://en.wikipedia.org/wiki/Kothrud",
+          "title": "Kothrud",
+          "publisher": "Wikipedia",
+          "retrieved_at": "2026-10-09",
+          "quote": "Groundwater is accessible throughout the year in most parts thanks largely to the underlying geology"
+        },
+        {
+          "url": "https://questionofcities.org/how-punekars-fought-for-their-hill-vetal-tekdi-to-save-its-ecology/",
+          "title": "How Punekars fought for their hill, Vetal Tekdi, to save its ecology",
+          "publisher": "Question of Cities",
+          "retrieved_at": "2026-10-09",
+          "quote": "further degradation of the land surface is likely to damage the fractured/jointed section in the Basalt rock, disturbing continuity in the groundwater movement"
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kothrud-rainfall-1",
+      "topic": "rainfall",
+      "text": "Punekar News reported a flash flood in Kothrud and Vanaz on 11 September 2022, with water rushing down to Paud Road, and flooding around several societies near Pratidnya Mangal Karyalaya in Kothrud on 28 September 2023. The Bridge Chronicle reported on 30 September 2026 that Kothrud Garbage Depot was among the places waterlogged after heavy rain on 28 September, despite pre-monsoon drain cleaning.",
+      "services": [
+        "waterproofing",
+        "exterior-painting",
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://www.punekarnews.in/?p=118080",
+          "title": "Pune: Flash Floods Break Out In Kothrud, Water Logging Reported In Many Areas",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "Kothrud and Vanaz reported cases of water logging."
+        },
+        {
+          "url": "https://www.punekarnews.in/?p=155528",
+          "title": "Pune: Heavy Rain Cause Flooding Around Kothrud Societies, PMC Team On Spot",
+          "publisher": "Punekar News",
+          "retrieved_at": "2026-10-09",
+          "quote": "Waterlogging was also reported near Pratidnya Mangal Karyalaya in Kothrud where several societies around this area were also flooded."
+        },
+        {
+          "url": "https://www.thebridgechronicle.com/amp/story/pune/pune-roads-flooded-drainage-civic-lapses-agn97",
+          "title": "Pune Roads Flooded Despite Crores Spent on Drainage, Heavy Rain Exposes Civic Lapses",
+          "publisher": "The Bridge Chronicle",
+          "retrieved_at": "2026-10-09",
+          "quote": "Several areas, including the central peths, Kothrud Garbage Depot, Lagad Mala and Mitramandal Chowk on Sinhagad Road, Wagholi, Ambethan Temple Road, Upper Depot, Bibwewadi, Gokul Nagar, Kamthe Nagar, Yewalewadi and the VIT College Road area in Kondhwa, reported waterlogging."
+        }
+      ],
+      "status": "draft"
+    },
+    {
+      "id": "kothrud-access-1",
+      "topic": "access",
+      "text": "Construction of Pune Metro Corridor 2A (Vanaz-Chandni Chowk) was reported on 24 April 2026 to have begun, with soil testing and survey works under way in the Chandni Chowk area. In May 2025 the Free Press Journal reported a PMC survey that found 23 km of missing link roads in Kothrud and 8.92 km in the Karve Road area.",
+      "services": [
+        "house-construction"
+      ],
+      "sources": [
+        {
+          "url": "https://indianinfrastructure.com/2026/04/24/construction-work-commences-on-vanaz-chandini-chowk-corridor-under-pune-metro-project/",
+          "title": "Construction work commences on Vanaz-Chandini Chowk corridor under Pune Metro Project",
+          "publisher": "Indian Infrastructure",
+          "retrieved_at": "2026-10-09",
+          "quote": "Early-stage works are currently in progress in the Chandni Chowk area, comprising soil testing and survey activities."
+        },
+        {
+          "url": "https://www.freepressjournal.in/pune/pune-pmc-to-address-kothruds-traffic-woes-with-33-missing-link-roads",
+          "title": "Pune: PMC To Address Kothrud's Traffic Woes With 33 Missing Link Roads",
+          "publisher": "The Free Press Journal",
+          "retrieved_at": "2026-10-09",
+          "quote": "Out of these, 23 kilometers of missing roads lie in Kothrud, while 8.92 kilometers of missing link roads are found in the Karve Road area."
+        }
+      ],
+      "status": "draft"
+    }
+  ]
+}

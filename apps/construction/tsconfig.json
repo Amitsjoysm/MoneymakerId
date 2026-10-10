@@ -1,0 +1,10 @@
+{
+  // Checked with `astro check` (pnpm --filter <app> check). The repo's strictness settings come from the base;
+  // Astro's preset adds JSX and `.astro` handling. Components also run in the browser, hence the DOM libs.
+  "extends": ["../../tsconfig.base.json", "astro/tsconfigs/strict"],
+  "compilerOptions": {
+    "lib": ["ES2024", "DOM", "DOM.Iterable"]
+  },
+  "include": [".astro/types.d.ts", "src/**/*"],
+  "exclude": ["dist", "node_modules"]
+}

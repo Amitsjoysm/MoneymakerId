@@ -1,0 +1,123 @@
+// Builds the Cloudflare Workers Static Assets `_headers` file for the public apps (plan §17).
+//
+// Static pages never run a Worker, so their security headers can only come from this file, which the
+// deploy pipeline (O01b) writes to `dist/_headers` after the build. It is the only place the CSP lives.
+//
+//   buildHeaders({ launched, hashes }) -> string
+//
+//   launched  boolean. While false, every response carries `X-Robots-Tag: noindex` (PUBLIC_LAUNCHED=false).
+//             It must be a real boolean: the string "false" is truthy and would silently launch the site.
+//   hashes    { script?: string[], style?: string[] } CSP hash sources for the inline <script> and <style>
+//             blocks found in the built HTML, as `sha256-<base64>` (also sha384 or sha512). Quotes are
+//             optional. Duplicates are removed and the order does not matter.
+//
+// Cloudflare limits: 100 rules per file and 2000 characters per header line. This file writes one rule, and
+// the function throws when the CSP would pass 2000 characters, so a deploy fails loudly instead of
+// shipping a `_headers` file Cloudflare ignores.
+
+const MAX_LINE_LENGTH = 2000;
+
+// Hosts the pages may load from. Each is justified by a product feature in plan §17 / §21.
+const GOOGLE_TAG_MANAGER = 'https://www.googletagmanager.com'; // GA4 loader (gtag.js)
+const ADSENSE = 'https://pagead2.googlesyndication.com'; // AdSense loader
+const TURNSTILE = 'https://challenges.cloudflare.com'; // Turnstile script and widget iframe
+const CF_WEB_ANALYTICS = 'https://static.cloudflareinsights.com'; // Cloudflare Web Analytics beacon script
+
+const CSP_HASH = /^(sha256|sha384|sha512)-[A-Za-z0-9+/]+={0,2}$/;
+
+/**
+ * Validates CSP hash sources and returns them quoted, de-duplicated and sorted.
+ * @param {unknown} list
+ * @param {string} name which list this is, for error messages
+ * @returns {string[]}
+ */
+function hashSources(list, name) {
+  if (list === undefined) return [];
+  if (!Array.isArray(list)) throw new TypeError(`hashes.${name} must be an array of CSP hash sources`);
+  const unique = new Set();
+  for (const raw of list) {
+    const bare = typeof raw === 'string' ? raw.replace(/^'(.*)'$/, '$1') : raw;
+    if (typeof bare !== 'string' || !CSP_HASH.test(bare)) {
+      throw new TypeError(
+        `hashes.${name} has an invalid CSP hash source: ${JSON.stringify(raw)} (expected sha256-<base64>)`,
+      );
+    }
+    unique.add(`'${bare}'`);
+  }
+  return [...unique].sort();
+}
+
+/**
+ * @param {{ launched: boolean, hashes?: { script?: string[], style?: string[] } }} options
+ * @returns {string} the text of the `_headers` file
+ */
+export function buildHeaders({ launched, hashes = {} } = /** @type {never} */ ({})) {
+  if (typeof launched !== 'boolean') {
+    throw new TypeError(`buildHeaders: "launched" must be a boolean, got ${JSON.stringify(launched)}`);
+  }
+
+  const scriptHashes = hashSources(hashes.script, 'script');
+  const styleHashes = hashSources(hashes.style, 'style');
+
+  /** @type {Record<string, string[]>} */
+  const csp = {
+    'default-src': ["'self'"],
+    'script-src': ["'self'", ...scriptHashes, GOOGLE_TAG_MANAGER, ADSENSE, TURNSTILE, CF_WEB_ANALYTICS],
+    'style-src': ["'self'", ...styleHashes],
+    'img-src': [
+      "'self'",
+      'data:',
+      'https://www.google-analytics.com',
+      GOOGLE_TAG_MANAGER,
+      ADSENSE,
+      'https://tpc.googlesyndication.com',
+      'https://googleads.g.doubleclick.net',
+    ],
+    'font-src': ["'self'"],
+    'connect-src': [
+      "'self'",
+      'https://*.google-analytics.com',
+      'https://*.analytics.google.com',
+      GOOGLE_TAG_MANAGER,
+      ADSENSE,
+      'https://cloudflareinsights.com',
+    ],
+    'frame-src': [TURNSTILE, 'https://googleads.g.doubleclick.net', 'https://tpc.googlesyndication.com'],
+    'object-src': ["'none'"],
+    'base-uri': ["'self'"],
+    'form-action': ["'self'"],
+    'frame-ancestors': ["'none'"],
+    'upgrade-insecure-requests': [],
+  };
+
+  const contentSecurityPolicy = Object.entries(csp)
+    .map(([directive, sources]) => [directive, ...sources].join(' '))
+    .join('; ');
+
+  /** @type {[string, string][]} */
+  const headers = [
+    ['Content-Security-Policy', contentSecurityPolicy],
+    ['Strict-Transport-Security', 'max-age=31536000; includeSubDomains'],
+    ['X-Content-Type-Options', 'nosniff'],
+    ['Referrer-Policy', 'strict-origin-when-cross-origin'],
+    ['Permissions-Policy', 'geolocation=(self), camera=(), microphone=(), payment=(), usb=()'],
+  ];
+  if (!launched) headers.push(['X-Robots-Tag', 'noindex']);
+
+  const lines = headers.map(([name, value]) => `  ${name}: ${value}`);
+  for (const line of lines) {
+    if (line.length > MAX_LINE_LENGTH) {
+      throw new RangeError(
+        `buildHeaders: the ${line.trim().split(':')[0]} header is ${line.length} characters, over the ` +
+          `Cloudflare _headers limit of ${MAX_LINE_LENGTH}. Too many inline script or style hashes?`,
+      );
+    }
+  }
+
+  return [
+    '# Generated by scripts/headers.mjs (T05). Do not edit by hand.',
+    '/*',
+    ...lines,
+    '',
+  ].join('\n');
+}

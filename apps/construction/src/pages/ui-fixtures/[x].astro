@@ -1,0 +1,21 @@
+---
+// Placeholder (T05); T03 fills in the content. This page exists only for UI work and the accessibility and
+// visual checks: it is built when DATA_SOURCE=fixtures (CI, local), and never in a production build.
+export function getStaticPaths() {
+  if (import.meta.env.DATA_SOURCE === 'fixtures') return [{ params: { x: 'components' } }];
+  return [];
+}
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>UI fixtures | MarketMind AI</title>
+  </head>
+  <body>
+    <h1>UI fixtures (T03 fills this)</h1>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+# CI for every push and pull request (docs/TASKS.md T04, plan §17). Deploys and the nightly pipeline live in
+# their own workflows.
+#
+# Third-party actions are pinned by commit SHA with the tag in a comment. Take a new SHA from
+# `git ls-remote https://github.com/<owner>/<repo> refs/tags/<tag>` (for an annotated tag, the `^{}` line).
+name: CI
+
+on:
+  push:
+  pull_request:
+
+# No job writes to the repository or to GitHub, so the token is read-only.
+permissions:
+  contents: read
+
+# A newer push to a pull request cancels the run it replaces. Runs on other refs always finish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  ASTRO_TELEMETRY_DISABLED: '1'
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Install, static checks, unit tests, Workers-runtime tests and the tests of scripts/.
+  lint-typecheck-test:
+    name: Lint, typecheck, test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # pnpm's version comes from "packageManager" in package.json; Node's from .nvmrc.
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      # The nightly backup (P04c) encrypts with age. `digest` is the SHA-256 of the release archive.
+      - name: Install age
+        uses: jaxxstorm/action-install-gh-release@25e24d2d23ae098373794ef1d6faecb48ee52da8 # v3.0.0
+        with:
+          repo: FiloSottile/age
+          tag: v1.3.2
+          digest: cbe24006683f8eb669266162894b9a522a1af52f2665fbc63a4bb032ed26ac10
+          binaries-location: age
+      - name: Check age
+        run: age --version
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm format:check
+      # Tests of the build scripts in scripts/ run on Node's own test runner; `pnpm test` does not cover them.
+      - name: Test scripts
+        run: node --test "scripts/*.test.mjs"
+
+  # pgTAP tests on a local Supabase database. Skipped, and green, until supabase/config.toml exists.
+  db:
+    name: Database tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Look for a Supabase project
+        id: project
+        run: |
+          if [ -f supabase/config.toml ]; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "present=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Database tests skipped::supabase/config.toml does not exist yet."
+          fi
+      # Keep this version equal to the `supabase` entry in pnpm-workspace.yaml.
+      - name: Install the Supabase CLI
+        if: steps.project.outputs.present == 'true'
+        uses: supabase/setup-cli@45a513f8c64c0bc8e0e3dfe572b5c95be85f6359 # v3.0.1
+        with:
+          version: 2.120.0
+      - name: Start the database
+        if: steps.project.outputs.present == 'true'
+        run: supabase db start
+      - name: Run the pgTAP tests
+        if: steps.project.outputs.present == 'true'
+        run: supabase test db
+
+  # Builds every app from fixtures, then checks the output for credentials.
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Build every app
+        run: pnpm build
+        env:
+          DATA_SOURCE: fixtures
+      # The shell expands the glob. If no build output exists, the scan fails instead of passing.
+      - name: Scan the build output for secrets
+        run: node scripts/secret-scan.mjs apps/*/dist
+      # One tar file keeps every path and dotfile exactly as built for the next job.
+      - name: Pack the build output
+        run: tar -czf "$RUNNER_TEMP/build-output.tar.gz" apps/*/dist
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: build-output
+          path: ${{ runner.temp }}/build-output.tar.gz
+          if-no-files-found: error
+          retention-days: 3
+
+  # Checks that read the build output, then the browser tests. Each passes while nothing exists to run
+  # (no scripts/run-checks.mjs, no e2e/ tests, no lighthouserc*.json); the tasks that add them need no edit here.
+  checks-e2e:
+    name: Build checks, E2E, Lighthouse
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # Any app server that the E2E and Lighthouse runs start reads fixtures, as the build did.
+    env:
+      DATA_SOURCE: fixtures
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: pnpm/action-setup@ea17c68df8912ef543352723c149a84f56e3d413 # v6.1.0
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        with:
+          name: build-output
+          path: ${{ runner.temp }}/build-output
+      - name: Unpack the build output
+        run: tar -xzf "$RUNNER_TEMP/build-output/build-output.tar.gz"
+      # Playwright needs its own Chromium once e2e/ holds tests. Lighthouse uses the Chrome already on the runner.
+      - name: Install Playwright's Chromium
+        if: hashFiles('e2e/**') != ''
+        run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm checks
+      - run: pnpm test:e2e
+      - run: pnpm lhci
+
+  # Lints the workflow files themselves. The image is pinned by digest (actionlint 1.7.12) and includes
+  # shellcheck, so the shell in `run:` steps is checked too.
+  actionlint:
+    name: actionlint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: docker://rhysd/actionlint@sha256:b1934ee5f1c509618f2508e6eb47ee0d3520686341fec936f3b79331f9315667 # 1.7.12
+        with:
+          args: -color

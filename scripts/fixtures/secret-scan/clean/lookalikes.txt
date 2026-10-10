@@ -1,0 +1,16 @@
+# Lookalikes that must NOT be flagged.
+short supabase secret: sb_secret_short
+short groq key: gsk_tooShort123
+short firecrawl key: fc-deadbeef
+css class: fc-calendar-event-title-wrapper
+anon token: eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJyb2xlIjoiYW5vbiIsImlzcyI6ImZpeHR1cmUtbm90LXJlYWwifQ.FAKE-SIGNATURE-NOT-REAL
+authenticated token: eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJyb2xlIjoiYXV0aGVudGljYXRlZCIsImlzcyI6ImZpeHR1cmUtbm90LXJlYWwifQ.FAKE-SIGNATURE-NOT-REAL
+const example_id = "00000000-0000-4000-8000-000000000000";
+EXAMPLE_ID=00000000-0000-4000-8000-000000000000
+EXACT_MATCH_ID=00000000-0000-4000-8000-000000000000
+const hexagon = "00000000-0000-4000-8000-000000000000";
+row id: 00000000-0000-4000-8000-000000000000
+EXA_API_KEYS=
+EXA_API_KEY=your-key-here
+-----BEGIN CERTIFICATE-----
+-----BEGIN PUBLIC KEY-----

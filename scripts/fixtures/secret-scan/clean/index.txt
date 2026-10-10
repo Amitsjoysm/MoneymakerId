@@ -1,0 +1,3 @@
+MarketMind AI build output without credentials.
+The Supabase publishable key is public by design and is not scanned for.
+Pattern names such as sb_secret_ or gsk_ may appear in prose without a key after them.

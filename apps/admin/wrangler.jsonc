@@ -1,0 +1,43 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mm-admin",
+  "compatibility_date": "2026-10-01",
+
+  // No *.workers.dev URL and no preview URLs: the only way in is the custom domain, which Cloudflare Access
+  // protects (CONTRACTS §10, plan §14).
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "admin.marketmindai.com", "custom_domain": true }],
+
+  // Custom entry point: re-exports Astro's fetch handler and adds the `scheduled` handler for the crons below.
+  "main": "./src/worker.ts",
+
+  // Cron triggers are written in UTC. IST is UTC+5:30, so these run at 01:01 IST (nightly pipeline dispatch;
+  // O02 adds the jitter) and 07:31 IST (health report). Minutes 01 and 31 avoid the busy :00 and :30 marks.
+  "triggers": { "crons": ["31 19 * * *", "1 2 * * *"] },
+
+  "kv_namespaces": [
+    // OWNER INPUT (docs/DEPLOY.md G1): the id of the shared LEADS_OUTBOX namespace. This placeholder makes
+    // a real deploy fail until the owner has created it.
+    { "binding": "LEADS_OUTBOX", "id": "00000000000000000000000000000000" }
+  ],
+
+  // Alert emails. OWNER INPUT (docs/DEPLOY.md D1): once the alert inbox is verified, add
+  // "destination_address" with that address to restrict the binding to it.
+  "send_email": [{ "name": "ALERT_EMAIL" }],
+
+  // Plain values only; the config is their source of truth. Secrets are set with `wrangler secret put`.
+  "vars": {
+    "SITE_URL_MAIN": "https://marketmindai.com",
+    "SITE_URL_FOOD": "https://food.marketmindai.com",
+    "SITE_URL_CONSTRUCTION": "https://construction.marketmindai.com",
+    // OWNER INPUT (docs/DEPLOY.md E2): the Supabase project URL.
+    "SUPABASE_URL": "{{SUPABASE_URL}}",
+    "WHATSAPP_NUMBER": "919834346179",
+    // OWNER INPUT (docs/DEPLOY.md C4): the Cloudflare Access team domain and application audience tag.
+    "ACCESS_TEAM_DOMAIN": "{{ACCESS_TEAM_DOMAIN}}",
+    "ACCESS_AUD": "{{ACCESS_AUD}}",
+    // The repository that the Rebuild button and the nightly cron dispatch workflows to.
+    "GITHUB_REPO": "Amitsjoysm/MoneymakerId"
+  }
+}

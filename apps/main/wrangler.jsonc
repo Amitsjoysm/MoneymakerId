@@ -1,0 +1,46 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mm-main",
+  "compatibility_date": "2026-10-01",
+
+  // No *.workers.dev URL and no preview URLs: the only way in is the custom domain (CONTRACTS §10).
+  "workers_dev": false,
+  "preview_urls": false,
+  "routes": [{ "pattern": "marketmindai.com", "custom_domain": true }],
+
+  // Static pages are served from the assets binding, and unknown paths get the built 404 page.
+  // WHEN THE FIRST ON-DEMAND ROUTE LANDS (src/pages/api/*.ts, E02), add `"run_worker_first": ["/api/*"]` here.
+  // Without it the 404 page answers /api/* and the Worker never runs. Wrangler rejects the setting while the
+  // app is still fully static (no Worker is built), so it cannot be here yet. scripts/app-shells.test.mjs
+  // checks both cases.
+  "assets": {
+    "not_found_handling": "404-page",
+    "html_handling": "force-trailing-slash"
+  },
+
+  "kv_namespaces": [
+    // OWNER INPUT (docs/DEPLOY.md G1): the id of the shared LEADS_OUTBOX namespace. This placeholder makes
+    // a real deploy fail until the owner has created it.
+    { "binding": "LEADS_OUTBOX", "id": "00000000000000000000000000000000" }
+  ],
+
+  // Alert emails. OWNER INPUT (docs/DEPLOY.md D1): once the alert inbox is verified, add
+  // "destination_address" with that address to restrict the binding to it.
+  "send_email": [{ "name": "ALERT_EMAIL" }],
+
+  // Burst limit per key (Workers Rate Limiting; available on the free plan). The namespace id only has to be
+  // unique per Worker in the account. A second layer sits behind the one WAF rate rule on /api/* (plan §17).
+  "ratelimits": [{ "name": "RATE_LIMITER", "namespace_id": "1001", "simple": { "limit": 10, "period": 60 } }],
+
+  // Plain values only; the config is their source of truth. Secrets are set with `wrangler secret put`.
+  "vars": {
+    "SITE_URL_MAIN": "https://marketmindai.com",
+    "SITE_URL_FOOD": "https://food.marketmindai.com",
+    "SITE_URL_CONSTRUCTION": "https://construction.marketmindai.com",
+    // OWNER INPUT (docs/DEPLOY.md E2): the Supabase project URL.
+    "SUPABASE_URL": "{{SUPABASE_URL}}",
+    "WHATSAPP_NUMBER": "919834346179",
+    // Runtime kill switch for /api/event. Set to "false" and redeploy to stop collecting events.
+    "EVENTS_ENABLED": "true"
+  }
+}

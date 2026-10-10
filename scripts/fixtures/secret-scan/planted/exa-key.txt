@@ -1,0 +1,2 @@
+# Planted fixture for scripts/secret-scan.test.mjs. Every value here is obviously fake.
+EXA_API_KEYS=main:00000000-0000-4000-8000-000000000000,backup:11111111-1111-4111-8111-111111111111

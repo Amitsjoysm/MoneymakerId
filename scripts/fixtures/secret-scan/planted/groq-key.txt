@@ -1,0 +1,2 @@
+# Planted fixture for scripts/secret-scan.test.mjs. Every value here is obviously fake.
+GROQ_API_KEYS=main:gsk_FAKEFIXTURENOTAREALKEY0000000000
