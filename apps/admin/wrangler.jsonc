@@ -19,7 +19,7 @@
   "kv_namespaces": [
     // OWNER INPUT (docs/DEPLOY.md G1): the id of the shared LEADS_OUTBOX namespace. This placeholder makes
     // a real deploy fail until the owner has created it.
-    { "binding": "LEADS_OUTBOX", "id": "00000000000000000000000000000000" }
+    { "binding": "LEADS_OUTBOX", "id": "00000000000000000000000000000000" },
   ],
 
   // Alert emails. OWNER INPUT (docs/DEPLOY.md D1): once the alert inbox is verified, add
@@ -38,6 +38,6 @@
     "ACCESS_TEAM_DOMAIN": "{{ACCESS_TEAM_DOMAIN}}",
     "ACCESS_AUD": "{{ACCESS_AUD}}",
     // The repository that the Rebuild button and the nightly cron dispatch workflows to.
-    "GITHUB_REPO": "Amitsjoysm/MoneymakerId"
-  }
+    "GITHUB_REPO": "Amitsjoysm/MoneymakerId",
+  },
 }

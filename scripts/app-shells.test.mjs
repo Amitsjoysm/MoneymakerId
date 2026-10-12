@@ -47,7 +47,13 @@ const SECRETS = [
 ];
 
 // docs/DEPLOY.md part M: the plain (non-secret) values that live in each Worker's config.
-const COMMON_VARS = ['SITE_URL_CONSTRUCTION', 'SITE_URL_FOOD', 'SITE_URL_MAIN', 'SUPABASE_URL', 'WHATSAPP_NUMBER'];
+const COMMON_VARS = [
+  'SITE_URL_CONSTRUCTION',
+  'SITE_URL_FOOD',
+  'SITE_URL_MAIN',
+  'SUPABASE_URL',
+  'WHATSAPP_NUMBER',
+];
 const EXPECTED_VARS = {
   main: [...COMMON_VARS, 'EVENTS_ENABLED'].sort(),
   food: [...COMMON_VARS, 'EVENTS_ENABLED', 'LIVE_ASK_DAILY_CAP'].sort(),
@@ -90,21 +96,25 @@ for (const [app, expected] of Object.entries(APPS)) {
       assert.equal(config.send_email[0].name, 'ALERT_EMAIL');
     });
 
-    it(expected.isPublic ? 'binds a rate limiter' : 'has no rate limiter (admin is behind Cloudflare Access)', () => {
-      if (expected.isPublic) {
-        assert.equal(config.ratelimits.length, 1);
-        assert.equal(config.ratelimits[0].name, 'RATE_LIMITER');
-        // Workers Rate Limiting accepts a period of 10 or 60 seconds only.
-        assert.ok([10, 60].includes(config.ratelimits[0].simple.period));
-        assert.ok(config.ratelimits[0].simple.limit > 0);
-      } else {
-        assert.equal(config.ratelimits, undefined);
-      }
-    });
+    it(
+      expected.isPublic ? 'binds a rate limiter' : 'has no rate limiter (admin is behind Cloudflare Access)',
+      () => {
+        if (expected.isPublic) {
+          assert.equal(config.ratelimits.length, 1);
+          assert.equal(config.ratelimits[0].name, 'RATE_LIMITER');
+          // Workers Rate Limiting accepts a period of 10 or 60 seconds only.
+          assert.ok([10, 60].includes(config.ratelimits[0].simple.period));
+          assert.ok(config.ratelimits[0].simple.limit > 0);
+        } else {
+          assert.equal(config.ratelimits, undefined);
+        }
+      },
+    );
 
     it('declares exactly the plain variables DEPLOY.md lists, and no secret', () => {
       assert.deepEqual(Object.keys(config.vars ?? {}).sort(), EXPECTED_VARS[app]);
-      for (const secret of SECRETS) assert.ok(!(secret in config.vars), `${secret} must not be in the config`);
+      for (const secret of SECRETS)
+        assert.ok(!(secret in config.vars), `${secret} must not be in the config`);
     });
 
     it('uses the site URLs and WhatsApp number from the contracts', () => {
@@ -218,7 +228,8 @@ describe('packages/edge/src/worker-env.d.ts', () => {
         ...(config.ratelimits ?? []).map((limit) => limit.name),
         ...Object.keys(config.vars),
       ];
-      for (const name of names) assert.ok(declares(name), `${app}: ${name} is not declared on Cloudflare.Env`);
+      for (const name of names)
+        assert.ok(declares(name), `${app}: ${name} is not declared on Cloudflare.Env`);
     }
   });
 

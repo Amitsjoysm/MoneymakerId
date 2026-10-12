@@ -241,7 +241,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 ## Wave 5 (🔌)
 
 **E02 · Edge handlers**
-- **Owns:** `packages/edge/src/{lead,event,feedback,turnstile,visitor}/**`, `apps/{main,food,construction}/src/pages/api/{lead,event}.ts`, `apps/{food,construction}/src/pages/api/feedback.ts`; may add bindings to T00's `packages/edge/vitest.config.ts`
+- **Owns:** `packages/edge/src/{lead,event,feedback,turnstile,visitor}/**`, `apps/{main,food,construction}/src/pages/api/{lead,event}.ts`, `apps/{food,construction}/src/pages/api/feedback.ts`; may add bindings to T00's `packages/edge/vitest.config.ts`; adds `"run_worker_first": ["/api/*"]` to the `assets` block of `apps/{main,food,construction}/wrangler.jsonc` (that one line only; without it `scripts/app-shells.test.mjs` fails and `/api/*` never reaches the Worker)
 - **Depends on:** E01, E03, C06, T02b
 - **Deliverables:**
   - Origin check, 16 KB limit, Turnstile, visitor HMAC (IPv6 /64), burst limits

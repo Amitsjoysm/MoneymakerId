@@ -15,13 +15,13 @@
   // checks both cases.
   "assets": {
     "not_found_handling": "404-page",
-    "html_handling": "force-trailing-slash"
+    "html_handling": "force-trailing-slash",
   },
 
   "kv_namespaces": [
     // OWNER INPUT (docs/DEPLOY.md G1): the id of the shared LEADS_OUTBOX namespace. This placeholder makes
     // a real deploy fail until the owner has created it.
-    { "binding": "LEADS_OUTBOX", "id": "00000000000000000000000000000000" }
+    { "binding": "LEADS_OUTBOX", "id": "00000000000000000000000000000000" },
   ],
 
   // Alert emails. OWNER INPUT (docs/DEPLOY.md D1): once the alert inbox is verified, add
@@ -43,6 +43,6 @@
     // Runtime kill switch for /api/event. Set to "false" and redeploy to stop collecting events.
     "EVENTS_ENABLED": "true",
     // Live Ask lookups per day, across all visitors (plan §9).
-    "LIVE_ASK_DAILY_CAP": "50"
-  }
+    "LIVE_ASK_DAILY_CAP": "50",
+  },
 }

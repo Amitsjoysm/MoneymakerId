@@ -1,5 +1,4 @@
 /// <reference types="astro/client" />
-/// <reference path="../../../packages/edge/src/worker-env.d.ts" />
 
 // Build-time values (CONTRACTS §10). They come from the build environment, not from the Worker's `env`, and
 // are read with `import.meta.env`. Runtime values: `import { env } from 'cloudflare:workers'`.

@@ -183,8 +183,16 @@ describe('buildHeaders: Content-Security-Policy', () => {
       42,
     ];
     for (const value of bad) {
-      assert.throws(() => buildHeaders({ launched: true, hashes: { script: [value] } }), /hash/i, String(value));
-      assert.throws(() => buildHeaders({ launched: true, hashes: { style: [value] } }), /hash/i, String(value));
+      assert.throws(
+        () => buildHeaders({ launched: true, hashes: { script: [value] } }),
+        /hash/i,
+        String(value),
+      );
+      assert.throws(
+        () => buildHeaders({ launched: true, hashes: { style: [value] } }),
+        /hash/i,
+        String(value),
+      );
     }
   });
 

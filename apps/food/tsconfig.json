@@ -1,10 +1,11 @@
 {
   // Checked with `astro check` (pnpm --filter <app> check). The repo's strictness settings come from the base;
   // Astro's preset adds JSX and `.astro` handling. Components also run in the browser, hence the DOM libs.
+  // The worker-env.d.ts in the include list (owned by T05, shared with @mm/edge) types `env` from 'cloudflare:workers'.
   "extends": ["../../tsconfig.base.json", "astro/tsconfigs/strict"],
   "compilerOptions": {
     "lib": ["ES2024", "DOM", "DOM.Iterable"]
   },
-  "include": [".astro/types.d.ts", "src/**/*"],
+  "include": [".astro/types.d.ts", "src/**/*", "../../packages/edge/src/worker-env.d.ts"],
   "exclude": ["dist", "node_modules"]
 }
