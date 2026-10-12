@@ -35,7 +35,16 @@ function parseDoubleQuoted(raw: string, no: number): { value: string; rest: stri
       continue;
     }
     const esc = raw[++i];
-    const simple: Record<string, string> = { '"': '"', '\\': '\\', '/': '/', n: '\n', t: '\t', r: '\r', b: '\b', f: '\f' };
+    const simple: Record<string, string> = {
+      '"': '"',
+      '\\': '\\',
+      '/': '/',
+      n: '\n',
+      t: '\t',
+      r: '\r',
+      b: '\b',
+      f: '\f',
+    };
     if (esc !== undefined && esc in simple) out += simple[esc];
     else if (esc === 'u' && /^[0-9a-fA-F]{4}$/.test(raw.slice(i + 1, i + 5))) {
       out += String.fromCharCode(parseInt(raw.slice(i + 1, i + 5), 16));
@@ -78,7 +87,8 @@ function parseScalar(raw: string, no: number): unknown {
   const plain = text.replace(/\s+#.*$/, '').trim();
   if (plain === '[]') return [];
   if (/^[[\]{}|>&*!%@`]/.test(plain)) fail(no, `unsupported YAML syntax: ${plain}`);
-  if (plain.includes(': ') || plain.endsWith(':')) fail(no, `a plain value may not contain ": " (quote it): ${plain}`);
+  if (plain.includes(': ') || plain.endsWith(':'))
+    fail(no, `a plain value may not contain ": " (quote it): ${plain}`);
   if (plain === '' || plain === '~' || /^(null|Null|NULL)$/.test(plain)) return null;
   if (/^(true|True|TRUE)$/.test(plain)) return true;
   if (/^(false|False|FALSE)$/.test(plain)) return false;
@@ -87,7 +97,11 @@ function parseScalar(raw: string, no: number): unknown {
   return plain;
 }
 
-function parseMapping(lines: Line[], start: number, indent: number): { value: Record<string, unknown>; next: number } {
+function parseMapping(
+  lines: Line[],
+  start: number,
+  indent: number,
+): { value: Record<string, unknown>; next: number } {
   const out: Record<string, unknown> = {};
   let i = start;
   while (i < lines.length) {

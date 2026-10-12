@@ -45,7 +45,9 @@ describe('GateConfig', () => {
   it('rejects a rule with a missing field or an out-of-range threshold', () => {
     const { seo_min: _seo, ...incomplete } = rule;
     expect(ok(GateConfigSchema, { ...cfg, pages: { 'food:place': incomplete } })).toBe(false);
-    expect(ok(GateConfigSchema, { ...cfg, pages: { 'food:place': { ...rule, min_relevance: 1.5 } } })).toBe(false);
+    expect(ok(GateConfigSchema, { ...cfg, pages: { 'food:place': { ...rule, min_relevance: 1.5 } } })).toBe(
+      false,
+    );
   });
 });
 
@@ -59,7 +61,9 @@ describe('GateResult and GateDecision', () => {
   it('accept a result and a decision', () => {
     expect(ok(GateResultSchema, result)).toBe(true);
     expect(ok(GateDecisionSchema, { action: 'build_index', result, noindex_since: null })).toBe(true);
-    expect(ok(GateDecisionSchema, { action: 'redirect_parent', result, noindex_since: '2026-09-01T00:00:00Z' })).toBe(true);
+    expect(
+      ok(GateDecisionSchema, { action: 'redirect_parent', result, noindex_since: '2026-09-01T00:00:00Z' }),
+    ).toBe(true);
   });
   it('reject an unknown action', () => {
     expect(ok(GateDecisionSchema, { action: 'publish', result, noindex_since: null })).toBe(false);

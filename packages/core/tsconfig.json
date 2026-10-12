@@ -3,7 +3,8 @@
   // checked with no ambient Node types: `process`, `Buffer` and `node:*` imports are errors here.
   // Test files run under Node and are checked by tsconfig.test.json instead (`pnpm typecheck` runs both).
   "extends": "../../tsconfig.base.json",
-  "compilerOptions": { "types": [] },
+  // `WebWorker` supplies URL, TextEncoder, crypto, console and structuredClone, which exist on both Node and Workers.
+  "compilerOptions": { "types": [], "lib": ["ES2024", "WebWorker"] },
   "include": ["src"],
   "exclude": ["src/**/*.test.ts"]
 }

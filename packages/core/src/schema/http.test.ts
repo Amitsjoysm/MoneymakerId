@@ -22,7 +22,9 @@ describe('LeadSubmission', () => {
 
   it('requires accepted consent, exactly true', () => {
     const base = leadSubmission();
-    expect(ok(LeadSubmissionSchema, { ...base, consent: { version: 'lead-consent-v1', accepted: false } })).toBe(false);
+    expect(
+      ok(LeadSubmissionSchema, { ...base, consent: { version: 'lead-consent-v1', accepted: false } }),
+    ).toBe(false);
     expect(ok(LeadSubmissionSchema, { ...base, consent: { version: 'lead-consent-v1' } })).toBe(false);
     expect(ok(LeadSubmissionSchema, { ...base, consent: { version: '', accepted: true } })).toBe(false);
   });
@@ -45,7 +47,9 @@ describe('LeadSubmission', () => {
     expect(ok(LeadSubmissionSchema, { ...base, quote: { ...quote, timeline: 'someday' } })).toBe(false);
     expect(ok(LeadSubmissionSchema, { ...base, quote: { ...quote, property_type: 'castle' } })).toBe(false);
     expect(ok(LeadSubmissionSchema, { ...base, quote: { ...quote, tier: null, estimate: null } })).toBe(true);
-    expect(ok(LeadSubmissionSchema, { ...base, quote: { ...quote, area: { preset: 'custom', quantity: null } } })).toBe(true);
+    expect(
+      ok(LeadSubmissionSchema, { ...base, quote: { ...quote, area: { preset: 'custom', quantity: null } } }),
+    ).toBe(true);
     expect(ok(LeadSubmissionSchema, { ...base, idempotency_key: 'not-a-uuid' })).toBe(false);
   });
 
@@ -68,8 +72,16 @@ describe('LeadSubmission', () => {
       services: ['terrace-waterproofing'],
       preferred_placement: null,
     };
-    expect(ok(LeadSubmissionSchema, { ...leadSubmission(), lead_type: 'for_contractors', quote: null, business })).toBe(true);
-    expect(ok(LeadSubmissionSchema, { ...leadSubmission(), quote: null, business: { ...business, email: 'nope' } })).toBe(false);
+    expect(
+      ok(LeadSubmissionSchema, { ...leadSubmission(), lead_type: 'for_contractors', quote: null, business }),
+    ).toBe(true);
+    expect(
+      ok(LeadSubmissionSchema, {
+        ...leadSubmission(),
+        quote: null,
+        business: { ...business, email: 'nope' },
+      }),
+    ).toBe(false);
   });
 
   it('strips unknown keys from untrusted input rather than carrying them through', () => {
@@ -86,7 +98,12 @@ describe('lead responses', () => {
     expect(ok(LeadResponseSchema, { ok: false })).toBe(false);
   });
   it('LeadErrorResponse lists field errors', () => {
-    expect(ok(LeadErrorResponseSchema, { ok: false, errors: [{ path: 'phone', message: 'Enter a valid mobile number' }] })).toBe(true);
+    expect(
+      ok(LeadErrorResponseSchema, {
+        ok: false,
+        errors: [{ path: 'phone', message: 'Enter a valid mobile number' }],
+      }),
+    ).toBe(true);
     expect(ok(LeadErrorResponseSchema, { ok: true, errors: [] })).toBe(false);
   });
 });
@@ -122,7 +139,13 @@ describe('EventRequest', () => {
 
 describe('FeedbackRequest and Ask', () => {
   it('FeedbackRequest bounds the note to 500', () => {
-    const f = { page_key: 'food:place:x', entity_id: null, kind: 'useful', note: null, turnstile_token: null };
+    const f = {
+      page_key: 'food:place:x',
+      entity_id: null,
+      kind: 'useful',
+      note: null,
+      turnstile_token: null,
+    };
     expect(ok(FeedbackRequestSchema, f)).toBe(true);
     expect(ok(FeedbackRequestSchema, { ...f, note: 'x'.repeat(500) })).toBe(true);
     expect(ok(FeedbackRequestSchema, { ...f, note: 'x'.repeat(501) })).toBe(false);
@@ -147,9 +170,21 @@ describe('FeedbackRequest and Ask', () => {
       confidence: 0.8,
     };
     expect(
-      ok(AskResponseSchema, { intent, results: [], served_from: 'db', live: { status: 'pending', lookup_id: uuid() } }),
+      ok(AskResponseSchema, {
+        intent,
+        results: [],
+        served_from: 'db',
+        live: { status: 'pending', lookup_id: uuid() },
+      }),
     ).toBe(true);
-    expect(ok(AskResponseSchema, { intent, results: [], served_from: 'live', live: { status: 'none', lookup_id: null } })).toBe(false);
+    expect(
+      ok(AskResponseSchema, {
+        intent,
+        results: [],
+        served_from: 'live',
+        live: { status: 'none', lookup_id: null },
+      }),
+    ).toBe(false);
     expect(ok(AskResultResponseSchema, { status: 'done', results: [], citations: [] })).toBe(true);
     expect(ok(AskResultResponseSchema, { status: 'queued', results: [], citations: [] })).toBe(false);
   });
@@ -157,7 +192,9 @@ describe('FeedbackRequest and Ask', () => {
 
 describe('DeployDispatchInputs', () => {
   it('needs a reason and the override flag', () => {
-    expect(ok(DeployDispatchInputsSchema, { reason: 'content refresh', override_shrinkage: false })).toBe(true);
+    expect(ok(DeployDispatchInputsSchema, { reason: 'content refresh', override_shrinkage: false })).toBe(
+      true,
+    );
     expect(ok(DeployDispatchInputsSchema, { reason: '', override_shrinkage: false })).toBe(false);
     expect(ok(DeployDispatchInputsSchema, { reason: 'x' })).toBe(false);
   });

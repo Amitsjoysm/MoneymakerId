@@ -55,13 +55,19 @@ describe('api.* inputs and outputs (CONTRACTS §5)', () => {
   });
   it('ask_commit and ask_result', () => {
     const result = { items: [], served_from: 'live', citations: [] };
-    expect(ok(AskCommitInputSchema, { lookup_id: uuid(), result, key_outcomes: [], candidates: [] })).toBe(true);
+    expect(ok(AskCommitInputSchema, { lookup_id: uuid(), result, key_outcomes: [], candidates: [] })).toBe(
+      true,
+    );
     expect(ok(AskResultOutputSchema, { status: 'done', result })).toBe(true);
     expect(ok(AskResultOutputSchema, { status: 'pending', result: null })).toBe(true);
   });
   it('upsert_business result and page_builds_record input', () => {
-    expect(ok(UpsertBusinessResultSchema, { business_id: uuid(), slug: 'example-place', action: 'merged' })).toBe(true);
-    expect(ok(UpsertBusinessResultSchema, { business_id: uuid(), slug: 'example-place', action: 'deleted' })).toBe(false);
+    expect(
+      ok(UpsertBusinessResultSchema, { business_id: uuid(), slug: 'example-place', action: 'merged' }),
+    ).toBe(true);
+    expect(
+      ok(UpsertBusinessResultSchema, { business_id: uuid(), slug: 'example-place', action: 'deleted' }),
+    ).toBe(false);
     expect(ok(PageBuildsRecordInputSchema, { build_id: 'b1', entries: [] })).toBe(true);
   });
 });

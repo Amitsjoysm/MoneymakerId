@@ -57,8 +57,16 @@ export const LocalFactTopicSchema = z.enum([
 ]);
 export type LocalFactTopic = z.infer<typeof LocalFactTopicSchema>;
 
+/**
+ * A fact id such as `hinjewadi-housing_stock-1`. The contract types it as a plain string, and the committed
+ * facts embed the topic, whose names use `_`; so `_` is allowed here, unlike in a reference-data slug.
+ */
+export const LocalFactIdSchema = z
+  .string()
+  .regex(/^[a-z0-9]+(?:[-_][a-z0-9]+)*$/, 'must be lowercase ASCII with - or _ separators');
+
 export const LocalFactSchema = z.strictObject({
-  id: SlugSchema,
+  id: LocalFactIdSchema,
   topic: LocalFactTopicSchema,
   text: TextSchema,
   /** Every service id (top-level or sub) the fact is relevant to. */
@@ -254,9 +262,11 @@ export const CostModelSchema = z
     const m = ctx.value;
     const total = Object.values(m.components).reduce((a, b) => a + b, 0);
     // The epsilon keeps a sum of exactly 1.01 (1 + 0.01 in floating point) valid.
-    if (Math.abs(total - 1) > 0.01 + 1e-9) addIssue(ctx, `components sum to ${total}, expected 1 +/- 0.01`, ['components']);
+    if (Math.abs(total - 1) > 0.01 + 1e-9)
+      addIssue(ctx, `components sum to ${total}, expected 1 +/- 0.01`, ['components']);
     const publishers = new Set(m.sources.map((s) => s.publisher.trim().toLowerCase()));
-    if (publishers.size < 2) addIssue(ctx, 'sources must come from at least 2 different publishers', ['sources']);
+    if (publishers.size < 2)
+      addIssue(ctx, 'sources must come from at least 2 different publishers', ['sources']);
     if (m.valid_until < m.reviewed_at) addIssue(ctx, 'valid_until is before reviewed_at', ['valid_until']);
   });
 export type CostModel = z.infer<typeof CostModelSchema>;

@@ -15,7 +15,9 @@ describe('parseCsv', () => {
   });
 
   it('handles quoted cells with commas, escaped quotes and newlines', () => {
-    expect(parseCsv('a,"b, c","say ""hi""","line1\nline2"\n')).toEqual([['a', 'b, c', 'say "hi"', 'line1\nline2']]);
+    expect(parseCsv('a,"b, c","say ""hi""","line1\nline2"\n')).toEqual([
+      ['a', 'b, c', 'say "hi"', 'line1\nline2'],
+    ]);
   });
 
   it('handles CRLF, a missing final newline and a leading BOM', () => {

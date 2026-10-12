@@ -115,6 +115,12 @@ describe('LocalFact', () => {
   it('rejects an unknown topic', () => {
     expect(ok(LocalFactSchema, fact({ topic: 'gossip' }))).toBe(false);
   });
+  it('allows the topic name, with its underscore, inside the id, but only lowercase ASCII', () => {
+    expect(ok(LocalFactSchema, fact({ id: 'hinjewadi-housing_stock-1' }))).toBe(true);
+    expect(ok(LocalFactSchema, fact({ id: 'Hinjewadi-water-1' }))).toBe(false);
+    expect(ok(LocalFactSchema, fact({ id: 'water fact' }))).toBe(false);
+    expect(ok(LocalFactSchema, fact({ id: '_water' }))).toBe(false);
+  });
 });
 
 describe('Locality', () => {
@@ -130,13 +136,23 @@ describe('Locality', () => {
     expect(ok(LocalitySchema, locality({ city_id: 'mumbai' }))).toBe(false);
   });
   it('requires a landmark to be near-prefixed with a parent locality', () => {
-    expect(ok(LocalitySchema, locality({ id: 'near-balewadi-stadium', kind: 'landmark', parent_id: 'balewadi' }))).toBe(true);
-    expect(ok(LocalitySchema, locality({ id: 'balewadi-stadium', kind: 'landmark', parent_id: 'balewadi' }))).toBe(false);
-    expect(ok(LocalitySchema, locality({ id: 'near-balewadi-stadium', kind: 'landmark', parent_id: null }))).toBe(false);
+    expect(
+      ok(LocalitySchema, locality({ id: 'near-balewadi-stadium', kind: 'landmark', parent_id: 'balewadi' })),
+    ).toBe(true);
+    expect(
+      ok(LocalitySchema, locality({ id: 'balewadi-stadium', kind: 'landmark', parent_id: 'balewadi' })),
+    ).toBe(false);
+    expect(
+      ok(LocalitySchema, locality({ id: 'near-balewadi-stadium', kind: 'landmark', parent_id: null })),
+    ).toBe(false);
   });
   it('requires a sub-locality to have a parent', () => {
-    expect(ok(LocalitySchema, locality({ id: 'hinjewadi-phase-1', kind: 'sub_locality', parent_id: 'hinjewadi' }))).toBe(true);
-    expect(ok(LocalitySchema, locality({ id: 'hinjewadi-phase-1', kind: 'sub_locality', parent_id: null }))).toBe(false);
+    expect(
+      ok(LocalitySchema, locality({ id: 'hinjewadi-phase-1', kind: 'sub_locality', parent_id: 'hinjewadi' })),
+    ).toBe(true);
+    expect(
+      ok(LocalitySchema, locality({ id: 'hinjewadi-phase-1', kind: 'sub_locality', parent_id: null })),
+    ).toBe(false);
   });
   it('rejects a bad pincode', () => {
     expect(ok(LocalitySchema, locality({ pincodes: ['41104'] }))).toBe(false);
@@ -179,15 +195,27 @@ describe('ServiceDef', () => {
     expect(ok(ServiceDefSchema, parent)).toBe(true);
   });
   it('rejects a sub-service whose parent_id does not name its parent', () => {
-    const parent = service({ sub_services: [service({ id: 'interior-painting', parent_id: 'waterproofing' })] });
+    const parent = service({
+      sub_services: [service({ id: 'interior-painting', parent_id: 'waterproofing' })],
+    });
     expect(ok(ServiceDefSchema, parent)).toBe(false);
   });
   it('accepts a sourced duration and rejects an inverted one', () => {
-    expect(ok(ServiceDefSchema, service({ duration_days: { min: 3, max: 7, basis: 'Planning estimate' } }))).toBe(true);
-    expect(ok(ServiceDefSchema, service({ duration_days: { min: 7, max: 3, basis: 'Planning estimate' } }))).toBe(false);
+    expect(
+      ok(ServiceDefSchema, service({ duration_days: { min: 3, max: 7, basis: 'Planning estimate' } })),
+    ).toBe(true);
+    expect(
+      ok(ServiceDefSchema, service({ duration_days: { min: 7, max: 3, basis: 'Planning estimate' } })),
+    ).toBe(false);
   });
   it('requires sources on an area preset', () => {
-    const preset = { preset: 'terrace', label: 'Terrace', quantity: 1000, assumption: 'Example', sources: [] };
+    const preset = {
+      preset: 'terrace',
+      label: 'Terrace',
+      quantity: 1000,
+      assumption: 'Example',
+      sources: [],
+    };
     expect(ok(ServiceDefSchema, service({ area_presets: [preset] }))).toBe(false);
     expect(ok(ServiceDefSchema, service({ area_presets: [{ ...preset, sources: [source()] }] }))).toBe(true);
   });
@@ -208,7 +236,9 @@ describe('CostModel', () => {
   it('requires two sources from different publishers', () => {
     expect(ok(CostModelSchema, costModel({ sources: [source('A', 1)] }))).toBe(false);
     expect(ok(CostModelSchema, costModel({ sources: [source('A', 1), source(' a ', 2)] }))).toBe(false);
-    expect(ok(CostModelSchema, costModel({ sources: [source('A', 1), source('B', 2), source('B', 3)] }))).toBe(true);
+    expect(
+      ok(CostModelSchema, costModel({ sources: [source('A', 1), source('B', 2), source('B', 3)] })),
+    ).toBe(true);
   });
   it('rejects valid_until before reviewed_at and non-integer rates', () => {
     expect(ok(CostModelSchema, costModel({ valid_until: '2026-01-01' }))).toBe(false);
@@ -252,13 +282,31 @@ describe('small data files', () => {
     const prices = [{ service_id: 'painting', grade: 'A', price_inr: 400 }];
     expect(ok(LeadPricingSchema, { currency: 'INR', exclusive_multiplier: 2.5, prices })).toBe(true);
     expect(ok(LeadPricingSchema, { currency: 'USD', exclusive_multiplier: 2.5, prices })).toBe(false);
-    expect(ok(LeadPricingSchema, { currency: 'INR', exclusive_multiplier: 2.5, prices: [{ ...prices[0], grade: 'D' }] })).toBe(false);
+    expect(
+      ok(LeadPricingSchema, {
+        currency: 'INR',
+        exclusive_multiplier: 2.5,
+        prices: [{ ...prices[0], grade: 'D' }],
+      }),
+    ).toBe(false);
   });
   it('AggregatorEntry is discovery-only with a lowercase domain', () => {
-    expect(ok(AggregatorEntrySchema, { domain: 'zomato.com', owner_group: 'eternal-zomato', discovery_only: true })).toBe(true);
-    expect(ok(AggregatorEntrySchema, { domain: 'zomato.com', owner_group: 'x', discovery_only: false })).toBe(false);
-    expect(ok(AggregatorEntrySchema, { domain: 'Zomato.com', owner_group: 'x', discovery_only: true })).toBe(false);
-    expect(ok(AggregatorEntrySchema, { domain: 'https://zomato.com', owner_group: 'x', discovery_only: true })).toBe(false);
+    expect(
+      ok(AggregatorEntrySchema, {
+        domain: 'zomato.com',
+        owner_group: 'eternal-zomato',
+        discovery_only: true,
+      }),
+    ).toBe(true);
+    expect(ok(AggregatorEntrySchema, { domain: 'zomato.com', owner_group: 'x', discovery_only: false })).toBe(
+      false,
+    );
+    expect(ok(AggregatorEntrySchema, { domain: 'Zomato.com', owner_group: 'x', discovery_only: true })).toBe(
+      false,
+    );
+    expect(
+      ok(AggregatorEntrySchema, { domain: 'https://zomato.com', owner_group: 'x', discovery_only: true }),
+    ).toBe(false);
   });
   it('the locality-facts staging file maps locality ids to facts', () => {
     expect(ok(LocalityFactsStagingSchema, { baner: [fact()] })).toBe(true);

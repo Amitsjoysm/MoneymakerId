@@ -100,7 +100,7 @@ const text = z.string().trim().min(1);
 const optionalText = z.string().transform((s) => (s.trim() === '' ? null : s.trim()));
 
 /** An empty cell is `null`; otherwise the cell must satisfy `inner`. */
-function optional<T extends z.ZodType>(inner: T) {
+function optional<T extends z.ZodType<unknown, string>>(inner: T) {
   return z
     .string()
     .transform((s) => (s.trim() === '' ? null : s.trim()))
@@ -108,7 +108,7 @@ function optional<T extends z.ZodType>(inner: T) {
 }
 
 /** A `|`-separated cell. Empty gives `[]`. */
-function list<T extends z.ZodType>(item: T) {
+function list<T extends z.ZodType<unknown, string>>(item: T) {
   return z
     .string()
     .transform((s) =>
@@ -120,19 +120,13 @@ function list<T extends z.ZodType>(item: T) {
     .pipe(z.array(item));
 }
 
-const wholeNumber = z
-  .string()
-  .trim()
-  .regex(/^\d+$/, 'must be a whole number')
-  .transform(Number);
+const wholeNumber = z.string().trim().regex(/^\d+$/, 'must be a whole number').transform(Number);
 const decimal = z
   .string()
   .trim()
   .regex(/^-?\d+(\.\d+)?$/, 'must be a number')
   .transform(Number);
-const boolean = z
-  .enum(['true', 'false'])
-  .transform((v) => v === 'true');
+const boolean = z.enum(['true', 'false']).transform((v) => v === 'true');
 
 /** `https://…` for a published source, `visited` for first-hand, `owner` for owner-entered. */
 const sourceCell = z.union([HttpsUrlSchema, z.literal('visited'), z.literal('owner')]);
@@ -148,11 +142,12 @@ export function parseOpeningHoursCell(cell: string): OpeningHours | null {
   for (const part of raw.split(';')) {
     const m = /^([a-z]+)=(.+)$/.exec(part.trim());
     const day = m ? WeekdaySchema.safeParse(m[1]) : null;
-    if (!m || !day?.success) throw new Error(`opening_hours: cannot read "${part.trim()}" (expected day=HH:MM-HH:MM)`);
+    if (!m || !day?.success)
+      throw new Error(`opening_hours: cannot read "${part.trim()}" (expected day=HH:MM-HH:MM)`);
     if (day.data in hours) throw new Error(`opening_hours: ${day.data} appears twice`);
     hours[day.data] = m[2]!.split('|').map((range) => {
       const r = /^(\d{2}:\d{2})-(\d{2}:\d{2})$/.exec(range.trim());
-      if (!r) throw new Error(`opening_hours: cannot read "${range.trim()}" (expected HH:MM-HH:MM)`);
+      if (!r) throw new Error(`opening_hours: cannot read "${part.trim()}" (expected HH:MM-HH:MM)`);
       return [r[1]!, r[2]!];
     });
   }

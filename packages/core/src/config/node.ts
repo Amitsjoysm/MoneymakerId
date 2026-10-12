@@ -34,7 +34,9 @@ interface NodeProcessLike {
 export function nodeApi(): NodeApi {
   const proc = (globalThis as unknown as { process?: NodeProcessLike }).process;
   if (!proc?.getBuiltinModule || !proc.cwd) {
-    throw new ConfigError('@mm/core/config is Node-only: it reads data/ from disk and cannot run on Workers.');
+    throw new ConfigError(
+      '@mm/core/config is Node-only: it reads data/ from disk and cannot run on Workers.',
+    );
   }
   const cwd = proc.cwd.bind(proc);
   return {

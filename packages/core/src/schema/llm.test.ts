@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { LLM_SCHEMAS, LlmClaimSchema, LlmEntitySchema, LlmExtractionSchema, exportLlmJsonSchemas } from './llm.ts';
+import {
+  LLM_SCHEMAS,
+  LlmClaimSchema,
+  LlmEntitySchema,
+  LlmExtractionSchema,
+  exportLlmJsonSchemas,
+} from './llm.ts';
 import { strictSchemaViolations, toStrictJsonSchema } from './json-schema.ts';
 import { z } from 'zod';
 
@@ -35,6 +41,26 @@ describe('LLM-facing schemas', () => {
     expect(LlmExtractionSchema.safeParse({ entities: [entity] }).success).toBe(true);
   });
 
+  it('accept the four cost units and serving as a price_unit, and nothing else', () => {
+    const base = {
+      claim_type: 'price',
+      supporting_quote: 'q',
+      dish_id: null,
+      variant_label: null,
+      service_id: null,
+      price_inr: 100,
+      rating_value: null,
+      rating_scale: null,
+      sentiment: null,
+      text: null,
+      ends_on: null,
+    };
+    for (const unit of ['sqft', 'rft', 'unit', 'project', 'serving', null]) {
+      expect(LlmClaimSchema.safeParse({ ...base, price_unit: unit }).success).toBe(true);
+    }
+    expect(LlmClaimSchema.safeParse({ ...base, price_unit: 'per_kg' }).success).toBe(false);
+  });
+
   it('require every property: a missing nullable field is an error, not a default', () => {
     const { price_inr: _p, ...missing } = {
       claim_type: 'price',
@@ -68,9 +94,12 @@ describe('exported JSON schemas satisfy Groq strict mode', () => {
     expect(Object.keys(exported).length).toBeGreaterThan(0);
   });
 
-  it.each(Object.entries(exported))('%s: every property required, optional means nullable, no extra properties', (_name, json) => {
-    expect(strictSchemaViolations(json)).toEqual([]);
-  });
+  it.each(Object.entries(exported))(
+    '%s: every property required, optional means nullable, no extra properties',
+    (_name, json) => {
+      expect(strictSchemaViolations(json)).toEqual([]);
+    },
+  );
 
   it('has no $schema header and uses only strict-mode keywords', () => {
     for (const json of Object.values(exported)) {
@@ -87,9 +116,27 @@ describe('exported JSON schemas satisfy Groq strict mode', () => {
         }
       };
       walk(json);
-      const allowed = new Set(['type', 'properties', 'required', 'additionalProperties', 'items', 'enum', 'description', 'anyOf']);
+      const allowed = new Set([
+        'type',
+        'properties',
+        'required',
+        'additionalProperties',
+        'items',
+        'enum',
+        'description',
+        'anyOf',
+      ]);
       expect([...keywords].filter((k) => !allowed.has(k))).toEqual([]);
     }
+  });
+
+  it('exports price_unit as one nullable enum that keeps the serving literal', () => {
+    const claim = exported['LlmClaim'] as { properties: Record<string, unknown> };
+    expect(claim.properties['price_unit']).toEqual({
+      type: ['string', 'null'],
+      enum: ['sqft', 'rft', 'unit', 'project', 'serving', null],
+      description: 'The unit the price applies to, or null.',
+    });
   });
 
   it('nullable fields export as a type union including null', () => {
@@ -112,13 +159,27 @@ describe('strictSchemaViolations (the checker itself)', () => {
   it('recurses into arrays and nested objects', () => {
     const nested = {
       type: 'object',
-      properties: { list: { type: 'array', items: { type: 'object', properties: { x: { type: 'string' } }, required: [], additionalProperties: false } } },
+      properties: {
+        list: {
+          type: 'array',
+          items: {
+            type: 'object',
+            properties: { x: { type: 'string' } },
+            required: [],
+            additionalProperties: false,
+          },
+        },
+      },
       required: ['list'],
       additionalProperties: false,
     };
     expect(strictSchemaViolations(nested).some((v) => /list/.test(v) && /x/.test(v))).toBe(true);
   });
   it('accepts a fully strict schema', () => {
-    expect(strictSchemaViolations(toStrictJsonSchema(z.object({ a: z.string().nullable(), b: z.array(z.object({ c: z.number() })) })))).toEqual([]);
+    expect(
+      strictSchemaViolations(
+        toStrictJsonSchema(z.object({ a: z.string().nullable(), b: z.array(z.object({ c: z.number() })) })),
+      ),
+    ).toEqual([]);
   });
 });

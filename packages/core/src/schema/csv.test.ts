@@ -35,7 +35,9 @@ describe('CSV_HEADERS (CONTRACTS §6)', () => {
   });
   it('each row schema reads exactly its template columns', () => {
     for (const [name, template] of Object.entries(CSV_TEMPLATES)) {
-      expect([...Object.keys(template.row.shape)], name).toEqual([...CSV_HEADERS[name as keyof typeof CSV_HEADERS]]);
+      expect([...Object.keys(template.row.shape)], name).toEqual([
+        ...CSV_HEADERS[name as keyof typeof CSV_HEADERS],
+      ]);
     }
   });
 });
@@ -69,8 +71,10 @@ describe('parseOpeningHoursCell', () => {
   });
 });
 
-const row = (schema: { safeParse(v: unknown): { success: boolean; data?: unknown } }, v: Record<string, string>) =>
-  schema.safeParse(v);
+const row = (
+  schema: { safeParse(v: unknown): { success: boolean; data?: unknown } },
+  v: Record<string, string>,
+) => schema.safeParse(v);
 
 describe('PlaceRowSchema', () => {
   const place = {
@@ -177,7 +181,11 @@ describe('other row schemas', () => {
       tags: 'family|late_night',
       notes: 'Generous portion',
     };
-    expect(row(ExperienceRowSchema, r).data).toMatchObject({ rating: 4, would_recommend: true, tags: ['family', 'late_night'] });
+    expect(row(ExperienceRowSchema, r).data).toMatchObject({
+      rating: 4,
+      would_recommend: true,
+      tags: ['family', 'late_night'],
+    });
     expect(row(ExperienceRowSchema, { ...r, rating: '6' }).success).toBe(false);
     expect(row(ExperienceRowSchema, { ...r, rating: '0' }).success).toBe(false);
   });
@@ -192,7 +200,9 @@ describe('other row schemas', () => {
       publisher: 'Publisher',
       retrieved_at: '2026-10-06',
     };
-    expect(row(LocalFactRowSchema, r).data).toMatchObject({ services: ['terrace-waterproofing', 'bathroom-waterproofing'] });
+    expect(row(LocalFactRowSchema, r).data).toMatchObject({
+      services: ['terrace-waterproofing', 'bathroom-waterproofing'],
+    });
     expect(row(LocalFactRowSchema, { ...r, source_url: 'visited' }).success).toBe(false); // a fact needs a real source
     expect(row(LocalFactRowSchema, { ...r, topic: 'gossip' }).success).toBe(false);
   });

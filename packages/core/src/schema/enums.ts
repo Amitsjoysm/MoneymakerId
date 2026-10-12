@@ -21,13 +21,30 @@ export const VerificationMethodSchema = z.enum(['website', 'phone', 'business_do
 export type VerificationMethod = z.infer<typeof VerificationMethodSchema>;
 
 export const SourceKindSchema = z.enum([
-  'first_hand', 'owner_manual', 'csv', 'official_site', 'menu', 'directory', 'article', 'aggregator',
+  'first_hand',
+  'owner_manual',
+  'csv',
+  'official_site',
+  'menu',
+  'directory',
+  'article',
+  'aggregator',
 ]);
 export type SourceKind = z.infer<typeof SourceKindSchema>;
 
 export const ClaimTypeSchema = z.enum([
-  'price', 'hours', 'offer', 'availability', 'dish', 'service', 'address', 'phone', 'rating', 'mention',
-  'locality_fact', 'cost_rate',
+  'price',
+  'hours',
+  'offer',
+  'availability',
+  'dish',
+  'service',
+  'address',
+  'phone',
+  'rating',
+  'mention',
+  'locality_fact',
+  'cost_rate',
 ]);
 export type ClaimType = z.infer<typeof ClaimTypeSchema>;
 
@@ -44,7 +61,15 @@ export const DietSchema = z.enum(['veg', 'non_veg', 'egg', 'both']);
 export type Diet = z.infer<typeof DietSchema>;
 
 export const CravingSchema = z.enum([
-  'spicy', 'sweet', 'savoury', 'light', 'filling', 'street', 'breakfast', 'late_night', 'healthy',
+  'spicy',
+  'sweet',
+  'savoury',
+  'light',
+  'filling',
+  'street',
+  'breakfast',
+  'late_night',
+  'healthy',
 ]);
 export type Craving = z.infer<typeof CravingSchema>;
 
@@ -61,7 +86,13 @@ export const CostUnitSchema = z.enum(['sqft', 'rft', 'unit', 'project']);
 export type CostUnit = z.infer<typeof CostUnitSchema>;
 
 export const AreaPresetSchema = z.enum([
-  '1bhk', '2bhk', '3bhk', '4bhk', 'independent_house', 'terrace', 'custom',
+  '1bhk',
+  '2bhk',
+  '3bhk',
+  '4bhk',
+  'independent_house',
+  'terrace',
+  'custom',
 ]);
 export type AreaPreset = z.infer<typeof AreaPresetSchema>;
 
@@ -75,12 +106,25 @@ export const TimelineSchema = z.enum(['within_2_weeks', 'within_1_month', '1_to_
 export type Timeline = z.infer<typeof TimelineSchema>;
 
 export const LeadTypeSchema = z.enum([
-  'quote', 'featured_enquiry', 'advertise', 'claim', 'contact', 'for_contractors', 'reminder',
+  'quote',
+  'featured_enquiry',
+  'advertise',
+  'claim',
+  'contact',
+  'for_contractors',
+  'reminder',
 ]);
 export type LeadType = z.infer<typeof LeadTypeSchema>;
 
 export const LeadStatusSchema = z.enum([
-  'new', 'contacted', 'qualified', 'assigned', 'won', 'lost', 'spam', 'nurture',
+  'new',
+  'contacted',
+  'qualified',
+  'assigned',
+  'won',
+  'lost',
+  'spam',
+  'nurture',
 ]);
 export type LeadStatus = z.infer<typeof LeadStatusSchema>;
 
@@ -113,7 +157,11 @@ export const BadgeLabelSchema = z.enum(['hidden_gem', 'best_value', 'late_night'
 export type BadgeLabel = z.infer<typeof BadgeLabelSchema>;
 
 export const TrustLabelSchema = z.enum([
-  'verified', 'recently_checked', 'source_backed', 'price_checked', 'hours_checked',
+  'verified',
+  'recently_checked',
+  'source_backed',
+  'price_checked',
+  'hours_checked',
 ]);
 export type TrustLabel = z.infer<typeof TrustLabelSchema>;
 
@@ -133,17 +181,55 @@ export const ProviderSchema = z.enum(['groq', 'exa', 'firecrawl']);
 export type Provider = z.infer<typeof ProviderSchema>;
 
 export const EventNameSchema = z.enum([
-  'session_start', 'web_vital', 'search', 'filter', 'recommendation_click', 'website_click', 'call_click',
-  'direction_click', 'whatsapp_click', 'quote_start', 'quote_step', 'quote_submit', 'calculator_start',
-  'calculator_complete', 'featured_click', 'provider_click', 'profile_view', 'list_impression',
-  'ad_impression', 'ad_click', 'ask_submit', 'feedback', 'outbound_order_click',
+  'session_start',
+  'web_vital',
+  'search',
+  'filter',
+  'recommendation_click',
+  'website_click',
+  'call_click',
+  'direction_click',
+  'whatsapp_click',
+  'quote_start',
+  'quote_step',
+  'quote_submit',
+  'calculator_start',
+  'calculator_complete',
+  'featured_click',
+  'provider_click',
+  'profile_view',
+  'list_impression',
+  'ad_impression',
+  'ad_click',
+  'ask_submit',
+  'feedback',
+  'outbound_order_click',
 ]);
 export type EventName = z.infer<typeof EventNameSchema>;
 
 export const PageTypeSchema = z.enum([
-  'home', 'city_hub', 'locality_hub', 'dish_city', 'dish_locality', 'food_intent', 'locality_food_intent',
-  'place', 'service_cost', 'service_city', 'locality_service', 'provider', 'calculator', 'get_quotes',
-  'for_contractors', 'ask', 'locality_guide', 'legal', 'business', 'contact', 'about', 'not_found',
+  'home',
+  'city_hub',
+  'locality_hub',
+  'dish_city',
+  'dish_locality',
+  'food_intent',
+  'locality_food_intent',
+  'place',
+  'service_cost',
+  'service_city',
+  'locality_service',
+  'provider',
+  'calculator',
+  'get_quotes',
+  'for_contractors',
+  'ask',
+  'locality_guide',
+  'legal',
+  'business',
+  'contact',
+  'about',
+  'not_found',
   'thank_you',
 ]);
 export type PageType = z.infer<typeof PageTypeSchema>;

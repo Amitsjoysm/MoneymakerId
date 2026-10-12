@@ -2,11 +2,7 @@
 // every free-text field is bounded. Every response is `Cache-Control: no-store`; bodies are at most 16 KB
 // (enforced by the Workers, not here).
 import { z } from 'zod';
-import {
-  AskItemSchema,
-  CitationSchema,
-  ParsedIntentSchema,
-} from './derived.ts';
+import { AskItemSchema, CitationSchema, ParsedIntentSchema } from './derived.ts';
 import {
   DeviceClassSchema,
   EventNameSchema,

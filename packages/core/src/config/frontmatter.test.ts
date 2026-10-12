@@ -7,9 +7,27 @@ const doc = (front: string, body = 'Body text.\n') => `---\n${front}\n---\n${bod
 describe('parseFrontmatter', () => {
   it('parses scalars: quoted, plain, numbers, booleans and null', () => {
     const { data, body } = parseFrontmatter(
-      doc(['a: "quoted: with colon"', "b: 'single ''quoted'''", 'c: plain text', 'd: 42', 'e: true', 'f: null', 'g: ~'].join('\n')),
+      doc(
+        [
+          'a: "quoted: with colon"',
+          "b: 'single ''quoted'''",
+          'c: plain text',
+          'd: 42',
+          'e: true',
+          'f: null',
+          'g: ~',
+        ].join('\n'),
+      ),
     );
-    expect(data).toEqual({ a: 'quoted: with colon', b: "single 'quoted'", c: 'plain text', d: 42, e: true, f: null, g: null });
+    expect(data).toEqual({
+      a: 'quoted: with colon',
+      b: "single 'quoted'",
+      c: 'plain text',
+      d: 42,
+      e: true,
+      f: null,
+      g: null,
+    });
     expect(body).toBe('Body text.\n');
   });
 

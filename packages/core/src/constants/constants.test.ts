@@ -262,12 +262,19 @@ describe('reserved slugs (§4a)', () => {
     );
   });
 
-  it.each(['veg', 'late-night-food', 'under-250', 'under-100', 'terrace-waterproofing-cost', 'x-cost', 'api', 'mr', 'hi'])(
-    '%s is reserved',
-    (slug) => {
-      expect(isReservedSlug(slug)).toBe(true);
-    },
-  );
+  it.each([
+    'veg',
+    'late-night-food',
+    'under-250',
+    'under-100',
+    'terrace-waterproofing-cost',
+    'x-cost',
+    'api',
+    'mr',
+    'hi',
+  ])('%s is reserved', (slug) => {
+    expect(isReservedSlug(slug)).toBe(true);
+  });
 
   it.each(['biryani', 'hinjewadi', 'costco', 'underpass', 'vegan', 'hindi'])('%s is not reserved', (slug) => {
     expect(isReservedSlug(slug)).toBe(false);

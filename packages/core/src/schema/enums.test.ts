@@ -18,7 +18,10 @@ function contractEnums(): Map<string, string[]> {
   for (const line of lines) {
     const m = /^(\w+)\s*=\s*(.*)$/.exec(line);
     if (!m || m[2]!.includes('`')) continue; // FoodIntent is a template literal, tested separately
-    out.set(m[1]!, [...m[2]!.matchAll(/'([^']*)'/g)].map((x) => x[1]!));
+    out.set(
+      m[1]!,
+      [...m[2]!.matchAll(/'([^']*)'/g)].map((x) => x[1]!),
+    );
   }
   return out;
 }

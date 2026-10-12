@@ -35,7 +35,11 @@ describe('dates, timestamps, uuids', () => {
     }
   });
   it('Timestamp is ISO 8601 with a zone (Z or offset), with any sub-second precision', () => {
-    for (const v of ['2026-10-07T10:00:00Z', '2026-10-07T10:00:00.123456+00:00', '2026-10-07T15:30:00+05:30']) {
+    for (const v of [
+      '2026-10-07T10:00:00Z',
+      '2026-10-07T10:00:00.123456+00:00',
+      '2026-10-07T15:30:00+05:30',
+    ]) {
       expect(ok(TimestampSchema, v), v).toBe(true);
     }
     for (const v of ['2026-10-07', '2026-10-07T10:00:00', 'yesterday']) {
@@ -55,8 +59,8 @@ describe('money, phone, geo', () => {
     for (const v of [-1, 2.5, '249', Number.NaN, Infinity]) expect(ok(InrSchema, v), String(v)).toBe(false);
   });
   it('PhoneE164 matches the Indian mobile rule', () => {
-    expect(ok(PhoneE164Schema, '+919834346179')).toBe(true);
-    for (const v of ['9834346179', '+915834346179', '+91983434617', '+9198343461790', '+14155550100']) {
+    expect(ok(PhoneE164Schema, '+919876543210')).toBe(true);
+    for (const v of ['9876543210', '+915876543210', '+91987654321', '+9198765432100', '+14155550100']) {
       expect(ok(PhoneE164Schema, v), v).toBe(false);
     }
   });

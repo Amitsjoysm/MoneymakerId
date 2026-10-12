@@ -8,7 +8,7 @@ export function leadSubmission(): Record<string, unknown> {
     turnstile_token: 'turnstile-token',
     consent: { version: 'lead-consent-v1', accepted: true },
     name: 'Asha Patil',
-    phone: '98343 46179',
+    phone: '98765 43210',
     quote: {
       service_id: 'terrace-waterproofing',
       locality_id: 'wakad',

@@ -6,7 +6,15 @@
 // unknown keys instead.
 import { z } from 'zod';
 import { FOOD_WEIGHTS, HOT_WEIGHTS, PROVIDER_WEIGHTS, SEO_WEIGHTS } from '../constants/weights.ts';
-import { addIssue, CostModelSchema, LocalFactSchema, LocalityGuideSchema, LocalitySchema, DishSchema, ServiceDefSchema } from './data.ts';
+import {
+  addIssue,
+  CostModelSchema,
+  LocalFactSchema,
+  LocalityGuideSchema,
+  LocalitySchema,
+  DishSchema,
+  ServiceDefSchema,
+} from './data.ts';
 import {
   ActorSchema,
   BadgeLabelSchema,
@@ -34,7 +42,6 @@ import {
   ReferrerClassSchema,
   SalesStageSchema,
   SentimentSchema,
-  ServedFromSchema,
   ServiceModeSchema,
   SourceKindSchema,
   TempLabelSchema,
@@ -137,11 +144,9 @@ export const ClaimSchema = z.union([
   z.strictObject({ address: TextSchema }),
   z.strictObject({ phone: TextSchema }),
   z.strictObject({
-    rating: z
-      .strictObject({ value: z.number().nonnegative(), scale: z.number().positive() })
-      .check((ctx) => {
-        if (ctx.value.value > ctx.value.scale) addIssue(ctx, 'rating value exceeds its scale');
-      }),
+    rating: z.strictObject({ value: z.number().nonnegative(), scale: z.number().positive() }).check((ctx) => {
+      if (ctx.value.value > ctx.value.scale) addIssue(ctx, 'rating value exceeds its scale');
+    }),
   }),
   z.strictObject({ mention: z.strictObject({ sentiment: SentimentSchema }) }),
   z.strictObject({ offer: z.strictObject({ text: TextSchema, ends_on: IsoDateSchema.nullable() }) }),
@@ -476,7 +481,11 @@ export const CatalogueSnapshotSchema = z.strictObject({
   featured: z.array(FeaturedViewSchema),
   campaigns: z.array(CampaignViewSchema),
   demand: z.array(
-    z.strictObject({ subject_id: SlugSchema, locality_id: SlugSchema.nullable(), score: z.number().nonnegative() }),
+    z.strictObject({
+      subject_id: SlugSchema,
+      locality_id: SlugSchema.nullable(),
+      score: z.number().nonnegative(),
+    }),
   ),
   /** n >= 3, last 180 days. */
   quote_stats: z.array(
@@ -489,7 +498,11 @@ export const CatalogueSnapshotSchema = z.strictObject({
     }),
   ),
   founding_slots: z.array(
-    z.strictObject({ service_id: SlugSchema, locality_id: SlugSchema, remaining: z.number().int().nonnegative() }),
+    z.strictObject({
+      service_id: SlugSchema,
+      locality_id: SlugSchema,
+      remaining: z.number().int().nonnegative(),
+    }),
   ),
   prose_reviews: z.array(z.strictObject({ key: TextSchema, status: ProseStatusSchema })),
   redirects: z.array(z.strictObject({ host: HostSchema, from_path: TextSchema, to_path: TextSchema })),

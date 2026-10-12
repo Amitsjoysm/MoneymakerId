@@ -81,7 +81,13 @@ export const ExperimentSchema = z.strictObject({
   host: HostSchema,
   page_types: z.array(PageTypeSchema),
   variants: z
-    .array(z.strictObject({ id: SlugSchema, weight: z.number().positive(), params: z.record(z.string(), z.unknown()) }))
+    .array(
+      z.strictObject({
+        id: SlugSchema,
+        weight: z.number().positive(),
+        params: z.record(z.string(), z.unknown()),
+      }),
+    )
     .min(1),
   guardrail_metric: z.enum(['quote_submit', 'recommendation_click']),
   active: z.boolean(),

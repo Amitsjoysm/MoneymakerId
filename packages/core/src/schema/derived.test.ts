@@ -44,7 +44,13 @@ describe('Claim and EvidenceInsert', () => {
     claim_type,
     claim,
     supporting_quote: 'Chicken biryani Rs. 249',
-    source: { kind: 'menu', url: 'https://example.com/menu', title: 'Menu', publisher: 'Example', experience_id: null },
+    source: {
+      kind: 'menu',
+      url: 'https://example.com/menu',
+      title: 'Menu',
+      publisher: 'Example',
+      experience_id: null,
+    },
     retrieved_at: ts,
     valid_until: null,
     confidence: 0.9,
@@ -59,7 +65,7 @@ describe('Claim and EvidenceInsert', () => {
       { dish: { dish_id: 'biryani', variant_label: null } },
       { service: { service_id: 'terrace-waterproofing' } },
       { address: '12 Sample Road' },
-      { phone: '+919834346179' },
+      { phone: '+919876543210' },
       { rating: { value: 4.2, scale: 5 } },
       { mention: { sentiment: 'positive' } },
       { offer: { text: '10% off', ends_on: '2026-11-01' } },
@@ -68,7 +74,7 @@ describe('Claim and EvidenceInsert', () => {
     ];
     for (const c of claims) expect(ok(ClaimSchema, c), JSON.stringify(c)).toBe(true);
     expect(ok(ClaimSchema, {})).toBe(false);
-    expect(ok(ClaimSchema, { ...price, phone: '+919834346179' })).toBe(false);
+    expect(ok(ClaimSchema, { ...price, phone: '+919876543210' })).toBe(false);
     expect(ok(ClaimSchema, { price: { ...price.price, unit: 'litre' } })).toBe(false);
     expect(ok(ClaimSchema, { rating: { value: 6, scale: 5 } })).toBe(false);
   });
@@ -81,7 +87,9 @@ describe('Claim and EvidenceInsert', () => {
   it('EvidenceInsert needs a URL unless the source is first-hand', () => {
     const noUrl = { kind: 'first_hand', url: null, title: null, publisher: null, experience_id: uuid() };
     expect(ok(EvidenceInsertSchema, { ...evidence('price', price), source: noUrl })).toBe(true);
-    expect(ok(EvidenceInsertSchema, { ...evidence('price', price), source: { ...noUrl, kind: 'menu' } })).toBe(false);
+    expect(
+      ok(EvidenceInsertSchema, { ...evidence('price', price), source: { ...noUrl, kind: 'menu' } }),
+    ).toBe(false);
   });
 
   it('EvidenceInsert bounds confidence to 0..1', () => {
@@ -89,7 +97,13 @@ describe('Claim and EvidenceInsert', () => {
   });
 
   it('EvidenceView adds id, source_id, status and tier', () => {
-    const view = { ...evidence('price', price), id: uuid(), source_id: uuid(), status: 'active', tier: 'HOT' };
+    const view = {
+      ...evidence('price', price),
+      id: uuid(),
+      source_id: uuid(),
+      status: 'active',
+      tier: 'HOT',
+    };
     expect(ok(EvidenceViewSchema, view)).toBe(true);
     expect(ok(EvidenceViewSchema, { ...view, tier: 'LUKEWARM' })).toBe(false);
     expect(ok(EvidenceViewSchema, { ...view, claim_type: 'hours' })).toBe(false);
@@ -127,7 +141,7 @@ describe('BusinessUpsert and CandidateInput', () => {
 describe('LeadInsert and LeadRecord', () => {
   const insert = {
     ...leadSubmission(),
-    phone_e164: '+919834346179',
+    phone_e164: '+919876543210',
     grade: 'A',
     qualified: true,
     visitor_hmac: 'abc123',
@@ -135,7 +149,7 @@ describe('LeadInsert and LeadRecord', () => {
   };
   it('LeadInsert extends the submission with server fields', () => {
     expect(ok(LeadInsertSchema, insert)).toBe(true);
-    expect(ok(LeadInsertSchema, { ...insert, phone_e164: '9834346179' })).toBe(false);
+    expect(ok(LeadInsertSchema, { ...insert, phone_e164: '9876543210' })).toBe(false);
     expect(ok(LeadInsertSchema, { ...insert, synthetic: true })).toBe(false);
     expect(ok(LeadInsertSchema, { ...insert, grade: 'D' })).toBe(false);
   });
@@ -207,7 +221,7 @@ describe('KeyOutcome, ParsedIntent, AskItem, AskResult', () => {
     expect(ok(AskResultSchema, { items: [item], served_from: 'cache', citations: [] })).toBe(false);
   });
   it('AskItem rejects extra keys, so a personal phone cannot ride along', () => {
-    expect(ok(AskItemSchema, { ...item, phone: '+919834346179' })).toBe(false);
+    expect(ok(AskItemSchema, { ...item, phone: '+919876543210' })).toBe(false);
   });
 });
 
@@ -256,11 +270,13 @@ describe('views', () => {
     last_verified_at: null,
     auto_published: true,
     reviewed_at: null,
-    dishes: [{ dish_id: 'biryani', variant_label: null, price_inr: 249, evidence_id: uuid(), last_seen_at: ts }],
+    dishes: [
+      { dish_id: 'biryani', variant_label: null, price_inr: 249, evidence_id: uuid(), last_seen_at: ts },
+    ],
   };
   it('PlaceView accepts a place and rejects a personal phone column', () => {
     expect(ok(PlaceViewSchema, place)).toBe(true);
-    expect(ok(PlaceViewSchema, { ...place, phone: '+919834346179' })).toBe(false);
+    expect(ok(PlaceViewSchema, { ...place, phone: '+919876543210' })).toBe(false);
   });
   it('ProviderView carries no personal phone', () => {
     const provider = {
@@ -280,7 +296,7 @@ describe('views', () => {
       reviewed_at: null,
     };
     expect(ok(ProviderViewSchema, provider)).toBe(true);
-    expect(ok(ProviderViewSchema, { ...provider, phone: '+919834346179' })).toBe(false);
+    expect(ok(ProviderViewSchema, { ...provider, phone: '+919876543210' })).toBe(false);
   });
 });
 
@@ -308,7 +324,14 @@ describe('page, ranking and manifest shapes', () => {
     expect(ok(ManifestEntrySchema, { ...entry, content_hash: 'abc' })).toBe(false);
   });
   it('PageCandidate keys seo_inputs by the SEO weights', () => {
-    const seo = { demand: 0.5, data_quality: 0.5, locality_specificity: 0.5, commercial_intent: 0.5, content_depth: 0.5, freshness: 0.5 };
+    const seo = {
+      demand: 0.5,
+      data_quality: 0.5,
+      locality_specificity: 0.5,
+      commercial_intent: 0.5,
+      content_depth: 0.5,
+      freshness: 0.5,
+    };
     const c = {
       url: 'https://food.marketmindai.com/pune/wakad/biryani/',
       host: 'food',
@@ -330,7 +353,15 @@ describe('page, ranking and manifest shapes', () => {
     expect(ok(PageCandidateSchema, { ...c, seo_inputs: missing })).toBe(false);
   });
   it('FoodCandidate and HotInputs key components by the §8a weights, each 0 to 1', () => {
-    const food = { relevance: 1, rating_strength: 1, review_strength: 1, dish_evidence: 1, freshness: 1, value: 1, locality_match: 1 };
+    const food = {
+      relevance: 1,
+      rating_strength: 1,
+      review_strength: 1,
+      dish_evidence: 1,
+      freshness: 1,
+      value: 1,
+      locality_match: 1,
+    };
     expect(ok(FoodCandidateSchema, { entity_id: uuid(), components: food })).toBe(true);
     expect(ok(FoodCandidateSchema, { entity_id: uuid(), components: { ...food, value: 1.5 } })).toBe(false);
     expect(ok(FoodCandidateSchema, { entity_id: uuid(), components: { ...food, extra: 1 } })).toBe(false);

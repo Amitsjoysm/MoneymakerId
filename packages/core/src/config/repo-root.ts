@@ -14,7 +14,9 @@ export function findRepoRoot(from?: string): string {
     if (fs.existsSync(path.join(dir, 'pnpm-workspace.yaml'))) return dir;
     const parent = path.dirname(dir);
     if (parent === dir) {
-      throw new ConfigError(`No pnpm-workspace.yaml found in or above ${start}; cannot locate the repository root.`);
+      throw new ConfigError(
+        `No pnpm-workspace.yaml found in or above ${start}; cannot locate the repository root.`,
+      );
     }
     dir = parent;
   }
