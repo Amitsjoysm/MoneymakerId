@@ -17,8 +17,11 @@ catalog:
   # Runtime libraries
   zod: 4.6.5
   tldts: 7.4.16
-  # Variable display font with Latin and Devanagari subsets (T03 owns the final choice).
+  # Brand fonts from techresona.com (owner, 2026-10-13): Space Grotesk (display) and Manrope (body).
+  # Anek Devanagari is the Devanagari companion for the Marathi and Hindi pages (M6).
   '@fontsource-variable/anek-devanagari': 5.3.0
+  '@fontsource-variable/manrope': 5.3.0
+  '@fontsource-variable/space-grotesk': 5.3.0
 
   # Language and lint
   # typescript stays on 6.0.x: typescript-eslint 8.71 allows <6.1.0, @astrojs/check allows ^5 || ^6.

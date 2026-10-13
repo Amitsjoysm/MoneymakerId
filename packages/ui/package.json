@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "@fontsource-variable/anek-devanagari": "catalog:",
+    "@fontsource-variable/manrope": "catalog:",
+    "@fontsource-variable/space-grotesk": "catalog:",
     "@mm/core": "workspace:*",
     "astro": "catalog:"
   }

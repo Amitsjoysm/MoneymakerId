@@ -184,6 +184,13 @@ CostModel = { id: string; service_id: string; scope_id: string | null; material_
 - `admin_api`: exposed. It holds `SECURITY DEFINER` functions, with `REVOKE EXECUTE … FROM anon, authenticated` and `GRANT EXECUTE … TO service_role` only. Callers are the admin Worker and Node scripts (pipeline, import, deploy) using the secret key.
 - **Storage:** a private bucket `experience-photos`, which only `service_role` can read and write.
 
+**Decisions fixed by T02a (2026-10-13; binding on T02b, T02c and every later caller):**
+- **No direct table access for any role.** `app` tables grant nothing to `anon`, `authenticated` or `service_role`. All data access goes through `SECURITY DEFINER` functions owned by `postgres` with `SET search_path = ''`. No script or Worker queries `app` tables directly, not even with the secret key.
+- **Function grants are explicit.** `EXECUTE` on functions is revoked from `PUBLIC` by default. Each `api.*` function is granted to `anon` and `service_role`; each `admin_api.*` function to `service_role` only.
+- **Empty dimensions.** `events_daily` and `demand_daily` store an absent dimension as `''`, because a primary key cannot hold NULL. Writers coalesce to `''`; readers map `''` back to `null`. `api.record_events` rejects id-like dimensions over 100 characters and `landing_path` over 300.
+- **`quote_stats` is derived, not stored.** `api.export_catalogue` computes it from `lead_assignments.quoted_amount_inr` over the last 180 days, emitting only cells with n ≥ 3. `ranking_commit` does not write it.
+- **Invariants and status vocabularies.** The `CHECK` constraints and status lists in `supabase/migrations/000*.sql` are authoritative where this section is silent. Examples: a published business has a publish date, a verified business has a method, a priced dish has evidence, a published photo has alt text, a reviewed prose key has a reviewer. Functions must satisfy them. T02a's report lists them all.
+
 **Reference data authority.** `mm import:reference` loads `data/*.json` into `localities`, `dishes`, `services` and `cost_models`. After the first import, **database rows are authoritative**. A re-import inserts missing IDs, and it updates a row only if the row is unedited (`updated_at = imported_at`) or `--force <id>` is passed. Builds read reference data only from the snapshot (§6).
 
 **Tables** (every table has `created_at` and `updated_at`):

@@ -27,6 +27,12 @@ catalogs:
     '@fontsource-variable/anek-devanagari':
       specifier: 5.3.0
       version: 5.3.0
+    '@fontsource-variable/manrope':
+      specifier: 5.3.0
+      version: 5.3.0
+    '@fontsource-variable/space-grotesk':
+      specifier: 5.3.0
+      version: 5.3.0
     '@lhci/cli':
       specifier: 0.15.1
       version: 0.15.1
@@ -158,7 +164,7 @@ importers:
     devDependencies:
       '@astrojs/check':
         specifier: 'catalog:'
-        version: 0.9.10(@emnapi/runtime@1.11.3)(prettier-plugin-astro@1.1.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(prettier@3.9.9))(prettier@3.9.9)(typescript@6.0.3)
+        version: 0.9.10(@emnapi/runtime@1.11.3)(prettier-plugin-astro@1.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.9.9))(prettier@3.9.9)(typescript@6.0.3)
       wrangler:
         specifier: 'catalog:'
         version: 4.148.0(@cloudflare/workers-types@5.20261007.1)(@types/node@22.20.5)
@@ -186,7 +192,7 @@ importers:
     devDependencies:
       '@astrojs/check':
         specifier: 'catalog:'
-        version: 0.9.10(@emnapi/runtime@1.11.3)(prettier-plugin-astro@1.1.0(@emnapi/core@1.11.1)(@emnapi/runtime@1.11.3)(prettier@3.9.9))(prettier@3.9.9)(typescript@6.0.3)
+        version: 0.9.10(@emnapi/runtime@1.11.3)(prettier-plugin-astro@1.1.0(@emnapi/core@1.11.3)(@emnapi/runtime@1.11.3)(prettier@3.9.9))(prettier@3.9.9)(typescript@6.0.3)
       wrangler:
         specifier: 'catalog:'
         version: 4.148.0(@cloudflare/workers-types@5.20261007.1)(@types/node@22.20.5)
@@ -326,6 +332,12 @@ importers:
   packages/ui:
     dependencies:
       '@fontsource-variable/anek-devanagari':
+        specifier: 'catalog:'
+        version: 5.3.0
+      '@fontsource-variable/manrope':
+        specifier: 'catalog:'
+        version: 5.3.0
+      '@fontsource-variable/space-grotesk':
         specifier: 'catalog:'
         version: 5.3.0
       '@mm/core':
@@ -1105,6 +1117,12 @@ packages:
 
   '@fontsource-variable/anek-devanagari@5.3.0':
     resolution: {integrity: sha512-mng3nw6XK5/5agZqIgCHcspyYbXe5HcF3F6b8J3v7He3Ilk4Mp7/irelZnCNde1rPg2JSiC7LeuI9Y9DcZk4yw==}
+
+  '@fontsource-variable/manrope@5.3.0':
+    resolution: {integrity: sha512-6D5dgokHsWDDMtmXHznKa0hK229NN+1a4BLPmUCLqcO1Pw5EEhWY5RFt0AcXnVRAljFFPfRtLkJePQj6LSsV6g==}
+
+  '@fontsource-variable/space-grotesk@5.3.0':
+    resolution: {integrity: sha512-2IxmvfB08i9vnGB3Ym/AXvhRE+8XOjWMXIyDum03c+tPwH0FUoMNQfGpU8NXPxjbws0Vvss3AH0Zqt4oJBBAdw==}
 
   '@formatjs/ecma402-abstract@2.3.6':
     resolution: {integrity: sha512-HJnTFeRM2kVFVr5gr5kH1XP6K0JcJtE7Lzvtr3FS/so5f1kpsqqqxy5JF+FRaO6H2qmcMfAUIox7AJteieRtVw==}
@@ -3032,8 +3050,8 @@ packages:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
 
-  legacy-javascript@0.0.1:
-    resolution: {integrity: sha512-lPyntS4/aS7jpuvOlitZDFifBCb4W8L/3QU0PLbUTUj+zYah8rfVjYic88yG7ZKTxhS5h9iz7duT8oUXKszLhg==}
+  legacy-javascript@0.0.3:
+    resolution: {integrity: sha512-1r6MT4dVaJyXt4G07Cm2cQ0AUaLJdefiEp4SmIAylA++gnEQ82YvmzE58RkM5EP0fk5hROLCslUPGnwIYdZQVA==}
 
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -5198,6 +5216,10 @@ snapshots:
 
   '@fontsource-variable/anek-devanagari@5.3.0': {}
 
+  '@fontsource-variable/manrope@5.3.0': {}
+
+  '@fontsource-variable/space-grotesk@5.3.0': {}
+
   '@formatjs/ecma402-abstract@2.3.6':
     dependencies:
       '@formatjs/fast-memoize': 2.2.7
@@ -5654,7 +5676,7 @@ snapshots:
 
   '@paulirish/trace_engine@0.0.53':
     dependencies:
-      legacy-javascript: 0.0.1
+      legacy-javascript: 0.0.3
       third-party-web: 0.30.0
 
   '@pkgr/core@0.3.6': {}
@@ -7226,7 +7248,7 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  legacy-javascript@0.0.1: {}
+  legacy-javascript@0.0.3: {}
 
   levn@0.4.1:
     dependencies:
