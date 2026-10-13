@@ -420,7 +420,8 @@ GateDecision = { action: 'build_index' | 'build_noindex' | 'redirect_parent' | '
 evaluateGate(c: PageCandidate, siblings: PageCandidate[], prev: ManifestEntry|null, cfg: GateConfig, reviewed: (key: string) => boolean, now: Date): GateDecision
 buildManifest(snapshot: CatalogueSnapshot, cfg: GateConfig, now: Date): ManifestEntry[]   // enumerates every candidate page of every host
 foodScore(c: FoodCandidate) / providerScore(c: ProviderCandidate) / hotScore(c: HotInputs) → { score; components; label? }
-badges(c: BadgeInputs): BadgeLabel[]     trustLabels(e: EvidenceView[], b: PlaceView|ProviderView, now): TrustLabel[]
+badges(c: BadgeInputs, now: Date): BadgeLabel[]   // now is needed for late_night's 30-day check; without it late_night is withheld
+trustLabels(e: EvidenceView[], b: PlaceView|ProviderView, now): TrustLabel[]
 autoPublish(c: CandidateInput, ev: EvidenceInsert[], aggregators: AggregatorEntry[]): 'publish' | 'queue'   // @mm/extract/independence (P02a)
 ```
 

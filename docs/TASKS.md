@@ -191,7 +191,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 ## Wave 4 (🔌; all test-first)
 
 **T03 · Design system** (impeccable)
-- **Owns:** `packages/ui/src/**` except `src/islands/**`, `packages/ui/fixtures/**`, `PRODUCT.md`, `DESIGN.md`
+- **Owns:** `packages/ui/src/**` except `src/islands/**`, `packages/ui/fixtures/**`, `packages/ui/.impeccable/**`, `DESIGN.md`, `.impeccable/design.json`; fills the content of T05's `apps/construction/src/pages/ui-fixtures/[x].astro`. `PRODUCT.md` was written by the orchestrator (Impeccable init, 13 Oct 2026)
 - **Depends on:** T00, T01; plan §15, §18
 - **Deliverables:**
   - `/impeccable init`, then OKLCH tokens for two themes in light and dark, the type scale and the self-hosted display font
@@ -245,7 +245,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 - **Depends on:** E01, E03, C06, T02b
 - **Deliverables:**
   - Origin check, 16 KB limit, Turnstile, visitor HMAC (IPv6 /64), burst limits
-  - `LeadInsert` built with C06, the outbox format (§7) and the synthetic header
+  - `LeadInsert` built with C06, the outbox format (§7) and the synthetic header. At submit, `leadScore` runs with `whatsapp_confirmed: false`, so `qualified` is false (ruling 2026-10-13: "contact confirmed" means the owner confirmed the contact on WhatsApp)
   - alerts sent in `waitUntil`; events carry `visitor_hmac` and `verified`
 - **Acceptance (Workers-pool tests):** database 503 → 202 with the lead in KV; duplicate key; bad origin; bad Turnstile token; synthetic request → no lead row and no alert; ≤ 6 subrequests per lead.
 
@@ -330,6 +330,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 - **Deliverables:**
   - a leads list and detail view: grade, status, follow-up, WhatsApp templates, assignments with masked forwarding, CSV export, "Log WhatsApp lead", outbox replay, reminders due, and "Erase personal data" (`lead_anonymise`)
   - a read-only providers list
+  - when the owner marks a lead's WhatsApp contact confirmed, re-run `@mm/core/leads.leadScore` with `whatsapp_confirmed: true` and save the new `grade` and `qualified` through `lead_update` (ruling 2026-10-13)
 - **Acceptance:** Workers tests for each mutation; no horizontal scroll at 375 px (Playwright).
 
 **P02a · Deterministic extraction, grounding, independence**
@@ -417,7 +418,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 **P03 · Live Ask** 🔑 (Wave 10a)
 - **Owns:** `packages/edge/src/ask/**`, `apps/{food,construction}/src/pages/api/ask.ts`, `apps/{food,construction}/src/pages/api/ask/**`; may add bindings to T00's `packages/edge/vitest.config.ts`
 - **Depends on:** E01, E02, P01, P02a, P02b, C01, C03, T02b
-- **Deliverables:** the plan §9 flow, with `ask_search` for the instant answer, `autoPublish` before commit, and the 50/day cap.
+- **Deliverables:** the plan §9 flow, with `ask_search` for the instant answer, `autoPublish` before commit, and the 50/day cap. `parseIntent` gets `serviceAliases` built from each `ServiceDef`'s name and its sub-services' names (ServiceDef has no alias field; C01 ruling 2026-10-13).
 - **Acceptance:** ≤ 20 subrequests on the worst error path; CPU per lookup is logged.
 
 **P04a / P04b / P04c · Pipeline stages** (Wave 10a)
