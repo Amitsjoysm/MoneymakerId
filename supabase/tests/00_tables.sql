@@ -2,7 +2,7 @@
 -- schema app is locked down the same way (RLS on, no policies, no privilege for anon,
 -- authenticated or service_role, created_at/updated_at with the shared trigger).
 begin;
-select plan(61);
+select plan(65);
 
 -- The columns named in CONTRACTS section 5, one entry per table ("table:col,col,...").
 -- Names that the contract leaves open (geo, rate_inr, price_sanity_inr and the LeadRecord
@@ -164,7 +164,8 @@ select results_eq(
 
 select has_index('app', 'businesses', 'businesses_name_trgm_idx', 'businesses has a name index');
 select ok(
-  (select indexdef ~ 'USING gin \(normalised_name extensions\.gin_trgm_ops\)'
+  -- the opclass prints schema-qualified or not, depending on the search_path of the session
+  (select indexdef ~ 'USING gin \(normalised_name (extensions\.)?gin_trgm_ops\)'
      from pg_indexes
     where schemaname = 'app' and tablename = 'businesses' and indexname = 'businesses_name_trgm_idx'),
   'the businesses name index is a pg_trgm GIN index on normalised_name'
