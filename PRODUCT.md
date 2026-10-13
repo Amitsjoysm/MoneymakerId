@@ -73,7 +73,7 @@ Visitors should trust MarketMind AI over Zomato, Justdial or UrbanCompany for fo
   - **Typefaces:** Space Grotesk (display), Manrope (body), JetBrains Mono (mono).
   - **Radii:** 8 / 14 / 24 px.
   - **Logo mark:** a cloud with circuit traces, rising buildings and a sweeping orbit in a magenta-to-red gradient (`https://techresona.com/assets/img/logo-mark.png`).
-- **Voice:** the owner chose all three offered voices together: plain local English, friendly with the occasional Hindi or Marathi word, and the measured tone of an expert. *Inferred mapping, to confirm in review:*
+- **Voice:** the owner chose all three offered voices together: plain local English, friendly with the occasional Hindi or Marathi word, and the measured tone of an expert. _Inferred mapping, to confirm in review:_
   - plain local English is the default everywhere;
   - friendly, light Hinglish fits food pages and conversational microcopy;
   - the expert register fits cost guides, methodology and trust pages.
