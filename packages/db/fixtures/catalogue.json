@@ -1,0 +1,568 @@
+{
+  "places": [
+    {
+      "id": "e1000000-0000-4000-8000-000000000001",
+      "slug": "example-biryani-house",
+      "name": "Example Biryani House",
+      "locality_id": "hinjewadi",
+      "address": "Example Road, Hinjewadi (fixture, not a real address)",
+      "geo": null,
+      "website": "https://example.com/example-biryani-house",
+      "price_level": 2,
+      "cuisines": ["Hyderabadi"],
+      "diet": "non_veg",
+      "service_modes": ["dine_in", "delivery"],
+      "opening_hours": {
+        "mon": [["11:00", "23:00"]],
+        "tue": [["11:00", "23:00"]],
+        "wed": [["11:00", "23:00"]],
+        "thu": [["11:00", "23:00"]],
+        "fri": [["11:00", "23:00"]],
+        "sat": [["11:00", "23:00"]],
+        "sun": [["11:00", "23:00"]]
+      },
+      "tags": ["fixture"],
+      "verification_status": "verified",
+      "verified_at": "2026-10-02T09:00:00Z",
+      "last_verified_at": "2026-10-02T09:00:00Z",
+      "auto_published": false,
+      "reviewed_at": "2026-10-02T09:00:00Z",
+      "dishes": [
+        {
+          "dish_id": "biryani",
+          "variant_label": "Chicken",
+          "price_inr": 280,
+          "evidence_id": "e3000000-0000-4000-8000-000000000001",
+          "last_seen_at": "2026-10-01T06:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000002",
+      "slug": "example-misal-corner",
+      "name": "Example Misal Corner",
+      "locality_id": "baner",
+      "address": "Example Road, Baner (fixture, not a real address)",
+      "geo": null,
+      "website": "https://example.com/example-misal-corner",
+      "price_level": 1,
+      "cuisines": ["Maharashtrian"],
+      "diet": "veg",
+      "service_modes": ["dine_in", "delivery"],
+      "opening_hours": {
+        "mon": [["11:00", "23:00"]],
+        "tue": [["11:00", "23:00"]],
+        "wed": [["11:00", "23:00"]],
+        "thu": [["11:00", "23:00"]],
+        "fri": [["11:00", "23:00"]],
+        "sat": [["11:00", "23:00"]],
+        "sun": [["11:00", "23:00"]]
+      },
+      "tags": ["fixture"],
+      "verification_status": "unverified",
+      "verified_at": null,
+      "last_verified_at": null,
+      "auto_published": true,
+      "reviewed_at": null,
+      "dishes": [
+        {
+          "dish_id": "misal-pav",
+          "variant_label": null,
+          "price_inr": 120,
+          "evidence_id": "e3000000-0000-4000-8000-000000000002",
+          "last_seen_at": "2026-10-01T06:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000003",
+      "slug": "example-dosa-point",
+      "name": "Example Dosa Point",
+      "locality_id": "wakad",
+      "address": "Example Road, Wakad (fixture, not a real address)",
+      "geo": null,
+      "website": "https://example.com/example-dosa-point",
+      "price_level": 1,
+      "cuisines": ["South Indian"],
+      "diet": "veg",
+      "service_modes": ["dine_in", "delivery"],
+      "opening_hours": {
+        "mon": [["11:00", "23:00"]],
+        "tue": [["11:00", "23:00"]],
+        "wed": [["11:00", "23:00"]],
+        "thu": [["11:00", "23:00"]],
+        "fri": [["11:00", "23:00"]],
+        "sat": [["11:00", "23:00"]],
+        "sun": [["11:00", "23:00"]]
+      },
+      "tags": ["fixture"],
+      "verification_status": "unverified",
+      "verified_at": null,
+      "last_verified_at": null,
+      "auto_published": true,
+      "reviewed_at": null,
+      "dishes": [
+        {
+          "dish_id": "dosa",
+          "variant_label": "Masala",
+          "price_inr": 90,
+          "evidence_id": "e3000000-0000-4000-8000-000000000003",
+          "last_seen_at": "2026-10-01T06:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "e1000000-0000-4000-8000-000000000004",
+      "slug": "example-spice-biryani",
+      "name": "Example Spice Biryani",
+      "locality_id": "hinjewadi",
+      "address": "Example Road, Hinjewadi (fixture, not a real address)",
+      "geo": null,
+      "website": "https://example.com/example-spice-biryani",
+      "price_level": 2,
+      "cuisines": ["Hyderabadi", "Awadhi"],
+      "diet": "both",
+      "service_modes": ["dine_in", "delivery"],
+      "opening_hours": {
+        "mon": [["11:00", "23:00"]],
+        "tue": [["11:00", "23:00"]],
+        "wed": [["11:00", "23:00"]],
+        "thu": [["11:00", "23:00"]],
+        "fri": [["11:00", "23:00"]],
+        "sat": [["11:00", "23:00"]],
+        "sun": [["11:00", "23:00"]]
+      },
+      "tags": ["fixture"],
+      "verification_status": "unverified",
+      "verified_at": null,
+      "last_verified_at": null,
+      "auto_published": true,
+      "reviewed_at": null,
+      "dishes": [
+        {
+          "dish_id": "biryani",
+          "variant_label": "Mutton",
+          "price_inr": 340,
+          "evidence_id": "e3000000-0000-4000-8000-000000000004",
+          "last_seen_at": "2026-10-01T06:30:00Z"
+        }
+      ]
+    }
+  ],
+  "providers": [
+    {
+      "id": "e2000000-0000-4000-8000-000000000001",
+      "slug": "example-waterproofing-works",
+      "name": "Example Waterproofing Works",
+      "locality_id": "hinjewadi",
+      "service_localities": ["hinjewadi", "wakad", "baner"],
+      "services": ["terrace-waterproofing"],
+      "specializations": ["membrane", "terrace"],
+      "experience_years": 8,
+      "accepts_leads": true,
+      "verification_status": "verified",
+      "verified_at": "2026-10-02T09:00:00Z",
+      "founding_partner": true,
+      "auto_published": false,
+      "reviewed_at": "2026-10-02T09:00:00Z"
+    },
+    {
+      "id": "e2000000-0000-4000-8000-000000000002",
+      "slug": "example-roof-care",
+      "name": "Example Roof Care",
+      "locality_id": "wakad",
+      "service_localities": ["wakad", "hinjewadi"],
+      "services": ["terrace-waterproofing", "interior-painting"],
+      "specializations": ["terrace", "interior walls"],
+      "experience_years": 5,
+      "accepts_leads": true,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "founding_partner": false,
+      "auto_published": true,
+      "reviewed_at": null
+    },
+    {
+      "id": "e2000000-0000-4000-8000-000000000003",
+      "slug": "example-painters",
+      "name": "Example Painters",
+      "locality_id": "baner",
+      "service_localities": ["baner", "wakad"],
+      "services": ["interior-painting"],
+      "specializations": ["interior walls"],
+      "experience_years": 12,
+      "accepts_leads": true,
+      "verification_status": "unverified",
+      "verified_at": null,
+      "founding_partner": false,
+      "auto_published": true,
+      "reviewed_at": null
+    }
+  ],
+  "evidence": [
+    {
+      "id": "e3000000-0000-4000-8000-000000000001",
+      "source_id": "e4000000-0000-4000-8000-000000000001",
+      "status": "active",
+      "tier": "HOT",
+      "entity_type": "restaurant_dish",
+      "entity_id": "e5000000-0000-4000-8000-000000000001",
+      "claim_type": "price",
+      "claim": {
+        "price": {
+          "dish_id": "biryani",
+          "service_id": null,
+          "price_inr": 280,
+          "unit": "serving"
+        }
+      },
+      "supporting_quote": "Fixture menu line: Chicken biryani 280",
+      "source": {
+        "kind": "menu",
+        "url": "https://example.com/example-biryani-house/menu",
+        "title": "Example Biryani House menu (fixture)",
+        "publisher": "Example Biryani House",
+        "experience_id": null
+      },
+      "retrieved_at": "2026-10-01T06:30:00Z",
+      "valid_until": "2099-12-31T00:00:00Z",
+      "confidence": 0.9,
+      "extractor_version": "fixture-1"
+    },
+    {
+      "id": "e3000000-0000-4000-8000-000000000002",
+      "source_id": "e4000000-0000-4000-8000-000000000002",
+      "status": "active",
+      "tier": "HOT",
+      "entity_type": "restaurant_dish",
+      "entity_id": "e5000000-0000-4000-8000-000000000002",
+      "claim_type": "price",
+      "claim": {
+        "price": {
+          "dish_id": "misal-pav",
+          "service_id": null,
+          "price_inr": 120,
+          "unit": "serving"
+        }
+      },
+      "supporting_quote": "Fixture menu line: misal-pav 120",
+      "source": {
+        "kind": "menu",
+        "url": "https://example.com/example-misal-corner/menu",
+        "title": "Example Misal Corner menu (fixture)",
+        "publisher": "Example Misal Corner",
+        "experience_id": null
+      },
+      "retrieved_at": "2026-10-01T06:30:00Z",
+      "valid_until": "2099-12-31T00:00:00Z",
+      "confidence": 0.9,
+      "extractor_version": "fixture-1"
+    },
+    {
+      "id": "e3000000-0000-4000-8000-000000000003",
+      "source_id": "e4000000-0000-4000-8000-000000000003",
+      "status": "active",
+      "tier": "HOT",
+      "entity_type": "restaurant_dish",
+      "entity_id": "e5000000-0000-4000-8000-000000000003",
+      "claim_type": "price",
+      "claim": {
+        "price": {
+          "dish_id": "dosa",
+          "service_id": null,
+          "price_inr": 90,
+          "unit": "serving"
+        }
+      },
+      "supporting_quote": "Fixture menu line: Masala dosa 90",
+      "source": {
+        "kind": "menu",
+        "url": "https://example.com/example-dosa-point/menu",
+        "title": "Example Dosa Point menu (fixture)",
+        "publisher": "Example Dosa Point",
+        "experience_id": null
+      },
+      "retrieved_at": "2026-10-01T06:30:00Z",
+      "valid_until": "2099-12-31T00:00:00Z",
+      "confidence": 0.9,
+      "extractor_version": "fixture-1"
+    },
+    {
+      "id": "e3000000-0000-4000-8000-000000000004",
+      "source_id": "e4000000-0000-4000-8000-000000000004",
+      "status": "active",
+      "tier": "HOT",
+      "entity_type": "restaurant_dish",
+      "entity_id": "e5000000-0000-4000-8000-000000000004",
+      "claim_type": "price",
+      "claim": {
+        "price": {
+          "dish_id": "biryani",
+          "service_id": null,
+          "price_inr": 340,
+          "unit": "serving"
+        }
+      },
+      "supporting_quote": "Fixture menu line: Mutton biryani 340",
+      "source": {
+        "kind": "menu",
+        "url": "https://example.com/example-spice-biryani/menu",
+        "title": "Example Spice Biryani menu (fixture)",
+        "publisher": "Example Spice Biryani",
+        "experience_id": null
+      },
+      "retrieved_at": "2026-10-01T06:30:00Z",
+      "valid_until": "2099-12-31T00:00:00Z",
+      "confidence": 0.9,
+      "extractor_version": "fixture-1"
+    },
+    {
+      "id": "e3000000-0000-4000-8000-000000000005",
+      "source_id": "e4000000-0000-4000-8000-000000000005",
+      "status": "active",
+      "tier": "WARM",
+      "entity_type": "provider_service",
+      "entity_id": "e2000000-0000-4000-8000-000000000001",
+      "claim_type": "service",
+      "claim": {
+        "service": {
+          "service_id": "terrace-waterproofing"
+        }
+      },
+      "supporting_quote": "Fixture listing: Example Waterproofing Works offers terrace-waterproofing",
+      "source": {
+        "kind": "official_site",
+        "url": "https://example.com/example-waterproofing-works",
+        "title": "Example Waterproofing Works (fixture)",
+        "publisher": "Example Waterproofing Works",
+        "experience_id": null
+      },
+      "retrieved_at": "2026-10-01T06:30:00Z",
+      "valid_until": "2099-12-31T00:00:00Z",
+      "confidence": 0.8,
+      "extractor_version": "fixture-1"
+    },
+    {
+      "id": "e3000000-0000-4000-8000-000000000006",
+      "source_id": "e4000000-0000-4000-8000-000000000006",
+      "status": "active",
+      "tier": "WARM",
+      "entity_type": "provider_service",
+      "entity_id": "e2000000-0000-4000-8000-000000000002",
+      "claim_type": "service",
+      "claim": {
+        "service": {
+          "service_id": "terrace-waterproofing"
+        }
+      },
+      "supporting_quote": "Fixture listing: Example Roof Care offers terrace-waterproofing",
+      "source": {
+        "kind": "official_site",
+        "url": "https://example.com/example-roof-care",
+        "title": "Example Roof Care (fixture)",
+        "publisher": "Example Roof Care",
+        "experience_id": null
+      },
+      "retrieved_at": "2026-10-01T06:30:00Z",
+      "valid_until": "2099-12-31T00:00:00Z",
+      "confidence": 0.8,
+      "extractor_version": "fixture-1"
+    },
+    {
+      "id": "e3000000-0000-4000-8000-000000000007",
+      "source_id": "e4000000-0000-4000-8000-000000000007",
+      "status": "active",
+      "tier": "WARM",
+      "entity_type": "provider_service",
+      "entity_id": "e2000000-0000-4000-8000-000000000002",
+      "claim_type": "service",
+      "claim": {
+        "service": {
+          "service_id": "interior-painting"
+        }
+      },
+      "supporting_quote": "Fixture listing: Example Roof Care offers interior-painting",
+      "source": {
+        "kind": "official_site",
+        "url": "https://example.com/example-roof-care",
+        "title": "Example Roof Care (fixture)",
+        "publisher": "Example Roof Care",
+        "experience_id": null
+      },
+      "retrieved_at": "2026-10-01T06:30:00Z",
+      "valid_until": "2099-12-31T00:00:00Z",
+      "confidence": 0.8,
+      "extractor_version": "fixture-1"
+    },
+    {
+      "id": "e3000000-0000-4000-8000-000000000008",
+      "source_id": "e4000000-0000-4000-8000-000000000008",
+      "status": "active",
+      "tier": "WARM",
+      "entity_type": "provider_service",
+      "entity_id": "e2000000-0000-4000-8000-000000000003",
+      "claim_type": "service",
+      "claim": {
+        "service": {
+          "service_id": "interior-painting"
+        }
+      },
+      "supporting_quote": "Fixture listing: Example Painters offers interior-painting",
+      "source": {
+        "kind": "official_site",
+        "url": "https://example.com/example-painters",
+        "title": "Example Painters (fixture)",
+        "publisher": "Example Painters",
+        "experience_id": null
+      },
+      "retrieved_at": "2026-10-01T06:30:00Z",
+      "valid_until": "2099-12-31T00:00:00Z",
+      "confidence": 0.8,
+      "extractor_version": "fixture-1"
+    }
+  ],
+  "experiences": [
+    {
+      "id": "e6000000-0000-4000-8000-000000000001",
+      "business_id": "e1000000-0000-4000-8000-000000000002",
+      "visited_at": "2026-09-28",
+      "dishes": [
+        {
+          "dish_id": "misal-pav",
+          "price_paid_inr": 120,
+          "rating": 4,
+          "notes": "Fixture note, not a real visit."
+        }
+      ],
+      "overall_rating": 4,
+      "would_recommend": true,
+      "tags": ["fixture"],
+      "notes": "Example visit note for UI fixtures. Not a real visit.",
+      "prose_status": "draft",
+      "photos": []
+    }
+  ],
+  "recommendations": [
+    {
+      "ranking_run_id": "e7000000-0000-4000-8000-000000000001",
+      "page_key": "dish_locality:biryani:hinjewadi",
+      "entity_id": "e1000000-0000-4000-8000-000000000001",
+      "rank": 1,
+      "organic_score": 0.82,
+      "components": {
+        "relevance": 0.85,
+        "rating_strength": 0.85,
+        "dish_evidence": 0.8,
+        "freshness": 0.9,
+        "value": 0.7,
+        "locality_match": 1.0
+      },
+      "labels": ["hot"]
+    },
+    {
+      "ranking_run_id": "e7000000-0000-4000-8000-000000000001",
+      "page_key": "dish_locality:biryani:hinjewadi",
+      "entity_id": "e1000000-0000-4000-8000-000000000004",
+      "rank": 2,
+      "organic_score": 0.74,
+      "components": {
+        "relevance": 0.7,
+        "rating_strength": 0.7,
+        "dish_evidence": 0.8,
+        "freshness": 0.9,
+        "value": 0.7,
+        "locality_match": 1.0
+      },
+      "labels": []
+    },
+    {
+      "ranking_run_id": "e7000000-0000-4000-8000-000000000001",
+      "page_key": "dish_locality:misal-pav:baner",
+      "entity_id": "e1000000-0000-4000-8000-000000000002",
+      "rank": 1,
+      "organic_score": 0.7,
+      "components": {
+        "relevance": 0.7,
+        "rating_strength": 0.7,
+        "dish_evidence": 0.8,
+        "freshness": 0.9,
+        "value": 0.7,
+        "locality_match": 1.0
+      },
+      "labels": ["hidden_gem"]
+    },
+    {
+      "ranking_run_id": "e7000000-0000-4000-8000-000000000001",
+      "page_key": "dish_locality:dosa:wakad",
+      "entity_id": "e1000000-0000-4000-8000-000000000003",
+      "rank": 1,
+      "organic_score": 0.68,
+      "components": {
+        "relevance": 0.65,
+        "rating_strength": 0.65,
+        "dish_evidence": 0.8,
+        "freshness": 0.9,
+        "value": 0.7,
+        "locality_match": 1.0
+      },
+      "labels": []
+    },
+    {
+      "ranking_run_id": "e7000000-0000-4000-8000-000000000001",
+      "page_key": "locality_service:terrace-waterproofing:hinjewadi",
+      "entity_id": "e2000000-0000-4000-8000-000000000001",
+      "rank": 1,
+      "organic_score": 0.77,
+      "components": {
+        "service_match": 1.0,
+        "locality_match": 0.9,
+        "specialization": 0.6,
+        "verification": 0.9,
+        "freshness": 0.9,
+        "experience": 0.6
+      },
+      "labels": []
+    },
+    {
+      "ranking_run_id": "e7000000-0000-4000-8000-000000000001",
+      "page_key": "locality_service:terrace-waterproofing:wakad",
+      "entity_id": "e2000000-0000-4000-8000-000000000002",
+      "rank": 1,
+      "organic_score": 0.66,
+      "components": {
+        "service_match": 1.0,
+        "locality_match": 0.6,
+        "specialization": 0.6,
+        "verification": 0.6,
+        "freshness": 0.9,
+        "experience": 0.6
+      },
+      "labels": []
+    },
+    {
+      "ranking_run_id": "e7000000-0000-4000-8000-000000000001",
+      "page_key": "locality_service:interior-painting:baner",
+      "entity_id": "e2000000-0000-4000-8000-000000000003",
+      "rank": 1,
+      "organic_score": 0.63,
+      "components": {
+        "service_match": 1.0,
+        "locality_match": 0.6,
+        "specialization": 0.6,
+        "verification": 0.6,
+        "freshness": 0.9,
+        "experience": 0.6
+      },
+      "labels": []
+    }
+  ],
+  "locality_profiles": [],
+  "featured": [],
+  "campaigns": [],
+  "demand": [],
+  "quote_stats": [],
+  "founding_slots": [],
+  "prose_reviews": [],
+  "redirects": [],
+  "previous_manifest": []
+}

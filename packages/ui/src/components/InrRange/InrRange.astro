@@ -1,0 +1,24 @@
+---
+// A rupee range as one unbreakable figure ("₹35–₹100"), read aloud as "₹35 to ₹100".
+import { formatInr, formatInrRange } from '../../lib/format.ts';
+
+interface Props {
+  low: number;
+  high: number;
+  class?: string;
+}
+
+const { low, high, class: className } = Astro.props;
+const spoken = low === high ? formatInr(low) : `${formatInr(low)} to ${formatInr(high)}`;
+---
+
+<span class:list={['mm-inr', className]}
+  ><span aria-hidden="true">{formatInrRange(low, high)}</span><span class="mm-hidden">{spoken}</span></span
+>
+
+<style is:global>
+  .mm-inr {
+    font-variant-numeric: tabular-nums lining-nums;
+    white-space: nowrap;
+  }
+</style>

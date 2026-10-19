@@ -1,0 +1,242 @@
+---
+// One ranked recommendation (a place or a provider). It stamps the CONTRACTS §7a attributes the analytics
+// island reads, shows its rank as a node on the evidence ribbon, and keeps paid placement visibly paid:
+// a featured card says so in words and is tracked as a featured click, never as an organic one.
+import type { BadgeLabel, SourceRef, TempLabel, TrustLabel } from '@mm/core/schema';
+import type { TrackEvent } from '../Button/Button.astro';
+import DateStamp from '../DateStamp/DateStamp.astro';
+import Disclosure from '../Disclosure/Disclosure.astro';
+import Icon from '../Icon/Icon.astro';
+import LabelBadge from '../LabelBadge/LabelBadge.astro';
+import SourceNote from '../SourceNote/SourceNote.astro';
+import TrustBadges from '../TrustBadges/TrustBadges.astro';
+
+interface Props {
+  entityId: string;
+  /** ranking_run_id of the run that placed this item. */
+  runId: string;
+  /** 1-based position in the list as built. */
+  position: number;
+  name: string;
+  href: string;
+  locality: { id: string; name: string };
+  summary?: string | null;
+  labels?: readonly (TempLabel | BadgeLabel)[];
+  trust?: readonly TrustLabel[];
+  checkedAt?: string | null;
+  /** A price already formatted by the page ("₹249 for a plate"), with the sources it comes from. */
+  price?: { text: string; sources: readonly SourceRef[]; stale?: boolean } | null;
+  featured?: boolean;
+  /** Date of the owner's first-hand visit (ISO), shown as a round stamp. */
+  visitedOn?: string | null;
+  /** The §7a event for the main link of an organic card; featured cards always send featured_click. */
+  event?: TrackEvent;
+  headingLevel?: 2 | 3 | 4;
+}
+
+const {
+  entityId,
+  runId,
+  position,
+  name,
+  href,
+  locality,
+  summary = null,
+  labels = [],
+  trust = [],
+  checkedAt = null,
+  price = null,
+  featured = false,
+  visitedOn = null,
+  event,
+  headingLevel = 3,
+} = Astro.props;
+const Heading = `h${headingLevel}` as const;
+const linkEvent: TrackEvent | undefined = featured ? 'featured_click' : event;
+---
+
+<article
+  class:list={['mm-rec', featured && 'mm-rec--featured']}
+  data-mm-entity={entityId}
+  data-mm-run={runId}
+  data-mm-pos={position}
+>
+  {visitedOn && <DateStamp date={visitedOn} class="mm-rec__stamp" />}
+  <div class="mm-rec__top">
+    {
+      featured ? (
+        <span class="mm-rec__paid">Featured</span>
+      ) : (
+        <span class="mm-rec__pos">
+          <span class="mm-hidden">Rank </span>
+          {position}
+        </span>
+      )
+    }
+    {
+      labels.length > 0 && (
+        <ul class="mm-rec__labels" aria-label="Labels">
+          {labels.map((label) => (
+            <li>
+              <LabelBadge label={label} />
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+  <Heading class="mm-rec__name">
+    <a class="mm-rec__link" href={href} data-mm-event={linkEvent}>{name}</a>
+  </Heading>
+  <p class="mm-rec__place" data-locality={locality.id}>
+    <Icon name="pin" size={16} />
+    {locality.name}
+  </p>
+  {summary && <p class="mm-rec__summary">{summary}</p>}
+  {
+    price && (
+      <div class="mm-rec__price">
+        <p class="mm-rec__amount">{price.text}</p>
+        <SourceNote sources={price.sources} state={price.stale ? 'stale' : 'sourced'} />
+      </div>
+    )
+  }
+  {trust.length > 0 && <TrustBadges labels={trust} checkedAt={checkedAt} />}
+  {featured && <Disclosure kind="featured" />}
+</article>
+
+<style is:global>
+  .mm-rec {
+    position: relative;
+    display: grid;
+    gap: var(--mm-space-3);
+    align-content: start;
+    padding: var(--mm-space-5);
+    border: 1px solid var(--mm-line);
+    border-radius: var(--mm-radius-m);
+    background: var(--mm-raised);
+    box-shadow:
+      0 1px 1px var(--mm-shade),
+      0 14px 32px -26px var(--mm-shade);
+    transition: border-color var(--mm-dur-1) var(--mm-ease);
+  }
+
+  .mm-rec:hover {
+    border-color: var(--mm-line-strong);
+  }
+
+  .mm-rec--featured {
+    border: 1.5px solid var(--mm-line-strong);
+    background: var(--mm-surface);
+    box-shadow: none;
+  }
+
+  .mm-rec__stamp {
+    position: absolute;
+    top: var(--mm-space-3);
+    right: var(--mm-space-3);
+    width: 4.75rem;
+    height: 4.75rem;
+  }
+
+  .mm-rec:has(.mm-rec__stamp) > :not(.mm-rec__stamp, .mm-trust, .mm-disclosure, .mm-rec__price) {
+    padding-right: 5rem;
+  }
+
+  .mm-rec__top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mm-space-2);
+    align-items: center;
+  }
+
+  .mm-rec__pos {
+    display: inline-grid;
+    place-items: center;
+    width: 1.875rem;
+    height: 1.875rem;
+    border: 2px solid var(--mm-ribbon);
+    border-radius: 50%;
+    background: var(--mm-ground);
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step--1);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .mm-rec__paid {
+    padding: 0.125rem 0.5rem;
+    border: 1.5px solid var(--mm-ink);
+    border-radius: 3px;
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step--2);
+    font-weight: 700;
+    letter-spacing: var(--mm-track-label);
+    text-transform: uppercase;
+  }
+
+  .mm-rec__labels {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mm-space-1);
+    padding: 0;
+    list-style: none;
+  }
+
+  .mm-rec__name {
+    font-size: var(--mm-step-1);
+  }
+
+  .mm-rec__link {
+    color: var(--mm-ink);
+    text-decoration: none;
+  }
+
+  .mm-rec__link:hover {
+    color: var(--mm-ribbon-deep);
+    text-decoration: underline;
+  }
+
+  /* The whole card opens the listing; the source links inside stay clickable above it. */
+  .mm-rec__link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+  }
+
+  .mm-rec a:not(.mm-rec__link) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .mm-rec__place {
+    display: inline-flex;
+    gap: 0.375rem;
+    align-items: center;
+    color: var(--mm-place-ink);
+    font-size: var(--mm-step--1);
+    font-weight: 600;
+  }
+
+  .mm-rec__place .mm-icon {
+    color: var(--mm-place);
+  }
+
+  .mm-rec__summary {
+    color: var(--mm-ink-2);
+    max-width: var(--mm-measure);
+  }
+
+  .mm-rec__price {
+    display: grid;
+    gap: var(--mm-space-1);
+  }
+
+  .mm-rec__amount {
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step-1);
+    font-weight: 600;
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+</style>

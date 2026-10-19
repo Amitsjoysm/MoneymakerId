@@ -1,0 +1,978 @@
+[
+  {
+    "id": "biryani",
+    "name": "Biryani",
+    "parent_id": null,
+    "aliases": [
+      "biriyani",
+      "briyani",
+      "biriani",
+      "biryaani",
+      "बिर्याणी",
+      "बिरयानी"
+    ],
+    "cravings": [
+      "spicy",
+      "filling"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      200,
+      300,
+      500
+    ],
+    "price_sanity_inr": {
+      "min": 40,
+      "max": 1500
+    },
+    "description": "Biryani is a mixed rice dish traditionally made with spiced meat, seafood or vegetables. It is thought to derive from a Persian rice dish and combines slow cooking with yoghurt-marinated meat and spicy Indian-style seasoning. Ingredients vary by region; chicken and goat are common meats, and vegetarian versions replace the meat with paneer, soya or vegetables. It may be served with raita, salad or a curried side such as mirchi ka salan. Biryani is the single most-ordered dish on Indian online food ordering and delivery services.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "बिर्याणी"
+      },
+      "hi": {
+        "name": "बिरयानी"
+      }
+    }
+  },
+  {
+    "id": "samosa",
+    "name": "Samosa",
+    "parent_id": null,
+    "aliases": [
+      "samosas",
+      "samossa",
+      "singara",
+      "shingara",
+      "singada",
+      "समोसा",
+      "सामोसा"
+    ],
+    "cravings": [
+      "savoury",
+      "street"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      30,
+      50,
+      100
+    ],
+    "price_sanity_inr": {
+      "min": 5,
+      "max": 300
+    },
+    "description": "A samosa is a fried turnover from the Indian subcontinent with a savoury filling that mostly consists of vegetables such as spiced potatoes, onions and peas, though paneer, meat or fish are also used. It is made as a triangle, cone or crescent depending on the region and is often accompanied by chutney. The name comes from the Middle Persian sambosag, meaning triangular pastry. In the east of the subcontinent it is called shingara. Samosas are popular snacks across South Asia.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "सामोसा"
+      },
+      "hi": {
+        "name": "समोसा"
+      }
+    }
+  },
+  {
+    "id": "vada-pav",
+    "name": "Vada Pav",
+    "parent_id": null,
+    "aliases": [
+      "wada pav",
+      "vada paav",
+      "wada pao",
+      "vadapav",
+      "vada pao",
+      "bombay burger",
+      "वडापाव",
+      "वडा पाव",
+      "वड़ा पाव",
+      "वड़ापाव"
+    ],
+    "cravings": [
+      "spicy",
+      "street",
+      "savoury"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      20,
+      40,
+      80
+    ],
+    "price_sanity_inr": {
+      "min": 5,
+      "max": 250
+    },
+    "description": "Vada pav is a vegetarian fast food dish native to Maharashtra: a deep-fried potato dumpling placed inside a bread bun (pav) sliced almost in half. It is generally accompanied by one or more chutneys, most commonly a spicy garlic-coconut chutney, and a green chilli. It began as an affordable street food in Mumbai and is now served at stalls and restaurants across India. It is also called the Bombay burger. In metropolitan areas including Mumbai and Pune, vada pav is among the most popular fast foods.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "वडापाव"
+      },
+      "hi": {
+        "name": "वड़ापाव"
+      }
+    }
+  },
+  {
+    "id": "misal-pav",
+    "name": "Misal Pav",
+    "parent_id": null,
+    "aliases": [
+      "misal",
+      "missal",
+      "missal pav",
+      "misal paav",
+      "misalpav",
+      "मिसळ पाव",
+      "मिसळपाव",
+      "मिसळ",
+      "मिसल पाव"
+    ],
+    "cravings": [
+      "spicy",
+      "breakfast",
+      "filling"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 600
+    },
+    "description": "Misal pav is a dish from Maharashtra made of a vegetable curry, mostly of moth beans (misal), served with pav, a type of bread roll. It is topped with farsan or sev, onions, lemon and coriander, and is usually served hot with butter-toasted bread or rolls, buttermilk or dahi, and papad. It is eaten as a breakfast dish, a snack and a full meal. Regional versions include Pune, Kolhapur, Nashik, Khandeshi and Ahmednagar misal, and most are on the spicier side.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "मिसळ पाव"
+      },
+      "hi": {
+        "name": "मिसल पाव"
+      }
+    }
+  },
+  {
+    "id": "momos",
+    "name": "Momos",
+    "parent_id": null,
+    "aliases": [
+      "momo",
+      "momoz",
+      "मोमो",
+      "मोमोज",
+      "मोमोज़"
+    ],
+    "cravings": [
+      "savoury",
+      "street"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 700
+    },
+    "description": "Momos are steamed, filled dumplings from Nepalese and Tibetan cuisine, also popular in India, Bhutan and Bangladesh. They are usually served with a dipping sauce known as achar or chutney, and can also be served in soup. Fillings include ground meat, vegetables, tofu, mushrooms and paneer. Momos are traditionally steamed but can also be deep-fried or pan-fried. In the Indo-Gangetic Plains the most common meat was chicken, and vegetable momos were introduced for the large vegetarian population.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "मोमो"
+      }
+    }
+  },
+  {
+    "id": "dosa",
+    "name": "Dosa",
+    "parent_id": null,
+    "aliases": [
+      "dosai",
+      "thosai",
+      "dose",
+      "डोसा",
+      "दोसा"
+    ],
+    "cravings": [
+      "breakfast",
+      "savoury"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 600
+    },
+    "description": "A dosa is a thin, savoury batter bread in South Indian cuisine, made from a fermented batter of ground black gram and rice. The batter is spread on a hot griddle (tava) to make a pancake that can be thick or thin and crispy. Dosas are served hot, often with chutney and sambar. Common varieties include masala dosa, plain (saada) dosa, paper dosa and rava dosa, which is made crispier with semolina. The dosa arrived in Mumbai with the opening of Udupi restaurants in the 1930s.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "डोसा"
+      },
+      "hi": {
+        "name": "डोसा"
+      }
+    }
+  },
+  {
+    "id": "pizza",
+    "name": "Pizza",
+    "parent_id": null,
+    "aliases": [
+      "pizzas",
+      "पिझ्झा",
+      "पिज़्ज़ा",
+      "पिज्जा"
+    ],
+    "cravings": [
+      "savoury",
+      "filling"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      200,
+      400,
+      600
+    ],
+    "price_sanity_inr": {
+      "min": 60,
+      "max": 2500
+    },
+    "description": "Pizza is an Italian dish typically consisting of a flat base of leavened wheat-based dough topped with tomato, cheese and other ingredients, baked at a high temperature, traditionally in a wood-fired oven. The modern version is often credited to Naples at the end of the 19th century, and Neapolitan pizza is registered in the European Union as a traditional speciality guaranteed. Pizza is sold in pizzerias and other restaurants, by delivery and as street food, and in casual settings it is usually cut into slices.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "पिझ्झा"
+      },
+      "hi": {
+        "name": "पिज़्ज़ा"
+      }
+    }
+  },
+  {
+    "id": "burger",
+    "name": "Burger",
+    "parent_id": null,
+    "aliases": [
+      "burgers",
+      "hamburger",
+      "hamburgers",
+      "बर्गर",
+      "ह्यामबर्गर",
+      "हैमबर्गर"
+    ],
+    "cravings": [
+      "savoury",
+      "filling"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      100,
+      200,
+      300
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 900
+    },
+    "description": "A burger, short for hamburger, is a filling placed inside a sliced bun or bread roll, usually a patty of panfried or grilled ground meat, often served with lettuce, tomato, onion, pickles and condiments. A burger with the patty topped with cheese is a cheeseburger. In India, where there are cultural beliefs against eating beef and pork, the term burger refers to a variety of sandwiches usually made from chicken or vegetable patties. The vada pav is sometimes called the Bombay burger.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "बर्गर"
+      },
+      "hi": {
+        "name": "बर्गर"
+      }
+    }
+  },
+  {
+    "id": "poha",
+    "name": "Poha",
+    "parent_id": null,
+    "aliases": [
+      "pohe",
+      "pohay",
+      "kanda poha",
+      "kanda pohe",
+      "batata poha",
+      "batata pohe",
+      "flattened rice",
+      "पोहे",
+      "पोहा"
+    ],
+    "cravings": [
+      "breakfast",
+      "light"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      50,
+      80,
+      120
+    ],
+    "price_sanity_inr": {
+      "min": 10,
+      "max": 350
+    },
+    "description": "Poha is flattened rice: rice grains pounded into flat flakes, a breakfast staple in South Asia. It is made by dehusking rice and parboiling or soaking it, then drying, roasting and flattening the grains. In Maharashtra, pohe is typically served with tea and is the dish a Maharashtrian is most likely to offer a guest. Kanda pohe is pohe prepared with onion, and batata pohe uses diced potatoes instead. Thinner flakes suit cooking and thicker ones suit deep-frying.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "पोहे"
+      },
+      "hi": {
+        "name": "पोहा"
+      }
+    }
+  },
+  {
+    "id": "pav-bhaji",
+    "name": "Pav Bhaji",
+    "parent_id": null,
+    "aliases": [
+      "pao bhaji",
+      "paav bhaji",
+      "pav bhaaji",
+      "bhaji pav",
+      "पाव भाजी",
+      "पावभाजी"
+    ],
+    "cravings": [
+      "spicy",
+      "street",
+      "filling"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 30,
+      "max": 700
+    },
+    "description": "Pav bhaji is a staple food of Maharashtra: a thick, spicy vegetable curry (bhaji) served with a soft, buttered bread roll (pav). The bhaji is a spiced mixture of mashed vegetables such as potatoes, onions, chilli peppers, green peas, bell peppers and tomatoes, cooked on a flat griddle (tawa) with plenty of butter and garnished with coriander. It is served as a street snack or a main dish. It began as a fast lunchtime dish for textile mill workers in Mumbai. Variations include cheese, paneer and Jain pav bhaji.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "पाव भाजी"
+      },
+      "hi": {
+        "name": "पाव भाजी"
+      }
+    }
+  },
+  {
+    "id": "shawarma",
+    "name": "Shawarma",
+    "parent_id": null,
+    "aliases": [
+      "shwarma",
+      "shawerma",
+      "shawarma roll",
+      "शोरमा",
+      "शवर्मा",
+      "शावरमा",
+      "शॉरमा"
+    ],
+    "cravings": [
+      "spicy",
+      "street"
+    ],
+    "diet": "non_veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 30,
+      "max": 800
+    },
+    "description": "Shawarma is a popular street food of the Middle East that originated in the Levant during the Ottoman Empire. Meat is cut into thin slices, stacked in an inverted cone and roasted on a slow-turning vertical spit, and shavings are cut off as it cooks. It is traditionally made with lamb or mutton but may also use chicken, turkey, beef or veal. It is commonly served as a sandwich or wrap in a flatbread such as pita or lavash, and the spices may include cumin, cardamom, cinnamon and turmeric.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "शोरमा"
+      },
+      "hi": {
+        "name": "शवर्मा"
+      }
+    }
+  },
+  {
+    "id": "chole-bhature",
+    "name": "Chole Bhature",
+    "parent_id": null,
+    "aliases": [
+      "chole bhatura",
+      "chhole bhature",
+      "choley bhature",
+      "chana bhatura",
+      "channa bhatura",
+      "छोले भटूरे",
+      "छोले भटुरे"
+    ],
+    "cravings": [
+      "breakfast",
+      "street",
+      "filling"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 30,
+      "max": 600
+    },
+    "description": "Chole bhature pairs chickpea curry (chole) with bhatura, a deep-fried flatbread made from maida, or refined wheat flour. The bhatura dough is fermented before being rolled and fried, so it puffs up and turns crispy and golden brown. The dish is served hot, commonly as a breakfast or street food, sometimes with lassi, and may be accompanied by onions, chutney, achaar or lemon slices. Its origin is debated, with some sources attributing it to Punjab, and by the 2010s it had become a popular fast food across India.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "छोले भटूरे"
+      }
+    }
+  },
+  {
+    "id": "thali",
+    "name": "Thali",
+    "parent_id": null,
+    "aliases": [
+      "thaali",
+      "bhojanam",
+      "थाली",
+      "थाळी"
+    ],
+    "cravings": [
+      "filling"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      150,
+      250,
+      400
+    ],
+    "price_sanity_inr": {
+      "min": 50,
+      "max": 1500
+    },
+    "description": "Thali is a round platter used to serve food in South Asia, and the word also refers to an Indian-style meal made up of a selection of dishes served on a platter. The idea behind a thali is to offer different flavours of sweet, salt, bitter, sour, astringent and spicy on one single plate. Restaurants typically offer a choice of vegetarian or meat-based thalis. In Marathi, thali (थाळी) is a shallow, wide metal plate used for eating, and in a restaurant the word can also mean a set meal.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "थाळी"
+      },
+      "hi": {
+        "name": "थाली"
+      }
+    }
+  },
+  {
+    "id": "kebab",
+    "name": "Kebab",
+    "parent_id": null,
+    "aliases": [
+      "kabab",
+      "kebap",
+      "kabob",
+      "kebob",
+      "kabaab",
+      "कबाब"
+    ],
+    "cravings": [
+      "spicy",
+      "savoury"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      200,
+      300,
+      500
+    ],
+    "price_sanity_inr": {
+      "min": 50,
+      "max": 2000
+    },
+    "description": "Kebab is a variety of roasted meat dishes that originated in the Middle East. Kebabs consist of cut-up meat, sometimes with vegetables and other accompaniments, and are typically cooked on a skewer over a fire, though some are oven-baked in a pan or prepared as a stew. The traditional meat is most often lamb, but regional recipes may use beef, goat, chicken, fish or pork. The word reached English partly through Hindi-Urdu and Persian. Seekh kebab is a type from the Indian subcontinent, made from spiced minced meat grilled on skewers.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": {
+        "name": "कबाब"
+      },
+      "hi": {
+        "name": "कबाब"
+      }
+    }
+  },
+  {
+    "id": "sandwich",
+    "name": "Sandwich",
+    "parent_id": null,
+    "aliases": [
+      "sandwiches",
+      "सैंडविच",
+      "सँडविच"
+    ],
+    "cravings": [
+      "savoury",
+      "light"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      80,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 15,
+      "max": 700
+    },
+    "description": "A sandwich is a dish typically made of meat, cheese, sauces and vegetables used as a filling between slices of bread, or placed on top of a slice of bread as an open sandwich. More generally it is any dish in which bread serves as a container or wrapper for another food. Sandwiches are a popular lunch food, taken to work, school or picnics, and can be served hot or cold. Most are savoury, but sweet sandwiches such as jam sandwiches form their own category. The dish is named after John Montagu, 4th Earl of Sandwich.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "सैंडविच"
+      }
+    }
+  },
+  {
+    "id": "desserts",
+    "name": "Desserts",
+    "parent_id": null,
+    "aliases": [
+      "dessert",
+      "sweets",
+      "sweet dish",
+      "mithai",
+      "मिठाई",
+      "मिष्ठान्न"
+    ],
+    "cravings": [
+      "sweet"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      100,
+      200,
+      400
+    ],
+    "price_sanity_inr": {
+      "min": 10,
+      "max": 3000
+    },
+    "description": "Desserts are sweet foods eaten at the end of a meal, such as cake, biscuits and ice cream. Indian sweets include gulab jamun, made mainly from milk solids and soaked in a flavoured sugar syrup, and jalebi, a deep-fried batter soaked in sugar syrup. In Maharashtrian cuisine, typical desserts include puran poli, a flatbread stuffed with jaggery and lentils, shrikhand, strained yogurt flavoured with sugar and saffron, basundi and modak, and desserts are an important part of festivals and special occasions.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "मिष्टान्न"
+      }
+    }
+  },
+  {
+    "id": "chicken-biryani",
+    "name": "Chicken Biryani",
+    "parent_id": "biryani",
+    "aliases": [
+      "chicken biriyani",
+      "chicken briyani",
+      "चिकन बिर्याणी",
+      "चिकन बिरयानी"
+    ],
+    "cravings": [
+      "spicy",
+      "filling"
+    ],
+    "diet": "non_veg",
+    "price_bands_inr": [
+      200,
+      300,
+      500
+    ],
+    "price_sanity_inr": {
+      "min": 50,
+      "max": 1500
+    },
+    "description": "Chicken biryani is the chicken version of biryani, a mixed rice dish traditionally made with spiced meat. Chicken is named among the prime meats used with rice in biryani, alongside goat and beef. The dish combines slow cooking as in Persian pilau with yoghurt-marinated meat and a spicy Indian style of cooking. It may be served with raita, salad or a curried side such as ande ka salan, made with boiled eggs. Biryani as a whole is the single most-ordered dish on Indian online food ordering and delivery services.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "चिकन बिरयानी"
+      }
+    }
+  },
+  {
+    "id": "mutton-biryani",
+    "name": "Mutton Biryani",
+    "parent_id": "biryani",
+    "aliases": [
+      "mutton biriyani",
+      "mutton briyani",
+      "goat biryani",
+      "मटण बिर्याणी",
+      "मटन बिरयानी"
+    ],
+    "cravings": [
+      "spicy",
+      "filling"
+    ],
+    "diet": "non_veg",
+    "price_bands_inr": [
+      250,
+      400,
+      600
+    ],
+    "price_sanity_inr": {
+      "min": 80,
+      "max": 2000
+    },
+    "description": "Mutton biryani is biryani made with mutton, the slow-cooked, spiced meat-and-rice dish thought to derive from a Persian rice dish. In most countries of South Asia the term mutton is applied to goat meat, so mutton biryani is usually a goat-meat biryani. The Muslim festival of Bakr Eid is marked by biryani at dinner, using the mutton from goats slaughtered for the occasion. Biryani may be served with raita, salad or a curried side such as mirchi ka salan, made with chilli peppers.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "मटन बिरयानी"
+      }
+    }
+  },
+  {
+    "id": "veg-biryani",
+    "name": "Veg Biryani",
+    "parent_id": "biryani",
+    "aliases": [
+      "vegetable biryani",
+      "veg biriyani",
+      "veggie biryani",
+      "vegetarian biryani",
+      "व्हेज बिर्याणी",
+      "वेज बिरयानी"
+    ],
+    "cravings": [
+      "spicy",
+      "filling"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      150,
+      250,
+      400
+    ],
+    "price_sanity_inr": {
+      "min": 40,
+      "max": 1200
+    },
+    "description": "Veg biryani is the vegetarian version of biryani, a mixed rice dish traditionally made with spiced meat, seafood or vegetables. Dietary variations substitute the meat with paneer, soyabean or vegetables, especially in Hindu or non-religious vegetarian variants. Like other biryanis it is slow-cooked with spices and may be served with raita, salad or fried or curried aubergine. Biryani as a whole is the single most-ordered dish on Indian online food ordering and delivery services.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "वेज बिरयानी"
+      }
+    }
+  },
+  {
+    "id": "chicken-momos",
+    "name": "Chicken Momos",
+    "parent_id": "momos",
+    "aliases": [
+      "chicken momo",
+      "चिकन मोमोज"
+    ],
+    "cravings": [
+      "savoury",
+      "street"
+    ],
+    "diet": "non_veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 700
+    },
+    "description": "Chicken momos are momos filled with chicken. Momos are steamed, filled dumplings from Nepalese and Tibetan cuisine, and after they reached the Indo-Gangetic Plains the most common meat in them was chicken. Minced meat fillings may be combined with onions or shallots, garlic, ginger and coriander, and some cooks add puréed tomatoes and soy sauce. They are traditionally steamed but can also be deep-fried or pan-fried, and are usually served with a dipping sauce such as achar or chutney.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": null
+    }
+  },
+  {
+    "id": "veg-momos",
+    "name": "Veg Momos",
+    "parent_id": "momos",
+    "aliases": [
+      "veg momo",
+      "vegetable momos",
+      "vegetarian momos",
+      "वेज मोमोज",
+      "व्हेज मोमोज"
+    ],
+    "cravings": [
+      "savoury",
+      "street"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      80,
+      120,
+      200
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 600
+    },
+    "description": "Veg momos are momos with a vegetarian filling. Momos are steamed, filled dumplings from Nepalese and Tibetan cuisine, and vegetable momos were introduced in India to feed the large population of vegetarian Hindus. In Nepal, vegetable fillings include finely chopped cabbage, carrot, soy granules and potato, and momos are also made with tofu, mushrooms or paneer. They are traditionally steamed but can also be deep-fried or pan-fried, and are usually served with a dipping sauce such as achar or chutney.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "वेज मोमोज"
+      }
+    }
+  },
+  {
+    "id": "masala-dosa",
+    "name": "Masala Dosa",
+    "parent_id": "dosa",
+    "aliases": [
+      "masala dosai",
+      "masala thosai",
+      "masale dose",
+      "मसाला डोसा",
+      "मसाला दोसा"
+    ],
+    "cravings": [
+      "breakfast",
+      "savoury"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 600
+    },
+    "description": "Masala dosa is a dish of South India consisting of a savoury dosa crepe stuffed with a spiced potato stir fry. It is a popular breakfast item in South India, though it can be served at all times of the day. The rice and legumes, such as black gram, are fermented by soaking overnight and ground into a batter, which is spread on a hot tava griddle, pan-roasted until crispy, filled with potato curry and served with chutneys and sambar. Paper masala dosa is a thinner, crisper version.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "मसाला डोसा"
+      }
+    }
+  },
+  {
+    "id": "chicken-shawarma",
+    "name": "Chicken Shawarma",
+    "parent_id": "shawarma",
+    "aliases": [
+      "chicken shwarma",
+      "chicken shawerma",
+      "chicken shawarma roll"
+    ],
+    "cravings": [
+      "spicy",
+      "street"
+    ],
+    "diet": "non_veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 30,
+      "max": 800
+    },
+    "description": "Chicken shawarma is shawarma made with chicken: thin cuts of seasoned, marinated meat stacked on a skewer and slowly roasted on a vertical spit as it turns, with shavings cut off to serve. In the Middle East it is typically served with garlic sauce, fries and pickles, and toum, a garlic sauce, is usually served with chicken shawarma. Syrian-style shawarma commonly uses chicken breast and thigh meat rather than lamb or beef. It is commonly served as a sandwich or wrap in a flatbread such as pita.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": null
+    }
+  },
+  {
+    "id": "puneri-misal-pav",
+    "name": "Puneri Misal Pav",
+    "parent_id": "misal-pav",
+    "aliases": [
+      "puneri misal",
+      "pune misal",
+      "pune misal pav",
+      "puneri missal",
+      "पुणेरी मिसळ"
+    ],
+    "cravings": [
+      "breakfast",
+      "filling"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 600
+    },
+    "description": "Puneri misal is a vegetarian version of misal from Pune, Maharashtra, eaten for breakfast, as a midday snack or as a meal, often as part of misal pav. It is described as less hot and spicy than Kolhapuri misal and often has a sweet to tangy taste, and this version contains pohe. The ingredients typically include matki usal, a moth bean curry, a spicy gravy called tarri or kat, potato bhaji, yogurt, chivda, farsan, and a garnish of onions, tomatoes and coriander.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": null
+    }
+  },
+  {
+    "id": "kolhapuri-misal-pav",
+    "name": "Kolhapuri Misal Pav",
+    "parent_id": "misal-pav",
+    "aliases": [
+      "kolhapuri misal",
+      "kolhapuri missal",
+      "कोल्हापुरी मिसळ"
+    ],
+    "cravings": [
+      "spicy",
+      "breakfast",
+      "filling"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      100,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 600
+    },
+    "description": "Kolhapuri misal is the version of misal from Kolhapur, Maharashtra, known for its high spice content, which is achieved through the use of kala masala. According to one account it usually does not contain pohe and is served with thick slices of bread rather than pav, but it is also sold as misal pav. Misal itself is a Maharashtrian dish of spiced moth bean curry (usal) with a spicy gravy called tarri, kat or rassa, topped with farsan or sev, onions, tomatoes and coriander, and eaten for breakfast, as a snack or as a meal.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": null
+    }
+  },
+  {
+    "id": "seekh-kebab",
+    "name": "Seekh Kebab",
+    "parent_id": "kebab",
+    "aliases": [
+      "seekh kabab",
+      "sheekh kebab",
+      "sheekh kabab",
+      "seekh kabaab",
+      "सीख कबाब",
+      "सीख़ कबाब",
+      "सींक कबाब"
+    ],
+    "cravings": [
+      "spicy",
+      "savoury"
+    ],
+    "diet": "both",
+    "price_bands_inr": [
+      200,
+      300,
+      500
+    ],
+    "price_sanity_inr": {
+      "min": 50,
+      "max": 2000
+    },
+    "description": "Seekh kebab is a type of kebab from the Indian subcontinent, made with Indian spices and spiced minced or ground meat, usually lamb, beef or chicken, formed into cylinders on skewers and grilled. It is typically cooked on a mangal or barbecue, or in a tandoor, and seasoned with ginger, garlic, green chilli, powdered chilli, garam masala, lemon juice, coriander and mint. It is typically served with raita, salad, onion slices, lemon wedges or green chutney. Vegetarian seekh kebabs are common in India.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": {
+        "name": "सीख़ कबाब"
+      }
+    }
+  },
+  {
+    "id": "veg-burger",
+    "name": "Veg Burger",
+    "parent_id": "burger",
+    "aliases": [
+      "veggie burger",
+      "vegetable burger",
+      "vegetarian burger"
+    ],
+    "cravings": [
+      "savoury",
+      "filling"
+    ],
+    "diet": "veg",
+    "price_bands_inr": [
+      80,
+      150,
+      250
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 700
+    },
+    "description": "A veg burger is a burger with a vegetarian patty in place of meat. Vegetarian and vegan burger patties can be formed from tofu, textured vegetable protein, seitan, beans, grains or an assortment of vegetables, and are served in a sliced bun. In India, where there are cultural beliefs against eating beef and pork, the term burger refers to a variety of sandwiches usually made from chicken or vegetable patties.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": null
+    }
+  },
+  {
+    "id": "chicken-burger",
+    "name": "Chicken Burger",
+    "parent_id": "burger",
+    "aliases": [
+      "chicken burgers"
+    ],
+    "cravings": [
+      "savoury",
+      "filling"
+    ],
+    "diet": "non_veg",
+    "price_bands_inr": [
+      100,
+      200,
+      300
+    ],
+    "price_sanity_inr": {
+      "min": 20,
+      "max": 900
+    },
+    "description": "A chicken burger is a burger with chicken in place of beef. The filling may be ground chicken meat, chicken breast (marinated or not) or fried chicken, placed inside a sliced bun and often served with lettuce, tomato, onion, pickles and condiments. In India, where there are cultural beliefs against eating beef and pork, the term burger refers to a variety of sandwiches usually made from chicken or vegetable patties.",
+    "prose_status": "draft",
+    "i18n": {
+      "mr": null,
+      "hi": null
+    }
+  }
+]

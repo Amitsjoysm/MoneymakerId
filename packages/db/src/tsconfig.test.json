@@ -1,0 +1,7 @@
+{
+  // Checks @mm/db's test files (and the source they import) with Node types.
+  "extends": "../tsconfig.json",
+  "compilerOptions": { "types": ["node"] },
+  "include": ["."],
+  "exclude": []
+}

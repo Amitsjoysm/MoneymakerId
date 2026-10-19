@@ -1,1 +1,172 @@
-/* Stub created by T00. T03 replaces this file with the OKLCH design tokens. */
+/*
+ * MarketMind AI design tokens: the Evidence ribbon world in the TechResona palette.
+ *
+ * Colour roles come from techresona.com (PRODUCT.md, 13 Oct 2026) converted to OKLCH. Where a brand value is
+ * kept exactly, the hex is noted. Derived roles exist only where a brand value fails WCAG 2.2 AA in a role:
+ *   --mm-faint     #9C7CA0 exact; 3.06-3.62:1, so it draws lines and inactive marks only, never text.
+ *   --mm-line      #D9C0DE exact; 1.4-1.6:1, a decorative hairline only.
+ *   --mm-line-strong  derived: control boundaries need 3:1 on every ground (#8E6C93).
+ *   --mm-signal    #E0435F exact; 3.5-4.1:1, so it marks stale facts (strike, ring) and never sets text.
+ *   --mm-signal-ink   derived: stale-fact label text needs 4.5:1 on the surface (#BA2840).
+ * The contrast test (src/tokens/contrast.test.ts) checks every pair in src/tokens/pairs.ts in each theme root.
+ *
+ * Theme roots: <html>, or any element that carries both data-theme and data-vertical. The vertical accent
+ * (--mm-place) marks locality and place identity only, never an action. The ribbon is the only action colour.
+ * Selectors here stay compound (no combinators) so the contrast test can model them exactly. A var() token is
+ * computed where it is declared, so every theme block declares its own (a nested dark panel must not inherit
+ * the light page's resolved --mm-focus).
+ */
+
+/* Light: plum-tinted paper, plum ink, magenta ribbon. */
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --mm-ground: oklch(0.9773 0.0068 325.63); /* #FAF6FA */
+  --mm-surface: oklch(0.945 0.0181 322.99); /* #F3E9F4 */
+  --mm-raised: oklch(1 0 0); /* #FFFFFF, "elevated" */
+  --mm-line: oklch(0.838 0.0493 320.62); /* #D9C0DE */
+  --mm-line-strong: oklch(0.58 0.07 322.6);
+  --mm-ink: oklch(0.2308 0.0655 319.57); /* #2A1130 */
+  --mm-ink-2: oklch(0.4642 0.0769 323.23); /* #6E4A72, "muted" */
+  --mm-faint: oklch(0.629 0.0646 322.64); /* #9C7CA0 */
+  --mm-ribbon: oklch(0.5019 0.1884 343.16); /* #A6237F */
+  --mm-ribbon-deep: oklch(0.431 0.16 342.69); /* #861C67, hover */
+  --mm-on-ribbon: oklch(1 0 0);
+  --mm-ribbon-wash: oklch(0.925 0.04 340);
+  --mm-select: oklch(0.88 0.07 340);
+  --mm-signal: oklch(0.6157 0.1927 14.75); /* #E0435F */
+  --mm-signal-ink: oklch(0.52 0.18 18);
+  --mm-focus: var(--mm-ribbon);
+  --mm-shade: oklch(0.2308 0.0655 319.57 / 0.16);
+  --mm-place: var(--mm-ink-2);
+  --mm-place-ink: var(--mm-ink-2);
+}
+
+/* Vertical accents, light. Construction: blueprint ink. Food: turmeric, deepened until a marker reads 3:1. */
+[data-vertical='construction'] {
+  --mm-place: oklch(0.46 0.13 256);
+  --mm-place-ink: oklch(0.46 0.13 256);
+}
+
+[data-vertical='food'] {
+  --mm-place: oklch(0.6 0.13 66);
+  --mm-place-ink: oklch(0.5 0.105 58);
+}
+
+/* Dark: a plum-black ground with a brighter ribbon. Kept identical in both blocks below (the test checks). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --mm-ground: oklch(0.165 0.028 322);
+    --mm-surface: oklch(0.205 0.034 322);
+    --mm-raised: oklch(0.245 0.04 322);
+    --mm-line: oklch(0.34 0.045 322);
+    --mm-line-strong: oklch(0.56 0.06 322);
+    --mm-ink: oklch(0.95 0.012 322);
+    --mm-ink-2: oklch(0.8 0.04 322);
+    --mm-faint: oklch(0.6 0.06 322);
+    --mm-ribbon: oklch(0.74 0.16 346);
+    --mm-ribbon-deep: oklch(0.82 0.12 346);
+    --mm-on-ribbon: oklch(0.165 0.028 322);
+    --mm-ribbon-wash: oklch(0.3 0.08 344);
+    --mm-select: oklch(0.38 0.1 344);
+    --mm-signal: oklch(0.7 0.17 16);
+    --mm-signal-ink: oklch(0.77 0.115 16);
+    --mm-focus: var(--mm-ribbon);
+    --mm-shade: oklch(0.08 0.02 322 / 0.6);
+    --mm-place: var(--mm-ink-2);
+    --mm-place-ink: var(--mm-ink-2);
+  }
+
+  :root:not([data-theme='light'])[data-vertical='construction'] {
+    --mm-place: oklch(0.76 0.1 250);
+    --mm-place-ink: oklch(0.78 0.09 250);
+  }
+
+  :root:not([data-theme='light'])[data-vertical='food'] {
+    --mm-place: oklch(0.82 0.15 82);
+    --mm-place-ink: oklch(0.84 0.14 84);
+  }
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --mm-ground: oklch(0.165 0.028 322);
+  --mm-surface: oklch(0.205 0.034 322);
+  --mm-raised: oklch(0.245 0.04 322);
+  --mm-line: oklch(0.34 0.045 322);
+  --mm-line-strong: oklch(0.56 0.06 322);
+  --mm-ink: oklch(0.95 0.012 322);
+  --mm-ink-2: oklch(0.8 0.04 322);
+  --mm-faint: oklch(0.6 0.06 322);
+  --mm-ribbon: oklch(0.74 0.16 346);
+  --mm-ribbon-deep: oklch(0.82 0.12 346);
+  --mm-on-ribbon: oklch(0.165 0.028 322);
+  --mm-ribbon-wash: oklch(0.3 0.08 344);
+  --mm-select: oklch(0.38 0.1 344);
+  --mm-signal: oklch(0.7 0.17 16);
+  --mm-signal-ink: oklch(0.77 0.115 16);
+  --mm-focus: var(--mm-ribbon);
+  --mm-shade: oklch(0.08 0.02 322 / 0.6);
+  --mm-place: var(--mm-ink-2);
+  --mm-place-ink: var(--mm-ink-2);
+}
+
+[data-theme='dark'][data-vertical='construction'] {
+  --mm-place: oklch(0.76 0.1 250);
+  --mm-place-ink: oklch(0.78 0.09 250);
+}
+
+[data-theme='dark'][data-vertical='food'] {
+  --mm-place: oklch(0.82 0.15 82);
+  --mm-place-ink: oklch(0.84 0.14 84);
+}
+
+/* Type, space, shape and motion: one set for every theme. */
+:root {
+  --mm-font-display: 'Space Grotesk Variable', 'Space Grotesk Fallback Roboto', 'Space Grotesk Fallback Arial', sans-serif;
+  --mm-font-body: 'Manrope Variable', 'Manrope Fallback Roboto', 'Manrope Fallback Arial', sans-serif;
+
+  /* Scale: 1.25 at phone width, opening to about 1.33 on desktop. Step 5 is the range figure. */
+  --mm-step--2: 0.75rem;
+  --mm-step--1: 0.875rem;
+  --mm-step-0: clamp(1rem, 0.96rem + 0.18vw, 1.0625rem);
+  --mm-step-1: clamp(1.125rem, 1.06rem + 0.3vw, 1.3125rem);
+  --mm-step-2: clamp(1.375rem, 1.24rem + 0.6vw, 1.75rem);
+  --mm-step-3: clamp(1.875rem, 1.6rem + 1.3vw, 2.875rem);
+  --mm-step-4: clamp(2.25rem, 1.8rem + 2vw, 3.5rem);
+  --mm-step-5: clamp(3.25rem, 2.3rem + 4.4vw, 5.75rem);
+
+  --mm-leading: 1.6;
+  --mm-leading-tight: 1.08;
+  --mm-track-label: 0.08em;
+  --mm-measure: 66ch;
+
+  --mm-space-1: 0.25rem;
+  --mm-space-2: 0.5rem;
+  --mm-space-3: 0.75rem;
+  --mm-space-4: 1rem;
+  --mm-space-5: 1.5rem;
+  --mm-space-6: 2rem;
+  --mm-space-7: 3rem;
+  --mm-space-8: 4.5rem;
+  --mm-gutter: clamp(1rem, 0.6rem + 1.8vw, 2rem);
+  --mm-page: 76rem;
+
+  /* TechResona radii. */
+  --mm-radius-s: 8px;
+  --mm-radius-m: 14px;
+  --mm-radius-l: 24px;
+
+  /* The ribbon: rail column, line weight, node size. */
+  --mm-rail: 1.75rem;
+  --mm-rail-x: 0.6875rem;
+  --mm-ribbon-w: 3px;
+  --mm-node: 0.875rem;
+  --mm-tap: 2.75rem;
+
+  --mm-ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --mm-dur-1: 160ms;
+  --mm-dur-2: 320ms;
+  --mm-dur-draw: 900ms;
+}

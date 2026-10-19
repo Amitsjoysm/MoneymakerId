@@ -1,0 +1,53 @@
+---
+// The icon set: authored on a 24px grid, one 1.75px round stroke, drawn in currentColor. Icons are always
+// decorative (aria-hidden); the text next to them carries the meaning.
+export type IconName =
+  | 'whatsapp'
+  | 'external'
+  | 'chevron'
+  | 'seal'
+  | 'info'
+  | 'alert'
+  | 'close'
+  | 'pin'
+  | 'arrow'
+  | 'flag'
+  | 'plus';
+
+interface Props {
+  name: IconName;
+  size?: number;
+  class?: string;
+}
+
+const RING = 'M20.5 12a8.5 8.5 0 1 1-17 0 8.5 8.5 0 0 1 17 0z';
+const PATHS: Record<IconName, string> = {
+  whatsapp: 'M12 3.5a8.5 8.5 0 0 0-7.36 12.75L3.5 20.5l4.35-1.12A8.5 8.5 0 1 0 12 3.5z M8.6 10.4h6.8 M8.6 13.6h4.4',
+  external: 'M14 4.5h5.5V10 M19.5 4.5 11 13 M17 13.5v5a1 1 0 0 1-1 1H5.5a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1h5',
+  chevron: 'm6.5 9.5 5.5 5.5 5.5-5.5',
+  seal: `${RING} m8.4 12.3 2.5 2.5 4.8-5`,
+  info: `${RING} M12 11v5.2 M12 7.9v.1`,
+  alert: `${RING} M12 7.4v5.4 M12 16.2v.1`,
+  close: 'm6.5 6.5 11 11 M17.5 6.5l-11 11',
+  pin: 'M12 21s-6.5-5.4-6.5-10.6a6.5 6.5 0 0 1 13 0C18.5 15.6 12 21 12 21z M14.3 10.3a2.3 2.3 0 1 1-4.6 0 2.3 2.3 0 0 1 4.6 0z',
+  arrow: 'M4.5 12h15 M13.5 6l6 6-6 6',
+  flag: 'M5.5 21V3.8 M5.5 4.2H17l-2.4 4.2 2.4 4.2H5.5',
+  plus: 'M12 5v14 M5 12h14',
+};
+
+const { name, size = 20, class: className } = Astro.props;
+---
+
+<svg
+  class:list={['mm-icon', className]}
+  width={size}
+  height={size}
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.75"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"><path d={PATHS[name]}></path></svg
+>

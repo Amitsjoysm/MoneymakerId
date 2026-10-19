@@ -1,0 +1,66 @@
+---
+// An ad or sponsorship slot (CONTRACTS §7a, §9). Renders nothing unless enabled; when enabled it is always
+// labelled and reserves its height, so a creative that loads late never shifts the page. Whether a slot is
+// enabled is decided by the page with @mm/core/monetization showAd(); M01b adds sponsorship and expiry here.
+import { AD_LABEL } from '@mm/core/constants';
+import type { AdSlotId } from '@mm/core/schema';
+import Disclosure from '../Disclosure/Disclosure.astro';
+
+interface Props {
+  /** Named slotId because `slot` is reserved in Astro. */
+  slotId: AdSlotId;
+  enabled: boolean;
+  campaign?: string | null;
+  /** ISO date after which the slot hides (read by the slot-expiry island). */
+  end?: string | null;
+  class?: string;
+}
+
+const { slotId, enabled, campaign = null, end = null, class: className } = Astro.props;
+---
+
+{
+  enabled && (
+    <aside
+      class:list={['mm-ad', className]}
+      data-mm-slot={slotId}
+      data-mm-campaign={campaign ?? undefined}
+      data-end={end ?? undefined}
+      aria-label={AD_LABEL}
+    >
+      <Disclosure kind="ad" />
+      <div class="mm-ad__unit">
+        <slot />
+      </div>
+    </aside>
+  )
+}
+
+<style is:global>
+  .mm-ad {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: var(--mm-space-2);
+    padding: var(--mm-space-3);
+    border: 1px solid var(--mm-line);
+    border-radius: var(--mm-radius-s);
+    background: var(--mm-surface);
+    min-height: 17.5rem;
+  }
+
+  .mm-ad__unit {
+    display: grid;
+    place-items: center;
+    min-width: 0;
+  }
+
+  /* Reserved heights per slot: the creative's box plus the label row. */
+  .mm-ad[data-mm-slot='AD_SLOT_TOP'],
+  .mm-ad[data-mm-slot='AD_SLOT_FOOTER'] {
+    min-height: 8.5rem;
+  }
+
+  .mm-ad[data-mm-slot='AD_SLOT_SIDEBAR'] {
+    min-height: 40rem;
+  }
+</style>

@@ -1,0 +1,62 @@
+---
+// The round date stamp of a first-hand visit: the owner was there on this day. Inked, slightly turned, like
+// a stamp on a ledger. It marks the visit only; the claims it backs still carry their own sources.
+import { formatDate } from '../../lib/format.ts';
+import { uid } from '../../lib/uid.ts';
+
+interface Props {
+  /** The visit date (ISO). */
+  date: string;
+  label?: string;
+  class?: string;
+}
+
+const { date, label = 'First-hand visit', class: className } = Astro.props;
+const [day, month, year] = formatDate(date).split(' ') as [string, string, string];
+const arc = uid('mm-stamp-arc');
+const foot = uid('mm-stamp-foot');
+---
+
+<svg class:list={['mm-stamp', className]} viewBox="0 0 100 100" width="88" height="88" role="img">
+  <title>{label} on {formatDate(date)}</title>
+  <circle cx="50" cy="50" r="47" fill="none" stroke="currentColor" stroke-width="2.5"></circle>
+  <circle cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="1"></circle>
+  <path id={arc} d="M11 50a39 39 0 0 1 78 0" fill="none"></path>
+  <path id={foot} d="M12.5 50a37.5 37.5 0 0 0 75 0" fill="none"></path>
+  <text class="mm-stamp__ring" aria-hidden="true"
+    ><textPath href={`#${arc}`} startOffset="50%" text-anchor="middle">{label.toUpperCase()}</textPath></text
+  >
+  <text class="mm-stamp__ring" aria-hidden="true"
+    ><textPath href={`#${foot}`} startOffset="50%" text-anchor="middle" dominant-baseline="hanging">{year}</textPath
+    ></text
+  >
+  <text class="mm-stamp__day" x="50" y="55" text-anchor="middle" aria-hidden="true">{day}</text>
+  <text class="mm-stamp__month" x="50" y="69" text-anchor="middle" aria-hidden="true">{month.toUpperCase()}</text>
+</svg>
+
+<style is:global>
+  .mm-stamp {
+    color: var(--mm-ink-2);
+    rotate: -7deg;
+    font-family: var(--mm-font-display);
+    fill: currentColor;
+  }
+
+  .mm-stamp__ring {
+    font-size: 8.5px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+  }
+
+  .mm-stamp__day {
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  .mm-stamp__month {
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+  }
+</style>

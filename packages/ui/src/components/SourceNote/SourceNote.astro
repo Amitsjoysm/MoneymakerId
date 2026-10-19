@@ -1,0 +1,88 @@
+---
+// One cited line under a figure: who says so and when we checked. A sourced or stale note without a source
+// fails the build, because a claim without a visible source and date does not ship (PRODUCT.md principle 1).
+// The tick in front is the evidence ribbon in miniature: solid when sourced, struck when stale, dashed when
+// the figure is our own estimate.
+import type { SourceRef } from '@mm/core/schema';
+import { formatDate } from '../../lib/format.ts';
+
+interface Props {
+  sources?: readonly SourceRef[];
+  state?: 'sourced' | 'stale' | 'estimate';
+  /** For an estimate: how it was worked out, in one plain sentence. */
+  note?: string;
+  class?: string;
+}
+
+const { sources = [], state = 'sourced', note, class: className } = Astro.props;
+const [first, ...rest] = sources;
+if (state !== 'estimate' && !first) throw new Error('SourceNote: a sourced or stale note needs at least one source');
+if (state === 'estimate' && !note) throw new Error('SourceNote: an estimate needs a note saying how it was worked out');
+const latest = sources.map((s) => s.retrieved_at).sort().at(-1);
+---
+
+<p class:list={['mm-srcnote', className]} data-state={state}>
+  <span class="mm-srcnote__tick" aria-hidden="true"></span>
+  {
+    state === 'estimate' ? (
+      <span>
+        <strong>Estimate.</strong> {note}
+      </span>
+    ) : (
+      first &&
+      latest && (
+        <span>
+          {state === 'stale' && <strong class="mm-srcnote__stale">Outdated. </strong>}
+          Source:{' '}
+          <a href={first.url} rel="noopener">
+            {first.publisher}
+          </a>
+          {rest.length > 0 && ` and ${rest.length} more`}, checked <time datetime={latest}>{formatDate(latest)}</time>
+        </span>
+      )
+    )
+  }
+</p>
+
+<style is:global>
+  .mm-srcnote {
+    display: flex;
+    gap: var(--mm-space-2);
+    align-items: baseline;
+    font-size: var(--mm-step--1);
+    line-height: 1.45;
+    color: var(--mm-ink-2);
+  }
+
+  .mm-srcnote a {
+    font-weight: 600;
+  }
+
+  .mm-srcnote__tick {
+    flex: none;
+    width: 0.875rem;
+    height: 0;
+    border-top: var(--mm-ribbon-w) solid var(--mm-ribbon);
+    transform: translateY(-0.3em);
+  }
+
+  .mm-srcnote[data-state='estimate'] .mm-srcnote__tick {
+    border-top: 2px dashed var(--mm-faint);
+  }
+
+  .mm-srcnote[data-state='stale'] .mm-srcnote__tick {
+    border-top-color: var(--mm-signal);
+  }
+
+  .mm-srcnote__stale {
+    color: var(--mm-signal-ink);
+  }
+
+  .mm-srcnote strong {
+    color: var(--mm-ink);
+  }
+
+  .mm-srcnote strong.mm-srcnote__stale {
+    color: var(--mm-signal-ink);
+  }
+</style>

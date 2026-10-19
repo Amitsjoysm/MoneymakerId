@@ -11,6 +11,8 @@ export default defineConfig({
         compatibilityFlags: ['nodejs_compat'],
         // CONTRACTS §10: the lead outbox binding.
         kvNamespaces: ['LEADS_OUTBOX'],
+        // CONTRACTS §10: the alert email binding. Locally Miniflare accepts and stores the message instead of sending it.
+        email: { send_email: [{ name: 'ALERT_EMAIL' }] },
       },
     }),
   ],

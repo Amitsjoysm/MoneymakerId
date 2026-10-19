@@ -1,4 +1,11 @@
 {
+  // @mm/db runs on Node (builds, pipeline) and on the Cloudflare Workers runtime (the public clients), so its
+  // source is checked with no ambient Node types: `process`, `Buffer` and `node:*` imports are errors here.
+  // Tests run under Node and are checked by src/tsconfig.test.json (Vitest's types pull @types/node into a
+  // program, so tests must not share one with this source-only check).
   "extends": "../../tsconfig.base.json",
-  "include": ["src"]
+  // `WebWorker` supplies fetch, Response, AbortSignal, URL, console and atob, which exist on both runtimes.
+  "compilerOptions": { "types": [], "lib": ["ES2024", "WebWorker"] },
+  "include": ["src"],
+  "exclude": ["src/**/*.test.ts", "src/testing.ts"]
 }

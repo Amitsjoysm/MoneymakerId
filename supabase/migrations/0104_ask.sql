@@ -10,8 +10,11 @@
 --
 -- Trust boundary: these are callable by anyone who has the publishable key, not only by our Workers. They
 -- therefore validate everything, accept a commit once per pending lookup, refuse URLs that are not http(s)
--- or a site path (a stored result is shown to other visitors), and never publish a business: candidates are
--- held for the catalogue writer (see app.ask_apply_candidates).
+-- or a site path (a stored result is shown to other visitors), never register a key (only update known ones), and
+-- never publish a business: candidates are recorded and handed to the catalogue writer (app.ask_apply_candidates).
+-- Known limit: a caller with the publishable key can report outcomes for a registered fingerprint (ask_begin hands
+-- the fingerprints out, as CONTRACTS section 5 requires), so it could cool or disable a key. Only a secret shared
+-- with the Worker would stop that; it is reported to the orchestrator rather than invented here.
 
 -- ---------------------------------------------------------------------------
 -- Helpers (schema app: not callable by any API role)
@@ -301,7 +304,7 @@ $$;
 -- Candidates a live lookup found. They are validated by api.ask_commit and arrive here for the catalogue
 -- writer. T02b cannot apply them itself: the one door into the catalogue is T02c's upsert_business (tiered
 -- dedup, slug allocation, the publish rules), and a candidate arriving through a public function must not
--- publish anything. So this is a seam: here it does nothing, and T02c replaces it (CREATE OR REPLACE in a 02*
+-- publish anything. So this is a seam: here it only checks its arguments, and T02c replaces it (CREATE OR REPLACE in a 02*
 -- migration) to go through upsert_business + evidence_insert with actor 'ask' and a server-side publish decision.
 -- ask_commit keeps every candidate whole in a system event itself, whatever this does, so nothing is lost.
 create function app.ask_apply_candidates(p_lookup uuid, p_candidates jsonb)
@@ -310,12 +313,14 @@ language plpgsql
 set search_path = ''
 as $$
 begin
-  null;
+  if p_lookup is null or jsonb_typeof(p_candidates) is distinct from 'array' then
+    perform app.raise_invalid('ask_apply_candidates', 'a lookup id and an array of candidates are required');
+  end if;
 end;
 $$;
 
 comment on function app.ask_apply_candidates(uuid, jsonb) is
-  'Seam between api.ask_commit and the catalogue writer. T02b: does nothing. T02c replaces the body to go through upsert_business + evidence_insert with actor ask and a server-side publish decision. Candidates are already kept in a system event by ask_commit.';
+  'Seam between api.ask_commit and the catalogue writer. T02b: only checks its arguments. T02c replaces the body to go through upsert_business + evidence_insert with actor ask and a server-side publish decision. Candidates are already kept in a system event by ask_commit.';
 
 -- ---------------------------------------------------------------------------
 -- api.ask_search

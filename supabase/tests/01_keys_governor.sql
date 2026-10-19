@@ -257,7 +257,7 @@ select throws_ok(
   format($$select admin_api.key_report(%L::jsonb)$$, (select jsonb_agg(pg_temp.ko('groq', 'aaaaaaaaaaaa', 'ok')) from generate_series(1, 51))::text),
   '22023', null, 'deny: more than 50 outcomes');
 select throws_ok($$select pg_temp.report(pg_temp.ko('groq', 'AAAAAAAAAAAA', 'ok'))$$, '22023', null, 'deny: an upper-case fingerprint');
-select throws_ok($$select pg_temp.report(pg_temp.ko('groq', 'gsk_live_abcdefghijklmnop', 'ok'))$$, '22023', null, 'deny: something that looks like a key instead of a fingerprint');
+select throws_ok($$select pg_temp.report(pg_temp.ko('groq', 'example-not-a-real-key', 'ok'))$$, '22023', null, 'deny: something that looks like a key instead of a fingerprint');
 select throws_ok($$select pg_temp.report(pg_temp.ko('groq', repeat('a', 64), 'ok'))$$, '22023', null, 'deny: a full sha256 instead of the 12-character prefix');
 select throws_ok($$select pg_temp.report(pg_temp.ko('groq', 'aaaaaaaaaaaa', 'exploded'))$$, '22023', null, 'deny: an outcome outside the vocabulary');
 select throws_ok($$select pg_temp.report(pg_temp.ko('openai', 'aaaaaaaaaaaa', 'ok'))$$, '22023', null, 'deny: a provider outside the vocabulary');

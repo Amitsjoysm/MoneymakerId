@@ -1,0 +1,228 @@
+---
+// Buttons and button-styled links. Primary is the ribbon itself: the magenta fill with a swallowtail cut at
+// its end, the one action colour on the page. The cut is drawn on a ::before layer so the focus ring is never
+// clipped. Secondary is a plum outline; quiet is a text action.
+import type { HTMLAttributes } from 'astro/types';
+import Icon, { type IconName } from '../Icon/Icon.astro';
+
+/** CONTRACTS §7a trackable link events. */
+export type TrackEvent =
+  | 'website_click'
+  | 'call_click'
+  | 'direction_click'
+  | 'whatsapp_click'
+  | 'provider_click'
+  | 'featured_click'
+  | 'outbound_order_click';
+
+interface Props {
+  /** Renders a link when set; a <button> otherwise. */
+  href?: string;
+  type?: 'button' | 'submit' | 'reset';
+  variant?: 'primary' | 'secondary' | 'quiet';
+  size?: 'md' | 'lg';
+  icon?: IconName;
+  iconEnd?: IconName;
+  event?: TrackEvent;
+  disabled?: boolean;
+  /** Busy state for a submit in flight: the label is kept and a pending ring turns beside it. */
+  loading?: boolean;
+  block?: boolean;
+  rel?: string;
+  form?: string;
+  name?: string;
+  value?: string;
+  class?: string;
+  'aria-describedby'?: string;
+}
+
+const {
+  href,
+  type = 'button',
+  variant = 'primary',
+  size = 'md',
+  icon,
+  iconEnd,
+  event,
+  disabled = false,
+  loading = false,
+  block = false,
+  rel,
+  form,
+  name,
+  value,
+  class: className,
+  'aria-describedby': describedBy,
+} = Astro.props;
+
+const classes = ['mm-btn', `mm-btn--${variant}`, `mm-btn--${size}`, block && 'mm-btn--block', className];
+const common: HTMLAttributes<'a'> & HTMLAttributes<'button'> = {
+  'data-mm-event': event,
+  'aria-describedby': describedBy,
+};
+---
+
+{
+  href ? (
+    <a class:list={classes} href={href} rel={rel} {...common}>
+      {icon && <Icon name={icon} />}
+      <span class="mm-btn__label">
+        <slot />
+      </span>
+      {iconEnd && <Icon name={iconEnd} />}
+    </a>
+  ) : (
+    <button
+      class:list={classes}
+      type={type}
+      disabled={disabled || loading}
+      aria-busy={loading ? 'true' : undefined}
+      form={form}
+      name={name}
+      value={value}
+      {...common}
+    >
+      {loading ? <span class="mm-btn__pending" aria-hidden="true" /> : icon && <Icon name={icon} />}
+      <span class="mm-btn__label">
+        <slot />
+      </span>
+      {iconEnd && !loading && <Icon name={iconEnd} />}
+    </button>
+  )
+}
+
+<style is:global>
+  .mm-btn {
+    --cut: 0.75rem;
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--mm-space-2);
+    min-height: var(--mm-tap);
+    padding: 0.625rem 1.125rem;
+    border: 0;
+    border-radius: var(--mm-radius-s);
+    background: none;
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step-0);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.005em;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition:
+      color var(--mm-dur-1) var(--mm-ease),
+      transform var(--mm-dur-1) var(--mm-ease);
+  }
+
+  .mm-btn--lg {
+    min-height: 3.375rem;
+    padding-inline: 1.375rem;
+    font-size: var(--mm-step-1);
+  }
+
+  .mm-btn--block {
+    display: flex;
+    width: 100%;
+  }
+
+  .mm-btn:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+
+  .mm-btn:disabled {
+    cursor: not-allowed;
+  }
+
+  .mm-btn--primary {
+    padding-right: calc(1.125rem + var(--cut));
+    color: var(--mm-on-ribbon);
+  }
+
+  .mm-btn--primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--mm-ribbon);
+    clip-path: polygon(0 0, 100% 0, calc(100% - var(--cut)) 50%, 100% 100%, 0 100%);
+    transition: background-color var(--mm-dur-1) var(--mm-ease);
+  }
+
+  .mm-btn--primary:hover {
+    color: var(--mm-on-ribbon);
+  }
+
+  .mm-btn--primary:hover::before {
+    background: var(--mm-ribbon-deep);
+  }
+
+  .mm-btn--primary:disabled::before {
+    background: var(--mm-faint);
+  }
+
+  .mm-btn--secondary {
+    border: 1.5px solid var(--mm-line-strong);
+    background: var(--mm-raised);
+    color: var(--mm-ink);
+  }
+
+  .mm-btn--secondary:hover {
+    border-color: var(--mm-ink);
+    color: var(--mm-ink);
+  }
+
+  .mm-btn--secondary:disabled {
+    border-style: dashed;
+    color: var(--mm-ink-2);
+  }
+
+  .mm-btn--quiet {
+    min-height: var(--mm-tap);
+    padding-inline: var(--mm-space-1);
+    color: var(--mm-ribbon);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.22em;
+  }
+
+  .mm-btn--quiet:hover {
+    color: var(--mm-ribbon-deep);
+    text-decoration-thickness: 2px;
+  }
+
+  .mm-btn--quiet:disabled {
+    color: var(--mm-ink-2);
+    text-decoration-style: dashed;
+  }
+
+  /* Pending: a dashed ring (the world's mark for "not settled yet") that turns while a submit is in flight. */
+  .mm-btn__pending {
+    width: 1.125em;
+    height: 1.125em;
+    border: 2px dashed currentColor;
+    border-radius: 50%;
+    animation: mm-turn 1.4s linear infinite;
+  }
+
+  @keyframes mm-turn {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  @media (forced-colors: active) {
+    .mm-btn--primary::before {
+      background: ButtonText;
+    }
+
+    .mm-btn--primary {
+      color: ButtonFace;
+      border: 1px solid ButtonText;
+    }
+  }
+</style>

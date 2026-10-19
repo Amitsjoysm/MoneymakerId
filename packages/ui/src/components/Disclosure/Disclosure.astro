@@ -1,0 +1,54 @@
+---
+// The spec §86 disclosure strings, rendered exactly as @mm/core/constants defines them (never reworded).
+import { AD_LABEL, AFFILIATE_DISCLOSURE, COST_DISCLAIMER, FEATURED_DISCLOSURE } from '@mm/core/constants';
+import Icon from '../Icon/Icon.astro';
+
+export type DisclosureKind = 'featured' | 'ad' | 'affiliate' | 'cost';
+
+interface Props {
+  kind: DisclosureKind;
+  class?: string;
+}
+
+const TEXT: Record<DisclosureKind, string> = {
+  featured: FEATURED_DISCLOSURE,
+  ad: AD_LABEL,
+  affiliate: AFFILIATE_DISCLOSURE,
+  cost: COST_DISCLAIMER,
+};
+
+const { kind, class: className } = Astro.props;
+---
+
+<p class:list={['mm-disclosure', className]} data-kind={kind}>
+  {kind !== 'ad' && <Icon name="info" size={16} />}<span class="mm-disclosure__text">{TEXT[kind]}</span>
+</p>
+
+<style is:global>
+  .mm-disclosure {
+    display: flex;
+    gap: var(--mm-space-2);
+    align-items: flex-start;
+    max-width: var(--mm-measure);
+    font-size: var(--mm-step--1);
+    line-height: 1.45;
+    color: var(--mm-ink-2);
+  }
+
+  .mm-disclosure .mm-icon {
+    margin-top: 0.1em;
+  }
+
+  .mm-disclosure[data-kind='featured'] {
+    color: var(--mm-ink);
+    font-weight: 600;
+  }
+
+  .mm-disclosure[data-kind='ad'] {
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step--2);
+    font-weight: 600;
+    letter-spacing: var(--mm-track-label);
+    text-transform: uppercase;
+  }
+</style>

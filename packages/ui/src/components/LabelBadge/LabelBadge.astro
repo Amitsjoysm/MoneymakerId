@@ -1,0 +1,42 @@
+---
+// A ranking label (CONTRACTS §3 TempLabel | BadgeLabel), set as a small ribbon tag. Labels come from C03,
+// which never gives one below MIN_LABEL_EVIDENCE; this component only shows what it is handed.
+import type { BadgeLabel, TempLabel } from '@mm/core/schema';
+import { labelText } from '../../lib/labels.ts';
+
+interface Props {
+  label: TempLabel | BadgeLabel;
+  class?: string;
+}
+
+const { label, class: className } = Astro.props;
+---
+
+<span class:list={['mm-tag', className]} data-label={label}>{labelText(label)}</span>
+
+<style is:global>
+  .mm-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+    padding: 0.125rem 0.875rem 0.125rem 0.5rem;
+    background: var(--mm-surface);
+    color: var(--mm-ink);
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step--2);
+    font-weight: 600;
+    letter-spacing: var(--mm-track-label);
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 0.375rem) 50%, 100% 100%, 0 100%);
+    border-radius: 3px 0 0 3px;
+  }
+
+  @media (forced-colors: active) {
+    .mm-tag {
+      border: 1px solid CanvasText;
+      clip-path: none;
+    }
+  }
+</style>

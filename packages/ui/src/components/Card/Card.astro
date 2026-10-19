@@ -1,0 +1,55 @@
+---
+// A sheet of paper on the ground: raised (white, a soft plum shadow) or flush (surface tint). With `tab`, a
+// ribbon bookmark hangs from its top edge to mark it as a record of evidence. Never nest cards.
+interface Props {
+  as?: 'article' | 'section' | 'aside' | 'div' | 'li';
+  tone?: 'raised' | 'surface';
+  tab?: boolean;
+  label?: string;
+  labelledby?: string;
+  class?: string;
+}
+
+const { as: Tag = 'div', tone = 'raised', tab = false, label, labelledby, class: className } = Astro.props;
+---
+
+<Tag
+  class:list={['mm-card', `mm-card--${tone}`, tab && 'mm-card--tab', className]}
+  aria-label={label}
+  aria-labelledby={labelledby}
+>
+  <slot />
+</Tag>
+
+<style is:global>
+  .mm-card {
+    position: relative;
+    padding: var(--mm-space-5);
+    border: 1px solid var(--mm-line);
+    border-radius: var(--mm-radius-m);
+    background: var(--mm-raised);
+    box-shadow:
+      0 1px 1px var(--mm-shade),
+      0 14px 32px -26px var(--mm-shade);
+  }
+
+  .mm-card--surface {
+    background: var(--mm-surface);
+    box-shadow: none;
+  }
+
+  .mm-card--tab {
+    padding-top: calc(var(--mm-space-5) + 0.5rem);
+  }
+
+  .mm-card--tab::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: var(--mm-space-5);
+    width: 0.75rem;
+    height: 1.375rem;
+    background: var(--mm-ribbon);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+  }
+</style>

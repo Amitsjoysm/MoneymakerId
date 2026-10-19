@@ -1,0 +1,195 @@
+/* Base sheet: element defaults, the browser's own surfaces themed from the palette, and the few shared
+   utilities. Component styles live with their components under the mm- prefix. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  interpolate-size: allow-keywords;
+  accent-color: var(--mm-ribbon);
+  scrollbar-color: var(--mm-faint) var(--mm-ground);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font: 450 var(--mm-step-0) / var(--mm-leading) var(--mm-font-body);
+  font-optical-sizing: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Every theme root paints its own paper and ink (the page, or a nested light/dark panel). */
+body,
+[data-theme] {
+  background: var(--mm-ground);
+  color: var(--mm-ink);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-family: var(--mm-font-display);
+  font-weight: 600;
+  line-height: var(--mm-leading-tight);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--mm-step-3);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: var(--mm-step-2);
+}
+
+h3 {
+  font-size: var(--mm-step-1);
+}
+
+p,
+ul,
+ol,
+dl,
+dd,
+figure,
+blockquote {
+  margin: 0;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: var(--mm-ribbon);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color var(--mm-dur-1) var(--mm-ease);
+}
+
+a:hover {
+  color: var(--mm-ribbon-deep);
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--mm-focus);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--mm-select);
+  color: var(--mm-ink);
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+input,
+textarea {
+  caret-color: var(--mm-ribbon);
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+svg {
+  flex-shrink: 0;
+}
+
+time,
+.mm-num {
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.mm-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.mm-skip {
+  position: absolute;
+  inset: var(--mm-space-2) auto auto var(--mm-space-2);
+  z-index: 100;
+  padding: var(--mm-space-2) var(--mm-space-4);
+  border-radius: var(--mm-radius-s);
+  background: var(--mm-ink);
+  color: var(--mm-ground);
+  font-weight: 700;
+  transform: translateY(-160%);
+}
+
+.mm-skip:focus-visible {
+  transform: none;
+}
+
+.mm-page {
+  width: 100%;
+  max-width: var(--mm-page);
+  margin-inline: auto;
+  padding-inline: var(--mm-gutter);
+}
+
+/* Tracked uppercase label in the display face: legends, table heads, slip captions. Never a kicker over a heading. */
+.mm-label {
+  font-family: var(--mm-font-display);
+  font-size: var(--mm-step--2);
+  font-weight: 600;
+  letter-spacing: var(--mm-track-label);
+  text-transform: uppercase;
+  color: var(--mm-ink-2);
+}
+
+/* Section heading with its ribbon tab: the bookmark marks where a section of evidence starts. */
+.mm-section-title {
+  display: flex;
+  align-items: baseline;
+  gap: var(--mm-space-3);
+}
+
+.mm-section-title::before {
+  content: '';
+  flex: none;
+  width: 0.6em;
+  height: 0.85em;
+  background: var(--mm-ribbon);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+  transform: translateY(0.08em);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

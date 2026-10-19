@@ -1,0 +1,24 @@
+---
+// The WhatsApp handoff. Takes a ready-made link from @mm/core/leads whatsappUrl() (the only place a wa.me
+// link is built, CONTRACTS §7) and refuses anything else, so the number can never be typed in by hand.
+// It is a plain link the visitor taps; nothing redirects them automatically.
+import Button from '../Button/Button.astro';
+
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary';
+  size?: 'md' | 'lg';
+  block?: boolean;
+  class?: string;
+}
+
+const { href, variant = 'primary', size = 'lg', block = false, class: className } = Astro.props;
+if (!/^https:\/\/wa\.me\/\d+\?text=/.test(href)) {
+  throw new Error(`WhatsAppButton: href must come from whatsappUrl() in @mm/core/leads, got ${href}`);
+}
+const label = Astro.slots.has('default') ? null : 'Get quotes on WhatsApp';
+---
+
+<Button href={href} variant={variant} size={size} block={block} icon="whatsapp" event="whatsapp_click" class={className}>
+  {label ?? <slot />}
+</Button>

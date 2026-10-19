@@ -3,7 +3,7 @@
 -- lead_type = 'reminder' stores a nurture lead. Every case runs in a rolled-back transaction.
 -- 22023 = invalid input (stable message prefix mm_invalid), 42501 = insufficient privilege.
 begin;
-select plan(59);
+select plan(60);
 
 -- ---------------------------------------------------------------------------
 -- Fixtures: reference rows, one published provider, and a valid LeadInsert builder
@@ -139,7 +139,13 @@ select is(
   'the same service from another phone is not a duplicate'
 );
 
--- the window: a lead older than 30 days no longer counts, and neither does one marked spam
+-- the window: a lead 29 days old still counts, one older than 30 days no longer does, and neither does one marked spam
+update app.leads set created_at = now() - interval '29 days';
+select is(
+  (api.submit_lead(pg_temp.lead(jsonb_build_object('idempotency_key', pg_temp.key(18)))) ->> 'duplicate_of')::uuid,
+  (select (r ->> 'lead_id')::uuid from result_1),
+  'a lead 29 days old is still inside the dedupe window'
+);
 update app.leads set created_at = now() - interval '31 days';
 create temp table result_6 as
   select api.submit_lead(pg_temp.lead(jsonb_build_object('idempotency_key', pg_temp.key(6)))) as r;
