@@ -4,6 +4,18 @@ import { DbError } from '../rpc.ts';
 import { emptySnapshot, jsonResponse, mockFetch } from '../testing.ts';
 import { API_FUNCTIONS, createApiClient } from './index.ts';
 
+const intent = {
+  vertical: 'food' as const,
+  subject_id: 'biryani',
+  craving: null,
+  locality_id: 'baner',
+  budget_inr: null,
+  diet: null,
+  open_now: false,
+  intent_key: 'food:biryani:baner',
+  confidence: 0.9,
+};
+
 const URL_BASE = 'https://example-project.supabase.co';
 const KEY = ['sb', 'publishable', 'abcdefghijklmnop'].join('_');
 const SECRET_KEY = ['sb', 'secret', 'abcdefghijklmnop'].join('_');
@@ -95,6 +107,7 @@ describe('createApiClient', () => {
     await expect(
       api.askCommit({
         lookup_id: UUID,
+        commit_sig: 'a'.repeat(64),
         result: { items: [], served_from: 'live', citations: [] },
         key_outcomes: [],
         candidates: [],
@@ -110,17 +123,6 @@ describe('createApiClient', () => {
 
   it('askSearch validates a list of items', async () => {
     const { api, calls } = client(() => jsonResponse([]));
-    const intent = {
-      vertical: 'food' as const,
-      subject_id: 'biryani',
-      craving: null,
-      locality_id: 'baner',
-      budget_inr: null,
-      diet: null,
-      open_now: false,
-      intent_key: 'food:biryani:baner',
-      confidence: 0.9,
-    };
     await expect(api.askSearch({ intent, limit: 5 })).resolves.toEqual([]);
     expect(calls[0]!.body).toEqual({ p: { intent, limit: 5 } });
   });
@@ -128,10 +130,12 @@ describe('createApiClient', () => {
   it('askBegin validates the verdict', async () => {
     const ok = { verdict: 'allow', lookup_id: UUID, usable: { groq: ['abc123'], exa: [], firecrawl: [] } };
     const { api } = client(() => jsonResponse(ok));
-    await expect(api.askBegin({ intent_key: 'k', visitor_hmac: 'h', want_live: true })).resolves.toEqual(ok);
+    await expect(
+      api.askBegin({ intent, intent_key: 'k', visitor_hmac: 'h', want_live: true }),
+    ).resolves.toEqual(ok);
     const bad = client(() => jsonResponse({ ...ok, verdict: 'maybe' }));
     await expect(
-      bad.api.askBegin({ intent_key: 'k', visitor_hmac: 'h', want_live: true }),
+      bad.api.askBegin({ intent, intent_key: 'k', visitor_hmac: 'h', want_live: true }),
     ).rejects.toMatchObject({
       kind: 'decode',
     });

@@ -495,7 +495,7 @@ Experiment = { id; host: Host; page_types: PageType[]; variants: { id; weight; p
 | `ASK_COMMIT_SECRET` (signs `api.ask_commit`; the same value is set in the database by `admin_api.ask_secret_set` at deploy) | | ✓ | ✓ | | ✓ |
 | `LEADS_OUTBOX` (KV binding) | ✓ | ✓ | ✓ | ✓ | |
 | `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | ✓ | ✓ | ✓ | ✓ | ✓ |
-| `ALERT_EMAIL` (`send_email` binding + destination address) | ✓ | ✓ | ✓ | ✓ | |
+| `ALERT_EMAIL` (`send_email` binding) with `ALERT_EMAIL_TO` (destination address, required for email) and `ALERT_EMAIL_FROM` (default `alerts@marketmindai.com`) | ✓ | ✓ | ✓ | ✓ | |
 | `GROQ_API_KEYS` / `EXA_API_KEYS` / `FIRECRAWL_API_KEYS` (`label:key,…`) | | ✓ | ✓ | ✓ | ✓ |
 | `LIVE_ASK_DAILY_CAP` (default 50) | | ✓ | ✓ | | |
 | `WHATSAPP_NUMBER` (`919834346179`) | ✓ | ✓ | ✓ | ✓ | ✓ |

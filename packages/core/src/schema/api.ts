@@ -50,6 +50,8 @@ export type AskSearchInput = z.infer<typeof AskSearchInputSchema>;
 export const AskSearchResultSchema = z.array(AskItemSchema);
 
 export const AskBeginInputSchema = z.strictObject({
+  /** Logged as one `queries` row: the search history behind locality recommendations. */
+  intent: ParsedIntentSchema,
   intent_key: TextSchema,
   visitor_hmac: TextSchema,
   want_live: z.boolean(),
@@ -66,6 +68,8 @@ export type AskBeginResult = z.infer<typeof AskBeginResultSchema>;
 
 export const AskCommitInputSchema = z.strictObject({
   lookup_id: UuidSchema,
+  /** `hex(HMAC-SHA256(ASK_COMMIT_SECRET, lookup_id))`, lowercase; the database rejects any other value. */
+  commit_sig: z.string().regex(/^[0-9a-f]{64}$/),
   result: AskResultSchema,
   key_outcomes: z.array(KeyOutcomeSchema),
   candidates: z.array(CandidateInputSchema),
