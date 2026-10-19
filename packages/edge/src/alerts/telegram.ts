@@ -37,7 +37,7 @@ export async function sendTelegram(
     const link = options.link;
     // The limit applies to the text Telegram shows (after it parses the entities and tags), so cut before
     // escaping, and leave room for the new line and the label of the link.
-    const room = TELEGRAM_MAX_CHARS;
+    const room = TELEGRAM_MAX_CHARS - (link ? 1 + link.label.length : 0);
     const message = truncateChars(text.trim(), room);
     if (!token || !chatId || !message) return 'skipped';
     const html = link
