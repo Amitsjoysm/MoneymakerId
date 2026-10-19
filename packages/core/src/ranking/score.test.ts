@@ -30,27 +30,43 @@ const hot = (components: HotInputs['components'], evidence_count = MIN_LABEL_EVI
   evidence_count,
 });
 
+/** One scorer under test, with its component keys erased so a single test body can drive all three. */
+interface ScorerCase {
+  name: string;
+  weights: Weights;
+  run: (c: Record<string, number>) => { score: number; components: Record<string, number> };
+}
+
+/**
+ * Builds a case from a scorer typed on its own component keys. The call sites below stay fully typed (a
+ * misspelt key in `run` or a weight object of the wrong shape fails to compile); the one widening cast
+ * lives here, where the shared test body hands the scorer a string-keyed record.
+ */
+function scorer<K extends string>(
+  name: string,
+  weights: Record<K, number>,
+  run: (c: Record<K, number>) => { score: number; components: Record<K, number> },
+): ScorerCase {
+  return { name, weights, run: (c) => run(c as Record<K, number>) };
+}
+
 describe.each([
-  ['foodScore', FOOD_WEIGHTS as Weights, (c: Record<string, number>) => foodScore(food(c as never))],
-  [
-    'providerScore',
-    PROVIDER_WEIGHTS as Weights,
-    (c: Record<string, number>) => providerScore(provider(c as never)),
-  ],
-  ['hotScore', HOT_WEIGHTS as Weights, (c: Record<string, number>) => hotScore(hot(c as never))],
-] as const)('%s uses the §8a weight objects exactly', (_name, weights, run) => {
+  scorer('foodScore', FOOD_WEIGHTS, (c) => foodScore(food(c))),
+  scorer('providerScore', PROVIDER_WEIGHTS, (c) => providerScore(provider(c))),
+  scorer('hotScore', HOT_WEIGHTS, (c) => hotScore(hot(c))),
+])('$name uses the §8a weight objects exactly', ({ weights, run }) => {
   it('scores each unit vector at exactly that component weight', () => {
     for (const key of Object.keys(weights)) {
       const result = run(vector(weights, 0, key, 1));
       expect(result.score, key).toBe(weights[key]);
-      expect(result.components[key as never], key).toBe(weights[key]);
+      expect(result.components[key], key).toBe(weights[key]);
     }
   });
   it('echoes the weighted parts, one per weight, in the weight order', () => {
     const result = run(vector(weights, 0.5));
     expect(Object.keys(result.components)).toEqual(Object.keys(weights));
     for (const key of Object.keys(weights)) {
-      expect(result.components[key as never]).toBeCloseTo((weights[key] as number) * 0.5, 9);
+      expect(result.components[key]).toBeCloseTo((weights[key] as number) * 0.5, 9);
     }
   });
   it('gives 1 for all ones, 0 for all zeros and halves for halves', () => {

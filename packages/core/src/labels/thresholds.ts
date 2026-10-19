@@ -1,7 +1,10 @@
 // Badge and trust-label thresholds owned by C03. These are not CONTRACTS values: MIN_LABEL_EVIDENCE,
 // CLAIM_TIER and TIER_TTL_DAYS live in @mm/core/constants (§8a) and are imported from there.
 
-/** Hidden gem (spec §10, plan §8): quality at or above the 75th percentile and visibility at or below the 25th. */
+/**
+ * Hidden gem (spec §10, plan §8): quality at or above the 75th percentile and visibility at or below the 25th.
+ * The owner-approved plan governs; the C03 brief's 80th/30th was overruled by the orchestrator (2026-10-13).
+ */
 export const HIDDEN_GEM_MIN_QUALITY_PCT = 75;
 export const HIDDEN_GEM_MAX_VISIBILITY_PCT = 25;
 

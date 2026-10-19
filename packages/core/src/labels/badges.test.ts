@@ -28,7 +28,7 @@ function none(over: Partial<BadgeInputs> = {}): BadgeInputs {
 }
 
 describe('thresholds', () => {
-  it('hidden gem is quality >= 80th and visibility <= 30th percentile (orchestrator-chosen, brief C03)', () => {
+  it('hidden gem is quality >= 75th and visibility <= 25th percentile (owner-approved plan §8; the brief 80/30 was overruled)', () => {
     expect(HIDDEN_GEM_MIN_QUALITY_PCT).toBe(75);
     expect(HIDDEN_GEM_MAX_VISIBILITY_PCT).toBe(25);
   });
@@ -59,6 +59,14 @@ describe('badges: hidden gem', () => {
     expect(badges(edge, NOW)).toEqual(['hidden_gem']);
     expect(badges({ ...edge, quality_pct: HIDDEN_GEM_MIN_QUALITY_PCT - 0.01 }, NOW)).toEqual([]);
     expect(badges({ ...edge, visibility_pct: HIDDEN_GEM_MAX_VISIBILITY_PCT + 0.01 }, NOW)).toEqual([]);
+  });
+  it('uses the plan §8 cut-offs (75th and 25th), written here as literals rather than read from the constants', () => {
+    expect(badges(none({ quality_pct: 75, visibility_pct: 25 }), NOW)).toEqual(['hidden_gem']);
+    expect(badges(none({ quality_pct: 74.99, visibility_pct: 25 }), NOW)).toEqual([]);
+    expect(badges(none({ quality_pct: 75, visibility_pct: 25.01 }), NOW)).toEqual([]);
+    // The values the brief proposed (80th and 30th) would have changed these two outcomes.
+    expect(badges(none({ quality_pct: 76, visibility_pct: 20 }), NOW)).toEqual(['hidden_gem']);
+    expect(badges(none({ quality_pct: 90, visibility_pct: 28 }), NOW)).toEqual([]);
   });
   it('is not given for high quality that is also highly visible', () => {
     expect(badges(none({ quality_pct: 99, visibility_pct: 90 }), NOW)).toEqual([]);
