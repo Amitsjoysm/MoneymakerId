@@ -262,7 +262,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 - **Acceptance:** a dry-run diff; one bad row aborts the file with line numbers; re-importing after an admin edit keeps the edit.
 
 **A04 · SEO endpoints**
-- **Owns:** `apps/*/src/pages/{robots.txt,sitemap.xml,sitemap-[type].xml,llms.txt}.ts`, `apps/main/src/pages/ads.txt.ts`
+- **Owns:** `apps/*/src/pages/{robots.txt,sitemap.xml,sitemap-[type].xml,llms.txt}.ts`, `apps/main/src/pages/ads.txt.ts`, `apps/{main,food,construction}/src/lib/seo/**` (logic and tests; nothing but routes lives in `src/pages`)
 - **Depends on:** T05, C04, C05a, E01
 - **Deliverables:** robots allows every AI bot and disallows only `/api/`; sitemaps come from the manifest (`MM_MANIFEST_PATH`), listing only indexable entries with `lastmod = hash_changed_at`; `llms.txt`; `ads.txt` on main only.
 - **Acceptance:** unit tests on a fixture manifest show non-indexable entries excluded and every `lastmod` correct.
@@ -293,7 +293,7 @@ npm → T00 → T01 → C02/C04/C05a → A02 → A01 → O01b → 🧑 sign-off.
 **R00 · Rank command**
 - **Owns:** `packages/pipeline/src/commands/rank.ts`, `packages/pipeline/src/stages/rank/**`
 - **Depends on:** C03, E01, T02c
-- **Deliverables:** food, provider and hot ranking runs from database evidence → `admin_api.ranking_commit` (recommendations, locality_profiles, quote_stats).
+- **Deliverables:** food, provider and hot ranking runs from database evidence → `admin_api.ranking_commit` (recommendations, locality_profiles). `quote_stats` is derived inside `api.export_catalogue`, not written here (CONTRACTS §5 ruling 2026-10-13).
 - **Acceptance:** idempotent; `ranking_run_id` stable for a given `config_hash`.
 
 ## Wave 6 (🔌)
