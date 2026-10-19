@@ -10,7 +10,7 @@ export {
 } from './email.ts';
 export type { EmailContent, RawEmailParts } from './email.ts';
 export { escapeTelegramHtml, sendTelegram, TELEGRAM_MAX_CHARS } from './telegram.ts';
-export { leadAlert, maskPhone, renderAlert } from './templates.ts';
+export { leadAlert, maskPhone, renderAlert, whatsappReplyLink } from './templates.ts';
 export type { LeadAlertSource } from './templates.ts';
 export type {
   AlertEnv,
@@ -23,4 +23,5 @@ export type {
   HealthAlert,
   KeyDisabledAlert,
   LeadAlert,
+  TelegramLink,
 } from './types.ts';

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { leadAlert, maskPhone, renderAlert } from './templates.ts';
+import { leadAlert, maskPhone, renderAlert, whatsappReplyLink } from './templates.ts';
 import type { AlertEvent } from './types.ts';
 
 const PHONE = '+919876543210';
@@ -191,5 +191,90 @@ describe('renderAlert: health', () => {
 describe('renderAlert: bad input', () => {
   it('throws for an event kind it does not know, so alert() can report failure', () => {
     expect(() => renderAlert({ kind: 'nope' } as unknown as AlertEvent)).toThrow();
+  });
+});
+
+describe('whatsappReplyLink', () => {
+  const event: AlertEvent = {
+    kind: 'lead',
+    ref: 'MM-AB12CD',
+    grade: 'A',
+    lead_type: 'quote',
+    service: 'waterproofing',
+    locality: 'wakad',
+    phone: PHONE,
+  };
+  const OWN_NUMBER = '919834346179';
+
+  it("links to the customer's own number, with a greeting that carries the lead ref", () => {
+    expect(whatsappReplyLink(event)).toEqual({
+      label: 'Reply on WhatsApp',
+      url: 'https://wa.me/919876543210?text=Hi%2C%20this%20is%20MarketMind%20AI%20about%20your%20quote%20request.%0A%0ARef%20MM-AB12CD',
+    });
+  });
+
+  it('puts the greeting and the ref in the prefilled text', () => {
+    const url = new URL(whatsappReplyLink(event)?.url ?? '');
+    expect(url.pathname).toBe('/919876543210');
+    expect(url.searchParams.get('text')).toBe(
+      'Hi, this is MarketMind AI about your quote request.\n\nRef MM-AB12CD',
+    );
+  });
+
+  it('uses a neutral greeting when the lead is not a quote request', () => {
+    for (const lead_type of ['advertise', 'claim', 'contact', 'for_contractors'] as const) {
+      const text = new URL(whatsappReplyLink({ ...event, lead_type })?.url ?? '').searchParams.get('text');
+      expect(text).toBe('Hi, this is MarketMind AI about your enquiry.\n\nRef MM-AB12CD');
+    }
+  });
+
+  it("never uses MarketMind AI's own number", () => {
+    expect(whatsappReplyLink(event)?.url).not.toContain(OWN_NUMBER);
+    for (const phone of ['', 'x', '9876543210', '+0']) {
+      expect(whatsappReplyLink({ ...event, phone })?.url ?? '').not.toContain(OWN_NUMBER);
+    }
+  });
+
+  it.each([
+    '',
+    'abc',
+    '9876543210',
+    '919876543210',
+    '+91 98765 43210',
+    '+91-98765-43210',
+    '+0123456789012',
+    '+12',
+  ])('gives no link, and does not throw, for a phone that is not E.164 (%j)', (phone) => {
+    expect(whatsappReplyLink({ ...event, phone })).toBeNull();
+  });
+
+  it.each(['', 'has space', 'a'.repeat(65), 'x\ny'])(
+    'gives no link, and does not throw, for a ref wa.me cannot carry (%j)',
+    (ref) => {
+      expect(whatsappReplyLink({ ...event, ref })).toBeNull();
+    },
+  );
+
+  it('gives no link for the other kinds of alert', () => {
+    const others: AlertEvent[] = [
+      {
+        kind: 'key_disabled',
+        provider: 'exa',
+        account_label: 'main',
+        fingerprint: 'a1b2c3d4e5f6',
+        reason: 'auth',
+      },
+      { kind: 'dead_man', job: 'nightly-pipeline', last_seen: null },
+      { kind: 'health', summary: ['All good'] },
+    ];
+    for (const other of others) expect(whatsappReplyLink(other)).toBeNull();
+  });
+
+  it('leaves the rendered subject and body without any link or full number', () => {
+    const { subject, body } = renderAlert(event);
+    for (const text of [subject, body]) {
+      expect(text).not.toContain('wa.me');
+      expect(text).not.toContain('9876543210');
+    }
   });
 });

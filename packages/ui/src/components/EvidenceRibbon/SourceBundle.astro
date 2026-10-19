@@ -1,0 +1,82 @@
+---
+// The rest of a figure's sources, folded into one filled node so the first viewport keeps two or three dated
+// nodes. Unfolds in place into one slip listing each source with its figure, quote and link.
+import { formatDate } from '../../lib/format.ts';
+import Icon from '../Icon/Icon.astro';
+import type { SlipSource } from './types.ts';
+
+interface Props {
+  sources: readonly SlipSource[];
+  class?: string;
+}
+
+const { sources, class: className } = Astro.props;
+if (sources.length === 0) throw new Error('SourceBundle: needs at least one source');
+const latest = sources.map((s) => s.source.retrieved_at).sort().at(-1)!;
+const names = sources.map((s) => s.source.publisher).join(', ');
+const count = sources.length === 1 ? '1 more source' : `${sources.length} more sources`;
+---
+
+<li class:list={['mm-ev__step', className]} data-line="solid">
+  <span class="mm-ev__node" data-node="bundle" aria-hidden="true"></span>
+  <details class="mm-slip">
+    <summary>
+      <span class="mm-slip__who">{count}</span>
+      <Icon name="chevron" size={18} class="mm-slip__chev" />
+      <span class="mm-slip__when">{names} · checked <time datetime={latest}>{formatDate(latest)}</time></span>
+    </summary>
+    <div class="mm-slip__fold">
+      <ul class="mm-slip__body mm-bundle">
+        {
+          sources.map(({ source, figure, scope, stale }) => (
+            <li class="mm-bundle__item">
+              <p class="mm-bundle__head">
+                <strong>{source.publisher}</strong>
+                {figure && (stale ? <s class="mm-slip__fig">{figure}</s> : <span class="mm-slip__fig">{figure}</span>)}
+              </p>
+              {source.quote && (
+                <blockquote class="mm-slip__quote" cite={source.url}>
+                  <p>“{source.quote}”</p>
+                </blockquote>
+              )}
+              <p class="mm-slip__cite">
+                <a href={source.url} rel="noopener external">
+                  {source.title}
+                  <Icon name="external" size={16} />
+                </a>
+                <span>
+                  {stale && <strong class="mm-slip__stale">Outdated · </strong>}
+                  Retrieved <time datetime={source.retrieved_at}>{formatDate(source.retrieved_at)}</time>
+                  {scope && ` · ${scope}`}
+                </span>
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </details>
+</li>
+
+<style is:global>
+  .mm-bundle {
+    margin: 0;
+    list-style: none;
+  }
+
+  .mm-bundle__item {
+    display: grid;
+    gap: var(--mm-space-2);
+  }
+
+  .mm-bundle__item + .mm-bundle__item {
+    padding-top: var(--mm-space-3);
+    border-top: 1px dashed var(--mm-line);
+  }
+
+  .mm-bundle__head {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--mm-space-3);
+  }
+</style>

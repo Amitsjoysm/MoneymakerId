@@ -1,0 +1,93 @@
+---
+// A labelled native <select> in the field box, with the system's chevron. Native, so the phone's own picker
+// opens on Android and iOS.
+import { uid } from '../../lib/uid.ts';
+import Icon from '../Icon/Icon.astro';
+
+interface Props {
+  label: string;
+  name: string;
+  options: readonly { value: string; label: string }[];
+  value?: string | null;
+  /** First, empty choice ("Choose one"); required selects should have one so nothing is preselected. */
+  placeholder?: string | null;
+  hint?: string | null;
+  error?: string | null;
+  required?: boolean;
+  disabled?: boolean;
+  id?: string;
+  class?: string;
+}
+
+const {
+  label,
+  name,
+  options,
+  value = null,
+  placeholder = null,
+  hint = null,
+  error = null,
+  required = false,
+  disabled = false,
+  id = uid('mm-select'),
+  class: className,
+} = Astro.props;
+const hintId = hint ? `${id}-hint` : null;
+const errorId = error ? `${id}-error` : null;
+const describedBy = [hintId, errorId].filter(Boolean).join(' ') || undefined;
+---
+
+<div class:list={['mm-field', className]} data-invalid={error ? '' : undefined}>
+  <label class="mm-field__label" for={id}>
+    {label}
+    {!required && <span class="mm-field__optional">(optional)</span>}
+  </label>
+  {hint && <p class="mm-field__hint" id={hintId}>{hint}</p>}
+  <div class="mm-field__box mm-select">
+    <select
+      class="mm-field__input"
+      id={id}
+      name={name}
+      required={required}
+      disabled={disabled}
+      aria-describedby={describedBy}
+      aria-invalid={error ? 'true' : undefined}
+    >
+      {placeholder && <option value="" selected={value === null}>{placeholder}</option>}
+      {options.map((option) => <option value={option.value} selected={option.value === value}>{option.label}</option>)}
+    </select>
+    <Icon name="chevron" size={18} class="mm-select__chev" />
+  </div>
+  {
+    error && (
+      <p class="mm-field__error" id={errorId}>
+        <Icon name="alert" size={18} />
+        {error}
+      </p>
+    )
+  }
+</div>
+
+<style is:global>
+  .mm-select {
+    position: relative;
+  }
+
+  .mm-select select {
+    appearance: none;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+
+  .mm-select option {
+    background: var(--mm-raised);
+    color: var(--mm-ink);
+  }
+
+  .mm-select__chev {
+    position: absolute;
+    right: 0.75rem;
+    color: var(--mm-ink-2);
+    pointer-events: none;
+  }
+</style>

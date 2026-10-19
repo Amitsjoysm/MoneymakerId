@@ -1,0 +1,30 @@
+---
+// A locality or place marker: a pin and a name in the vertical's accent (construction blueprint ink, food
+// turmeric). The accent marks place identity only; it is never used for an action.
+import Icon from '../Icon/Icon.astro';
+
+interface Props {
+  name: string;
+  /** Locality id, for the analytics island and tests. */
+  id?: string | null;
+  class?: string;
+}
+
+const { name, id = null, class: className } = Astro.props;
+---
+
+<span class:list={['mm-placetag', className]} data-locality={id ?? undefined}><Icon name="pin" size={16} />{name}</span>
+
+<style is:global>
+  .mm-placetag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--mm-place-ink);
+    font-weight: 700;
+  }
+
+  .mm-placetag .mm-icon {
+    color: var(--mm-place);
+  }
+</style>

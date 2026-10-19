@@ -1,0 +1,124 @@
+---
+// The page's close: the wordmark and the promise every page keeps, the site links, and the legal line.
+// The "by TechResona" endorsement has a slot here but stays off until the owner decides (PRODUCT.md).
+import Wordmark from '../Wordmark/Wordmark.astro';
+
+interface Props {
+  homeHref: string;
+  links?: readonly { label: string; href: string }[];
+  /** Shows "by TechResona" beside the wordmark. Off until the owner decides. */
+  endorsement?: boolean;
+  /** The legal line (entity name, address) once the owner has supplied it. */
+  legal?: string | null;
+  class?: string;
+}
+
+const { homeHref, links = [], endorsement = false, legal = null, class: className } = Astro.props;
+---
+
+<footer class:list={['mm-footer', className]}>
+  <div class="mm-page mm-footer__inner">
+    <div class="mm-footer__brand">
+      <p class="mm-footer__mark">
+        <Wordmark href={homeHref} />
+        {endorsement && <span class="mm-footer__by">by TechResona</span>}
+      </p>
+      <p class="mm-footer__promise">
+        Pune costs and places, one locality at a time. Every figure shows its source and the date we checked it.
+      </p>
+    </div>
+    {
+      links.length > 0 && (
+        <nav aria-label="Footer">
+          <ul class="mm-footer__links">
+            {links.map((link) => (
+              <li>
+                <a href={link.href}>{link.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )
+    }
+    {legal && <p class="mm-footer__legal">{legal}</p>}
+  </div>
+</footer>
+
+<style is:global>
+  .mm-footer {
+    position: relative;
+    margin-top: var(--mm-space-8);
+    padding-block: var(--mm-space-7) var(--mm-space-6);
+    border-top: 1px solid var(--mm-line);
+    background: var(--mm-surface);
+  }
+
+  /* The ribbon tab that closes the page. */
+  .mm-footer::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: max(var(--mm-gutter), calc((100% - var(--mm-page)) / 2 + var(--mm-gutter)));
+    width: 0.875rem;
+    height: 1.5rem;
+    background: var(--mm-ribbon);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+  }
+
+  .mm-footer__inner {
+    display: grid;
+    gap: var(--mm-space-6);
+  }
+
+  .mm-footer__mark {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: var(--mm-space-2);
+  }
+
+  .mm-footer__by {
+    font-size: var(--mm-step--1);
+    color: var(--mm-ink-2);
+  }
+
+  .mm-footer__promise {
+    max-width: 34rem;
+    margin-top: var(--mm-space-3);
+    color: var(--mm-ink-2);
+  }
+
+  .mm-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--mm-space-5);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mm-footer__links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: var(--mm-tap);
+    color: var(--mm-ink);
+    font-size: var(--mm-step--1);
+    font-weight: 600;
+  }
+
+  .mm-footer__legal {
+    font-size: var(--mm-step--1);
+    color: var(--mm-ink-2);
+  }
+
+  @media (min-width: 48rem) {
+    .mm-footer__inner {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: start;
+    }
+
+    .mm-footer__legal {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

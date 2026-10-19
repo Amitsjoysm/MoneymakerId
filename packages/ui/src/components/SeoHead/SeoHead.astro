@@ -1,0 +1,32 @@
+---
+// The SEO part of <head>, from ready-made values: @mm/core/seo (C05a) builds the title, description, canonical
+// URL, robots value and JSON-LD; this component only writes them. JSON-LD goes through serializeJsonLd, which
+// escapes `<`, `>` and `&`, so no value can close the script tag. The Open Graph tags repeat the same values,
+// because a link shared on WhatsApp is previewed from them.
+import { serializeJsonLd, type JsonLdNode } from '@mm/core/seo';
+
+export interface SeoProps {
+  title: string;
+  description: string;
+  canonical: string;
+  /** `index,follow` or `noindex,follow` (ROBOTS_INDEX / ROBOTS_NOINDEX), or a stricter value for fixtures. */
+  robots: string;
+  jsonLd?: JsonLdNode | readonly JsonLdNode[] | null;
+}
+
+type Props = SeoProps;
+
+const { title, description, canonical, robots, jsonLd = null } = Astro.props;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+<meta name="robots" content={robots} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="MarketMind AI" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:locale" content="en_IN" />
+{jsonLd && <script type="application/ld+json" is:inline set:html={serializeJsonLd(jsonLd)} />}

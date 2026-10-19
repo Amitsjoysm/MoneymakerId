@@ -1,0 +1,160 @@
+---
+// The phone's sticky action: once the page's own action has scrolled away, a bar at the foot of the screen
+// keeps it one tap away. It hides again while any element marked `data-mm-sticky-hide` (the in-page action)
+// is on screen, never covers the page on wide screens, and can be dismissed for the rest of the visit.
+// Without JavaScript it simply stays (there is nothing to dismiss it with, so no close button is shown).
+// `inline` puts it in the page flow, for fixtures and previews.
+import Icon from '../Icon/Icon.astro';
+
+interface Props {
+  /** Accessible name of the region ("Quick quote"). */
+  label: string;
+  /** One short line, usually the figure ("₹35–₹100 per sq ft"). */
+  title: string;
+  detail?: string | null;
+  inline?: boolean;
+  class?: string;
+}
+
+const { label, title, detail = null, inline = false, class: className } = Astro.props;
+---
+
+<aside class:list={['mm-sticky', className]} aria-label={label} data-mm-sticky data-inline={inline ? '' : undefined}>
+  <div class="mm-sticky__inner">
+    <p class="mm-sticky__text">
+      <strong>{title}</strong>
+      {detail && <span>{detail}</span>}
+    </p>
+    <slot />
+    <button class="mm-sticky__close" type="button" aria-label="Hide this bar" data-mm-dismiss hidden>
+      <Icon name="close" size={20} />
+    </button>
+  </div>
+</aside>
+
+<script>
+  const KEY = 'mm-sticky-dismissed';
+  const read = () => {
+    try {
+      return sessionStorage.getItem(KEY) === '1';
+    } catch {
+      return false;
+    }
+  };
+
+  for (const bar of document.querySelectorAll<HTMLElement>('[data-mm-sticky]')) {
+    const close = bar.querySelector<HTMLButtonElement>('[data-mm-dismiss]');
+    if (!close) continue;
+    close.hidden = false;
+    if (read() && !bar.hasAttribute('data-inline')) bar.dataset.state = 'dismissed';
+    close.addEventListener('click', () => {
+      bar.dataset.state = 'dismissed';
+      try {
+        sessionStorage.setItem(KEY, '1');
+      } catch {
+        // Private mode: the bar stays hidden for this page view only.
+      }
+    });
+    if (bar.hasAttribute('data-inline')) continue;
+    const watched = document.querySelectorAll('[data-mm-sticky-hide]');
+    if (watched.length === 0 || !('IntersectionObserver' in window)) continue;
+    const onScreen = new Set<Element>();
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) onScreen.add(entry.target);
+        else onScreen.delete(entry.target);
+      }
+      bar.toggleAttribute('data-away', onScreen.size > 0);
+    });
+    for (const el of watched) observer.observe(el);
+  }
+</script>
+
+<style is:global>
+  .mm-sticky {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 20;
+    padding: var(--mm-space-2) var(--mm-gutter) calc(var(--mm-space-2) + env(safe-area-inset-bottom));
+    border-top: 1px solid var(--mm-line);
+    background: var(--mm-raised);
+    box-shadow: 0 -10px 28px -20px var(--mm-shade);
+    transition:
+      translate var(--mm-dur-2) var(--mm-ease),
+      visibility 0s linear var(--mm-dur-2);
+  }
+
+  .mm-sticky[data-away],
+  .mm-sticky[data-state='dismissed'] {
+    translate: 0 110%;
+    visibility: hidden;
+  }
+
+  .mm-sticky:not([data-away], [data-state='dismissed']) {
+    transition-delay: 0s;
+  }
+
+  .mm-sticky[data-inline] {
+    position: static;
+    border: 1px solid var(--mm-line);
+    border-radius: var(--mm-radius-m);
+  }
+
+  .mm-sticky[data-inline][data-state='dismissed'] {
+    display: none;
+  }
+
+  .mm-sticky__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--mm-space-3);
+    max-width: var(--mm-page);
+    margin-inline: auto;
+  }
+
+  .mm-sticky__text {
+    display: grid;
+    flex: 1;
+    min-width: 0;
+    font-size: var(--mm-step--1);
+    line-height: 1.3;
+    color: var(--mm-ink-2);
+  }
+
+  .mm-sticky__text strong {
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step-0);
+    font-weight: 600;
+    color: var(--mm-ink);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .mm-sticky__close {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: var(--mm-tap);
+    height: var(--mm-tap);
+    margin-right: calc(var(--mm-space-2) * -1);
+    border: 0;
+    border-radius: 50%;
+    background: none;
+    color: var(--mm-ink-2);
+    cursor: pointer;
+  }
+
+  .mm-sticky__close:hover {
+    background: var(--mm-surface);
+    color: var(--mm-ink);
+  }
+
+  .mm-sticky__close[hidden] {
+    display: none;
+  }
+
+  @media (min-width: 48rem) {
+    .mm-sticky:not([data-inline]) {
+      display: none;
+    }
+  }
+</style>

@@ -1,5 +1,6 @@
+import { whatsappUrl } from '@mm/core/leads';
 import { cleanInline } from './text.ts';
-import type { AlertEvent, LeadAlert } from './types.ts';
+import type { AlertEvent, LeadAlert, TelegramLink } from './types.ts';
 
 const FIELD_MAX = 120;
 const SUMMARY_LINE_MAX = 500;
@@ -19,8 +20,8 @@ function redactSecrets(value: string): string {
 
 /**
  * `+91 98xxx xx210`: the first two and the last three digits of an Indian mobile number. Anything that is
- * not a ten-digit number shows only its last three digits. The full number is never sent to Telegram or
- * email; the lead record in the admin has it.
+ * not a ten-digit number shows only its last three digits. The text of an alert never has the full number;
+ * the Telegram reply link (`whatsappReplyLink`) and the lead record in the admin do.
  */
 export function maskPhone(phone: string): string {
   const digits = String(phone ?? '').replace(/\D/g, '');
@@ -53,6 +54,33 @@ export function leadAlert(lead: LeadAlertSource): LeadAlert {
     locality: lead.quote?.locality_id ?? lead.business?.locality_id ?? null,
     phone: lead.phone_e164,
   };
+}
+
+const REPLY_LABEL = 'Reply on WhatsApp';
+/** E.164: a `+`, then a country code and the number, 10 to 15 digits in all. */
+const E164 = /^\+[1-9]\d{9,14}$/;
+
+/**
+ * The "Reply on WhatsApp" link under a Telegram lead alert, so the owner can answer within two working hours
+ * (plan §13). It opens a chat with the CUSTOMER (`wa.me/<their digits>`), with a short greeting that carries
+ * the lead ref; it never uses MarketMind AI's own number. Only Telegram gets it: the email is the searchable
+ * record and stays masked.
+ *
+ * Returns `null` for every other kind of alert, and for a lead whose phone is not E.164 or whose ref
+ * `whatsappUrl` cannot carry, so a bad value drops the link and never the alert.
+ */
+export function whatsappReplyLink(event: AlertEvent): TelegramLink | null {
+  if (event.kind !== 'lead' || !E164.test(event.phone)) return null;
+  const about = event.lead_type === 'quote' ? 'your quote request' : 'your enquiry';
+  try {
+    const url = whatsappUrl(
+      { text: `Hi, this is MarketMind AI about ${about}.`, ref: event.ref },
+      event.phone.slice(1),
+    );
+    return { label: REPLY_LABEL, url };
+  } catch {
+    return null;
+  }
 }
 
 /**

@@ -1,21 +1,17 @@
 ---
-// Placeholder (T05); T03 fills in the content. This page exists only for UI work and the accessibility and
-// visual checks: it is built when DATA_SOURCE=fixtures (CI, local), and never in a production build.
+// Design-system fixtures (T03). Built only when DATA_SOURCE=fixtures (CI, local UI work), never in a
+// production build, and always noindex: they exist for the accessibility, contrast, CSS-budget and visual
+// checks. `components` shows every component in every state, light and dark; `cost-page` is the first
+// viewport of the construction cost page built from the real terrace waterproofing data.
+import Components from '../../../../../packages/ui/fixtures/components.astro';
+import CostPage from '../../../../../packages/ui/fixtures/cost-page.astro';
+
 export function getStaticPaths() {
-  if (import.meta.env.DATA_SOURCE === 'fixtures') return [{ params: { x: 'components' } }];
-  return [];
+  if (import.meta.env.DATA_SOURCE !== 'fixtures') return [];
+  return [{ params: { x: 'components' } }, { params: { x: 'cost-page' } }];
 }
+
+const { x } = Astro.params;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>UI fixtures | MarketMind AI</title>
-  </head>
-  <body>
-    <h1>UI fixtures (T03 fills this)</h1>
-  </body>
-</html>
+{x === 'components' ? <Components /> : <CostPage />}

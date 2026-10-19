@@ -1,0 +1,168 @@
+---
+// The estimate segment: the visitor's job priced from the sourced rate. It is our arithmetic, not a source,
+// so it rides a dashed line on a dashed node. Presets come estimated by the page (@mm/core/cost) and switch
+// without JavaScript (:has()). "Your area" appears only once the script is running, because only the script
+// can price a typed area; it uses the cost engine's own rounding (estimateRange, tested against estimate()).
+import type { CostUnit } from '@mm/core/schema';
+import { formatInr } from '../../lib/format.ts';
+import ChoiceChips from '../Form/ChoiceChips.astro';
+import Field from '../Form/Field.astro';
+import InrRange from '../InrRange/InrRange.astro';
+import type { EstimatePreset } from './types.ts';
+
+interface Props {
+  rate: { low: number; expected: number; high: number; min_job_inr: number | null };
+  unit: CostUnit;
+  presets: readonly EstimatePreset[];
+  /** Which preset starts chosen; the first by default. */
+  value?: string;
+  /** How the estimate is worked out, in one line. */
+  note: string;
+  legend?: string;
+  name?: string;
+  class?: string;
+}
+
+const UNIT_SUFFIX: Record<CostUnit, string> = { sqft: 'sq ft', rft: 'running ft', unit: 'units', project: 'projects' };
+
+const {
+  rate,
+  unit,
+  presets,
+  value = presets[0]?.value,
+  note,
+  legend = 'Estimate your job',
+  name = 'mm-area',
+  class: className,
+} = Astro.props;
+if (presets.length === 0 || presets.length > 6) throw new Error('RibbonEstimate: needs 1 to 6 presets');
+
+const options = [
+  ...presets.map((p) => ({ value: p.value, label: p.label, detail: p.detail })),
+  { value: 'custom', label: 'Your area', detail: UNIT_SUFFIX[unit], hidden: true },
+];
+---
+
+<li class:list={['mm-ev__step', 'mm-ev__est', className]} data-line="dashed">
+  <span class="mm-ev__node" data-node="estimate" aria-hidden="true"></span>
+  <div class="mm-est" data-mm-estimate={JSON.stringify(rate)}>
+    <ChoiceChips name={name} legend={legend} options={options} value={value} />
+    <Field
+      class="mm-est__custom"
+      label="Your area"
+      name={`${name}-qty`}
+      inputmode="decimal"
+      suffix={UNIT_SUFFIX[unit]}
+      markOptional={false}
+      autocomplete="off"
+      inputAttrs={{ 'data-mm-qty': '' }}
+    />
+    <output class="mm-est__total" aria-live="polite">
+      {
+        presets.map((p) => (
+          <span class="mm-est__val">
+            <InrRange class="mm-est__sum" low={p.low} high={p.high} />
+            <span class="mm-est__typ">
+              Typical <span class="mm-num">{formatInr(p.expected)}</span>
+              {p.note && ` · ${p.note}`}
+            </span>
+          </span>
+        ))
+      }
+      <span class="mm-est__val" data-mm-custom-out>
+        <span class="mm-est__sum">Type your area</span>
+        <span class="mm-est__typ">The estimate updates as you type.</span>
+      </span>
+    </output>
+    <p class="mm-est__note">{note}</p>
+  </div>
+</li>
+
+<script>
+  import { formatInr, formatInrRange } from '../../lib/format.ts';
+  import { estimateRange, parseQuantity, type RateInput } from '../../lib/estimate-range.ts';
+
+  for (const block of document.querySelectorAll<HTMLElement>('[data-mm-estimate]')) {
+    const rate = JSON.parse(block.dataset.mmEstimate ?? '') as RateInput;
+    const input = block.querySelector<HTMLInputElement>('[data-mm-qty]');
+    const out = block.querySelector<HTMLElement>('[data-mm-custom-out]');
+    const chip = block.querySelector<HTMLInputElement>('input[value="custom"]')?.closest('label');
+    if (!input || !out || !chip) continue;
+    const [sum, typical] = out.children as unknown as [HTMLElement, HTMLElement];
+    chip.hidden = false;
+    input.addEventListener('input', () => {
+      const quantity = parseQuantity(input.value);
+      if (quantity === null) {
+        sum.textContent = 'Type your area';
+        typical.textContent = input.value.trim() ? 'Use a number, like 850.' : 'The estimate updates as you type.';
+        return;
+      }
+      const range = estimateRange(rate, quantity);
+      sum.textContent = formatInrRange(range.low, range.high);
+      typical.textContent = `Typical ${formatInr(range.expected)}`;
+    });
+  }
+</script>
+
+<style is:global>
+  .mm-est {
+    display: grid;
+    gap: var(--mm-space-3);
+  }
+
+  .mm-est .mm-chips > legend {
+    display: flex;
+    align-items: center;
+    min-height: calc(var(--mm-node-y) * 2);
+    margin-bottom: 0;
+  }
+
+  .mm-est__custom {
+    display: none;
+    max-width: 15rem;
+  }
+
+  .mm-est:has(input[value='custom']:checked) .mm-est__custom {
+    display: grid;
+  }
+
+  .mm-est__val {
+    display: none;
+    flex-direction: column;
+    gap: 0.125rem;
+  }
+
+  .mm-est:has(.mm-chip:nth-child(1) > :checked) .mm-est__val:nth-child(1),
+  .mm-est:has(.mm-chip:nth-child(2) > :checked) .mm-est__val:nth-child(2),
+  .mm-est:has(.mm-chip:nth-child(3) > :checked) .mm-est__val:nth-child(3),
+  .mm-est:has(.mm-chip:nth-child(4) > :checked) .mm-est__val:nth-child(4),
+  .mm-est:has(.mm-chip:nth-child(5) > :checked) .mm-est__val:nth-child(5),
+  .mm-est:has(.mm-chip:nth-child(6) > :checked) .mm-est__val:nth-child(6),
+  .mm-est:has(.mm-chip:nth-child(7) > :checked) .mm-est__val:nth-child(7) {
+    display: flex;
+  }
+
+  @supports not selector(:has(*)) {
+    .mm-est__val:first-child {
+      display: flex;
+    }
+  }
+
+  .mm-est__sum {
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step-2);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+  }
+
+  .mm-est__typ,
+  .mm-est__note {
+    font-size: var(--mm-step--1);
+    color: var(--mm-ink-2);
+  }
+
+  .mm-est__note {
+    max-width: var(--mm-measure);
+  }
+</style>

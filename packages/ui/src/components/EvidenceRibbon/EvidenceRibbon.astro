@@ -1,0 +1,193 @@
+---
+// The evidence ribbon: one magenta custody line down the left of an answer, threading a figure to its
+// sources and check dates. Its parts are list items, in reading order:
+//   RibbonClaim     the figure, hung from a ribbon tab where the line starts;
+//   SourceSlip      a dated source node whose slip unfolds in place (<details>, no JS needed);
+//   SourceBundle    "N more sources", unfolding the rest in one slip;
+//   RibbonEstimate  the dashed segment: our own arithmetic, never a sourced figure;
+//   RibbonSplit     where the line forks into the primary action and "Report outdated".
+// The line is solid where a figure is sourced, dashed where it is estimated, and signal where a fact is stale.
+// It draws itself as each step scrolls into view (a scroll-driven animation); with reduced motion, or in a
+// browser without scroll timelines, it is simply drawn. Server-rendered and presentational.
+interface Props {
+  /** Accessible name of the list ("How this range is sourced"). */
+  label: string;
+  class?: string;
+}
+
+const { label, class: className } = Astro.props;
+---
+
+<ol class:list={['mm-ev', className]} aria-label={label}>
+  <slot />
+</ol>
+
+<style is:global>
+  .mm-ev {
+    --ev-ground: var(--mm-ground);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mm-ev__step {
+    position: relative;
+    padding: 0 0 var(--mm-space-3) var(--mm-rail);
+    view-timeline: --mm-ev block;
+  }
+
+  /* The segment from this step's node down to the next node. */
+  .mm-ev__step::before {
+    content: '';
+    position: absolute;
+    top: var(--mm-node-y);
+    bottom: calc(var(--mm-node-y) * -1);
+    left: calc(var(--mm-rail-x) - var(--mm-ribbon-w) / 2);
+    border-left: var(--mm-ribbon-w) solid var(--mm-ribbon);
+  }
+
+  .mm-ev__step[data-line='dashed']::before {
+    border-left-style: dashed;
+    border-left-color: var(--mm-faint);
+  }
+
+  .mm-ev__step[data-line='stale']::before {
+    border-left-color: var(--mm-signal);
+  }
+
+  .mm-ev__step:last-child::before {
+    display: none;
+  }
+
+  .mm-ev__step:has(+ .mm-ev__split)::before {
+    bottom: 0;
+  }
+
+  /* Nodes: a ring per source, filled for a bundle, dashed for our estimate, slashed in signal when stale. */
+  .mm-ev__node {
+    position: absolute;
+    z-index: 1;
+    top: calc(var(--mm-node-y) - var(--mm-node) / 2);
+    left: calc(var(--mm-rail-x) - var(--mm-node) / 2);
+    width: var(--mm-node);
+    height: var(--mm-node);
+    border: var(--mm-ribbon-w) solid var(--mm-ribbon);
+    border-radius: 50%;
+    background: var(--ev-ground);
+  }
+
+  .mm-ev__node[data-node='bundle'] {
+    background: var(--mm-ribbon);
+    box-shadow: inset 0 0 0 2px var(--ev-ground);
+  }
+
+  .mm-ev__node[data-node='estimate'] {
+    border: 2px dashed var(--mm-faint);
+  }
+
+  .mm-ev__node[data-node='stale'] {
+    border-color: var(--mm-signal);
+  }
+
+  .mm-ev__node[data-node='stale']::after {
+    content: '';
+    position: absolute;
+    top: -0.3rem;
+    bottom: -0.3rem;
+    left: calc(50% - 1px);
+    width: 2px;
+    background: var(--mm-signal);
+    rotate: 45deg;
+  }
+
+  /* The claim hangs from a ribbon tab; the line leaves from the tab's notch. */
+  .mm-ev__claim {
+    padding-bottom: var(--mm-space-5);
+  }
+
+  .mm-ev__claim::before {
+    top: 1.375rem;
+  }
+
+  .mm-ev__node[data-node='claim'] {
+    top: 0.25rem;
+    left: calc(var(--mm-rail-x) - 0.5625rem);
+    width: 1.125rem;
+    height: 1.5rem;
+    border: 0;
+    border-radius: 2px 2px 0 0;
+    background: var(--mm-ribbon);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+  }
+
+  /* The fork: a solid elbow into the primary action, a thin faint elbow into the secondary one. */
+  .mm-ev__split {
+    display: grid;
+    gap: var(--mm-space-2);
+    justify-items: start;
+    padding-bottom: 0;
+  }
+
+  .mm-ev__branch {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: var(--mm-tap);
+  }
+
+  .mm-ev__branch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: calc(100% + 2px);
+    left: calc(var(--mm-rail-x) - var(--mm-rail) - var(--mm-ribbon-w) / 2);
+    height: calc(50% + var(--mm-ribbon-w) / 2);
+    border: 0 solid var(--mm-ribbon);
+    border-width: 0 0 var(--mm-ribbon-w) var(--mm-ribbon-w);
+    border-bottom-left-radius: 0.875rem;
+  }
+
+  .mm-ev__branch--main::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    bottom: calc(var(--mm-space-2) * -1);
+    left: calc(var(--mm-rail-x) - var(--mm-rail) - 0.75px);
+    border-left: 1.5px solid var(--mm-faint);
+  }
+
+  .mm-ev__branch--main:only-child::after {
+    display: none;
+  }
+
+  .mm-ev__branch--side::before {
+    top: calc(var(--mm-space-2) * -1);
+    left: calc(var(--mm-rail-x) - var(--mm-rail) - 0.75px);
+    right: calc(100% + 0.25rem);
+    height: calc(50% + var(--mm-space-2) + 0.75px);
+    border-color: var(--mm-faint);
+    border-width: 0 0 1.5px 1.5px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      .mm-ev__step::before {
+        animation: mm-ev-draw linear both;
+        animation-timeline: --mm-ev;
+        animation-range: entry 0% entry 100%;
+      }
+    }
+  }
+
+  @keyframes mm-ev-draw {
+    from {
+      clip-path: inset(0 0 100% 0);
+    }
+  }
+
+  @media (forced-colors: active) {
+    .mm-ev__node[data-node='claim'] {
+      background: CanvasText;
+    }
+  }
+</style>

@@ -1,0 +1,22 @@
+---
+// Where the ribbon ends: it forks into the primary action (a solid elbow straight into the ribbon button) and
+// a thin faint branch to the secondary one, usually "Report outdated". Put the actions in the `primary` and
+// `secondary` slots. With `stickyHide`, the sticky action bar stays away while this fork is on screen.
+interface Props {
+  stickyHide?: boolean;
+  class?: string;
+}
+
+const { stickyHide = false, class: className } = Astro.props;
+---
+
+<li class:list={['mm-ev__step', 'mm-ev__split', className]} data-mm-sticky-hide={stickyHide ? '' : undefined}>
+  <div class="mm-ev__branch mm-ev__branch--main"><slot name="primary" /></div>
+  {
+    Astro.slots.has('secondary') && (
+      <div class="mm-ev__branch mm-ev__branch--side">
+        <slot name="secondary" />
+      </div>
+    )
+  }
+</li>

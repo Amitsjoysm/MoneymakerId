@@ -1,0 +1,131 @@
+---
+// A checkbox with its label beside it: consent, opt-ins. The whole row is the target. Unticked unless the
+// page says otherwise (consent is never pre-ticked). The label text comes in the default slot so a consent
+// text can carry a link to the policy.
+import { uid } from '../../lib/uid.ts';
+import Icon from '../Icon/Icon.astro';
+
+interface Props {
+  name: string;
+  value?: string;
+  checked?: boolean;
+  required?: boolean;
+  disabled?: boolean;
+  error?: string | null;
+  id?: string;
+  class?: string;
+}
+
+const {
+  name,
+  value = 'yes',
+  checked = false,
+  required = false,
+  disabled = false,
+  error = null,
+  id = uid('mm-check'),
+  class: className,
+} = Astro.props;
+const errorId = error ? `${id}-error` : null;
+---
+
+<div class:list={['mm-check', className]} data-invalid={error ? '' : undefined}>
+  <input
+    class="mm-check__box"
+    type="checkbox"
+    id={id}
+    name={name}
+    value={value}
+    checked={checked}
+    required={required}
+    disabled={disabled}
+    aria-describedby={errorId ?? undefined}
+    aria-invalid={error ? 'true' : undefined}
+  />
+  <label class="mm-check__label" for={id}><slot /></label>
+  {
+    error && (
+      <p class="mm-field__error mm-check__error" id={errorId}>
+        <Icon name="alert" size={18} />
+        {error}
+      </p>
+    )
+  }
+</div>
+
+<style is:global>
+  .mm-check {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--mm-space-2) var(--mm-space-3);
+    align-items: start;
+  }
+
+  .mm-check__box {
+    appearance: none;
+    display: grid;
+    place-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0;
+    border: 1.5px solid var(--mm-line-strong);
+    border-radius: 6px;
+    background: var(--mm-raised);
+    cursor: pointer;
+    transition:
+      background-color var(--mm-dur-1) var(--mm-ease),
+      border-color var(--mm-dur-1) var(--mm-ease);
+  }
+
+  .mm-check__box::before {
+    content: '';
+    width: 0.75rem;
+    height: 0.4rem;
+    border: solid var(--mm-on-ribbon);
+    border-width: 0 0 2.5px 2.5px;
+    translate: 0 -1px;
+    rotate: -45deg;
+    scale: 0;
+    transition: scale var(--mm-dur-1) var(--mm-ease);
+  }
+
+  .mm-check__box:hover {
+    border-color: var(--mm-ink-2);
+  }
+
+  .mm-check__box:checked {
+    border-color: var(--mm-ribbon);
+    background: var(--mm-ribbon);
+  }
+
+  .mm-check__box:checked::before {
+    scale: 1;
+  }
+
+  .mm-check__box:disabled {
+    border-style: dashed;
+    cursor: not-allowed;
+  }
+
+  .mm-check[data-invalid] .mm-check__box {
+    border-color: var(--mm-signal);
+    box-shadow: 0 0 0 1px var(--mm-signal);
+  }
+
+  .mm-check__label {
+    padding-top: 0.0625rem;
+    font-size: var(--mm-step--1);
+    line-height: 1.5;
+    cursor: pointer;
+  }
+
+  .mm-check__error {
+    grid-column: 2;
+  }
+
+  @media (forced-colors: active) {
+    .mm-check__box {
+      appearance: auto;
+    }
+  }
+</style>

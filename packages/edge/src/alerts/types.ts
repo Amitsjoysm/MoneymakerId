@@ -1,6 +1,5 @@
-// Shapes for @mm/edge/alerts. Type-only (erased at build time), so importing the module loads nothing from
-// @mm/core. The module also runs in Node (GitHub Actions: the health report and the dead-man check), so
-// nothing here depends on the Workers global types.
+// Shapes for @mm/edge/alerts. Type-only (erased at build time). The module also runs in Node (GitHub Actions:
+// the health report and the dead-man check), so nothing here depends on the Workers global types.
 import type { LeadGrade, LeadType, Provider } from '@mm/core/schema';
 
 /** What happened to one channel. `skipped` means it is not configured (or there was nothing to send). */
@@ -9,6 +8,12 @@ export type AlertStatus = 'sent' | 'skipped' | 'failed';
 export interface AlertResult {
   telegram: AlertStatus;
   email: AlertStatus;
+}
+
+/** One tap-to-open link under a Telegram message: `label` is what the owner reads, `url` is where it goes. */
+export interface TelegramLink {
+  label: string;
+  url: string;
 }
 
 /** The envelope of an email, as the Workers runtime `EmailMessage` exposes it. */
@@ -37,12 +42,15 @@ export interface AlertEnv {
   ALERT_EMAIL_FROM?: string;
 }
 
-/** A new lead. The phone number is masked in the message; the full number is never sent. */
+/**
+ * A new lead. The message text shows the phone masked. The Telegram message also carries a "Reply on
+ * WhatsApp" link to the customer's number (plan Q-D); the email never has the full number.
+ */
 export interface LeadAlert {
   kind: 'lead';
   ref: string;
   grade: LeadGrade;
-  /** E.164 as stored (`+919876543210`). Only the masked form is rendered. */
+  /** E.164 as stored (`+919876543210`). The text shows only the masked form; the reply link needs the whole number. */
   phone: string;
   lead_type?: LeadType;
   service?: string | null;

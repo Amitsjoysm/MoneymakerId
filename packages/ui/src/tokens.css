@@ -158,11 +158,12 @@
   --mm-radius-m: 14px;
   --mm-radius-l: 24px;
 
-  /* The ribbon: rail column, line weight, node size. */
+  /* The ribbon: rail column, the rail's centre line, line weight, node size, node centre from a step's top. */
   --mm-rail: 1.75rem;
-  --mm-rail-x: 0.6875rem;
+  --mm-rail-x: 0.75rem;
   --mm-ribbon-w: 3px;
   --mm-node: 0.875rem;
+  --mm-node-y: 1.25rem;
   --mm-tap: 2.75rem;
 
   --mm-ease: cubic-bezier(0.16, 1, 0.3, 1);

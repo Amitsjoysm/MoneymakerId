@@ -1,0 +1,99 @@
+---
+// Questions and answers as native disclosures, under a ribbon-tab section heading. An answer that states a
+// fact carries its sources, like every other claim. The FAQPage JSON-LD is the page's (@mm/core/seo).
+import type { SourceRef } from '@mm/core/schema';
+import { uid } from '../../lib/uid.ts';
+import Icon from '../Icon/Icon.astro';
+import SourceNote from '../SourceNote/SourceNote.astro';
+
+interface Item {
+  question: string;
+  /** Plain text; blank lines start new paragraphs. */
+  answer: string;
+  sources?: readonly SourceRef[];
+}
+
+interface Props {
+  title: string;
+  items: readonly Item[];
+  class?: string;
+}
+
+const { title, items, class: className } = Astro.props;
+const headingId = uid('mm-faq');
+---
+
+<section class:list={['mm-faq', className]} aria-labelledby={headingId}>
+  <h2 class="mm-section-title" id={headingId}>{title}</h2>
+  <div class="mm-faq__list">
+    {
+      items.map((item) => (
+        <details class="mm-faq__item">
+          <summary>
+            <span>{item.question}</span>
+            <Icon name="plus" size={20} class="mm-faq__mark" />
+          </summary>
+          <div class="mm-faq__answer">
+            {item.answer.split(/\n\s*\n/).map((para) => (
+              <p>{para}</p>
+            ))}
+            {item.sources && item.sources.length > 0 && <SourceNote sources={item.sources} />}
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</section>
+
+<style is:global>
+  .mm-faq {
+    display: grid;
+    gap: var(--mm-space-4);
+  }
+
+  .mm-faq__list {
+    border-top: 1px solid var(--mm-line);
+  }
+
+  .mm-faq__item {
+    border-bottom: 1px solid var(--mm-line);
+  }
+
+  .mm-faq__item > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--mm-space-4);
+    min-height: 3.5rem;
+    padding: var(--mm-space-3) 0;
+    font-weight: 700;
+    line-height: 1.4;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .mm-faq__item > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mm-faq__item > summary:hover {
+    color: var(--mm-ribbon-deep);
+  }
+
+  .mm-faq__mark {
+    color: var(--mm-ribbon);
+    transition: rotate var(--mm-dur-2) var(--mm-ease);
+  }
+
+  .mm-faq__item[open] .mm-faq__mark {
+    rotate: 45deg;
+  }
+
+  .mm-faq__answer {
+    display: grid;
+    gap: var(--mm-space-3);
+    max-width: var(--mm-measure);
+    padding-bottom: var(--mm-space-5);
+    color: var(--mm-ink-2);
+  }
+</style>

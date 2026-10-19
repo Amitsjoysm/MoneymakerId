@@ -1,0 +1,80 @@
+---
+// The figure the ribbon starts from: a rupee range per unit, set as the largest thing on screen, with its
+// typical value and where it applies. Extra context goes in the default slot.
+import type { CostUnit } from '@mm/core/schema';
+import { formatInr, perUnit } from '../../lib/format.ts';
+import InrRange from '../InrRange/InrRange.astro';
+import PlaceTag from '../PlaceTag/PlaceTag.astro';
+
+interface Props {
+  low: number;
+  high: number;
+  unit: CostUnit;
+  /** The expected value, shown as "typical". */
+  typical?: number | null;
+  /** Where the figure applies ("Pune-wide rate"), shown as a place marker. */
+  place?: string | null;
+  class?: string;
+}
+
+const { low, high, unit, typical = null, place = null, class: className } = Astro.props;
+---
+
+<li class:list={['mm-ev__step', 'mm-ev__claim', className]}>
+  <span class="mm-ev__node" data-node="claim" aria-hidden="true"></span>
+  <p class="mm-claim">
+    <InrRange class="mm-claim__fig" low={low} high={high} />
+    <span class="mm-claim__unit">{perUnit(unit)}</span>
+  </p>
+  {
+    (typical !== null || place) && (
+      <p class="mm-claim__meta">
+        {typical !== null && (
+          <span>
+            Typical <strong class="mm-num">{formatInr(typical)}</strong>
+          </span>
+        )}
+        {place && <PlaceTag name={place} />}
+      </p>
+    )
+  }
+  <slot />
+</li>
+
+<style is:global>
+  .mm-claim {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: var(--mm-space-3);
+  }
+
+  .mm-claim__fig {
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step-5);
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.035em;
+  }
+
+  .mm-claim__unit {
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step-1);
+    font-weight: 500;
+    color: var(--mm-ink-2);
+  }
+
+  .mm-claim__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mm-space-1) var(--mm-space-4);
+    margin-top: var(--mm-space-2);
+    font-size: var(--mm-step--1);
+    color: var(--mm-ink-2);
+  }
+
+  .mm-claim__meta strong {
+    color: var(--mm-ink);
+    font-weight: 700;
+  }
+</style>

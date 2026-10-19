@@ -22,6 +22,7 @@ TASK-MARKER: completion-D02
 4. **Britannica was tried as a second publisher** (biryani, samosa, dosa, pizza, hamburger, kebab, sandwich) and answered HTTP 403 for every URL, so no second encyclopedia source exists for the general dish facts. See gaps.
 5. **Single-publisher caveat.** Most general dish facts rest on Wikipedia alone. That is acceptable for `draft` prose; the owner review that moves a dish to `reviewed` should open each page and confirm the wording.
 6. **WebSearch used: 10 of 20.** All ten were name-spelling or attestation lookups (section 8). Wikipedia fetches via curl are free and not counted.
+7. **Re-verification on retry (2026-10-13 task date).** All 33 cited pages (24 Wikipedia, 9 publisher) were fetched a second time with `curl` (`--compressed` for the Indian news sites; one Wikipedia 429 was retried after a pause) and all 138 quotes plus the 8 publisher page titles were re-checked character-for-character against the fresh text. 137 of 138 matched. One had drifted because Wikipedia was edited in between: the Mutton page now says "South and Southeast Asia" where it said "South Asia". The `mutton-biryani` quote and description were updated to the current wording and "usually" was softened to "often". No extra WebSearch calls were used on the retry (still 10 of 20).
 
 ## 3. Sources opened
 
@@ -261,9 +262,9 @@ Format per dish: editorial fields first (not claims about reality, see section 7
 ### `mutton-biryani` · Mutton Biryani (variant of `biryani`)
 
 - diet `non_veg` · cravings `spicy`, `filling` · bands [250, 400, 600] · sanity 80-2000 INR
-- description (83 words): Mutton biryani is biryani made with mutton, the slow-cooked, spiced meat-and-rice dish thought to derive from a Persian rice dish. In most countries of South Asia the term mutton is applied to goat meat, so mutton biryani is usually a goat-meat biryani. The Muslim festival of Bakr Eid is marked by biryani at dinner, using the mutton from goats slaughtered for the occasion. Biryani may be served with raita, salad or a curried side such as mirchi ka salan, made with chilli peppers.
+- description (85 words): Mutton biryani is biryani made with mutton, the slow-cooked, spiced meat-and-rice dish thought to derive from a Persian rice dish. In most countries of South and Southeast Asia the term mutton is applied to goat meat, so mutton biryani is often a goat-meat biryani. The Muslim festival of Bakr Eid is marked by biryani at dinner, using the mutton from goats slaughtered for the occasion. Biryani may be served with raita, salad or a curried side such as mirchi ka salan, made with chilli peppers.
 - quotes:
-  - [W-MUT] "The term "mutton" is applied to goat meat in most countries of South Asia"
+  - [W-MUT] "The term "mutton" is applied to goat meat in most countries of South and Southeast Asia"
   - [W-BIR] "The Muslim festival of Bakr Eid is marked by biryani at dinner, using the mutton from goats slaughtered in memory of the prophet Abraham"
   - [W-BIR] "It is thought to derive from a Persian rice dish, either pilau or birinj biryan."
   - [W-BIR] "mirchi ka salan (with chili peppers)"

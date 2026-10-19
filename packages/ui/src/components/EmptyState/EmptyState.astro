@@ -1,0 +1,59 @@
+---
+// A gap in the record, said plainly: no providers listed yet, no first-hand visit yet, nothing matches the
+// filters. Drawn the way the world draws inference and gaps, with a dashed line and an open node, and never
+// padded with filler. The body says what is missing and why; the `actions` slot offers the way on.
+interface Props {
+  title: string;
+  headingLevel?: 2 | 3 | 4;
+  class?: string;
+}
+
+const { title, headingLevel = 3, class: className } = Astro.props;
+const Heading = `h${headingLevel}` as const;
+---
+
+<div class:list={['mm-empty', className]}>
+  <span class="mm-empty__node" aria-hidden="true"></span>
+  <Heading class="mm-empty__title">{title}</Heading>
+  <div class="mm-empty__body"><slot /></div>
+  {Astro.slots.has('actions') && <div class="mm-empty__actions"><slot name="actions" /></div>}
+</div>
+
+<style is:global>
+  .mm-empty {
+    position: relative;
+    display: grid;
+    gap: var(--mm-space-2);
+    padding: var(--mm-space-5) var(--mm-space-5) var(--mm-space-5) calc(var(--mm-space-5) + var(--mm-rail));
+    border: 1.5px dashed var(--mm-line-strong);
+    border-radius: var(--mm-radius-m);
+  }
+
+  .mm-empty__node {
+    position: absolute;
+    top: calc(var(--mm-space-5) + 0.15rem);
+    left: var(--mm-space-5);
+    width: var(--mm-node);
+    height: var(--mm-node);
+    border: 2px dashed var(--mm-faint);
+    border-radius: 50%;
+  }
+
+  .mm-empty__title {
+    font-size: var(--mm-step-1);
+  }
+
+  .mm-empty__body {
+    display: grid;
+    gap: var(--mm-space-2);
+    max-width: var(--mm-measure);
+    color: var(--mm-ink-2);
+  }
+
+  .mm-empty__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--mm-space-3);
+    margin-top: var(--mm-space-2);
+  }
+</style>

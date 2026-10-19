@@ -123,3 +123,63 @@ describe('sendTelegram', () => {
     expect(JSON.stringify(warn.mock.calls)).not.toContain('AAH-example_token');
   });
 });
+
+describe('sendTelegram with a link', () => {
+  const link = {
+    label: 'Reply on WhatsApp',
+    url: 'https://wa.me/919876543210?text=Hi%2C%20there%0A%0ARef%20MM-AB12CD',
+  };
+
+  /** What Telegram shows: the tags removed and the entities decoded. */
+  function shown(html: string): string {
+    return html
+      .replace(/<[^>]*>/g, '')
+      .replaceAll('&lt;', '<')
+      .replaceAll('&gt;', '>')
+      .replaceAll('&quot;', '"')
+      .replaceAll('&amp;', '&');
+  }
+
+  it('adds one HTML link on its own line after the escaped text', async () => {
+    await expect(sendTelegram(env, 'Fish & chips', { link })).resolves.toBe('sent');
+    expect(sentBody().text).toBe(`Fish &amp; chips\n<a href="${link.url}">Reply on WhatsApp</a>`);
+    expect(sentBody().parse_mode).toBe('HTML');
+  });
+
+  it('escapes the label, and the quote and markup characters of the address', async () => {
+    await sendTelegram(env, 'Hello', {
+      link: { label: 'A <b> & C', url: 'https://example.com/?a=1&b="2"<3>' },
+    });
+    expect(sentBody().text).toBe(
+      'Hello\n<a href="https://example.com/?a=1&amp;b=&quot;2&quot;&lt;3&gt;">A &lt;b&gt; &amp; C</a>',
+    );
+  });
+
+  it('cuts the text, not the link, so the message stays within 4096 characters as Telegram counts them', async () => {
+    await sendTelegram(env, 'a'.repeat(6000), { link });
+    const text = sentBody().text as string;
+    expect(text.endsWith(`<a href="${link.url}">Reply on WhatsApp</a>`)).toBe(true);
+    expect(text.match(/<a /g)).toHaveLength(1);
+    expect(shown(text)).toHaveLength(TELEGRAM_MAX_CHARS);
+    expect(shown(text)).toContain('…\nReply on WhatsApp');
+
+    // Text that fits is not cut, and the link brings it to exactly the limit.
+    fetchMock.mockClear();
+    const room = TELEGRAM_MAX_CHARS - 1 - link.label.length;
+    await sendTelegram(env, 'b'.repeat(room), { link });
+    expect(shown(sentBody().text as string)).toHaveLength(TELEGRAM_MAX_CHARS);
+    expect(sentBody().text as string).not.toContain('…');
+  });
+
+  it('does not send a link on its own: with no text there is nothing to send', async () => {
+    await expect(sendTelegram(env, '   ', { link })).resolves.toBe('skipped');
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it('sends exactly what it sent before when there is no link', async () => {
+    await sendTelegram(env, 'Hello');
+    await sendTelegram(env, 'Hello', {});
+    await sendTelegram(env, 'Hello', { link: undefined });
+    for (const call of [0, 1, 2]) expect(sentBody(call).text).toBe('Hello');
+  });
+});

@@ -1,0 +1,193 @@
+---
+// The host strip: wordmark, the vertical's name, and the site navigation. On a phone the links fold into a
+// native <details> menu so the first viewport stays for the answer; on wider screens they sit in the strip.
+// Only one of the two navs is displayed at any width, so assistive technology meets one "Site" landmark.
+import Icon from '../Icon/Icon.astro';
+import Wordmark from '../Wordmark/Wordmark.astro';
+
+interface Link {
+  label: string;
+  href: string;
+  current?: boolean;
+}
+
+interface Props {
+  homeHref: string;
+  /** The vertical's name beside the wordmark ("Construction costs"); none on the brand host. */
+  section?: string | null;
+  nav?: readonly Link[];
+  class?: string;
+}
+
+const { homeHref, section = null, nav = [], class: className } = Astro.props;
+---
+
+<header class:list={['mm-header', className]}>
+  <div class="mm-page mm-header__bar">
+    <div class="mm-header__brand">
+      <Wordmark href={homeHref} />
+      {section && <span class="mm-header__section">{section}</span>}
+    </div>
+    {
+      nav.length > 0 && (
+        <>
+          <nav class="mm-header__nav" aria-label="Site">
+            <ul>
+              {nav.map((link) => (
+                <li>
+                  <a href={link.href} aria-current={link.current ? 'page' : undefined}>
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <details class="mm-menu">
+            <summary>
+              Menu
+              <Icon name="chevron" size={18} />
+            </summary>
+            <nav class="mm-menu__panel" aria-label="Site">
+              <ul>
+                {nav.map((link) => (
+                  <li>
+                    <a href={link.href} aria-current={link.current ? 'page' : undefined}>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </details>
+        </>
+      )
+    }
+  </div>
+</header>
+
+<style is:global>
+  .mm-header {
+    position: relative;
+    z-index: 10;
+    border-bottom: 1px solid var(--mm-line);
+  }
+
+  .mm-header__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--mm-space-4);
+    min-height: 3.5rem;
+  }
+
+  .mm-header__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--mm-space-3);
+    min-width: 0;
+  }
+
+  .mm-header__section {
+    padding-left: var(--mm-space-3);
+    border-left: 1px solid var(--mm-line-strong);
+    font-family: var(--mm-font-display);
+    font-size: var(--mm-step--2);
+    font-weight: 600;
+    letter-spacing: var(--mm-track-label);
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--mm-ink-2);
+  }
+
+  .mm-header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .mm-header__nav {
+    display: none;
+  }
+
+  .mm-header__nav ul {
+    display: flex;
+    gap: var(--mm-space-5);
+  }
+
+  .mm-header a:not(.mm-wordmark) {
+    display: flex;
+    align-items: center;
+    min-height: var(--mm-tap);
+    color: var(--mm-ink);
+    font-weight: 600;
+    font-size: var(--mm-step--1);
+    text-decoration: none;
+  }
+
+  .mm-header a:not(.mm-wordmark):hover {
+    color: var(--mm-ribbon-deep);
+    text-decoration: underline;
+  }
+
+  .mm-header a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-color: var(--mm-ribbon);
+    text-decoration-thickness: 2px;
+  }
+
+  .mm-menu {
+    position: relative;
+  }
+
+  .mm-menu > summary {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    min-height: var(--mm-tap);
+    padding: 0 var(--mm-space-3);
+    margin-right: calc(var(--mm-space-3) * -1);
+    border-radius: var(--mm-radius-s);
+    font-size: var(--mm-step--1);
+    font-weight: 700;
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .mm-menu > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .mm-menu[open] > summary .mm-icon {
+    rotate: 180deg;
+  }
+
+  .mm-menu__panel {
+    position: absolute;
+    top: calc(100% + 0.375rem);
+    right: calc(var(--mm-space-2) * -1);
+    min-width: 13rem;
+    padding: var(--mm-space-2) var(--mm-space-4);
+    border: 1px solid var(--mm-line);
+    border-radius: var(--mm-radius-m);
+    background: var(--mm-raised);
+    box-shadow: 0 18px 36px -24px var(--mm-shade);
+  }
+
+  .mm-menu__panel li + li {
+    border-top: 1px solid var(--mm-line);
+  }
+
+  @media (min-width: 48rem) {
+    .mm-header__bar {
+      min-height: 4rem;
+    }
+
+    .mm-header__nav {
+      display: block;
+    }
+
+    .mm-menu {
+      display: none;
+    }
+  }
+</style>

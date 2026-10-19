@@ -44,6 +44,16 @@ function telegramText(): string {
   return (JSON.parse(init.body as string) as { text: string }).text;
 }
 
+/** What a reader of the Telegram message sees: tags removed, entities decoded. */
+function visibleTelegramText(): string {
+  return telegramText()
+    .replace(/<[^>]*>/g, '')
+    .replaceAll('&lt;', '<')
+    .replaceAll('&gt;', '>')
+    .replaceAll('&quot;', '"')
+    .replaceAll('&amp;', '&');
+}
+
 function emailParts(): { subject: string; body: string } {
   const raw = (createEmailMessage.mock.calls[0] as [string, string, string])[2];
   const subject = /^Subject: (.*)$/m.exec(raw)?.[1] ?? '';
@@ -67,12 +77,84 @@ describe('alert', () => {
     expect(body).toContain('Phone: +91 98xxx xx210');
   });
 
-  it('never puts the full phone number in either channel', async () => {
+  it('never shows the full phone number: the email has none, and neither does the Telegram text you read', async () => {
     await alert(fullEnv, leadEvent);
     const raw = (createEmailMessage.mock.calls[0] as [string, string, string])[2];
-    for (const text of [telegramText(), emailParts().body, raw]) {
+    for (const text of [visibleTelegramText(), emailParts().body, raw]) {
       expect(text).not.toContain('9876543210');
     }
+  });
+
+  describe('the WhatsApp reply link on a lead', () => {
+    const waLink =
+      'https://wa.me/919876543210?text=Hi%2C%20this%20is%20MarketMind%20AI%20about%20your%20quote%20request.%0A%0ARef%20C-WAKAD-WP';
+
+    it('adds exactly one "Reply on WhatsApp" link to the Telegram message, built from the lead phone and ref', async () => {
+      await alert(fullEnv, leadEvent);
+      const text = telegramText();
+      expect(text.match(/href="/g)).toHaveLength(1);
+      expect(text.match(/wa\.me/g)).toHaveLength(1);
+      expect(text).toContain(`<a href="${waLink}">Reply on WhatsApp</a>`);
+      expect(text).not.toContain('919834346179');
+    });
+
+    it('keeps the visible Telegram text to the masked phone', async () => {
+      await alert(fullEnv, leadEvent);
+      const visible = visibleTelegramText();
+      expect(visible).toContain('Phone: +91 98xxx xx210');
+      expect(visible).toContain('New lead C-WAKAD-WP (grade A)');
+      expect(visible).not.toMatch(/\d{6,}/);
+      expect(visible.endsWith('Reply on WhatsApp')).toBe(true);
+    });
+
+    it('leaves the email masked, without a link', async () => {
+      await alert(fullEnv, leadEvent);
+      const raw = (createEmailMessage.mock.calls[0] as [string, string, string])[2];
+      const { subject, body } = emailParts();
+      for (const text of [raw, subject, body]) {
+        expect(text).not.toContain('wa.me');
+        expect(text).not.toContain('href');
+        expect(text).not.toContain('9876543210');
+      }
+      expect(body).toContain('Phone: +91 98xxx xx210');
+    });
+
+    it('still sends the alert, without a link, when the phone or ref cannot make one', async () => {
+      await expect(alert(fullEnv, { ...leadEvent, phone: '9876543210' })).resolves.toEqual({
+        telegram: 'sent',
+        email: 'sent',
+      });
+      expect(telegramText()).not.toContain('href');
+      expect(telegramText()).toContain('Phone: +91 98xxx xx210');
+    });
+
+    it('keeps the message within the 4096-character cap, link included, even with huge fields', async () => {
+      const big = 'x'.repeat(10_000);
+      await alert(fullEnv, { ...leadEvent, service: big, locality: big, lead_type: 'quote' });
+      expect(visibleTelegramText().length).toBeLessThanOrEqual(4096);
+      expect(telegramText()).toContain(`<a href="${waLink}">Reply on WhatsApp</a>`);
+    });
+
+    it('adds no link to the other kinds of alert', async () => {
+      const others: AlertEvent[] = [
+        {
+          kind: 'key_disabled',
+          provider: 'exa',
+          account_label: 'main',
+          fingerprint: 'a1b2c3d4e5f6',
+          reason: 'auth',
+        },
+        { kind: 'dead_man', job: 'nightly-pipeline', last_seen: null },
+        { kind: 'health', summary: ['All good'] },
+      ];
+      for (const [index, event] of others.entries()) {
+        await alert(fullEnv, event);
+        const init = fetchMock.mock.calls[index]?.[1] as RequestInit;
+        const text = (JSON.parse(init.body as string) as { text: string }).text;
+        expect(text).not.toContain('<a');
+        expect(text).not.toContain('wa.me');
+      }
+    });
   });
 
   it('sends the email even when Telegram fails, and the other way round', async () => {

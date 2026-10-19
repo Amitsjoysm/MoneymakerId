@@ -1,6 +1,6 @@
 import { sendEmail } from './email.ts';
 import { sendTelegram } from './telegram.ts';
-import { renderAlert } from './templates.ts';
+import { renderAlert, whatsappReplyLink } from './templates.ts';
 import type { AlertEnv, AlertEvent, AlertResult, AlertStatus } from './types.ts';
 
 const EMAIL_SUBJECT_PREFIX = '[MarketMind AI] ';
@@ -22,8 +22,10 @@ function outcome(result: PromiseSettledResult<AlertStatus>): AlertStatus {
 export async function alert(env: AlertEnv, event: AlertEvent): Promise<AlertResult> {
   try {
     const { subject, body } = renderAlert(event);
+    // The reply link goes to Telegram only; the email is the masked, searchable record.
+    const link = whatsappReplyLink(event) ?? undefined;
     const [telegram, email] = await Promise.allSettled([
-      start(() => sendTelegram(env, `${subject}\n\n${body}`)),
+      start(() => sendTelegram(env, `${subject}\n\n${body}`, { link })),
       start(() => sendEmail(env, { subject: `${EMAIL_SUBJECT_PREFIX}${subject}`, text: body })),
     ]);
     return { telegram: outcome(telegram), email: outcome(email) };

@@ -1,4 +1,4 @@
-import type { AlertEnv, AlertStatus } from './types.ts';
+import type { AlertEnv, AlertStatus, TelegramLink } from './types.ts';
 import { truncateChars } from './text.ts';
 
 /** Telegram's limit for a message, counted after it has parsed the HTML entities. */
@@ -10,8 +10,15 @@ export function escapeTelegramHtml(text: string): string {
   return text.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 }
 
+/** The same, for a value inside a double-quoted HTML attribute. */
+function escapeTelegramAttribute(value: string): string {
+  return escapeTelegramHtml(value).replaceAll('"', '&quot;');
+}
+
 /**
- * Sends `text` (plain text; it is escaped here) to the owner's Telegram chat. Never throws.
+ * Sends `text` (plain text; it is escaped here) to the owner's Telegram chat. Never throws. With `link`, one
+ * HTML link goes on its own line after the text; the label counts toward the limit, the address does not, and
+ * it is the text that is cut when the message is too long, never the link.
  *
  * `skipped`: the bot token or chat id is not configured, or there is nothing to send.
  * `failed`: Telegram answered with an error, or the request failed or timed out.
@@ -19,20 +26,30 @@ export function escapeTelegramHtml(text: string): string {
  * The bot token is part of the request URL, so it is never logged: failures log the HTTP status or the
  * error name only.
  */
-export async function sendTelegram(env: AlertEnv, text: string): Promise<AlertStatus> {
+export async function sendTelegram(
+  env: AlertEnv,
+  text: string,
+  options: { link?: TelegramLink } = {},
+): Promise<AlertStatus> {
   try {
     const token = env.TELEGRAM_BOT_TOKEN?.trim();
     const chatId = env.TELEGRAM_CHAT_ID?.trim();
-    // The limit applies to the text Telegram shows, so cut before escaping.
-    const message = truncateChars(text.trim(), TELEGRAM_MAX_CHARS);
+    const link = options.link;
+    // The limit applies to the text Telegram shows (after it parses the entities and tags), so cut before
+    // escaping, and leave room for the new line and the label of the link.
+    const room = TELEGRAM_MAX_CHARS - (link ? 1 + link.label.length : 0);
+    const message = truncateChars(text.trim(), room);
     if (!token || !chatId || !message) return 'skipped';
+    const html = link
+      ? `${escapeTelegramHtml(message)}\n<a href="${escapeTelegramAttribute(link.url)}">${escapeTelegramHtml(link.label)}</a>`
+      : escapeTelegramHtml(message);
 
     const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
       body: JSON.stringify({
         chat_id: chatId,
-        text: escapeTelegramHtml(message),
+        text: html,
         parse_mode: 'HTML',
         disable_web_page_preview: true,
       }),

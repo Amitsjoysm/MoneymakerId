@@ -1,0 +1,97 @@
+---
+// Where the page sits: city › service › page, or city › locality › service. The last crumb is the current
+// page (not a link). A crumb with `place` is a locality and wears the place marker. The BreadcrumbList
+// JSON-LD is the page's (@mm/core/seo breadcrumbListJsonLd, through SeoHead); this is the visible trail.
+import Icon from '../Icon/Icon.astro';
+
+interface Crumb {
+  label: string;
+  /** Leave out on the current page. */
+  href?: string;
+  place?: boolean;
+}
+
+interface Props {
+  items: readonly Crumb[];
+  class?: string;
+}
+
+const { items, class: className } = Astro.props;
+---
+
+<nav class:list={['mm-crumbs', className]} aria-label="Breadcrumb">
+  <ol>
+    {
+      items.map((item, i) => (
+        <li>
+          {item.href && i < items.length - 1 ? (
+            <a href={item.href} class:list={[item.place && 'mm-crumbs__place']}>
+              {item.place && <Icon name="pin" size={15} />}
+              {item.label}
+            </a>
+          ) : (
+            <span aria-current="page">{item.label}</span>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style is:global>
+  .mm-crumbs ol {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.125rem 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: var(--mm-step--1);
+    line-height: 1.3;
+  }
+
+  .mm-crumbs li {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* A drawn chevron between crumbs, in the faint line colour. */
+  .mm-crumbs li + li::before {
+    content: '';
+    width: 0.4em;
+    height: 0.4em;
+    margin: 0 0.7em 0 0.45em;
+    border: solid var(--mm-faint);
+    border-width: 1.5px 1.5px 0 0;
+    rotate: 45deg;
+  }
+
+  .mm-crumbs a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+    min-height: 2rem;
+    color: var(--mm-ink-2);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .mm-crumbs a:hover {
+    color: var(--mm-ink);
+    text-decoration: underline;
+  }
+
+  .mm-crumbs a.mm-crumbs__place {
+    color: var(--mm-place-ink);
+  }
+
+  .mm-crumbs__place .mm-icon {
+    color: var(--mm-place);
+  }
+
+  .mm-crumbs [aria-current] {
+    color: var(--mm-ink);
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+// The document every public page renders into. It writes the CONTRACTS §7a body attributes the islands read,
+// sets the vertical's theme on <html> (`data-vertical`, with an optional `data-theme` override of the system
+// light/dark preference), preloads the display face, and loads the token, font and base sheets once.
+// Page regions arrive through slots: `header`, the default slot (inside <main>), `footer`, and `after` for
+// anything fixed to the viewport (the sticky action bar).
+import displayFace from '@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2?url';
+import type { Host, Locale, PageType } from '@mm/core/schema';
+import SeoHead, { type SeoProps } from '../components/SeoHead/SeoHead.astro';
+import { markDataUri } from '../lib/mark.ts';
+import '../tokens.css';
+import '../styles/fonts.css';
+import '../styles/base.css';
+
+interface Props {
+  host: Host;
+  pageType: PageType;
+  /** Locality id of the page, when it has one. */
+  locality?: string | null;
+  /** Service or dish id the page is about, when it has one. */
+  subject?: string | null;
+  /** Experiment variant the page was built for (M02). */
+  variant?: string | null;
+  seo: SeoProps;
+  /** Forces light or dark; by default the visitor's system setting decides. */
+  theme?: 'light' | 'dark' | null;
+  lang?: Locale;
+}
+
+const { host, pageType, locality = null, subject = null, variant = null, seo, theme = null, lang = 'en' } = Astro.props;
+
+/** The admin host wears the brand host's theme. */
+const vertical = host === 'admin' ? 'main' : host;
+const colorScheme = theme ?? 'light dark';
+---
+
+<!doctype html>
+<html lang={lang} data-vertical={vertical} data-theme={theme ?? undefined}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content={colorScheme} />
+    <meta name="theme-color" content="#FAF6FA" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1A0F1D" media="(prefers-color-scheme: dark)" />
+    <link rel="preload" href={displayFace} as="font" type="font/woff2" crossorigin />
+    <link rel="icon" type="image/svg+xml" href={markDataUri()} />
+    <SeoHead {...seo} />
+    <slot name="head" />
+  </head>
+  <body
+    data-host={host}
+    data-page-type={pageType}
+    data-locality={locality ?? undefined}
+    data-subject={subject ?? undefined}
+    data-variant={variant ?? undefined}
+  >
+    <a class="mm-skip" href="#main">Skip to content</a>
+    <slot name="header" />
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+    <slot name="footer" />
+    <slot name="after" />
+  </body>
+</html>

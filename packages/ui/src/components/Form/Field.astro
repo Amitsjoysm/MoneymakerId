@@ -1,0 +1,211 @@
+---
+// A labelled text field: text, tel, email, a number typed as text (inputmode), or a multi-line note. The hint
+// and the error are wired to the input with aria-describedby; an error also sets aria-invalid and is written
+// in words with an icon, never in colour alone. Prefix and suffix ("+91", "sq ft") sit inside the box.
+import { uid } from '../../lib/uid.ts';
+import Icon from '../Icon/Icon.astro';
+
+interface Props {
+  label: string;
+  name: string;
+  type?: 'text' | 'tel' | 'email' | 'search';
+  inputmode?: 'text' | 'tel' | 'email' | 'numeric' | 'decimal' | 'search';
+  multiline?: boolean;
+  value?: string | null;
+  placeholder?: string | null;
+  autocomplete?: string | null;
+  hint?: string | null;
+  error?: string | null;
+  required?: boolean;
+  /** Writes "(optional)" after the label of a field that is not required. */
+  markOptional?: boolean;
+  disabled?: boolean;
+  maxlength?: number | null;
+  prefix?: string | null;
+  suffix?: string | null;
+  id?: string;
+  class?: string;
+  /** Extra attributes for the input (a script hook such as `data-mm-qty`). */
+  inputAttrs?: Record<string, string>;
+}
+
+const {
+  label,
+  name,
+  type = 'text',
+  inputmode,
+  multiline = false,
+  value = null,
+  placeholder = null,
+  autocomplete = null,
+  hint = null,
+  error = null,
+  required = false,
+  markOptional = true,
+  disabled = false,
+  maxlength = null,
+  prefix = null,
+  suffix = null,
+  id = uid('mm-field'),
+  class: className,
+  inputAttrs = {},
+} = Astro.props;
+
+const hintId = hint ? `${id}-hint` : null;
+const errorId = error ? `${id}-error` : null;
+// The affixes are part of the value's meaning ("+91", "sq ft"), so they are read out with the field.
+const prefixId = prefix ? `${id}-prefix` : null;
+const suffixId = suffix ? `${id}-suffix` : null;
+const describedBy = [prefixId, suffixId, hintId, errorId].filter(Boolean).join(' ') || undefined;
+const common = {
+  id,
+  name,
+  class: 'mm-field__input',
+  required,
+  disabled,
+  placeholder: placeholder ?? undefined,
+  autocomplete: autocomplete ?? undefined,
+  maxlength: maxlength ?? undefined,
+  'aria-describedby': describedBy,
+  'aria-invalid': error ? 'true' : undefined,
+  ...inputAttrs,
+};
+---
+
+<div class:list={['mm-field', className]} data-invalid={error ? '' : undefined}>
+  <label class="mm-field__label" for={id}>
+    {label}
+    {!required && markOptional && <span class="mm-field__optional">(optional)</span>}
+  </label>
+  {hint && <p class="mm-field__hint" id={hintId}>{hint}</p>}
+  <div class="mm-field__box" data-multiline={multiline ? '' : undefined}>
+    {prefix && <span class="mm-field__affix" id={prefixId}>{prefix}</span>}
+    {
+      multiline ? (
+        <textarea {...common} rows={4} set:text={value ?? ''} />
+      ) : (
+        <input {...common} type={type} inputmode={inputmode} value={value ?? undefined} />
+      )
+    }
+    {suffix && <span class="mm-field__affix" id={suffixId}>{suffix}</span>}
+  </div>
+  {
+    error && (
+      <p class="mm-field__error" id={errorId}>
+        <Icon name="alert" size={18} />
+        {error}
+      </p>
+    )
+  }
+</div>
+
+<style is:global>
+  .mm-field {
+    display: grid;
+    gap: 0.375rem;
+    min-width: 0;
+  }
+
+  .mm-field__label {
+    font-size: var(--mm-step--1);
+    font-weight: 700;
+  }
+
+  .mm-field__optional {
+    margin-left: 0.375rem;
+    font-weight: 500;
+    color: var(--mm-ink-2);
+  }
+
+  .mm-field__hint {
+    font-size: var(--mm-step--1);
+    color: var(--mm-ink-2);
+  }
+
+  .mm-field__box {
+    display: flex;
+    align-items: center;
+    min-height: 3rem;
+    border: 1.5px solid var(--mm-line-strong);
+    border-radius: var(--mm-radius-s);
+    background: var(--mm-raised);
+    transition:
+      border-color var(--mm-dur-1) var(--mm-ease),
+      box-shadow var(--mm-dur-1) var(--mm-ease);
+  }
+
+  .mm-field__box:hover {
+    border-color: var(--mm-ink-2);
+  }
+
+  .mm-field__box:focus-within {
+    border-color: var(--mm-focus);
+    box-shadow: 0 0 0 1px var(--mm-focus);
+  }
+
+  .mm-field__input {
+    flex: 1;
+    min-width: 0;
+    align-self: stretch;
+    padding: 0.625rem 0.875rem;
+    border: 0;
+    border-radius: inherit;
+    background: none;
+  }
+
+  .mm-field__input:focus-visible {
+    outline: none;
+  }
+
+  .mm-field__input::placeholder {
+    color: var(--mm-ink-2);
+    opacity: 1;
+  }
+
+  .mm-field__input:disabled {
+    cursor: not-allowed;
+  }
+
+  .mm-field__box[data-multiline] {
+    align-items: stretch;
+  }
+
+  textarea.mm-field__input {
+    resize: vertical;
+    min-height: 6rem;
+  }
+
+  .mm-field__affix {
+    padding-inline: 0.875rem;
+    color: var(--mm-ink-2);
+    font-weight: 600;
+    white-space: nowrap;
+  }
+
+  .mm-field__affix:first-child {
+    padding-right: 0;
+  }
+
+  .mm-field__input + .mm-field__affix {
+    padding-left: 0;
+  }
+
+  .mm-field:has(.mm-field__input:disabled) .mm-field__box {
+    border-style: dashed;
+    background: var(--mm-surface);
+  }
+
+  .mm-field[data-invalid] .mm-field__box {
+    border-color: var(--mm-signal);
+    box-shadow: 0 0 0 1px var(--mm-signal);
+  }
+
+  .mm-field__error {
+    display: flex;
+    gap: 0.375rem;
+    align-items: flex-start;
+    font-size: var(--mm-step--1);
+    font-weight: 700;
+    color: var(--mm-signal-ink);
+  }
+</style>
