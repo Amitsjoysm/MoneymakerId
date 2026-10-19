@@ -1,8 +1,9 @@
 import { readFileSync } from 'node:fs';
-import { estimate } from '@mm/core/cost';
+import { estimate, roundInr, roundUpInr } from '@mm/core/cost';
 import { CostModelSchema } from '@mm/core/schema';
+import fc from 'fast-check';
 import { describe, expect, it } from 'vitest';
-import { estimateRange, parseQuantity } from './estimate-range.ts';
+import { estimateRange, parseQuantity, roundToGrid, roundUpToGrid } from './estimate-range.ts';
 
 const models = CostModelSchema.array().parse(
   JSON.parse(readFileSync(new URL('../../../../data/cost-models/waterproofing.json', import.meta.url), 'utf8')),
@@ -30,6 +31,24 @@ describe('estimateRange (the live total the estimate segment shows for a typed a
       expected: 5_000,
       high: 5_000,
     });
+  });
+});
+
+// The browser copy of the engine's display grid. It is mirrored, not imported: @mm/core/cost's entry point
+// brings zod and every constant into the page (120 KB), against a 15 KB budget (plan §18).
+describe('the display-grid rounding mirrored from @mm/core/cost', () => {
+  const amounts = fc.oneof(
+    fc.integer({ min: 0, max: 50_000_000 }),
+    fc.double({ min: 0, max: 50_000_000, noNaN: true }),
+    fc.constantFrom(0, 4.999, 5, 9_995, 9_999.5, 10_000, 10_000.01, 10_049, 10_050, 10_051),
+  );
+
+  it('roundToGrid equals roundInr for any amount', () => {
+    fc.assert(fc.property(amounts, (amount) => roundToGrid(amount) === roundInr(amount)));
+  });
+
+  it('roundUpToGrid equals roundUpInr for any amount', () => {
+    fc.assert(fc.property(amounts, (amount) => roundUpToGrid(amount) === roundUpInr(amount)));
   });
 });
 
