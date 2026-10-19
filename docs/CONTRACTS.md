@@ -245,8 +245,8 @@ CostModel = { id: string; service_id: string; scope_id: string | null; material_
 | 🌐 `api.record_events(p)` | `{ visitor_hmac, verified: boolean, events: EventAggregate[] }` → `void` | T02b |
 | 🌐 `api.submit_feedback(p)` | `{ page_key, entity_id, kind, note, visitor_hmac }` → `void` (rate-limited) | T02b |
 | 🌐 `api.ask_search(p)` | `{ intent: ParsedIntent, limit ≤ 10 }` → `AskItem[]` (published entities only; latest recommendations + active evidence; no individuals' phone numbers) | T02b |
-| 🌐 `api.ask_begin(p)` | `{ intent_key, visitor_hmac, want_live }` → `{ verdict: 'allow'\|'rate_limited'\|'budget_exhausted'\|'cached', lookup_id: uuid\|null, usable: Record<Provider, string[]> }` | T02b |
-| 🌐 `api.ask_commit(p)` | `{ lookup_id, result: AskResult, key_outcomes: KeyOutcome[], candidates: CandidateInput[] }` → `void` | T02b |
+| 🌐 `api.ask_begin(p)` | `{ intent: ParsedIntent, intent_key, visitor_hmac, want_live }` → `{ verdict: 'allow'\|'rate_limited'\|'budget_exhausted'\|'cached', lookup_id: uuid\|null, usable: Record<Provider, string[]> }`. Also writes one `queries` row (intent, locality_id, served_from; no IP, no free text over 200 characters): this is the search history that drives locality recommendations | T02b |
+| 🌐 `api.ask_commit(p)` | `{ lookup_id, commit_sig, result: AskResult, key_outcomes: KeyOutcome[], candidates: CandidateInput[] }` → `void`. `commit_sig = hex(HMAC-SHA256(ASK_COMMIT_SECRET, lookup_id))`; the function rejects a missing or wrong signature before touching keys, governor or catalogue, so a publishable-key holder cannot cool or disable API keys or inject candidates. The secret is stored in `app` (never exposed) by `admin_api.ask_secret_set(secret)` (service_role) at deploy time | T02b |
 | 🌐 `api.ask_result(id)` | `uuid` → `{ status, result: AskResult\|null }` | T02b |
 | 🌐 `api.export_catalogue()` | → `CatalogueSnapshot` (published rows and allowlisted columns only; **no leads, no individuals' phone numbers**) | T02c |
 
@@ -492,6 +492,7 @@ Experiment = { id; host: Host; page_types: PageType[]; variants: { id; weight; p
 | `TURNSTILE_SECRET_KEY` | ✓ | ✓ | ✓ | | |
 | `VISITOR_HMAC_SECRET` (rotated daily) | ✓ | ✓ | ✓ | | |
 | `SYNTHETIC_SECRET` | ✓ | ✓ | ✓ | | ✓ |
+| `ASK_COMMIT_SECRET` (signs `api.ask_commit`; the same value is set in the database by `admin_api.ask_secret_set` at deploy) | | ✓ | ✓ | | ✓ |
 | `LEADS_OUTBOX` (KV binding) | ✓ | ✓ | ✓ | ✓ | |
 | `TELEGRAM_BOT_TOKEN` / `TELEGRAM_CHAT_ID` | ✓ | ✓ | ✓ | ✓ | ✓ |
 | `ALERT_EMAIL` (`send_email` binding + destination address) | ✓ | ✓ | ✓ | ✓ | |
