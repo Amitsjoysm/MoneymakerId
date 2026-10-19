@@ -179,7 +179,7 @@ What we **do not** collect or store:
 
 ### 8.3 Breaches
 
-If personal data is exposed (a leaked key, a lost device with alerts on it), the owner: rotates the affected secrets the same day (see `docs/DEPLOY.md`, Golden rules), records what happened in `system_events`, and informs affected people and the authorities as Indian law requires. **Reviewer:** confirm the notification duties and deadlines under the DPDP Act and Rules.
+If personal data is exposed (a leaked key, a lost device with alerts on it), the owner: rotates the affected secrets the same day (see `docs/DEPLOY.md`, Golden rules), records what happened in `system_events`, and informs affected people and the authorities as Indian law requires. Under DPDP Rule 7 (as notified 13 Nov 2025, in force 13 May 2027), affected people are told without delay, and the Data Protection Board gets an initial report without delay and a detailed report within 72 hours (`content/legal/privacy.md` cites the text). **Reviewer:** confirm this before launch.
 
 ---
 
@@ -198,5 +198,5 @@ From PLAN §17 and §20 (the build fails if any is broken):
 ## 10. Gaps and open items
 
 - Retention periods in Section 6 and the storage thresholds in Section 7 are **proposals** awaiting owner approval.
-- The legal timetable of India's Digital Personal Data Protection Rules (which obligations apply on which date) could not be verified while drafting; the privacy policy is written to meet the Act's obligations from launch day regardless. A lawyer should confirm before launch.
+- The DPDP timetable as currently notified (verified 19 Oct 2026, sources in the end block of `content/legal/privacy.md`): Board provisions from 13 Nov 2025, consent managers from 13 Nov 2026, the main duties, rights and penalties from 13 May 2027. A January 2026 proposal to shorten these dates was not found notified, so re-check the Gazette on launch day. The privacy policy meets the Act's obligations from launch day regardless. A lawyer should confirm before launch, including the one-year log retention in Rules 6 and 8 against our 30-day periods.
 - Accounting retention for paid customers (Section 6) needs an accountant's confirmation.

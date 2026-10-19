@@ -15,11 +15,23 @@ NOTES FOR THE REVIEWER (HTML comment: not rendered on the page; delete before la
    Storage / Session Storage), with and without consent, and confirm the tables below match what is actually set.
    Add exact cookie names and lifetimes for the third-party rows from that inspection and from each provider's
    own documentation; they are deliberately not listed here because they could not be verified while drafting.
-2. If the site adds a "Cookie settings" link (consent banner for GA4 or AdSense outside the EEA), describe it in
-   section 5.
+2. Google's EU user consent policy (https://www.google.com/about/company/user-consent-policy/, read 2026-10-19)
+   requires, for visitors in the EEA, UK and Switzerland, that the site keeps records of consent and gives "clear
+   instructions for revocation of consent". So the sites need a persistent "Cookie settings" (or equivalent)
+   link that lets people change their choice, and section 5 must describe it. Engineering task: the link does
+   not exist yet. If a consent banner is also added for GA4 or AdSense outside the EEA, describe it in section 5.
 3. PLAN §16 grants analytics consent by default outside the EEA/UK/Switzerland. Confirm with counsel whether this
-   is acceptable for visitors in India under the DPDP Act, or whether opt-in is needed.
-4. Placeholders to fill: {{LEGAL_NAME}}, {{CONTACT_EMAIL}}, {{GRIEVANCE_OFFICER}}, {{POSTAL_ADDRESS}}, {{EFFECTIVE_DATE}}.
+   is acceptable for visitors in India under the DPDP Act, or whether opt-in is needed. Facts checked on
+   2026-10-19 (citations in the end block of privacy.md): DPDP Act s.6(1) requires consent that is "free, specific,
+   informed, unconditional and unambiguous with a clear affirmative action"; s.7 has no general legitimate-interests
+   ground; and these duties are not in force until 13 May 2027 as notified (G.S.R. 843(E)). So the question is
+   about the launch-to-May-2027 period and about what must change by that date, not about today.
+4. Ad vendors: Google's AdSense "Required content" page says that unless third-party ad serving is switched off,
+   other vendors and ad networks may serve ads, and the site must name them, link to their sites and say users can
+   opt out there. Section 3.4 has a generic sentence plus a link to Google's partner list. When ads go live, either
+   restrict third-party ad serving in AdSense or add the actual vendor names from the AdSense account. Do not
+   invent names.
+5. Placeholders to fill: {{LEGAL_NAME}}, {{CONTACT_EMAIL}}, {{GRIEVANCE_OFFICER}}, {{POSTAL_ADDRESS}}, {{EFFECTIVE_DATE}}.
 -->
 
 **Last updated:** {{EFFECTIVE_DATE}}
@@ -77,6 +89,7 @@ When ads are shown by **Google AdSense**:
 - You can opt out of personalised advertising in [Google Ads Settings](https://adssettings.google.com/), and opt out of some third-party vendors' use of cookies for personalised advertising at [www.aboutads.info](https://www.aboutads.info/).
 - In the EEA, the UK and Switzerland you are asked for consent through Google's consent message first. Without consent, only non-personalised ads are shown.
 - Learn [how Google uses information from sites that use its services](https://policies.google.com/technologies/partner-sites).
+- **Other advertising companies** (third-party vendors and ad networks) may also use cookies to serve and measure ads on our pages. For visitors in the EEA, the UK and Switzerland, Google publishes the list of ad technology partners that may do this on its [ad technology partners page](https://support.google.com/adsense/answer/9012903). You can visit those companies' websites to opt out of their use of cookies for personalised advertising where they offer it, or use [www.aboutads.info](https://www.aboutads.info/).
 
 ### 3.5 Links that take you elsewhere
 
