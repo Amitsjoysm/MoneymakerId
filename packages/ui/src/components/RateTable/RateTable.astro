@@ -37,10 +37,10 @@ const captionId = uid('mm-rates');
     <caption id={captionId}>{caption}</caption>
     <thead>
       <tr>
-        <th scope="col">System</th>
-        <th scope="col" class="mm-rates__num">Rate {perUnit(unit)}</th>
-        <th scope="col" class="mm-rates__num">Typical</th>
-        <th scope="col">Sources</th>
+        <th scope="col" class="mm-label">System</th>
+        <th scope="col" class="mm-label mm-rates__num">Rate {perUnit(unit)}</th>
+        <th scope="col" class="mm-label mm-rates__num">Typical</th>
+        <th scope="col" class="mm-label">Sources</th>
       </tr>
     </thead>
     <tbody>
@@ -104,12 +104,6 @@ const captionId = uid('mm-rates');
   .mm-rates thead th {
     padding-block: var(--mm-space-2);
     border-bottom: 1px solid var(--mm-line-strong);
-    font-family: var(--mm-font-display);
-    font-size: var(--mm-step--2);
-    font-weight: 600;
-    letter-spacing: var(--mm-track-label);
-    text-transform: uppercase;
-    color: var(--mm-ink-2);
     white-space: nowrap;
   }
 

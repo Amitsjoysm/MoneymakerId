@@ -4,6 +4,7 @@
 // a featured card says so in words and is tracked as a featured click, never as an organic one.
 import type { BadgeLabel, SourceRef, TempLabel, TrustLabel } from '@mm/core/schema';
 import type { TrackEvent } from '../Button/Button.astro';
+import Card from '../Card/Card.astro';
 import DateStamp from '../DateStamp/DateStamp.astro';
 import Disclosure from '../Disclosure/Disclosure.astro';
 import Icon from '../Icon/Icon.astro';
@@ -55,8 +56,10 @@ const Heading = `h${headingLevel}` as const;
 const linkEvent: TrackEvent | undefined = featured ? 'featured_click' : event;
 ---
 
-<article
-  class:list={['mm-rec', featured && 'mm-rec--featured']}
+<Card
+  as="article"
+  tone={featured ? 'surface' : 'raised'}
+  class={featured ? 'mm-rec mm-rec--featured' : 'mm-rec'}
   data-mm-entity={entityId}
   data-mm-run={runId}
   data-mm-pos={position}
@@ -65,7 +68,7 @@ const linkEvent: TrackEvent | undefined = featured ? 'featured_click' : event;
   <div class="mm-rec__top">
     {
       featured ? (
-        <span class="mm-rec__paid">Featured</span>
+        <span class="mm-label mm-rec__paid">Featured</span>
       ) : (
         <span class="mm-rec__pos">
           <span class="mm-hidden">Rank </span>
@@ -103,21 +106,14 @@ const linkEvent: TrackEvent | undefined = featured ? 'featured_click' : event;
   }
   {trust.length > 0 && <TrustBadges labels={trust} checkedAt={checkedAt} />}
   {featured && <Disclosure kind="featured" />}
-</article>
+</Card>
 
 <style is:global>
+  /* A Card (it supplies the paper, edge and shadow) laid out as a ranked entry. */
   .mm-rec {
-    position: relative;
     display: grid;
     gap: var(--mm-space-3);
     align-content: start;
-    padding: var(--mm-space-5);
-    border: 1px solid var(--mm-line);
-    border-radius: var(--mm-radius-m);
-    background: var(--mm-raised);
-    box-shadow:
-      0 1px 1px var(--mm-shade),
-      0 14px 32px -26px var(--mm-shade);
     transition: border-color var(--mm-dur-1) var(--mm-ease);
   }
 
@@ -127,8 +123,6 @@ const linkEvent: TrackEvent | undefined = featured ? 'featured_click' : event;
 
   .mm-rec--featured {
     border: 1.5px solid var(--mm-line-strong);
-    background: var(--mm-surface);
-    box-shadow: none;
   }
 
   .mm-rec__stamp {
@@ -168,11 +162,8 @@ const linkEvent: TrackEvent | undefined = featured ? 'featured_click' : event;
     padding: 0.125rem 0.5rem;
     border: 1.5px solid var(--mm-ink);
     border-radius: 3px;
-    font-family: var(--mm-font-display);
-    font-size: var(--mm-step--2);
+    color: var(--mm-ink);
     font-weight: 700;
-    letter-spacing: var(--mm-track-label);
-    text-transform: uppercase;
   }
 
   .mm-rec__labels {

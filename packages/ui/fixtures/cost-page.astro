@@ -172,31 +172,31 @@ const nav = [
           <h2 id="cp-record" class="cp__record-title">The record behind this rate</h2>
           <dl class="cp__facts">
             <div>
-              <dt>Cost model</dt>
+              <dt class="mm-label">Cost model</dt>
               <dd>Acrylic roof coating, budget tier</dd>
             </div>
             <div>
-              <dt>Rate</dt>
+              <dt class="mm-label">Rate</dt>
               <dd><InrRange low={model.rate_inr.low} high={model.rate_inr.high} /> per sq ft, typical {formatInr(model.rate_inr.expected)}</dd>
             </div>
             {
               scope && (
                 <div>
-                  <dt>Covers</dt>
+                  <dt class="mm-label">Covers</dt>
                   <dd>{scope.description}</dd>
                 </div>
               )
             }
             <div>
-              <dt>Sources</dt>
+              <dt class="mm-label">Sources</dt>
               <dd>{model.sources.length}, all retrieved <time datetime={checked}>{formatDate(checked)}</time></dd>
             </div>
             <div>
-              <dt>Re-check by</dt>
+              <dt class="mm-label">Re-check by</dt>
               <dd><time datetime={model.valid_until}>{formatDate(model.valid_until)}</time></dd>
             </div>
             <div>
-              <dt>Status</dt>
+              <dt class="mm-label">Status</dt>
               <dd class="cp__status">Draft: compiled from the sources, awaiting editor review</dd>
             </div>
           </dl>
@@ -234,7 +234,8 @@ const nav = [
   </StickyActionBar>
 </BaseLayout>
 
-<style>
+<!-- Page layout of the fixture, unscoped: its classes are unique to this page. -->
+<style is:global>
   .cp {
     padding-top: var(--mm-space-3);
   }
@@ -287,12 +288,6 @@ const nav = [
   }
 
   .cp__facts dt {
-    font-family: var(--mm-font-display);
-    font-size: var(--mm-step--2);
-    font-weight: 600;
-    letter-spacing: var(--mm-track-label);
-    text-transform: uppercase;
-    color: var(--mm-ink-2);
     padding-top: 0.15em;
   }
 

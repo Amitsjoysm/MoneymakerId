@@ -93,6 +93,15 @@ a:hover {
   color: var(--mm-ink);
 }
 
+summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
 input,
 button,
 select,
@@ -179,7 +188,7 @@ time,
   width: 0.6em;
   height: 0.85em;
   background: var(--mm-ribbon);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+  clip-path: var(--mm-tab);
   transform: translateY(0.08em);
 }
 

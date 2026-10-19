@@ -165,6 +165,8 @@
   --mm-node: 0.875rem;
   --mm-node-y: 1.25rem;
   --mm-tap: 2.75rem;
+  /* The ribbon tab: a bookmark with a swallowtail notch. Section openers, record cards, the footer, the claim. */
+  --mm-tab: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
 
   --mm-ease: cubic-bezier(0.16, 1, 0.3, 1);
   --mm-dur-1: 160ms;

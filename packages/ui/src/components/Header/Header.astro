@@ -26,7 +26,7 @@ const { homeHref, section = null, nav = [], class: className } = Astro.props;
   <div class="mm-page mm-header__bar">
     <div class="mm-header__brand">
       <Wordmark href={homeHref} />
-      {section && <span class="mm-header__section">{section}</span>}
+      {section && <span class="mm-label mm-header__section">{section}</span>}
     </div>
     {
       nav.length > 0 && (
@@ -90,13 +90,7 @@ const { homeHref, section = null, nav = [], class: className } = Astro.props;
   .mm-header__section {
     padding-left: var(--mm-space-3);
     border-left: 1px solid var(--mm-line-strong);
-    font-family: var(--mm-font-display);
-    font-size: var(--mm-step--2);
-    font-weight: 600;
-    letter-spacing: var(--mm-track-label);
     line-height: 1.2;
-    text-transform: uppercase;
-    color: var(--mm-ink-2);
   }
 
   .mm-header ul {
@@ -149,12 +143,6 @@ const { homeHref, section = null, nav = [], class: className } = Astro.props;
     border-radius: var(--mm-radius-s);
     font-size: var(--mm-step--1);
     font-weight: 700;
-    list-style: none;
-    cursor: pointer;
-  }
-
-  .mm-menu > summary::-webkit-details-marker {
-    display: none;
   }
 
   .mm-menu[open] > summary .mm-icon {

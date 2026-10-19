@@ -1,6 +1,7 @@
 ---
 // A sheet of paper on the ground: raised (white, a soft plum shadow) or flush (surface tint). With `tab`, a
 // ribbon bookmark hangs from its top edge to mark it as a record of evidence. Never nest cards.
+// Data attributes pass through (RecommendationCard stamps the CONTRACTS §7a ones on its card).
 interface Props {
   as?: 'article' | 'section' | 'aside' | 'div' | 'li';
   tone?: 'raised' | 'surface';
@@ -8,15 +9,17 @@ interface Props {
   label?: string;
   labelledby?: string;
   class?: string;
+  [data: `data-${string}`]: string | number | undefined;
 }
 
-const { as: Tag = 'div', tone = 'raised', tab = false, label, labelledby, class: className } = Astro.props;
+const { as: Tag = 'div', tone = 'raised', tab = false, label, labelledby, class: className, ...data } = Astro.props;
 ---
 
 <Tag
   class:list={['mm-card', `mm-card--${tone}`, tab && 'mm-card--tab', className]}
   aria-label={label}
   aria-labelledby={labelledby}
+  {...data}
 >
   <slot />
 </Tag>
@@ -50,6 +53,6 @@ const { as: Tag = 'div', tone = 'raised', tab = false, label, labelledby, class:
     width: 0.75rem;
     height: 1.375rem;
     background: var(--mm-ribbon);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 74%, 0 100%);
+    clip-path: var(--mm-tab);
   }
 </style>
