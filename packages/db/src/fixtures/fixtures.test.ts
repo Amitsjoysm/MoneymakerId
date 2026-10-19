@@ -50,7 +50,7 @@ const SERVICES = [
 const file = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'fixtures', 'catalogue.json');
 
 describe('isFixtureBusinessName', () => {
-  it('flags names that start with "Example" as a word, case-insensitively', () => {
+  it('flags every name that starts with "Example", in any case (CONTRACTS §6, the E01 brief)', () => {
     expect(FIXTURE_NAME_PREFIX).toBe('Example');
     for (const name of [
       'Example Biryani House',
@@ -58,13 +58,16 @@ describe('isFixtureBusinessName', () => {
       'EXAMPLE Painters',
       '  Example Dosa',
       'Example',
+      'Exampleton Grill',
+      'Examples & Co',
+      'Example-Cafe',
     ]) {
       expect(isFixtureBusinessName(name), name).toBe(true);
     }
   });
 
-  it('does not flag real-looking names that merely contain or begin with the letters', () => {
-    for (const name of ['Exampleton Grill', 'The Example Cafe', 'Sample Biryani', 'Examples']) {
+  it('does not flag names that only contain the word or merely look similar', () => {
+    for (const name of ['The Example Cafe', 'Sample Biryani', 'Exemplar Foods', 'Xample Cafe', '']) {
       expect(isFixtureBusinessName(name), name).toBe(false);
     }
   });

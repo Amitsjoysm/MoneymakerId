@@ -23,6 +23,8 @@ describe('ADMIN_API_FUNCTIONS', () => {
       'key_report',
       'credentials_usable',
       'governor_set_budget',
+      // signs api.ask_commit (CONTRACTS §5, amended 2026-10-19)
+      'ask_secret_set',
       // catalogue
       'upsert_business',
       'evidence_insert',
@@ -82,23 +84,65 @@ describe('createAdminClient', () => {
     expect(calls).toHaveLength(0);
   });
 
-  it('keyReport sends the outcomes as p and returns the counts', async () => {
-    const outcome: KeyOutcome = {
-      provider: 'groq',
-      fingerprint: 'abc123def456',
-      account_label: 'one',
-      status_code: 200,
-      outcome: 'ok',
-      retry_after_s: null,
-      tokens: 120,
-    };
-    const counts = { applied: 1, disabled: 0, breakers_opened: 0 };
-    const { db, calls } = admin(() => jsonResponse(counts));
-    await expect(db.keyReport([outcome])).resolves.toEqual(counts);
+  const keyOutcome: KeyOutcome = {
+    provider: 'groq',
+    fingerprint: 'abc123def456',
+    account_label: 'one',
+    status_code: 200,
+    outcome: 'ok',
+    retry_after_s: null,
+    tokens: 120,
+  };
+
+  // The real admin_api.key_report (supabase/migrations/0103_keys_governor.sql, app.apply_key_outcomes) returns
+  // { applied: int, disabled: [{ provider, fingerprint, reason }], breakers_opened: [provider] }.
+  it('keyReport sends the outcomes as p and returns the real result shape (empty lists)', async () => {
+    const result = { applied: 1, disabled: [], breakers_opened: [] };
+    const { db, calls } = admin(() => jsonResponse(result));
+    await expect(db.keyReport([keyOutcome])).resolves.toEqual(result);
     expect(calls[0]!.url).toMatch(/\/rpc\/key_report$/);
-    expect(calls[0]!.body).toEqual({ p: [outcome] });
-    const bad = admin(() => jsonResponse({ applied: 'one' }));
-    await expect(bad.db.keyReport([outcome])).rejects.toMatchObject({ kind: 'decode', fn: 'key_report' });
+    expect(calls[0]!.body).toEqual({ p: [keyOutcome] });
+  });
+
+  it('keyReport returns the disabled keys and the opened breakers so a caller can alert', async () => {
+    const result = {
+      applied: 3,
+      disabled: [
+        { provider: 'groq', fingerprint: 'abc123def456', reason: 'auth' },
+        { provider: 'exa', fingerprint: '0123456789ab', reason: 'credits' },
+      ],
+      breakers_opened: ['firecrawl'],
+    };
+    const { db } = admin(() => jsonResponse(result));
+    const report = await db.keyReport([keyOutcome]);
+    expect(report).toEqual(result);
+    expect(report.disabled.map((d) => `${d.provider}:${d.reason}`)).toEqual(['groq:auth', 'exa:credits']);
+    expect(report.breakers_opened).toEqual(['firecrawl']);
+  });
+
+  it.each([
+    ['counts instead of lists (the old, wrong shape)', { applied: 1, disabled: 0, breakers_opened: 0 }],
+    ['applied that is not a number', { applied: 'one', disabled: [], breakers_opened: [] }],
+    ['a missing field', { applied: 1, disabled: [] }],
+    ['a disabled entry that is not an object', { applied: 1, disabled: ['groq'], breakers_opened: [] }],
+    [
+      'a disabled entry without a fingerprint',
+      { applied: 1, disabled: [{ provider: 'groq', reason: 'auth' }], breakers_opened: [] },
+    ],
+    [
+      'a disabled entry with an unknown provider',
+      {
+        applied: 1,
+        disabled: [{ provider: 'openai', fingerprint: 'abc123def456', reason: 'auth' }],
+        breakers_opened: [],
+      },
+    ],
+    ['a breaker that is not a provider', { applied: 1, disabled: [], breakers_opened: ['openai'] }],
+    ['breakers as objects', { applied: 1, disabled: [], breakers_opened: [{ provider: 'groq' }] }],
+    ['an array instead of an object', []],
+  ])('keyReport fails with a decode error for %s', async (_name, body) => {
+    const { db } = admin(() => jsonResponse(body));
+    await expect(db.keyReport([keyOutcome])).rejects.toMatchObject({ kind: 'decode', fn: 'key_report' });
   });
 
   it('credentialsUsable sends the provider and validates a list of fingerprints', async () => {
@@ -127,6 +171,48 @@ describe('createAdminClient', () => {
     await expect(bad.db.governorSetBudget({ provider: 'groq', budget: 100 })).rejects.toMatchObject({
       kind: 'decode',
     });
+  });
+
+  it('askSecretSet sends the secret by name and returns only {rotated}', async () => {
+    const secret = 'example-ask-commit-secret-not-real-0001';
+    const { db, calls } = admin(() => jsonResponse({ rotated: false }));
+    await expect(db.askSecretSet(secret)).resolves.toEqual({ rotated: false });
+    expect(calls[0]!.url).toBe(`${URL_BASE}/rest/v1/rpc/ask_secret_set`);
+    expect(calls[0]!.headers['content-profile']).toBe('admin_api');
+    expect(calls[0]!.body).toEqual({ secret });
+    const rotated = admin(() => jsonResponse({ rotated: true }));
+    await expect(rotated.db.askSecretSet(secret)).resolves.toEqual({ rotated: true });
+    const bad = admin(() => jsonResponse({ rotated: 'yes' }));
+    await expect(bad.db.askSecretSet(secret)).rejects.toMatchObject({ kind: 'decode', fn: 'ask_secret_set' });
+  });
+
+  it('askSecretSet never puts the secret into an error, whatever the failure and whoever echoes it', async () => {
+    const secret = 'example-ask-commit-secret-not-real-0001';
+    const echo = `invalid input: ${secret}`;
+    const failures: [string, Parameters<typeof mockFetch>[0], string][] = [
+      ['http', () => jsonResponse({ code: '22023', message: echo }, 400), 'http'],
+      ['http (secret in the code)', () => jsonResponse({ code: secret, message: 'nope' }, 400), 'http'],
+      ['decode', () => jsonResponse({ echoed: secret }), 'decode'],
+      ['network', () => Promise.reject(new TypeError(echo)), 'network'],
+    ];
+    for (const [name, responder, kind] of failures) {
+      const error = await admin(responder)
+        .db.askSecretSet(secret)
+        .then(
+          () => {
+            throw new Error(`${name}: expected askSecretSet to reject`);
+          },
+          (e: unknown) => e,
+        );
+      expect(error, name).toMatchObject({ kind, fn: 'ask_secret_set' });
+      expect((error as DbError).message, name).not.toContain(secret);
+      expect(String((error as DbError).code), name).not.toContain(secret);
+      expect(JSON.stringify(error, Object.getOwnPropertyNames(error)), name).not.toContain(secret);
+    }
+    // The secret is still sent to the database.
+    const ok = admin(() => jsonResponse({ rotated: false }));
+    await ok.db.askSecretSet(secret);
+    expect(ok.calls[0]!.body).toEqual({ secret });
   });
 
   it('upsertBusiness validates the result', async () => {

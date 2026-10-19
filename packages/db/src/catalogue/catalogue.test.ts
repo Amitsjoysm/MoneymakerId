@@ -15,6 +15,12 @@ import {
   snapshotOptionsFromEnv,
 } from './index.ts';
 
+// Wraps the real loader so a test can prove the supabase path never reaches it (no fallback to fixtures).
+vi.mock('../fixtures/index.ts', async (importOriginal) => {
+  const actual = await importOriginal<typeof import('../fixtures/index.ts')>();
+  return { ...actual, loadFixtureCatalogue: vi.fn(actual.loadFixtureCatalogue) };
+});
+
 const URL_BASE = 'https://example-project.supabase.co';
 const KEY = ['sb', 'publishable', 'abcdefghijklmnop'].join('_');
 const repoRoot = join(dirname(new URL(import.meta.url).pathname), '..', '..', '..', '..');
@@ -51,8 +57,14 @@ describe('assertNoFixtureBusinesses', () => {
     expect(() => assertNoFixtureBusinesses(emptySnapshot({ places: [place] }), 'fixtures')).not.toThrow();
   });
 
-  it('allows ordinary names, including ones that only look similar', () => {
-    for (const name of ['Sample Biryani', 'Exampleton Grill', 'The Example Cafe']) {
+  it('throws for any name that starts with "Example", even when it continues as one word', () => {
+    for (const name of ['Exampleton Grill', 'EXAMPLES Painters', 'example']) {
+      expect(() => assertNoFixtureBusinesses(real(name)), name).toThrow(SnapshotError);
+    }
+  });
+
+  it('allows ordinary names, including ones that only contain or resemble the word', () => {
+    for (const name of ['Sample Biryani', 'The Example Cafe', 'Exemplar Foods']) {
       expect(() => assertNoFixtureBusinesses(real(name)), name).not.toThrow();
     }
     expect(() => assertNoFixtureBusinesses(emptySnapshot())).not.toThrow();
@@ -105,8 +117,7 @@ describe("loadSnapshot({ dataSource: 'supabase' })", () => {
     ['timeout', () => hangingFetch(), 20],
     ['decode', () => mockFetch(() => jsonResponse({ snapshot_id: 'incomplete' })).fetch, undefined],
   ] as const)('a %s error throws and does not fall back to fixtures', async (kind, makeFetch, timeoutMs) => {
-    const fixtureLoad = vi.fn();
-    vi.stubGlobal('console', { ...console, warn: fixtureLoad });
+    vi.mocked(loadFixtureCatalogue).mockClear();
     const error = await loadSnapshot({
       dataSource: 'supabase',
       supabase: {
@@ -115,10 +126,15 @@ describe("loadSnapshot({ dataSource: 'supabase' })", () => {
         fetch: makeFetch(),
         ...(timeoutMs ? { timeoutMs } : {}),
       },
-    }).catch((e: unknown) => e);
+    }).then(
+      (snapshot) => {
+        throw new Error(`resolved with snapshot "${snapshot.snapshot_id}" instead of rejecting`);
+      },
+      (e: unknown) => e,
+    );
     expect(error).toBeInstanceOf(DbError);
     expect((error as DbError).kind).toBe(kind);
-    expect(fixtureLoad).not.toHaveBeenCalled();
+    expect(loadFixtureCatalogue).not.toHaveBeenCalled();
   });
 
   it('throws when it has neither a client nor a url and key', async () => {

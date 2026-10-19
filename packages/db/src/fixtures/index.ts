@@ -12,9 +12,13 @@ import { formatIssues } from '../issues.ts';
 /** The word every fixture business name starts with (CONTRACTS §6: "Fixture businesses are named 'Example …'"). */
 export const FIXTURE_NAME_PREFIX = 'Example';
 
-/** Whether `name` looks like a fixture business: it starts with the word "Example", in any case. */
+/**
+ * Whether `name` is a fixture business: it starts with "Example", in any case (the E01 brief's literal rule).
+ * Deliberately loose, so it fails closed: "Exampleton Grill" is flagged too, and a real business that needs
+ * that name is a loud build failure a person resolves, where a leaked fixture would be silent fabrication.
+ */
 export function isFixtureBusinessName(name: string): boolean {
-  return /^example(?![\p{L}\p{N}_])/iu.test(name.normalize('NFKC').trimStart());
+  return name.normalize('NFKC').trimStart().toLowerCase().startsWith(FIXTURE_NAME_PREFIX.toLowerCase());
 }
 
 /** The sections of the snapshot that come from the fixture file (everything but the reference data). */
