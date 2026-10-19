@@ -34,7 +34,9 @@
       "min_unique": 0.5,
       "seo_min": 0.5,
       "requires_reviewed_prose": false,
-      "extra": { "min_localities": 2 }
+      "extra": {
+        "min_localities": 2
+      }
     },
     "food:locality_hub": {
       "min_entities": 5,
@@ -52,7 +54,10 @@
       "min_unique": 0.5,
       "seo_min": 0.5,
       "requires_reviewed_prose": false,
-      "extra": { "min_grounded_claims": 3, "min_independent_sources": 2 }
+      "extra": {
+        "min_grounded_claims": 3,
+        "min_independent_sources": 2
+      }
     },
     "construction:service_cost": {
       "min_entities": 0,
@@ -61,7 +66,9 @@
       "min_unique": 0.5,
       "seo_min": 0.5,
       "requires_reviewed_prose": true,
-      "extra": { "min_sources": 2 }
+      "extra": {
+        "min_sources": 2
+      }
     },
     "construction:locality_service": {
       "min_entities": 0,
@@ -70,7 +77,12 @@
       "min_unique": 0.5,
       "seo_min": 0.5,
       "requires_reviewed_prose": false,
-      "extra": { "min_local_facts": 3, "min_providers": 2, "min_quotes": 3, "min_factor_sources": 2 }
+      "extra": {
+        "min_local_facts": 3,
+        "min_providers": 2,
+        "min_quotes": 3,
+        "min_factor_sources": 2
+      }
     },
     "main:locality_guide": {
       "min_entities": 0,
@@ -79,7 +91,27 @@
       "min_unique": 0.5,
       "seo_min": 0.5,
       "requires_reviewed_prose": true,
-      "extra": { "min_words": 400 }
+      "extra": {
+        "min_words": 400
+      }
+    },
+    "construction:service_city": {
+      "min_entities": 2,
+      "min_evidence": 2,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": {}
+    },
+    "construction:locality_hub": {
+      "min_entities": 0,
+      "min_evidence": 3,
+      "min_relevance": 0.6,
+      "min_unique": 0.5,
+      "seo_min": 0.5,
+      "requires_reviewed_prose": false,
+      "extra": {}
     }
   },
   "hysteresis_ratio": 0.8,

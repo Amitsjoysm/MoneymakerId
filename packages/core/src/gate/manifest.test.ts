@@ -208,6 +208,32 @@ describe('buildManifest: an intent page needs its parent page to be indexed', ()
   });
 });
 
+describe('buildManifest: a locality food intent page needs its locality hub to be indexed', () => {
+  // Plan §5: an intent page passes only when its parent page passes (orchestrator ruling 2026-10-19 extends
+  // this to the locality intents: late-night-food, budget-food, veg-food).
+  const localityIntentConfig = (hubMinEntities: number): GateConfig =>
+    makeConfig({
+      'food:locality_hub': { min_entities: hubMinEntities, min_evidence: 0, min_unique: 0, seo_min: 0 },
+      'food:locality_food_intent': { min_entities: 1, min_evidence: 1, min_unique: 0, seo_min: 0 },
+    });
+  const HUB = '/pune/hinjewadi/';
+  const VEG = '/pune/hinjewadi/veg-food/';
+
+  it('indexes the locality intent page when the locality hub passes', async () => {
+    const m = await build(() => {}, localityIntentConfig(0));
+    expect(manifestAction(entry(m, 'food', HUB))).toBe('build_index');
+    expect(manifestAction(entry(m, 'food', VEG))).toBe('build_index');
+  });
+
+  it('skips the locality intent page when the locality hub is not indexed', async () => {
+    const m = await build(() => {}, localityIntentConfig(1000));
+    expect(manifestAction(entry(m, 'food', HUB))).toBe('skip');
+    const child = entry(m, 'food', VEG);
+    expect(manifestAction(child)).toBe('skip');
+    expect(child.gate.reasons.join(' ')).toMatch(/parent page \/pune\/hinjewadi\/ is not indexed/);
+  });
+});
+
 describe('buildManifest: content hash and hash_changed_at', () => {
   it('gives identical inputs an identical hash, and identical manifests', async () => {
     const a = await build();

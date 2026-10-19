@@ -18,8 +18,11 @@ import { shinglesOf } from './shingles.ts';
 
 const CITY_URL = '/pune/';
 
-/** Page types that are only indexed while their parent page is (plan §5: an intent page needs its dish page to pass). */
-const NEEDS_INDEXED_PARENT: ReadonlySet<GateKey> = new Set<GateKey>(['food:food_intent']);
+/** Page types that are only indexed while their parent page is (plan §5: an intent page needs its parent page to pass). */
+const NEEDS_INDEXED_PARENT: ReadonlySet<GateKey> = new Set<GateKey>([
+  'food:food_intent',
+  'food:locality_food_intent',
+]);
 
 /** The most ancestors a redirect climbs through before giving up. */
 const MAX_CLIMB = 8;
