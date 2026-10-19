@@ -1,15 +1,31 @@
 -- T02b: api.ask_begin, api.ask_commit and api.ask_result (CONTRACTS section 5, plan section 9).
 -- ask_begin answers in one round trip: cached/coalesced, per-visitor burst limit, the daily Ask cap,
--- provider budgets, and which keys are usable. ask_commit settles a pending lookup once.
+-- provider budgets, and which keys are usable. ask_commit settles a pending lookup once, and only for a
+-- caller that signs the lookup id with the shared secret (the signature itself is tested in
+-- 01_ask_commit_sig.sql; the search history ask_begin writes in 01_ask_history.sql).
 -- 22023 = invalid input (mm_invalid), P0002 = not found, 42501 = insufficient privilege.
 begin;
-select plan(98);
+select plan(99);
 
 create function pg_temp.today() returns date language sql as $$ select (now() at time zone 'Asia/Kolkata')::date; $$;
 
-create function pg_temp.begin_(intent text, hmac text default 'v1', live boolean default true)
+-- A ParsedIntent for a food search; 'over' replaces keys (shallow)
+create function pg_temp.pi(intent_key text, over jsonb default '{}') returns jsonb language sql as $$
+  select $j${
+    "vertical": "food", "subject_id": "chicken-biryani", "craving": null, "locality_id": "baner",
+    "budget_inr": null, "diet": null, "open_now": false, "confidence": 0.9
+  }$j$::jsonb || jsonb_build_object('intent_key', intent_key) || over;
+$$;
+
+create function pg_temp.begin_(intent text, hmac text default 'v1', live boolean default true, over jsonb default '{}')
 returns jsonb language sql as $$
-  select api.ask_begin(jsonb_build_object('intent_key', intent, 'visitor_hmac', hmac, 'want_live', live));
+  select api.ask_begin(jsonb_build_object('intent', pg_temp.pi(intent, over), 'intent_key', intent, 'visitor_hmac', hmac, 'want_live', live));
+$$;
+
+-- hex(HMAC-SHA256(secret, lookup_id)): what the Worker sends as commit_sig
+create function pg_temp.sig(id uuid, secret text default 'example-ask-commit-secret-not-real-0001') returns text
+language sql as $$
+  select encode(extensions.hmac(id::text, secret, 'sha256'), 'hex');
 $$;
 
 create function pg_temp.lookups_today() returns int language sql as $$
@@ -20,6 +36,7 @@ $$;
 create function pg_temp.commit_(id uuid, over jsonb default '{}') returns jsonb language sql as $$
   select jsonb_build_object(
     'lookup_id', id,
+    'commit_sig', pg_temp.sig(id),
     'result', $j${
       "items": [
         { "entity_id": null, "name": "Example Found Kitchen", "locality_id": "baner", "url": "https://example.test/found",
@@ -47,6 +64,8 @@ $$;
 insert into app.localities (id, name, kind, lat, lng, geo_source, jurisdiction) values ('baner', 'Baner', 'locality', 18.559, 73.786, '{}', 'PMC');
 create temp table obs_before as select count(*)::int as n from app.observations;
 create temp table biz_before as select count(*)::int as n from app.businesses;
+-- the secret the Worker signs commits with (set at deploy by the secret-key path)
+select admin_api.ask_secret_set('example-ask-commit-secret-not-real-0001');
 
 -- ---------------------------------------------------------------------------
 -- ask_begin before any budget exists: fails closed
@@ -157,6 +176,7 @@ select is((pg_temp.begin_('p-1', 'v-p') ->> 'verdict'), 'allow', 'allow: and eve
 create temp table lookups_before as select count(*)::int as n from app.ask_lookups;
 select throws_ok($$select api.ask_begin('[]'::jsonb)$$, '22023', 'mm_invalid: ask_begin: the argument must be a JSON object', 'deny: an array');
 select throws_ok($$select api.ask_begin('{"visitor_hmac": "v", "want_live": true}'::jsonb)$$, '22023', 'mm_invalid: ask_begin: intent_key is required', 'deny: no intent_key');
+select throws_ok($$select api.ask_begin('{"intent_key": "k", "visitor_hmac": "v", "want_live": true}'::jsonb)$$, '22023', 'mm_invalid: ask_begin: intent is required', 'deny: no intent');
 select throws_ok($$select api.ask_begin('{"intent_key": "   ", "visitor_hmac": "v", "want_live": true}'::jsonb)$$, '22023', null, 'deny: a blank intent_key');
 select throws_ok(format($$select api.ask_begin(%L::jsonb)$$, jsonb_build_object('intent_key', repeat('k', 201), 'visitor_hmac', 'v', 'want_live', true)::text), '22023', null, 'deny: an intent_key over 200 characters');
 select throws_ok($$select api.ask_begin('{"intent_key": "k", "want_live": true}'::jsonb)$$, '22023', 'mm_invalid: ask_begin: visitor_hmac is required', 'deny: no visitor_hmac');
@@ -165,8 +185,9 @@ select throws_ok($$select api.ask_begin('{"intent_key": "k", "visitor_hmac": "v"
 select is((select count(*)::int from app.ask_lookups), (select n from lookups_before), 'rejected calls created no lookup');
 select ok(has_function_privilege('anon', 'api.ask_begin(jsonb)', 'execute'), 'allow: anon can execute api.ask_begin');
 select ok(not has_function_privilege('authenticated', 'api.ask_begin(jsonb)', 'execute'), 'deny: authenticated cannot execute api.ask_begin');
+do $$ begin perform set_config('t.begin', jsonb_build_object('intent', pg_temp.pi('as-anon'), 'intent_key', 'as-anon', 'visitor_hmac', 'v-anon', 'want_live', true)::text, true); end $$;
 set local role anon;
-select is(api.ask_begin('{"intent_key": "as-anon", "visitor_hmac": "v-anon", "want_live": true}'::jsonb) ->> 'verdict', 'allow', 'allow: a call made as anon succeeds');
+select is(api.ask_begin(current_setting('t.begin')::jsonb) ->> 'verdict', 'allow', 'allow: a call made as anon succeeds');
 reset role;
 set local role authenticated;
 select throws_ok($$select api.ask_begin('{}'::jsonb)$$, '42501', null, 'deny: authenticated gets insufficient privilege');

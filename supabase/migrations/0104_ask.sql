@@ -12,9 +12,16 @@
 -- therefore validate everything, accept a commit once per pending lookup, refuse URLs that are not http(s)
 -- or a site path (a stored result is shown to other visitors), never register a key (only update known ones), and
 -- never publish a business: candidates are recorded and handed to the catalogue writer (app.ask_apply_candidates).
--- Known limit: a caller with the publishable key can report outcomes for a registered fingerprint (ask_begin hands
--- the fingerprints out, as CONTRACTS section 5 requires), so it could cool or disable a key. Only a secret shared
--- with the Worker would stop that; it is reported to the orchestrator rather than invented here.
+-- ask_commit also requires a signature: commit_sig = hex(HMAC-SHA256(ASK_COMMIT_SECRET, lookup_id)), checked against
+-- the secret stored by admin_api.ask_secret_set (0105_ask_commit_secret.sql) before anything else is read or written.
+-- ask_begin hands the usable key fingerprints and the lookup id to anyone, so without the signature a holder of the
+-- publishable key could cool or disable a registered key, spend the budget, or settle a pending lookup with a forged
+-- result that other visitors would then be shown.
+--
+-- Search history: ask_begin writes one app.queries row for every search it accepts (vertical, parsed intent, locality,
+-- where the answer came from, the lookup). It stores no IP address, no user agent and no visitor hash, and nothing
+-- the caller adds beyond the nine ParsedIntent fields. A signed ask_commit that settles a lookup from a live fetch
+-- flips served_from to 'live' on the rows that waited for it. ask_search stays a pure read and logs nothing.
 
 -- ---------------------------------------------------------------------------
 -- Helpers (schema app: not callable by any API role)
@@ -182,6 +189,67 @@ as $$
    group by r.entity_id;
 $$;
 
+-- A ParsedIntent (CONTRACTS section 6a), validated and normalised: exactly its nine fields and nothing else, so
+-- anything else a caller adds is dropped, with an absent value stored as JSON null (open_now as false). Shared by
+-- api.ask_search and api.ask_begin so both accept the same intents. Every free-text value is capped (slugs at 100
+-- characters, intent_key at 200), which keeps the stored history under the 200 character rule.
+create function app.ask_read_intent(p_intent jsonb, p_fn text)
+returns jsonb
+language plpgsql
+set search_path = ''
+as $$
+declare
+  c_slug constant text := '^[a-z0-9]+(-[a-z0-9]+)*$';
+  v_vertical text;
+  v_subject text;
+  v_locality text;
+  v_craving text;
+  v_diet text;
+  v_budget numeric;
+  v_open_now boolean;
+  v_key text;
+  v_confidence numeric;
+begin
+  v_vertical := app.in_enum(p_intent, 'vertical', p_fn, array['food', 'construction'], true, 'intent.vertical');
+  v_subject := app.in_text(p_intent, 'subject_id', p_fn, 100, false, 'intent.subject_id');
+  v_locality := app.in_text(p_intent, 'locality_id', p_fn, 100, false, 'intent.locality_id');
+  if v_subject is not null and v_subject !~ c_slug then
+    perform app.raise_invalid(p_fn, 'intent.subject_id must be a lowercase slug');
+  end if;
+  if v_locality is not null and v_locality !~ c_slug then
+    perform app.raise_invalid(p_fn, 'intent.locality_id must be a lowercase slug');
+  end if;
+  v_craving := app.in_enum(p_intent, 'craving', p_fn,
+    array['spicy', 'sweet', 'savoury', 'light', 'filling', 'street', 'breakfast', 'late_night', 'healthy'], false, 'intent.craving');
+  v_diet := app.in_enum(p_intent, 'diet', p_fn, array['veg', 'non_veg', 'egg', 'both'], false, 'intent.diet');
+  v_budget := app.in_num(p_intent, 'budget_inr', p_fn, 0, 100000000, false, false, 'intent.budget_inr');
+  v_open_now := coalesce(app.in_bool(p_intent, 'open_now', p_fn, false, 'intent.open_now'), false);
+  v_key := app.in_text(p_intent, 'intent_key', p_fn, 200, false, 'intent.intent_key');
+  v_confidence := app.in_num(p_intent, 'confidence', p_fn, 0, 1, false, false, 'intent.confidence');
+
+  return jsonb_build_object(
+    'vertical', v_vertical, 'subject_id', v_subject, 'craving', v_craving, 'locality_id', v_locality,
+    'budget_inr', v_budget, 'diet', v_diet, 'open_now', v_open_now, 'intent_key', v_key, 'confidence', v_confidence);
+end;
+$$;
+
+-- The lookup an intent can join: a finished one from the last 24 hours (the cache) or one still in flight that
+-- started less than five minutes ago (identical concurrent misses share one lookup). Null when there is none.
+create function app.ask_find_lookup(p_intent_key text)
+returns uuid
+language sql
+stable
+set search_path = ''
+as $$
+  select l.id
+    from app.ask_lookups l
+   where l.intent_key = p_intent_key
+     and ((l.status = 'done' and l.created_at > now() - interval '24 hours')
+       or (l.status = 'pending' and l.created_at > now() - interval '5 minutes'))
+   order by l.created_at desc
+   limit 1;
+$$;
+
 create function app.ask_search_food(
   p_subject text, p_craving text, p_locality text, p_budget numeric, p_diet text,
   p_open_now boolean, p_limit integer, p_now timestamptz
@@ -333,41 +401,21 @@ set search_path = ''
 as $$
 declare
   c_fn constant text := 'ask_search';
-  c_slug constant text := '^[a-z0-9]+(-[a-z0-9]+)*$';
   v_intent jsonb;
   v_limit integer;
-  v_vertical text;
-  v_subject text;
-  v_locality text;
-  v_craving text;
-  v_diet text;
-  v_budget numeric;
-  v_open_now boolean;
 begin
   perform app.require_object(p, c_fn);
   v_intent := app.in_obj(p, 'intent', c_fn);
   v_limit := coalesce(app.in_num(p, 'limit', c_fn, 1, 10, false, true), 10)::integer;
+  v_intent := app.ask_read_intent(v_intent, c_fn);
 
-  v_vertical := app.in_enum(v_intent, 'vertical', c_fn, array['food', 'construction'], true, 'intent.vertical');
-  v_subject := app.in_text(v_intent, 'subject_id', c_fn, 100, false, 'intent.subject_id');
-  v_locality := app.in_text(v_intent, 'locality_id', c_fn, 100, false, 'intent.locality_id');
-  if v_subject is not null and v_subject !~ c_slug then
-    perform app.raise_invalid(c_fn, 'intent.subject_id must be a lowercase slug');
+  if v_intent ->> 'vertical' = 'food' then
+    return app.ask_search_food(
+      v_intent ->> 'subject_id', v_intent ->> 'craving', v_intent ->> 'locality_id', (v_intent ->> 'budget_inr')::numeric,
+      v_intent ->> 'diet', (v_intent ->> 'open_now')::boolean, v_limit, now());
   end if;
-  if v_locality is not null and v_locality !~ c_slug then
-    perform app.raise_invalid(c_fn, 'intent.locality_id must be a lowercase slug');
-  end if;
-  v_craving := app.in_enum(v_intent, 'craving', c_fn,
-    array['spicy', 'sweet', 'savoury', 'light', 'filling', 'street', 'breakfast', 'late_night', 'healthy'], false, 'intent.craving');
-  v_diet := app.in_enum(v_intent, 'diet', c_fn, array['veg', 'non_veg', 'egg', 'both'], false, 'intent.diet');
-  v_budget := app.in_num(v_intent, 'budget_inr', c_fn, 0, 100000000, false, false, 'intent.budget_inr');
-  v_open_now := coalesce(app.in_bool(v_intent, 'open_now', c_fn, false, 'intent.open_now'), false);
-  perform app.in_text(v_intent, 'intent_key', c_fn, 200, false, 'intent.intent_key');
-
-  if v_vertical = 'food' then
-    return app.ask_search_food(v_subject, v_craving, v_locality, v_budget, v_diet, v_open_now, v_limit, now());
-  end if;
-  return app.ask_search_construction(v_subject, v_locality, v_budget, v_limit, now());
+  return app.ask_search_construction(
+    v_intent ->> 'subject_id', v_intent ->> 'locality_id', (v_intent ->> 'budget_inr')::numeric, v_limit, now());
 end;
 $$;
 
@@ -388,15 +436,16 @@ set search_path = ''
 as $$
 declare
   c_fn constant text := 'ask_begin';
-  c_cache_hours constant integer := 24;      -- a finished lookup answers the same intent for a day
-  c_coalesce_minutes constant integer := 5;  -- a pending lookup is joined for five minutes, then presumed lost
   c_burst_limit constant integer := 10;      -- live lookups per visitor per window (CGNAT-friendly, plan section 9)
   c_burst_window constant interval := interval '10 minutes';
   v_none constant jsonb := '{"groq": [], "exa": [], "firecrawl": []}'::jsonb;
   v_intent_key text;
   v_hmac text;
   v_live boolean;
+  v_intent jsonb;
+  v_verdict text;
   v_lookup uuid;
+  v_usable jsonb := v_none;
   v_groq text[];
   v_exa text[];
   v_gov_groq app.governor;
@@ -409,63 +458,68 @@ begin
   v_intent_key := app.in_text(p, 'intent_key', c_fn, 200);
   v_hmac := app.in_text(p, 'visitor_hmac', c_fn, 128);
   v_live := app.in_bool(p, 'want_live', c_fn);
+  -- Validated before anything is written, with the same readers as ask_search. What is kept is the normalised
+  -- ParsedIntent (nine fields): no IP, no user agent, no visitor hash, nothing the caller adds.
+  v_intent := app.ask_read_intent(app.in_obj(p, 'intent', c_fn), c_fn);
 
-  -- not asking for a live lookup: report what exists and start nothing
-  if not v_live then
-    select l.id into v_lookup
+  <<decide>>
+  begin
+    -- not asking for a live lookup: report what exists and start nothing
+    if not v_live then
+      v_lookup := app.ask_find_lookup(v_intent_key);
+      v_verdict := 'cached';
+      exit decide;
+    end if;
+
+    -- One lock serialises live starts, so identical concurrent misses join one lookup and the daily cap holds.
+    perform pg_advisory_xact_lock(hashtextextended('mm:ask_begin', 0));
+
+    v_lookup := app.ask_find_lookup(v_intent_key);
+    if v_lookup is not null then
+      v_verdict := 'cached';
+      exit decide;
+    end if;
+
+    -- Providers: a budget, a closed breaker and a usable key for both Groq and Exa (Firecrawl is not part of Ask).
+    v_groq := app.provider_keys_usable('groq', true);
+    v_exa := app.provider_keys_usable('exa', true);
+    if cardinality(v_groq) = 0 or cardinality(v_exa) = 0 then
+      v_verdict := 'budget_exhausted';
+      exit decide;
+    end if;
+
+    -- The daily cap on live lookups is the smaller Ask share of Groq and Exa (50 by default, plan section 9).
+    v_gov_groq := app.governor_today('groq');
+    v_gov_exa := app.governor_today('exa');
+    v_cap := least(v_gov_groq.reserved_ask, v_gov_exa.reserved_ask);
+    select count(*)::integer into v_started
       from app.ask_lookups l
-     where l.intent_key = v_intent_key
-       and ((l.status = 'done' and l.created_at > now() - make_interval(hours => c_cache_hours))
-         or (l.status = 'pending' and l.created_at > now() - make_interval(mins => c_coalesce_minutes)))
-     order by l.created_at desc
-     limit 1;
-    return jsonb_build_object('verdict', 'cached', 'lookup_id', v_lookup, 'usable', v_none);
-  end if;
+     where l.created_at >= (app.today_ist()::timestamp at time zone 'Asia/Kolkata');
+    if v_started >= v_cap then
+      v_verdict := 'budget_exhausted';
+      exit decide;
+    end if;
 
-  -- One lock serialises live starts, so identical concurrent misses join one lookup and the daily cap holds.
-  perform pg_advisory_xact_lock(hashtextextended('mm:ask_begin', 0));
+    if not app.rate_hit('ask:' || v_hmac, c_burst_window, c_burst_limit) then
+      v_verdict := 'rate_limited';
+      exit decide;
+    end if;
 
-  select l.id into v_lookup
-    from app.ask_lookups l
-   where l.intent_key = v_intent_key
-     and ((l.status = 'done' and l.created_at > now() - make_interval(hours => c_cache_hours))
-       or (l.status = 'pending' and l.created_at > now() - make_interval(mins => c_coalesce_minutes)))
-   order by l.created_at desc
-   limit 1;
-  if v_lookup is not null then
-    return jsonb_build_object('verdict', 'cached', 'lookup_id', v_lookup, 'usable', v_none);
-  end if;
-
-  -- Providers: a budget, a closed breaker and a usable key for both Groq and Exa (Firecrawl is not part of Ask).
-  v_groq := app.provider_keys_usable('groq', true);
-  v_exa := app.provider_keys_usable('exa', true);
-  if cardinality(v_groq) = 0 or cardinality(v_exa) = 0 then
-    return jsonb_build_object('verdict', 'budget_exhausted', 'lookup_id', null, 'usable', v_none);
-  end if;
-
-  -- The daily cap on live lookups is the smaller Ask share of Groq and Exa (50 by default, plan section 9).
-  v_gov_groq := app.governor_today('groq');
-  v_gov_exa := app.governor_today('exa');
-  v_cap := least(v_gov_groq.reserved_ask, v_gov_exa.reserved_ask);
-  select count(*)::integer into v_started
-    from app.ask_lookups l
-   where l.created_at >= (app.today_ist()::timestamp at time zone 'Asia/Kolkata');
-  if v_started >= v_cap then
-    return jsonb_build_object('verdict', 'budget_exhausted', 'lookup_id', null, 'usable', v_none);
-  end if;
-
-  if not app.rate_hit('ask:' || v_hmac, c_burst_window, c_burst_limit) then
-    return jsonb_build_object('verdict', 'rate_limited', 'lookup_id', null, 'usable', v_none);
-  end if;
-
-  insert into app.ask_lookups (intent_key) values (v_intent_key) returning id into v_lookup;
-  return jsonb_build_object(
-    'verdict', 'allow',
-    'lookup_id', v_lookup,
-    'usable', jsonb_build_object(
+    insert into app.ask_lookups (intent_key) values (v_intent_key) returning id into v_lookup;
+    v_verdict := 'allow';
+    v_usable := jsonb_build_object(
       'groq', to_jsonb(v_groq),
       'exa', to_jsonb(v_exa),
-      'firecrawl', to_jsonb(app.provider_keys_usable('firecrawl', true))));
+      'firecrawl', to_jsonb(app.provider_keys_usable('firecrawl', true)));
+  end decide;
+
+  -- The search history: one row for every accepted call, whatever the verdict. It starts as served from the
+  -- database, or from the cache when the verdict is cached; a signed ask_commit flips it to live.
+  insert into app.queries (vertical, intent, locality_id, served_from, lookup_id)
+  values (v_intent ->> 'vertical', v_intent, v_intent ->> 'locality_id',
+          case when v_verdict = 'cached' then 'cache' else 'db' end, v_lookup);
+
+  return jsonb_build_object('verdict', v_verdict, 'lookup_id', v_lookup, 'usable', v_usable);
 end;
 $$;
 
@@ -473,7 +527,7 @@ revoke all on function api.ask_begin(jsonb) from public;
 grant execute on function api.ask_begin(jsonb) to anon, service_role;
 
 comment on function api.ask_begin(jsonb) is
-  '{ intent_key, visitor_hmac, want_live } -> { verdict, lookup_id, usable }. cached also covers a lookup already in flight; want_live = false never starts one (cached with a null lookup_id when none exists). budget_exhausted covers the daily cap, a spent budget, an open breaker and no usable key.';
+  '{ intent: ParsedIntent, intent_key, visitor_hmac, want_live } -> { verdict, lookup_id, usable }. cached also covers a lookup already in flight; want_live = false never starts one (cached with a null lookup_id when none exists). budget_exhausted covers the daily cap, a spent budget, an open breaker and no usable key. Writes one app.queries row per accepted call (vertical, the nine ParsedIntent fields, locality_id, served_from db, or cache when the verdict is cached, and the lookup id); no IP, no user agent, no visitor hash.';
 
 -- ---------------------------------------------------------------------------
 -- api.ask_commit
@@ -504,6 +558,9 @@ begin
     perform app.raise_invalid(c_fn, 'the payload is larger than 64 KB');
   end if;
   v_id := app.in_uuid(p, 'lookup_id', c_fn);
+  -- The signature comes first. Nothing below is read, validated or written for a caller who cannot sign the lookup
+  -- id with the shared secret: no key outcome, no budget, no lookup, no candidate.
+  perform app.require_ask_commit_sig(c_fn, v_id, app.in_text(p, 'commit_sig', c_fn, 64));
 
   -- result: an AskResult, or null when the lookup failed
   if not (p ? 'result') then
@@ -587,6 +644,12 @@ begin
          result = v_result
    where l.id = v_id;
 
+  -- the searches that waited for this lookup (the visitor who started it and any who joined it) were answered by a
+  -- live fetch; one answered from the database stays as it is
+  if v_result is not null and v_result ->> 'served_from' = 'live' then
+    update app.queries q set served_from = 'live' where q.lookup_id = v_id and q.served_from <> 'live';
+  end if;
+
   if jsonb_array_length(v_candidates) > 0 then
     insert into app.system_events (level, kind, message, data)
     values ('info', 'ask_candidates_received',
@@ -601,7 +664,7 @@ revoke all on function api.ask_commit(jsonb) from public;
 grant execute on function api.ask_commit(jsonb) to anon, service_role;
 
 comment on function api.ask_commit(jsonb) is
-  '{ lookup_id, result: AskResult | null, key_outcomes, candidates } -> void. Settles a pending lookup once (null result = failed), applies the key outcomes of keys already registered (never registers one), records the candidates in a system event and hands them to app.ask_apply_candidates. Validates every field; publishes nothing.';
+  '{ lookup_id, commit_sig, result: AskResult | null, key_outcomes, candidates } -> void. commit_sig = hex(HMAC-SHA256(secret stored by admin_api.ask_secret_set, lookup_id)); a missing or wrong signature, or no stored secret, is refused with mm_invalid before anything else is read or written. Settles a pending lookup once (null result = failed), applies the key outcomes of keys already registered (never registers one), flips the search history of a live result to served_from live, records the candidates in a system event and hands them to app.ask_apply_candidates. Validates every field; publishes nothing.';
 
 -- ---------------------------------------------------------------------------
 -- api.ask_result

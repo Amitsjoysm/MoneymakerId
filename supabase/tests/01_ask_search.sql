@@ -2,7 +2,7 @@
 -- Published entities only; the latest finished ranking run; active, unexpired evidence; no phone numbers.
 -- 22023 = invalid input (mm_invalid), 42501 = insufficient privilege.
 begin;
-select plan(57);
+select plan(58);
 
 -- ---------------------------------------------------------------------------
 -- Fixtures: invented "Example ..." businesses, in test data only
@@ -234,6 +234,7 @@ select throws_ok(format($$select api.ask_search(%L::jsonb)$$, pg_temp.q('{"diet"
 select throws_ok(format($$select api.ask_search(%L::jsonb)$$, pg_temp.q('{"craving": "hungry"}')::text), '22023', null, 'deny: a craving outside the vocabulary');
 select throws_ok(format($$select api.ask_search(%L::jsonb)$$, pg_temp.q('{"subject_id": "Not A Slug"}')::text), '22023', null, 'deny: a subject that is not a slug');
 select throws_ok(format($$select api.ask_search(%L::jsonb)$$, pg_temp.q(jsonb_build_object('intent_key', repeat('k', 201)))::text), '22023', null, 'deny: an intent_key over 200 characters');
+select throws_ok(format($$select api.ask_search(%L::jsonb)$$, pg_temp.q('{"confidence": 1.5}')::text), '22023', 'mm_invalid: ask_search: intent.confidence must be between 0 and 1', 'deny: a confidence above 1');
 select is((select count(*)::int from app.queries), (select n from queries_before), 'ask_search is a read: it logs no query and changes nothing');
 select is((select count(*)::int from app.observations), (select n from obs_before), 'and writes no observations');
 

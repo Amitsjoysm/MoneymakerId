@@ -1,9 +1,9 @@
 -- T02b: the inventory of public functions and their ACLs (CONTRACTS section 5).
 -- Seven api functions are callable with the publishable key (anon) and the secret key (service_role);
--- three admin_api functions are callable with the secret key only. Behaviour is tested in the other 01_ files.
+-- four admin_api functions are callable with the secret key only. Behaviour is tested in the other 01_ files.
 -- This file lists what T02b must provide; T02c adds more functions to the same schemas.
 begin;
-select plan(62);
+select plan(68);
 
 create temp table expected (schema_name name, fn name, args text[], returns text);
 insert into expected values
@@ -16,7 +16,8 @@ insert into expected values
   ('api', 'ask_result', array['uuid'], 'jsonb'),
   ('admin_api', 'key_report', array['jsonb'], 'jsonb'),
   ('admin_api', 'credentials_usable', array['text'], 'text[]'),
-  ('admin_api', 'governor_set_budget', array['jsonb'], 'jsonb');
+  ('admin_api', 'governor_set_budget', array['jsonb'], 'jsonb'),
+  ('admin_api', 'ask_secret_set', array['text'], 'jsonb');
 
 select has_function(e.schema_name, e.fn, e.args, format('%s.%s(%s) exists', e.schema_name, e.fn, array_to_string(e.args, ', ')))
   from expected e order by e.schema_name, e.fn;
